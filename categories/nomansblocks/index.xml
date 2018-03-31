@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nomansblocks on Eddie Abbondanzio</title>
+    <link>https://EddieAbb95.github.io/categories/nomansblocks/</link>
+    <description>Recent content in Nomansblocks on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Mar 2018 15:22:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://EddieAbb95.github.io/categories/nomansblocks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>No Mans Blocks - 3/31 Update</title>
+      <link>https://EddieAbb95.github.io/post/nomansblocks/3-31-18-update/</link>
+      <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/nomansblocks/3-31-18-update/</guid>
+      <description>Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:</description>
+    </item>
+    
+  </channel>
+</rss>

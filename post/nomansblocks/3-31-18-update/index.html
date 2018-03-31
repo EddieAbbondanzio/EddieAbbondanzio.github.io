@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.37" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://EddieAbb95.github.io/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+    <link rel="alternate" href="https://EddieAbb95.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+
+    <title>
+        
+        No Mans Blocks - 3/31 Update  - Eddie Abbondanzio 
+    </title>
+</head>
+    
+<body>
+    <header>
+        <div class="container clearfix">
+        
+        <a class="path" href="https://EddieAbb95.github.io/">Home</a>
+
+        
+        <div class="right">
+            
+            
+            
+            
+            
+            <a class="path" href="/page/about/">About Me</a>
+        </div>
+      </div>
+    </header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-03-31">March 31, 2018</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://EddieAbb95.github.io/categories/nomansblocks">NoMansBlocks</a>
+
+    </span>
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">No Mans Blocks - 3/31 Update</h1>
+  <section class="body" itemprop="articleBody" style="width: 100%;">
+    
+
+<h2 id="stepping-back-into-networking">Stepping back into Networking</h2>
+
+<p>These past few months I&rsquo;ve been on a tangent that wasn&rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&rsquo;t exactly remember every change some of the key ones are:</p>
+
+<ul>
+<li>New Task Scheduler + ThreadManager</li>
+<li>Faster greedy mesh algorithm</li>
+<li>New Command Console</li>
+<li>New World loading method</li>
+<li>Introduction of random world generation</li>
+<li>Prefab Controller to allow for new features such as sprite blocks + more</li>
+</ul>
+
+<p>While it may not seem like much, it will make moving forward much easier. The voxel engine itself is quite enjoyable to work with and I&rsquo;m excited to see where it goes. I also took the opportunity to redo the server application code. Previously there was a lot of redundant code between the game server and voxel engine, but that&rsquo;s no longer the case. The server app is currently running through console but down the road I plan on adding a GUI.</p>
+
+<p>Below is all of the code for the server. It doesn&rsquo;t really show much as the server application is nothing more than a wrapper for accepting inputs to the command console of Voxelated. I&rsquo;ll give out some more details soon.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">namespace</span> NoMansBlocks.Server {
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The entry point for the applicaiton. The server app itself
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// does nothing more than process commands.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span> {
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span><span style="color:#a6e22e">[]</span> args) {
+            <span style="color:#a6e22e">VoxelatedEngine</span>.OnStop += OnStop;
+
+            <span style="color:#a6e22e">LoggerUtils</span>.SetLogProfile(<span style="color:#a6e22e">LogProfile</span>.ConsoleDebug);
+
+            <span style="color:#75715e">//Start the engine up
+</span><span style="color:#75715e"></span>            VoxelatedEngine voxelatedEngine = <span style="color:#66d9ef">new</span> VoxelatedEngine();
+            <span style="color:#a6e22e">voxelatedEngine</span>.Start();
+
+            <span style="color:#75715e">//While it&#39;s running, keep accepting commands
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">voxelatedEngine</span>.IsRunning) {
+                <span style="color:#66d9ef">string</span> input = <span style="color:#a6e22e">Console</span>.ReadLine();
+                <span style="color:#a6e22e">VoxelatedEngine</span>.<span style="color:#a6e22e">Console</span>.Parse(input);
+            }
+        }
+
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// Called when the voxelated engine is shutting down.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> OnStop(<span style="color:#66d9ef">object</span> sender, EventArgs e) {
+            <span style="color:#a6e22e">Environment</span>.Exit(<span style="color:#ae81ff">0</span>);
+        }
+    }
+}</code></pre></div>
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer style="position: relative; bottom: 0px; width: 100%;">
+  <div class="container">
+    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+
