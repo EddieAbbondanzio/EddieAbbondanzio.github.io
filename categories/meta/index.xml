@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on Eddie Abbondanzio</title>
+    <link>https://EddieAbb95.github.io/categories/meta/</link>
+    <description>Recent content in Meta on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Mar 2018 10:06:59 -0400</lastBuildDate>
+    
+	<atom:link href="https://EddieAbb95.github.io/categories/meta/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New site, who this?</title>
+      <link>https://EddieAbb95.github.io/post/misc/first-post/</link>
+      <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/misc/first-post/</guid>
+      <description>Welcome! If your reading this, it means you&amp;rsquo;ve found my new website. It&amp;rsquo;s still in it&amp;rsquo;s early stages so it may seem quite primitive. It&amp;rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
+In the following weeks I&amp;rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&amp;rsquo;m working on.
+What is this blog about?</description>
+    </item>
+    
+  </channel>
+</rss>

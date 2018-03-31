@@ -139,8 +139,18 @@ pre, code {
 
 /* Header Layout */
 
+header a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
 header a.path {
-  color: #6699cc;
+  color: #ffcc66;
+}
+
+header a.disabled {
+    color: #747369;
+    pointer-events: none;
 }
 
 header span.caret {

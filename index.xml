@@ -6,10 +6,19 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Mar 2018 10:06:59 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 30 Mar 2018 10:06:59 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbb95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Object Pooling in Unity</title>
+      <link>https://EddieAbb95.github.io/post/voxel/prefab-controller/</link>
+      <pubDate>Fri, 30 Mar 2018 10:06:59 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/voxel/prefab-controller/</guid>
+      <description>GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to let it use one of the objects in it.</description>
+    </item>
     
     <item>
       <title>Greedy Meshing for Voxels</title>
@@ -30,6 +39,15 @@ However if your like me, your probably looking for a simpler explanation and per
       <description>Welcome! If your reading this, it means you&amp;rsquo;ve found my new website. It&amp;rsquo;s still in it&amp;rsquo;s early stages so it may seem quite primitive. It&amp;rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
 In the following weeks I&amp;rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&amp;rsquo;m working on.
 What is this blog about?</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://EddieAbb95.github.io/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/page/about/</guid>
+      <description>Welcome! My name is Eddie Abbondanzio, and you&amp;rsquo;ve managed to find my site.</description>
     </item>
     
   </channel>
