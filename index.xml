@@ -6,10 +6,19 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Mar 2018 15:22:42 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 15:56:01 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbb95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Logging to Unity or Console</title>
+      <link>https://EddieAbb95.github.io/post/unity/debug-logging/</link>
+      <pubDate>Sat, 31 Mar 2018 15:56:01 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/unity/debug-logging/</guid>
+      <description>Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&amp;rsquo;ll need a way to differentiate between the running environments.</description>
+    </item>
     
     <item>
       <title>No Mans Blocks - 3/31 Update</title>
