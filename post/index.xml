@@ -6,13 +6,31 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2018 16:22:42 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 08 Apr 2018 18:25:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbb95.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Civic Build 4-6-18</title>
+      <title>No Mans Blocks - 4/8/18</title>
+      <link>https://EddieAbb95.github.io/post/nomansblocks/4-8-18-update/</link>
+      <pubDate>Sun, 08 Apr 2018 18:25:42 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/nomansblocks/4-8-18-update/</guid>
+      <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events.</description>
+    </item>
+    
+    <item>
+      <title>Civic Build - 4/8/18</title>
+      <link>https://EddieAbb95.github.io/post/civic/4-8-18-update/</link>
+      <pubDate>Sun, 08 Apr 2018 18:04:42 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/civic/4-8-18-update/</guid>
+      <description>New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&amp;rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.</description>
+    </item>
+    
+    <item>
+      <title>Civic Build - 4/6/18</title>
       <link>https://EddieAbb95.github.io/post/civic/4-6-18-update/</link>
       <pubDate>Fri, 06 Apr 2018 16:22:42 -0400</pubDate>
       
@@ -58,7 +76,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
     </item>
     
     <item>
-      <title>No Mans Blocks - 3/31 Update</title>
+      <title>No Mans Blocks - 3/31/18</title>
       <link>https://EddieAbb95.github.io/post/nomansblocks/3-31-18-update/</link>
       <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
       
