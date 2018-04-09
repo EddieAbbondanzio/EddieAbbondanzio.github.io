@@ -161,7 +161,8 @@
     }
 }</code></pre></div>
 <p>Add an OnValidate() method to the class. This is called by Unity anytime a value on the monobehaviour script is modified. By validating our field values it helps prevent any absurd run time errors that could occur.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Called when an editor field is modified.
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnValidate() {
@@ -185,7 +186,8 @@
         }
     }</code></pre></div>
 <p>The Coroutine for adjusting pool size is the trickiest part of the pool. It may seem redundant but I&rsquo;ve implemented it in this way for clarity. If you prefer you could find the delta size via Mathf.ABS() then checking if objects should be added, or removed and perform the operation delta times.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Handles adjusting the pool size when needed.
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> IEnumerator UpdatePoolCoroutine() {
@@ -220,7 +222,8 @@
 <p>You&rsquo;ll want to adjust MaxChangesPerTick based on how complex your prefab object is. For larger complex objects reduce the number closer to one, but for simple objects such as the cube primitive MaxChangesPerTick could be fairly high.</p>
 
 <p>Since adding or removing an instance could require some additional work that could clutter the Coroutine we&rsquo;ll move them to their own specialized methods.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Adds a new instances to the bottom of the pool.
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> AddInstance() {
@@ -240,7 +243,8 @@
 </span><span style="color:#75715e"></span>    DestroyImmediate(lastInstance);
 }</code></pre></div>
 <p>Finally we&rsquo;ll need a way to return and retrieve objects from the pool. I&rsquo;ve added a few overloads for getting objects from the pool as examples of what can be done.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Returns an instance from the pool. If the
 </span><span style="color:#75715e">/// pool is of fixed type, it may return null.
 </span><span style="color:#75715e">/// &lt;/summary&gt;
@@ -295,7 +299,8 @@
     <span style="color:#66d9ef">return</span> instance;
 }</code></pre></div>
 <p>And to wrap things up let&rsquo;s add the return object method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Return an instance back to the pool.
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnInstance(GameObject obj) {
