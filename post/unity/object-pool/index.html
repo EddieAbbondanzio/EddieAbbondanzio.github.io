@@ -227,8 +227,7 @@
 </span><span style="color:#75715e">/// Adds a new instances to the bottom of the pool.
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> AddInstance() {
-    GameObject newInstance = <span style="color:#a6e22e">PrefabUtility</span>.InstantiatePrefab(Prefab) <span style="color:#66d9ef">as</span> GameObject;
-    <span style="color:#a6e22e">newInstance</span>.<span style="color:#a6e22e">transform</span>.parent = <span style="color:#66d9ef">this</span>.transform;
+    GameObject newInstance = <span style="color:#a6e22e">GameObject</span>.InstantiatePrefab(Prefab, <span style="color:#66d9ef">this</span>.transform) <span style="color:#66d9ef">as</span> GameObject;
 
     <span style="color:#a6e22e">newInstance</span>.SetActive(<span style="color:#66d9ef">false</span>);
 }
