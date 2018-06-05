@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.37" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://EddieAbb95.github.io/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+    <link rel="alternate" href="https://EddieAbb95.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+
+    <title>
+        
+        No Mans Blocks - 6/4/18  - Eddie Abbondanzio 
+    </title>
+</head>
+    
+<body>
+    <header>
+        <div class="container clearfix">
+        
+        <a class="path" href="https://EddieAbb95.github.io/">Home</a>
+
+        
+        <div class="right">
+            
+            
+            
+            
+            
+            <a class="path" href="/page/about/">About Me</a>
+        </div>
+      </div>
+    </header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-06-04">June 04, 2018</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://EddieAbb95.github.io/categories/nomansblocks">NoMansBlocks</a>
+
+    </span>
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">No Mans Blocks - 6/4/18</h1>
+  <section class="body" itemprop="articleBody" >
+    
+
+<h2 id="creating-time-literally">Creating Time (literally!)</h2>
+
+<p>I have a knack for forgetting what I&rsquo;ve managed to accomplish on the game during the week. To try to overcome this
+so I have updates I can post on it, I&rsquo;ve started writing down each accomplishment on a sticky note.</p>
+
+<p>Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While
+the networking implementation is still early, I&rsquo;ve managed to get a sever-authoratative set up running that handles
+syncing up lobby of players together. Players can specify their own nicknames, which will be ensured to be unique. Chat with
+each other through text based messages, and some moderator functions such as kicking players are included.</p>
+
+<p>Changelog:</p>
+
+<ul>
+<li>Switched to LiteNetLib from Lidgren. (Very happy).</li>
+<li>Added custom kick message that is sent to players when kicked from a lobby.</li>
+<li>Changed lobby settings to allow for picking of the next map via voting
+or randomly.</li>
+<li>Fixed a bug in the byte buffer that was writing a bool as a byte instead of just a bit.</li>
+<li>Moved Name + description of the server to server settings instead of lobby. (The client
+recieves these when their connection is accepted.)</li>
+<li>Added game modes (Team Deathmatch, Deathmatch, Capture the Flag, and Demolition) more on these soon&hellip;</li>
+</ul>
+
+<p>Lastly while the switch to LiteNetLib was pretty hassle free I did have to implement my own
+network synchronized time system, which is actually quite a bit easier than it sounds!</p>
+
+<p>Both the server, and clients maintain their own time which basically just indicates how long the
+game has been running for in seconds. To generate a synchronized time across the
+network the following steps need to be taken.</p>
+
+<ol>
+<li>When a client connects have them send a time sync request and track when it was sent</li>
+<li>The server then responds back with it&rsquo;s current time.</li>
+<li>On the return of the sync request to the client calculate the offset from server time to
+local time by subtracting the round trip time from the recieved value.</li>
+</ol>
+
+<p>These code snippets are from my TimeSynchronizer class. They are the message handlers that
+process incoming messages from over the network.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnConnectionMessage(<span style="color:#66d9ef">object</span> sender, NetMessageArgs e) {
+    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">e</span>.Message?.Type) {
+        <span style="color:#75715e">//Step 1 (Client side):
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//When a new server is connected to. Send it a time request.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">NetMessageType</span>.ConnectionAccepted:
+            SendSyncRequest();
+            <span style="color:#66d9ef">break</span>;
+
+        <span style="color:#75715e">//Disconnected from server. Wipe offset.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">NetMessageType</span>.Disconnected:
+            <span style="color:#a6e22e">time</span>.SetServerOffset(<span style="color:#ae81ff">0</span>);
+            <span style="color:#66d9ef">break</span>;
+    }
+}
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnTimeMessage(<span style="color:#66d9ef">object</span> sender, NetMessageArgs e) {
+    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">e</span>.Message?.Type) {
+        <span style="color:#75715e">//Step 3 (Client Side)
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//Time sync message was recieved.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">NetMessageType</span>.TimeSync:
+            TimeSyncMessage incomingSync = <span style="color:#a6e22e">e</span>.Message <span style="color:#66d9ef">as</span> TimeSyncMessage;
+
+            <span style="color:#66d9ef">if</span> (incomingSync != <span style="color:#66d9ef">null</span>) {
+                <span style="color:#a6e22e">time</span>.SetServerOffset(<span style="color:#a6e22e">incomingSync</span>.ServerTime - timeSyncSentAt);
+            }
+
+            <span style="color:#66d9ef">break</span>;
+
+        <span style="color:#75715e">//Step 2 (Server Side)
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//Client is requesting a time sync message.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">NetMessageType</span>.TimeSyncRequest:
+            <span style="color:#a6e22e">LiteNetLib</span>.NetPeer msgSender = <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Message</span>.Sender;
+            <span style="color:#66d9ef">if</span> (msgSender != <span style="color:#66d9ef">null</span>) {
+                TimeSyncMessage outgoingSync = <span style="color:#66d9ef">new</span> TimeSyncMessage(<span style="color:#a6e22e">Time</span>.LocalTime);
+                <span style="color:#a6e22e">netManager</span>.SendMessage(outgoingSync, msgSender, <span style="color:#a6e22e">LiteNetLib</span>.<span style="color:#a6e22e">SendOptions</span>.ReliableOrdered);
+            }
+            <span style="color:#66d9ef">break</span>;
+    }
+}</code></pre></div>
+<p>This process isn&rsquo;t quite perfect and a variance of several milliseconds can occur but this can be overcome by repeating these steps occasionally. It could be
+taken one step further and several time syncs could be sent when a player first joins, then the average offset can be calculated from them which can reduce bad
+data due to a lag spike.</p>
+
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer style="position: relative; bottom: 0px; width: 100%;">
+  <div class="container">
+    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

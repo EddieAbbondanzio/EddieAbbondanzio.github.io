@@ -6,10 +6,20 @@
     <description>Recent content in Nomansblocks on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Apr 2018 23:05:42 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jun 2018 20:05:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbb95.github.io/categories/nomansblocks/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>No Mans Blocks - 6/4/18</title>
+      <link>https://EddieAbb95.github.io/post/nomansblocks/6-4-18/</link>
+      <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
+      
+      <guid>https://EddieAbb95.github.io/post/nomansblocks/6-4-18/</guid>
+      <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
+Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
+    </item>
     
     <item>
       <title>No Mans Blocks - 4/20/18</title>
