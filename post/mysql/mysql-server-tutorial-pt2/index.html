@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.37" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://EddieAbb95.github.io/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+    <link rel="alternate" href="https://EddieAbb95.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+
+    <title>
+        
+        Setting up a MySQL Server with Ubuntu via VirtualBox Pt2  - Eddie Abbondanzio 
+    </title>
+</head>
+    
+<body>
+    <header>
+        <div class="container clearfix">
+        
+        <a class="path" href="https://EddieAbb95.github.io/">Home</a>
+
+        
+        <div class="right">
+            
+            
+            
+            
+            
+            <a class="path" href="/page/about/">About Me</a>
+        </div>
+      </div>
+    </header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-07-23">July 23, 2018</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://EddieAbb95.github.io/categories/mysql">MySQL</a>
+
+    </span>
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">Setting up a MySQL Server with Ubuntu via VirtualBox Pt2</h1>
+  <section class="body" itemprop="articleBody" >
+    
+
+<h1 id="part-2-installing-ubuntu">Part 2: Installing Ubuntu</h1>
+
+<p>With out virtual machine ready to be fired up thanks to part 1, we are now ready to begin
+installing Ubuntu. If you don&rsquo;t have VirtualBox open, go ahead and do so now. Highlight
+the VM that we just set up and click <strong>Start</strong></p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/1.png" class="image-center"></p>
+
+<p>Okay I lied. There&rsquo;s actually one last step we need to do and that&rsquo;s specify the location
+of our Ubuntu ISO file that we downloaded earlier. Click the little folder icon next to
+the drop down and locate the ISO file.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/2.png" class="image-center"></p>
+
+<p>Now we are ready to begin! Click <strong>Start</strong> and let the VM do it&rsquo;s thing.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/3.png" class="image-center"></p>
+
+<p>If everything worked accordingly, you&rsquo;ll be taken to the install screen for Ubuntu.
+Go ahead and select <strong>Install Ubuntu</strong></p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/4.png" class="image-center"></p>
+
+<p>Both of these options are up to you, but I recommend selecting the checkbox next
+to <strong>Download updates&hellip;</strong></p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/5.png" class="image-center"></p>
+
+<p>While this page may seem a little scary due to the warning don&rsquo;t worry as the VM only
+has access to the small partition that we created for it earlier. In no way will it harm your actual OS.</p>
+
+<p>Since this server will only be used for development we won&rsquo;t be encrypting it as it
+will never be publicly accessible. Select <strong>Install Now</strong>, then <strong>Continue</strong> on the popup that appears.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/6.png" class="image-center">
+<img src="/imgs/mysql/mysql-server-tutorial/pt2/7.png" class="image-center"></p>
+
+<p>If the timezone selected by default isn&rsquo;t yours, go ahead and update it to correctly
+reflect your location and hit <strong>Continue</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/8.png" class="image-center"></p>
+
+<p>Pick your keyboard layout. If your unsure, you probably just want the default. If your window is
+cut off like mine try dragging it via the top gray portion. Ubuntu doesn&rsquo;t seem to like
+such a small display of 800x600 pixels.
+<img src="/imgs/mysql/mysql-server-tutorial/pt2/9.png" class="image-center"></p>
+
+<p>The last step! Fill out all of the fields, and then hit <strong>Continue</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/10.png" class="image-center"></p>
+
+<p>Ubuntu will now begin to install itself onto the VM. Sit back and hold tight for a bit while it does
+it&rsquo;s thing.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/11.png" class="image-center"></p>
+
+<p>Once Ubuntu has completed installing you&rsquo;ll be prompted to perform a restart. Hit <strong>Restart Now</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/12.png" class="image-center"></p>
+
+<p>You don&rsquo;t actually have to remove anything when this appears. Just hit <strong>Enter</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/13.png" class="image-center"></p>
+
+<p>Once rebooted, go ahead and log into your account. Your now ready for part 3!</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt2/14.png" class="image-center">
+<img src="/imgs/mysql/mysql-server-tutorial/pt2/15.png" class="image-center"></p>
+
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer style="position: relative; bottom: 0px; width: 100%;">
+  <div class="container">
+    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

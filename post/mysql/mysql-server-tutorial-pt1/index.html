@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.37" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://EddieAbb95.github.io/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+    <link rel="alternate" href="https://EddieAbb95.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+
+    <title>
+        
+        Setting up a MySQL Server with Ubuntu via VirtualBox Pt1  - Eddie Abbondanzio 
+    </title>
+</head>
+    
+<body>
+    <header>
+        <div class="container clearfix">
+        
+        <a class="path" href="https://EddieAbb95.github.io/">Home</a>
+
+        
+        <div class="right">
+            
+            
+            
+            
+            
+            <a class="path" href="/page/about/">About Me</a>
+        </div>
+      </div>
+    </header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2018-07-23">July 23, 2018</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://EddieAbb95.github.io/categories/mysql">MySQL</a>
+
+    </span>
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</h1>
+  <section class="body" itemprop="articleBody" >
+    
+
+<h1 id="part-1-setting-up-virtual-box">Part 1: Setting up Virtual Box</h1>
+
+<p>Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL
+server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public
+database server for development. Before we begin though you&rsquo;ll need a few resources.</p>
+
+<p>Download the following:</p>
+
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+<li><a href="https://www.ubuntu.com/download/desktop">Ubuntu (Desktop)</a></li>
+</ul>
+
+<p>Why Desktop? Well, when it comes to Ubuntu both versions are nearly identical. The key difference is the collection
+of packages each includes by default. It&rsquo;s not required to have the desktop version, although it can be quite useful
+to have a GUI for when things go awry.</p>
+
+<p>Once you&rsquo;ve downloaded both VirtualBox and the Ubuntu ISO, go ahead and install VirtualBox. Since there&rsquo;s no special
+requirements for it I won&rsquo;t go into detail on it. Simply accept all the defaults and evverything should be okay.</p>
+
+<p>With VirtualBox installed, go ahead and open it up.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/1.png" class="image-center"></p>
+
+<p>While it may look simple don&rsquo;t be fooled as VirtualBox is quite the powerful little tool. Overall we won&rsquo;t have to do
+much to it but we do need to adjust one setting first. Click on the <strong>Settings</strong> button then navigate to the <strong>Network</strong> tab.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/2.png" class="image-center"></p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/3.png" class="image-center"></p>
+
+<p>Double check to ensure that <em>Bridged Adapter</em> is selected in the <strong>Attached To</strong> drop down then click <strong>OK</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/4.png" class="image-center"></p>
+
+<p>Now we&rsquo;ll begin creating our new virtual machine. Click the <strong>New</strong> option in the menu.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/5.png" class="image-center"></p>
+
+<p>Give it a name (can be anything really), and select <em>Linux</em> in the <strong>Type</strong> dropdown. <em>Ubuntu</em> should
+automatically be selected for the <strong>Version</strong> dropdown but if it isn&rsquo;t go ahead and select it. Then click <strong>Next</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/6.png" class="image-center"></p>
+
+<p>If desired, you can adjust the size of the RAM allocated for the VM. For our purposes 1024MB should be
+more than enough. Click <strong>Next</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/7.png" class="image-center"></p>
+
+<p>Nothing to worry about on the next two pages so go ahead and click <strong>Create</strong> then <strong>Next</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/8.png" class="image-center"></p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/9.png" class="image-center"></p>
+
+<p>To gain a (slight) performance boost we&rsquo;ll select the <em>Fixed Size</em> option.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/10.png" class="image-center"></p>
+
+<p>Pick a size for your partition (10GB is perfectly fine for this example), then click <strong>Create</strong>.</p>
+
+<p><img src="/imgs/mysql/mysql-server-tutorial/pt1/11.png" class="image-center"></p>
+
+<p>It can take about a minute or so for this step to complete. It varies based on factors such as the speed of
+your hard drive, and how large of a partition you specified. Once complete though the VM will be ready to
+start and you can move on to Part 2.</p>
+
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer style="position: relative; bottom: 0px; width: 100%;">
+  <div class="container">
+    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+
