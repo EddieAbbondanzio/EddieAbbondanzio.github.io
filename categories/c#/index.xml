@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# on Eddie Abbondanzio</title>
-    <link>https://EddieAbb95.github.io/categories/c#/</link>
+    <link>https://EddieAbbondanzio.github.io/categories/c#/</link>
     <description>Recent content in C# on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 May 2018 19:04:42 -0400</lastBuildDate>
     
-	<atom:link href="https://EddieAbb95.github.io/categories/c#/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://EddieAbbondanzio.github.io/categories/c#/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C# Threadable Queue</title>
-      <link>https://EddieAbb95.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</link>
+      <link>https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</link>
       <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
       <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
 public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
     </item>

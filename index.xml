@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eddie Abbondanzio</title>
-    <link>https://EddieAbb95.github.io/</link>
+    <link>https://EddieAbbondanzio.github.io/</link>
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Jul 2018 06:59:42 -0400</lastBuildDate>
     
-	<atom:link href="https://EddieAbb95.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://EddieAbbondanzio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt3</title>
-      <link>https://EddieAbb95.github.io/post/mysql/mysql-server-tutorial-pt3/</link>
+      <link>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/</link>
       <pubDate>Mon, 23 Jul 2018 06:59:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/mysql/mysql-server-tutorial-pt3/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/</guid>
       <description>Part 3: Setting up MySQL Server If you&amp;rsquo;ve made it this far your on the home stretch! In this part we&amp;rsquo;ll be configuring Ubuntu, and setting up MySQL Server. If you haven&amp;rsquo;t already, load up the Ubuntu VM.
 While this is optional, I highly recommend giving your server a static IP address. Normally the router is reponsible for handing out IP addresses but since we will be connecting to this through code we really don&amp;rsquo;t want to have to update the address every single time in the database connection.</description>
     </item>
     
     <item>
       <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt2</title>
-      <link>https://EddieAbb95.github.io/post/mysql/mysql-server-tutorial-pt2/</link>
+      <link>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/</link>
       <pubDate>Mon, 23 Jul 2018 06:58:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/mysql/mysql-server-tutorial-pt2/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/</guid>
       <description>Part 2: Installing Ubuntu With out virtual machine ready to be fired up thanks to part 1, we are now ready to begin installing Ubuntu. If you don&amp;rsquo;t have VirtualBox open, go ahead and do so now. Highlight the VM that we just set up and click Start
 Okay I lied. There&amp;rsquo;s actually one last step we need to do and that&amp;rsquo;s specify the location of our Ubuntu ISO file that we downloaded earlier.</description>
     </item>
     
     <item>
       <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</title>
-      <link>https://EddieAbb95.github.io/post/mysql/mysql-server-tutorial-pt1/</link>
+      <link>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/</link>
       <pubDate>Mon, 23 Jul 2018 06:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/mysql/mysql-server-tutorial-pt1/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/</guid>
       <description>Part 1: Setting up Virtual Box Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public database server for development. Before we begin though you&amp;rsquo;ll need a few resources.
 Download the following:
  VirtualBox Ubuntu (Desktop)  Why Desktop?</description>
@@ -44,189 +44,189 @@ Download the following:
     
     <item>
       <title>Civic Build - 6-23-18</title>
-      <link>https://EddieAbb95.github.io/post/civic/6-23-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/6-23-18-update/</link>
       <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/6-23-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/6-23-18-update/</guid>
       <description>Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&amp;rsquo;t been gassed up since last September and was pretty much on E.</description>
     </item>
     
     <item>
       <title>Civic Build - 6-9-18</title>
-      <link>https://EddieAbb95.github.io/post/civic/6-9-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/</link>
       <pubDate>Sat, 09 Jun 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/6-9-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/</guid>
       <description>Getting ready for the test drive While the car may not be on the road yet, it&amp;rsquo;s come quite a bit closer to getting there. Lately I&amp;rsquo;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&amp;rsquo;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 6/4/18</title>
-      <link>https://EddieAbb95.github.io/post/nomansblocks/6-4-18/</link>
+      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18/</link>
       <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/nomansblocks/6-4-18/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18/</guid>
       <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
 Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
     </item>
     
     <item>
       <title>Civic Build - 5/20/18</title>
-      <link>https://EddieAbb95.github.io/post/civic/5-20-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/</link>
       <pubDate>Sun, 20 May 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/5-20-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/</guid>
       <description>Finishing things up With the weather warming up it&amp;rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.
 I had thought this task would be difficult but it really wasn&amp;rsquo;t that bad.</description>
     </item>
     
     <item>
       <title>C# Threadable Queue</title>
-      <link>https://EddieAbb95.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</link>
+      <link>https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</link>
       <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
       <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
 public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 4/20/18</title>
-      <link>https://EddieAbb95.github.io/post/nomansblocks/4-20-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/</link>
       <pubDate>Fri, 20 Apr 2018 23:05:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/nomansblocks/4-20-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/</guid>
       <description>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&amp;rsquo;t want to handle serialization with 2 different methods I&amp;rsquo;ve decided to bite the bullet and roll my own set up.
 To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/15/18</title>
-      <link>https://EddieAbb95.github.io/post/civic/4-15-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/4-15-18-update/</link>
       <pubDate>Sun, 15 Apr 2018 20:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/4-15-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/4-15-18-update/</guid>
       <description>Connecting the Pieces It&amp;rsquo;s easy to forget just how many parts you&amp;rsquo;ve removed until it comes time to put them all back together. I know I&amp;rsquo;m probably not alone when I say I&amp;rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&amp;hellip;
 To help keep costs down I try to buy cheap things when I know they&amp;rsquo;ll only be used temporarily.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/14/18</title>
-      <link>https://EddieAbb95.github.io/post/civic/4-14-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/4-14-18-update/</link>
       <pubDate>Sat, 14 Apr 2018 20:40:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/4-14-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/4-14-18-update/</guid>
       <description>Getting Closer. I ran into a few set backs this weekend, and I&amp;rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.
 Last year everytime I pushed the clutch in it made a real nice squeek that let everyone in a 15 foot radius know what was going on. Thankfully this time I didn&amp;rsquo;t forget to grease the pivot point on the clutch fork.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/12/18</title>
-      <link>https://EddieAbb95.github.io/post/civic/4-12-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/4-12-18-update/</link>
       <pubDate>Thu, 12 Apr 2018 13:13:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/4-12-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/4-12-18-update/</guid>
       <description>Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&amp;rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&amp;rsquo;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&amp;hellip;). Here&amp;rsquo;s how it looked before touching it at all.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 4/8/18</title>
-      <link>https://EddieAbb95.github.io/post/nomansblocks/4-8-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/4-8-18-update/</link>
       <pubDate>Sun, 08 Apr 2018 18:25:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/nomansblocks/4-8-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/4-8-18-update/</guid>
       <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/8/18</title>
-      <link>https://EddieAbb95.github.io/post/civic/4-8-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/4-8-18-update/</link>
       <pubDate>Sun, 08 Apr 2018 18:04:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/4-8-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/4-8-18-update/</guid>
       <description>New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&amp;rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/6/18</title>
-      <link>https://EddieAbb95.github.io/post/civic/4-6-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/4-6-18-update/</link>
       <pubDate>Fri, 06 Apr 2018 16:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/4-6-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/4-6-18-update/</guid>
       <description>Wrapping it up It&amp;rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
 Initially I wanted to work on finishing up the engine bay but with how cold it was outside I decided to focus on the motor instead.</description>
     </item>
     
     <item>
       <title>B-Series Bolt Sizes</title>
-      <link>https://EddieAbb95.github.io/post/honda/b-series-bolts/</link>
+      <link>https://EddieAbbondanzio.github.io/post/honda/b-series-bolts/</link>
       <pubDate>Fri, 06 Apr 2018 15:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/honda/b-series-bolts/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/honda/b-series-bolts/</guid>
       <description>Trying to find the size of a missing bolt? I&amp;rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try to help any others who are partaking in a similar project I&amp;rsquo;ve compiled a list of what I found below.</description>
     </item>
     
     <item>
       <title>Civic Build 4-1-18</title>
-      <link>https://EddieAbb95.github.io/post/civic/4-1-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/4-1-18-update/</link>
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/civic/4-1-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/4-1-18-update/</guid>
       <description>I like projects And I&amp;rsquo;m the kind of person that can&amp;rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&amp;rsquo;s totally different, it&amp;rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&amp;rsquo;s full history check out my build thread on D-Series.</description>
     </item>
     
     <item>
       <title>My Work Station</title>
-      <link>https://EddieAbb95.github.io/post/misc/desk/</link>
+      <link>https://EddieAbbondanzio.github.io/post/misc/desk/</link>
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/misc/desk/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/misc/desk/</guid>
       <description>My Budget Build At my work, I&amp;rsquo;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home. However I&amp;rsquo;m on a college student budget, and don&amp;rsquo;t want to spend an arm and a leg right now. In the end I came up with this solution that&amp;rsquo;s left me pretty happy.</description>
     </item>
     
     <item>
       <title>Logging to Unity or Console</title>
-      <link>https://EddieAbb95.github.io/post/unity/debug-logging/</link>
+      <link>https://EddieAbbondanzio.github.io/post/unity/debug-logging/</link>
       <pubDate>Sat, 31 Mar 2018 15:56:01 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/unity/debug-logging/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/unity/debug-logging/</guid>
       <description>Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&amp;rsquo;ll need a way to differentiate between the running environments.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 3/31/18</title>
-      <link>https://EddieAbb95.github.io/post/nomansblocks/3-31-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/3-31-18-update/</link>
       <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/nomansblocks/3-31-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/3-31-18-update/</guid>
       <description>Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:</description>
     </item>
     
     <item>
       <title>Object Pooling in Unity</title>
-      <link>https://EddieAbb95.github.io/post/unity/object-pool/</link>
+      <link>https://EddieAbbondanzio.github.io/post/unity/object-pool/</link>
       <pubDate>Fri, 30 Mar 2018 10:06:59 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/unity/object-pool/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/unity/object-pool/</guid>
       <description>GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.</description>
     </item>
     
     <item>
       <title>Greedy Meshing for Voxels</title>
-      <link>https://EddieAbb95.github.io/post/voxel/greedy-mesh/</link>
+      <link>https://EddieAbbondanzio.github.io/post/voxel/greedy-mesh/</link>
       <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/voxel/greedy-mesh/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/voxel/greedy-mesh/</guid>
       <description>What is Greedy Meshing? Anyone who has spent some time working with voxels will have heard of the term &amp;lsquo;Greedy Meshing&amp;rsquo; at some point. If your new to the concept check out this article written by Mikola Lysenko. It&amp;rsquo;s probably the most popular (and if not best) article out there regarding voxel mesh generation.
 However if your like me, your probably looking for a simpler explanation and perhaps some source code to really get the ball rolling, and improve your understanding.</description>
     </item>
     
     <item>
       <title>New site, who this?</title>
-      <link>https://EddieAbb95.github.io/post/misc/first-post/</link>
+      <link>https://EddieAbbondanzio.github.io/post/misc/first-post/</link>
       <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
       
-      <guid>https://EddieAbb95.github.io/post/misc/first-post/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/misc/first-post/</guid>
       <description>Welcome! If your reading this, it means you&amp;rsquo;ve found my new website. It&amp;rsquo;s still in it&amp;rsquo;s early stages so it may seem quite primitive. It&amp;rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
 In the following weeks I&amp;rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&amp;rsquo;m working on.
 What is this blog about?</description>
@@ -234,10 +234,10 @@ What is this blog about?</description>
     
     <item>
       <title>About Me</title>
-      <link>https://EddieAbb95.github.io/page/about/</link>
+      <link>https://EddieAbbondanzio.github.io/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://EddieAbb95.github.io/page/about/</guid>
+      <guid>https://EddieAbbondanzio.github.io/page/about/</guid>
       <description>Welcome! My name is Eddie Abbondanzio, and you&amp;rsquo;ve managed to find my site. This page is currently under construction but come back soon.</description>
     </item>
     
