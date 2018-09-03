@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/jeep/9-3-18-update/</loc>
+    <lastmod>2018-09-02T12:57:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/</loc>
     <lastmod>2018-07-23T06:59:42-04:00</lastmod>
   </url>
@@ -141,13 +146,19 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
-    <lastmod>2018-07-23T06:59:42-04:00</lastmod>
+    <lastmod>2018-09-02T12:57:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/categories/honda/</loc>
     <lastmod>2018-04-06T15:22:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/jeep/</loc>
+    <lastmod>2018-09-02T12:57:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,7 +187,7 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2018-07-23T06:59:42-04:00</lastmod>
+    <lastmod>2018-09-02T12:57:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   

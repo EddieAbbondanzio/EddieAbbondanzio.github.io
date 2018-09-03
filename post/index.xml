@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Jul 2018 06:59:42 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 02 Sep 2018 12:57:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cherokee Build - 9-03-18</title>
+      <link>https://EddieAbbondanzio.github.io/post/jeep/9-3-18-update/</link>
+      <pubDate>Sun, 02 Sep 2018 12:57:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/jeep/9-3-18-update/</guid>
+      <description>Repainting the Cherokee&amp;rsquo;s roof I&amp;rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&amp;rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&amp;rsquo;s never let me down, and has successfully travelled 20,000 miles in it&amp;rsquo;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.</description>
+    </item>
     
     <item>
       <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt3</title>
