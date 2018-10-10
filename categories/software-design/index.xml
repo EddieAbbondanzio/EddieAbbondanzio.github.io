@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Design on Eddie Abbondanzio</title>
+    <link>https://EddieAbbondanzio.github.io/categories/software-design/</link>
+    <description>Recent content in Software Design on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Oct 2018 05:16:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://EddieAbbondanzio.github.io/categories/software-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Software Design - Contextual Validation</title>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/contextualvalidation/</link>
+      <pubDate>Wed, 10 Oct 2018 05:16:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/contextualvalidation/</guid>
+      <description>Validating Objects Based on Context It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
+    </item>
+    
+  </channel>
+</rss>
