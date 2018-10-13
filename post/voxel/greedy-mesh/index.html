@@ -1,64 +1,224 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="generator" content="Hugo 0.37" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
-    <link rel="alternate" href="https://EddieAbbondanzio.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
 
-    <title>
-        
-        Greedy Meshing for Voxels  - Eddie Abbondanzio 
-    </title>
-</head>
-    
-<body>
-    <header>
-        <div class="container clearfix">
-        
-        <a class="path" href="https://EddieAbbondanzio.github.io/">Home</a>
+  <title>Greedy Meshing for Voxels &middot; Eddie Abbondanzio</title>
 
-        
-        <div class="right">
-            
-            
-            
-            
-            
-            <a class="path" href="/page/about/">About Me</a>
-        </div>
-      </div>
-    </header>
-
-<div class="container">
-
-
-<main role="main" class="article">
   
-<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="meta">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
 
-    <span class="key">published on</span>
-    <span class="val"><time itemprop="datePublished" datetime="2018-03-25">March 25, 2018</time></span>
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
 
 
-    <span class="key">in</span>
-    <span class="val">
+<body>
+<div id="layout">
 
-        <a href="https://EddieAbbondanzio.github.io/categories/voxel">Voxel</a>
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
 
-    </span>
+  
 
-
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
   </div>
-  <h1 class="headline" itemprop="headline">Greedy Meshing for Voxels</h1>
-  <section class="body" itemprop="articleBody" >
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
     
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div style="position: absolute; bottom: 0px;">
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print" style="text-align: center;">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Greedy Meshing for Voxels</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>25 Mar 2018, 10:06</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
 
 <h2 id="what-is-greedy-meshing">What is Greedy Meshing?</h2>
 
@@ -76,61 +236,77 @@ who derived his work from the author of the article posted above.</p>
 
 <p>To start well need a way to track if we&rsquo;re building a render mesh, or collision mesh. The only difference between the two
 is in the block compare step a render mesh will test for color equivalency.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Basic enum to keep track of the two types of meshes
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> MeshType : <span style="color:#66d9ef">byte</span> {
-        Render = <span style="color:#ae81ff">0</span>,
-        Collision = <span style="color:#ae81ff">1</span>
+
+<pre><code class="language-c#">    //Basic enum to keep track of the two types of meshes
+    public enum MeshType : byte {
+        Render = 0,
+        Collision = 1
     }
 
-    <span style="color:#75715e">//Builds the optimized greedy mesh of a chunk
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> MeshData GreedyMesh(MeshType type){
-        MeshData mesh = <span style="color:#66d9ef">new</span> Mesh(RenderKey);
+    //Builds the optimized greedy mesh of a chunk
+    public MeshData GreedyMesh(MeshType type){
+        MeshData mesh = new Mesh(RenderKey);
         
-        <span style="color:#66d9ef">return</span> mesh;
-    }</code></pre></div>
+        return mesh;
+    }
+</code></pre>
+
 <p>Within the GreedyMesh function well want to add a loop that runs through all 6 faces. We&rsquo;ll also want
 to know if the current face is a back face.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> s = <span style="color:#ae81ff">0</span>; s &lt; <span style="color:#ae81ff">6</span>; s++){
-        <span style="color:#66d9ef">bool</span> back = s &gt; <span style="color:#ae81ff">2</span>;
-    }</code></pre></div>
+
+<pre><code class="language-c#">    for(int s = 0; s &lt; 6; s++){
+        bool back = s &gt; 2;
+    }
+</code></pre>
+
 <p>To simplify things, we&rsquo;ll break down the problem into building slices of the mesh on 1 plane
 at a time. Lets add some work variables for tracking which two axes we are working on. We will work
 on the planes YZ, ZX, XY. Each plane will be visited twice, once to do the front faces, then
 again to do the back faces.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">int</span> d, i, j;
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> s = <span style="color:#ae81ff">0</span>; s &lt; <span style="color:#ae81ff">6</span>; s++){
-        <span style="color:#66d9ef">bool</span> back = s &gt; <span style="color:#ae81ff">2</span>;
-        d = s % <span style="color:#ae81ff">3</span>;
-        i = (d + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
-        j = (d + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
-    }</code></pre></div>
+
+<pre><code class="language-c#">    int d, i, j;
+    for(int s = 0; s &lt; 6; s++){
+        bool back = s &gt; 2;
+        d = s % 3;
+        i = (d + 1) % 3;
+        j = (d + 2) % 3;
+    }
+</code></pre>
+
 <p>We still need a few more work variables. Go ahead and add the following above the for loop. Vect3Int is simply
 an integer version of Unity&rsquo;s Vector3. Anything can be used to substitute these even a simple int array of
 size 3 will suffice.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//This tracks if we merged the blocks in the slice.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[,]</span> merged;
+
+<pre><code class="language-c#">    //This tracks if we merged the blocks in the slice.
+    bool[,] merged;
     
     Vect3Int a, b, q, m, n, o;
-    Vector3<span style="color:#a6e22e">[]</span> verts;
+    Vector3[] verts;
     
-    Block startBlock;</code></pre></div>
+    Block startBlock;
+</code></pre>
+
 <p>Now add an inner for loop as seen below. This will work it&rsquo;s way through the chunk 1 layer at a time
 in the direction (d).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> s = <span style="color:#ae81ff">0</span>; s &lt; <span style="color:#ae81ff">6</span>; s++){
-        <span style="color:#66d9ef">bool</span> back = s &gt; <span style="color:#ae81ff">2</span>;
-        d = s % <span style="color:#ae81ff">3</span>;
-        i = (d + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
-        j = (d + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
+
+<pre><code class="language-c#">
+    for(int s = 0; s &lt; 6; s++){
+        bool back = s &gt; 2;
+        d = s % 3;
+        i = (d + 1) % 3;
+        j = (d + 2) % 3;
         
-        a = <span style="color:#66d9ef">new</span> Vect3Int();
-        b = <span style="color:#66d9ef">new</span> Vect3Int();
+        a = new Vect3Int();
+        b = new Vect3Int();
         
-        <span style="color:#75715e">//d is the axis we are slicing on.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[d]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[d]</span> &lt; Size<span style="color:#a6e22e">[d]</span>; a<span style="color:#a6e22e">[d]</span>++) {
+        //d is the axis we are slicing on.
+        for (a[d] = 0; a[d] &lt; Size[d]; a[d]++) {
 
         
         }
-    }</code></pre></div>
+    }
+</code></pre>
+
 <p>We&rsquo;ll want to prep our bool array now. The variable Size is a Vect3Int of the dimensions of
 the chunk we are building. Since we want to be able to handle non cubic chunks we can&rsquo;t
 initialize it until we know which axis we are slicing. The next step is to begin building the
@@ -138,167 +314,195 @@ mesh slices.</p>
 
 <p>Start by getting the block at the current position and check to ensure that it
 hasn&rsquo;t already been merged, is solid, and can be seen by the player.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">        <span style="color:#75715e">//d is the axis we are slicing on.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[d]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[d]</span> &lt; Size<span style="color:#a6e22e">[d]</span>; a<span style="color:#a6e22e">[d]</span>++) {
-            merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[Size[i]</span>, Size<span style="color:#a6e22e">[j]</span>];
 
-            <span style="color:#75715e">//Now we build the slices
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[i]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[i]</span> &lt; Size<span style="color:#a6e22e">[i]</span>; a<span style="color:#a6e22e">[i]</span>++) {
-                <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[j]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[j]</span> &lt; Size<span style="color:#a6e22e">[j]</span>; a<span style="color:#a6e22e">[j]</span>++) {     
+<pre><code class="language-c#">        //d is the axis we are slicing on.
+        for (a[d] = 0; a[d] &lt; Size[d]; a[d]++) {
+            merged = new bool[Size[i], Size[j]];
+
+            //Now we build the slices
+            for (a[i] = 0; a[i] &lt; Size[i]; a[i]++) {
+                for (a[j] = 0; a[j] &lt; Size[j]; a[j]++) {     
                     startBlock = GetBlock(a);
                 
-                    <span style="color:#75715e">//If this block has already been merged, is air, or not visible skip it.
-</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">if</span> (merged<span style="color:#a6e22e">[a[i]</span>, a<span style="color:#a6e22e">[j]</span>] || !<span style="color:#a6e22e">startBlock</span>.IsSolid || !IsBlockFaceVisible(a, d, back)) {
-                        <span style="color:#66d9ef">continue</span>;
+                    //If this block has already been merged, is air, or not visible skip it.
+                    if (merged[a[i], a[j]] || !startBlock.IsSolid || !IsBlockFaceVisible(a, d, back)) {
+                        continue;
                     }
                 }
             }
-        }</code></pre></div>
+        }
+</code></pre>
+
 <p>The GetBlock() and IsBlockFaceVisible() functions will vary based off your implementation but should follow the
 signatures of:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> Block GetBlock(Vect3Int pos){
-        <span style="color:#75715e">//If out of bounds return air, else return the block at pos.
-</span><span style="color:#75715e"></span>    }
+
+<pre><code class="language-c#">    public Block GetBlock(Vect3Int pos){
+        //If out of bounds return air, else return the block at pos.
+    }
     
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsBlockFaceVisible(Vect3Int pos, <span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">bool</span> back) {
-        pos<span style="color:#a6e22e">[a]</span> += back ? -<span style="color:#ae81ff">1</span> : <span style="color:#ae81ff">1</span>;
-        <span style="color:#66d9ef">return</span> !GetBlock(pos).IsSolid;
-    }</code></pre></div>
+    public bool IsBlockFaceVisible(Vect3Int pos, int a, bool back) {
+        pos[a] += back ? -1 : 1;
+        return !GetBlock(pos).IsSolid;
+    }
+</code></pre>
+
 <p>You&rsquo;ll also want to add a CompareStep() function that tests two blocks for equivalency. Mine is
 implemented as:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> CompareStep(Vect3Int a, Vect3Int b, <span style="color:#66d9ef">int</span> d, <span style="color:#66d9ef">bool</span> back, MeshType type) {
+
+<pre><code class="language-c#">    public bool CompareStep(Vect3Int a, Vect3Int b, int d, bool back, MeshType type) {
         Block blockA = GetBlock(a);
         Block blockB = GetBlock(b);
 
-        <span style="color:#66d9ef">if</span>(type == <span style="color:#a6e22e">MeshType</span>.Render) {
-            <span style="color:#66d9ef">return</span> blockA == blockB &amp;&amp; !<span style="color:#a6e22e">blockB</span>.IsAir &amp;&amp; IsBlockFaceVisible(b, d, back);
+        if(type == MeshType.Render) {
+            return blockA == blockB &amp;&amp; !blockB.IsAir &amp;&amp; IsBlockFaceVisible(b, d, back);
         }
-        <span style="color:#66d9ef">else</span> {
-            <span style="color:#66d9ef">return</span> !<span style="color:#a6e22e">blockB</span>.IsAir &amp;&amp; IsBlockFaceVisible(b, d, back);
-        }
-    }</code></pre></div>
-<p>Reset the quad size variable (q) back to zero. This tracks how big the current face
-we are creating will be.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Reset the work var
-</span><span style="color:#75715e"></span>    q = <span style="color:#66d9ef">new</span> Vect3Int();</code></pre></div>
-<p>Now we want to figure out how wide this face of the mesh will be. This for loop continuously
-compares the next neighbor to see if it is a match to the current one.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Figure out the width, then save it
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (b = a, b<span style="color:#a6e22e">[j]</span>++; b<span style="color:#a6e22e">[j]</span> &lt; Size<span style="color:#a6e22e">[j]</span> &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged<span style="color:#a6e22e">[b[i]</span>, b<span style="color:#a6e22e">[j]</span>]; b<span style="color:#a6e22e">[j]</span>++) { }
-    q<span style="color:#a6e22e">[j]</span> = b<span style="color:#a6e22e">[j]</span> - a<span style="color:#a6e22e">[j]</span>;</code></pre></div>
-<p>Now we want to repeat the same process for the height of the face.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Figure out the height, then save it
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (b = a, b<span style="color:#a6e22e">[i]</span>++; b<span style="color:#a6e22e">[i]</span> &lt; Size<span style="color:#a6e22e">[i]</span> &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged<span style="color:#a6e22e">[b[i]</span>, b<span style="color:#a6e22e">[j]</span>]; b<span style="color:#a6e22e">[i]</span>++) {
-        <span style="color:#66d9ef">for</span> (b<span style="color:#a6e22e">[j]</span> = a<span style="color:#a6e22e">[j]</span>; b<span style="color:#a6e22e">[j]</span> &lt; Size<span style="color:#a6e22e">[j]</span> &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged<span style="color:#a6e22e">[b[i]</span>, b<span style="color:#a6e22e">[j]</span>]; b<span style="color:#a6e22e">[j]</span>++) { }
-
-        <span style="color:#75715e">//If we didn&#39;t reach the end then its not a good add.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (b<span style="color:#a6e22e">[j]</span> - a<span style="color:#a6e22e">[j]</span> &lt; q<span style="color:#a6e22e">[j]</span>) {
-            <span style="color:#66d9ef">break</span>;
-        }
-        <span style="color:#66d9ef">else</span> {
-            b<span style="color:#a6e22e">[j]</span> = a<span style="color:#a6e22e">[j]</span>;
+        else {
+            return !blockB.IsAir &amp;&amp; IsBlockFaceVisible(b, d, back);
         }
     }
-    q<span style="color:#a6e22e">[i]</span> = b<span style="color:#a6e22e">[i]</span> - a<span style="color:#a6e22e">[i]</span>;</code></pre></div>
-<p>Once we have figured out the height and width of the face, we can go ahead and add it to our mesh.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Now we add the quad to the mesh
-</span><span style="color:#75715e"></span>    m = <span style="color:#66d9ef">new</span> Vect3Int();
-    m<span style="color:#a6e22e">[i]</span> = q<span style="color:#a6e22e">[i]</span>;
+</code></pre>
 
-    n = <span style="color:#66d9ef">new</span> Vect3Int();
-    n<span style="color:#a6e22e">[j]</span> = q<span style="color:#a6e22e">[j]</span>;
+<p>Reset the quad size variable (q) back to zero. This tracks how big the current face
+we are creating will be.</p>
 
-    <span style="color:#75715e">//We need to add a slight offset when working with front faces.
-</span><span style="color:#75715e"></span>    o = a;
-    o<span style="color:#a6e22e">[d]</span> += back ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
+<pre><code class="language-c#">    //Reset the work var
+    q = new Vect3Int();
 
-    <span style="color:#75715e">//Draw the face to the mesh
-</span><span style="color:#75715e"></span>    verts = <span style="color:#66d9ef">new</span> Vector3<span style="color:#a6e22e">[]</span> { o, o + m, o + m + n, o + n };
-    <span style="color:#a6e22e">mesh</span>.AddColoredFace(verts, <span style="color:#a6e22e">startBlock</span>.Color, back);</code></pre></div>
-<p>And lastly we need to mark all the blocks we visited as merged.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Mark it merged
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; q<span style="color:#a6e22e">[i]</span>; f++) {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; q<span style="color:#a6e22e">[j]</span>; g++) {
-            merged<span style="color:#a6e22e">[a[i]</span> + f, a<span style="color:#a6e22e">[j]</span> + g] = <span style="color:#66d9ef">true</span>;
+</code></pre>
+
+<p>Now we want to figure out how wide this face of the mesh will be. This for loop continuously
+compares the next neighbor to see if it is a match to the current one.</p>
+
+<pre><code class="language-c#">    //Figure out the width, then save it
+    for (b = a, b[j]++; b[j] &lt; Size[j] &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged[b[i], b[j]]; b[j]++) { }
+    q[j] = b[j] - a[j];
+</code></pre>
+
+<p>Now we want to repeat the same process for the height of the face.</p>
+
+<pre><code class="language-c#">    //Figure out the height, then save it
+    for (b = a, b[i]++; b[i] &lt; Size[i] &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged[b[i], b[j]]; b[i]++) {
+        for (b[j] = a[j]; b[j] &lt; Size[j] &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged[b[i], b[j]]; b[j]++) { }
+
+        //If we didn't reach the end then its not a good add.
+        if (b[j] - a[j] &lt; q[j]) {
+            break;
         }
-    }</code></pre></div>
+        else {
+            b[j] = a[j];
+        }
+    }
+    q[i] = b[i] - a[i];
+</code></pre>
+
+<p>Once we have figured out the height and width of the face, we can go ahead and add it to our mesh.</p>
+
+<pre><code class="language-c#">    //Now we add the quad to the mesh
+    m = new Vect3Int();
+    m[i] = q[i];
+
+    n = new Vect3Int();
+    n[j] = q[j];
+
+    //We need to add a slight offset when working with front faces.
+    o = a;
+    o[d] += back ? 0 : 1;
+
+    //Draw the face to the mesh
+    verts = new Vector3[] { o, o + m, o + m + n, o + n };
+    mesh.AddColoredFace(verts, startBlock.Color, back);
+
+</code></pre>
+
+<p>And lastly we need to mark all the blocks we visited as merged.</p>
+
+<pre><code class="language-c#">    //Mark it merged
+    for (int f = 0; f &lt; q[i]; f++) {
+        for (int g = 0; g &lt; q[j]; g++) {
+            merged[a[i] + f, a[j] + g] = true;
+        }
+    }
+
+</code></pre>
+
 <p>Here&rsquo;s the full algorithm for those who like to see the big picture.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Builds the optimized greedy mesh of a chunk
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> MeshData GreedyMesh(MeshType type){
-        MeshData mesh = <span style="color:#66d9ef">new</span> Mesh(RenderKey);
+
+<pre><code class="language-c#">    //Builds the optimized greedy mesh of a chunk
+    public MeshData GreedyMesh(MeshType type){
+        MeshData mesh = new Mesh(RenderKey);
         
-        <span style="color:#75715e">//This tracks if we merged the blocks in the slice.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[,]</span> merged;
+        //This tracks if we merged the blocks in the slice.
+        bool[,] merged;
 
         Vect3Int a, b, q, m, n, o;
-        Vector3<span style="color:#a6e22e">[]</span> verts;
+        Vector3[] verts;
 
         Block startBlock;
-        <span style="color:#66d9ef">int</span> d, i, j;
+        int d, i, j;
         
-        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> s = <span style="color:#ae81ff">0</span>; s &lt; <span style="color:#ae81ff">6</span>; s++){
-            <span style="color:#66d9ef">bool</span> back = s &gt; <span style="color:#ae81ff">2</span>;
-            d = s % <span style="color:#ae81ff">3</span>;
-            i = (d + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
-            j = (d + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
+        for(int s = 0; s &lt; 6; s++){
+            bool back = s &gt; 2;
+            d = s % 3;
+            i = (d + 1) % 3;
+            j = (d + 2) % 3;
             
-            a = <span style="color:#66d9ef">new</span> Vect3Int();
-            b = <span style="color:#66d9ef">new</span> Vect3Int();
+            a = new Vect3Int();
+            b = new Vect3Int();
 
-            <span style="color:#75715e">//This is the axis we will slice on
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[d]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[d]</span> &lt; Size<span style="color:#a6e22e">[d]</span>; a<span style="color:#a6e22e">[d]</span>++) {
-                merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[Size[i]</span>, Size<span style="color:#a6e22e">[j]</span>];
+            //This is the axis we will slice on
+            for (a[d] = 0; a[d] &lt; Size[d]; a[d]++) {
+                merged = new bool[Size[i], Size[j]];
 
-                <span style="color:#75715e">//These are dem slices we&#39;re building
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[i]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[i]</span> &lt; Size<span style="color:#a6e22e">[i]</span>; a<span style="color:#a6e22e">[i]</span>++) {
-                    <span style="color:#66d9ef">for</span> (a<span style="color:#a6e22e">[j]</span> = <span style="color:#ae81ff">0</span>; a<span style="color:#a6e22e">[j]</span> &lt; Size<span style="color:#a6e22e">[j]</span>; a<span style="color:#a6e22e">[j]</span>++) {
+                //These are dem slices we're building
+                for (a[i] = 0; a[i] &lt; Size[i]; a[i]++) {
+                    for (a[j] = 0; a[j] &lt; Size[j]; a[j]++) {
                         startBlock = GetBlock(a);
 
-                        <span style="color:#75715e">//If this block has already been merged, is air, or not visible skip it.
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">if</span> (merged<span style="color:#a6e22e">[a[i]</span>, a<span style="color:#a6e22e">[j]</span>] || !<span style="color:#a6e22e">startBlock</span>.IsSolid || !IsBlockFaceVisible(a, d, back)) {
-                            <span style="color:#66d9ef">continue</span>;
+                        //If this block has already been merged, is air, or not visible skip it.
+                        if (merged[a[i], a[j]] || !startBlock.IsSolid || !IsBlockFaceVisible(a, d, back)) {
+                            continue;
                         }
 
-                        <span style="color:#75715e">//Reset the work var
-</span><span style="color:#75715e"></span>                        q = <span style="color:#66d9ef">new</span> Vect3Int();
+                        //Reset the work var
+                        q = new Vect3Int();
 
-                        <span style="color:#75715e">//Figure out the width, then save it
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (b = a, b<span style="color:#a6e22e">[j]</span>++; b<span style="color:#a6e22e">[j]</span> &lt; Size<span style="color:#a6e22e">[j]</span> &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged<span style="color:#a6e22e">[b[i]</span>, b<span style="color:#a6e22e">[j]</span>]; b<span style="color:#a6e22e">[j]</span>++) { }
-                        q<span style="color:#a6e22e">[j]</span> = b<span style="color:#a6e22e">[j]</span> - a<span style="color:#a6e22e">[j]</span>;
+                        //Figure out the width, then save it
+                        for (b = a, b[j]++; b[j] &lt; Size[j] &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged[b[i], b[j]]; b[j]++) { }
+                        q[j] = b[j] - a[j];
 
-                        <span style="color:#75715e">//Figure out the height, then save it
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (b = a, b<span style="color:#a6e22e">[i]</span>++; b<span style="color:#a6e22e">[i]</span> &lt; Size<span style="color:#a6e22e">[i]</span> &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged<span style="color:#a6e22e">[b[i]</span>, b<span style="color:#a6e22e">[j]</span>]; b<span style="color:#a6e22e">[i]</span>++) {
-                            <span style="color:#66d9ef">for</span> (b<span style="color:#a6e22e">[j]</span> = a<span style="color:#a6e22e">[j]</span>; b<span style="color:#a6e22e">[j]</span> &lt; Size<span style="color:#a6e22e">[j]</span> &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged<span style="color:#a6e22e">[b[i]</span>, b<span style="color:#a6e22e">[j]</span>]; b<span style="color:#a6e22e">[j]</span>++) { }
+                        //Figure out the height, then save it
+                        for (b = a, b[i]++; b[i] &lt; Size[i] &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged[b[i], b[j]]; b[i]++) {
+                            for (b[j] = a[j]; b[j] &lt; Size[j] &amp;&amp; CompareStep(a, b, d, back, type) &amp;&amp; !merged[b[i], b[j]]; b[j]++) { }
 
-                            <span style="color:#75715e">//If we didn&#39;t reach the end then its not a good add.
-</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">if</span> (b<span style="color:#a6e22e">[j]</span> - a<span style="color:#a6e22e">[j]</span> &lt; q<span style="color:#a6e22e">[j]</span>) {
-                                <span style="color:#66d9ef">break</span>;
+                            //If we didn't reach the end then its not a good add.
+                            if (b[j] - a[j] &lt; q[j]) {
+                                break;
                             }
-                            <span style="color:#66d9ef">else</span> {
-                                b<span style="color:#a6e22e">[j]</span> = a<span style="color:#a6e22e">[j]</span>;
+                            else {
+                                b[j] = a[j];
                             }
                         }
-                        q<span style="color:#a6e22e">[i]</span> = b<span style="color:#a6e22e">[i]</span> - a<span style="color:#a6e22e">[i]</span>;
+                        q[i] = b[i] - a[i];
 
-                        <span style="color:#75715e">//Now we add the quad to the mesh
-</span><span style="color:#75715e"></span>                        m = <span style="color:#66d9ef">new</span> Vect3Int();
-                        m<span style="color:#a6e22e">[i]</span> = q<span style="color:#a6e22e">[i]</span>;
+                        //Now we add the quad to the mesh
+                        m = new Vect3Int();
+                        m[i] = q[i];
 
-                        n = <span style="color:#66d9ef">new</span> Vect3Int();
-                        n<span style="color:#a6e22e">[j]</span> = q<span style="color:#a6e22e">[j]</span>;
+                        n = new Vect3Int();
+                        n[j] = q[j];
 
-                        <span style="color:#75715e">//We need to add a slight offset when working with front faces.
-</span><span style="color:#75715e"></span>                        o = a;
-                        o<span style="color:#a6e22e">[d]</span> += back ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
+                        //We need to add a slight offset when working with front faces.
+                        o = a;
+                        o[d] += back ? 0 : 1;
 
-                        <span style="color:#75715e">//Draw the face to the mesh
-</span><span style="color:#75715e"></span>                        verts = <span style="color:#66d9ef">new</span> Vector3<span style="color:#a6e22e">[]</span> { o, o + m, o + m + n, o + n };
-                        <span style="color:#a6e22e">mesh</span>.AddColoredFace(verts, <span style="color:#a6e22e">startBlock</span>.Color, back);
+                        //Draw the face to the mesh
+                        verts = new Vector3[] { o, o + m, o + m + n, o + n };
+                        mesh.AddColoredFace(verts, startBlock.Color, back);
 
-                        <span style="color:#75715e">//Mark it merged
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; q<span style="color:#a6e22e">[i]</span>; f++) {
-                            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; q<span style="color:#a6e22e">[j]</span>; g++) {
-                                merged<span style="color:#a6e22e">[a[i]</span> + f, a<span style="color:#a6e22e">[j]</span> + g] = <span style="color:#66d9ef">true</span>;
+                        //Mark it merged
+                        for (int f = 0; f &lt; q[i]; f++) {
+                            for (int g = 0; g &lt; q[j]; g++) {
+                                merged[a[i] + f, a[j] + g] = true;
                             }
                         }
                     }
@@ -306,21 +510,56 @@ compares the next neighbor to see if it is a match to the current one.</p>
             }
         }
             
-        <span style="color:#66d9ef">return</span> mesh;
-    }</code></pre></div>
-  </section>
-</article>
+        return mesh;
+    }
+</code></pre>
 
-</main>
 
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/misc/first-post/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/misc/first-post/">New site, who this?</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://EddieAbbondanzio.github.io/post/unity/object-pool/">Object Pooling in Unity</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/unity/object-pool/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
 
 </div>
 
-<footer style="position: relative; bottom: 0px; width: 100%;">
-  <div class="container">
-    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
-  </div>
-</footer>
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+
+
+
 
 </body>
 </html>

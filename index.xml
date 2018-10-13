@@ -6,6 +6,7 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Wed, 10 Oct 2018 05:16:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -99,10 +100,10 @@ Download the following:
     
     <item>
       <title>No Mans Blocks - 6/4/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18/</link>
+      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/</link>
       <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/</guid>
       <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
 Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
     </item>
@@ -124,7 +125,7 @@ I had thought this task would be difficult but it really wasn&amp;rsquo;t that b
       
       <guid>https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
       <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
-public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
+public class ThreadableQueue&amp;lt;T&amp;gt; { }  If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
     </item>
     
     <item>
@@ -204,6 +205,16 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://EddieAbbondanzio.github.io/about/</link>
+      <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/about/</guid>
+      <description>Who am I? Welcome! My name is Eddie Abbondanzio and this is my personal blog. I&amp;rsquo;m a software developer who loves to work on his own projects whenever possible. I&amp;rsquo;ve graduated with a BS in Computer Science from the University of Maine Orono, and am currently employed full time.
+Hobbies  Anything automotive (Detailing, Resoration, etc..) Software development (Full stack). Running Cooking Long walks on the beach&amp;hellip; Oh wait, wrong site.</description>
+    </item>
+    
+    <item>
       <title>Civic Build 4-1-18</title>
       <link>https://EddieAbbondanzio.github.io/post/civic/4-1-18-update/</link>
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
@@ -270,12 +281,12 @@ What is this blog about?</description>
     </item>
     
     <item>
-      <title>About Me</title>
-      <link>https://EddieAbbondanzio.github.io/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Contact Me</title>
+      <link>https://EddieAbbondanzio.github.io/contact/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/page/about/</guid>
-      <description>Welcome! My name is Eddie Abbondanzio, and you&amp;rsquo;ve managed to find my site. This page is currently under construction but come back soon.</description>
+      <guid>https://EddieAbbondanzio.github.io/contact/</guid>
+      <description> Name Email     Send   </description>
     </item>
     
   </channel>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
+
+  <title>No Mans Blocks - 6/4/18 &middot; Eddie Abbondanzio</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div style="position: absolute; bottom: 0px;">
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print" style="text-align: center;">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>No Mans Blocks - 6/4/18</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Jun 2018, 20:05</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h2 id="creating-time-literally">Creating Time (literally!)</h2>
+
+<p>I have a knack for forgetting what I&rsquo;ve managed to accomplish on the game during the week. To try to overcome this
+so I have updates I can post on it, I&rsquo;ve started writing down each accomplishment on a sticky note.</p>
+
+<p>Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While
+the networking implementation is still early, I&rsquo;ve managed to get a sever-authoratative set up running that handles
+syncing up lobby of players together. Players can specify their own nicknames, which will be ensured to be unique. Chat with
+each other through text based messages, and some moderator functions such as kicking players are included.</p>
+
+<p>Changelog:</p>
+
+<ul>
+<li>Switched to LiteNetLib from Lidgren. (Very happy).</li>
+<li>Added custom kick message that is sent to players when kicked from a lobby.</li>
+<li>Changed lobby settings to allow for picking of the next map via voting
+or randomly.</li>
+<li>Fixed a bug in the byte buffer that was writing a bool as a byte instead of just a bit.</li>
+<li>Moved Name + description of the server to server settings instead of lobby. (The client
+recieves these when their connection is accepted.)</li>
+<li>Added game modes (Team Deathmatch, Deathmatch, Capture the Flag, and Demolition) more on these soon&hellip;</li>
+</ul>
+
+<p>Lastly while the switch to LiteNetLib was pretty hassle free I did have to implement my own
+network synchronized time system, which is actually quite a bit easier than it sounds!</p>
+
+<p>Both the server, and clients maintain their own time which basically just indicates how long the
+game has been running for in seconds. To generate a synchronized time across the
+network the following steps need to be taken.</p>
+
+<ol>
+<li>When a client connects have them send a time sync request and track when it was sent</li>
+<li>The server then responds back with it&rsquo;s current time.</li>
+<li>On the return of the sync request to the client calculate the offset from server time to
+local time by subtracting the round trip time from the recieved value.</li>
+</ol>
+
+<p>These code snippets are from my TimeSynchronizer class. They are the message handlers that
+process incoming messages from over the network.</p>
+
+<pre><code class="language-c#">private void OnConnectionMessage(object sender, NetMessageArgs e) {
+    switch (e.Message?.Type) {
+        //Step 1 (Client side):
+        //When a new server is connected to. Send it a time request.
+        case NetMessageType.ConnectionAccepted:
+            SendSyncRequest();
+            break;
+
+        //Disconnected from server. Wipe offset.
+        case NetMessageType.Disconnected:
+            time.SetServerOffset(0);
+            break;
+    }
+}
+
+private void OnTimeMessage(object sender, NetMessageArgs e) {
+    switch (e.Message?.Type) {
+        //Step 3 (Client Side)
+        //Time sync message was recieved.
+        case NetMessageType.TimeSync:
+            TimeSyncMessage incomingSync = e.Message as TimeSyncMessage;
+
+            if (incomingSync != null) {
+                time.SetServerOffset(incomingSync.ServerTime - timeSyncSentAt);
+            }
+
+            break;
+
+        //Step 2 (Server Side)
+        //Client is requesting a time sync message.
+        case NetMessageType.TimeSyncRequest:
+            LiteNetLib.NetPeer msgSender = e.Message.Sender;
+            if (msgSender != null) {
+                TimeSyncMessage outgoingSync = new TimeSyncMessage(Time.LocalTime);
+                netManager.SendMessage(outgoingSync, msgSender, LiteNetLib.SendOptions.ReliableOrdered);
+            }
+            break;
+    }
+}
+</code></pre>
+
+<p>This process isn&rsquo;t quite perfect and a variance of several milliseconds can occur but this can be overcome by repeating these steps occasionally. It could be
+taken one step further and several time syncs could be sent when a player first joins, then the average offset can be calculated from them which can reduce bad
+data due to a lag spike.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/">Civic Build - 5/20/18</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/">Civic Build - 6-9-18</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

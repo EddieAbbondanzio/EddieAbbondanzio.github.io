@@ -1,159 +1,361 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="generator" content="Hugo 0.37" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
-    <link rel="alternate" href="https://EddieAbbondanzio.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
 
-    <title>
-        
-        Software Design - Contextual Validation  - Eddie Abbondanzio 
-    </title>
-</head>
-    
-<body>
-    <header>
-        <div class="container clearfix">
-        
-        <a class="path" href="https://EddieAbbondanzio.github.io/">Home</a>
+  <title>Software Design - Contextual Validation &middot; Eddie Abbondanzio</title>
 
-        
-        <div class="right">
-            
-            
-            
-            
-            
-            <a class="path" href="/page/about/">About Me</a>
-        </div>
-      </div>
-    </header>
-
-<div class="container">
-
-
-<main role="main" class="article">
   
-<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="meta">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
 
-    <span class="key">published on</span>
-    <span class="val"><time itemprop="datePublished" datetime="2018-10-10">October 10, 2018</time></span>
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
 
 
-    <span class="key">in</span>
-    <span class="val">
+<body>
+<div id="layout">
 
-        <a href="https://EddieAbbondanzio.github.io/categories/software-design">Software Design</a>
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
 
-    </span>
+  
 
-
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
   </div>
-  <h1 class="headline" itemprop="headline">Software Design - Contextual Validation</h1>
-  <section class="body" itemprop="articleBody" >
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
     
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div style="position: absolute; bottom: 0px;">
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print" style="text-align: center;">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Software Design - Contextual Validation</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Oct 2018, 05:16</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
 
 <h2 id="validating-objects-based-on-context">Validating Objects Based on Context</h2>
 
 <p>It&rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise. Let&rsquo;s work with an example.</p>
 
 <p>Imagine there is an User object like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Username { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Password { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<pre><code class="language-c#">    public class User {
+        public string Username { get; set; }
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsDeleted { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+        public string Password { get; set; }
 
-        <span style="color:#66d9ef">public</span> User(<span style="color:#66d9ef">string</span> username, <span style="color:#66d9ef">string</span> password) {
+        public bool IsDeleted { get; set; }
+
+        public User(string username, string password) {
             Username = username;
             Password = password;
         }
-    }</code></pre></div>
+    }
+</code></pre>
+
 <p>We need a way that we can validate users before adding them to the database. This could be achieved by adding the IsValid() method as mentioned earlier.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+
+<pre><code class="language-c#">    public class User {
         ...
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsValid() {
-            <span style="color:#66d9ef">if</span>(!<span style="color:#66d9ef">string</span>.IsNullOrEmpty(Username) &amp;&amp; !<span style="color:#66d9ef">string</span>.IsNullOrEmpty(Password)) {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+        public bool IsValid() {
+            if(!string.IsNullOrEmpty(Username) &amp;&amp; !string.IsNullOrEmpty(Password)) {
+                return true;
             }
-            <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+            else {
+                return false;
             }
         }
-    }</code></pre></div>
+    }
+</code></pre>
+
 <p>This solves the problem by checking that both a Username, and Password have been defined, and if not returns false. However, what do we do when we also need to handle validating that a user hasn&rsquo;t been deleted already before allowing it to be deleted? We could add an IsValidToDelete() method to the class but this is just starting to clutter things, and seems like a pretty bad approach. On the other hand we could simply call IsValid before deleting but then any user we want to delete would have to have a valid username, and password which makes no sense.</p>
 
 <p>To overcome this issue we can introduce the concept of validators. Validators utilize the <a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor pattern</a> to separate the validaiton logic from the model itself. Let&rsquo;s define an interface for all validators to derive from.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IValidator&lt;T&gt; {
-        <span style="color:#66d9ef">bool</span> Validate(T entity);
-    }</code></pre></div>
+
+<pre><code class="language-c#">    public interface IValidator&lt;T&gt; {
+        bool Validate(T entity);
+    }
+</code></pre>
+
 <p>Now we can define two validators, one to handle users when created, and another to handle users when deleted.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserCreationValidator</span> : IValidator&lt;User&gt; {
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(User user) {
-            <span style="color:#66d9ef">if</span> (!<span style="color:#66d9ef">string</span>.IsNullOrEmpty(<span style="color:#a6e22e">user</span>.Username) &amp;&amp; !<span style="color:#66d9ef">string</span>.IsNullOrEmpty(<span style="color:#a6e22e">user</span>.Password)) {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+
+<pre><code class="language-c#">    public class UserCreationValidator : IValidator&lt;User&gt; {
+        public bool Validate(User user) {
+            if (!string.IsNullOrEmpty(user.Username) &amp;&amp; !string.IsNullOrEmpty(user.Password)) {
+                return true;
             }
-            <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+            else {
+                return false;
             }
         }
     }
 
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserDeletionValidator</span> : IValidator&lt;User&gt; {
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(User user) {
-            <span style="color:#66d9ef">return</span> !<span style="color:#a6e22e">user</span>.IsDeleted;
+    public class UserDeletionValidator : IValidator&lt;User&gt; {
+        public bool Validate(User user) {
+            return !user.IsDeleted;
         }
-    }</code></pre></div>
+    }
+</code></pre>
+
 <p>Then in our UserController class we could handle validation like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> AddUser(User user) {
-            UserCreationValidator validator = <span style="color:#66d9ef">new</span> UserCreationValidator();
 
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">validator</span>.Validate(user)) {
-                <span style="color:#75715e">//Add the user
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+<pre><code class="language-c#">    public class UserController {
+        public bool AddUser(User user) {
+            UserCreationValidator validator = new UserCreationValidator();
+
+            if (validator.Validate(user)) {
+                //Add the user
+                return true;
             }
-            <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+            else {
+                return false;
             }
         }
 
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> DeleteUser(User user) {
-            UserDeletionValidator validator = <span style="color:#66d9ef">new</span> UserDeletionValidator();
+        public bool DeleteUser(User user) {
+            UserDeletionValidator validator = new UserDeletionValidator();
 
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">validator</span>.Validate(user)) {
-                <span style="color:#75715e">//Delete the user
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+            if (validator.Validate(user)) {
+                //Delete the user
+                return true;
             }
-            <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+            else {
+                return false;
             }
         }
-    }</code></pre></div>
+    }
+</code></pre>
+
 <p>This helps maintain the single role principle for each of our classes, and enables us to handle validating based on context in a way that can scale nicely.</p>
 
-  </section>
-</article>
 
-</main>
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/jeep/10-8-18-update/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/jeep/10-8-18-update/">Cherokee Build - 10-8-18</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
 
+
+
+  
 
 </div>
 
-<footer style="position: relative; bottom: 0px; width: 100%;">
-  <div class="container">
-    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
-  </div>
-</footer>
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+
+
+
 
 </body>
 </html>

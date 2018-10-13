@@ -1,143 +1,354 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="generator" content="Hugo 0.37" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
-    <link rel="alternate" href="https://EddieAbbondanzio.github.io/index.xml" type="application/rss+xml" title="Eddie Abbondanzio">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
 
-    <title>
-        
-        C# Threadable Queue  - Eddie Abbondanzio 
-    </title>
-</head>
-    
-<body>
-    <header>
-        <div class="container clearfix">
-        
-        <a class="path" href="https://EddieAbbondanzio.github.io/">Home</a>
+  <title>C# Threadable Queue &middot; Eddie Abbondanzio</title>
 
-        
-        <div class="right">
-            
-            
-            
-            
-            
-            <a class="path" href="/page/about/">About Me</a>
-        </div>
-      </div>
-    </header>
-
-<div class="container">
-
-
-<main role="main" class="article">
   
-<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="meta">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
 
-    <span class="key">published on</span>
-    <span class="val"><time itemprop="datePublished" datetime="2018-05-09">May 09, 2018</time></span>
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
 
 
-    <span class="key">in</span>
-    <span class="val">
+<body>
+<div id="layout">
 
-        <a href="https://EddieAbbondanzio.github.io/categories/c">C#</a>
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
 
-    </span>
+  
 
-
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
   </div>
-  <h1 class="headline" itemprop="headline">C# Threadable Queue</h1>
-  <section class="body" itemprop="articleBody" >
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
     
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div style="position: absolute; bottom: 0px;">
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print" style="text-align: center;">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>C# Threadable Queue</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>09 May 2018, 19:04</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
 
 <h2 id="implementing-a-thread-safe-queue">Implementing a Thread-Safe Queue</h2>
 
 <p>One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&rsquo;t thread-safe by default. Thankfully it&rsquo;s easy enough to implement your own as we will do today. Let&rsquo;s start by defining our class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadableQueue</span>&lt;T&gt; {
 
-}</code></pre></div>
+<pre><code class="language-c#">public class ThreadableQueue&lt;T&gt; {
+
+}
+</code></pre>
+
 <p>If your unfamiliar with generics check out this <a href="https://www.dotnetperls.com/generic">link.</a> Within the class we need to define two members.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> Queue&lt;T&gt; queue;
 
-privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">object</span> lockObj;</code></pre></div>
+<pre><code class="language-c#">private Queue&lt;T&gt; queue;
+
+privare readonly object lockObj;
+</code></pre>
+
 <p>The queue needs to be kept private so we can control access to it. Anytime it&rsquo;s modified we need to ensure we lock the semaphore object (lockObj) first.</p>
 
 <p>Now lets define two constructors. The second one is optional but provides an easy way to convert a regular queue into a threadable one.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> ThreadableQueue&lt;T&gt;() {
-    queue = <span style="color:#66d9ef">new</span> Queue&lt;T&gt;;
-    lockObj = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">object</span>();
+
+<pre><code class="language-c#">public ThreadableQueue&lt;T&gt;() {
+    queue = new Queue&lt;T&gt;;
+    lockObj = new object();
 }
 
-<span style="color:#66d9ef">public</span> ThreadableQueue&lt;T&gt;(Queue&lt;T&gt; queue){
-    <span style="color:#66d9ef">this</span>.queue = queue;
-    lockObj = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">object</span>();
-}</code></pre></div>
+public ThreadableQueue&lt;T&gt;(Queue&lt;T&gt; queue){
+    this.queue = queue;
+    lockObj = new object();
+}
+</code></pre>
+
 <p>Next up lets add a way to add, and remove items from the queue. We call lock() around the queue actions as a way to ensure only one thread can access it at once.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Enqueue(T <span style="color:#66d9ef">value</span>){
-    <span style="color:#66d9ef">lock</span>(lockObj){
-        <span style="color:#a6e22e">queue</span>.Enqueue(<span style="color:#66d9ef">value</span>);
+
+<pre><code class="language-c#">public void Enqueue(T value){
+    lock(lockObj){
+        queue.Enqueue(value);
     }
 }
 
-<span style="color:#66d9ef">public</span> T Dequeue(){
-    <span style="color:#66d9ef">lock</span>(lockObj){
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">queue</span>.Dequeue();
+public T Dequeue(){
+    lock(lockObj){
+        return queue.Dequeue();
     }
-}</code></pre></div>
+}
+</code></pre>
+
 <p>When it comes to locking you want to call it as little as possible. This is because it can cause performance issues, especially when it&rsquo;s not needed.</p>
 
 <p>Let&rsquo;s wrap things up by adding a few more functions that are expected of any queue.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Clear() {
-    <span style="color:#66d9ef">lock</span> (lockObj) {
-        <span style="color:#a6e22e">queue</span>.Clear();
+
+<pre><code class="language-c#">public void Clear() {
+    lock (lockObj) {
+        queue.Clear();
     }
 }
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Contains(T <span style="color:#66d9ef">value</span>){
-    <span style="color:#66d9ef">lock</span> (lockObj) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">queue</span>.Contains(<span style="color:#66d9ef">value</span>);
+public bool Contains(T value){
+    lock (lockObj) {
+        return queue.Contains(value);
     }
 }
 
 
-<span style="color:#66d9ef">public</span> T<span style="color:#a6e22e">[]</span> ToArray() {
-    <span style="color:#66d9ef">lock</span> (lockObj) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">queue</span>.ToArray();
+public T[] ToArray() {
+    lock (lockObj) {
+        return queue.ToArray();
     }
-}</code></pre></div>
+}
+</code></pre>
+
 <p>And how can we forget .count?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count {
-    <span style="color:#66d9ef">get</span> {
-        <span style="color:#66d9ef">lock</span> (lockObj) {
-            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">queue</span>.Count;
+
+<pre><code class="language-c#">public int Count {
+    get {
+        lock (lockObj) {
+            return queue.Count;
         }
     }
-}</code></pre></div>
+}
+</code></pre>
+
 <p>It&rsquo;s easy enough to expand the class if desired. Just ensure your calling lock() first before modifying the underlying queue.</p>
 
-  </section>
-</article>
 
-</main>
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/">No Mans Blocks - 4/20/18</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/">Civic Build - 5/20/18</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
 
+
+
+  
 
 </div>
 
-<footer style="position: relative; bottom: 0px; width: 100%;">
-  <div class="container">
-    <span class="copyright">&copy; 2018  Eddie Abbondanzio - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
-  </div>
-</footer>
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+
+
+
 
 </body>
 </html>

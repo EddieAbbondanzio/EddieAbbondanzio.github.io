@@ -6,6 +6,7 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Wed, 10 Oct 2018 05:16:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
@@ -99,10 +100,10 @@ Download the following:
     
     <item>
       <title>No Mans Blocks - 6/4/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18/</link>
+      <link>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/</link>
       <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/</guid>
       <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
 Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
     </item>
@@ -124,7 +125,7 @@ I had thought this task would be difficult but it really wasn&amp;rsquo;t that b
       
       <guid>https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
       <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
-public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
+public class ThreadableQueue&amp;lt;T&amp;gt; { }  If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
     </item>
     
     <item>
