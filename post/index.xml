@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 13 Oct 2018 15:05:42 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 05:16:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Software Design - Unit Tests vs Integration Tests</title>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/test-types/</link>
+      <pubDate>Mon, 15 Oct 2018 05:16:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/test-types/</guid>
+      <description>Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
+What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.</description>
+    </item>
     
     <item>
       <title>No Mans Blocks - 10/13/2018</title>
@@ -23,10 +33,10 @@
     
     <item>
       <title>Software Design - Contextual Validation</title>
-      <link>https://EddieAbbondanzio.github.io/post/software-design/contextualvalidation/</link>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/</link>
       <pubDate>Wed, 10 Oct 2018 05:16:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/software-design/contextualvalidation/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/</guid>
       <description>Validating Objects Based on Context It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
     </item>
     

@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/software-design/test-types/</loc>
+    <lastmod>2018-10-15T05:16:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/</loc>
     <lastmod>2018-10-13T15:05:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://EddieAbbondanzio.github.io/post/software-design/contextualvalidation/</loc>
+    <loc>https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/</loc>
     <lastmod>2018-10-10T05:16:42-04:00</lastmod>
   </url>
   
@@ -154,13 +159,13 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
-    <lastmod>2018-10-13T15:05:42-04:00</lastmod>
+    <lastmod>2018-10-15T05:16:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2018-10-13T15:05:42-04:00</lastmod>
+    <lastmod>2018-10-15T05:16:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   

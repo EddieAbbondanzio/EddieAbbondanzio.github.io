@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
+
+  <title>Software Design - Unit Tests vs Integration Tests &middot; Eddie Abbondanzio</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Software Design - Unit Tests vs Integration Tests</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>15 Oct 2018, 05:16</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h2 id="preface">Preface</h2>
+
+<p>Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.</p>
+
+<h2 id="what-is-a-unit-test">What is a Unit Test?</h2>
+
+<p>Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program. Typically, units are a method, or class, but in the end it comes down to your personal definition of a unit. The only thing to keep in mind is that while there&rsquo;s no size limit on a unit test the smaller, the better.</p>
+
+<p>Once a unit has been isolated from the program it is then subjected to some kind of check. This could be checking the value generated by a method, or ensuring an error is thrown when a class is instantiated incorrectly. Unit tests should be kept simple and a single test should only ever check one condition. A unit test should never rely on an external dependency, because at that point it&rsquo;s no longer a single unit being tested. Below is an example of a unit test in TypeScript using the well known testing library Jest:</p>
+
+<pre><code class="language-JavaScript">    test('Initialized with an id of undefined.', () =&gt; {
+        let user: User = new User();
+        expect(user.id).toBeUndefined();
+    });
+</code></pre>
+
+<h2 id="what-is-an-integration-test">What is an Integration Test?</h2>
+
+<p>Integration tests can be thought of as larger tests that check to verify how components of a system interact with each other. This could be a business logic service communicating with the database, or checking for a specific http status code returned by the server when processing a http request.</p>
+
+<p>Integration tests are ran less frequently, and therefore are permitted to take longer. These tests can help ensure the system is functional as a whole, and help weed out logic bugs that may be overlooked. The following is an example of a integration test in TypeScript using Jest:</p>
+
+<pre><code class="language-JavaScript">    test('Users are generated and inserted into the database.', () =&gt; {
+        let userReg: UserRegistration = new UserRegistration('Bert', 'hunter2');
+
+        let user: User = await Database.registerNewUser(userReg);
+        expect(user).not.toBeNull();
+    });
+</code></pre>
+
+<h2 id="how-to-tell-them-apart">How to tell them apart?</h2>
+
+<p>Distinguishing the difference between a unit test and integration test can be difficult. In the end it comes down to the nature of the test. Unit tests fall under the &lsquo;white box testing&rsquo; category. A white box test (also known as a &lsquo;clear box test&rsquo;) is a test where the underlying implementation of the subject is known, and is being checked for a consistent behaviour. Unit tests typically only serve a useful purpose to the developer who needs to verify a minor implementation detail.</p>
+
+<p>Integration tests reside in the &lsquo;black box testing&rsquo; category. A black box test is one where the underlying implementation of the subject is unknown. These tests verify the external functionality of a subject, and check to verify features are working as intended.</p>
+
+<h2 id="when-to-use-them">When to use them?</h2>
+
+<p>Unit tests need to be quick, as the faster they are, the more often the developer will be willing to run them. This is one of the primary reasons why unit tests should be kept as small as possible. No developer wants to constantly pause their work to kick off a unit test cycle that could take several minutes to complete.</p>
+
+<p>On the other end, integration tests only need to be ran when checking in code to source control. These tests help verify that existing functionality is not compromised by new code, and if any tests fail the check-in can be rejected. This helps keep a higher standard of quality in source control, and helps keep the code in a state that can be released.</p>
+
+<p>Integration tests are typically ran as part of a &lsquo;continuous integration&rsquo; pipeline. This is a topic for another day however.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/">No Mans Blocks - 10/13/2018</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
