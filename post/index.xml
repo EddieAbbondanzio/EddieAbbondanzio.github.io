@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 15 Oct 2018 05:16:42 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 18 Oct 2018 06:34:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Software Design - Dependency Injection and Inversion</title>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/dependency-injection/</link>
+      <pubDate>Thu, 18 Oct 2018 06:34:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/dependency-injection/</guid>
+      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</description>
+    </item>
     
     <item>
       <title>Software Design - Unit Tests vs Integration Tests</title>
