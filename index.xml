@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 18 Oct 2018 06:34:42 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 21 Oct 2018 16:51:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cherokee Build - 10-21-18</title>
+      <link>https://EddieAbbondanzio.github.io/post/jeep/10-21-18-update/</link>
+      <pubDate>Sun, 21 Oct 2018 16:51:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/jeep/10-21-18-update/</guid>
+      <description>Patching Holes This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about cutting out and welding in a new rocker panel.
+Initially the plan for this weekend was to finish welding in the new driver side rocker panel. However, I managed to screw up trimming it to fit and had to order another replacement which wont be in for about a week.</description>
+    </item>
     
     <item>
       <title>Software Design - Dependency Injection and Inversion</title>
