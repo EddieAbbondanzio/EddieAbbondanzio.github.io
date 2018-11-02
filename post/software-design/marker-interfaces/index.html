@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Eddie Abbondanzio</title>
+  <title>Software Design - Marker Interfaces &middot; Eddie Abbondanzio</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Eddie Abbondanzio" href="https://EddieAbbondanzio.github.io/index.xml" />
   
 
   
@@ -95,10 +93,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -202,21 +196,16 @@
 
 
 <div class="header">
-  <h1>Eddie Abbondanzio</h1>
-  <h2>My Personal Blog</h2>
+  <h1>Software Design - Marker Interfaces</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/unity/object-pool/">Object Pooling in Unity</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 Mar 2018, 10:06</time>
+    <time>02 Nov 2018, 05:12</time>
   </div>
 
   
@@ -227,133 +216,85 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.
-  </p>
+<h1 id="what-are-they">What Are They?</h1>
+
+<p>A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</p>
+
+<p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
+
+<h1 id="example">Example</h1>
+
+<p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
+
+<pre><code class="language-c#">public class ServiceLocator {
+    public void Register&lt;???&gt;() {
+        //Implementation details...
+    }
+
+    public ??? Retrieve&lt;???&gt;() {
+        //Implementation details...
+    }
+}
+</code></pre>
+
+<p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
+
+<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
+
+<p>Our marker interface would look like so:</p>
+
+<pre><code class="language-c#">//The marker interface
+public interface IService { 
+
+}
+</code></pre>
+
+<p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
+
+<pre><code class="language-c#">public class ServiceLocator {
+    public void Register&lt;IService&gt;() {
+        //Implementation details...
+    }
+
+    public IService Retrieve&lt;IService&gt;() {
+        //Implementation details...
+    }
+}
+</code></pre>
+
+<p>Using marker interfaces may not be the best approach in every language, but in certain situations it satisfies the need for a quick, and elegant solution.</p>
+
 
   
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/unity/object-pool/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/voxel/greedy-mesh/">Greedy Meshing for Voxels</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Mar 2018, 10:06</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-
-  
-
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  What is Greedy Meshing? Anyone who has spent some time working with voxels will have heard of the term &lsquo;Greedy Meshing&rsquo; at some point. If your new to the concept check out this article written by Mikola Lysenko. It&rsquo;s probably the most popular (and if not best) article out there regarding voxel mesh generation.
-However if your like me, your probably looking for a simpler explanation and perhaps some source code to really get the ball rolling, and improve your understanding.
-  </p>
 
   
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/voxel/greedy-mesh/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/misc/first-post/">New site, who this?</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Mar 2018, 10:06</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Welcome! If your reading this, it means you&rsquo;ve found my new website. It&rsquo;s still in it&rsquo;s early stages so it may seem quite primitive. It&rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
-In the following weeks I&rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&rsquo;m working on.
-What is this blog about?
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/misc/first-post/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/"></a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>01 Jan 0001, 00:00</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  
-  </p>
-
-  
-</article>
-
-  
-
-  
-
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://EddieAbbondanzio.github.io/page/3/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;4 / 4&nbsp;</span>
-  
-  <i class="fa fa-chevron-right"></i>
-  
-</nav>
-
-
 
 </div>
 

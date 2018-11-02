@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 29 Oct 2018 19:16:42 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 02 Nov 2018 05:12:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Software Design - Marker Interfaces</title>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/</link>
+      <pubDate>Fri, 02 Nov 2018 05:12:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/</guid>
+      <description>What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.
+It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution.</description>
+    </item>
     
     <item>
       <title>Software Design - Magic Numbers</title>
@@ -316,6 +326,15 @@ However if your like me, your probably looking for a simpler explanation and per
       <description>Welcome! If your reading this, it means you&amp;rsquo;ve found my new website. It&amp;rsquo;s still in it&amp;rsquo;s early stages so it may seem quite primitive. It&amp;rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
 In the following weeks I&amp;rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&amp;rsquo;m working on.
 What is this blog about?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/</guid>
+      <description></description>
     </item>
     
   </channel>
