@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Software Design - Marker Interfaces &middot; Eddie Abbondanzio</title>
+  <title>Software Design - Abstraction &middot; Eddie Abbondanzio</title>
 
   
   
@@ -196,7 +196,7 @@
 
 
 <div class="header">
-  <h1>Software Design - Marker Interfaces</h1>
+  <h1>Software Design - Abstraction</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -205,7 +205,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Nov 2018, 05:12</time>
+    <time>08 Nov 2018, 17:20</time>
   </div>
 
   
@@ -218,66 +218,30 @@
 
   
 
-<h1 id="what-are-they">What Are They?</h1>
+<h1 id="abstraction-is-your-friend">Abstraction is Your Friend</h1>
 
-<p>A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</p>
+<p>Do you think the automotive designers who carefully crafted each body line and roll of your car&rsquo;s chassis cared about the engine&rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&rsquo;s hemis?</p>
 
-<p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
+<p>Of course not, all they cared about was more important details such as the dimensions, mount positions, electrical connections, and plumbing of the engine. To them, the engine was nothing more than the power plant of the vehicle and they were tasked with creating a chassis that could support it.</p>
 
-<h1 id="example">Example</h1>
+<p>Then why should the program using your classes have to fully understand the inner-workings of each one in order to fully utilize them? Abstraction promotes simplicity, and elegance that help reduce the overall complexity of code, but only if you actually take advantage of it.</p>
 
-<p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
+<p>If a class requires several steps before it can be used, don&rsquo;t write each step as an independent method that needs to be invoked. Instead write <em>one</em> initialization method that will take care of all the dirty work for you. You&rsquo;ll thank yourself later when you come back to the program six months down the road and can&rsquo;t remember how to use the class properly.</p>
 
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;???&gt;() {
-        //Implementation details...
-    }
-
-    public ??? Retrieve&lt;???&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
-
-<p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
-
-<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
-
-<p>Our marker interface would look like so:</p>
-
-<pre><code class="language-c#">//The marker interface
-public interface IService { 
-
-}
-</code></pre>
-
-<p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
-
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;IService&gt;() {
-        //Implementation details...
-    }
-
-    public IService Retrieve&lt;IService&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
-
-<p>Using marker interfaces may not be the best approach in every language, but in certain situations it satisfies the need for a quick, and elegant solution.</p>
+<p>Abstraction creates &ldquo;black boxes&rdquo; that reduce the number of moving parts you need to have loaded in your mental map of the program at any one time. Instead of worrying about how each one works you can instead focus on connecting each piece of the puzzle to solve the larger problem at hand.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a>
+      <a href="https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/">Software Design - Marker Interfaces</a>
     </nav>
     
   </div>
@@ -286,14 +250,8 @@ public interface IService {
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

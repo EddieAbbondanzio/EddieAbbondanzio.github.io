@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/software-design/abstraction/</loc>
+    <lastmod>2018-11-08T17:20:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/</loc>
     <lastmod>2018-11-02T05:12:42-04:00</lastmod>
   </url>
@@ -183,13 +188,13 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
-    <lastmod>2018-11-02T05:12:42-04:00</lastmod>
+    <lastmod>2018-11-08T17:20:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2018-11-02T05:12:42-04:00</lastmod>
+    <lastmod>2018-11-08T17:20:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
