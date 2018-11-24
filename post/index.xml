@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 15 Nov 2018 18:10:42 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 08 Nov 2018 17:20:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>The Dream to be a Full-Stack Dev</title>
-      <link>https://EddieAbbondanzio.github.io/post/meta/full-stack-dev-dream/</link>
-      <pubDate>Thu, 15 Nov 2018 18:10:42 -0400</pubDate>
-      
-      <guid>https://EddieAbbondanzio.github.io/post/meta/full-stack-dev-dream/</guid>
-      <description>I&amp;rsquo;m still fairly new to the Node.js universe, but it&amp;rsquo;s quickly grown to be my favorite server environment. For awhile I had a disposition towards dynamic type languages like Javascript or Python because to me it just didn&amp;rsquo;t feel &amp;ldquo;right&amp;rdquo;. It&amp;rsquo;s hard to explain, but after spending so much time in C#, or Java I guess I just didn&amp;rsquo;t understand the benefits. Why would someone want to work in such a high level language?</description>
-    </item>
     
     <item>
       <title>Software Design - Abstraction</title>
@@ -152,6 +143,17 @@ Okay I lied. There&amp;rsquo;s actually one last step we need to do and that&amp
       <pubDate>Mon, 23 Jul 2018 06:57:42 -0400</pubDate>
       
       <guid>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/</guid>
+      <description>Part 1: Setting up Virtual Box Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public database server for development. Before we begin though you&amp;rsquo;ll need a few resources.
+Download the following:
+ VirtualBox Ubuntu (Desktop)  Why Desktop?</description>
+    </item>
+    
+    <item>
+      <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</title>
+      <link>https://EddieAbbondanzio.github.io/post/node/publishing-a-ts-npm-package/</link>
+      <pubDate>Mon, 23 Jul 2018 06:57:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/node/publishing-a-ts-npm-package/</guid>
       <description>Part 1: Setting up Virtual Box Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public database server for development. Before we begin though you&amp;rsquo;ll need a few resources.
 Download the following:
  VirtualBox Ubuntu (Desktop)  Why Desktop?</description>

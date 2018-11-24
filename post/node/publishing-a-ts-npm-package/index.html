@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Civic Build - 6-23-18 &middot; Eddie Abbondanzio</title>
+  <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt1 &middot; Eddie Abbondanzio</title>
 
   
   
@@ -196,7 +196,7 @@
 
 
 <div class="header">
-  <h1>Civic Build - 6-23-18</h1>
+  <h1>Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -205,7 +205,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Jun 2018, 12:57</time>
+    <time>23 Jul 2018, 06:57</time>
   </div>
 
   
@@ -218,46 +218,85 @@
 
   
 
-<h1 id="ten-months-of-work-finally-pays-off">Ten months of work finally pays off</h1>
+<h1 id="part-1-setting-up-virtual-box">Part 1: Setting up Virtual Box</h1>
 
-<p>I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&rsquo;t been gassed up since last September and was pretty much on E.</p>
+<p>Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL
+server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public
+database server for development. Before we begin though you&rsquo;ll need a few resources.</p>
 
-<p>While my Jeep Cherokee may not be horrible on gas it was kind of a relief to see if only took 9 gallons to fill up the civic compared to 16. I travel quite a bit and can easily rack up 500 miles a week which is slowly taking a toll on my wallet.</p>
+<p>Download the following:</p>
 
-<p>The civic also finally got a much needed wash. While it may still be covered in overspray, it does shine up quite nicely. I figure in a month or so I&rsquo;ll go through it fully with a nice clay bar, machine polish, and wax to finish. Hopefully I can hit up a car show before the end of the year as well.</p>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+<li><a href="https://www.ubuntu.com/download/desktop">Ubuntu (Desktop)</a></li>
+</ul>
 
-<p><img src="https://EddieAbbondanzio.github.io/img/civic/6-23-18/1.jpg" class="image-center">
-<img src="https://EddieAbbondanzio.github.io/img/civic/6-23-18/2.jpg" class="image-center">
-<img src="https://EddieAbbondanzio.github.io/img/civic/6-23-18/3.jpg" class="image-center"></p>
+<p>Why Desktop? Well, when it comes to Ubuntu both versions are nearly identical. The key difference is the collection
+of packages each includes by default. It&rsquo;s not required to have the desktop version, although it can be quite useful
+to have a GUI for when things go awry.</p>
 
-<h2 id="swap-thoughts">Swap Thoughts</h2>
+<p>Once you&rsquo;ve downloaded both VirtualBox and the Ubuntu ISO, go ahead and install VirtualBox. Since there&rsquo;s no special
+requirements for it I won&rsquo;t go into detail on it. Simply accept all the defaults and evverything should be okay.</p>
 
-<p>I&rsquo;ve never had the chance to drive a swapped honda till now. While this swap may not be the fastest or coolest out there it really brings the car to life. The B20B pairs very nicely with the LS trans. Seems like there&rsquo;s a fair amount of dislike on LS transmissions since they&rsquo;re the longest geared B series transmission, but honestly it works great for long back roads. The engine pulls nicely through out it&rsquo;s entire power band and regardless of the gear the car just wants to go. The motors not winded right up when travelling at 50+ either.</p>
+<p>With VirtualBox installed, go ahead and open it up.</p>
 
-<p><img src="https://EddieAbbondanzio.github.io/img/civic/6-23-18/4.jpg" class="image-center"></p>
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/1.png" class="image-center"></p>
 
-<p>I do miss power steering though, and plan on adding it back soon. Just need to do a little research on what pump to use. From what I understand is the hose that connects the pump to the rack differs between obd1 and obd2. I can&rsquo;t imagine it&rsquo;ll take too much to figure out.</p>
+<p>While it may look simple don&rsquo;t be fooled as VirtualBox is quite the powerful little tool. Overall we won&rsquo;t have to do
+much to it but we do need to adjust one setting first. Click on the <strong>Settings</strong> button then navigate to the <strong>Network</strong> tab.</p>
 
-<p><img src="https://EddieAbbondanzio.github.io/img/civic/6-23-18/5.jpg" class="image-center"></p>
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/2.png" class="image-center"></p>
 
-<p>Sometime in the future I plan on upgrading to a tuck radiator. The current one is a cheap ebay unit and I plan on replacing every single ebay part currently on the car. While cheap prices may be enticing they just aren&rsquo;t worth it when it comes to the quality, and how long the parts tend to last.</p>
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/3.png" class="image-center"></p>
 
-<p><img src="https://EddieAbbondanzio.github.io/img/civic/6-23-18/6.jpg" class="image-center"></p>
+<p>Double check to ensure that <em>Bridged Adapter</em> is selected in the <strong>Attached To</strong> drop down then click <strong>OK</strong>.</p>
 
-<p>But for now it&rsquo;s time to just enjoy the car and have some fun with the low end power of the b20b.</p>
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/4.png" class="image-center"></p>
+
+<p>Now we&rsquo;ll begin creating our new virtual machine. Click the <strong>New</strong> option in the menu.</p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/5.png" class="image-center"></p>
+
+<p>Give it a name (can be anything really), and select <em>Linux</em> in the <strong>Type</strong> dropdown. <em>Ubuntu</em> should
+automatically be selected for the <strong>Version</strong> dropdown but if it isn&rsquo;t go ahead and select it. Then click <strong>Next</strong>.</p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/6.png" class="image-center"></p>
+
+<p>If desired, you can adjust the size of the RAM allocated for the VM. For our purposes 1024MB should be
+more than enough. Click <strong>Next</strong>.</p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/7.png" class="image-center"></p>
+
+<p>Nothing to worry about on the next two pages so go ahead and click <strong>Create</strong> then <strong>Next</strong>.</p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/8.png" class="image-center"></p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/9.png" class="image-center"></p>
+
+<p>To gain a (slight) performance boost we&rsquo;ll select the <em>Fixed Size</em> option.</p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/10.png" class="image-center"></p>
+
+<p>Pick a size for your partition (10GB is perfectly fine for this example), then click <strong>Create</strong>.</p>
+
+<p><img src="https://EddieAbbondanzio.github.io/img/mysql/mysql-server-tutorial/pt1/11.png" class="image-center"></p>
+
+<p>It can take about a minute or so for this step to complete. It varies based on factors such as the speed of
+your hard drive, and how large of a partition you specified. Once complete though the VM will be ready to
+start and you can move on to Part 2.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/civic/6-23-18-update/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/">Civic Build - 6-9-18</a>
+      <a href="https://EddieAbbondanzio.github.io/post/civic/6-23-18-update/">Civic Build - 6-23-18</a>
     </nav>
     
   </div>
@@ -267,13 +306,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://EddieAbbondanzio.github.io/post/node/publishing-a-ts-npm-package/">Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</a>
+      <a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/">Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/node/publishing-a-ts-npm-package/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
