@@ -218,17 +218,69 @@
 
   
 
-<h1 id="abstraction-is-your-friend">Abstraction is Your Friend</h1>
+<h2 id="the-less-you-know-the-better">The Less You Know, The Better</h2>
 
 <p>Do you think the automotive designers who carefully crafted each body line and roll of your car&rsquo;s chassis cared about the engine&rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&rsquo;s hemis?</p>
 
-<p>Of course not, all they cared about was more important details such as the dimensions, mount positions, electrical connections, and plumbing of the engine. To them, the engine was nothing more than the power plant of the vehicle and they were tasked with creating a chassis that could support it.</p>
+<p>Of course not, all they cared about were the more important details such as dimensions, mounting positions, electrical connections, and plumbing points. To them, the engine was nothing more than a power plant and they were tasked with creating a chassis that could support it.</p>
 
-<p>Then why should the program using your classes have to fully understand the inner-workings of each one in order to fully utilize them? Abstraction promotes simplicity, and elegance that help reduce the overall complexity of code, but only if you actually take advantage of it.</p>
+<p>Then why should the programmer using your classes have to fully understand the inner-workings of each one in order to fully utilize them? Abstraction promotes simplicity, and elegance that help reduce the overall complexity of code, but only if you actually take advantage of it.</p>
 
 <p>If a class requires several steps before it can be used, don&rsquo;t write each step as an independent method that needs to be invoked. Instead write <em>one</em> initialization method that will take care of all the dirty work for you. You&rsquo;ll thank yourself later when you come back to the program six months down the road and can&rsquo;t remember how to use the class properly.</p>
 
 <p>Abstraction creates &ldquo;black boxes&rdquo; that reduce the number of moving parts you need to have loaded in your mental map of the program at any one time. Instead of worrying about how each one works you can instead focus on connecting each piece of the puzzle to solve the larger problem at hand.</p>
+
+<h2 id="a-working-example">A Working Example</h2>
+
+<p>Imagine your given the task of creating an online product catalog for the Widget Company. They want to incorporate a search feature to interact with their preexisting back-end so that users visiting the site can find widgets easier.</p>
+
+<p>The back-end is a little dated and still utilizes SOAP based web services that require an input of XML, and return XML as the output. Thankfully though, the original developers of the back-end planned ahead and prepared a search web service. It expects a properly formatted xml string like so:</p>
+
+<pre><code class="language-xml">&lt;Params Category=&quot;Category&quot;&gt;
+    Search Text Here
+&lt;/Params&gt;
+</code></pre>
+
+<p>With some quick thinking you whip up a wrapper function to manage invoking, logging, and parsing the return of the web service.</p>
+
+<pre><code class="language-c#">public List&lt;Widget&gt; searchWidgets(string xml) {
+    //Non-important implementation details
+}
+</code></pre>
+
+<p>The function works out perfectly, and allows you to finish building the online widget catalog. The client is happy with the solution, and a couple of months pass by without any issues.</p>
+
+<p>One day though, your boss informs you that the Widget Company has updated their back-end to be RESTful and now has inputs and outputs in JSON. The online catalog no longer works, but it sounds easy enough to fix, right?</p>
+
+<p>It takes a little while to get the dev workspace loaded up due to some small errors like usual, but it does and you start digging in trying to remember why you designed it this way, and where the web services are being invoked.</p>
+
+<p>After fumbling through the code for what feels like an eternity you finally come across your little ingenious solution for invoking the web services.</p>
+
+<pre><code class="language-c#">public List&lt;Widget&gt; searchWidgets(string xml) {
+    //Non-important implementation details
+}
+</code></pre>
+
+<p>And then it dawns on you. The function only accepts an input of xml, which is no longer valid input for the new RESTful back-end. You start to panic as your boss only quoted the client <sup>1</sup>&frasl;<sub>2</sub> a day&rsquo;s work, and you already killed 2 hours just setting up the environment.</p>
+
+<p>Maybe I could refactor the function to accept JSON you think to yourself. A quick <em>Find All References</em> in Visual Studio shows the function being invoked over a 100 times. No dice.</p>
+
+<p>With the deadline loaming even closer, you decide to whip up an intermediate function that parses the XML then builds the respective JSON equivalence. It&rsquo;s not pretty, and will probably crash for some edge cases but it works and allows you to restore functionality to the online catalog. Crisis averted.</p>
+
+<h2 id="the-moral-of-the-story">The Moral Of The Story</h2>
+
+<p>While it&rsquo;s impossible to plan for everything that may change, and things will change, it is possible to design a system that can be adapted as necessary. Abstraction is simply one of several tools we have at our disposable to help design adaptable systems.</p>
+
+<p>Revisiting the problem from earlier, abstraction could have helped saved us from having to devise a last minute band aid solution, and all the unnecessary stress. A quick refactor of the method to accept a parameter of a category, and search query would suffice. Although it may require some additional work to generate the JSON, this could be offloaded to a helper function to prevent <code>searchWidgets()</code> from being overly bloated.</p>
+
+<pre><code class="language-csharp">public List&lt;Widget&gt; searchWidgets(string category, string query) {
+    //Build the JSON here
+
+    //Non-important implementation details
+}
+</code></pre>
+
+<p>While too much abstraction can be just as bad as not enough, when used properly it can help keep systems flexible, and simple.</p>
 
 
   

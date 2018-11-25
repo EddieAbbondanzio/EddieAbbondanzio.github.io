@@ -18,8 +18,8 @@
       <pubDate>Thu, 08 Nov 2018 17:20:42 -0400</pubDate>
       
       <guid>https://EddieAbbondanzio.github.io/post/software-design/abstraction/</guid>
-      <description>Abstraction is Your Friend Do you think the automotive designers who carefully crafted each body line and roll of your car&amp;rsquo;s chassis cared about the engine&amp;rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&amp;rsquo;s hemis?
-Of course not, all they cared about was more important details such as the dimensions, mount positions, electrical connections, and plumbing of the engine.</description>
+      <description>The Less You Know, The Better Do you think the automotive designers who carefully crafted each body line and roll of your car&amp;rsquo;s chassis cared about the engine&amp;rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&amp;rsquo;s hemis?
+Of course not, all they cared about were the more important details such as dimensions, mounting positions, electrical connections, and plumbing points.</description>
     </item>
     
     <item>
