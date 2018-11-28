@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
+
+  <title>How To Set Up A TypeScript Project &middot; Eddie Abbondanzio</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div style="position: absolute; bottom: 0px;">
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print" style="text-align: center">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>How To Set Up A TypeScript Project</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>26 Nov 2018, 06:57</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<h1 id="summary">Summary</h1>
+
+<p>For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&rsquo;s <a href="https://www.typescriptlang.org/">&ldquo;JavaScript that scales&rdquo;</a>, and once you use it you&rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</p>
+
+<p>This tutorial attempts to cover a no bs approach to setting up a new TypeScript project that builds and runs via <code>npm run build</code>, and <code>npm start</code> without any additional node modules. However, it does assume you have some familiarity with the command prompt, and node. If this were a medium article it would probably be titled &ldquo;How To Set Up a TypeScript Project In 5 Minutes Or Less&rdquo;.</p>
+
+<h1 id="steps">Steps</h1>
+
+<p>1 - Create a new folder to hold the project. Then open up a command prompt and navigate to the newly created folder using the <code>cd</code> command. For this example we&rsquo;ll be working in a <code>test-project</code> folder.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/1.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>2 - Run the standard node initialization command <code>npm init</code> or if you want to accept the defaults for the questionnaire <code>npm init -y</code>
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/2.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>3 - Create two folders (<code>dist</code>, and <code>src</code>) within the project directory. The <code>dist</code> folder will be used to store our transpiled JavaScript files, and the <code>src</code> folder will hold all our TypeScript files. It&rsquo;s in your best interest to keep the two seperated or else things will become cluttered fast. The project structure should now be:
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/3.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>4 - Open up the <code>src</code> folder and create a new <code>index.ts</code> file. This will be our very first TypeScript file.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/4.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>5 - Open up <code>index.ts</code>, and write a classic hello world line. Save it, and close out.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/5.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>6 - Now we need to install TypeScript globally. <code>npm install typescript -g</code>
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/6.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>7 - With TypeScript installed, we can run the init command: <code>tsc --init</code>
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/7.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>8 - You should see a tsconfig.json file in the project directory. Go ahead and open it up. We&rsquo;ll need to un-comment the <code>outDir</code> and <code>rootDir</code> line. Then fill them out with the following values:
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/8.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>9 - Switch over to <code>package.json</code> and add a build command, and start command.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/9.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>10 - With everything set up we can build the project. Enter <code>npm run build</code> in the command prompt.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/10.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>If things went correctly it won&rsquo;t print out anything, but we can see a new .js file under <code>dist</code>.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/10b.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>11 - Finally we can run it via the <code>npm start</code> command.
+<img src="https://EddieAbbondanzio.github.io/img/typescript/no-bs-ts/11.png" class="image-center" style="margin-bottom: 64px;"></p>
+
+<p>Success! The project runs our JavaScript file that we transpiled from TypeScript. From here I recommend checking out some of the settings available in the <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig</a> file. This tutorial is merely skimming the surface of TypeScript, but should be enough to help get your feet wet. Happy coding!</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128571017-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+
