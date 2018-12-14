@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/software-design/symptoms-of-bad-code/</loc>
+    <lastmod>2018-12-07T19:59:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/</loc>
     <lastmod>2018-11-26T06:57:42-04:00</lastmod>
   </url>
@@ -193,13 +198,13 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
-    <lastmod>2018-11-26T06:57:42-04:00</lastmod>
+    <lastmod>2018-12-07T19:59:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2018-11-26T06:57:42-04:00</lastmod>
+    <lastmod>2018-12-07T19:59:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
