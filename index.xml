@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 21 Dec 2018 06:59:42 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 09:53:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript Takes The Magic Out of Magic Strings</title>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/magic-strings/</link>
+      <pubDate>Sat, 05 Jan 2019 09:53:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/magic-strings/</guid>
+      <description>What&amp;rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
+They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</description>
+    </item>
+    
+    <item>
+      <title>Launching a SaaS Part 2 : The Back End</title>
+      <link>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/</link>
+      <pubDate>Fri, 04 Jan 2019 17:59:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/</guid>
+      <description>Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
+    </item>
     
     <item>
       <title>Launching a SaaS Part 1 : The Landing Page</title>
@@ -18,7 +37,7 @@
       <pubDate>Fri, 21 Dec 2018 06:59:42 -0400</pubDate>
       
       <guid>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/</guid>
-      <description>This is the first part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
+      <description>Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
     </item>
     
     <item>
@@ -383,6 +402,18 @@ What is this blog about?</description>
       
       <guid>https://EddieAbbondanzio.github.io/contact/</guid>
       <description> Name Email     Send   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://EddieAbbondanzio.github.io/post/software-design/be-a-lazy-programmer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/software-design/be-a-lazy-programmer/</guid>
+      <description>title: &amp;ldquo;Be a Lazy Programmer&amp;rdquo; date: 2018-12-25T15:34:42-04:00 categories: [&amp;ldquo;Software Design&amp;rdquo;]
+type: post I&amp;rsquo;d like to preface this post by warning the reader that this is a rant about an anti-pattern we as developers tend to fall for.
+DRY - Don&amp;rsquo;t Repeat Yourself This is a well known principle
+I&amp;rsquo;d like to preface this by mentioning this is more of a rant about an anti-pattern us developers tend to fall for.</description>
     </item>
     
     <item>

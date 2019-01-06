@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Software Design - Marker Interfaces &middot; Eddie Abbondanzio</title>
+  <title> &middot; Eddie Abbondanzio</title>
 
   
   
@@ -195,7 +195,7 @@
   <div id="main">
 
 <div class="header">
-  <h1>Software Design - Marker Interfaces</h1>
+  <h1></h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -204,7 +204,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Nov 2018, 05:12</time>
+    <time>01 Jan 0001, 00:00</time>
   </div>
 
   
@@ -217,66 +217,46 @@
 
   
 
-<h1 id="what-are-they">What Are They?</h1>
+<p>title: &ldquo;Be a Lazy Programmer&rdquo;
+date: 2018-12-25T15:34:42-04:00
+categories: [&ldquo;Software Design&rdquo;]</p>
 
-<p>A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</p>
+<h2 id="type-post">type: post</h2>
 
-<p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
+<p><img src="https://EddieAbbondanzio.github.io/img/software-design/be-a-lazy-programmer/1.jpg" class="image-center"></p>
 
-<h1 id="example">Example</h1>
+<p>I&rsquo;d like to preface this post by warning the reader that this is a rant about an anti-pattern we as developers tend to fall for.</p>
 
-<p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
+<h1 id="dry-don-t-repeat-yourself">DRY - Don&rsquo;t Repeat Yourself</h1>
 
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;???&gt;() {
-        //Implementation details...
-    }
+<p>This is a well known principle</p>
 
-    public ??? Retrieve&lt;???&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
+<p>I&rsquo;d like to preface this by mentioning this is more of a rant about an anti-pattern us developers tend to fall for.</p>
 
-<p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
+<p>//Write code that lets you write as little as possible
+//DRY
+//Predictable
+//
+//Don&rsquo;t reinvent the wheel</p>
 
-<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
+<h2 id="photo">Photo</h2>
 
-<p>Our marker interface would look like so:</p>
-
-<pre><code class="language-c#">//The marker interface
-public interface IService { 
-
-}
-</code></pre>
-
-<p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
-
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;IService&gt;() {
-        //Implementation details...
-    }
-
-    public IService Retrieve&lt;IService&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
-
-<p>Using marker interfaces may not be the best approach in every language, but in certain situations it satisfies the need for a quick, and elegant solution.</p>
+<ul>
+<li><a href="https://unsplash.com/photos/qGheSe6xIVY">Wes Hicks</a> &ndash;&gt;</li>
+</ul>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a>
+      <a href="https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/"></a>
     </nav>
     
   </div>
@@ -286,13 +266,13 @@ public interface IService {
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a>
+      <a href="https://EddieAbbondanzio.github.io/post/misc/first-post/">New site, who this?</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/misc/first-post/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

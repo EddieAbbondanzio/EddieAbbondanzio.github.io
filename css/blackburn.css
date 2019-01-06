@@ -79,6 +79,7 @@ i {
 .image-center {
   display: block;
   margin: 0 auto;
+  margin-bottom: 4em;
   max-width: 100%;
   max-height: auto;
 }
@@ -87,4 +88,8 @@ i {
     width: 75%;
     display: block;
     margin: 0 auto 5em;
+}
+
+.content p {
+  font-size: 18px;
 }

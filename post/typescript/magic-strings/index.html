@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Software Design - Marker Interfaces &middot; Eddie Abbondanzio</title>
+  <title>TypeScript Takes The Magic Out of Magic Strings &middot; Eddie Abbondanzio</title>
 
   
   
@@ -195,7 +195,7 @@
   <div id="main">
 
 <div class="header">
-  <h1>Software Design - Marker Interfaces</h1>
+  <h1>TypeScript Takes The Magic Out of Magic Strings</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -204,7 +204,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Nov 2018, 05:12</time>
+    <time>05 Jan 2019, 09:53</time>
   </div>
 
   
@@ -217,66 +217,69 @@
 
   
 
-<h1 id="what-are-they">What Are They?</h1>
+<h1 id="what-s-so-magical-about-magic-strings">What&rsquo;s so Magical About Magic Strings?</h1>
 
-<p>A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</p>
+<p>Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</p>
 
-<p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
+<p>They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</p>
 
-<h1 id="example">Example</h1>
+<p>If the need to change a magic string does ever arise, it will require the developer to hunt down each and every use of the string throughout the code base. This is no easy task, especially for larger, or legacy code bases.</p>
 
-<p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
+<h1 id="typescript-to-the-rescue">TypeScript to the Rescue</h1>
 
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;???&gt;() {
-        //Implementation details...
-    }
+<p>TypeScript has a powerful type system that when used properly can improve a developers life seven fold. Personally, I&rsquo;ve come from a C# background, and TypeScript has often felt quirky when dealing with it, but I&rsquo;ve slowly grown to love this.</p>
 
-    public ??? Retrieve&lt;???&gt;() {
-        //Implementation details...
+<p>One of the capabilities offered by TypeScript is to create types limited to specific instances of strings. This ability can be used to create string based enums that reduce the amount of typing requried by the developer, while at the same time producing code that is clear and concise.</p>
+
+<h1 id="a-working-example">A Working Example</h1>
+
+<p>Imagine we were working with objects that represent database columns, and needed an enum to represent the various data types. While we could simply define an enum as follows:</p>
+
+<pre><code class="language-js">export enum DatabaseColumnType {
+    Boolean,
+    Date,
+    String
+}
+</code></pre>
+
+<p>TypeScript offers us the ability to represent these as a collection of string literals.</p>
+
+<pre><code class="language-js">export type DatabaseColumnType = 'Boolean' | 'Date' | 'String';
+</code></pre>
+
+<p>If we had a <code>DatabaseColumn</code> object like so:</p>
+
+<pre><code class="language-js">export class DatabaseColumn {
+    constructor(public type: DatabaseColumnType, value: any) {
     }
 }
 </code></pre>
 
-<p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
+<p>Then we could specify the column type directly through strings instead of having to append <code>DatabaseColumnType</code> before the enum each time we used it.</p>
 
-<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
-
-<p>Our marker interface would look like so:</p>
-
-<pre><code class="language-c#">//The marker interface
-public interface IService { 
-
-}
+<pre><code class="language-js">    let col: DatabaseColumn = new DatabaseColumn('Boolean', true);
 </code></pre>
 
-<p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
+<p>The TypeScript compiler is smart enough to reject invalid strings that do not exist on the type.</p>
 
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;IService&gt;() {
-        //Implementation details...
-    }
-
-    public IService Retrieve&lt;IService&gt;() {
-        //Implementation details...
-    }
-}
+<pre><code class="language-js">    let col: DatabaseColumn = new DatabaseColumn('Foo', 1);
+    //Throws compile time error
 </code></pre>
 
-<p>Using marker interfaces may not be the best approach in every language, but in certain situations it satisfies the need for a quick, and elegant solution.</p>
+<p>While this may seem seem lazy on the developers end, it does offer us an advantage to produce simple, and highly readable code.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a>
+      <a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/">Launching a SaaS Part 2 : The Back End</a>
     </nav>
     
   </div>
@@ -285,14 +288,8 @@ public interface IService {
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

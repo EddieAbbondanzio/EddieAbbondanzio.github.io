@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Software Design - Marker Interfaces &middot; Eddie Abbondanzio</title>
+  <title>Launching a SaaS Part 2 : The Back End &middot; Eddie Abbondanzio</title>
 
   
   
@@ -195,7 +195,7 @@
   <div id="main">
 
 <div class="header">
-  <h1>Software Design - Marker Interfaces</h1>
+  <h1>Launching a SaaS Part 2 : The Back End</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -204,7 +204,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Nov 2018, 05:12</time>
+    <time>04 Jan 2019, 17:59</time>
   </div>
 
   
@@ -217,66 +217,52 @@
 
   
 
-<h1 id="what-are-they">What Are They?</h1>
+<p><img src="https://EddieAbbondanzio.github.io/img/saas/launching-a-saas-part-2/1.jpg" class="image-center"></p>
 
-<p>A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</p>
+<h1 id="overview">Overview</h1>
 
-<p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
+<p>This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</p>
 
-<h1 id="example">Example</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
 
-<p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
+<ul>
+<li><a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/">Part 1: The Landing Page</a></li>
+<li><a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/">Part 2: The Back End</a></li>
+</ul>
 
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;???&gt;() {
-        //Implementation details...
-    }
+<h1 id="the-back-end">The Back End</h1>
 
-    public ??? Retrieve&lt;???&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
+<p>For those unfamiliar with web development, a (dynamic) website, or web app is typically divided into two parts: front end, and back end. The front end can be though of as everything that the client runs, and sees. There&rsquo;s numerous front end frameworks out there but in the end they always boil down to the same three things: HTML, CSS, and JavaScript. HTML is what web pages are comprised of, and CSS is the makeup that pretties them up. Ever see a (warning vulgar language) <a href="https://motherfuckingwebsite.com/">website without CSS?</a> Probably not, at least not recently.</p>
 
-<p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
+<p>The back end on the other hand, is everything that runs on the server. This is where the brunt of the logic is located, and where sensitive data is stored. RESTless back ends have been all the craze lately</p>
 
-<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
+<p>To prevent from re-inventing the wheel, several popular npm modules are used. They are as follows:</p>
 
-<p>Our marker interface would look like so:</p>
+<p>mysql
+nodemailer
+bcryptjs
+jsonwebtoken
+express
+reflect</p>
 
-<pre><code class="language-c#">//The marker interface
-public interface IService { 
+<h2 id="photo">Photo</h2>
 
-}
-</code></pre>
-
-<p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
-
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;IService&gt;() {
-        //Implementation details...
-    }
-
-    public IService Retrieve&lt;IService&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
-
-<p>Using marker interfaces may not be the best approach in every language, but in certain situations it satisfies the need for a quick, and elegant solution.</p>
+<ul>
+<li><a href="https://unsplash.com/photos/lJ-b5lkzxWs">Tel Aviv-Yafo, By Daniel Lerman</a></li>
+</ul>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a>
+      <a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/">Launching a SaaS Part 1 : The Landing Page</a>
     </nav>
     
   </div>
@@ -286,13 +272,13 @@ public interface IService {
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a>
+      <a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/">TypeScript Takes The Magic Out of Magic Strings</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

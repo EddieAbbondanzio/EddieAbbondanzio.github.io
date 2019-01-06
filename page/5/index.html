@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>Software Design - Marker Interfaces &middot; Eddie Abbondanzio</title>
+  <title>Eddie Abbondanzio</title>
 
   
   
@@ -39,6 +39,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Eddie Abbondanzio" href="https://EddieAbbondanzio.github.io/index.xml" />
   
 
   
@@ -93,6 +95,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -194,17 +200,23 @@
 
   <div id="main">
 
-<div class="header">
-  <h1>Software Design - Marker Interfaces</h1>
-  <h2></h2>
-</div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="header">
+  <h1>Eddie Abbondanzio</h1>
+  <h2>My Personal Blog</h2>
+</div>
+
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/"></a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Nov 2018, 05:12</time>
+    <time>01 Jan 0001, 00:00</time>
   </div>
 
   
@@ -215,91 +227,31 @@
 
 </div>
 
+  </header>
+
+  <p>
   
-
-<h1 id="what-are-they">What Are They?</h1>
-
-<p>A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</p>
-
-<p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
-
-<h1 id="example">Example</h1>
-
-<p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
-
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;???&gt;() {
-        //Implementation details...
-    }
-
-    public ??? Retrieve&lt;???&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
-
-<p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
-
-<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
-
-<p>Our marker interface would look like so:</p>
-
-<pre><code class="language-c#">//The marker interface
-public interface IService { 
-
-}
-</code></pre>
-
-<p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
-
-<pre><code class="language-c#">public class ServiceLocator {
-    public void Register&lt;IService&gt;() {
-        //Implementation details...
-    }
-
-    public IService Retrieve&lt;IService&gt;() {
-        //Implementation details...
-    }
-}
-</code></pre>
-
-<p>Using marker interfaces may not be the best approach in every language, but in certain situations it satisfies the need for a quick, and elegant solution.</p>
-
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+</article>
 
   
+
+  
+
+
+<nav class="pagination" role="pagination">
+  
+  <a href="https://EddieAbbondanzio.github.io/page/4/"><i class="fa fa-chevron-left"></i></a>
+  
+  <span>&nbsp;5 / 5&nbsp;</span>
+  
+  <i class="fa fa-chevron-right"></i>
+  
+</nav>
+
+
 
 </div>
 
