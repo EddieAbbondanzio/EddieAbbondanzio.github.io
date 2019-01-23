@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37" />
+
+  <title>TypeScript - Events &middot; Eddie Abbondanzio</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div style="position: absolute; bottom: 0px;">
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print" style="text-align: center">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+<div class="header">
+  <h1>TypeScript - Events</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>21 Jan 2019, 18:37</time>
+  </div>
+
+  
+
+  
+
+  
+
+</div>
+
+  
+
+<p><img src="https://EddieAbbondanzio.github.io/img/typescript/events/1.jpg" class="image-center" style="margin-bottom: 64px;"></p>
+
+<h1 id="intro">Intro</h1>
+
+<p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
+
+<p>Polling in Computer Science is &ldquo;the process where the computer or controlling device waits for an external device to check for its readiness or state.&rdquo; [1] It&rsquo;s often used for low level applications such as listening for incoming data from the network, or interacting with an IO device.</p>
+
+<p>We could represent a very basic form of polling from a network as follows:</p>
+
+<pre><code class="language-js">    while(true) {
+        if(network.hasData()) {
+            //Do work
+        }
+    }
+</code></pre>
+
+<p>Since the network doesn&rsquo;t &ldquo;announce&rdquo; when data comes in, we have to manually check it over and over again via the <code>network.hasData()</code> conditional. Polling can be a costly operation depending on how often it occurs, and should only be used when there are no other options. Fortunately, for most problems we can take advantage of events to write reactive code that only executes when needed.</p>
+
+<h1 id="enter-typescript">Enter TypeScript</h1>
+
+<p>TypeScript may not support events directly out of the box, but that doesn&rsquo;t mean we can&rsquo;t create our own. We&rsquo;ll start off by defining a type to represent event handlers that can subscribe to events.</p>
+
+<pre><code class="language-js">/**
+ * Event handler that can subscribe to a dispatcher.
+ */
+export type EventHandler&lt;E&gt; = (event: E) =&gt; void;
+</code></pre>
+
+<p>Now let&rsquo;s define an interface to represent events. By defining an interface we can restrict the ability to invoke events to within the class that owns them.</p>
+
+<pre><code class="language-js">/**
+ * Event that can be subscribed to.
+ */
+export interface Event&lt;E&gt; {
+    /**
+     * Register a new handler with the dispatcher. Any time the event is
+     * dispatched, the handler will be notified.
+     * @param handler The handler to register.
+     */
+    register(handler: EventHandler&lt;E&gt;): void;
+
+    /**
+     * Desubscribe a handler from the dispatcher.
+     * @param handler The handler to remove.
+     */
+    unregister(handler: EventHandler&lt;E&gt;): void;
+}
+</code></pre>
+
+<p>After that we&rsquo;ll need an event dispatcher. This will need to implement our <code>Event&lt;E&gt;</code> interface.</p>
+
+<pre><code class="language-js">/**
+ * Dispatcher that can propogate events to subscribers.
+ */
+export class EventDispatcher&lt;E&gt; implements Event&lt;E&gt; {
+}
+</code></pre>
+
+<p>The dispatcher maintains a collection of handlers that should be notified anytime the event is dispatched.</p>
+
+<pre><code class="language-js">export class EventDispatcher&lt;E&gt; implements Event&lt;E&gt; {
+    /**
+     * The handlers that want to be notified when an event occurs.
+     */
+    private _handlers: EventHandler&lt;E&gt;[];
+
+    /**
+     * Create a new event dispatcher.
+     */
+    constructor() {
+        this._handlers = [];
+    }
+}
+</code></pre>
+
+<p>Then to satisfy the <code>Event&lt;E&gt;</code> interface we&rsquo;ll implement <code>register()</code> and <code>unregister()</code> like so:</p>
+
+<pre><code class="language-js">    /**
+     * Register a new handler with the dispatcher. Any time the event is
+     * dispatched, the handler will be notified.
+     * @param handler The handler to register.
+     */
+    public register(handler: EventHandler&lt;E&gt;): void {
+        this._handlers.push(handler);
+    }
+
+    /**
+     * Desubscribe a handler from the dispatcher.
+     * @param handler The handler to remove.
+     */
+    public unregister(handler: EventHandler&lt;E&gt;): void {
+        for (let i = 0; i &lt; this._handlers.length; i++) {
+            if (this._handlers[i] === handler) {
+                this._handlers.splice(i, 1);
+            }
+        }
+    }
+</code></pre>
+
+<p>To finish off our <code>EventDispatcher&lt;E&gt;</code> class, we&rsquo;ll define a <code>dispatch()</code> method that can notify all the subscribers when the event is invoked.</p>
+
+<pre><code class="language-js">    /**
+     * Dispatch an event to all the subscribers.
+     * @param event The data of the event that occured.
+     */
+    public dispatch(event: E): void {
+        for (let handler of this._handlers) {
+            handler(event);
+        }
+    }
+</code></pre>
+
+<h1 id="example">Example</h1>
+
+<p>Imagine we we&rsquo;re working on a login form that accepts an input of an email, and password. The form needs to notify the parent page when the user hits the login button so a request can be sent off to the server.</p>
+
+<pre><code class="language-js">    export type UserCredentials = { email: string, password: string };
+
+    export class LoginForm {
+        private _email!: string;
+
+        private _password! string;
+        
+        private _onLoginDispatcher: EventDispatcher&lt;UserCredentials&gt;;
+
+        get onLogin(): Event&lt;UserCredentials&gt; {
+            return this._onLoginDispatcher as Event&lt;UserCredentials&gt;;
+        }
+    }
+</code></pre>
+
+<p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
+
+<pre><code class="language-js">    this._onLoginDispatcher.dispatch({
+        email: 'john.smith@mail.com', 
+        password: 'hunter2' 
+    });
+</code></pre>
+
+<h2 id="sources">Sources</h2>
+
+<p>[1] Wikipedia contributors. (2018, June 3). Polling (computer science). In Wikipedia, The Free Encyclopedia. Retrieved 12:12, January 22, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740">https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740</a></p>
+
+<h2 id="photo">Photo</h2>
+
+<p><a href="https://unsplash.com/photos/yV-an6f_rqo">By Lance Anderson</a></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/">TypeScript Takes The Magic Out of Magic Strings</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-128571017-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+

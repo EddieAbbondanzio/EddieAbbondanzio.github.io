@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 05 Jan 2019 09:53:42 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jan 2019 18:37:24 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript - Events</title>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/events/</link>
+      <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/events/</guid>
+      <description>Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&amp;rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&amp;rsquo;s known as polling.</description>
+    </item>
     
     <item>
       <title>TypeScript Takes The Magic Out of Magic Strings</title>
@@ -387,17 +396,17 @@ What is this blog about?</description>
     </item>
     
     <item>
-      <title>Civic Build - 07-06-15</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/15-07-06./</link>
+      <title>Civic Build - 07/06/15</title>
+      <link>https://EddieAbbondanzio.github.io/post/civic/15-07-06/</link>
       <pubDate>Wed, 15 Jul 2015 20:44:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/15-07-06./</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/15-07-06/</guid>
       <description>The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&amp;rsquo;t resist making the switch.
 While it was kinda gross, it actually cleaned up pretty nicely. After a lot of scrubbing and cleaning it was finally ready for paint.</description>
     </item>
     
     <item>
-      <title>Civic Build - 07-03-15</title>
+      <title>Civic Build - 07/03/15</title>
       <link>https://EddieAbbondanzio.github.io/post/civic/15-07-03/</link>
       <pubDate>Wed, 15 Jul 2015 19:43:42 -0400</pubDate>
       
@@ -423,18 +432,6 @@ My first car was a 1999 Acura RL that I purchased from my Grandmother. The car w
       <guid>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/</guid>
       <description>title: &amp;ldquo;Launching a SaaS Part 2 : The Back End&amp;rdquo; date: 2019-01-04T17:59:42-04:00 categories: [&amp;ldquo;SaaS&amp;rdquo;]
 type: post Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://EddieAbbondanzio.github.io/post/software-design/be-a-lazy-programmer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://EddieAbbondanzio.github.io/post/software-design/be-a-lazy-programmer/</guid>
-      <description>title: &amp;ldquo;Be a Lazy Programmer&amp;rdquo; date: 2018-12-25T15:34:42-04:00 categories: [&amp;ldquo;Software Design&amp;rdquo;]
-type: post I&amp;rsquo;d like to preface this post by warning the reader that this is a rant about an anti-pattern we as developers tend to fall for.
-DRY - Don&amp;rsquo;t Repeat Yourself This is a well known principle
-I&amp;rsquo;d like to preface this by mentioning this is more of a rant about an anti-pattern us developers tend to fall for.</description>
     </item>
     
     <item>
