@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 21 Jan 2019 18:37:24 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 18:37:24 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTTP Cookies</title>
+      <link>https://EddieAbbondanzio.github.io/post/http/cookies/</link>
+      <pubDate>Thu, 24 Jan 2019 18:37:24 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/http/cookies/</guid>
+      <description>-- What Are They? HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&amp;rsquo;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.</description>
+    </item>
     
     <item>
       <title>TypeScript - Events</title>
@@ -22,7 +31,7 @@
     </item>
     
     <item>
-      <title>TypeScript Takes The Magic Out of Magic Strings</title>
+      <title>TypeScript - Taking The Magic Out of Magic Strings</title>
       <link>https://EddieAbbondanzio.github.io/post/typescript/magic-strings/</link>
       <pubDate>Sat, 05 Jan 2019 09:53:42 -0400</pubDate>
       
@@ -32,7 +41,7 @@ They are often considered an anti-pattern due to how to they introduce the poten
     </item>
     
     <item>
-      <title>Launching a SaaS Part 1 : The Landing Page</title>
+      <title>Launching a SaaS - Part 1 The Landing Page</title>
       <link>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/</link>
       <pubDate>Fri, 21 Dec 2018 06:59:42 -0400</pubDate>
       
@@ -41,7 +50,7 @@ They are often considered an anti-pattern due to how to they introduce the poten
     </item>
     
     <item>
-      <title>Symptoms of Bad Code</title>
+      <title>Software Design - Symptoms of Bad Code</title>
       <link>https://EddieAbbondanzio.github.io/post/software-design/symptoms-of-bad-code/</link>
       <pubDate>Fri, 07 Dec 2018 19:59:42 -0400</pubDate>
       
@@ -51,7 +60,7 @@ The catch-22 however, is that bad code should only be brought to life when it wi
     </item>
     
     <item>
-      <title>How To Set Up A TypeScript Project</title>
+      <title>TypeScript - How To Set Up A New Project</title>
       <link>https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/</link>
       <pubDate>Mon, 26 Nov 2018 06:57:42 -0400</pubDate>
       
@@ -90,11 +99,11 @@ However, this does not mean that all constants should be blindly replaced with p
     </item>
     
     <item>
-      <title>Cherokee Build - 10-21-18</title>
-      <link>https://EddieAbbondanzio.github.io/post/jeep/10-21-18-update/</link>
+      <title>Cherokee Build - 10/21/18</title>
+      <link>https://EddieAbbondanzio.github.io/post/cherokee/10-21-18-update/</link>
       <pubDate>Sun, 21 Oct 2018 16:51:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/jeep/10-21-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/cherokee/10-21-18-update/</guid>
       <description>Patching Holes This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about cutting out and welding in a new rocker panel.
 Initially the plan for this weekend was to finish welding in the new driver side rocker panel. However, I managed to screw up trimming it to fit and had to order another replacement which wont be in for about a week.</description>
     </item>
@@ -137,11 +146,11 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
     </item>
     
     <item>
-      <title>Cherokee Build - 10-8-18</title>
-      <link>https://EddieAbbondanzio.github.io/post/jeep/10-8-18-update/</link>
+      <title>Cherokee Build - 10/8/18</title>
+      <link>https://EddieAbbondanzio.github.io/post/cherokee/10-8-18-update/</link>
       <pubDate>Mon, 08 Oct 2018 17:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/jeep/10-8-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/cherokee/10-8-18-update/</guid>
       <description>Passenger side rocker replacement This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.
 Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&amp;rdquo; in length and about 3&amp;rdquo; wide.</description>
     </item>
@@ -156,16 +165,16 @@ Like most xjs out there, especially those in the rustier parts of the US, the ro
     </item>
     
     <item>
-      <title>Cherokee Build - 9-03-18</title>
-      <link>https://EddieAbbondanzio.github.io/post/jeep/9-3-18-update/</link>
+      <title>Cherokee Build - 9/03/18</title>
+      <link>https://EddieAbbondanzio.github.io/post/cherokee/9-3-18-update/</link>
       <pubDate>Sun, 02 Sep 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/jeep/9-3-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/cherokee/9-3-18-update/</guid>
       <description>Repainting the Cherokee&amp;rsquo;s roof I&amp;rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&amp;rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&amp;rsquo;s never let me down, and has successfully travelled 20,000 miles in it&amp;rsquo;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.</description>
     </item>
     
     <item>
-      <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt3</title>
+      <title>MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 3</title>
       <link>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/</link>
       <pubDate>Mon, 23 Jul 2018 06:59:42 -0400</pubDate>
       
@@ -175,7 +184,7 @@ While this is optional, I highly recommend giving your server a static IP addres
     </item>
     
     <item>
-      <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt2</title>
+      <title>MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 2</title>
       <link>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/</link>
       <pubDate>Mon, 23 Jul 2018 06:58:42 -0400</pubDate>
       
@@ -185,7 +194,7 @@ Okay I lied. There&amp;rsquo;s actually one last step we need to do and that&amp
     </item>
     
     <item>
-      <title>Setting up a MySQL Server with Ubuntu via VirtualBox Pt1</title>
+      <title>MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 1</title>
       <link>https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/</link>
       <pubDate>Mon, 23 Jul 2018 06:57:42 -0400</pubDate>
       
@@ -196,20 +205,20 @@ Download the following:
     </item>
     
     <item>
-      <title>Civic Build - 6-23-18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/6-23-18-update/</link>
+      <title>Civic Build - 6/23/18</title>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-23-06/</link>
       <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/6-23-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-23-06/</guid>
       <description>Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&amp;rsquo;t been gassed up since last September and was pretty much on E.</description>
     </item>
     
     <item>
-      <title>Civic Build - 6-9-18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/</link>
+      <title>Civic Build - 6/9/18</title>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-09-06/</link>
       <pubDate>Sat, 09 Jun 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/6-9-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-09-06/</guid>
       <description>Getting ready for the test drive While the car may not be on the road yet, it&amp;rsquo;s come quite a bit closer to getting there. Lately I&amp;rsquo;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&amp;rsquo;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap.</description>
     </item>
     
@@ -225,10 +234,10 @@ Every Friday I hope to write a small blurb, and post some code showing off the c
     
     <item>
       <title>Civic Build - 5/20/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-05-20/</link>
       <pubDate>Sun, 20 May 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/5-20-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-05-20/</guid>
       <description>Finishing things up With the weather warming up it&amp;rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.
 I had thought this task would be difficult but it really wasn&amp;rsquo;t that bad.</description>
     </item>
@@ -255,30 +264,30 @@ To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that
     
     <item>
       <title>Civic Build - 4/15/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/4-15-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-04-15/</link>
       <pubDate>Sun, 15 Apr 2018 20:57:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/4-15-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-04-15/</guid>
       <description>Connecting the Pieces It&amp;rsquo;s easy to forget just how many parts you&amp;rsquo;ve removed until it comes time to put them all back together. I know I&amp;rsquo;m probably not alone when I say I&amp;rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&amp;hellip;
 To help keep costs down I try to buy cheap things when I know they&amp;rsquo;ll only be used temporarily.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/14/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/4-14-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-04-14/</link>
       <pubDate>Sat, 14 Apr 2018 20:40:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/4-14-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-04-14/</guid>
       <description>Getting Closer. I ran into a few set backs this weekend, and I&amp;rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.
 Last year everytime I pushed the clutch in it made a real nice squeek that let everyone in a 15 foot radius know what was going on. Thankfully this time I didn&amp;rsquo;t forget to grease the pivot point on the clutch fork.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/12/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/4-12-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-04-12/</link>
       <pubDate>Thu, 12 Apr 2018 13:13:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/4-12-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-04-12/</guid>
       <description>Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&amp;rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&amp;rsquo;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&amp;hellip;). Here&amp;rsquo;s how it looked before touching it at all.</description>
     </item>
     
@@ -293,19 +302,19 @@ Last year everytime I pushed the clutch in it made a real nice squeek that let e
     
     <item>
       <title>Civic Build - 4/8/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/4-8-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-04-08/</link>
       <pubDate>Sun, 08 Apr 2018 18:04:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/4-8-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-04-08/</guid>
       <description>New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&amp;rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.</description>
     </item>
     
     <item>
       <title>Civic Build - 4/6/18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/4-6-18-update/</link>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-04-06/</link>
       <pubDate>Fri, 06 Apr 2018 16:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/4-6-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-04-06/</guid>
       <description>Wrapping it up It&amp;rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
 Initially I wanted to work on finishing up the engine bay but with how cold it was outside I decided to focus on the motor instead.</description>
     </item>
@@ -330,11 +339,11 @@ Hobbies  Anything automotive (Detailing, Resoration, etc..) Software development
     </item>
     
     <item>
-      <title>Civic Build 4-1-18</title>
-      <link>https://EddieAbbondanzio.github.io/post/civic/4-1-18-update/</link>
+      <title>Civic Build - 4/1/18</title>
+      <link>https://EddieAbbondanzio.github.io/post/civic/18-04-01/</link>
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/civic/4-1-18-update/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/civic/18-04-01/</guid>
       <description>I like projects And I&amp;rsquo;m the kind of person that can&amp;rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&amp;rsquo;s totally different, it&amp;rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&amp;rsquo;s full history check out my build thread on D-Series.</description>
     </item>
     
