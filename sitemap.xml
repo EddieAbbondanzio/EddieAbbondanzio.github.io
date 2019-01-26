@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/cherokee/19-01-26/</loc>
+    <lastmod>2019-01-26T16:51:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/http/cookies/</loc>
     <lastmod>2019-01-24T18:37:24-04:00</lastmod>
   </url>
@@ -48,7 +53,12 @@
   </url>
   
   <url>
-    <loc>https://EddieAbbondanzio.github.io/post/cherokee/10-21-18-update/</loc>
+    <loc>https://EddieAbbondanzio.github.io/post/cherokee/18-10-26/</loc>
+    <lastmod>2018-10-26T16:51:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/post/cherokee/18-10-21/</loc>
     <lastmod>2018-10-21T16:51:42-04:00</lastmod>
   </url>
   
@@ -73,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://EddieAbbondanzio.github.io/post/cherokee/10-8-18-update/</loc>
+    <loc>https://EddieAbbondanzio.github.io/post/cherokee/18-10-08/</loc>
     <lastmod>2018-10-08T17:22:42-04:00</lastmod>
   </url>
   
@@ -83,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://EddieAbbondanzio.github.io/post/cherokee/9-3-18-update/</loc>
+    <loc>https://EddieAbbondanzio.github.io/post/cherokee/18-09-03/</loc>
     <lastmod>2018-09-02T12:57:42-04:00</lastmod>
   </url>
   
@@ -232,13 +242,13 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
-    <lastmod>2019-01-24T18:37:24-04:00</lastmod>
+    <lastmod>2019-01-26T16:51:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2019-01-24T18:37:24-04:00</lastmod>
+    <lastmod>2019-01-26T16:51:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
