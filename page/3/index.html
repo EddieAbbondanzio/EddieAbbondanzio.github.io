@@ -1,592 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-us">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.37" />
-
+	<meta name="generator" content="Hugo 0.37" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>Eddie Abbondanzio</title>
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-  <link rel="alternate" type="application/rss+xml" title="Eddie Abbondanzio" href="https://EddieAbbondanzio.github.io/index.xml" />
-  
-
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-
-  
-  
-
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/style.css" />
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/font-awesome.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
 </head>
-
-
 <body>
-<div id="layout">
 
+<header class="header" style="background-color: #009DDC;
+    background-image: url(https://EddieAbbondanzio.github.io//img/banner.jpg),linear-gradient(to bottom, #009DDC, #006ccb); background-size: 100% auto;" role="banner">
+
+      <section id="branding">
+        <div id="site-title"><a href="https://EddieAbbondanzio.github.io/">Eddie Abbondanzio</a></div>
+        <nav id="mainmenu">
+          <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+        </nav>
+        <input type="checkbox" id="op"></input>
+        <div class="lower">
+          <label for="op">Menu</label>
+        </div>
+        <div class="overlay overlay-hugeinc">
+          <label for="op"></label>
+          <nav id="menu" role="navigation">
+            <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+          </nav>
+        </div>
+        <div class="clearfix"></div>
+      </section>
+      <div class="post-heading">
+        <h1> 
+        </h1>
+      </div>
+
+    </header>
+
+    <div id="container">
+
+<section id="content" role="main">
   
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-  </ul>
-</div>
-
-
-  <div style="position: absolute; bottom: 0px;">
-  <div class="small-print">
-    <small>&copy; 2019. All rights reserved.</small>
-  </div>
-  <div class="small-print" style="text-align: center">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>Eddie Abbondanzio</h1>
-  <h2>My Personal Blog</h2>
-</div>
-
-<div class="content">
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/">MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 3</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Jul 2018, 06:59</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-09-03/" rel="bookmark" title="Link to Cherokee Build - 9/03/18">Cherokee Build - 9/03/18</a></h2>
+  <span class="post-date">Published Sep 2, 2018</span>
+  <p>Repainting the Cherokee&rsquo;s roof I&rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&rsquo;s never let me down, and has successfully travelled 20,000 miles in it&rsquo;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/cherokee/18-09-03/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Part 3: Setting up MySQL Server If you&rsquo;ve made it this far your on the home stretch! In this part we&rsquo;ll be configuring Ubuntu, and setting up MySQL Server. If you haven&rsquo;t already, load up the Ubuntu VM.
-While this is optional, I highly recommend giving your server a static IP address. Normally the router is reponsible for handing out IP addresses but since we will be connecting to this through code we really don&rsquo;t want to have to update the address every single time in the database connection.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/">MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 2</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Jul 2018, 06:58</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/" rel="bookmark" title="Link to MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 3">MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 3</a></h2>
+  <span class="post-date">Published Jul 23, 2018</span>
+  <p>Part 3: Setting up MySQL Server If you&rsquo;ve made it this far your on the home stretch! In this part we&rsquo;ll be configuring Ubuntu, and setting up MySQL Server. If you haven&rsquo;t already, load up the Ubuntu VM.
+While this is optional, I highly recommend giving your server a static IP address. Normally the router is reponsible for handing out IP addresses but since we will be connecting to this through code we really don&rsquo;t want to have to update the address every single time in the database connection.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt3/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Part 2: Installing Ubuntu With out virtual machine ready to be fired up thanks to part 1, we are now ready to begin installing Ubuntu. If you don&rsquo;t have VirtualBox open, go ahead and do so now. Highlight the VM that we just set up and click Start
-Okay I lied. There&rsquo;s actually one last step we need to do and that&rsquo;s specify the location of our Ubuntu ISO file that we downloaded earlier.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/">MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 1</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Jul 2018, 06:57</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/" rel="bookmark" title="Link to MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 2">MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 2</a></h2>
+  <span class="post-date">Published Jul 23, 2018</span>
+  <p>Part 2: Installing Ubuntu With out virtual machine ready to be fired up thanks to part 1, we are now ready to begin installing Ubuntu. If you don&rsquo;t have VirtualBox open, go ahead and do so now. Highlight the VM that we just set up and click Start
+Okay I lied. There&rsquo;s actually one last step we need to do and that&rsquo;s specify the location of our Ubuntu ISO file that we downloaded earlier.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt2/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
   
-
-</div>
-
-  </header>
-
-  <p>
-  Part 1: Setting up Virtual Box Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public database server for development. Before we begin though you&rsquo;ll need a few resources.
+    <article>
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/" rel="bookmark" title="Link to MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 1">MySQL - Setting up a MySQL Server with Ubuntu via VirtualBox Part 1</a></h2>
+  <span class="post-date">Published Jul 23, 2018</span>
+  <p>Part 1: Setting up Virtual Box Welcome! This is part 1 of my 3 part series that will teach you how to start up an instance of MySQL server running in a Ubuntu virtual machine. This is great for when you need a temporary or non public database server for development. Before we begin though you&rsquo;ll need a few resources.
 Download the following:
- VirtualBox Ubuntu (Desktop)  Why Desktop?
-  </p>
-
+ VirtualBox Ubuntu (Desktop)  Why Desktop?</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/mysql/mysql-server-tutorial-pt1/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-23-06/">Civic Build - 6/23/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>23 Jun 2018, 12:57</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-23-06/" rel="bookmark" title="Link to Civic Build - 6/23/18">Civic Build - 6/23/18</a></h2>
+  <span class="post-date">Published Jun 23, 2018</span>
+  <p>Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&rsquo;t been gassed up since last September and was pretty much on E.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-23-06/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&rsquo;t been gassed up since last September and was pretty much on E.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-23-06/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-09-06/">Civic Build - 6/9/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>09 Jun 2018, 12:57</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-09-06/" rel="bookmark" title="Link to Civic Build - 6/9/18">Civic Build - 6/9/18</a></h2>
+  <span class="post-date">Published Jun 9, 2018</span>
+  <p>Getting ready for the test drive While the car may not be on the road yet, it&rsquo;s come quite a bit closer to getting there. Lately I&rsquo;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&rsquo;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-09-06/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Getting ready for the test drive While the car may not be on the road yet, it&rsquo;s come quite a bit closer to getting there. Lately I&rsquo;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&rsquo;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-09-06/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/">No Mans Blocks - 6/4/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Jun 2018, 20:05</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/" rel="bookmark" title="Link to No Mans Blocks - 6/4/18">No Mans Blocks - 6/4/18</a></h2>
+  <span class="post-date">Published Jun 4, 2018</span>
+  <p>Creating Time (literally!) I have a knack for forgetting what I&rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&rsquo;ve started writing down each accomplishment on a sticky note.
+Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Creating Time (literally!) I have a knack for forgetting what I&rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&rsquo;ve started writing down each accomplishment on a sticky note.
-Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/6-4-18-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-05-20/">Civic Build - 5/20/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>20 May 2018, 12:57</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-05-20/" rel="bookmark" title="Link to Civic Build - 5/20/18">Civic Build - 5/20/18</a></h2>
+  <span class="post-date">Published May 20, 2018</span>
+  <p>Finishing things up With the weather warming up it&rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.
+I had thought this task would be difficult but it really wasn&rsquo;t that bad.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-05-20/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Finishing things up With the weather warming up it&rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.
-I had thought this task would be difficult but it really wasn&rsquo;t that bad.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-05-20/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/">C# Threadable Queue</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>09 May 2018, 19:04</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/" rel="bookmark" title="Link to C# Threadable Queue">C# Threadable Queue</a></h2>
+  <span class="post-date">Published May 9, 2018</span>
+  <p>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&rsquo;t thread-safe by default. Thankfully it&rsquo;s easy enough to implement your own as we will do today. Let&rsquo;s start by defining our class.
+public class ThreadableQueue&lt;T&gt; { }  If your unfamiliar with generics check out this link. Within the class we need to define two members.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&rsquo;t thread-safe by default. Thankfully it&rsquo;s easy enough to implement your own as we will do today. Let&rsquo;s start by defining our class.
-public class ThreadableQueue&lt;T&gt; { }  If your unfamiliar with generics check out this link. Within the class we need to define two members.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/c-sharp/c-sharp-tutorial-threadable-queue/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/">No Mans Blocks - 4/20/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>20 Apr 2018, 23:05</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/" rel="bookmark" title="Link to No Mans Blocks - 4/20/18">No Mans Blocks - 4/20/18</a></h2>
+  <span class="post-date">Published Apr 20, 2018</span>
+  <p>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&rsquo;t want to handle serialization with 2 different methods I&rsquo;ve decided to bite the bullet and roll my own set up.
+To help prepare for this task I&rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&rsquo;t want to handle serialization with 2 different methods I&rsquo;ve decided to bite the bullet and roll my own set up.
-To help prepare for this task I&rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-20-18-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-15/">Civic Build - 4/15/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>15 Apr 2018, 20:57</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Connecting the Pieces It&rsquo;s easy to forget just how many parts you&rsquo;ve removed until it comes time to put them all back together. I know I&rsquo;m probably not alone when I say I&rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&hellip;
-To help keep costs down I try to buy cheap things when I know they&rsquo;ll only be used temporarily.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-04-15/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
-
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://EddieAbbondanzio.github.io/page/2/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;3 / 5&nbsp;</span>
-  
-  <a href="https://EddieAbbondanzio.github.io/page/4/"><i class="fa fa-chevron-right"></i></a>
-  
+  <nav id="nav-below" class="navigation" role="navigation">
+<div class="older">
+		<a href="https://EddieAbbondanzio.github.io/page/4/">Older Posts &raquo;</a>
+	</div>
+<div class="newer">
+		<a href="https://EddieAbbondanzio.github.io/page/2/">&laquo; Newer Posts</a>
+	</div>
+	<div class="clearfix"></div>
+	<div class="pagination">Page 3 of 5</div>
 </nav>
-
-
-
+</section>
+<div class="clear"></div>
 </div>
-
-</div>
-</div>
-<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
-
-
-<script>
+<footer id="footer" style="color: #7A7B7C; background-color: #3A3B3C;background-image: url(https://EddieAbbondanzio.github.io//img/texture.png),linear-gradient(to bottom, #3A3B3C, #1d1e1e); background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
+  <div id="footer-container">
+  <div class="footer-column">Some text here.</div>
+  <div class="footer-column">Some different text here.</div>
+  <div class="footer-column">Even more different text here.</div>
+  <div class="clearfix"></div>
+  </div>
+  <div id="copyright">&copy; 2019. All rights reserved.</div>
+</footer>
+<script src="https://EddieAbbondanzio.github.io//js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
   
-  if (window.location.hostname != "localhost") {
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-128571017-1', 'auto');
     ga('send', 'pageview');
-  }
-</script>
-
-
-
-
-
+  </script>
+  
+</div>
 </body>
+    <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io//img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://EddieAbbondanzio.github.io//img/apple-touch-icon.jpg" />
 </html>
 

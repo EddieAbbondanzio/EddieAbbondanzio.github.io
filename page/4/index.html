@@ -1,585 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-us">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.37" />
-
+	<meta name="generator" content="Hugo 0.37" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>Eddie Abbondanzio</title>
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-  <link rel="alternate" type="application/rss+xml" title="Eddie Abbondanzio" href="https://EddieAbbondanzio.github.io/index.xml" />
-  
-
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-
-  
-  
-
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/style.css" />
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/font-awesome.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
 </head>
-
-
 <body>
-<div id="layout">
 
+<header class="header" style="background-color: #009DDC;
+    background-image: url(https://EddieAbbondanzio.github.io//img/banner.jpg),linear-gradient(to bottom, #009DDC, #006ccb); background-size: 100% auto;" role="banner">
+
+      <section id="branding">
+        <div id="site-title"><a href="https://EddieAbbondanzio.github.io/">Eddie Abbondanzio</a></div>
+        <nav id="mainmenu">
+          <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+        </nav>
+        <input type="checkbox" id="op"></input>
+        <div class="lower">
+          <label for="op">Menu</label>
+        </div>
+        <div class="overlay overlay-hugeinc">
+          <label for="op"></label>
+          <nav id="menu" role="navigation">
+            <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+          </nav>
+        </div>
+        <div class="clearfix"></div>
+      </section>
+      <div class="post-heading">
+        <h1> 
+        </h1>
+      </div>
+
+    </header>
+
+    <div id="container">
+
+<section id="content" role="main">
   
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-  </ul>
-</div>
-
-
-  <div style="position: absolute; bottom: 0px;">
-  <div class="small-print">
-    <small>&copy; 2019. All rights reserved.</small>
-  </div>
-  <div class="small-print" style="text-align: center">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>Eddie Abbondanzio</h1>
-  <h2>My Personal Blog</h2>
-</div>
-
-<div class="content">
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-14/">Civic Build - 4/14/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>14 Apr 2018, 20:40</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-15/" rel="bookmark" title="Link to Civic Build - 4/15/18">Civic Build - 4/15/18</a></h2>
+  <span class="post-date">Published Apr 15, 2018</span>
+  <p>Connecting the Pieces It&rsquo;s easy to forget just how many parts you&rsquo;ve removed until it comes time to put them all back together. I know I&rsquo;m probably not alone when I say I&rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&hellip;
+To help keep costs down I try to buy cheap things when I know they&rsquo;ll only be used temporarily.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-04-15/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Getting Closer. I ran into a few set backs this weekend, and I&rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.
-Last year everytime I pushed the clutch in it made a real nice squeek that let everyone in a 15 foot radius know what was going on. Thankfully this time I didn&rsquo;t forget to grease the pivot point on the clutch fork.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-04-14/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-12/">Civic Build - 4/12/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>12 Apr 2018, 13:13</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-14/" rel="bookmark" title="Link to Civic Build - 4/14/18">Civic Build - 4/14/18</a></h2>
+  <span class="post-date">Published Apr 14, 2018</span>
+  <p>Getting Closer. I ran into a few set backs this weekend, and I&rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.
+Last year everytime I pushed the clutch in it made a real nice squeek that let everyone in a 15 foot radius know what was going on. Thankfully this time I didn&rsquo;t forget to grease the pivot point on the clutch fork.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-04-14/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&rsquo;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&hellip;). Here&rsquo;s how it looked before touching it at all.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-04-12/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-8-18-update/">No Mans Blocks - 4/8/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>08 Apr 2018, 18:25</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-12/" rel="bookmark" title="Link to Civic Build - 4/12/18">Civic Build - 4/12/18</a></h2>
+  <span class="post-date">Published Apr 12, 2018</span>
+  <p>Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&rsquo;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&hellip;). Here&rsquo;s how it looked before touching it at all.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-04-12/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&rsquo;s message events.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-8-18-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-08/">Civic Build - 4/8/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>08 Apr 2018, 18:04</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-8-18-update/" rel="bookmark" title="Link to No Mans Blocks - 4/8/18">No Mans Blocks - 4/8/18</a></h2>
+  <span class="post-date">Published Apr 8, 2018</span>
+  <p>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&rsquo;s message events.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/nomansblocks/4-8-18-update/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-04-08/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-06/">Civic Build - 4/6/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>06 Apr 2018, 16:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-08/" rel="bookmark" title="Link to Civic Build - 4/8/18">Civic Build - 4/8/18</a></h2>
+  <span class="post-date">Published Apr 8, 2018</span>
+  <p>New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-04-08/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Wrapping it up It&rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
-Initially I wanted to work on finishing up the engine bay but with how cold it was outside I decided to focus on the motor instead.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-04-06/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/honda/b-series-bolts/">B-Series Bolt Sizes</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>06 Apr 2018, 15:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-06/" rel="bookmark" title="Link to Civic Build - 4/6/18">Civic Build - 4/6/18</a></h2>
+  <span class="post-date">Published Apr 6, 2018</span>
+  <p>Wrapping it up It&rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
+Initially I wanted to work on finishing up the engine bay but with how cold it was outside I decided to focus on the motor instead.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-04-06/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Trying to find the size of a missing bolt? I&rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try to help any others who are partaking in a similar project I&rsquo;ve compiled a list of what I found below.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/honda/b-series-bolts/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-01/">Civic Build - 4/1/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>01 Apr 2018, 15:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/honda/b-series-bolts/" rel="bookmark" title="Link to B-Series Bolt Sizes">B-Series Bolt Sizes</a></h2>
+  <span class="post-date">Published Apr 6, 2018</span>
+  <p>Trying to find the size of a missing bolt? I&rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try to help any others who are partaking in a similar project I&rsquo;ve compiled a list of what I found below.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/honda/b-series-bolts/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  I like projects And I&rsquo;m the kind of person that can&rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&rsquo;s totally different, it&rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&rsquo;s full history check out my build thread on D-Series.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/civic/18-04-01/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/misc/desk/">My Work Station</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>01 Apr 2018, 15:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/about/" rel="bookmark" title="Link to About">About</a></h2>
+  <span class="post-date">Published Apr 1, 2018</span>
+  <p>Who am I? Welcome! My name is Eddie Abbondanzio and this is my personal blog. I&rsquo;m a software developer who loves to work on his own projects whenever possible. I&rsquo;ve graduated with a BS in Computer Science from the University of Maine Orono, and am currently employed full time.
+Hobbies  Anything automotive (Detailing, Resoration, etc..) Software development (Full stack). Running Cooking Long walks on the beach&hellip; Oh wait, wrong site.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/about/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  My Budget Build At my work, I&rsquo;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home. However I&rsquo;m on a college student budget, and don&rsquo;t want to spend an arm and a leg right now. In the end I came up with this solution that&rsquo;s left me pretty happy.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/misc/desk/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/unity/debug-logging/">Logging to Unity or Console</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 Mar 2018, 15:56</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/civic/18-04-01/" rel="bookmark" title="Link to Civic Build - 4/1/18">Civic Build - 4/1/18</a></h2>
+  <span class="post-date">Published Apr 1, 2018</span>
+  <p>I like projects And I&rsquo;m the kind of person that can&rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&rsquo;s totally different, it&rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&rsquo;s full history check out my build thread on D-Series.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/civic/18-04-01/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&rsquo;s own set of methods for writing to it&rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&rsquo;ll need a way to differentiate between the running environments.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/unity/debug-logging/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/3-31-18-update/">No Mans Blocks - 3/31/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 Mar 2018, 15:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/misc/desk/" rel="bookmark" title="Link to My Work Station">My Work Station</a></h2>
+  <span class="post-date">Published Apr 1, 2018</span>
+  <p>My Budget Build At my work, I&rsquo;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home. However I&rsquo;m on a college student budget, and don&rsquo;t want to spend an arm and a leg right now. In the end I came up with this solution that&rsquo;s left me pretty happy.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/misc/desk/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Stepping back into Networking These past few months I&rsquo;ve been on a tangent that wasn&rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&rsquo;t exactly remember every change some of the key ones are:
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/3-31-18-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
-
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://EddieAbbondanzio.github.io/page/3/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;4 / 5&nbsp;</span>
-  
-  <a href="https://EddieAbbondanzio.github.io/page/5/"><i class="fa fa-chevron-right"></i></a>
-  
+  <nav id="nav-below" class="navigation" role="navigation">
+<div class="older">
+		<a href="https://EddieAbbondanzio.github.io/page/5/">Older Posts &raquo;</a>
+	</div>
+<div class="newer">
+		<a href="https://EddieAbbondanzio.github.io/page/3/">&laquo; Newer Posts</a>
+	</div>
+	<div class="clearfix"></div>
+	<div class="pagination">Page 4 of 5</div>
 </nav>
-
-
-
+</section>
+<div class="clear"></div>
 </div>
-
-</div>
-</div>
-<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
-
-
-<script>
+<footer id="footer" style="color: #7A7B7C; background-color: #3A3B3C;background-image: url(https://EddieAbbondanzio.github.io//img/texture.png),linear-gradient(to bottom, #3A3B3C, #1d1e1e); background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
+  <div id="footer-container">
+  <div class="footer-column">Some text here.</div>
+  <div class="footer-column">Some different text here.</div>
+  <div class="footer-column">Even more different text here.</div>
+  <div class="clearfix"></div>
+  </div>
+  <div id="copyright">&copy; 2019. All rights reserved.</div>
+</footer>
+<script src="https://EddieAbbondanzio.github.io//js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
   
-  if (window.location.hostname != "localhost") {
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-128571017-1', 'auto');
     ga('send', 'pageview');
-  }
-</script>
-
-
-
-
-
+  </script>
+  
+</div>
 </body>
+    <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io//img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://EddieAbbondanzio.github.io//img/apple-touch-icon.jpg" />
 </html>
 

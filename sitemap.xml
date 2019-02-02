@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</loc>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/http/status-codes-for-rest/</loc>
     <lastmod>2019-01-29T18:29:29-04:00</lastmod>
   </url>
@@ -238,22 +243,84 @@
   </url>
   
   <url>
-    <loc>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/</loc>
-  </url>
-  
-  <url>
     <loc>https://EddieAbbondanzio.github.io/post/software-design/contextual-validation/</loc>
   </url>
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/c#/</loc>
+    <lastmod>2018-05-09T19:04:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/</loc>
+    <lastmod>2018-05-09T19:04:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/civic/</loc>
+    <lastmod>2018-06-23T12:57:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/honda/</loc>
+    <lastmod>2018-04-06T15:22:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/http/</loc>
     <lastmod>2019-01-29T18:29:29-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/jeep/</loc>
+    <lastmod>2019-01-26T16:51:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/meta/</loc>
+    <lastmod>2018-10-08T15:22:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/mysql/</loc>
+    <lastmod>2018-07-23T06:59:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/nomansblocks/</loc>
+    <lastmod>2018-10-13T15:05:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2019-01-29T18:29:29-04:00</lastmod>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/saas/</loc>
+    <lastmod>2018-12-21T06:59:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/software-design/</loc>
+    <lastmod>2019-01-21T18:37:24-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -263,7 +330,20 @@
   </url>
   
   <url>
-    <loc>https://EddieAbbondanzio.github.io/topics/</loc>
+    <loc>https://EddieAbbondanzio.github.io/categories/typescript/</loc>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/unity/</loc>
+    <lastmod>2018-03-31T15:56:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://EddieAbbondanzio.github.io/categories/voxel/</loc>
+    <lastmod>2018-03-25T10:06:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   

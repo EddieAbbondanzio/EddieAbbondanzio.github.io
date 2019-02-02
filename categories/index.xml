@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Eddie Abbondanzio</title>
+    <link>https://EddieAbbondanzio.github.io/categories/</link>
+    <description>Recent content in Categories on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 09 May 2018 19:04:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://EddieAbbondanzio.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C#</title>
+      <link>https://EddieAbbondanzio.github.io/categories/c#/</link>
+      <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Civic</title>
+      <link>https://EddieAbbondanzio.github.io/categories/civic/</link>
+      <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/civic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Honda</title>
+      <link>https://EddieAbbondanzio.github.io/categories/honda/</link>
+      <pubDate>Fri, 06 Apr 2018 15:22:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/honda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>https://EddieAbbondanzio.github.io/categories/http/</link>
+      <pubDate>Tue, 29 Jan 2019 18:29:29 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jeep</title>
+      <link>https://EddieAbbondanzio.github.io/categories/jeep/</link>
+      <pubDate>Sat, 26 Jan 2019 16:51:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/jeep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>https://EddieAbbondanzio.github.io/categories/meta/</link>
+      <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://EddieAbbondanzio.github.io/categories/mysql/</link>
+      <pubDate>Mon, 23 Jul 2018 06:59:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nomansblocks</title>
+      <link>https://EddieAbbondanzio.github.io/categories/nomansblocks/</link>
+      <pubDate>Sat, 13 Oct 2018 15:05:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/nomansblocks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Saas</title>
+      <link>https://EddieAbbondanzio.github.io/categories/saas/</link>
+      <pubDate>Fri, 21 Dec 2018 06:59:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/saas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Design</title>
+      <link>https://EddieAbbondanzio.github.io/categories/software-design/</link>
+      <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/software-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typescript</title>
+      <link>https://EddieAbbondanzio.github.io/categories/typescript/</link>
+      <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unity</title>
+      <link>https://EddieAbbondanzio.github.io/categories/unity/</link>
+      <pubDate>Sat, 31 Mar 2018 15:56:01 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/unity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Voxel</title>
+      <link>https://EddieAbbondanzio.github.io/categories/voxel/</link>
+      <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/categories/voxel/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

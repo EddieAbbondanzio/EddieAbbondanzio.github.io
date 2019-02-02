@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 29 Jan 2019 18:29:29 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 16:52:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript - Interpolated Strings</title>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</link>
+      <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</guid>
+      <description>Interpolated strings are the bees knees</description>
+    </item>
     
     <item>
       <title>HTTP Status Codes For a RESTful API</title>
@@ -440,16 +449,6 @@ While it was kinda gross, it actually cleaned up pretty nicely. After a lot of s
       <guid>https://EddieAbbondanzio.github.io/post/civic/15-07-03/</guid>
       <description>I don&amp;rsquo;t know why, but I&amp;rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&amp;rsquo;s a fact.
 My first car was a 1999 Acura RL that I purchased from my Grandmother. The car was in rough shape, and needed some love but it was an amazing first car. I put over 36k miles on the car in 3 years, and loved everything about it.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-2/</guid>
-      <description>title: &amp;ldquo;Launching a SaaS Part 2 : The Back End&amp;rdquo; date: 2019-01-04T17:59:42-04:00 categories: [&amp;ldquo;SaaS&amp;rdquo;]
-type: post Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
     </item>
     
     <item>

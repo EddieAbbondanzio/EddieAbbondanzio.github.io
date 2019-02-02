@@ -1,588 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-us">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.37" />
-
+	<meta name="generator" content="Hugo 0.37" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>Eddie Abbondanzio</title>
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-  <link rel="alternate" type="application/rss+xml" title="Eddie Abbondanzio" href="https://EddieAbbondanzio.github.io/index.xml" />
-  
-
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-
-  
-  
-
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/style.css" />
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/font-awesome.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
 </head>
-
-
 <body>
-<div id="layout">
 
+<header class="header" style="background-color: #009DDC;
+    background-image: url(https://EddieAbbondanzio.github.io//img/banner.jpg),linear-gradient(to bottom, #009DDC, #006ccb); background-size: 100% auto;" role="banner">
+
+      <section id="branding">
+        <div id="site-title"><a href="https://EddieAbbondanzio.github.io/">Eddie Abbondanzio</a></div>
+        <nav id="mainmenu">
+          <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+        </nav>
+        <input type="checkbox" id="op"></input>
+        <div class="lower">
+          <label for="op">Menu</label>
+        </div>
+        <div class="overlay overlay-hugeinc">
+          <label for="op"></label>
+          <nav id="menu" role="navigation">
+            <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+          </nav>
+        </div>
+        <div class="clearfix"></div>
+      </section>
+      <div class="post-heading">
+        <h1> 
+        </h1>
+      </div>
+
+    </header>
+
+    <div id="container">
+
+<section id="content" role="main">
   
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-  </ul>
-</div>
-
-
-  <div style="position: absolute; bottom: 0px;">
-  <div class="small-print">
-    <small>&copy; 2019. All rights reserved.</small>
-  </div>
-  <div class="small-print" style="text-align: center">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>Eddie Abbondanzio</h1>
-  <h2>My Personal Blog</h2>
-</div>
-
-<div class="content">
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>29 Oct 2018, 19:16</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/" rel="bookmark" title="Link to Software Design - Marker Interfaces">Software Design - Marker Interfaces</a></h2>
+  <span class="post-date">Published Nov 2, 2018</span>
+  <p>What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.
+It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&rdquo;. [1]
-However, this does not mean that all constants should be blindly replaced with pre-defined constants.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-26/">Cherokee Build - 10/26/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Oct 2018, 16:51</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/" rel="bookmark" title="Link to Software Design - Magic Numbers">Software Design - Magic Numbers</a></h2>
+  <span class="post-date">Published Oct 29, 2018</span>
+  <p>What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&rdquo;. [1]
+However, this does not mean that all constants should be blindly replaced with pre-defined constants.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/magic-numbers/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Finishing Up With winter approaching fast, and my Civic only having summer tires I needed to hurry up and finish the Cherokee. The Civic was also suffering from a stuck open thermostat that ensured the engine temperature never reached operating temp, and my heat was always cold.
-The funny thing is, when I was preparing to drop the B20B engine into the Civic I clearly remember thinking how pointless it would be to replace the thermostat.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-26/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-21/">Cherokee Build - 10/21/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Oct 2018, 16:51</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-26/" rel="bookmark" title="Link to Cherokee Build - 10/26/18">Cherokee Build - 10/26/18</a></h2>
+  <span class="post-date">Published Oct 26, 2018</span>
+  <p>Finishing Up With winter approaching fast, and my Civic only having summer tires I needed to hurry up and finish the Cherokee. The Civic was also suffering from a stuck open thermostat that ensured the engine temperature never reached operating temp, and my heat was always cold.
+The funny thing is, when I was preparing to drop the B20B engine into the Civic I clearly remember thinking how pointless it would be to replace the thermostat.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-26/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Patching Holes This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about cutting out and welding in a new rocker panel.
-Initially the plan for this weekend was to finish welding in the new driver side rocker panel. However, I managed to screw up trimming it to fit and had to order another replacement which wont be in for about a week.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-21/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/dependency-injection/">Software Design - Dependency Injection and Inversion</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Oct 2018, 06:34</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-21/" rel="bookmark" title="Link to Cherokee Build - 10/21/18">Cherokee Build - 10/21/18</a></h2>
+  <span class="post-date">Published Oct 21, 2018</span>
+  <p>Patching Holes This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about cutting out and welding in a new rocker panel.
+Initially the plan for this weekend was to finish welding in the new driver side rocker panel. However, I managed to screw up trimming it to fit and had to order another replacement which wont be in for about a week.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-21/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&rsquo;ve likely used it yourself in the past and just didn&rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/dependency-injection/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/test-types/">Software Design - Unit Tests vs Integration Tests</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>15 Oct 2018, 05:16</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/dependency-injection/" rel="bookmark" title="Link to Software Design - Dependency Injection and Inversion">Software Design - Dependency Injection and Inversion</a></h2>
+  <span class="post-date">Published Oct 18, 2018</span>
+  <p>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&rsquo;ve likely used it yourself in the past and just didn&rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/dependency-injection/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
-What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/test-types/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/">No Mans Blocks - 10/13/2018</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Oct 2018, 15:05</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/test-types/" rel="bookmark" title="Link to Software Design - Unit Tests vs Integration Tests">Software Design - Unit Tests vs Integration Tests</a></h2>
+  <span class="post-date">Published Oct 15, 2018</span>
+  <p>Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
+What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/test-types/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Where I&rsquo;ve Been, and Where I&rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/validator-pattern/">Software Design - Validator Pattern</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>10 Oct 2018, 05:16</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/" rel="bookmark" title="Link to No Mans Blocks - 10/13/2018">No Mans Blocks - 10/13/2018</a></h2>
+  <span class="post-date">Published Oct 13, 2018</span>
+  <p>Where I&rsquo;ve Been, and Where I&rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/nomansblocks/10-13-18-update/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Validating Objects Based on Context It&rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/validator-pattern/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-08/">Cherokee Build - 10/8/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>08 Oct 2018, 17:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/validator-pattern/" rel="bookmark" title="Link to Software Design - Validator Pattern">Software Design - Validator Pattern</a></h2>
+  <span class="post-date">Published Oct 10, 2018</span>
+  <p>Validating Objects Based on Context It&rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/validator-pattern/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Passenger side rocker replacement This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.
-Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&rdquo; in length and about 3&rdquo; wide.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-08/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/misc/desk2-0/">My Work Station 2.0</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>08 Oct 2018, 15:22</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-08/" rel="bookmark" title="Link to Cherokee Build - 10/8/18">Cherokee Build - 10/8/18</a></h2>
+  <span class="post-date">Published Oct 8, 2018</span>
+  <p>Passenger side rocker replacement This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.
+Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&rdquo; in length and about 3&rdquo; wide.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/cherokee/18-10-08/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Going all out This post is a successor to my first attempt at building a standing desk. Back during college when I built my first desk I didn&rsquo;t have much of a budget since it was a spur of the moment decision. Because of this the solution I came up with ended up being a permanent standing desk built using misc. parts from Lowe&rsquo;s. Ever since graduating from college however, I&rsquo;ve found it less than thrilling to come home and stand at my desk after standing all day at work.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/misc/desk2-0/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/cherokee/18-09-03/">Cherokee Build - 9/03/18</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Sep 2018, 12:57</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/misc/desk2-0/" rel="bookmark" title="Link to My Work Station 2.0">My Work Station 2.0</a></h2>
+  <span class="post-date">Published Oct 8, 2018</span>
+  <p>Going all out This post is a successor to my first attempt at building a standing desk. Back during college when I built my first desk I didn&rsquo;t have much of a budget since it was a spur of the moment decision. Because of this the solution I came up with ended up being a permanent standing desk built using misc. parts from Lowe&rsquo;s. Ever since graduating from college however, I&rsquo;ve found it less than thrilling to come home and stand at my desk after standing all day at work.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/misc/desk2-0/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Repainting the Cherokee&rsquo;s roof I&rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&rsquo;s never let me down, and has successfully travelled 20,000 miles in it&rsquo;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/cherokee/18-09-03/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
-
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://EddieAbbondanzio.github.io/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;2 / 5&nbsp;</span>
-  
-  <a href="https://EddieAbbondanzio.github.io/page/3/"><i class="fa fa-chevron-right"></i></a>
-  
+  <nav id="nav-below" class="navigation" role="navigation">
+<div class="older">
+		<a href="https://EddieAbbondanzio.github.io/page/3/">Older Posts &raquo;</a>
+	</div>
+<div class="newer">
+		<a href="https://EddieAbbondanzio.github.io/">&laquo; Newer Posts</a>
+	</div>
+	<div class="clearfix"></div>
+	<div class="pagination">Page 2 of 5</div>
 </nav>
-
-
-
+</section>
+<div class="clear"></div>
 </div>
-
-</div>
-</div>
-<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
-
-
-<script>
+<footer id="footer" style="color: #7A7B7C; background-color: #3A3B3C;background-image: url(https://EddieAbbondanzio.github.io//img/texture.png),linear-gradient(to bottom, #3A3B3C, #1d1e1e); background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
+  <div id="footer-container">
+  <div class="footer-column">Some text here.</div>
+  <div class="footer-column">Some different text here.</div>
+  <div class="footer-column">Even more different text here.</div>
+  <div class="clearfix"></div>
+  </div>
+  <div id="copyright">&copy; 2019. All rights reserved.</div>
+</footer>
+<script src="https://EddieAbbondanzio.github.io//js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
   
-  if (window.location.hostname != "localhost") {
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-128571017-1', 'auto');
     ga('send', 'pageview');
-  }
-</script>
-
-
-
-
-
+  </script>
+  
+</div>
 </body>
+    <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io//img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://EddieAbbondanzio.github.io//img/apple-touch-icon.jpg" />
 </html>
 

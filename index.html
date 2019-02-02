@@ -1,587 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-us">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.37" />
-
+	<meta name="generator" content="Hugo 0.37" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>Eddie Abbondanzio</title>
-
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
-
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/side-menu.css">
-  <!--<![endif]-->
-
-  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io/css/blackburn.css">
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
- 
-  
-  <link rel="alternate" type="application/rss+xml" title="Eddie Abbondanzio" href="https://EddieAbbondanzio.github.io/index.xml" />
-  
-
-  
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-
-  
-  
-
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/style.css" />
+  <link rel="stylesheet" href="https://EddieAbbondanzio.github.io//css/font-awesome.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
 </head>
-
-
 <body>
-<div id="layout">
 
+<header class="header" style="background-color: #009DDC;
+    background-image: url(https://EddieAbbondanzio.github.io//img/banner.jpg),linear-gradient(to bottom, #009DDC, #006ccb); background-size: 100% auto;" role="banner">
+
+      <section id="branding">
+        <div id="site-title"><a href="https://EddieAbbondanzio.github.io/">Eddie Abbondanzio</a></div>
+        <nav id="mainmenu">
+          <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+        </nav>
+        <input type="checkbox" id="op"></input>
+        <div class="lower">
+          <label for="op">Menu</label>
+        </div>
+        <div class="overlay overlay-hugeinc">
+          <label for="op"></label>
+          <nav id="menu" role="navigation">
+            <ul>
+            <li><a href="https://EddieAbbondanzio.github.io/">Articles</a></li>
+            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
+            
+          </ul>
+          </nav>
+        </div>
+        <div class="clearfix"></div>
+      </section>
+      <div class="post-heading">
+        <h1> 
+        </h1>
+      </div>
+
+    </header>
+
+    <div id="container">
+
+<section id="content" role="main">
   
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
-      
-        </li>
-      
-    </ul>
-  </div>
-
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://EddieAbbondanzio.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://twitter.com/EAbbondanzio" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/EddieAbbondanzio" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-  </ul>
-</div>
-
-
-  <div style="position: absolute; bottom: 0px;">
-  <div class="small-print">
-    <small>&copy; 2019. All rights reserved.</small>
-  </div>
-  <div class="small-print" style="text-align: center">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>Eddie Abbondanzio</h1>
-  <h2>My Personal Blog</h2>
-</div>
-
-<div class="content">
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/http/status-codes-for-rest/">HTTP Status Codes For a RESTful API</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>29 Jan 2019, 18:29</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/" rel="bookmark" title="Link to TypeScript - Interpolated Strings">TypeScript - Interpolated Strings</a></h2>
+  <span class="post-date">Published Feb 1, 2019</span>
+  <p>Interpolated strings are the bees knees</p>
   
-
+  <hr class="divider">
+  </article>
   
-
   
-
-</div>
-
-  </header>
-
-  <p>
-  Intro Hyper Text Transfer Protocol (HTTP) powers the web. It&rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making requests that are sent to servers which then reply back with responses. Only servers can make responses, and only clients can make requests.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/http/status-codes-for-rest/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/cherokee/19-01-26/">Cherokee Build - 01/26/19</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Jan 2019, 16:51</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/http/status-codes-for-rest/" rel="bookmark" title="Link to HTTP Status Codes For a RESTful API">HTTP Status Codes For a RESTful API</a></h2>
+  <span class="post-date">Published Jan 29, 2019</span>
+  <p>Intro Hyper Text Transfer Protocol (HTTP) powers the web. It&rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making requests that are sent to servers which then reply back with responses. Only servers can make responses, and only clients can make requests.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/http/status-codes-for-rest/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  I&rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average $100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/cherokee/19-01-26/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/http/cookies/">HTTP Cookies</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>24 Jan 2019, 18:37</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/cherokee/19-01-26/" rel="bookmark" title="Link to Cherokee Build - 01/26/19">Cherokee Build - 01/26/19</a></h2>
+  <span class="post-date">Published Jan 26, 2019</span>
+  <p>I&rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average $100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/cherokee/19-01-26/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  What Are They? HTTP cookies are small bits of text that are included with each HTTP request made from a user&rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&rsquo;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/http/cookies/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/typescript/events/">TypeScript - Events</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Jan 2019, 18:37</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/http/cookies/" rel="bookmark" title="Link to HTTP Cookies">HTTP Cookies</a></h2>
+  <span class="post-date">Published Jan 24, 2019</span>
+  <p>What Are They? HTTP cookies are small bits of text that are included with each HTTP request made from a user&rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&rsquo;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/http/cookies/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/typescript/events/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/">TypeScript - Taking The Magic Out of Magic Strings</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Jan 2019, 09:53</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/typescript/events/" rel="bookmark" title="Link to TypeScript - Events">TypeScript - Events</a></h2>
+  <span class="post-date">Published Jan 21, 2019</span>
+  <p>Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/typescript/events/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  What&rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
-They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/">Launching a SaaS - Part 1 The Landing Page</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Dec 2018, 06:59</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/" rel="bookmark" title="Link to TypeScript - Taking The Magic Out of Magic Strings">TypeScript - Taking The Magic Out of Magic Strings</a></h2>
+  <span class="post-date">Published Jan 5, 2019</span>
+  <p>What&rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
+They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/typescript/magic-strings/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/symptoms-of-bad-code/">Software Design - Symptoms of Bad Code</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Dec 2018, 19:59</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/" rel="bookmark" title="Link to Launching a SaaS - Part 1 The Landing Page">Launching a SaaS - Part 1 The Landing Page</a></h2>
+  <span class="post-date">Published Dec 21, 2018</span>
+  <p>Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/saas/launching-a-saas-part-1/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Admit it, we&rsquo;ve all written bad code at some point in our software development careers. One could even argue it&rsquo;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
-The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/symptoms-of-bad-code/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/">TypeScript - How To Set Up A New Project</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Nov 2018, 06:57</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/symptoms-of-bad-code/" rel="bookmark" title="Link to Software Design - Symptoms of Bad Code">Software Design - Symptoms of Bad Code</a></h2>
+  <span class="post-date">Published Dec 7, 2018</span>
+  <p>Admit it, we&rsquo;ve all written bad code at some point in our software development careers. One could even argue it&rsquo;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
+The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/symptoms-of-bad-code/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&rsquo;s &ldquo;JavaScript that scales&rdquo;, and once you use it you&rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Software Design - Abstraction</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>08 Nov 2018, 17:20</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/" rel="bookmark" title="Link to TypeScript - How To Set Up A New Project">TypeScript - How To Set Up A New Project</a></h2>
+  <span class="post-date">Published Nov 26, 2018</span>
+  <p>Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&rsquo;s &ldquo;JavaScript that scales&rdquo;, and once you use it you&rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
-
   
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  The Less You Know, The Better Do you think the automotive designers who carefully crafted each body line and roll of your car&rsquo;s chassis cared about the engine&rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&rsquo;s hemis?
-Of course not, all they cared about were the more important details such as dimensions, mounting positions, electrical connections, and plumbing points.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
   
     <article>
-  <header>
-    <h2><a href="https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/">Software Design - Marker Interfaces</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>02 Nov 2018, 05:12</time>
-  </div>
-
+  <h2 class="post-title"><a href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/" rel="bookmark" title="Link to Software Design - Abstraction">Software Design - Abstraction</a></h2>
+  <span class="post-date">Published Nov 8, 2018</span>
+  <p>The Less You Know, The Better Do you think the automotive designers who carefully crafted each body line and roll of your car&rsquo;s chassis cared about the engine&rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&rsquo;s hemis?
+Of course not, all they cared about were the more important details such as dimensions, mounting positions, electrical connections, and plumbing points.</p>
+  <a class="moretag" href="https://EddieAbbondanzio.github.io/post/software-design/abstraction/">Continue reading &#8614;</a>
+  <hr class="divider">
+  </article>
   
+  <nav id="nav-below" class="navigation" role="navigation">
+<div class="older">
+		<a href="https://EddieAbbondanzio.github.io/page/2/">Older Posts &raquo;</a>
+	</div>
 
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.
-It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution.
-  </p>
-
-  
-  <footer>
-    <a href="https://EddieAbbondanzio.github.io/post/software-design/marker-interfaces/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
-
-
-<nav class="pagination" role="pagination">
-  
-  <i class="fa fa-chevron-left"></i>
-  
-  <span>&nbsp;1 / 5&nbsp;</span>
-  
-  <a href="https://EddieAbbondanzio.github.io/page/2/"><i class="fa fa-chevron-right"></i></a>
-  
+	<div class="clearfix"></div>
+	<div class="pagination">Page 1 of 5</div>
 </nav>
-
-
-
+</section>
+<div class="clear"></div>
 </div>
-
-</div>
-</div>
-<script src="https://EddieAbbondanzio.github.io/js/ui.js"></script>
-
-
-<script>
+<footer id="footer" style="color: #7A7B7C; background-color: #3A3B3C;background-image: url(https://EddieAbbondanzio.github.io//img/texture.png),linear-gradient(to bottom, #3A3B3C, #1d1e1e); background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
+  <div id="footer-container">
+  <div class="footer-column">Some text here.</div>
+  <div class="footer-column">Some different text here.</div>
+  <div class="footer-column">Even more different text here.</div>
+  <div class="clearfix"></div>
+  </div>
+  <div id="copyright">&copy; 2019. All rights reserved.</div>
+</footer>
+<script src="https://EddieAbbondanzio.github.io//js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
   
-  if (window.location.hostname != "localhost") {
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-128571017-1', 'auto');
     ga('send', 'pageview');
-  }
-</script>
-
-
-
-
-
+  </script>
+  
+</div>
 </body>
+    <link rel="shortcut icon" href="https://EddieAbbondanzio.github.io//img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://EddieAbbondanzio.github.io//img/apple-touch-icon.jpg" />
 </html>
 
