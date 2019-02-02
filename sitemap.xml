@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</loc>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://EddieAbbondanzio.github.io/post/http/status-codes-for-rest/</loc>
     <lastmod>2019-01-29T18:29:29-04:00</lastmod>
   </url>
@@ -261,7 +266,7 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/</loc>
-    <lastmod>2019-01-29T18:29:29-04:00</lastmod>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -303,7 +308,7 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/post/</loc>
-    <lastmod>2019-01-29T18:29:29-04:00</lastmod>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -326,7 +331,7 @@
   
   <url>
     <loc>https://EddieAbbondanzio.github.io/categories/typescript/</loc>
-    <lastmod>2019-01-05T09:53:42-04:00</lastmod>
+    <lastmod>2019-02-01T16:52:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   

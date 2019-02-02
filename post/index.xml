@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 29 Jan 2019 18:29:29 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 16:52:42 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript - Interpolated Strings</title>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</link>
+      <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
+      
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</guid>
+      <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&amp;rsquo;t so bad, after all console.log() allowed us to pass multiple parameters and would have no trouble logging them.
+let foo = { bar: 1 }; console.log(&#39;Foo is &#39;, foo); //Prints: Foo is Object { bar : 1 }  But this only covered one of the many use cases I used String.</description>
+    </item>
     
     <item>
       <title>HTTP Status Codes For a RESTful API</title>

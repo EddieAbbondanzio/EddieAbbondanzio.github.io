@@ -238,14 +238,23 @@ blockquote {
     padding: .5em 10px;
     quotes: "\201C""\201D""\2018""\2019"
 }
-blockquote:before {
+/* blockquote:before {
     color: #ccc;
     content: open-quote;
+    display: block;
     font-size: 4em;
     line-height: .1em;
     margin-right: .25em;
     vertical-align: -.4em
 }
+blockquote:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 4em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em
+} */
 blockquote p {
     display: inline
 }
@@ -287,6 +296,16 @@ a.moretag:hover {
 #site-title a {
     font-family: Lato, Avenir, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
 }
+
+.entry-meta {
+    padding-left: 16px;
+}
+
+article {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
 article p {
     margin: 1.5rem 0;
     font-size: 1.2em;
@@ -294,7 +313,13 @@ article p {
 }
 
 article ul, ol {
+    list-style-position: inside;
     padding-bottom: 1em;
+}
+
+article code {
+    color: rgb(70, 71, 71);
+    background-color: rgb(238, 237, 237);
 }
 
 #content {
