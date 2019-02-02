@@ -118,14 +118,14 @@
 </section></header>
 <section class="entry-content">
 <article>
-<p>Coming from the .NET world <code>String.Format()</code> was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&rsquo;t so bad, after all <code>console.log()</code> allowed us to pass multiple parameters and would have no trouble logging them.</p>
+<p>Coming from the .NET world <code>String.Format()</code> was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&rsquo;t so bad, after all <code>console.log()</code> allows us to pass multiple parameters and has no trouble logging them.</p>
 
 <pre><code class="language-js">    let foo = { bar: 1 };
     console.log('Foo is ', foo);
     //Prints: Foo is Object { bar : 1 }
 </code></pre>
 
-<p>But this only covered one of the many use cases I used <code>String.Format()</code> for. Disappointed with TypeScript, I decided to do some searching online. Surely I couldn&rsquo;t be the only one with this frustration?</p>
+<p>But this only covers one of the many use cases I used <code>String.Format()</code> for. Disappointed with TypeScript, I decided to do some searching online. Surely I couldn&rsquo;t be the only one with this frustration?</p>
 
 <p>Thanks to my scrutinizing research efforts (aka a couple Google searches) I discovered it was not TypeScript that was lacking, but instead it was a failure on my part to understand string interpolation. Things didn&rsquo;t really click until I came across a StackOverflow question from someone else who was facing a similar issue. The top answer of the post advised them to use string interpolation.</p>
 
