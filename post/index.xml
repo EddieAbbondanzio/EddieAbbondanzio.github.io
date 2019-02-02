@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 Feb 2019 16:52:42 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 18:29:29 -0400</lastBuildDate>
     
 	<atom:link href="https://EddieAbbondanzio.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>TypeScript - Interpolated Strings</title>
-      <link>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</link>
-      <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
-      
-      <guid>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</guid>
-      <description>Interpolated strings are the bees knees</description>
-    </item>
     
     <item>
       <title>HTTP Status Codes For a RESTful API</title>
