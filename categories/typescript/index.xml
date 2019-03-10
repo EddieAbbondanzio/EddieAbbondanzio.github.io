@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Typescript on Eddie Abbondanzio</title>
-    <link>eddieabbondanz.io/categories/typescript/</link>
+    <link>https://EddieAbbondanzio.github.io/categories/typescript/</link>
     <description>Recent content in Typescript on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Fri, 01 Feb 2019 16:52:42 -0400</lastBuildDate>
     
-	<atom:link href="eddieabbondanz.io/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://EddieAbbondanzio.github.io/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TypeScript - Interpolated Strings</title>
-      <link>eddieabbondanz.io/post/typescript/interpolated-strings/</link>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</link>
       <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
       
-      <guid>eddieabbondanz.io/post/typescript/interpolated-strings/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/interpolated-strings/</guid>
       <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&amp;rsquo;t so bad, after all console.log() allows us to pass multiple parameters and has no trouble logging them.
 let foo = { bar: 1 }; console.log(&#39;Foo is &#39;, foo); //Prints: Foo is Object { bar : 1 }  But this only covers one of the many use cases I used String.</description>
     </item>
     
     <item>
       <title>TypeScript - Taking The Magic Out of Magic Strings</title>
-      <link>eddieabbondanz.io/post/typescript/magic-strings/</link>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/magic-strings/</link>
       <pubDate>Sat, 05 Jan 2019 09:53:42 -0400</pubDate>
       
-      <guid>eddieabbondanz.io/post/typescript/magic-strings/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/magic-strings/</guid>
       <description>What&amp;rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
 They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</description>
     </item>
     
     <item>
       <title>TypeScript - How To Set Up A New Project</title>
-      <link>eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</link>
+      <link>https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/</link>
       <pubDate>Mon, 26 Nov 2018 06:57:42 -0400</pubDate>
       
-      <guid>eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</guid>
+      <guid>https://EddieAbbondanzio.github.io/post/typescript/setting-up-a-typescript-project/</guid>
       <description>Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&amp;rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</description>
     </item>
     
