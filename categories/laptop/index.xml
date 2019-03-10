@@ -2,22 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laptop on Eddie Abbondanzio</title>
-    <link>https://EddieAbbondanzio.github.io/categories/laptop/</link>
+    <link>eddieabbondanz.io/categories/laptop/</link>
     <description>Recent content in Laptop on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 15 Feb 2019 21:17:42 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://EddieAbbondanzio.github.io/categories/laptop/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="eddieabbondanz.io/categories/laptop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>More RAM</title>
-      <link>https://EddieAbbondanzio.github.io/post/laptop/more-ram/</link>
+      <title>WorkStation - Goodbye Windows</title>
+      <link>eddieabbondanz.io/post/laptop/kubuntu/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>eddieabbondanz.io/post/laptop/kubuntu/</guid>
+      <description>I&amp;rsquo;ve been using Windows for as long as I can remember. Back when Windows 2000 was a big deal I remember using it to play Space Cadet pinball although I was never very good at it.
+With the rise of Windows 10 it feels as if Microsoft is going downhill and no longer gives you &amp;ldquo;full control&amp;rdquo; of your own computer. My biggest gripe with Windows 10 is the automatic updates that it forces upon you.</description>
+    </item>
+    
+    <item>
+      <title>WorkStation - More RAM</title>
+      <link>eddieabbondanz.io/post/laptop/more-ram/</link>
       <pubDate>Fri, 15 Feb 2019 21:17:42 -0400</pubDate>
       
-      <guid>https://EddieAbbondanzio.github.io/post/laptop/more-ram/</guid>
+      <guid>eddieabbondanz.io/post/laptop/more-ram/</guid>
       <description>Mo&amp;rsquo; RAM, Mo&amp;rsquo; Problems I use my laptop for a ton of software development. I&amp;rsquo;ve been working on launching a SaaS and I often need to have a development build of the backend running along with the frontend. Both of those and a database and I&amp;rsquo;m easily eating up 5-6 gigabytes of RAM. My laptop is a Dell Inspirion 7559, and it came with 8 gigs of RAM from the factory.</description>
     </item>
     
