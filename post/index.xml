@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 13:22:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43; - Introduction and Hello World</title>
+      <link>https://eddieabbondanz.io/post/c&#43;&#43;/hello-world/</link>
+      <pubDate>Sun, 12 May 2019 13:22:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/c&#43;&#43;/hello-world/</guid>
+      <description>I&amp;rsquo;ve been wanting to dive into C++ for some time now, and figure it&amp;rsquo;s finally time to bite the bullet. I&amp;rsquo;m already familiar with several other languages (C#, JavaScript, and TypeScript) but none of these are low level like C++. My plan for this journey is to learn in public and share everything I learn via a series of blog posts.
+To keep things concise, I won&amp;rsquo;t be covering the basics of programming so this series will assume the reader already has some experience under their belt.</description>
+    </item>
     
     <item>
       <title>Launching a SaaS - Part 2 The Launch</title>
