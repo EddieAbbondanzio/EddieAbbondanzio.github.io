@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 12 May 2019 13:22:42 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jun 2019 14:50:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ASP.NET Core - Inversion of Control Container</title>
+      <link>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</link>
+      <pubDate>Sat, 29 Jun 2019 14:50:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
+      <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.
+Let&amp;rsquo;s imagine we&amp;rsquo;re building an API that has a UserController to provide an endpoint for retrieving users via their numeric id from the database.</description>
+    </item>
     
     <item>
       <title>C&#43;&#43; - Introduction and Hello World</title>

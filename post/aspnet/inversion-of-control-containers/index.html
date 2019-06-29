@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Civic Build - 4/15/18 &middot; Eddie Abbondanzio</title>
+  <title>ASP.NET Core - Inversion of Control Container &middot; Eddie Abbondanzio</title>
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
@@ -48,9 +48,9 @@
       <div class="header-overlay">
         <div class="post-heading">
           <h1>
-          Civic Build - 4/15/18
+          ASP.NET Core - Inversion of Control Container
             <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcivic%2f18-04-15%2f" target="_blank">
+              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2finversion-of-control-containers%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
                 <g>
@@ -67,7 +67,7 @@
                     S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                 </g>
               </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcivic%2f18-04-15%2f" target="_blank">
+              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2finversion-of-control-containers%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
                 <g>
                   <g>
@@ -88,7 +88,7 @@
                       S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                   </g>
               </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2fcivic%2f18-04-15%2f" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2finversion-of-control-containers%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
@@ -113,72 +113,172 @@
 
 <section id="content" role="main">
 <section class="entry-meta">
-  <span class="post-date">Apr 15, 2018</span>
+  <span class="post-date">Jun 29, 2019</span>
 </section></header>
 <section class="entry-content">
 <article>
 
 
-<h2 id="connecting-the-pieces">Connecting the Pieces</h2>
+<p>ASP.NET Core supports <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">dependency injection</a> directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</p>
 
-<p>It&rsquo;s easy to forget just how many parts you&rsquo;ve removed until it comes time to put them all back together. I know I&rsquo;m probably not alone when I say I&rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&hellip;</p>
+<p>Let&rsquo;s imagine we&rsquo;re building an API that has a <code>UserController</code> to provide an endpoint for retrieving users via their numeric id from the database. Since we don&rsquo;t want the <code>UserController</code> to directly interact with the database as it would violate the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">single responsibility principle</a> we will rely upon a <code>UserService</code> to do the dirty work for us.</p>
 
-<p>To help keep costs down I try to buy cheap things when I know they&rsquo;ll only be used temporarily. In this case I bought a Harbor Freight furniture dolley to support the motor / transmission. The sticker claimed it could support 1000lbs and while the wood felt cheap the cashier assured me they&rsquo;re tougher than they appear.</p>
+<p>We&rsquo;ll even take it one step further and assume our <code>UserService</code> implements an <code>IUserService</code> interface to support dependency inversion by coding against the <code>IUserService</code> interface in the <code>UserController</code>.</p>
 
-<p>For the price they aren&rsquo;t bad, but sadly the dolly snapped today. Thankfully it wasn&rsquo;t a clean break and I was able to slip something underneath before the motor hit the ground.</p>
+<pre><code class="language-csharp">public interface IUserService {
+  Task&lt;User&gt; GetUser(int id);
+}
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/1.jpg" class="image-center"></p>
+public class UserService : IUserService {
+  public async Task&lt;User&gt; GetUser(int id) {
+    //Magic goes here...
+  }
+}
+</code></pre>
 
-<p>Up here in Maine the roads have salt on them for almost 6 months out of the year. While this car doesn&rsquo;t see much snow, I didn&rsquo;t want the bare welds to start rusting so I spent some time on them today. Here&rsquo;s the passenger wheel well before starting.</p>
+<p>And for completeness the <code>UserController</code>:</p>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/2.jpg" class="image-center"></p>
+<pre><code class="language-csharp">[Route(&quot;api/user&quot;)]
+[ApiController]
+public class UserController : ControllerBase {
+  private IUserService userService; //Need a way to instantiate this...
 
-<p>To make working in there easier I pulled out the strut /  spindle quickly. Then hit the welds with a wire wheel.</p>
+  [HttpGet(&quot;{id}&quot;)]
+  public async Task&lt;ActionResult&gt; FindUserById(int id) {
+    User user = await userService.FindById(id);
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/3.jpg" class="image-center"></p>
+    if(user != null) {
+      return Ok(user);
+    } else {
+      return NotFound();
+    }
+  }
+}
+</code></pre>
 
-<p>After that the welds were hit with some paint followed by rubberized undercoating. I meant to take a picture before moving on to the next step but I forgot. With the welds done I started running the new brake line for the passenger front caliper.</p>
+<h1 id="registering-dependencies">Registering Dependencies</h1>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/4.jpg" class="image-center"></p>
+<p>In order for ASP.NET to be able to resolve a dependency, we need to register it with the IoC container. In older versions of ASP.NET this would be done in <code>global.asax</code>. However, this file is no longer present and the IoC container is now configured in <code>Startup.cs</code>. By default, <code>Startup.cs</code> is located within the root directory of your project. Open it up and locate the following method:</p>
 
-<p>You may notive a second hole in the above picture. Let&rsquo;s just say the first location caused the line to rub with the wheel and that was far from ideal&hellip;</p>
+<pre><code class="language-csharp">  // This method gets called by the runtime. Use this method to add services to the container.
+  public void ConfigureServices(IServiceCollection services) {
 
-<p>I also managed to get the two fittings that weren&rsquo;t hooking up properly to finally mate with their lines. I purposely placed these under the heater core hoses to hide them from view.</p>
+  }
+</code></pre>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/6.jpg" class="image-center"></p>
+<p>The parameter <code>services</code> of type <code>IServiceCollection</code> is the IoC container we need to set up. When it comes to registering a dependency with the container we have three different lifetimes available: transient, singleton, or scoped.</p>
 
-<p>With those lines taken care of I was able to pop the heater core back in. I made sure every bolt / nut was holding it in place in hopes of reducing interior rattles.</p>
+<h2 id="transient">Transient</h2>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/7.jpg" class="image-center"></p>
+<p>Dependencies registered via <code>AddTransient()</code> will return a new instance each time the dependency is resolved. This is useful for lightweight, stateless classes that don&rsquo;t require initialization.</p>
 
-<p>Then I hooked up the heater core hoses + the new heater valve. The original valve never worked quite right after sand blasting it so I ended up splurging on a new oem one.</p>
+<h2 id="singleton">Singleton</h2>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/8.jpg" class="image-center"></p>
+<p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it&rsquo;s resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
 
-<p>Figured it was time to finalize the fuel lines. The lines used were from a kit JB Tuned sells but honestly you should just cut out the main in the middle and buy directly from e85 Freaks. JB Tuned doesn&rsquo;t seem like that great of a company.</p>
+<h2 id="scoped">Scoped</h2>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/9.jpg" class="image-center">
-<img src="https://eddieabbondanz.io/img/civic/4-15-18/10.jpg" class="image-center"></p>
+<p>Lastly, a scoped dependency registered with <code>AddScoped()</code> will return a new instance per connection (request). For example if Client A made an API request it would be given one instance of the dependency but if Client B made a request it would be given another.</p>
 
-<p>Cleaned up some of the wiring on the inside. Everything still visible will be hidden in the glove box.
-<img src="https://eddieabbondanz.io/img/civic/4-15-18/11.jpg" class="image-center"></p>
+<p>None of the three methods accept any parameters, instead the dependency type is passed in via generics. Each method is also overloaded to allow for registering a dependency to it&rsquo;s exact type, or to an interface / abstract class (useful for dependency inversion).</p>
 
-<p>I tried bending my lines for the master cylinder. They aren&rsquo;t perfect but I&rsquo;m still pretty new to bending my own brake lines so I&rsquo;m pretty happy with them.</p>
+<p>Continuing on with our example, if we want to register our <code>UserService</code> as a transient we could do so:</p>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/12.jpg" class="image-center"></p>
+<pre><code class="language-csharp">  // This method gets called by the runtime. Use this method to add services to the container.
+  public void ConfigureServices(IServiceCollection services) {
+    services.AddTransient&lt;UserService&gt;();
+  }
+</code></pre>
 
-<p>Current bay status</p>
+<p>But, if we want to fully utilize dependency inversion we would need to reference the interface <code>UserService</code> implements, or else ASP.NET won&rsquo;t be able to resolve a <code>IUserService</code> dependency with our service.</p>
 
-<p><img src="https://eddieabbondanz.io/img/civic/4-15-18/13.jpg" class="image-center">
-<img src="https://eddieabbondanz.io/img/civic/4-15-18/14.jpg" class="image-center"></p>
+<pre><code class="language-csharp">  // This method gets called by the runtime. Use this method to add services to the container.
+  public void ConfigureServices(IServiceCollection services) {
+    services.AddTransient&lt;IUserService, UserService&gt;();
+  }
+</code></pre>
 
-<p>First start should be next weekend!</p>
+<h1 id="resolving-dependencies">Resolving Dependencies</h1>
+
+<p>We need to make a minor tweak to the constructor of <code>UserController</code> so ASP.NET knows to pass it a dependecy when creating the controller.</p>
+
+<pre><code class="language-csharp">[Route(&quot;api/user&quot;)]
+public class UserController : BaseController {
+  private IUserService userService;
+
+  public UserController(IUserService service) {
+    userService = service;
+  }
+  ...
+}
+</code></pre>
+
+<p>Now ASP.NET will automatically inject our depedency of the <code>IUserService</code> when it instantiates an instance of the <code>UserController</code>.</p>
+
+<p>*<strong>*Note</strong>: Since the <code>UserController</code> constructor expects a parameter of type <code>IUserService</code> it is crucial we register the <code>UserService</code> with its interface. If we register <code>UserService</code> without its interface then ASP.NET will throw an exception due to being unable to find the dependency.</p>
+
+<pre><code class="language-csharp">//Good
+services.AddTransient&lt;IUserService, UserService&gt;();
+
+//Bad
+services.AddTransient&lt;UserService&gt;();
+</code></pre>
+
+<h1 id="nested-dependencies">Nested Dependencies</h1>
+
+<p>The IoC container provided by ASP.NET supports nested dependencies. If our example of the <code>UserController</code> and <code>UserService</code> from earlier was a standard N-Tier structured project, there&rsquo;s a good chance our <code>UserService</code> needs some kind of way to interact with the data persistance layer. In a project with no objet relational mapping (ORM) library this would typically be a <code>UserRepo</code> to allow for CRUD (Create, Read, Update, and Delete) actions of users in the database.</p>
+
+<p>To ensure we keep the layers of the project loosely-coupled we wouldn&rsquo;t want the <code>UserService</code> to have to create it&rsquo;s own <code>UserRepo</code> instance. Instead we would want to code against a <code>IUserRepo</code> interface and pass the instance of the repo into the service via it&rsquo;s constructor.</p>
+
+<pre><code class="language-csharp">public class UserService {
+  private IUserRepo userRepo;
+
+  public UserService(IUserRepo uRepo) {
+    userRepo = uRepo;
+  }
+}
+
+public interface IUserRepo {
+  User FindById(int id);
+}
+
+public class UserRepo : IUserRepo {
+  public User FindById(int id){
+    //magic
+  }
+}
+</code></pre>
+
+<p>Then when we set up our IoC container we need to register the new dependency (the UserRepo)</p>
+
+<pre><code class="language-csharp">  // This method gets called by the runtime. Use this method to add services to the container.
+  public void ConfigureServices(IServiceCollection services) {
+    services.AddTransient&lt;IUserRepo, UserRepo&gt;();
+    services.AddTransient&lt;IUserService, UserService&gt;();
+  }
+</code></pre>
+
+<p>And now the IoC container will correctly resolve our <code>UserService</code> dependency and give it an instance of the <code>UserRepo</code>.</p>
+
+<h1 id="3rd-party-ioc-containers">3rd Party IoC Containers</h1>
+
+<p>While the IoC container provided by ASP.NET should suffice for most uses, it does have some drawbacks. As noted by the <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement">official documentation</a> it lacks the following features:</p>
+
+<ul>
+<li>Property injection</li>
+<li>Injection based on name</li>
+<li>Child containers</li>
+<li>Custom lifetime management</li>
+<li><code>Func&lt;T&gt;</code> support for lazy initialization</li>
+</ul>
+
+<p>If any of these missing features are deal breakers for you, the default IoC container can be swapped out with an external library such as <a href="https://www.nuget.org/packages/Autofac/">AutoFac</a> and following the instructions available <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement">here</a>.</p>
 
 </section>
 <div class="entry-links"></div>
 </article>
 <div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcivic%2f18-04-15%2f" target="_blank">
+  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2finversion-of-control-containers%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>
     <g>
@@ -195,7 +295,7 @@
         S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
     </g>
   </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcivic%2f18-04-15%2f" target="_blank">
+  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2finversion-of-control-containers%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
     <g>
       <g>
@@ -216,7 +316,7 @@
           S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
       </g>
   </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2fcivic%2f18-04-15%2f" target="_blank">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2finversion-of-control-containers%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>
