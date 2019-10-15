@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 29 Jun 2019 14:50:42 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2019 14:50:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/categories/aspnet/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
+      <link>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
+      <pubDate>Mon, 14 Oct 2019 14:50:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
+      <description>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.
+Claims Claims are the foundation behind claims-based authentication (who would have guessed).</description>
+    </item>
     
     <item>
       <title>ASP.NET Core - Inversion of Control Container</title>

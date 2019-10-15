@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Acura Build - 03/14/2014 &middot; Eddie Abbondanzio</title>
+  <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals &middot; Eddie Abbondanzio</title>
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
@@ -48,9 +48,9 @@
       <div class="header-overlay">
         <div class="post-heading">
           <h1>
-          Acura Build - 03/14/2014
+          ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals
             <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2facura%2f14-03-11%2f" target="_blank">
+              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2fclaims-based-authentication-claims-identities-principals%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
                 <g>
@@ -67,7 +67,7 @@
                     S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                 </g>
               </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2facura%2f14-03-11%2f" target="_blank">
+              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2fclaims-based-authentication-claims-identities-principals%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
                 <g>
                   <g>
@@ -88,7 +88,7 @@
                       S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                   </g>
               </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2facura%2f14-03-11%2f" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2fclaims-based-authentication-claims-identities-principals%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
@@ -113,43 +113,125 @@
 
 <section id="content" role="main">
 <section class="entry-meta">
-  <span class="post-date">Mar 14, 2014</span>
+  <span class="post-date">Oct 14, 2019</span>
 </section></header>
 <section class="entry-content">
 <article>
-<p>Made a little more progress on the tablet. I&rsquo;m using a Nexus 7 Gen 2 tablet.</p>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/1.jpg" class="image-center"></p>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/2.jpg" class="image-center"></p>
+<p>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the <code>User</code> property on <code>HttpContext</code> is now of type <code>ClaimsPrincipal</code> instead of <code>IPrincipal</code>. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.</p>
 
-<p>I had to open up the tablet to solder in wires to the power button. Other than that everything is 100% stock.</p>
+<h2 id="claims">Claims</h2>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/3.jpg" class="image-center"></p>
+<p>Claims are the foundation behind claims-based authentication (who would have guessed). A claim is simply a piece of information about a subject. A claim does not dictate what a subject can, or cannot do.</p>
 
-<p>Installed. I was hoping to match the bezel closer to the radio but it was pretty hard finding the right black.</p>
+<blockquote>
+<p>The term &ldquo;subject&rdquo; is used because claims are not restricted to only describing users. Claims can be about an application, service, or device.</p>
+</blockquote>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/4.jpg" class="image-center"></p>
+<p>Some examples of claims a subject may have are:</p>
 
-<p>Winter shot.</p>
+<ul>
+<li>Username</li>
+<li>Email</li>
+<li>IP Address</li>
+<li>Location</li>
+</ul>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/5.jpg" class="image-center"></p>
+<p>Claims are name-key values and are represented via the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0"><code>System.Security.Claim</code></a> class.</p>
 
-<p>I love the color that the projectors give off. That and the custom lighting in the cluster is a how upgrade over the stock setup.</p>
+<pre><code class="language-csharp">public class Claim {
+  public string Type { get; }
+  public string Value { get; }
+  public string ValueType { get; }
+  // some properties have been omitted.
+}
+</code></pre>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/6.jpg" class="image-center"></p>
+<p>Each claim has a <code>Type</code> property that is used to identify it, and a <code>Value</code> property which holds the data of the claim. For simplicity, <code>Claim</code> stores <code>Value</code> as a string, but if the data type of <code>Value</code> is not a string then the <code>ValueType</code> property can be set so the claim consumer knows how to interpret the <code>Value</code>.</p>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/7.jpg" class="image-center"></p>
+<p>We could represent a claim for a user&rsquo;s Id as follows:</p>
 
-<p>The color of the cut off is visible whenever I drive around.</p>
+<pre><code class="language-csharp">Claim idClaim = new Claim(&quot;Id&quot;, &quot;1&quot;, &quot;Integer&quot;);
+// idClaim.Name == &quot;Id&quot;
+// idClaim.Value = &quot;1&quot;
+// idClaim.ValueType == &quot;Integer&quot;
+</code></pre>
 
-<p><img src="https://eddieabbondanz.io/img/acura/14-03-14/8.jpg" class="image-center"></p>
+<p>Or if we needed one for a user&rsquo;s birthday:</p>
+
+<pre><code class="language-csharp">Claim dobClaim = new Claim(&quot;dob&quot;, &quot;04/20/1969&quot;, &quot;Date&quot;);
+// dobClaim.Name == &quot;dob&quot;
+// dobClaim.Value == &quot;04/20/1969&quot;
+// dobClaim.ValueType == &quot;Date&quot;
+</code></pre>
+
+<h2 id="identities">Identities</h2>
+
+<p>Claims representing the same subject can be grouped together and placed in a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0"><code>ClaimsIdentity</code></a>.</p>
+
+<pre><code class="language-csharp">public class ClaimsIdentity {
+  public string Name { get; }
+  public IEnumerable&lt;Claim&gt; Claims { get; }
+  public string AuthenticationType { get; }
+  public bool IsAuthenticated { get; }
+  // some properties have been omitted.
+}
+</code></pre>
+
+<p><code>ClaimsIdentity</code> also has an <code>AuthenticationType</code> property that holds the authentication method used such as &ldquo;Bearer&rdquo; or &ldquo;Basic&rdquo; and <code>IsAuthenticated</code> which returns true as long as <code>AuthenticationType</code> is not null.</p>
+
+<p>Imagine we we&rsquo;re working on an API where users are identified via their unique Id, and Name. After validating a bearer token (JWT, etc&hellip;) recieved from the user we could create a ClaimsIdentity to represent them:</p>
+
+<pre><code class="language-csharp">ClaimsIdentity userIdentity = new ClaimsIdentity(
+  new Claim[] {
+    new Claim(&quot;Id&quot;, &quot;1&quot;),
+    new Claim(&quot;Username&quot;, &quot;Bert&quot;)
+  },
+  &quot;Bearer&quot;
+);
+
+//userIdentity.IsAuthenticated == true since we passed &quot;Bearer&quot; as AuthenticationType.
+</code></pre>
+
+<h2 id="principals">Principals</h2>
+
+<p>A <code>ClaimsIdentity</code> is convenient for representing a subject via a collection of claims but what if we want to assign more than one identity to a subject? Returning back to our previous example of the API, what would happen if we wanted to also identify the device being used by the user to ensure it&rsquo;s whitelisted? Sure we could add a new Claim with device IP address, or agent string to the user identity, but what if the user accesses the API from more than one device?</p>
+
+<p>To handle this use case without duplicating user information we&rsquo;d be best off to create a new identity to represent the device that holds the IP address, and agent string.</p>
+
+<pre><code class="language-csharp">ClaimsIdentity deviceIdentity = new ClaimsIdentity(
+  new Claim[] {
+    new Claim(&quot;IP&quot;, &quot;192.168.1.1&quot;),
+    new Claim(&quot;Agent&quot;, &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0&quot;)
+  }
+);
+
+// Note the lack of AuthenticationType
+</code></pre>
+
+<p>Seperating the user claims from the device claims into two seperate identities allows us to indicate that each can exist without the other. This works great, but how do we show that the identies are related? Enter the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal?view=netcore-3.0"><code>ClaimsPrincipal</code></a>.</p>
+
+<pre><code class="language-csharp">public class ClaimsPrincipal {
+  public IEnumerable&lt;Claim&gt; Claims { get; }
+  public IEnumerable&lt;ClaimsIdentity&gt; { get; }
+  public ClaimsIdentity Identity { get; }
+  // some properties have been omitted.
+}
+</code></pre>
+
+<p>&ldquo;A principal object represents the security context of the user on whose behalf the code is running, including that user&rsquo;s identity&rdquo; <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.principal.iprincipal?view=netcore-3.0">[1]</a>. By using a <code>ClaimsPrincipal</code> we can group the user identity, and device identity into one context without having to duplicate any info.</p>
+
+<pre><code class="language-csharp">  var principal = new ClaimsPrincipal(new IIdentity[] { userIdentity, deviceIdentity });
+</code></pre>
+
+<p><code>ClaimsPrincipal</code> provides a handful of helper methods / properties to check things such as if a claim exists (<code>HasClaim()</code>) in any of the associated identities. When working within an API controller in ASP.NET we can access the current principal via the <code>User</code> property.</p>
 
 </section>
 <div class="entry-links"></div>
 </article>
 <div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2facura%2f14-03-11%2f" target="_blank">
+  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2fclaims-based-authentication-claims-identities-principals%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>
     <g>
@@ -166,7 +248,7 @@
         S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
     </g>
   </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2facura%2f14-03-11%2f" target="_blank">
+  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2fclaims-based-authentication-claims-identities-principals%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
     <g>
       <g>
@@ -187,7 +269,7 @@
           S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
       </g>
   </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2facura%2f14-03-11%2f" target="_blank">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2faspnet%2fclaims-based-authentication-claims-identities-principals%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>

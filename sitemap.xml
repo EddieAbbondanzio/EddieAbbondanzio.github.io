@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</loc>
-    <lastmod>2019-06-29T14:50:42-04:00</lastmod>
+    <loc>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</loc>
+    <lastmod>2019-10-14T14:50:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eddieabbondanz.io/post/c&#43;&#43;/hello-world/</loc>
-    <lastmod>2019-05-12T13:22:42-04:00</lastmod>
+    <loc>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</loc>
+    <lastmod>2019-06-29T14:50:42-04:00</lastmod>
   </url>
   
   <url>
@@ -348,7 +348,7 @@
   
   <url>
     <loc>https://eddieabbondanz.io/categories/aspnet/</loc>
-    <lastmod>2019-06-29T14:50:42-04:00</lastmod>
+    <lastmod>2019-10-14T14:50:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -359,14 +359,8 @@
   </url>
   
   <url>
-    <loc>https://eddieabbondanz.io/categories/c&#43;&#43;/</loc>
-    <lastmod>2019-05-12T13:22:42-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://eddieabbondanz.io/categories/</loc>
-    <lastmod>2019-06-29T14:50:42-04:00</lastmod>
+    <lastmod>2019-10-14T14:50:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -378,7 +372,7 @@
   
   <url>
     <loc>https://eddieabbondanz.io/</loc>
-    <lastmod>2019-06-29T14:50:42-04:00</lastmod>
+    <lastmod>2019-10-14T14:50:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -426,7 +420,7 @@
   
   <url>
     <loc>https://eddieabbondanz.io/post/</loc>
-    <lastmod>2019-06-29T14:50:42-04:00</lastmod>
+    <lastmod>2019-10-14T14:50:42-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 29 Jun 2019 14:50:42 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2019 14:50:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
+      <link>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
+      <pubDate>Mon, 14 Oct 2019 14:50:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
+      <description>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.
+Claims Claims are the foundation behind claims-based authentication (who would have guessed).</description>
+    </item>
     
     <item>
       <title>ASP.NET Core - Inversion of Control Container</title>
@@ -20,16 +30,6 @@
       <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
       <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.
 Let&amp;rsquo;s imagine we&amp;rsquo;re building an API that has a UserController to provide an endpoint for retrieving users via their numeric id from the database.</description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43; - Introduction and Hello World</title>
-      <link>https://eddieabbondanz.io/post/c&#43;&#43;/hello-world/</link>
-      <pubDate>Sun, 12 May 2019 13:22:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/c&#43;&#43;/hello-world/</guid>
-      <description>I&amp;rsquo;ve been wanting to dive into C++ for some time now, and figure it&amp;rsquo;s finally time to bite the bullet. I&amp;rsquo;m already familiar with several other languages (C#, JavaScript, and TypeScript) but none of these are low level like C++. My plan for this journey is to learn in public and share everything I learn via a series of blog posts.
-To keep things concise, I won&amp;rsquo;t be covering the basics of programming so this series will assume the reader already has some experience under their belt.</description>
     </item>
     
     <item>
