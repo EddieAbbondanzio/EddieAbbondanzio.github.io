@@ -13,13 +13,13 @@
     
     
     <item>
-      <title>Greedy Meshing for Voxels</title>
+      <title>Greedy Meshing for Vertex Colored Voxels In Unity</title>
       <link>https://eddieabbondanz.io/post/voxel/greedy-mesh/</link>
       <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/voxel/greedy-mesh/</guid>
-      <description>What is Greedy Meshing? Anyone who has spent some time working with voxels will have heard of the term &amp;lsquo;Greedy Meshing&amp;rsquo; at some point. If your new to the concept check out this article written by Mikola Lysenko. It&amp;rsquo;s probably the most popular (and if not best) article out there regarding voxel mesh generation.
-However if your like me, your probably looking for a simpler explanation and perhaps some source code to really get the ball rolling, and improve your understanding.</description>
+      <description>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&amp;rsquo;Leary, with a few alterations made.
+The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn&amp;rsquo;t be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I&amp;rsquo;ve left it up to the reader.</description>
     </item>
     
   </channel>
