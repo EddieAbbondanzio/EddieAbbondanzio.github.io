@@ -117,6 +117,8 @@
 </section></header>
 <section class="entry-content">
 <article>
+<p><strong>TL;DR</strong> Full algorithm is at the bottom. Classes for <code>Block</code>, <code>Chunk</code>, and <code>MeshData</code> are defined below the intro.</p>
+
 <p>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from <a href="https://github.com/roboleary/GreedyMesh">Robert O&rsquo;Leary</a>, with a few alterations made.</p>
 
 <p>The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn&rsquo;t be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I&rsquo;ve left it up to the reader.</p>
@@ -340,7 +342,13 @@ again to do the back faces.</p>
 <p>We&rsquo;ll want to prep our bool array now. Since we want to be able to handle non cubic chunks we can&rsquo;t initialize it until we know which axis we are slicing. The next step is to begin building the mesh slices.</p>
 
 <p>Start by getting the block at the current position and check to ensure that it
-hasn&rsquo;t already been merged, is solid, and can be seen by the player.</p>
+hasn&rsquo;t already been merged, is not an air block, and can be seen by the player. A block is considered visible to the player if the adjacent block to it is air. This will be checked via <code>IsBlockFaceVisible()</code></p>
+
+<pre><code class="language-c#">    public bool IsBlockFaceVisible(Vector3Int blockPosition, int axis, bool backFace) {
+        blockPosition[axis] += backFace ? -1 : 1;
+        return !GetBlock(blockPosition).IsSolid();
+    }
+</code></pre>
 
 <pre><code class="language-c#">    // Iterate over the chunk layer by layer.
     for (startPos[direction] = 0; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
@@ -373,6 +381,16 @@ compares the next neighbor to see if it is a match to the current one.</p>
 <pre><code class="language-c#">    // Figure out the width, then save it
     for (currPos = startPos, currPos[workAxis2]++; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
     quadSize[workAxis2] = currPos[workAxis2] - startPos[workAxis2];
+</code></pre>
+
+<p>For completeness here is <code>CompareStep()</code></p>
+
+<pre><code class="language-c#">public bool CompareStep(Vector3Int a, Vector3Int b, int direction, bool backFace) {
+    Block blockA = GetBlock(a);
+    Block blockB = GetBlock(b);
+
+    return blockA == blockB &amp;&amp; blockB.IsSolid() &amp;&amp; IsBlockFaceVisible(b, direction, backFace);
+}
 </code></pre>
 
 <p>Now we want to repeat the same process for the height of the face.</p>
@@ -515,6 +533,31 @@ compares the next neighbor to see if it is a match to the current one.</p>
 
         return builder.ToMeshData();
     }
+</code></pre>
+
+<p>And last but not least, if we want to render our mesh we generated we&rsquo;ll need to pass the data to a MeshFilter. For extra bonus points we could implement an extension method to make it even cleaner.</p>
+
+<pre><code class="language-c#">using UnityEngine;
+
+public static class MeshFilterExts {
+    public static void ApplyMeshData(this MeshFilter meshFilter, MeshData meshData) {
+        meshFilter.mesh.Clear();
+        meshFilter.mesh.vertices = meshData.Vertices;
+        meshFilter.mesh.triangles = meshData.Triangles;
+
+        //Color mesh and calculate normals
+        meshFilter.mesh.colors32 = meshData.Colors;
+        meshFilter.mesh.RecalculateNormals();
+    }
+}
+</code></pre>
+
+<p>Then to render our mesh we would use it like so.</p>
+
+<pre><code class="language-c#">    MeshData mesh = chunk.GenerateMesh();
+
+    MeshFilter meshFilter = GetComponent&lt;MeshFilter&gt;();
+    meshFilter.ApplyMeshData(mesh);
 </code></pre>
 
 </section>
