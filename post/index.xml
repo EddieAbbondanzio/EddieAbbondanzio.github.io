@@ -7,18 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 12 Nov 2019 21:01:01 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 06:10:00 +0000</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How to Set Up LiteNetLib with Unity</title>
+      <title>Unity - How to Create a Basic Server / Client With LiteNetLib</title>
+      <link>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</link>
+      <pubDate>Wed, 13 Nov 2019 06:10:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</guid>
+      <description>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: How to Setup LiteNetLib With Unity</description>
+    </item>
+    
+    <item>
+      <title>Unity - How to Set Up LiteNetLib</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-setup/</link>
       <pubDate>Tue, 12 Nov 2019 21:01:01 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
-      <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to your Plugins folder in your Unity project.
+      <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
  LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
 Create a Plugins Folder Open up your Unity project.</description>
     </item>
