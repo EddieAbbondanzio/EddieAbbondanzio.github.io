@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Cherokee Build - 10/21/18 &middot; Eddie Abbondanzio</title>
+  <title>How to Set Up LiteNetLib with Unity &middot; Eddie Abbondanzio</title>
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
@@ -12,7 +12,8 @@
 <body>
 
 
-<header class="header" style="background-color: rgb(46, 155, 218);  ;" role="banner">
+<header class="header" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://eddieabbondanz.io/img/unity/litenetlib-setup/hero.jpg); background-size: 100% auto;" role="banner">
+<!-- FeaturedImage. Otherwise show default //-->
 
 
       
@@ -48,9 +49,9 @@
       <div class="header-overlay">
         <div class="post-heading">
           <h1>
-          Cherokee Build - 10/21/18
+          How to Set Up LiteNetLib with Unity
             <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcherokee%2f18-10-21%2f" target="_blank">
+              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-setup%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
                 <g>
@@ -67,7 +68,7 @@
                     S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                 </g>
               </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcherokee%2f18-10-21%2f" target="_blank">
+              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-setup%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
                 <g>
                   <g>
@@ -88,7 +89,7 @@
                       S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                   </g>
               </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2fcherokee%2f18-10-21%2f" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-setup%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
@@ -113,49 +114,64 @@
 
 <section id="content" role="main">
 <section class="entry-meta">
-  <span class="post-date">Oct 21, 2018</span>
+  <span class="post-date">Nov 12, 2019</span>
 </section></header>
 <section class="entry-content">
 <article>
 
 
-<h1 id="patching-holes">Patching Holes</h1>
+<blockquote>
+<p><strong>TL;DR</strong> Download the most recent stable release source code zip and copy the <code>/LiteNetLib</code> folder to your <code>Plugins</code> folder in your Unity project.</p>
+</blockquote>
 
-<p>This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about <a href="https://eddieabbondanz.io/post/cherokee/18-10-08/">cutting out and welding in a new rocker panel</a>.</p>
+<p><a href="https://github.com/RevenantX/LiteNetLib">LiteNetLib</a> is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with <a href="https://github.com/lidgren/lidgren-network-gen3">Lidgren</a> you&rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&rsquo;s a popular choice.</p>
 
-<p>Initially the plan for this weekend was to finish welding in the new driver side rocker panel. However, I managed to screw up trimming it to fit and had to order another replacement which wont be in for about a week. To help keep progress moving I decided to finally tackle the &ldquo;little&rdquo; rust hole I spotted in the driver wheel well.</p>
+<h3 id="create-a-plugins-folder">Create a <code>Plugins</code> Folder</h3>
 
-<p>I first noticed this hole when I removed the inner fender liner to replace my dead wiper fluid pumps. I really didn&rsquo;t expect it to be so large, as just the previous summer I had pulled the carpet and cleaned up the inner floor pan and didn&rsquo;t spot any rust that was too horrible.</p>
+<p>Open up your Unity project. If you haven&rsquo;t already, create a <code>Plugins</code> folder directly under your <code>Assets</code> folder. The <code>Plugins</code> folder is one of several <a href="https://docs.unity3d.com/Manual/SpecialFolders.html">special folders</a> Unity supports. <code>Plugins</code> is a bit of an odd name, but Unity will check here for any 3rd party libraries you may want to use. These can be in the form of DLLs, or raw source files (Unity will compile .cs files).</p>
 
-<p><img src="https://eddieabbondanz.io/img/cherokee/10-21-18/1.jpg" class="image-center"></p>
+<pre><code>Assets
+└───Scenes
+└───Scripts
+└───Plugins &lt;-- Create This
+</code></pre>
 
-<p>This is directly after pulling back the carpet and seeing how much metal I could break off by hand. The hole ended up being quite a bit larger than I was expecting, but it wasn&rsquo;t the end of the world.</p>
+<h3 id="download-a-stable-release-of-litenetlib">Download a Stable Release of LiteNetLib</h3>
 
-<p><img src="https://eddieabbondanz.io/img/cherokee/10-21-18/2.jpg" class="image-center"></p>
+<p>Swing over to the <a href="https://github.com/RevenantX/LiteNetLib">LiteNetLib GitHub repo</a>. We need to navigate to the release page and find the most recent stable release.</p>
 
-<p>It looks as if the rust started in the body seam below it. On the inside there was a lot of seam sealer covering it. Perhaps some water managed to work it&rsquo;s way under the seam sealer and rusted out the metal over the years.</p>
+<p><img src="https://eddieabbondanz.io/img/unity/litenetlib-setup/1.png" class="image-center"></p>
 
-<p><img src="https://eddieabbondanz.io/img/cherokee/10-21-18/3.jpg" class="image-center"></p>
+<p>At the time of writing this <a href="https://github.com/RevenantX/LiteNetLib/releases/tag/v0.8.3">0.8.3</a> is the most recent stable release. Go ahead and download the source code zip, or tar.</p>
 
-<p>Like a diseased limb, there&rsquo;s only one way to prevent rust from spreading and that&rsquo;s by chopping it off. A 4&rdquo; disc on the grinder made quick work of the thin metal. The only thing that I had to be careful about was the interior wire harness which was only inches away from the hole.</p>
+<blockquote>
+<p>It&rsquo;s best not to use the DLL as there are some platform specific #ifdefs for Unity in the source code.</p>
+</blockquote>
 
-<p><img src="https://eddieabbondanz.io/img/cherokee/10-21-18/4.jpg" class="image-center"></p>
+<p><img src="https://eddieabbondanz.io/img/unity/litenetlib-setup/2.png" class="image-center"></p>
 
-<p>I didn&rsquo;t realize it at the time but the metal I bought was too thick and a total pain to work with. The patch ended up looking not so great, but it&rsquo;s water proof and solid metal.</p>
+<h3 id="extract-litenetlib-to-your-plugins-folder">Extract <code>/LiteNetLib</code> to Your <code>Plugins</code> Folder</h3>
 
-<p><img src="https://eddieabbondanz.io/img/cherokee/10-21-18/5.jpg" class="image-center"></p>
+<p>Once the download completes, extract the <code>LiteNetLib</code> folder from the zip into your <code>Plugins</code> folder. Your project directory should be as follows.</p>
 
-<p>The light gray stuff is SEM seam sealer. It&rsquo;s the same stuff that I used on my passenger rocker panel, and it dries in just 10 minutes which is hard to beat!</p>
+<pre><code>Assets
+└───Scenes
+└───Scripts
+└───Plugins
+│   └───LiteNetLib
+</code></pre>
 
-<p><img src="https://eddieabbondanz.io/img/cherokee/10-21-18/6.jpg" class="image-center"></p>
+<p>Switch back into Unity, and it should pop up with a loading window as it processes the new files. Once complete, your project should now have LiteNetLib ready to use. Visual Studio, or VS Code will recognize LiteNetLib classes and Unity will be able to compile your project error free.</p>
 
-<p>To finish it off I threw some POR15 over it. I don&rsquo;t really care about the finish since this is going to be hidden behind the plastic fender liner. If I had to do it again (which I do on the passenger side), I would use slightly thinner metal so I could at least work the patch into a more presentable shape before welding it in.</p>
+<p><img src="https://eddieabbondanz.io/img/unity/litenetlib-setup/3.png" class="image-center"></p>
+
+<p>Have fun!</p>
 
 </section>
 <div class="entry-links"></div>
 </article>
 <div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcherokee%2f18-10-21%2f" target="_blank">
+  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-setup%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>
     <g>
@@ -172,7 +188,7 @@
         S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
     </g>
   </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fcherokee%2f18-10-21%2f" target="_blank">
+  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-setup%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
     <g>
       <g>
@@ -193,7 +209,7 @@
           S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
       </g>
   </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2fcherokee%2f18-10-21%2f" target="_blank">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-setup%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>

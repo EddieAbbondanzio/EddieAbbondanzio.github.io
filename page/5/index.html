@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
-</head>
+</head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <body>
 
 
@@ -59,6 +59,14 @@
 
 <section id="content" role="main">
    
+  <article>
+    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/nomansblocks/4-8-18-update/" rel="bookmark" title="Link to No Mans Blocks - 4/8/18">No Mans Blocks - 4/8/18</a></h2>
+    <span class="post-date">Published Apr 8, 2018</span>
+    <p>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&rsquo;s message events.</p>
+    <a class="moretag" href="https://eddieabbondanz.io/post/nomansblocks/4-8-18-update/">Continue reading &#8614;</a>
+    <hr class="divider">
+    </article>
+  
   <article>
     <h2 class="post-title"><a href="https://eddieabbondanz.io/post/civic/18-04-08/" rel="bookmark" title="Link to Civic Build - 4/8/18">Civic Build - 4/8/18</a></h2>
     <span class="post-date">Published Apr 8, 2018</span>
@@ -129,16 +137,6 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
     <span class="post-date">Published Mar 30, 2018</span>
     <p>GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.</p>
     <a class="moretag" href="https://eddieabbondanz.io/post/unity/object-pool/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/" rel="bookmark" title="Link to Greedy Meshing for Vertex Colored Voxels In Unity">Greedy Meshing for Vertex Colored Voxels In Unity</a></h2>
-    <span class="post-date">Published Mar 25, 2018</span>
-    <p>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
-This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&rsquo;Leary, with a few alterations made.
-The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Continue reading &#8614;</a>
     <hr class="divider">
     </article>
   

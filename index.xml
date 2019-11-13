@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 14 Oct 2019 14:50:42 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 21:01:01 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Set Up LiteNetLib with Unity</title>
+      <link>https://eddieabbondanz.io/post/unity/litenetlib-setup/</link>
+      <pubDate>Tue, 12 Nov 2019 21:01:01 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
+      <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to your Plugins folder in your Unity project.
+ LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
+Create a Plugins Folder Open up your Unity project.</description>
+    </item>
     
     <item>
       <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
