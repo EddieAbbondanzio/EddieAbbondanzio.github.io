@@ -354,7 +354,7 @@ public class Cat : INetSerializable {
 }
 
 netPacketProcessor = new NetPacketProcessor();
-netPacketProcessor.RegisterNestedType&lt;Cat&gt;();
+netPacketProcessor.RegisterNestedType&lt;Cat&gt;(() =&gt; new Cat()); // We need to pass the constructor when it's not a struct.
 </code></pre>
 
 <h1 id="source-code">Source Code</h1>
