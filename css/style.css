@@ -896,3 +896,15 @@ article h5 {
 article h6 {
   padding-top: 12px;
 }
+
+article th {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+article td {
+  text-align: left !important;
+  padding: 8px;
+}

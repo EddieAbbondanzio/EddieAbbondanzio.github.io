@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Unity - How to Send Data With LiteNetLib &middot; Eddie Abbondanzio</title>
+  <title>Unity - LiteNetLib&#39;s Delivery Methods &middot; Eddie Abbondanzio</title>
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
   <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
   <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
@@ -15,7 +15,7 @@
 <body>
 
 
-<header class="header" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://eddieabbondanz.io/img/unity/litenetlib-sending-data/hero.jpg); background-size: 100% auto;" role="banner">
+<header class="header" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://eddieabbondanz.io/img/unity/litenetlib-delivery-methods/hero.jpg); background-size: 100% auto;" role="banner">
 <!-- FeaturedImage. Otherwise show default //-->
 
 
@@ -52,9 +52,9 @@
       <div class="header-overlay">
         <div class="post-heading">
           <h1>
-          Unity - How to Send Data With LiteNetLib
+          Unity - LiteNetLib&#39;s Delivery Methods
             <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
+              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-delivery-methods%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
                 <g>
@@ -71,7 +71,7 @@
                     S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                 </g>
               </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
+              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-delivery-methods%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
                 <g>
                   <g>
@@ -92,7 +92,7 @@
                       S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
                   </g>
               </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-delivery-methods%2f" target="_blank">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
               <g>
@@ -117,255 +117,103 @@
 
 <section id="content" role="main">
 <section class="entry-meta">
-  <span class="post-date">Nov 13, 2019</span>
+  <span class="post-date">Nov 14, 2019</span>
 </section></header>
 <section class="entry-content">
 <article>
 
 
-<p>Continuing off the previous post about <a href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/">how to build a basic server / client set up with LiteNetLib</a> it&rsquo;s time to talk about sending data. Because, well, a network set up that doesn&rsquo;t actually send any data is kind of useless.</p>
-
-<p>As we already know, we listen for incoming messages from the network via an <code>IEventListener</code> that we pass to our <code>NetManager</code>. <code>IEventListener</code> contains an event called <code>NetworkReceiveEvent</code> which is triggered anytime the network receives data from another connection. (If we were a server this would be one of the clients sending us something.)</p>
-
-<p>In the <code>NetworkReceiveEvent</code> delegate we&rsquo;re given a few parameters. The <code>NetPeer</code> that the message came from, a <code>NetDataReader</code> for reading the incoming data, and the <code>DeliveryMethod</code> of how it was sent (more on this later).</p>
-
-<pre><code class="language-c#">public void HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
-
-}
-</code></pre>
-
-<p><code>NetDataReader</code> provides us with a lot of great helpers to interpret the data received, such as <code>GetByte()</code>, <code>GetInt()</code>, or even <code>GetStringArray()</code> but what do we do if we don&rsquo;t know what kind of data was sent?</p>
-
-<p>One option would be to ensure our data is always sent with a type flag as the first byte which we could then use to recreate the original object but then our handler would grow linearly as the number of packet types increases.</p>
-
-<pre><code class="language-c#">public void HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
-    PacketType = (PacketType)data.PeekByte()
-
-    switch(PacketType) {
-        case PacketType.Foo
-        ...
-        case PacketType.Bar
-        ...
-        case PacketType.Baz
-        ...
-        case PacketType.Cat
-        ...
-        case PacketType.Dog
-        ...
-
-        // And so on...
-    }
-}
-</code></pre>
-
-<h1 id="enter-the-netpacketprocessor">Enter the <code>NetPacketProcessor</code></h1>
-
-<p>On the other hand, we could offload some of this logic to the <code>NetPacketProcessor</code> and leave it up to the processor to rebuild our incoming data. This convenience does come with a price though. The <code>NetPacketProcessor</code> will add 64 bits (8 bytes) to the beginning of each message we send. There&rsquo;s no doubt that there are some situations where every bit matters and this may be a deal breaker, but for most applications it&rsquo;s a reasonable price to pay.</p>
-
-<p>Let&rsquo;s define a packet that we want to send over the network.</p>
-
-<pre><code class="language-c#">public class FooPacket {
-    public int NumberValue { get; set; }
-    public string StringValue { get; set; }
-}
-</code></pre>
-
- 
-<div class="alert alert-info d-flex flex-row  align-items-center">
-  <i class="material-icons pr-3">
-    info
-  </i>
-  <p><a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-client-cs"><code>Client.cs</code></a> and <a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-server-cs"><code>Server.cs</code></a> from the previous section will be reused to reduce redundancy.</p>
-
-</div>
-
-
-
-<p>First up, we&rsquo;re going to modify the server to send a <code>FooPacket</code> to the newly connected client in <code>PeerConnectedEvent</code>. To do this we&rsquo;ll need to add a <code>NetPacketProcessor</code> as a field on the server.</p>
-
-<pre><code class="language-c#">public class Server : MonoBehaviour {
-    EventBasedNetListener netListener;
-    NetManager netManager;
-    NetPacketProcessor netProcessor; // Add this
-
-    // Start is called before the first frame update
-    void Start() {
-        netListener = new EventBasedNetListener();
-        netManager = new NetManager(netListener);
-        netProcessor = new NetPacketProcessor(); // Don't forget to initialize it
-
-        netManager.Start(9050);
-
-        netListener.ConnectionRequestEvent += (request) =&gt; {
-            request.Accept();
-        };
-
-        netListener.PeerConnectedEvent += (client) =&gt; {
-            Debug.LogError($&quot;Client connected: {client}&quot;);
-        };
-    }
-
-    // Update is called once per frame
-    void Update() {
-        netManager.PollEvents();
-    }
-}
-</code></pre>
-
-<p>Then in the <code>PeerConnectedEvent</code> delegate we&rsquo;ll add a new call to <code>NetPacketProcessor.Send()</code>.</p>
-
-<pre><code class="language-c#">netListener.PeerConnectedEvent += (client) =&gt; {
-    Debug.LogError($&quot;Client connected: {client}&quot;);
-
-    netProcessor.Send(client, new FooPacket() { NumberValue = 1, StringValue = &quot;Test&quot; }, DeliveryMethod.ReliableOrdered);
-};
-</code></pre>
-
-<p>If we wanted to send a <code>FooPacket</code> to every client connected to the server when a new client connects we could achieve this by using the following line instead:</p>
-
-<pre><code class="language-c#">netManager.SendToAll(netProcessor.Write(new FooPacket() { NumberValue = 3, StringValue = &quot;Cat&quot;}), DeliveryMethod.ReliableOrdered);
-</code></pre>
-
-<p>With the server set up to send a <code>FooPacket</code> to the client upon successful connection, we need to update the client to listen for the <code>FooPacket</code>. We&rsquo;ll do this by adding a <code>NetPacketProcessor</code> field to the <code>Client</code>.</p>
-
-<pre><code class="language-c#">public class Client : MonoBehaviour {
-    EventBasedNetListener netListener;
-    NetManager netManager;
-    NetPacketProcessor netPacketProcessor; // New field
-
-    void Start() {
-        netListener = new EventBasedNetListener();
-        netPacketProcessor = new NetPacketProcessor(); // Same thing to initalize as the server
-
-        netListener.PeerConnectedEvent += (server) =&gt; {
-            Debug.LogError($&quot;Connected to server: {server}&quot;);
-        };
-
-        netManager = new NetManager(netListener);
-        netManager.Start();
-        netManager.Connect(&quot;localhost&quot;, 9050);
-    }
-
-    // Update is called once per frame
-    void Update() {
-        netManager.PollEvents();
-    }
-}
-</code></pre>
-
-<p>Then we&rsquo;ll set it up so the packet processor reads all incoming data. Put this in <code>Start()</code> with the other initialization logic.</p>
-
-<pre><code class="language-c#">netListener.NetworkReceiveEvent += (server, reader, deliveryMethod) =&gt; {
-    netPacketProcessor.ReadAllPackets(reader, server);
-};
-</code></pre>
-
-<p>And lastly, we need to tell the packet processor to notify us when a <code>FooPacket</code> comes in. This will also be done in <code>Start()</code>.</p>
-
-<pre><code class="language-c#">netPacketProcessor.SubscribeReusable&lt;FooPacket&gt;((packet) =&gt; {
-    Debug.Log(&quot;Got a foo packet!&quot;);
-    Debug.Log(packet.NumberValue);
-});
-</code></pre>
-
-<p>Running the server and client we can see that the <code>FooPacket</code> is sent to the client from the server and contains the correct <code>NumberValue</code> of 1.</p>
-
-
-<figure>
-    
-        <img src="https://eddieabbondanz.io/img/unity/litenetlib-sending-data/1.png" />
-    
-    
-</figure>
-
-
-<h1 id="limitations">Limitations</h1>
-
-<p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
-
-<h2 id="properties-must-have-public-getters-setters-or-classes-structs-implement-inetserializable">Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
-
-<pre><code class="language-c#">// Bad!
-public class BarPacket {
-    public string Key { get; private set; }
-}
-
-// Good
-public class BarPacket : INetSerializable {
-    public string Key { get; private set; }
-
-    public void Serialize(NetDataWriter writer) {
-        writer.Put(Key);
-    }
-
-    public void Deserialize(NetDataReader reader) {
-        Key = reader.GetString();
-    }
-}
-</code></pre>
-
-<h2 id="nested-types-are-not-supported-the-following-types-for-properties-are-supported">Nested types are not supported. The following types for properties are supported:</h2>
-
-<pre><code>byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
-byte[] short[] ushort[] int[] uint[] long[] ulong[] float[] double[] bool[] string[]
-</code></pre>
-
-<p>However, there are two workarounds. The first option is to register the nested type with a static <code>Serialize</code> and <code>Deserialize</code> method to parse them. This is useful for types that we do not have control over such as <code>Vector3</code> in Unity.</p>
-
-<pre><code class="language-c#">public class FakePacket {
-    public Vector3 Position { get; set; }
-}
-
-public class Vector3Utils {
-    public static void Serialize(NetDataWriter writer, Vector3 vector) {
-        writer.Put(vector.x);
-        writer.Put(vector.y);
-        writer.Put(vector.z);
-    }
-
-    public static Vector3 Deserialize(NetDataReader reader) {
-        return new Vector3(reader.GetFloat(), reader.GetFloat(), reader.GetFloat());
-    }
-}
-
-netPacketProcessor = new NetPacketProcessor();
-netPacketProcessor.RegisterNestedType(Vector3Utils.Serialize, Vector3Utils.Deserialize);
-</code></pre>
-
-<p>The second option is for the nested type to implement <code>INetSerializable</code>. This is the better choice to use when we have control over the type definition.</p>
-
-<pre><code class="language-c#">public class CatPacket {
-    public Cat Cat { get; set; }
-}
-
-public class Cat : INetSerializable {
-    public string Name { get; set; }
-    public int Age { get; set; }
-
-    public void Serialize(NetDataWriter writer) {
-        writer.Put(Name);
-        writer.Put(Age);
-    }
-
-    public void Deserialize(NetDataReader reader) {
-        Name = reader.GetString();
-        Age = reader.GetInt();
-    }
-}
-
-netPacketProcessor = new NetPacketProcessor();
-netPacketProcessor.RegisterNestedType&lt;Cat&gt;();
-</code></pre>
-
-<h1 id="source-code">Source Code</h1>
-
-<script type="application/javascript" src="//gist.github.com/EddieAbbondanzio/0344b09faaadf5b6adea3ec91c7efebf.js"></script>
+<p>While LiteNetLib may run on <a href="https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/">UDP (User Datagram Protocol)</a> which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &ldquo;reliability&rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).</p>
+
+<p>In total, LiteNetLib offers 5 different delivery methods for sending packets to peers. They are as follows:</p>
+
+<ul>
+<li>Unreliable</li>
+<li>ReliableUnOrdered</li>
+<li>Sequenced</li>
+<li>ReliableOrdered</li>
+<li>ReliableSequenced</li>
+</ul>
+
+<h1 id="unreliable">Unreliable</h1>
+
+<p>Unreliable is standard UDP. There is no guarentee that a packet will be succesfully delivered to it&rsquo;s destination, and if it does, there&rsquo;s a chance more than 1 copy of it could arrive. Unreliable is best for data that needs to be sent over and over as quickly as possible. Player positions in a first person shooter would be a perfect example since they&rsquo;re constantly changing and a lost packet or two doesn&rsquo;t have much effect overall.</p>
+
+<h1 id="reliableunordered">ReliableUnordered</h1>
+
+<p>ReliableUnordered provides a reliable channel with the smallest performance hit possible. Any packet sent will be delivered, and only 1 copy of it will ever be delivered. The only downside is there&rsquo;s no promise what order the packets are delivered in. If packet A and packet B were sent in order AB they could arrive as AB, or BA. This channel is useful for sending duplicates such as a weapon firing event. It&rsquo;s irrelevant which bullet was fired, we just need to know that a bullet was fired, and ensure that every bullet is accounted for.</p>
+
+<h1 id="sequenced">Sequenced</h1>
+
+<p>Sequenced is another unreliable delivery method. Unlike unreliable, it ensures only 1 copy of a packet will be delivered (if it is delivered), and the packets always arrive in order.</p>
+
+<h1 id="reliableordered">ReliableOrdered</h1>
+
+<p>ReliableOrdered is as the name implies, a reliable delivery method that prevents duplicates. It also ensures packets are delivered in the same exact order they&rsquo;re sent. Unlike ReliableUnordered if packet A and packet B were sent in order AB they&rsquo;ll always arrive in order AB. Because of the slight performance hit only use ReliableOrdered if the order is truly a requirement. Otherwise, opt for ReliableUnordered.</p>
+
+<h1 id="reliablesequenced">ReliableSequenced</h1>
+
+<p>Last but not least, ReliableSequenced. Similar to ReliableOrdered it ensures packets will always be delivered in order, and no duplicates will be delivered. It does not guarentee that every packet will be delivered, instead only the last packet is guarenteed to be delivered. This would be useful for something such as a countdown timer sending out updates to listeners. It&rsquo;s not the end of the world if a packet is lost during the countdown, but the last packet (timer ending) is important.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>Always be sure to pick the least restrictive delivery method when sending data. The more restrictions the delivery method enforces, the higher performance cost it comes with.</p>
+
+<table>
+<thead>
+<tr>
+<th>Delivery Method</th>
+<th>Reliable</th>
+<th>Ordered</th>
+<th>Prevents Duplicates</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Unreliable</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>ReliableUnordered</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Sequenced</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>ReliableOrdered</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>ReliableSequenced</td>
+<td>Yes*</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+
+<p>* Last packet only</p>
 
 </section>
 <div class="entry-links"></div>
 </article>
 <div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
+  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-delivery-methods%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>
     <g>
@@ -382,7 +230,7 @@ netPacketProcessor.RegisterNestedType&lt;Cat&gt;();
         S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
     </g>
   </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
+  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-delivery-methods%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
     <g>
       <g>
@@ -403,7 +251,7 @@ netPacketProcessor.RegisterNestedType&lt;Cat&gt;();
           S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
       </g>
   </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-delivery-methods%2f" target="_blank">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
   <g>

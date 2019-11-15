@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 13 Nov 2019 19:04:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2019 21:31:00 +0000</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unity - LiteNetLib&#39;s Delivery Methods</title>
+      <link>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</link>
+      <pubDate>Thu, 14 Nov 2019 21:31:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</guid>
+      <description>While LiteNetLib may run on UDP (User Datagram Protocol) which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &amp;ldquo;reliability&amp;rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).
+In total, LiteNetLib offers 5 different delivery methods for sending packets to peers. They are as follows:
+ Unreliable ReliableUnOrdered Sequenced ReliableOrdered ReliableSequenced  Unreliable Unreliable is standard UDP.</description>
+    </item>
     
     <item>
       <title>Unity - How to Send Data With LiteNetLib</title>
