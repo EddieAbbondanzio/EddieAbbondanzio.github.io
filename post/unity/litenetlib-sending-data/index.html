@@ -127,7 +127,7 @@
 
 <p>As we already know, we listen for incoming messages from the network via an <code>IEventListener</code> that we pass to our <code>NetManager</code>. <code>IEventListener</code> contains an event called <code>NetworkReceiveEvent</code> which is triggered anytime the network receives data from another connection. (If we were a server this would be one of the clients sending us something.)</p>
 
-<p>In the <code>NetworkReceiveEvent</code> delegate we&rsquo;re given a few parameters. The <code>NetPeer</code> that the message came from, a <code>NetDataReader</code> for reading the incoming data, and the <code>DeliveryMethod</code> of how it was sent (more on this later).</p>
+<p>In the <code>NetworkReceiveEvent</code> delegate we&rsquo;re given a few parameters. The <code>NetPeer</code> that the message came from, a <code>NetDataReader</code> for reading the incoming data, and the <code>DeliveryMethod</code> of how it was sent (see <a href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/">LiteNetLib&rsquo;s Delivery Methods</a>).</p>
 
 <pre><code class="language-c#">public void HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
 
