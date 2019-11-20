@@ -1,270 +1,249 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Greedy Meshing for Vertex Colored Voxels In Unity &middot; Eddie Abbondanzio</title>
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
-  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Greedy Meshing for Vertex Colored Voxels In Unity</title>
+    
+    
+    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body>
 
+<body class="has-background-light">
+    
+<section class="hero is-fullheight"
+    style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://eddieabbondanz.io/post/voxel/greedy-mesh/images/hero.png); "
+    role="banner">
+    
 
-<header class="header" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://eddieabbondanz.io/img/voxel/greedy-mesh/hero.png); background-size: 100% auto;" role="banner">
-<!-- FeaturedImage. Otherwise show default //-->
+            <div class="hero-head">
+                <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+            Eddie Abbondanzio
+        </a>
 
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="hamburger-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
-      
-      <section id="branding">
-        <div id="site-title"><a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></div>
-        <nav id="mainmenu">
-          <ul>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-        </ul>
-        </nav>
-        <input type="checkbox" id="op"></input>
-        <div class="lower">
-          <label for="op">Menu</label>
-        </div>
-        <div class="overlay overlay-hugeinc">
-          <label for="op"></label>
-          <nav id="menu" role="navigation">
-            <ul>
-            <li><a href="https://eddieabbondanz.io">Home</a></li>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-          </ul>
-          </nav>
-        </div>
-        <div class="clearfix"></div>
-      </section>
+    <div id="hamburger-menu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+                About Me
+            </a>
 
-      <div class="header-overlay">
-        <div class="post-heading">
-          <h1>
-          Greedy Meshing for Vertex Colored Voxels In Unity
-            <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fvoxel%2fgreedy-mesh%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-              <g>
-                <g>
-                  <path d="M437.219,245.162c0-3.088-0.056-6.148-0.195-9.18c13.214-9.848,24.675-22.171,33.744-36.275
-                    c-12.129,5.453-25.148,9.097-38.835,10.626c13.965-8.596,24.675-22.338,29.738-38.834c-13.075,7.928-27.54,13.603-42.924,16.552
-                    c-12.323-14.021-29.904-22.95-49.35-23.284c-37.332-0.612-67.598,30.934-67.598,70.463c0,5.619,0.584,11.072,1.752,16.329
-                    c-56.22-3.616-106.042-32.881-139.369-77c-5.814,10.571-9.152,22.922-9.152,36.164c0,25.037,11.934,47.291,30.071,60.421
-                    c-11.099-0.5-21.503-3.866-30.627-9.375c0,0.306,0,0.612,0,0.918c0,34.996,23.312,64.316,54.245,71.159
-                    c-5.675,1.613-11.656,2.448-17.804,2.421c-4.367-0.028-8.596-0.501-12.713-1.392c8.596,28.681,33.577,49.628,63.147,50.323
-                    c-23.145,19.194-52.298,30.655-83.955,30.572c-5.453,0-10.849-0.361-16.135-1.029c29.933,20.53,65.456,32.491,103.65,32.491
-                    C369.23,447.261,437.219,339.048,437.219,245.162z"/>
-                  <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                    C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                    S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                </g>
-              </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fvoxel%2fgreedy-mesh%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path d="M349.146,402.251c0-30.016-17.387-44.815-36.525-60.922l-15.662-12.185c-4.785-3.895-11.294-9.124-11.294-18.693
-                      c0-9.57,6.537-15.662,12.184-21.309c18.249-14.354,36.526-29.571,36.526-61.756c0-33.076-20.892-50.462-30.878-58.724l0,0h26.956
-                      L358.271,153h-89.603c-23.479,0-53.049,3.478-77.863,23.924c-18.693,16.079-27.818,38.278-27.818,58.279
-                      c0,33.911,26.093,68.294,72.188,68.294c4.368,0,9.125-0.445,13.937-0.863c-2.17,5.23-4.34,9.569-4.34,16.97
-                      c0,13.464,6.955,21.753,13.047,29.57c-19.556,1.308-56.109,3.478-83.065,20.001c-25.676,15.217-33.493,37.416-33.493,53.077
-                      c0,32.186,30.461,62.201,93.525,62.201C309.561,484.454,349.146,443.116,349.146,402.251z M255.621,291.34
-                      c-37.415,0-54.384-48.292-54.384-77.418c0-11.322,2.17-23.034,9.569-32.186c6.955-8.707,19.139-14.382,30.461-14.382
-                      c36.108,0,54.802,48.738,54.802,80.033c0,7.845-0.862,21.754-10.877,31.768C278.237,286.11,266.498,291.312,255.621,291.34z
-                      M256.066,466.177c-46.54,0-76.556-22.171-76.556-53.049s27.846-41.311,37.416-44.787c18.276-6.093,41.755-6.982,45.677-6.982
-                      c4.34,0,6.51,0,9.987,0.445c33.076,23.479,47.402,35.218,47.402,57.416C319.992,446.176,297.821,466.177,256.066,466.177z"/>
-                    <polygon points="353.068,317.768 400.164,317.768 400.164,364.836 423.699,364.836 423.699,317.768 470.768,317.768 
-                      470.768,294.233 423.699,294.233 423.699,247.165 400.164,247.165 400.164,294.233 353.068,294.233     "/>
-                    <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                      C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                      S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                  </g>
-              </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2fvoxel%2fgreedy-mesh%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-              <g>
-                <g>
-                  <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                    C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                    S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                  <path d="M317.739,482.617V306h58.279l9.208-58.529h-67.487v-29.348c0-15.272,5.007-29.849,26.928-29.849h43.813v-58.418h-62.201
-                    c-52.298,0-66.569,34.438-66.569,82.175v35.413h-35.885V306h35.885v176.617H317.739L317.739,482.617z"/>
-                </g>
-              </svg>
-              </a>
-            </div>
             
-          </h1>
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                GitHub
+            </a>
+            
+
+            
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                Twitter
+            </a>
+            
         </div>
     </div>
-    </header>
+</nav>
+            </div>
 
-    <div id="container">
+            
+            
+            <div class="hero-foot">
+                <div class="container">
+                    <header>
+    <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
 
+        
+        <div class="has-margin-bottom-3">
+            <h1 class="is-marginless is-size-3-touch is-size-1-desktop">
+                Greedy Meshing for Vertex Colored Voxels In Unity
+            </h1>
 
-<section id="content" role="main">
-<section class="entry-meta">
-  <span class="post-date">Mar 25, 2018</span>
-</section></header>
-<section class="entry-content">
+            
+        </div>
+
+        
+        <div class="is-flex-desktop flex-row  has-text-grey-lighter">
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+                <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
+                <time class="has-text-grey-lighter">Mar 25, 2018</time>
+            </div>
+
+            
+        </div>
+    </div>
+</header>
+                </div>
+            </div>
+            
+        </section>
+
+    <main class="container has-background-white">
+        
 <article>
-<p><strong>TL;DR</strong> Full algorithm is at the bottom. Classes for <code>Block</code>, <code>Chunk</code>, and <code>MeshData</code> are defined below the intro.</p>
+    <p><strong>TL;DR</strong> Full algorithm is at the bottom. Classes for <code>Block</code>, <code>Chunk</code>, and <code>MeshData</code> are defined below the intro.</p>
 
 <p>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from <a href="https://github.com/roboleary/GreedyMesh">Robert O&rsquo;Leary</a>, with a few alterations made.</p>
 
 <p>The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn&rsquo;t be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I&rsquo;ve left it up to the reader.</p>
 
 <p>I prefer colored blocks over typed blocks. As such each block in my implementation holds 4 bytes of data for the color (red, green, blue, and alpha). A block is considered &ldquo;solid&rdquo; if the alpha value is maxed out.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Block.cs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Block</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">byte</span> R { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">byte</span> G { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">byte</span> B { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">byte</span> A { <span style="color:#66d9ef">get</span>; }
 
-<pre><code class="language-csharp">// Block.cs
-public struct Block {
-    public byte R { get; }
-    public byte G { get; }
-    public byte B { get; }
-    public byte A { get; }
-
-    public Block(byte r, byte g, byte b, byte a = byte.MaxValue) {
+    <span style="color:#66d9ef">public</span> Block(<span style="color:#66d9ef">byte</span> r, <span style="color:#66d9ef">byte</span> g, <span style="color:#66d9ef">byte</span> b, <span style="color:#66d9ef">byte</span> a = <span style="color:#66d9ef">byte</span>.MaxValue) {
         R = r;
         G = g;
         B = b;
         A = a;
     }
 
-    public bool IsSolid() =&gt; A == byte.MaxValue;
-    public Color32 GetColor() =&gt; new Color32(R, G, B, A);
-}
-</code></pre>
-
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsSolid() =&gt; A == <span style="color:#66d9ef">byte</span>.MaxValue;
+    <span style="color:#66d9ef">public</span> Color32 GetColor() =&gt; <span style="color:#66d9ef">new</span> Color32(R, G, B, A);
+}</code></pre></div>
 <p>Blocks are held within a chunk. For performance reasons the chunk utilizes a flattened 3d array, but helper methods <code>ContainsIndex()</code> and <code>FlattenIndex()</code> are provided.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Chunk.cs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> UnityEngine;
 
-<pre><code class="language-csharp">// Chunk.cs
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Chunk</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> Vector3Int Dimensions = <span style="color:#66d9ef">new</span> Vector3Int(<span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">128</span>, <span style="color:#ae81ff">32</span>);
 
-public class Chunk {
-    public static readonly Vector3Int Dimensions = new Vector3Int(32, 128, 32);
+    <span style="color:#66d9ef">public</span> Vector3Int Position { <span style="color:#66d9ef">get</span>; }
 
-    public Vector3Int Position { get; }
+    <span style="color:#66d9ef">private</span> Block<span style="color:#a6e22e">[]</span> blocks { <span style="color:#66d9ef">get</span>; }
 
-    private Block[] blocks { get; }
-
-    public Chunk(Vector3Int position) {
+    <span style="color:#66d9ef">public</span> Chunk(Vector3Int position) {
         Position = position;
-        blocks = new Block[Dimensions.x * Dimensions.y * Dimensions.z];
+        blocks = <span style="color:#66d9ef">new</span> Block<span style="color:#a6e22e">[Dimensions.x * Dimensions.y * Dimensions.z]</span>;
     }
 
-    public void SetBlock(Vector3Int index, Block block) {
-        if (!ContainsIndex(index)) {
-            throw new IndexOutOfRangeException($&quot;Chunk does not contain index: {index}&quot;);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> SetBlock(Vector3Int index, Block block) {
+        <span style="color:#66d9ef">if</span> (!ContainsIndex(index)) {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IndexOutOfRangeException(<span style="color:#e6db74">$&#34;Chunk does not contain index: {index}&#34;</span>);
         }
 
-        blocks[FlattenIndex(index)] = block;
+        blocks<span style="color:#a6e22e">[FlattenIndex(index)]</span> = block;
     }
 
-    public Block GetBlock(Vector3Int index) {
-        if (!ContainsIndex(index)) {
-            return Block.Air();
+    <span style="color:#66d9ef">public</span> Block GetBlock(Vector3Int index) {
+        <span style="color:#66d9ef">if</span> (!ContainsIndex(index)) {
+            <span style="color:#66d9ef">return</span> Block.Air();
         }
 
-        return blocks[FlattenIndex(index)];
+        <span style="color:#66d9ef">return</span> blocks<span style="color:#a6e22e">[FlattenIndex(index)]</span>;
     }
 
-    private bool ContainsIndex(Vector3Int index) =&gt;
-        index.x &gt;= 0 &amp;&amp; index.x &lt; Dimensions.x &amp;&amp;
-        index.y &gt;= 0 &amp;&amp; index.y &lt; Dimensions.y &amp;&amp;
-        index.z &gt;= 0 &amp;&amp; index.z &lt; Dimensions.z;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> ContainsIndex(Vector3Int index) =&gt;
+        index.x &gt;= <span style="color:#ae81ff">0</span> &amp;&amp; index.x &lt; Dimensions.x &amp;&amp;
+        index.y &gt;= <span style="color:#ae81ff">0</span> &amp;&amp; index.y &lt; Dimensions.y &amp;&amp;
+        index.z &gt;= <span style="color:#ae81ff">0</span> &amp;&amp; index.z &lt; Dimensions.z;
 
-    private int FlattenIndex(Vector3Int index) =&gt;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> FlattenIndex(Vector3Int index) =&gt;
         (index.z * Dimensions.x * Dimensions.y) +
         (index.y * Dimensions.x) +
         index.x;
-}
-</code></pre>
-
+}</code></pre></div>
 <p>A <code>MeshData</code> class has been created to ease passing vertices, triangles, and colors around.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// MeshData.cs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> UnityEngine;
 
-<pre><code class="language-csharp">// MeshData.cs
-using System.Collections.Generic;
-using UnityEngine;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshData</span> {
+    <span style="color:#66d9ef">public</span> Vector3<span style="color:#a6e22e">[]</span> Vertices { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span><span style="color:#a6e22e">[]</span> Triangles { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> Color32<span style="color:#a6e22e">[]</span> Colors { <span style="color:#66d9ef">get</span>; }
 
-public class MeshData {
-    public Vector3[] Vertices { get; }
-    public int[] Triangles { get; }
-    public Color32[] Colors { get; }
-
-    public MeshData(Vector3[] vertices, int[] triangles, Color32[] colors) {
+    <span style="color:#66d9ef">public</span> MeshData(Vector3<span style="color:#a6e22e">[]</span> vertices, <span style="color:#66d9ef">int</span><span style="color:#a6e22e">[]</span> triangles, Color32<span style="color:#a6e22e">[]</span> colors) {
         Vertices = vertices;
         Triangles = triangles;
         Colors = colors;
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>And lastly, a helper class for building meshes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// MeshBuilder.cs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> UnityEngine;
 
-<pre><code class="language-csharp">// MeshBuilder.cs
-using System;
-using System.Collections.Generic;
-using UnityEngine;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshBuilder</span> {
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> List&lt;Vector3&gt; vertices;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> List&lt;<span style="color:#66d9ef">int</span>&gt; triangles;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> List&lt;Color32&gt; colors;
 
-public class MeshBuilder {
-    private readonly List&lt;Vector3&gt; vertices;
-    private readonly List&lt;int&gt; triangles;
-    private readonly List&lt;Color32&gt; colors;
-
-    public MeshBuilder() {
-        vertices = new List&lt;Vector3&gt;();
-        triangles = new List&lt;int&gt;();
-        colors = new List&lt;Color32&gt;();
+    <span style="color:#66d9ef">public</span> MeshBuilder() {
+        vertices = <span style="color:#66d9ef">new</span> List&lt;Vector3&gt;();
+        triangles = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">int</span>&gt;();
+        colors = <span style="color:#66d9ef">new</span> List&lt;Color32&gt;();
     }
 
-    public void AddSquareFace(Vector3[] vertices, Color32 color, bool isBackFace) {
-        if (vertices.Length != 4) {
-            throw new ArgumentException(&quot;A square face requires 4 vertices&quot;);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AddSquareFace(Vector3<span style="color:#a6e22e">[]</span> vertices, Color32 color, <span style="color:#66d9ef">bool</span> isBackFace) {
+        <span style="color:#66d9ef">if</span> (vertices.Length != <span style="color:#ae81ff">4</span>) {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;A square face requires 4 vertices&#34;</span>);
         }
 
-        // Add the 4 vertices, and color for each vertex.
-        for (int i = 0; i &lt; vertices.Length; i++) {
-            this.vertices.Add(vertices[i]);
+        <span style="color:#75715e">// Add the 4 vertices, and color for each vertex.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; vertices.Length; i++) {
+            <span style="color:#66d9ef">this</span>.vertices.Add(vertices<span style="color:#a6e22e">[i]</span>);
             colors.Add(color);
         }
 
-        if (!isBackFace) {
-            triangles.Add(this.vertices.Count - 4);
-            triangles.Add(this.vertices.Count - 3);
-            triangles.Add(this.vertices.Count - 2);
+        <span style="color:#66d9ef">if</span> (!isBackFace) {
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">4</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">3</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">2</span>);
 
-            triangles.Add(this.vertices.Count - 4);
-            triangles.Add(this.vertices.Count - 2);
-            triangles.Add(this.vertices.Count - 1);
-        } else {
-            triangles.Add(this.vertices.Count - 2);
-            triangles.Add(this.vertices.Count - 3);
-            triangles.Add(this.vertices.Count - 4);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">4</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">2</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">1</span>);
+        } <span style="color:#66d9ef">else</span> {
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">2</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">3</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">4</span>);
 
-            triangles.Add(this.vertices.Count - 1);
-            triangles.Add(this.vertices.Count - 2);
-            triangles.Add(this.vertices.Count - 4);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">1</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">2</span>);
+            triangles.Add(<span style="color:#66d9ef">this</span>.vertices.Count - <span style="color:#ae81ff">4</span>);
         }
     }
 
-    public MeshData ToMeshData() {
-        MeshData data = new MeshData(
+    <span style="color:#66d9ef">public</span> MeshData ToMeshData() {
+        MeshData data = <span style="color:#66d9ef">new</span> MeshData(
             vertices.ToArray(),
             triangles.ToArray(),
             colors.ToArray()
@@ -274,248 +253,206 @@ public class MeshBuilder {
         triangles.Clear();
         colors.Clear();
 
-        return data;
+        <span style="color:#66d9ef">return</span> data;
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Let&rsquo;s go ahead and define a <code>GenerateMesh()</code> method on our <code>Chunk</code>.</p>
-
-<pre><code class="language-csharp">// Chunk.cs
-
-public class Chunk {
-    public MeshData GenerateMesh() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Chunk.cs
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Chunk</span> {
+    <span style="color:#66d9ef">public</span> MeshData GenerateMesh() {
 
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Within <code>GenerateMesh()</code> well want to add a loop that runs through all 6 faces of the blocks. We&rsquo;ll also want to know if the current face is a &ldquo;back&rdquo; face.</p>
-
-<pre><code class="language-c#">    // Iterate over each face of the blocks.
-    for (int face = 0; face &lt; 6; face++) {
-        bool isBackFace = face &gt; 2;
-    }
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Iterate over each face of the blocks.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
+        <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
+    }</code></pre></div>
 <p>To simplify things, we&rsquo;ll break down the problem into building slices of the mesh on 1 plane
 at a time. Lets add some work variables for tracking which two axes we are working on. We will work
 on the planes YZ, ZX, XY. Each plane will be visited twice, once to do the front faces, then
 again to do the back faces.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">int</span> direction, workAxis1, workAxis2;
 
-<pre><code class="language-c#">    int direction, workAxis1, workAxis2;
-
-    for (int face = 0; face &lt; 6; face++) {
-        bool isBackFace = face &gt; 2;
-        direction = face % 3;
-        workAxis1 = (direction + 1) % 3;
-        workAxis2 = (direction + 2) % 3;
-    }
-</code></pre>
-
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
+        <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
+        direction = face % <span style="color:#ae81ff">3</span>;
+        workAxis1 = (direction + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
+        workAxis2 = (direction + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
+    }</code></pre></div>
 <p>We still need a few more work variables. Go ahead and add the following above the for loop.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    MeshBuilder builder = <span style="color:#66d9ef">new</span> MeshBuilder();
 
-<pre><code class="language-c#">    MeshBuilder builder = new MeshBuilder();
-
-    bool[,] merged;
+    <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[,]</span> merged;
 
     Vector3Int startPos, currPos, quadSize, m, n, offsetPos;
-    Vector3[] vertices;
+    Vector3<span style="color:#a6e22e">[]</span> vertices;
 
-    Block startBlock;
-</code></pre>
-
+    Block startBlock;</code></pre></div>
 <p>Now add an inner for loop as seen below. This will work it&rsquo;s way through the chunk 1 layer at a time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
+        <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
+        direction = face % <span style="color:#ae81ff">3</span>;
+        workAxis1 = (direction + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
+        workAxis2 = (direction + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
 
-<pre><code class="language-c#">    for (int face = 0; face &lt; 6; face++) {
-        bool isBackFace = face &gt; 2;
-        direction = face % 3;
-        workAxis1 = (direction + 1) % 3;
-        workAxis2 = (direction + 2) % 3;
+        startPos = <span style="color:#66d9ef">new</span> Vector3Int();
+        currPos = <span style="color:#66d9ef">new</span> Vector3Int();
 
-        startPos = new Vector3Int();
-        currPos = new Vector3Int();
-
-        // Iterate over the chunk layer by layer.
-        for (startPos[direction] = 0; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
+        <span style="color:#75715e">// Iterate over the chunk layer by layer.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[direction]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[direction]</span> &lt; Dimensions<span style="color:#a6e22e">[direction]</span>; startPos<span style="color:#a6e22e">[direction]</span>++) {
 
         }
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>We&rsquo;ll want to prep our bool array now. Since we want to be able to handle non cubic chunks we can&rsquo;t initialize it until we know which axis we are slicing. The next step is to begin building the mesh slices.</p>
 
 <p>Start by getting the block at the current position and check to ensure that it
 hasn&rsquo;t already been merged, is not an air block, and can be seen by the player. A block is considered visible to the player if the adjacent block to it is air. This will be checked via <code>IsBlockFaceVisible()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsBlockFaceVisible(Vector3Int blockPosition, <span style="color:#66d9ef">int</span> axis, <span style="color:#66d9ef">bool</span> backFace) {
+        blockPosition<span style="color:#a6e22e">[axis]</span> += backFace ? -<span style="color:#ae81ff">1</span> : <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">return</span> !GetBlock(blockPosition).IsSolid();
+    }</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Iterate over the chunk layer by layer.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[direction]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[direction]</span> &lt; Dimensions<span style="color:#a6e22e">[direction]</span>; startPos<span style="color:#a6e22e">[direction]</span>++) {
+        merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[Dimensions[workAxis1]</span>, Dimensions<span style="color:#a6e22e">[workAxis2]</span>];
 
-<pre><code class="language-c#">    public bool IsBlockFaceVisible(Vector3Int blockPosition, int axis, bool backFace) {
-        blockPosition[axis] += backFace ? -1 : 1;
-        return !GetBlock(blockPosition).IsSolid();
-    }
-</code></pre>
-
-<pre><code class="language-c#">    // Iterate over the chunk layer by layer.
-    for (startPos[direction] = 0; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
-        merged = new bool[Dimensions[workAxis1], Dimensions[workAxis2]];
-
-        // Build the slices of the mesh.
-        for (startPos[workAxis1] = 0; startPos[workAxis1] &lt; Dimensions[workAxis1]; startPos[workAxis1]++) {
-            for (startPos[workAxis2] = 0; startPos[workAxis2] &lt; Dimensions[workAxis2]; startPos[workAxis2]++) {
+        <span style="color:#75715e">// Build the slices of the mesh.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis1]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span>; startPos<span style="color:#a6e22e">[workAxis1]</span>++) {
+            <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis2]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span>; startPos<span style="color:#a6e22e">[workAxis2]</span>++) {
                 startBlock = GetBlock(startPos);
 
-                // If this block has already been merged, is air, or not visible skip it.
-                if (merged[startPos[workAxis1], startPos[workAxis2]] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
-                    continue;
+                <span style="color:#75715e">// If this block has already been merged, is air, or not visible skip it.
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (merged<span style="color:#a6e22e">[startPos[workAxis1]</span>, startPos<span style="color:#a6e22e">[workAxis2]</span>] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
+                    <span style="color:#66d9ef">continue</span>;
                 }
             }
         }
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>Reset the quad size variable (q) back to zero. This tracks how big the current face
 we are creating will be.</p>
-
-<pre><code class="language-c#">    //Reset the work var
-    quadSize = new Vector3Int();
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Reset the work var
+</span><span style="color:#75715e"></span>    quadSize = <span style="color:#66d9ef">new</span> Vector3Int();</code></pre></div>
 <p>Now we want to figure out how wide this face of the mesh will be. This for loop continuously
 compares the next neighbor to see if it is a match to the current one.</p>
-
-<pre><code class="language-c#">    // Figure out the width, then save it
-    for (currPos = startPos, currPos[workAxis2]++; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
-    quadSize[workAxis2] = currPos[workAxis2] - startPos[workAxis2];
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Figure out the width, then save it
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis2]</span>++; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
+    quadSize<span style="color:#a6e22e">[workAxis2]</span> = currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span>;</code></pre></div>
 <p>For completeness here is <code>CompareStep()</code></p>
-
-<pre><code class="language-c#">public bool CompareStep(Vector3Int a, Vector3Int b, int direction, bool backFace) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> CompareStep(Vector3Int a, Vector3Int b, <span style="color:#66d9ef">int</span> direction, <span style="color:#66d9ef">bool</span> backFace) {
     Block blockA = GetBlock(a);
     Block blockB = GetBlock(b);
 
-    return blockA == blockB &amp;&amp; blockB.IsSolid() &amp;&amp; IsBlockFaceVisible(b, direction, backFace);
-}
-</code></pre>
-
+    <span style="color:#66d9ef">return</span> blockA == blockB &amp;&amp; blockB.IsSolid() &amp;&amp; IsBlockFaceVisible(b, direction, backFace);
+}</code></pre></div>
 <p>Now we want to repeat the same process for the height of the face.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Figure out the height, then save it
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis1]</span>++; currPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis1]</span>++) {
+        <span style="color:#66d9ef">for</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
 
-<pre><code class="language-c#">    // Figure out the height, then save it
-    for (currPos = startPos, currPos[workAxis1]++; currPos[workAxis1] &lt; Dimensions[workAxis1] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis1]++) {
-        for (currPos[workAxis2] = startPos[workAxis2]; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
-
-        // If we didn't reach the end then its not a good add.
-        if (currPos[workAxis2] - startPos[workAxis2] &lt; quadSize[workAxis2]) {
-            break;
-        } else {
-            currPos[workAxis2] = startPos[workAxis2];
+        <span style="color:#75715e">// If we didn&#39;t reach the end then its not a good add.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>) {
+            <span style="color:#66d9ef">break</span>;
+        } <span style="color:#66d9ef">else</span> {
+            currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>;
         }
     }
-    quadSize[workAxis1] = currPos[workAxis1] - startPos[workAxis1];
-</code></pre>
-
+    quadSize<span style="color:#a6e22e">[workAxis1]</span> = currPos<span style="color:#a6e22e">[workAxis1]</span> - startPos<span style="color:#a6e22e">[workAxis1]</span>;</code></pre></div>
 <p>Once we have figured out the height and width of the face, we can go ahead and add it to our mesh.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Now we add the quad to the mesh
+</span><span style="color:#75715e"></span>    m = <span style="color:#66d9ef">new</span> Vector3Int();
+    m<span style="color:#a6e22e">[workAxis1]</span> = quadSize<span style="color:#a6e22e">[workAxis1]</span>;
 
-<pre><code class="language-c#">    // Now we add the quad to the mesh
-    m = new Vector3Int();
-    m[workAxis1] = quadSize[workAxis1];
+    n = <span style="color:#66d9ef">new</span> Vector3Int();
+    n<span style="color:#a6e22e">[workAxis2]</span> = quadSize<span style="color:#a6e22e">[workAxis2]</span>;
 
-    n = new Vector3Int();
-    n[workAxis2] = quadSize[workAxis2];
+    <span style="color:#75715e">// We need to add a slight offset when working with front faces.
+</span><span style="color:#75715e"></span>    offsetPos = startPos;
+    offsetPos<span style="color:#a6e22e">[direction]</span> += isBackFace ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
 
-    // We need to add a slight offset when working with front faces.
-    offsetPos = startPos;
-    offsetPos[direction] += isBackFace ? 0 : 1;
-
-    //Draw the face to the mesh
-    vertices = new Vector3[] {
+    <span style="color:#75715e">//Draw the face to the mesh
+</span><span style="color:#75715e"></span>    vertices = <span style="color:#66d9ef">new</span> Vector3<span style="color:#a6e22e">[]</span> {
         offsetPos,
         offsetPos + m,
         offsetPos + m + n,
         offsetPos + n
     };
 
-    builder.AddSquareFace(vertices, startBlock.GetColor(), isBackFace);
-</code></pre>
-
+    builder.AddSquareFace(vertices, startBlock.GetColor(), isBackFace);</code></pre></div>
 <p>And lastly we need to mark all the blocks we visited as merged.</p>
-
-<pre><code class="language-c#">    // Mark it merged
-    for (int f = 0; f &lt; quadSize[workAxis1]; f++) {
-        for (int g = 0; g &lt; quadSize[workAxis2]; g++) {
-            merged[startPos[workAxis1] + f, startPos[workAxis2] + g] = true;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Mark it merged
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; quadSize<span style="color:#a6e22e">[workAxis1]</span>; f++) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>; g++) {
+            merged<span style="color:#a6e22e">[startPos[workAxis1]</span> + f, startPos<span style="color:#a6e22e">[workAxis2]</span> + g] = <span style="color:#66d9ef">true</span>;
         }
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>Here&rsquo;s the full algorithm for those who like to see the big picture.</p>
-
-<pre><code class="language-c#">    public MeshData GenerateMesh() {
-        MeshBuilder builder = new MeshBuilder();
-        bool[,] merged;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> MeshData GenerateMesh() {
+        MeshBuilder builder = <span style="color:#66d9ef">new</span> MeshBuilder();
+        <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[,]</span> merged;
 
         Vector3Int startPos, currPos, quadSize, m, n, offsetPos;
-        Vector3[] vertices;
+        Vector3<span style="color:#a6e22e">[]</span> vertices;
 
         Block startBlock;
-        int direction, workAxis1, workAxis2;
+        <span style="color:#66d9ef">int</span> direction, workAxis1, workAxis2;
 
-        // Iterate over each face of the blocks.
-        for (int face = 0; face &lt; 6; face++) {
-            bool isBackFace = face &gt; 2;
-            direction = face % 3;
-            workAxis1 = (direction + 1) % 3;
-            workAxis2 = (direction + 2) % 3;
+        <span style="color:#75715e">// Iterate over each face of the blocks.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
+            <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
+            direction = face % <span style="color:#ae81ff">3</span>;
+            workAxis1 = (direction + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
+            workAxis2 = (direction + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
 
-            startPos = new Vector3Int();
-            currPos = new Vector3Int();
+            startPos = <span style="color:#66d9ef">new</span> Vector3Int();
+            currPos = <span style="color:#66d9ef">new</span> Vector3Int();
 
-            // Iterate over the chunk layer by layer.
-            for (startPos[direction] = 0; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
-                merged = new bool[Dimensions[workAxis1], Dimensions[workAxis2]];
+            <span style="color:#75715e">// Iterate over the chunk layer by layer.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[direction]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[direction]</span> &lt; Dimensions<span style="color:#a6e22e">[direction]</span>; startPos<span style="color:#a6e22e">[direction]</span>++) {
+                merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[Dimensions[workAxis1]</span>, Dimensions<span style="color:#a6e22e">[workAxis2]</span>];
 
-                // Build the slices of the mesh.
-                for (startPos[workAxis1] = 0; startPos[workAxis1] &lt; Dimensions[workAxis1]; startPos[workAxis1]++) {
-                    for (startPos[workAxis2] = 0; startPos[workAxis2] &lt; Dimensions[workAxis2]; startPos[workAxis2]++) {
+                <span style="color:#75715e">// Build the slices of the mesh.
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis1]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span>; startPos<span style="color:#a6e22e">[workAxis1]</span>++) {
+                    <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis2]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span>; startPos<span style="color:#a6e22e">[workAxis2]</span>++) {
                         startBlock = GetBlock(startPos);
 
-                        // If this block has already been merged, is air, or not visible skip it.
-                        if (merged[startPos[workAxis1], startPos[workAxis2]] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
-                            continue;
+                        <span style="color:#75715e">// If this block has already been merged, is air, or not visible skip it.
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">if</span> (merged<span style="color:#a6e22e">[startPos[workAxis1]</span>, startPos<span style="color:#a6e22e">[workAxis2]</span>] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
+                            <span style="color:#66d9ef">continue</span>;
                         }
 
-                        // Reset the work var
-                        quadSize = new Vector3Int();
+                        <span style="color:#75715e">// Reset the work var
+</span><span style="color:#75715e"></span>                        quadSize = <span style="color:#66d9ef">new</span> Vector3Int();
 
-                        // Figure out the width, then save it
-                        for (currPos = startPos, currPos[workAxis2]++; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
-                        quadSize[workAxis2] = currPos[workAxis2] - startPos[workAxis2];
+                        <span style="color:#75715e">// Figure out the width, then save it
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis2]</span>++; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
+                        quadSize<span style="color:#a6e22e">[workAxis2]</span> = currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span>;
 
-                        // Figure out the height, then save it
-                        for (currPos = startPos, currPos[workAxis1]++; currPos[workAxis1] &lt; Dimensions[workAxis1] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis1]++) {
-                            for (currPos[workAxis2] = startPos[workAxis2]; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
+                        <span style="color:#75715e">// Figure out the height, then save it
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis1]</span>++; currPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis1]</span>++) {
+                            <span style="color:#66d9ef">for</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
 
-                            // If we didn't reach the end then its not a good add.
-                            if (currPos[workAxis2] - startPos[workAxis2] &lt; quadSize[workAxis2]) {
-                                break;
-                            } else {
-                                currPos[workAxis2] = startPos[workAxis2];
+                            <span style="color:#75715e">// If we didn&#39;t reach the end then its not a good add.
+</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">if</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>) {
+                                <span style="color:#66d9ef">break</span>;
+                            } <span style="color:#66d9ef">else</span> {
+                                currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>;
                             }
                         }
-                        quadSize[workAxis1] = currPos[workAxis1] - startPos[workAxis1];
+                        quadSize<span style="color:#a6e22e">[workAxis1]</span> = currPos<span style="color:#a6e22e">[workAxis1]</span> - startPos<span style="color:#a6e22e">[workAxis1]</span>;
 
-                        // Now we add the quad to the mesh
-                        m = new Vector3Int();
-                        m[workAxis1] = quadSize[workAxis1];
+                        <span style="color:#75715e">// Now we add the quad to the mesh
+</span><span style="color:#75715e"></span>                        m = <span style="color:#66d9ef">new</span> Vector3Int();
+                        m<span style="color:#a6e22e">[workAxis1]</span> = quadSize<span style="color:#a6e22e">[workAxis1]</span>;
 
-                        n = new Vector3Int();
-                        n[workAxis2] = quadSize[workAxis2];
+                        n = <span style="color:#66d9ef">new</span> Vector3Int();
+                        n<span style="color:#a6e22e">[workAxis2]</span> = quadSize<span style="color:#a6e22e">[workAxis2]</span>;
 
-                        // We need to add a slight offset when working with front faces.
-                        offsetPos = startPos;
-                        offsetPos[direction] += isBackFace ? 0 : 1;
+                        <span style="color:#75715e">// We need to add a slight offset when working with front faces.
+</span><span style="color:#75715e"></span>                        offsetPos = startPos;
+                        offsetPos<span style="color:#a6e22e">[direction]</span> += isBackFace ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
 
-                        //Draw the face to the mesh
-                        vertices = new Vector3[] {
+                        <span style="color:#75715e">//Draw the face to the mesh
+</span><span style="color:#75715e"></span>                        vertices = <span style="color:#66d9ef">new</span> Vector3<span style="color:#a6e22e">[]</span> {
                             offsetPos,
                             offsetPos + m,
                             offsetPos + m + n,
@@ -524,10 +461,10 @@ compares the next neighbor to see if it is a match to the current one.</p>
 
                         builder.AddSquareFace(vertices, startBlock.GetColor(), isBackFace);
 
-                        // Mark it merged
-                        for (int f = 0; f &lt; quadSize[workAxis1]; f++) {
-                            for (int g = 0; g &lt; quadSize[workAxis2]; g++) {
-                                merged[startPos[workAxis1] + f, startPos[workAxis2] + g] = true;
+                        <span style="color:#75715e">// Mark it merged
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; quadSize<span style="color:#a6e22e">[workAxis1]</span>; f++) {
+                            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>; g++) {
+                                merged<span style="color:#a6e22e">[startPos[workAxis1]</span> + f, startPos<span style="color:#a6e22e">[workAxis2]</span> + g] = <span style="color:#66d9ef">true</span>;
                             }
                         }
                     }
@@ -535,127 +472,33 @@ compares the next neighbor to see if it is a match to the current one.</p>
             }
         }
 
-        return builder.ToMeshData();
-    }
-</code></pre>
-
+        <span style="color:#66d9ef">return</span> builder.ToMeshData();
+    }</code></pre></div>
 <p>And last but not least, if we want to render our mesh we generated we&rsquo;ll need to pass the data to a MeshFilter. For extra bonus points we could implement an extension method to make it even cleaner.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEngine;
 
-<pre><code class="language-c#">using UnityEngine;
-
-public static class MeshFilterExts {
-    public static void ApplyMeshData(this MeshFilter meshFilter, MeshData meshData) {
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshFilterExts</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> ApplyMeshData(<span style="color:#66d9ef">this</span> MeshFilter meshFilter, MeshData meshData) {
         meshFilter.mesh.Clear();
         meshFilter.mesh.vertices = meshData.Vertices;
         meshFilter.mesh.triangles = meshData.Triangles;
 
-        //Color mesh and calculate normals
-        meshFilter.mesh.colors32 = meshData.Colors;
+        <span style="color:#75715e">//Color mesh and calculate normals
+</span><span style="color:#75715e"></span>        meshFilter.mesh.colors32 = meshData.Colors;
         meshFilter.mesh.RecalculateNormals();
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Then to render our mesh we would use it like so.</p>
-
-<pre><code class="language-c#">    MeshData mesh = chunk.GenerateMesh();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    MeshData mesh = chunk.GenerateMesh();
 
     MeshFilter meshFilter = GetComponent&lt;MeshFilter&gt;();
-    meshFilter.ApplyMeshData(mesh);
-</code></pre>
-
-</section>
-<div class="entry-links"></div>
+    meshFilter.ApplyMeshData(mesh);</code></pre></div>
 </article>
-<div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fvoxel%2fgreedy-mesh%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-  <g>
-    <g>
-      <path d="M437.219,245.162c0-3.088-0.056-6.148-0.195-9.18c13.214-9.848,24.675-22.171,33.744-36.275
-        c-12.129,5.453-25.148,9.097-38.835,10.626c13.965-8.596,24.675-22.338,29.738-38.834c-13.075,7.928-27.54,13.603-42.924,16.552
-        c-12.323-14.021-29.904-22.95-49.35-23.284c-37.332-0.612-67.598,30.934-67.598,70.463c0,5.619,0.584,11.072,1.752,16.329
-        c-56.22-3.616-106.042-32.881-139.369-77c-5.814,10.571-9.152,22.922-9.152,36.164c0,25.037,11.934,47.291,30.071,60.421
-        c-11.099-0.5-21.503-3.866-30.627-9.375c0,0.306,0,0.612,0,0.918c0,34.996,23.312,64.316,54.245,71.159
-        c-5.675,1.613-11.656,2.448-17.804,2.421c-4.367-0.028-8.596-0.501-12.713-1.392c8.596,28.681,33.577,49.628,63.147,50.323
-        c-23.145,19.194-52.298,30.655-83.955,30.572c-5.453,0-10.849-0.361-16.135-1.029c29.933,20.53,65.456,32.491,103.65,32.491
-        C369.23,447.261,437.219,339.048,437.219,245.162z"/>
-      <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-        C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-        S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-    </g>
-  </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2fvoxel%2fgreedy-mesh%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-    <g>
-      <g>
-        <path d="M349.146,402.251c0-30.016-17.387-44.815-36.525-60.922l-15.662-12.185c-4.785-3.895-11.294-9.124-11.294-18.693
-          c0-9.57,6.537-15.662,12.184-21.309c18.249-14.354,36.526-29.571,36.526-61.756c0-33.076-20.892-50.462-30.878-58.724l0,0h26.956
-          L358.271,153h-89.603c-23.479,0-53.049,3.478-77.863,23.924c-18.693,16.079-27.818,38.278-27.818,58.279
-          c0,33.911,26.093,68.294,72.188,68.294c4.368,0,9.125-0.445,13.937-0.863c-2.17,5.23-4.34,9.569-4.34,16.97
-          c0,13.464,6.955,21.753,13.047,29.57c-19.556,1.308-56.109,3.478-83.065,20.001c-25.676,15.217-33.493,37.416-33.493,53.077
-          c0,32.186,30.461,62.201,93.525,62.201C309.561,484.454,349.146,443.116,349.146,402.251z M255.621,291.34
-          c-37.415,0-54.384-48.292-54.384-77.418c0-11.322,2.17-23.034,9.569-32.186c6.955-8.707,19.139-14.382,30.461-14.382
-          c36.108,0,54.802,48.738,54.802,80.033c0,7.845-0.862,21.754-10.877,31.768C278.237,286.11,266.498,291.312,255.621,291.34z
-           M256.066,466.177c-46.54,0-76.556-22.171-76.556-53.049s27.846-41.311,37.416-44.787c18.276-6.093,41.755-6.982,45.677-6.982
-          c4.34,0,6.51,0,9.987,0.445c33.076,23.479,47.402,35.218,47.402,57.416C319.992,446.176,297.821,466.177,256.066,466.177z"/>
-        <polygon points="353.068,317.768 400.164,317.768 400.164,364.836 423.699,364.836 423.699,317.768 470.768,317.768 
-          470.768,294.233 423.699,294.233 423.699,247.165 400.164,247.165 400.164,294.233 353.068,294.233     "/>
-        <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-          C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-          S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-      </g>
-  </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2fvoxel%2fgreedy-mesh%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-  <g>
-    <g>
-      <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-        C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-        S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-      <path d="M317.739,482.617V306h58.279l9.208-58.529h-67.487v-29.348c0-15.272,5.007-29.849,26.928-29.849h43.813v-58.418h-62.201
-        c-52.298,0-66.569,34.438-66.569,82.175v35.413h-35.885V306h35.885v176.617H317.739L317.739,482.617z"/>
-    </g>
-  </svg>
-  </a>
-</div>
-<div class="clearfix"></div>
-<figure class="author-bio">
-<img class="bio-image" src="https://eddieabbondanz.io/img/avatar.jpg" />
-<figcaption class="bio-text">My name&#39;s Eddie Abbondanzio, and this is my blog. I mostly write about game dev / web dev, but I&#39;ll throw in the occasional car post.</figcaption>
-</figure>
-<hr>
 
-</section>
-<div class="clear"></div>
-</div>
-<footer id="footer" style="color: #7A7B7C; background-color: #141414;background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
-  <div id="footer-container">
-    <div class="clearfix"></div>
-  </div>
-  <div id="copyright">&copy; 2019. All rights reserved.</div>
+    </main>
 
-</footer>
-<script src="https://eddieabbondanz.io/js/highlight.pack.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-128571017-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</div>
-</body>
-<link rel="shortcut icon" href="https://eddieabbondanz.io/img/favicon.ico" />
-<link rel="apple-touch-icon" href="https://eddieabbondanz.io/img/apple-touch-icon.jpg" />
+    <footer>
+    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
 
 </html>

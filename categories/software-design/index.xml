@@ -7,26 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 21 Jan 2019 18:37:24 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 19:59:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/categories/software-design/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>TypeScript - Events</title>
-      <link>https://eddieabbondanz.io/post/typescript/events/</link>
-      <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/typescript/events/</guid>
-      <description>Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&amp;rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&amp;rsquo;s known as polling.</description>
-    </item>
-    
-    <item>
       <title>Software Design - Symptoms of Bad Code</title>
-      <link>https://eddieabbondanz.io/post/software-design/symptoms-of-bad-code/</link>
+      <link>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</link>
       <pubDate>Fri, 07 Dec 2018 19:59:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/software-design/symptoms-of-bad-code/</guid>
+      <guid>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</guid>
       <description>Admit it, we&amp;rsquo;ve all written bad code at some point in our software development careers. One could even argue it&amp;rsquo;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
 The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it.</description>
     </item>
@@ -72,10 +63,10 @@ However, this does not mean that all constants should be blindly replaced with p
     
     <item>
       <title>Software Design - Unit Tests vs Integration Tests</title>
-      <link>https://eddieabbondanz.io/post/software-design/test-types/</link>
+      <link>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</link>
       <pubDate>Mon, 15 Oct 2018 05:16:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/software-design/test-types/</guid>
+      <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
       <description>Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
 What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.</description>
     </item>

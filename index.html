@@ -1,193 +1,426 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 	<meta name="generator" content="Hugo 0.47.1" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Eddie Abbondanzio</title>
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
-  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eddie Abbondanzio</title>
+    
+    
+    <link rel="alternate" type="application/rss+xml" href="https://eddieabbondanz.io/index.xml" title="Eddie Abbondanzio">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body>
 
+<body class="has-background-light">
+    
+    <section id="hero-header" class="hero is-fullheight"
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://eddieabbondanz.io/img/banner.jpg); "
+        role="banner">
+        
 
-<header class="header" style="background-color: rgb(46, 155, 218);
-    background-image: url(https://eddieabbondanz.io/img/banner.jpg),linear-gradient(to bottom, #009DDC, #006ccb); background-size: 100% auto; " role="banner">
+            <div class="hero-head">
+                <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+            Eddie Abbondanzio
+        </a>
 
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="hamburger-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
-      
-      <section id="branding">
-        <div id="site-title"><a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></div>
-        <nav id="mainmenu">
-          <ul>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-        </ul>
-        </nav>
-        <input type="checkbox" id="op"></input>
-        <div class="lower">
-          <label for="op">Menu</label>
-        </div>
-        <div class="overlay overlay-hugeinc">
-          <label for="op"></label>
-          <nav id="menu" role="navigation">
-            <ul>
-            <li><a href="https://eddieabbondanz.io">Home</a></li>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-          </ul>
-          </nav>
-        </div>
-        <div class="clearfix"></div>
-      </section>
+    <div id="hamburger-menu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+                About Me
+            </a>
 
-      <div class="header-overlay">
-        <div class="post-heading">
-          <h1> 
-          </h1>
+            
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                GitHub
+            </a>
+            
+
+            
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                Twitter
+            </a>
+            
         </div>
     </div>
-    </header>
-
-    <div id="container">
-
-<section id="content" role="main">
-   
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/" rel="bookmark" title="Link to Unity - LiteNetLib&#39;s Delivery Methods">Unity - LiteNetLib&#39;s Delivery Methods</a></h2>
-    <span class="post-date">Published Nov 14, 2019</span>
-    <p>While LiteNetLib may run on UDP (User Datagram Protocol) which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &ldquo;reliability&rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).
-In total, LiteNetLib offers 5 different delivery methods for sending packets to peers. They are as follows:
- Unreliable ReliableUnOrdered Sequenced ReliableOrdered ReliableSequenced  Unreliable Unreliable is standard UDP.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/unity/litenetlib-sending-data/" rel="bookmark" title="Link to Unity - How to Send Data With LiteNetLib">Unity - How to Send Data With LiteNetLib</a></h2>
-    <span class="post-date">Published Nov 13, 2019</span>
-    <p>Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&rsquo;s time to talk about sending data. Because, well, a network set up that doesn&rsquo;t actually send any data is kind of useless.
-As we already know, we listen for incoming messages from the network via an IEventListener that we pass to our NetManager. IEventListener contains an event called NetworkReceiveEvent which is triggered anytime the network receives data from another connection.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/unity/litenetlib-sending-data/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/" rel="bookmark" title="Link to Unity - How to Create a Basic Server / Client With LiteNetLib">Unity - How to Create a Basic Server / Client With LiteNetLib</a></h2>
-    <span class="post-date">Published Nov 13, 2019</span>
-    <p>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&rsquo;s a few extra steps we&rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: How to Setup LiteNetLib With Unity</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/" rel="bookmark" title="Link to Unity - How to Set Up LiteNetLib">Unity - How to Set Up LiteNetLib</a></h2>
-    <span class="post-date">Published Nov 12, 2019</span>
-    <p>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
- LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&rsquo;s a popular choice.
-Create a Plugins Folder Open up your Unity project.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/" rel="bookmark" title="Link to ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals">ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</a></h2>
-    <span class="post-date">Published Oct 14, 2019</span>
-    <p>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.
-Claims Claims are the foundation behind claims-based authentication (who would have guessed).</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/" rel="bookmark" title="Link to ASP.NET Core - Inversion of Control Container">ASP.NET Core - Inversion of Control Container</a></h2>
-    <span class="post-date">Published Jun 29, 2019</span>
-    <p>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.
-Let&rsquo;s imagine we&rsquo;re building an API that has a UserController to provide an endpoint for retrieving users via their numeric id from the database.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/saas/launching-a-saas-part-2/" rel="bookmark" title="Link to Launching a SaaS - Part 2 The Launch">Launching a SaaS - Part 2 The Launch</a></h2>
-    <span class="post-date">Published Mar 10, 2019</span>
-    <p>Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/saas/launching-a-saas-part-2/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/laptop/kubuntu/" rel="bookmark" title="Link to WorkStation - Goodbye Windows">WorkStation - Goodbye Windows</a></h2>
-    <span class="post-date">Published Feb 18, 2019</span>
-    <p>I&rsquo;ve been using Windows for as long as I can remember. Back when Windows 2000 was a big deal I remember using it to play Space Cadet pinball although I was never very good at it.
-With the rise of Windows 10 it feels as if Microsoft is going downhill and no longer gives you &ldquo;full control&rdquo; of your own computer. My biggest gripe with Windows 10 is the automatic updates that it forces upon you.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/laptop/kubuntu/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/laptop/more-ram/" rel="bookmark" title="Link to WorkStation - More RAM">WorkStation - More RAM</a></h2>
-    <span class="post-date">Published Feb 15, 2019</span>
-    <p>Mo&rsquo; RAM, Mo&rsquo; Problems I use my laptop for a ton of software development. I&rsquo;ve been working on launching a SaaS and I often need to have a development build of the backend running along with the frontend. Both of those and a database and I&rsquo;m easily eating up 5-6 gigabytes of RAM. My laptop is a Dell Inspirion 7559, and it came with 8 gigs of RAM from the factory.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/laptop/more-ram/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/cherokee/19-02-03/" rel="bookmark" title="Link to Cherokee Build - 02/03/19">Cherokee Build - 02/03/19</a></h2>
-    <span class="post-date">Published Feb 3, 2019</span>
-    <p>The Cherokee strikes again. A couple weeks back when my exhaust snapped just before the catalytic converter I noticed my muffler had a minor leak. It wasn&rsquo;t anything major and wasn&rsquo;t loud so I figured I could probably just run it till spring and deal with it when it was warmer out.
-The Jeep had other plans though as the leak grew in size, and became extremely obnoxious. Due to the internals of the muffler rusting and coming loose, the muffler developed a horrendous rattle that sounded like a trumpet blasting a low note when at 2300RPM.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/cherokee/19-02-03/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <nav id="nav-below" class="navigation" role="navigation">
-<div class="older">
-		<a href="https://eddieabbondanz.io/page/2/">Older Posts &raquo;</a>
-	</div>
-
-	<div class="clearfix"></div>
-	<div class="pagination">Page 1 of 8</div>
 </nav>
-</section>
-<div class="clear"></div>
+            </div>
+
+            
+            
+        </section>
+
+    <main class="container has-background-white">
+        
+<div class="is-flex is-align-center has-margin-bottom-5">
+    <h2 class="is-size-4 has-text-grey has-margin-right-2">Filter By:</h2>
+    
+    <i class="material-icons has-margin-right-2 is-size-3 has-text-grey">folder</i>
+
+
+    <div class="dropdown">
+        <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                <span>Category</span>
+                <span class="icon is-small">
+                    <i class="material-icons" aria-hidden="true">expand_more</i>
+                </span>
+            </button>
+        </div>
+        <div class="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/c">C#</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/http">Http</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/laptop">Laptop</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/meta">Meta</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/mysql">Mysql</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/nomansblocks">Nomansblocks</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/saas">Saas</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/software-design">Software-Design</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/typescript">Typescript</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/unity">Unity</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/voxel">Voxel</a>
+                <hr class="dropdown-divider">
+                
+            </div>
+        </div>
+    </div>
+
+    
+
 </div>
-<footer id="footer" style="color: #7A7B7C; background-color: #141414;background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
-  <div id="footer-container">
-    <div class="clearfix"></div>
-  </div>
-  <div id="copyright">&copy; 2019. All rights reserved.</div>
 
-</footer>
-<script src="https://eddieabbondanz.io/js/highlight.pack.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
 
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-128571017-1', 'auto');
-  ga('send', 'pageview');
-</script>
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/">Unity - LiteNetLib&#39;s Delivery Methods</a></h1>
 
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Nov 14, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Nov 14, 2019</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/game-dev">Game Dev</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        While LiteNetLib may run on UDP (User Datagram Protocol) which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &ldquo;reliability&rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).
+In total, LiteNetLib offers 5 different delivery methods for sending packets to peers. They are as follows:
+ Unreliable ReliableUnOrdered Sequenced ReliableOrdered ReliableSequenced  Unreliable Unreliable is standard UDP.
+        
+        <a href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/unity/litenetlib-sending-data/">Unity - How to Send Data With LiteNetLib</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Nov 13, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Nov 13, 2019</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&rsquo;s time to talk about sending data. Because, well, a network set up that doesn&rsquo;t actually send any data is kind of useless.
+As we already know, we listen for incoming messages from the network via an IEventListener that we pass to our NetManager. IEventListener contains an event called NetworkReceiveEvent which is triggered anytime the network receives data from another connection.
+        
+        <a href="https://eddieabbondanz.io/post/unity/litenetlib-sending-data/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/">Unity - How to Create a Basic Server / Client With LiteNetLib</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Nov 13, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Nov 13, 2019</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&rsquo;s a few extra steps we&rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: How to Setup LiteNetLib With Unity
+        
+        <a href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">Unity - How to Set Up LiteNetLib</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Nov 12, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Nov 12, 2019</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
+  LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&rsquo;s a popular choice.
+Create a Plugins Folder Open up your Unity project.
+        
+        <a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/">ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Oct 14, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Oct 14, 2019</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/aspnet">aspnet</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.
+Claims Claims are the foundation behind claims-based authentication (who would have guessed).
+        
+        <a href="https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/">ASP.NET Core - Inversion of Control Container</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Jun 29, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Jun 29, 2019</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/aspnet">aspnet</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.
+Let&rsquo;s imagine we&rsquo;re building an API that has a UserController to provide an endpoint for retrieving users via their numeric id from the database.
+        
+        <a href="https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/saas/launching-a-saas-pt2/">Launching a SaaS - Part 2 The Launch</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Mar 10, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Mar 10, 2019</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.
+        
+        <a href="https://eddieabbondanz.io/post/saas/launching-a-saas-pt2/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/laptop/kubuntu/">WorkStation - Goodbye Windows</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Feb 18, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Feb 18, 2019</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        I&rsquo;ve been using Windows for as long as I can remember. Back when Windows 2000 was a big deal I remember using it to play Space Cadet pinball although I was never very good at it.
+With the rise of Windows 10 it feels as if Microsoft is going downhill and no longer gives you &ldquo;full control&rdquo; of your own computer. My biggest gripe with Windows 10 is the automatic updates that it forces upon you.
+        
+        <a href="https://eddieabbondanz.io/post/laptop/kubuntu/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/laptop/more-ram/">WorkStation - More RAM</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Feb 15, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Feb 15, 2019</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        Mo&rsquo; RAM, Mo&rsquo; Problems I use my laptop for a ton of software development. I&rsquo;ve been working on launching a SaaS and I often need to have a development build of the backend running along with the frontend. Both of those and a database and I&rsquo;m easily eating up 5-6 gigabytes of RAM. My laptop is a Dell Inspirion 7559, and it came with 8 gigs of RAM from the factory.
+        
+        <a href="https://eddieabbondanz.io/post/laptop/more-ram/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/cherokee/19-02-03/">Cherokee Build - 02/03/19</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Feb 3, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Feb 3, 2019</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        The Cherokee strikes again. A couple weeks back when my exhaust snapped just before the catalytic converter I noticed my muffler had a minor leak. It wasn&rsquo;t anything major and wasn&rsquo;t loud so I figured I could probably just run it till spring and deal with it when it was warmer out.
+The Jeep had other plans though as the leak grew in size, and became extremely obnoxious. Due to the internals of the muffler rusting and coming loose, the muffler developed a horrendous rattle that sounded like a trumpet blasting a low note when at 2300RPM.
+        
+        <a href="https://eddieabbondanz.io/post/cherokee/19-02-03/">Read more...</a>
+        
+    </p>
+</article>
+
+
+<div class="is-flex is-flex-row is-align-center has-margin-y-5 is-justify-center">
+    <div class="is-relative">
+        
+
+        <p class="has-margin-x-3 is-align-center is-justify-center" style="display: inline-flex; height: 40px;">
+            1 of 7
+        </p>
+
+        
+        <a class="button is-primary" style="display: inline-block; position: absolute; left: 96px;"
+            href="https://eddieabbondanz.io/page/2/">Next
+            Page</a>
+        
+    </div>
 </div>
-</body>
-<link rel="shortcut icon" href="https://eddieabbondanz.io/img/favicon.ico" />
-<link rel="apple-touch-icon" href="https://eddieabbondanz.io/img/apple-touch-icon.jpg" />
+
+
+    </main>
+
+    <footer>
+    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
 
 </html>

@@ -14,12 +14,12 @@
     
     <item>
       <title>C# Threadable Queue</title>
-      <link>https://eddieabbondanz.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</link>
+      <link>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</link>
       <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
+      <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
       <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
-public class ThreadableQueue&amp;lt;T&amp;gt; { }  If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
+public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
     </item>
     
   </channel>

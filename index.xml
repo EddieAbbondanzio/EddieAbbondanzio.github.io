@@ -49,7 +49,7 @@ As we already know, we listen for incoming messages from the network via an IEve
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
       <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
- LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
+  LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
 Create a Plugins Folder Open up your Unity project.</description>
     </item>
     
@@ -75,10 +75,10 @@ Let&amp;rsquo;s imagine we&amp;rsquo;re building an API that has a UserControlle
     
     <item>
       <title>Launching a SaaS - Part 2 The Launch</title>
-      <link>https://eddieabbondanz.io/post/saas/launching-a-saas-part-2/</link>
+      <link>https://eddieabbondanz.io/post/saas/launching-a-saas-pt2/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/saas/launching-a-saas-part-2/</guid>
+      <guid>https://eddieabbondanz.io/post/saas/launching-a-saas-pt2/</guid>
       <description>Overview This is the second part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
     </item>
     
@@ -118,7 +118,7 @@ The Jeep had other plans though as the leak grew in size, and became extremely o
       
       <guid>https://eddieabbondanz.io/post/typescript/interpolated-strings/</guid>
       <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&amp;rsquo;t so bad, after all console.log() allows us to pass multiple parameters and has no trouble logging them.
-let foo = { bar: 1 }; console.log(&#39;Foo is &#39;, foo); //Prints: Foo is Object { bar : 1 }  But this only covers one of the many use cases I used String.</description>
+let foo = { bar: 1 }; console.log(&amp;#34;Foo is &amp;#34;, foo); //Prints: Foo is Object { bar : 1 }  But this only covers one of the many use cases I used String.</description>
     </item>
     
     <item>
@@ -136,7 +136,7 @@ let foo = { bar: 1 }; console.log(&#39;Foo is &#39;, foo); //Prints: Foo is Obje
       <pubDate>Sat, 26 Jan 2019 16:51:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/cherokee/19-01-26/</guid>
-      <description>I&amp;rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average $100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so.</description>
+      <description>I&amp;rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average \$100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so.</description>
     </item>
     
     <item>
@@ -169,19 +169,19 @@ They are often considered an anti-pattern due to how to they introduce the poten
     
     <item>
       <title>Launching a SaaS - Part 1 The Landing Page</title>
-      <link>https://eddieabbondanz.io/post/saas/launching-a-saas-part-1/</link>
+      <link>https://eddieabbondanz.io/post/saas/launching-a-saas-pt1/</link>
       <pubDate>Fri, 21 Dec 2018 06:59:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/saas/launching-a-saas-part-1/</guid>
+      <guid>https://eddieabbondanz.io/post/saas/launching-a-saas-pt1/</guid>
       <description>Overview This is the first part of my blog series about launching a Software as a Service (SaaS) product. I intend for this series to be a collection of the lessons I&amp;rsquo;ve learnt along the way, and is meant to be an educational experience. Because learning new things is one of my motivations there will be times where I explore DIYing portions of the project that should typically be offloaded to a third-party.</description>
     </item>
     
     <item>
       <title>Software Design - Symptoms of Bad Code</title>
-      <link>https://eddieabbondanz.io/post/software-design/symptoms-of-bad-code/</link>
+      <link>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</link>
       <pubDate>Fri, 07 Dec 2018 19:59:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/software-design/symptoms-of-bad-code/</guid>
+      <guid>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</guid>
       <description>Admit it, we&amp;rsquo;ve all written bad code at some point in our software development careers. One could even argue it&amp;rsquo;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
 The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it.</description>
     </item>
@@ -256,20 +256,20 @@ Initially the plan for this weekend was to finish welding in the new driver side
     
     <item>
       <title>Software Design - Unit Tests vs Integration Tests</title>
-      <link>https://eddieabbondanz.io/post/software-design/test-types/</link>
+      <link>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</link>
       <pubDate>Mon, 15 Oct 2018 05:16:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/software-design/test-types/</guid>
+      <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
       <description>Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
 What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 10/13/2018</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/10-13-18-update/</link>
+      <link>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</link>
       <pubDate>Sat, 13 Oct 2018 15:05:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/nomansblocks/10-13-18-update/</guid>
+      <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
       <description>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&amp;rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.</description>
     </item>
     
@@ -343,28 +343,28 @@ Download the following:
     
     <item>
       <title>Civic Build - 6/23/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-23-06/</link>
+      <link>https://eddieabbondanz.io/post/civic/18-06-23/</link>
       <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/civic/18-23-06/</guid>
+      <guid>https://eddieabbondanz.io/post/civic/18-06-23/</guid>
       <description>Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&amp;rsquo;t been gassed up since last September and was pretty much on E.</description>
     </item>
     
     <item>
       <title>Civic Build - 6/9/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-09-06/</link>
+      <link>https://eddieabbondanz.io/post/civic/18-06-09/</link>
       <pubDate>Sat, 09 Jun 2018 12:57:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/civic/18-09-06/</guid>
+      <guid>https://eddieabbondanz.io/post/civic/18-06-09/</guid>
       <description>Getting ready for the test drive While the car may not be on the road yet, it&amp;rsquo;s come quite a bit closer to getting there. Lately I&amp;rsquo;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&amp;rsquo;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 6/4/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/6-4-18-update/</link>
+      <link>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</link>
       <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/nomansblocks/6-4-18-update/</guid>
+      <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
       <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
 Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
     </item>
@@ -381,20 +381,20 @@ I had thought this task would be difficult but it really wasn&amp;rsquo;t that b
     
     <item>
       <title>C# Threadable Queue</title>
-      <link>https://eddieabbondanz.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</link>
+      <link>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</link>
       <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/c-sharp/c-sharp-tutorial-threadable-queue/</guid>
+      <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
       <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
-public class ThreadableQueue&amp;lt;T&amp;gt; { }  If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
+public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 4/20/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/4-20-18-update/</link>
+      <link>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</link>
       <pubDate>Fri, 20 Apr 2018 23:05:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/nomansblocks/4-20-18-update/</guid>
+      <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
       <description>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&amp;rsquo;t want to handle serialization with 2 different methods I&amp;rsquo;ve decided to bite the bullet and roll my own set up.
 To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</description>
     </item>
@@ -430,10 +430,10 @@ Last year everytime I pushed the clutch in it made a real nice squeek that let e
     
     <item>
       <title>No Mans Blocks - 4/8/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/4-8-18-update/</link>
+      <link>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</link>
       <pubDate>Sun, 08 Apr 2018 18:25:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/nomansblocks/4-8-18-update/</guid>
+      <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
       <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events.</description>
     </item>
     
@@ -503,10 +503,10 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
     
     <item>
       <title>No Mans Blocks - 3/31/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/3-31-18-update/</link>
+      <link>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</link>
       <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/nomansblocks/3-31-18-update/</guid>
+      <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
       <description>Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:</description>
     </item>
     
@@ -528,17 +528,6 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <description>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
 This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&amp;rsquo;Leary, with a few alterations made.
 The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.</description>
-    </item>
-    
-    <item>
-      <title>New site, who this?</title>
-      <link>https://eddieabbondanz.io/post/misc/first-post/</link>
-      <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/misc/first-post/</guid>
-      <description>Welcome! If your reading this, it means you&amp;rsquo;ve found my new website. It&amp;rsquo;s still in it&amp;rsquo;s early stages so it may seem quite primitive. It&amp;rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
-In the following weeks I&amp;rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&amp;rsquo;m working on.
-What is this blog about?</description>
     </item>
     
     <item>
@@ -615,15 +604,6 @@ Overall it sounds nice albeit a little loud.</description>
     </item>
     
     <item>
-      <title>Contact Me</title>
-      <link>https://eddieabbondanz.io/contact/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://eddieabbondanz.io/contact/</guid>
-      <description> Name Email     Send   </description>
-    </item>
-    
-    <item>
       <title>Acura Build - 04/04/2014</title>
       <link>https://eddieabbondanz.io/post/acura/14-04-04/</link>
       <pubDate>Fri, 04 Apr 2014 00:00:00 +0000</pubDate>
@@ -635,10 +615,10 @@ This was my first time tinting, and has a few flaws but I&amp;rsquo;m happy with
     
     <item>
       <title>Acura Build - 03/14/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-03-11/</link>
+      <link>https://eddieabbondanz.io/post/acura/14-03-14/</link>
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/acura/14-03-11/</guid>
+      <guid>https://eddieabbondanz.io/post/acura/14-03-14/</guid>
       <description>Made a little more progress on the tablet. I&amp;rsquo;m using a Nexus 7 Gen 2 tablet.
 I had to open up the tablet to solder in wires to the power button. Other than that everything is 100% stock.
 Installed. I was hoping to match the bezel closer to the radio but it was pretty hard finding the right black.
@@ -706,7 +686,7 @@ I did a test fit of how everything will look. I&amp;rsquo;m liking how it&amp;rs
       
       <guid>https://eddieabbondanz.io/post/acura/13-12-18/</guid>
       <description>I&amp;rsquo;ve decided to do a projector retrofit. There&amp;rsquo;s nothing wrong with the current headlights I just really like the appeal of the crisp cutoff.
-I seperated the lense from the headlight house so I could begin to mount things in place. Took a little bit of work with the heat gun but I managed to remove them safely.
+I separated the lense from the headlight house so I could begin to mount things in place. Took a little bit of work with the heat gun but I managed to remove them safely.
 Test fit of the Apollo shroud.
 Future look to come.
 The shrouds needed a little trimming to fit in place but things are starting to look good.</description>
@@ -720,15 +700,6 @@ The shrouds needed a little trimming to fit in place but things are starting to 
       <guid>https://eddieabbondanz.io/post/acura/13-12-16/</guid>
       <description>I bought my first car off my Grandmother. It&amp;rsquo;s a 1999 Acura 3.5RL in rough condition. I&amp;rsquo;ve owned it for about 3 years now and only done a few small mods to it since. Over this winter I plan on restoring it bit by bit to get it back to it&amp;rsquo;s former glorly.
 The photos don&amp;rsquo;t really do it justice but the car has scratches and was missing paint all over the bumpers.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://eddieabbondanz.io/post/software-design/contextual-validation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/software-design/contextual-validation/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -1,126 +1,114 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Object Pooling in Unity &middot; Eddie Abbondanzio</title>
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
-  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Pooling in Unity</title>
+    
+    
+    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body>
 
-
-<header class="header" style="background-color: rgb(46, 155, 218);  ;" role="banner">
-
-
-      
-      <section id="branding">
-        <div id="site-title"><a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></div>
-        <nav id="mainmenu">
-          <ul>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-        </ul>
-        </nav>
-        <input type="checkbox" id="op"></input>
-        <div class="lower">
-          <label for="op">Menu</label>
-        </div>
-        <div class="overlay overlay-hugeinc">
-          <label for="op"></label>
-          <nav id="menu" role="navigation">
-            <ul>
-            <li><a href="https://eddieabbondanz.io">Home</a></li>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-          </ul>
-          </nav>
-        </div>
-        <div class="clearfix"></div>
-      </section>
-
-      <div class="header-overlay">
-        <div class="post-heading">
-          <h1>
-          Object Pooling in Unity
-            <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2fobject-pool%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-              <g>
-                <g>
-                  <path d="M437.219,245.162c0-3.088-0.056-6.148-0.195-9.18c13.214-9.848,24.675-22.171,33.744-36.275
-                    c-12.129,5.453-25.148,9.097-38.835,10.626c13.965-8.596,24.675-22.338,29.738-38.834c-13.075,7.928-27.54,13.603-42.924,16.552
-                    c-12.323-14.021-29.904-22.95-49.35-23.284c-37.332-0.612-67.598,30.934-67.598,70.463c0,5.619,0.584,11.072,1.752,16.329
-                    c-56.22-3.616-106.042-32.881-139.369-77c-5.814,10.571-9.152,22.922-9.152,36.164c0,25.037,11.934,47.291,30.071,60.421
-                    c-11.099-0.5-21.503-3.866-30.627-9.375c0,0.306,0,0.612,0,0.918c0,34.996,23.312,64.316,54.245,71.159
-                    c-5.675,1.613-11.656,2.448-17.804,2.421c-4.367-0.028-8.596-0.501-12.713-1.392c8.596,28.681,33.577,49.628,63.147,50.323
-                    c-23.145,19.194-52.298,30.655-83.955,30.572c-5.453,0-10.849-0.361-16.135-1.029c29.933,20.53,65.456,32.491,103.65,32.491
-                    C369.23,447.261,437.219,339.048,437.219,245.162z"/>
-                  <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                    C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                    S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                </g>
-              </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2fobject-pool%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path d="M349.146,402.251c0-30.016-17.387-44.815-36.525-60.922l-15.662-12.185c-4.785-3.895-11.294-9.124-11.294-18.693
-                      c0-9.57,6.537-15.662,12.184-21.309c18.249-14.354,36.526-29.571,36.526-61.756c0-33.076-20.892-50.462-30.878-58.724l0,0h26.956
-                      L358.271,153h-89.603c-23.479,0-53.049,3.478-77.863,23.924c-18.693,16.079-27.818,38.278-27.818,58.279
-                      c0,33.911,26.093,68.294,72.188,68.294c4.368,0,9.125-0.445,13.937-0.863c-2.17,5.23-4.34,9.569-4.34,16.97
-                      c0,13.464,6.955,21.753,13.047,29.57c-19.556,1.308-56.109,3.478-83.065,20.001c-25.676,15.217-33.493,37.416-33.493,53.077
-                      c0,32.186,30.461,62.201,93.525,62.201C309.561,484.454,349.146,443.116,349.146,402.251z M255.621,291.34
-                      c-37.415,0-54.384-48.292-54.384-77.418c0-11.322,2.17-23.034,9.569-32.186c6.955-8.707,19.139-14.382,30.461-14.382
-                      c36.108,0,54.802,48.738,54.802,80.033c0,7.845-0.862,21.754-10.877,31.768C278.237,286.11,266.498,291.312,255.621,291.34z
-                      M256.066,466.177c-46.54,0-76.556-22.171-76.556-53.049s27.846-41.311,37.416-44.787c18.276-6.093,41.755-6.982,45.677-6.982
-                      c4.34,0,6.51,0,9.987,0.445c33.076,23.479,47.402,35.218,47.402,57.416C319.992,446.176,297.821,466.177,256.066,466.177z"/>
-                    <polygon points="353.068,317.768 400.164,317.768 400.164,364.836 423.699,364.836 423.699,317.768 470.768,317.768 
-                      470.768,294.233 423.699,294.233 423.699,247.165 400.164,247.165 400.164,294.233 353.068,294.233     "/>
-                    <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                      C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                      S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                  </g>
-              </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2fobject-pool%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-              <g>
-                <g>
-                  <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                    C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                    S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                  <path d="M317.739,482.617V306h58.279l9.208-58.529h-67.487v-29.348c0-15.272,5.007-29.849,26.928-29.849h43.813v-58.418h-62.201
-                    c-52.298,0-66.569,34.438-66.569,82.175v35.413h-35.885V306h35.885v176.617H317.739L317.739,482.617z"/>
-                </g>
-              </svg>
-              </a>
-            </div>
+<body class="has-background-light">
+    
+        <section id="hero-header" class="hero is-fullheight is-primary">
             
-          </h1>
+
+            <div class="hero-head">
+                <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+            Eddie Abbondanzio
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="hamburger-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="hamburger-menu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+                About Me
+            </a>
+
+            
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                GitHub
+            </a>
+            
+
+            
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                Twitter
+            </a>
+            
         </div>
     </div>
-    </header>
+</nav>
+            </div>
 
-    <div id="container">
+            
+            
+            <div class="hero-foot">
+                <div class="container">
+                    <header>
+    <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
 
+        
+        <div class="has-margin-bottom-3">
+            <h1 class="is-marginless is-size-3-touch is-size-1-desktop">
+                Object Pooling in Unity
+            </h1>
 
-<section id="content" role="main">
-<section class="entry-meta">
-  <span class="post-date">Mar 30, 2018</span>
-</section></header>
-<section class="entry-content">
+            
+        </div>
+
+        
+        <div class="is-flex-desktop flex-row  has-text-grey-lighter">
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+                <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
+                <time class="has-text-grey-lighter">Mar 30, 2018</time>
+            </div>
+
+            
+        </div>
+    </div>
+</header>
+                </div>
+            </div>
+            
+        </section>
+
+    <main class="container has-background-white">
+        
 <article>
-
+    
 
 <h2 id="gameobject-instantiate-is-expensive">GameObject.Instantiate() is Expensive</h2>
 
@@ -129,386 +117,270 @@
 <p>To prepare my project for some of the new features coming up I decided to finally implement a better system for handling object pools. This implementation doesn&rsquo;t use a data structure to maintain references of the objects in the pools. Instead it uses the sibling index of Unity&rsquo;s transforms to keep all of the in use objects at the top, and object sitting in standby at the bottom. Now we only need an integer that tracks the index of the next free object.</p>
 
 <p>To get started we&rsquo;ll need a way to differentiate between our objects. Create a new enum and add some values to represent the prefabs you wish to pool. I&rsquo;ve added the PrefabType cube since in this tutorial we&rsquo;ll be building a cube object pool.</p>
-
-<pre><code class="language-c#">/// &lt;summary&gt;
-/// Unique identifier to quickly differentiate
-/// between our different prefabs
-/// &lt;/summary&gt;
-public enum PrefabType {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Unique identifier to quickly differentiate
+</span><span style="color:#75715e">/// between our different prefabs
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> PrefabType {
 	Cube
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Next we&rsquo;ll add a component that can be attached to our prefabs to allow for us to always have an easy way to return each object to their pool.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabInstance</span> : MonoBehaviour {
+    <span style="color:#75715e">#region Properties
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// What type of object it is.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> PrefabType Type;
 
-<pre><code class="language-c#">public class PrefabInstance : MonoBehaviour {
-    #region Properties
-    /// &lt;summary&gt;
-    /// What type of object it is.
-    /// &lt;/summary&gt;
-    public PrefabType Type;
-
-    /// &lt;summary&gt;
-    /// The pool that owns this object
-    /// &lt;/summary&gt;
-    public PrefabPool Pool;
-    #endregion
-
-    #region Publics
-    /// &lt;summary&gt;
-    /// Return the object back to it's pool.
-    /// &lt;/summary&gt;
-    public void ReturnToPool() {
-        if(Pool != null) {
-            Pool.ReturnInstance(this.gameObject);
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The pool that owns this object
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> PrefabPool Pool;
+    <span style="color:#75715e">#endregion
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">#region Publics
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Return the object back to it&#39;s pool.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnToPool() {
+        <span style="color:#66d9ef">if</span>(Pool != <span style="color:#66d9ef">null</span>) {
+            Pool.ReturnInstance(<span style="color:#66d9ef">this</span>.gameObject);
         }
-        else {
-            Debug.LogError(&quot;PrefabInstance: Pool reference was never set!&quot;);
+        <span style="color:#66d9ef">else</span> {
+            Debug.LogError(<span style="color:#e6db74">&#34;PrefabInstance: Pool reference was never set!&#34;</span>);
         }
     }
-    #endregion
-}
-</code></pre>
-
+    <span style="color:#75715e">#endregion
+</span><span style="color:#75715e"></span>}</code></pre></div>
 <p>While an error may seem harsh, we don&rsquo;t want pool objects floating around in purgatory. Now lets move on to the prefab pool class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#a6e22e">[ExecuteInEditMode]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabPool</span> : MonoBehaviour {
+    <span style="color:#75715e">#region Properties
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The prefab to use for instantiating. This must
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// have PrefabInstance.cs attached to it!
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> GameObject Prefab;
 
-<pre><code class="language-c#">[ExecuteInEditMode]
-public class PrefabPool : MonoBehaviour {
-    #region Properties
-    /// &lt;summary&gt;
-    /// The prefab to use for instantiating. This must
-    /// have PrefabInstance.cs attached to it!
-    /// &lt;/summary&gt;
-    public GameObject Prefab;
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The type of objects this pool contains
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> PrefabType Type;
 
-    /// &lt;summary&gt;
-    /// The type of objects this pool contains
-    /// &lt;/summary&gt;
-    public PrefabType Type;
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The target size of the pool.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Size;
 
-    /// &lt;summary&gt;
-    /// The target size of the pool.
-    /// &lt;/summary&gt;
-    public int Size;
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// How many objects we can adjust the pool by each frame
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> MaxChangesPerTick;
+    <span style="color:#75715e">#endregion
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">#region Members
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The next free object child index.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span>  currentInstance;
 
-    /// &lt;summary&gt;
-    /// How many objects we can adjust the pool by each frame
-    /// &lt;/summary&gt;
-    public int MaxChangesPerTick;
-    #endregion
-
-    #region Members
-    /// &lt;summary&gt;
-    /// The next free object child index.
-    /// &lt;/summary&gt;
-    private int  currentInstance;
-
-    /// &lt;summary&gt;
-    /// If the pool is currently going through a size adjustment.
-    /// &lt;/summary&gt;
-    private bool updatingSize;
-    #endregion
-}
-</code></pre>
-
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// If the pool is currently going through a size adjustment.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> updatingSize;
+    <span style="color:#75715e">#endregion
+</span><span style="color:#75715e"></span>}</code></pre></div>
 <p>First thing the pool will need to handle is settng up it&rsquo;s local variables. While it comes down to personal preference I prefer to initialize variables that pertain to the local object within Awake(), and those that rely on other objects in Start(). This prevents the need of knowing the execution order of the Monobehaviours.</p>
-
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Sets the pool up.
-/// &lt;/summary&gt;
-private void Awake() {
-    updatingSize = false;
-    currentInstance = 0;
-}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Sets the pool up.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake() {
+    updatingSize = <span style="color:#66d9ef">false</span>;
+    currentInstance = <span style="color:#ae81ff">0</span>;
+}</code></pre></div>
 <p>Now lets add a way for the pool to adjust it&rsquo;s size as needed. This way when the pool runs out of objects it won&rsquo;t start returning null instances during gameplay.</p>
-
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Adjusts pool size during play.
-/// &lt;/summary&gt;
-private void Update() {
-    //If the pool is not being modified, and should be do so.
-    if (!updatingSize &amp;&amp; transform.childCount != Size &amp;&amp; currentInstance &lt; Size) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Adjusts pool size during play.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Update() {
+    <span style="color:#75715e">//If the pool is not being modified, and should be do so.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (!updatingSize &amp;&amp; transform.childCount != Size &amp;&amp; currentInstance &lt; Size) {
         StartCoroutine(UpdatePoolCoroutine());
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Add an OnValidate() method to the class. This is called by Unity anytime a value on the monobehaviour script is modified. By validating our field values it helps prevent any absurd run time errors that could occur.</p>
-
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Called when an editor field is modified.
-/// &lt;/summary&gt;
-    private void OnValidate() {
-        //Ensure pool is greater than or equal to 1.
-        if (Size &lt; 1) {
-            Size = 1;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Called when an editor field is modified.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnValidate() {
+        <span style="color:#75715e">//Ensure pool is greater than or equal to 1.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (Size &lt; <span style="color:#ae81ff">1</span>) {
+            Size = <span style="color:#ae81ff">1</span>;
         }
 
-        //Ensure the max change isn't invalid.
-        if(MaxChangesPerTick &lt; 1) {
-            MaxChangesPerTick = 1;
+        <span style="color:#75715e">//Ensure the max change isn&#39;t invalid.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(MaxChangesPerTick &lt; <span style="color:#ae81ff">1</span>) {
+            MaxChangesPerTick = <span style="color:#ae81ff">1</span>;
         }
 
-        //Lastly check that the prefab has the PrefabInstace
-        //script attached to it.
-        if(Prefab != null) {
-            if (Prefab.GetComponent&lt;PrefabInstance&gt;() == null) {
-                Prefab = null;
-                Debug.LogError(&quot;PrefabPool: Prefab reference must have the PrefabInstance attached!&quot;);
+        <span style="color:#75715e">//Lastly check that the prefab has the PrefabInstace
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//script attached to it.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(Prefab != <span style="color:#66d9ef">null</span>) {
+            <span style="color:#66d9ef">if</span> (Prefab.GetComponent&lt;PrefabInstance&gt;() == <span style="color:#66d9ef">null</span>) {
+                Prefab = <span style="color:#66d9ef">null</span>;
+                Debug.LogError(<span style="color:#e6db74">&#34;PrefabPool: Prefab reference must have the PrefabInstance attached!&#34;</span>);
             }
         }
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>The Coroutine for adjusting pool size is the trickiest part of the pool. It may seem redundant but I&rsquo;ve implemented it in this way for clarity. If you prefer you could find the delta size via Mathf.ABS() then checking if objects should be added, or removed and perform the operation delta times.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Handles adjusting the pool size when needed.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> IEnumerator UpdatePoolCoroutine() {
+    <span style="color:#75715e">//Gets us out of OnValidate()
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
 
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Handles adjusting the pool size when needed.
-/// &lt;/summary&gt;
-private IEnumerator UpdatePoolCoroutine() {
-    //Gets us out of OnValidate()
-    yield return null;
-
-    //The pool is below target size. Add some
-    if (transform.childCount &lt; Size) {
-        for (int i = 0; i &lt; Size - transform.childCount + 1; i++) {
+    <span style="color:#75715e">//The pool is below target size. Add some
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (transform.childCount &lt; Size) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; Size - transform.childCount + <span style="color:#ae81ff">1</span>; i++) {
             AddInstance();
 
-            //If we've done too much take a break.
-            if(i != 0 &amp;&amp; i % MaxChangesPerTick == 0) {
-                yield return null;
+            <span style="color:#75715e">//If we&#39;ve done too much take a break.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(i != <span style="color:#ae81ff">0</span> &amp;&amp; i % MaxChangesPerTick == <span style="color:#ae81ff">0</span>) {
+                <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
             }
         }
     }
-    //The pool is above target size. Remove some
-    else if (transform.childCount &gt; Size) {
-        for (int i = 0; i &lt; transform.childCount - Size; i++) {
+    <span style="color:#75715e">//The pool is above target size. Remove some
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (transform.childCount &gt; Size) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; transform.childCount - Size; i++) {
             RemoveInstance();
 
-            //If we've done too much take a break.
-            if (i != 0 &amp;&amp; i % MaxChangesPerTick == 0) {
-                yield return null;
+            <span style="color:#75715e">//If we&#39;ve done too much take a break.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (i != <span style="color:#ae81ff">0</span> &amp;&amp; i % MaxChangesPerTick == <span style="color:#ae81ff">0</span>) {
+                <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
             }
         }
     }
 
-    updatingSize = false;
-}
-</code></pre>
-
+    updatingSize = <span style="color:#66d9ef">false</span>;
+}</code></pre></div>
 <p>You&rsquo;ll want to adjust MaxChangesPerTick based on how complex your prefab object is. For larger complex objects reduce the number closer to one, but for simple objects such as the cube primitive MaxChangesPerTick could be fairly high.</p>
 
 <p>Since adding or removing an instance could require some additional work that could clutter the Coroutine we&rsquo;ll move them to their own specialized methods.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Adds a new instances to the bottom of the pool.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> AddInstance() {
+    GameObject newInstance = GameObject.InstantiatePrefab(Prefab, <span style="color:#66d9ef">this</span>.transform) <span style="color:#66d9ef">as</span> GameObject;
 
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Adds a new instances to the bottom of the pool.
-/// &lt;/summary&gt;
-private void AddInstance() {
-    GameObject newInstance = GameObject.InstantiatePrefab(Prefab, this.transform) as GameObject;
-
-    newInstance.SetActive(false);
+    newInstance.SetActive(<span style="color:#66d9ef">false</span>);
 }
 
-/// &lt;summary&gt;
-/// Removes the lastmost instance from the pool.
-/// &lt;/summary&gt;
-private void RemoveInstance() {
+<span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Removes the lastmost instance from the pool.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RemoveInstance() {
     GameObject lastInstance = transform.GetChild(currentInstance).gameObject;
 
-    //Since this can run in the Editor we can't call the regular Destroy()
-    DestroyImmediate(lastInstance);
-}
-</code></pre>
-
+    <span style="color:#75715e">//Since this can run in the Editor we can&#39;t call the regular Destroy()
+</span><span style="color:#75715e"></span>    DestroyImmediate(lastInstance);
+}</code></pre></div>
 <p>Finally we&rsquo;ll need a way to return and retrieve objects from the pool. I&rsquo;ve added a few overloads for getting objects from the pool as examples of what can be done.</p>
-
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Returns an instance from the pool. If the
-/// pool is of fixed type, it may return null.
-/// &lt;/summary&gt;
-public GameObject GetPooledInstance() {
-    return GetInstance();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Returns an instance from the pool. If the
+</span><span style="color:#75715e">/// pool is of fixed type, it may return null.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance() {
+    <span style="color:#66d9ef">return</span> GetInstance();
 }
 
-/// &lt;summary&gt;
-/// Returns an instance from the pool at the
-/// desired location. If the pool is fixed,
-/// and it may return null.
-/// &lt;/summary&gt;
-public GameObject GetPooledInstance(Vector3 pos) {
+<span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Returns an instance from the pool at the
+</span><span style="color:#75715e">/// desired location. If the pool is fixed,
+</span><span style="color:#75715e">/// and it may return null.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance(Vector3 pos) {
     GameObject instance = GetInstance();
     instance.transform.position = pos;
 
-    return instance;
+    <span style="color:#66d9ef">return</span> instance;
 }
 
-/// &lt;summary&gt;
-/// Returns an instance from the pool at the desired location.
-/// If the pool is fixed, it may return null. The prefab is also
-/// set to static.
-/// &lt;/summary&gt;
-public GameObject GetPooledInstance(Vector3 pos, bool isStatic) {
+<span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Returns an instance from the pool at the desired location.
+</span><span style="color:#75715e">/// If the pool is fixed, it may return null. The prefab is also
+</span><span style="color:#75715e">/// set to static.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance(Vector3 pos, <span style="color:#66d9ef">bool</span> isStatic) {
     GameObject instance = GetInstance();
     instance.transform.position = pos;
     instance.isStatic = isStatic;
 
-    return instance;
+    <span style="color:#66d9ef">return</span> instance;
 }
 
-/// &lt;summary&gt;
-/// Get an instance from the pool. If the pool has none
-/// to give out, create one.
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-private GameObject GetInstance() {
-    if (currentInstance == transform.childCount) {
+<span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Get an instance from the pool. If the pool has none
+</span><span style="color:#75715e">/// to give out, create one.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> GameObject GetInstance() {
+    <span style="color:#66d9ef">if</span> (currentInstance == transform.childCount) {
         AddInstance();
     }
 
     GameObject instance = transform.GetChild(currentInstance).gameObject;
-    instance.SetActive(true);
+    instance.SetActive(<span style="color:#66d9ef">true</span>);
 
     PrefabInstance prefabInstance = instance.GetComponent&lt;PrefabInstance&gt;();
-    if (prefabInstance != null) {
-        prefabInstance.Pool = this;
+    <span style="color:#66d9ef">if</span> (prefabInstance != <span style="color:#66d9ef">null</span>) {
+        prefabInstance.Pool = <span style="color:#66d9ef">this</span>;
     }
 
     currentInstance++;
-    return instance;
-}
-</code></pre>
-
+    <span style="color:#66d9ef">return</span> instance;
+}</code></pre></div>
 <p>And to wrap things up let&rsquo;s add the return object method.</p>
-
-<pre><code class="language-c#">//PrefabPool.cs
-/// &lt;summary&gt;
-/// Return an instance back to the pool.
-/// &lt;/summary&gt;
-public void ReturnInstance(GameObject obj) {
-    if (obj == null) {
-        return;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
+</span><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Return an instance back to the pool.
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnInstance(GameObject obj) {
+    <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>) {
+        <span style="color:#66d9ef">return</span>;
     }
 
     PrefabInstance instance = obj.GetComponent&lt;PrefabInstance&gt;();
 
-    //Ensure it has a prefab pool component.
-    if(instance == null) {
-        return;
+    <span style="color:#75715e">//Ensure it has a prefab pool component.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(instance == <span style="color:#66d9ef">null</span>) {
+        <span style="color:#66d9ef">return</span>;
     }
 
-    if (instance.Type == Type &amp;&amp; instance.Pool == this) {
-        obj.SetActive(false);
+    <span style="color:#66d9ef">if</span> (instance.Type == Type &amp;&amp; instance.Pool == <span style="color:#66d9ef">this</span>) {
+        obj.SetActive(<span style="color:#66d9ef">false</span>);
         currentInstance--;
 
-        obj.isStatic = false;
+        obj.isStatic = <span style="color:#66d9ef">false</span>;
         obj.transform.SetSiblingIndex(currentInstance);
         obj.transform.position = Vector3.zero;
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>You&rsquo;ll notice that Unity doesn&rsquo;t like to add all the objects right away in Editor Mode. While the pool may not appear to be at it&rsquo;s correct size you can trigger updates in the Editor by clicking objects in the Hierarchy tab. This pool could use some expanding upon, but is atleast a good base to build off of.</p>
 
-</section>
-<div class="entry-links"></div>
 </article>
-<div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2fobject-pool%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-  <g>
-    <g>
-      <path d="M437.219,245.162c0-3.088-0.056-6.148-0.195-9.18c13.214-9.848,24.675-22.171,33.744-36.275
-        c-12.129,5.453-25.148,9.097-38.835,10.626c13.965-8.596,24.675-22.338,29.738-38.834c-13.075,7.928-27.54,13.603-42.924,16.552
-        c-12.323-14.021-29.904-22.95-49.35-23.284c-37.332-0.612-67.598,30.934-67.598,70.463c0,5.619,0.584,11.072,1.752,16.329
-        c-56.22-3.616-106.042-32.881-139.369-77c-5.814,10.571-9.152,22.922-9.152,36.164c0,25.037,11.934,47.291,30.071,60.421
-        c-11.099-0.5-21.503-3.866-30.627-9.375c0,0.306,0,0.612,0,0.918c0,34.996,23.312,64.316,54.245,71.159
-        c-5.675,1.613-11.656,2.448-17.804,2.421c-4.367-0.028-8.596-0.501-12.713-1.392c8.596,28.681,33.577,49.628,63.147,50.323
-        c-23.145,19.194-52.298,30.655-83.955,30.572c-5.453,0-10.849-0.361-16.135-1.029c29.933,20.53,65.456,32.491,103.65,32.491
-        C369.23,447.261,437.219,339.048,437.219,245.162z"/>
-      <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-        C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-        S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-    </g>
-  </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2fobject-pool%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-    <g>
-      <g>
-        <path d="M349.146,402.251c0-30.016-17.387-44.815-36.525-60.922l-15.662-12.185c-4.785-3.895-11.294-9.124-11.294-18.693
-          c0-9.57,6.537-15.662,12.184-21.309c18.249-14.354,36.526-29.571,36.526-61.756c0-33.076-20.892-50.462-30.878-58.724l0,0h26.956
-          L358.271,153h-89.603c-23.479,0-53.049,3.478-77.863,23.924c-18.693,16.079-27.818,38.278-27.818,58.279
-          c0,33.911,26.093,68.294,72.188,68.294c4.368,0,9.125-0.445,13.937-0.863c-2.17,5.23-4.34,9.569-4.34,16.97
-          c0,13.464,6.955,21.753,13.047,29.57c-19.556,1.308-56.109,3.478-83.065,20.001c-25.676,15.217-33.493,37.416-33.493,53.077
-          c0,32.186,30.461,62.201,93.525,62.201C309.561,484.454,349.146,443.116,349.146,402.251z M255.621,291.34
-          c-37.415,0-54.384-48.292-54.384-77.418c0-11.322,2.17-23.034,9.569-32.186c6.955-8.707,19.139-14.382,30.461-14.382
-          c36.108,0,54.802,48.738,54.802,80.033c0,7.845-0.862,21.754-10.877,31.768C278.237,286.11,266.498,291.312,255.621,291.34z
-           M256.066,466.177c-46.54,0-76.556-22.171-76.556-53.049s27.846-41.311,37.416-44.787c18.276-6.093,41.755-6.982,45.677-6.982
-          c4.34,0,6.51,0,9.987,0.445c33.076,23.479,47.402,35.218,47.402,57.416C319.992,446.176,297.821,466.177,256.066,466.177z"/>
-        <polygon points="353.068,317.768 400.164,317.768 400.164,364.836 423.699,364.836 423.699,317.768 470.768,317.768 
-          470.768,294.233 423.699,294.233 423.699,247.165 400.164,247.165 400.164,294.233 353.068,294.233     "/>
-        <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-          C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-          S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-      </g>
-  </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2fobject-pool%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-  <g>
-    <g>
-      <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-        C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-        S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-      <path d="M317.739,482.617V306h58.279l9.208-58.529h-67.487v-29.348c0-15.272,5.007-29.849,26.928-29.849h43.813v-58.418h-62.201
-        c-52.298,0-66.569,34.438-66.569,82.175v35.413h-35.885V306h35.885v176.617H317.739L317.739,482.617z"/>
-    </g>
-  </svg>
-  </a>
-</div>
-<div class="clearfix"></div>
-<figure class="author-bio">
-<img class="bio-image" src="https://eddieabbondanz.io/img/avatar.jpg" />
-<figcaption class="bio-text">My name&#39;s Eddie Abbondanzio, and this is my blog. I mostly write about game dev / web dev, but I&#39;ll throw in the occasional car post.</figcaption>
-</figure>
-<hr>
 
-</section>
-<div class="clear"></div>
-</div>
-<footer id="footer" style="color: #7A7B7C; background-color: #141414;background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
-  <div id="footer-container">
-    <div class="clearfix"></div>
-  </div>
-  <div id="copyright">&copy; 2019. All rights reserved.</div>
+    </main>
 
-</footer>
-<script src="https://eddieabbondanz.io/js/highlight.pack.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-128571017-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</div>
-</body>
-<link rel="shortcut icon" href="https://eddieabbondanz.io/img/favicon.ico" />
-<link rel="apple-touch-icon" href="https://eddieabbondanz.io/img/apple-touch-icon.jpg" />
+    <footer>
+    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
 
 </html>

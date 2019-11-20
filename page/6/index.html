@@ -1,195 +1,451 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 	<meta name="generator" content="Hugo 0.47.1" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Eddie Abbondanzio</title>
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
-  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eddie Abbondanzio</title>
+    
+    
+    <link rel="alternate" type="application/rss+xml" href="https://eddieabbondanz.io/index.xml" title="Eddie Abbondanzio">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body>
 
+<body class="has-background-light">
+    
+    <section id="hero-header" class="hero is-fullheight"
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://eddieabbondanz.io/img/banner.jpg); "
+        role="banner">
+        
 
-<header class="header" style="background-color: rgb(46, 155, 218);
-    background-image: url(https://eddieabbondanz.io/img/banner.jpg),linear-gradient(to bottom, #009DDC, #006ccb); background-size: 100% auto; " role="banner">
+            <div class="hero-head">
+                <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+            Eddie Abbondanzio
+        </a>
 
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="hamburger-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
-      
-      <section id="branding">
-        <div id="site-title"><a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></div>
-        <nav id="mainmenu">
-          <ul>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-        </ul>
-        </nav>
-        <input type="checkbox" id="op"></input>
-        <div class="lower">
-          <label for="op">Menu</label>
-        </div>
-        <div class="overlay overlay-hugeinc">
-          <label for="op"></label>
-          <nav id="menu" role="navigation">
-            <ul>
-            <li><a href="https://eddieabbondanz.io">Home</a></li>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-          </ul>
-          </nav>
-        </div>
-        <div class="clearfix"></div>
-      </section>
+    <div id="hamburger-menu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+                About Me
+            </a>
 
-      <div class="header-overlay">
-        <div class="post-heading">
-          <h1> 
-          </h1>
+            
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                GitHub
+            </a>
+            
+
+            
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                Twitter
+            </a>
+            
         </div>
     </div>
-    </header>
-
-    <div id="container">
-
-<section id="content" role="main">
-   
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/unity/debug-logging/" rel="bookmark" title="Link to Logging to Unity or Console">Logging to Unity or Console</a></h2>
-    <span class="post-date">Published Mar 31, 2018</span>
-    <p>Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&rsquo;s own set of methods for writing to it&rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&rsquo;ll need a way to differentiate between the running environments.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/unity/debug-logging/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/nomansblocks/3-31-18-update/" rel="bookmark" title="Link to No Mans Blocks - 3/31/18">No Mans Blocks - 3/31/18</a></h2>
-    <span class="post-date">Published Mar 31, 2018</span>
-    <p>Stepping back into Networking These past few months I&rsquo;ve been on a tangent that wasn&rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&rsquo;t exactly remember every change some of the key ones are:</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/nomansblocks/3-31-18-update/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/unity/object-pool/" rel="bookmark" title="Link to Object Pooling in Unity">Object Pooling in Unity</a></h2>
-    <span class="post-date">Published Mar 30, 2018</span>
-    <p>GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/unity/object-pool/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/" rel="bookmark" title="Link to Greedy Meshing for Vertex Colored Voxels In Unity">Greedy Meshing for Vertex Colored Voxels In Unity</a></h2>
-    <span class="post-date">Published Mar 25, 2018</span>
-    <p>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
-This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&rsquo;Leary, with a few alterations made.
-The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/misc/first-post/" rel="bookmark" title="Link to New site, who this?">New site, who this?</a></h2>
-    <span class="post-date">Published Mar 25, 2018</span>
-    <p>Welcome! If your reading this, it means you&rsquo;ve found my new website. It&rsquo;s still in it&rsquo;s early stages so it may seem quite primitive. It&rsquo;s powered via Hugo, and while I may have a decent grasp of HTML/CSS/JS, Go is a whole new concept.
-In the following weeks I&rsquo;ll work on dialing things in and at the same time post progresss about my various projects I&rsquo;m working on.
-What is this blog about?</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/misc/first-post/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/civic/15-09-07/" rel="bookmark" title="Link to Civic Build - 09/07/15">Civic Build - 09/07/15</a></h2>
-    <span class="post-date">Published Sep 7, 2015</span>
-    <p>Now that I&rsquo;m back at college it&rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
-I wasn&rsquo;t a fan of the stock antenna and it was broken so I figured we should delete it. My Dad helped out by soldering in a small patch to cover the antenna hole then skim coated it with body filler until you couldn&rsquo;t even tell it was ever there.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/civic/15-09-07/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/civic/15-08-22/" rel="bookmark" title="Link to Civic Build - 08/22/15">Civic Build - 08/22/15</a></h2>
-    <span class="post-date">Published Aug 22, 2015</span>
-    <p>I&rsquo;ve been quite busy working on the Civic in the past month. I&rsquo;m verfy excited to shared the journey I&rsquo;m embarking on, and can&rsquo;t wait to see how the finished product looks.
-Like every other civic / older Honda out there the wiper arms had basically all but lost their OEM paint. I wanted to fix them up so instead of buying new ones I sandblasted and powder coated mine with a nice matte black powder coat.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/civic/15-08-22/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/civic/15-07-06/" rel="bookmark" title="Link to Civic Build - 07/06/15">Civic Build - 07/06/15</a></h2>
-    <span class="post-date">Published Jul 15, 2015</span>
-    <p>The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&rsquo;t resist making the switch.
-While it was kinda gross, it actually cleaned up pretty nicely. After a lot of scrubbing and cleaning it was finally ready for paint.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/civic/15-07-06/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/civic/15-07-03/" rel="bookmark" title="Link to Civic Build - 07/03/15">Civic Build - 07/03/15</a></h2>
-    <span class="post-date">Published Jul 15, 2015</span>
-    <p>I don&rsquo;t know why, but I&rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&rsquo;s a fact.
-My first car was a 1999 Acura RL that I purchased from my Grandmother. The car was in rough shape, and needed some love but it was an amazing first car. I put over 36k miles on the car in 3 years, and loved everything about it.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/civic/15-07-03/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <article>
-    <h2 class="post-title"><a href="https://eddieabbondanz.io/post/acura/14-09-09/" rel="bookmark" title="Link to Acura Build - 09/09/2014">Acura Build - 09/09/2014</a></h2>
-    <span class="post-date">Published Sep 9, 2014</span>
-    <p>I&rsquo;ve been fairly quiet since I&rsquo;ve just been enjoying the car. I&rsquo;ve moved up North for college and have decided to sell the RL. There&rsquo;s nothing wrong with it I&rsquo;m just bored of it. I really want something that can be modded a little more. There&rsquo;s almost no aftermarket support for the RL so everything has to be done custom.
-It took a month to sell but this is the last pic of it.</p>
-    <a class="moretag" href="https://eddieabbondanz.io/post/acura/14-09-09/">Continue reading &#8614;</a>
-    <hr class="divider">
-    </article>
-  
-  <nav id="nav-below" class="navigation" role="navigation">
-<div class="older">
-		<a href="https://eddieabbondanz.io/page/7/">Older Posts &raquo;</a>
-	</div>
-<div class="newer">
-		<a href="https://eddieabbondanz.io/page/5/">&laquo; Newer Posts</a>
-	</div>
-	<div class="clearfix"></div>
-	<div class="pagination">Page 6 of 8</div>
 </nav>
-</section>
-<div class="clear"></div>
+            </div>
+
+            
+            
+        </section>
+
+    <main class="container has-background-white">
+        
+<div class="is-flex is-align-center has-margin-bottom-5">
+    <h2 class="is-size-4 has-text-grey has-margin-right-2">Filter By:</h2>
+    
+    <i class="material-icons has-margin-right-2 is-size-3 has-text-grey">folder</i>
+
+
+    <div class="dropdown">
+        <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                <span>Category</span>
+                <span class="icon is-small">
+                    <i class="material-icons" aria-hidden="true">expand_more</i>
+                </span>
+            </button>
+        </div>
+        <div class="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/c">C#</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/http">Http</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/laptop">Laptop</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/meta">Meta</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/mysql">Mysql</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/nomansblocks">Nomansblocks</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/saas">Saas</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/software-design">Software-Design</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/typescript">Typescript</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/unity">Unity</a>
+                <hr class="dropdown-divider">
+                
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/voxel">Voxel</a>
+                <hr class="dropdown-divider">
+                
+            </div>
+        </div>
+    </div>
+
+    
+
 </div>
-<footer id="footer" style="color: #7A7B7C; background-color: #141414;background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
-  <div id="footer-container">
-    <div class="clearfix"></div>
-  </div>
-  <div id="copyright">&copy; 2019. All rights reserved.</div>
 
-</footer>
-<script src="https://eddieabbondanz.io/js/highlight.pack.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
 
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-128571017-1', 'auto');
-  ga('send', 'pageview');
-</script>
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/nomansblocks/18-03-31/">No Mans Blocks - 3/31/18</a></h1>
 
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Mar 31, 2018">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Mar 31, 2018</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        Stepping back into Networking These past few months I&rsquo;ve been on a tangent that wasn&rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&rsquo;t exactly remember every change some of the key ones are:
+        
+        <a href="https://eddieabbondanz.io/post/nomansblocks/18-03-31/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/unity/object-pool/">Object Pooling in Unity</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Mar 30, 2018">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Mar 30, 2018</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.
+        
+        <a href="https://eddieabbondanz.io/post/unity/object-pool/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Greedy Meshing for Vertex Colored Voxels In Unity</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Mar 25, 2018">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Mar 25, 2018</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
+This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&rsquo;Leary, with a few alterations made.
+The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.
+        
+        <a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/civic/15-09-07/">Civic Build - 09/07/15</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Sep 7, 2015">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Sep 7, 2015</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        Now that I&rsquo;m back at college it&rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
+I wasn&rsquo;t a fan of the stock antenna and it was broken so I figured we should delete it. My Dad helped out by soldering in a small patch to cover the antenna hole then skim coated it with body filler until you couldn&rsquo;t even tell it was ever there.
+        
+        <a href="https://eddieabbondanz.io/post/civic/15-09-07/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/civic/15-08-22/">Civic Build - 08/22/15</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Aug 22, 2015">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Aug 22, 2015</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        I&rsquo;ve been quite busy working on the Civic in the past month. I&rsquo;m verfy excited to shared the journey I&rsquo;m embarking on, and can&rsquo;t wait to see how the finished product looks.
+Like every other civic / older Honda out there the wiper arms had basically all but lost their OEM paint. I wanted to fix them up so instead of buying new ones I sandblasted and powder coated mine with a nice matte black powder coat.
+        
+        <a href="https://eddieabbondanz.io/post/civic/15-08-22/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/civic/15-07-06/">Civic Build - 07/06/15</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Jul 15, 2015">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Jul 15, 2015</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&rsquo;t resist making the switch.
+While it was kinda gross, it actually cleaned up pretty nicely. After a lot of scrubbing and cleaning it was finally ready for paint.
+        
+        <a href="https://eddieabbondanz.io/post/civic/15-07-06/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/civic/15-07-03/">Civic Build - 07/03/15</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Jul 15, 2015">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Jul 15, 2015</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        I don&rsquo;t know why, but I&rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&rsquo;s a fact.
+My first car was a 1999 Acura RL that I purchased from my Grandmother. The car was in rough shape, and needed some love but it was an amazing first car. I put over 36k miles on the car in 3 years, and loved everything about it.
+        
+        <a href="https://eddieabbondanz.io/post/civic/15-07-03/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/acura/14-09-09/">Acura Build - 09/09/2014</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Sep 9, 2014">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Sep 9, 2014</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        I&rsquo;ve been fairly quiet since I&rsquo;ve just been enjoying the car. I&rsquo;ve moved up North for college and have decided to sell the RL. There&rsquo;s nothing wrong with it I&rsquo;m just bored of it. I really want something that can be modded a little more. There&rsquo;s almost no aftermarket support for the RL so everything has to be done custom.
+It took a month to sell but this is the last pic of it.
+        
+        <a href="https://eddieabbondanz.io/post/acura/14-09-09/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/acura/14-05-25/">Acura Build - 05/25/2014</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on May 25, 2014">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">May 25, 2014</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        The fog lights were a little too squarish for my taste so I made some custom overlays to give them a slight &ldquo;curve&rdquo;. The grill is also the custom debadged one I made a couple months back.
+On the newer RLs they came with paint matched side skirts. I decided I want them as well.
+Not bad for spray paint. This was after hitting them with a buff.
+I also made another custom debadged grill.
+        
+        <a href="https://eddieabbondanz.io/post/acura/14-05-25/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/acura/14-05-10/">Acura Build - 05/10/2014</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on May 10, 2014">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">May 10, 2014</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        With a stock exhaust the car was fairly quiet. I decided it was time to let the 3.5 V6 under the hood make some noise and ordered a Borla exhaust.
+Lou&rsquo;s Exhaust in Portland did the install job. He even made some custom tips for it. I really like how it&rsquo;s tucked up nice and high and can&rsquo;t be seen.
+Overall it sounds nice albeit a little loud.
+        
+    </p>
+</article>
+
+
+<div class="is-flex is-flex-row is-align-center has-margin-y-5 is-justify-center">
+    <div class="is-relative">
+        
+        <a class="button is-primary" style="display: inline-block; position: absolute; right: 96px;"
+            href="https://eddieabbondanz.io/page/5/">Previous Page</a>
+        
+
+        <p class="has-margin-x-3 is-align-center is-justify-center" style="display: inline-flex; height: 40px;">
+            6 of 7
+        </p>
+
+        
+        <a class="button is-primary" style="display: inline-block; position: absolute; left: 96px;"
+            href="https://eddieabbondanz.io/page/7/">Next
+            Page</a>
+        
+    </div>
 </div>
-</body>
-<link rel="shortcut icon" href="https://eddieabbondanz.io/img/favicon.ico" />
-<link rel="apple-touch-icon" href="https://eddieabbondanz.io/img/apple-touch-icon.jpg" />
+
+
+    </main>
+
+    <footer>
+    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
 
 </html>

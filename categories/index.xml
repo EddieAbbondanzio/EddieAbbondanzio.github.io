@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 14 Oct 2019 14:50:42 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 09 May 2018 19:04:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Aspnet</title>
-      <link>https://eddieabbondanz.io/categories/aspnet/</link>
-      <pubDate>Mon, 14 Oct 2019 14:50:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/categories/aspnet/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>C#</title>
@@ -31,38 +22,11 @@
     </item>
     
     <item>
-      <title>Civic</title>
-      <link>https://eddieabbondanz.io/categories/civic/</link>
-      <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/categories/civic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Honda</title>
-      <link>https://eddieabbondanz.io/categories/honda/</link>
-      <pubDate>Fri, 06 Apr 2018 15:22:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/categories/honda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Http</title>
       <link>https://eddieabbondanz.io/categories/http/</link>
       <pubDate>Tue, 29 Jan 2019 18:29:29 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/categories/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jeep</title>
-      <link>https://eddieabbondanz.io/categories/jeep/</link>
-      <pubDate>Sun, 03 Feb 2019 17:28:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/categories/jeep/</guid>
       <description></description>
     </item>
     
@@ -114,7 +78,7 @@
     <item>
       <title>Software Design</title>
       <link>https://eddieabbondanz.io/categories/software-design/</link>
-      <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
+      <pubDate>Fri, 07 Dec 2018 19:59:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/categories/software-design/</guid>
       <description></description>
@@ -132,7 +96,7 @@
     <item>
       <title>Unity</title>
       <link>https://eddieabbondanz.io/categories/unity/</link>
-      <pubDate>Thu, 14 Nov 2019 21:31:00 +0000</pubDate>
+      <pubDate>Wed, 13 Nov 2019 19:04:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/categories/unity/</guid>
       <description></description>

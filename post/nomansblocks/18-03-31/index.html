@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>No Mans Blocks - 3/31/18</title>
+    
+    
+    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+<body class="has-background-light">
+    
+        <section id="hero-header" class="hero is-fullheight is-primary">
+            
+
+            <div class="hero-head">
+                <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+            Eddie Abbondanzio
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="hamburger-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="hamburger-menu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+                About Me
+            </a>
+
+            
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                GitHub
+            </a>
+            
+
+            
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                Twitter
+            </a>
+            
+        </div>
+    </div>
+</nav>
+            </div>
+
+            
+            
+            <div class="hero-foot">
+                <div class="container">
+                    <header>
+    <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
+
+        
+        <div class="has-margin-bottom-3">
+            <h1 class="is-marginless is-size-3-touch is-size-1-desktop">
+                No Mans Blocks - 3/31/18
+            </h1>
+
+            
+        </div>
+
+        
+        <div class="is-flex-desktop flex-row  has-text-grey-lighter">
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+                <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
+                <time class="has-text-grey-lighter">Mar 31, 2018</time>
+            </div>
+
+            
+        </div>
+    </div>
+</header>
+                </div>
+            </div>
+            
+        </section>
+
+    <main class="container has-background-white">
+        
+<article>
+    
+
+<h2 id="stepping-back-into-networking">Stepping back into Networking</h2>
+
+<p>These past few months I&rsquo;ve been on a tangent that wasn&rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&rsquo;t exactly remember every change some of the key ones are:</p>
+
+<ul>
+<li>New Task Scheduler + ThreadManager</li>
+<li>Faster greedy mesh algorithm</li>
+<li>New Command Console</li>
+<li>New World loading method</li>
+<li>Introduction of random world generation</li>
+<li>Prefab Controller to allow for new features such as sprite blocks + more</li>
+</ul>
+
+<p>While it may not seem like much, it will make moving forward much easier. The voxel engine itself is quite enjoyable to work with and I&rsquo;m excited to see where it goes. I also took the opportunity to redo the server application code. Previously there was a lot of redundant code between the game server and voxel engine, but that&rsquo;s no longer the case. The server app is currently running through console but down the road I plan on adding a GUI.</p>
+
+<p>Below is all of the code for the server. It doesn&rsquo;t really show much as the server application is nothing more than a wrapper for accepting inputs to the command console of Voxelated. I&rsquo;ll give out some more details soon.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">namespace</span> NoMansBlocks.Server {
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The entry point for the applicaiton. The server app itself
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// does nothing more than process commands.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span> {
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span><span style="color:#a6e22e">[]</span> args) {
+            VoxelatedEngine.OnStop += OnStop;
+
+            LoggerUtils.SetLogProfile(LogProfile.ConsoleDebug);
+
+            <span style="color:#75715e">//Start the engine up
+</span><span style="color:#75715e"></span>            VoxelatedEngine voxelatedEngine = <span style="color:#66d9ef">new</span> VoxelatedEngine();
+            voxelatedEngine.Start();
+
+            <span style="color:#75715e">//While it&#39;s running, keep accepting commands
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> (voxelatedEngine.IsRunning) {
+                <span style="color:#66d9ef">string</span> input = Console.ReadLine();
+                VoxelatedEngine.Console.Parse(input);
+            }
+        }
+
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// Called when the voxelated engine is shutting down.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> OnStop(<span style="color:#66d9ef">object</span> sender, EventArgs e) {
+            Environment.Exit(<span style="color:#ae81ff">0</span>);
+        }
+    }
+}</code></pre></div>
+</article>
+
+    </main>
+
+    <footer>
+    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
+
+</html>

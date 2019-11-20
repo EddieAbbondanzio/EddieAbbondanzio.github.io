@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 14 Nov 2019 21:31:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 19:04:00 +0000</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Unity - LiteNetLib&#39;s Delivery Methods</title>
-      <link>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</link>
-      <pubDate>Thu, 14 Nov 2019 21:31:00 +0000</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</guid>
-      <description>While LiteNetLib may run on UDP (User Datagram Protocol) which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &amp;ldquo;reliability&amp;rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).
-In total, LiteNetLib offers 5 different delivery methods for sending packets to peers. They are as follows:
- Unreliable ReliableUnOrdered Sequenced ReliableOrdered ReliableSequenced  Unreliable Unreliable is standard UDP.</description>
-    </item>
     
     <item>
       <title>Unity - How to Send Data With LiteNetLib</title>
@@ -49,7 +38,7 @@ As we already know, we listen for incoming messages from the network via an IEve
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
       <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
- LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
+  LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
 Create a Plugins Folder Open up your Unity project.</description>
     </item>
     

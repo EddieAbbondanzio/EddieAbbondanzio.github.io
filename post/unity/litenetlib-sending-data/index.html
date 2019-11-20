@@ -1,458 +1,318 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <meta name="description" content="My name is Eddie Abbondanzio and this is my personal blog for all things related to software development, architecture, design patterns, web development, and more. I also post updates on my car build threads." />
-  <title>Unity - How to Send Data With LiteNetLib &middot; Eddie Abbondanzio</title>
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/style.css" />
-  <link rel="stylesheet" href="https://eddieabbondanz.io/css/font-awesome.min.css" />
-  <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Unity - How to Send Data With LiteNetLib</title>
+    
+    
+    
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </head>
-<body>
 
+<body class="has-background-light">
+    
+<section class="hero is-fullheight"
+    style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://eddieabbondanz.io/post/unity/litenetlib-sending-data/images/hero.jpg); "
+    role="banner">
+    
 
-<header class="header" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://eddieabbondanz.io/img/unity/litenetlib-sending-data/hero.jpg); background-size: 100% auto;" role="banner">
-<!-- FeaturedImage. Otherwise show default //-->
+            <div class="hero-head">
+                <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+            Eddie Abbondanzio
+        </a>
 
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="hamburger-menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
-      
-      <section id="branding">
-        <div id="site-title"><a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></div>
-        <nav id="mainmenu">
-          <ul>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-        </ul>
-        </nav>
-        <input type="checkbox" id="op"></input>
-        <div class="lower">
-          <label for="op">Menu</label>
-        </div>
-        <div class="overlay overlay-hugeinc">
-          <label for="op"></label>
-          <nav id="menu" role="navigation">
-            <ul>
-            <li><a href="https://eddieabbondanz.io">Home</a></li>
-            <li><a href="https://eddieabbondanz.io/about">About Me</a></li>
-            <li><a href="http://github.com/EddieAbbondanzio" target="_blank">Github</a></li>
-            <li><a href="https://twitter.com/EAbbondanzio" target="_blank">Twitter</a></li>
-            <li><a href="https://edsautodetailing.com" target="_blank">Ed's Auto Detailing</a></li>
-          </ul>
-          </nav>
-        </div>
-        <div class="clearfix"></div>
-      </section>
+    <div id="hamburger-menu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+                About Me
+            </a>
 
-      <div class="header-overlay">
-        <div class="post-heading">
-          <h1>
-          Unity - How to Send Data With LiteNetLib
-            <div class="share-icons-header">
-              <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-              <g>
-                <g>
-                  <path d="M437.219,245.162c0-3.088-0.056-6.148-0.195-9.18c13.214-9.848,24.675-22.171,33.744-36.275
-                    c-12.129,5.453-25.148,9.097-38.835,10.626c13.965-8.596,24.675-22.338,29.738-38.834c-13.075,7.928-27.54,13.603-42.924,16.552
-                    c-12.323-14.021-29.904-22.95-49.35-23.284c-37.332-0.612-67.598,30.934-67.598,70.463c0,5.619,0.584,11.072,1.752,16.329
-                    c-56.22-3.616-106.042-32.881-139.369-77c-5.814,10.571-9.152,22.922-9.152,36.164c0,25.037,11.934,47.291,30.071,60.421
-                    c-11.099-0.5-21.503-3.866-30.627-9.375c0,0.306,0,0.612,0,0.918c0,34.996,23.312,64.316,54.245,71.159
-                    c-5.675,1.613-11.656,2.448-17.804,2.421c-4.367-0.028-8.596-0.501-12.713-1.392c8.596,28.681,33.577,49.628,63.147,50.323
-                    c-23.145,19.194-52.298,30.655-83.955,30.572c-5.453,0-10.849-0.361-16.135-1.029c29.933,20.53,65.456,32.491,103.65,32.491
-                    C369.23,447.261,437.219,339.048,437.219,245.162z"/>
-                  <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                    C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                    S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                </g>
-              </svg></a>
-              <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path d="M349.146,402.251c0-30.016-17.387-44.815-36.525-60.922l-15.662-12.185c-4.785-3.895-11.294-9.124-11.294-18.693
-                      c0-9.57,6.537-15.662,12.184-21.309c18.249-14.354,36.526-29.571,36.526-61.756c0-33.076-20.892-50.462-30.878-58.724l0,0h26.956
-                      L358.271,153h-89.603c-23.479,0-53.049,3.478-77.863,23.924c-18.693,16.079-27.818,38.278-27.818,58.279
-                      c0,33.911,26.093,68.294,72.188,68.294c4.368,0,9.125-0.445,13.937-0.863c-2.17,5.23-4.34,9.569-4.34,16.97
-                      c0,13.464,6.955,21.753,13.047,29.57c-19.556,1.308-56.109,3.478-83.065,20.001c-25.676,15.217-33.493,37.416-33.493,53.077
-                      c0,32.186,30.461,62.201,93.525,62.201C309.561,484.454,349.146,443.116,349.146,402.251z M255.621,291.34
-                      c-37.415,0-54.384-48.292-54.384-77.418c0-11.322,2.17-23.034,9.569-32.186c6.955-8.707,19.139-14.382,30.461-14.382
-                      c36.108,0,54.802,48.738,54.802,80.033c0,7.845-0.862,21.754-10.877,31.768C278.237,286.11,266.498,291.312,255.621,291.34z
-                      M256.066,466.177c-46.54,0-76.556-22.171-76.556-53.049s27.846-41.311,37.416-44.787c18.276-6.093,41.755-6.982,45.677-6.982
-                      c4.34,0,6.51,0,9.987,0.445c33.076,23.479,47.402,35.218,47.402,57.416C319.992,446.176,297.821,466.177,256.066,466.177z"/>
-                    <polygon points="353.068,317.768 400.164,317.768 400.164,364.836 423.699,364.836 423.699,317.768 470.768,317.768 
-                      470.768,294.233 423.699,294.233 423.699,247.165 400.164,247.165 400.164,294.233 353.068,294.233     "/>
-                    <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                      C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                      S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                  </g>
-              </svg></a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-              <g>
-                <g>
-                  <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-                    C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-                    S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-                  <path d="M317.739,482.617V306h58.279l9.208-58.529h-67.487v-29.348c0-15.272,5.007-29.849,26.928-29.849h43.813v-58.418h-62.201
-                    c-52.298,0-66.569,34.438-66.569,82.175v35.413h-35.885V306h35.885v176.617H317.739L317.739,482.617z"/>
-                </g>
-              </svg>
-              </a>
-            </div>
             
-          </h1>
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                GitHub
+            </a>
+            
+
+            
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                Twitter
+            </a>
+            
         </div>
     </div>
-    </header>
+</nav>
+            </div>
 
-    <div id="container">
+            
+            
+            <div class="hero-foot">
+                <div class="container">
+                    <header>
+    <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
 
+        
+        <div class="has-margin-bottom-3">
+            <h1 class="is-marginless is-size-3-touch is-size-1-desktop">
+                Unity - How to Send Data With LiteNetLib
+            </h1>
 
-<section id="content" role="main">
-<section class="entry-meta">
-  <span class="post-date">Nov 13, 2019</span>
-</section></header>
-<section class="entry-content">
+            
+        </div>
+
+        
+        <div class="is-flex-desktop flex-row  has-text-grey-lighter">
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+                <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
+                <time class="has-text-grey-lighter">Nov 13, 2019</time>
+            </div>
+
+            
+        </div>
+    </div>
+</header>
+                </div>
+            </div>
+            
+        </section>
+
+    <main class="container has-background-white">
+        
 <article>
-
+    
 
 <p>Continuing off the previous post about <a href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/">how to build a basic server / client set up with LiteNetLib</a> it&rsquo;s time to talk about sending data. Because, well, a network set up that doesn&rsquo;t actually send any data is kind of useless.</p>
 
 <p>As we already know, we listen for incoming messages from the network via an <code>IEventListener</code> that we pass to our <code>NetManager</code>. <code>IEventListener</code> contains an event called <code>NetworkReceiveEvent</code> which is triggered anytime the network receives data from another connection. (If we were a server this would be one of the clients sending us something.)</p>
 
 <p>In the <code>NetworkReceiveEvent</code> delegate we&rsquo;re given a few parameters. The <code>NetPeer</code> that the message came from, a <code>NetDataReader</code> for reading the incoming data, and the <code>DeliveryMethod</code> of how it was sent (see <a href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/">LiteNetLib&rsquo;s Delivery Methods</a>).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
 
-<pre><code class="language-c#">public void HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
-
-}
-</code></pre>
-
+}</code></pre></div>
 <p><code>NetDataReader</code> provides us with a lot of great helpers to interpret the data received, such as <code>GetByte()</code>, <code>GetInt()</code>, or even <code>GetStringArray()</code> but what do we do if we don&rsquo;t know what kind of data was sent?</p>
 
 <p>One option would be to ensure our data is always sent with a type flag as the first byte which we could then use to recreate the original object but then our handler would grow linearly as the number of packet types increases.</p>
-
-<pre><code class="language-c#">public void HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
     PacketType = (PacketType)data.PeekByte()
 
-    switch(PacketType) {
-        case PacketType.Foo
+    <span style="color:#66d9ef">switch</span>(PacketType) {
+        <span style="color:#66d9ef">case</span> PacketType.Foo
         ...
-        case PacketType.Bar
+        <span style="color:#66d9ef">case</span> PacketType.Bar
         ...
-        case PacketType.Baz
+        <span style="color:#66d9ef">case</span> PacketType.Baz
         ...
-        case PacketType.Cat
+        <span style="color:#66d9ef">case</span> PacketType.Cat
         ...
-        case PacketType.Dog
+        <span style="color:#66d9ef">case</span> PacketType.Dog
         ...
 
-        // And so on...
-    }
-}
-</code></pre>
-
+        <span style="color:#75715e">// And so on...
+</span><span style="color:#75715e"></span>    }
+}</code></pre></div>
 <h1 id="enter-the-netpacketprocessor">Enter the <code>NetPacketProcessor</code></h1>
 
 <p>On the other hand, we could offload some of this logic to the <code>NetPacketProcessor</code> and leave it up to the processor to rebuild our incoming data. This convenience does come with a price though. The <code>NetPacketProcessor</code> will add 64 bits (8 bytes) to the beginning of each message we send. There&rsquo;s no doubt that there are some situations where every bit matters and this may be a deal breaker, but for most applications it&rsquo;s a reasonable price to pay.</p>
 
 <p>Let&rsquo;s define a packet that we want to send over the network.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FooPacket</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> NumberValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> StringValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}</code></pre></div>
 
-<pre><code class="language-c#">public class FooPacket {
-    public int NumberValue { get; set; }
-    public string StringValue { get; set; }
-}
-</code></pre>
 
- 
-<div class="alert alert-info d-flex flex-row  align-items-center">
-  <i class="material-icons pr-3">
-    info
-  </i>
-  <p><a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-client-cs"><code>Client.cs</code></a> and <a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-server-cs"><code>Server.cs</code></a> from the previous section will be reused to reduce redundancy.</p>
 
+<div class="alert message is-info">
+    <div class="message-body is-flex is-flex-row is-align-center">
+        <i class="material-icons pr-3">
+            info
+        </i>
+        <p><a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-client-cs"><code>Client.cs</code></a> and <a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-server-cs"><code>Server.cs</code></a> from the previous section will be reused to reduce redundancy.</p>
+
+    </div>
 </div>
 
 
-
 <p>First up, we&rsquo;re going to modify the server to send a <code>FooPacket</code> to the newly connected client in <code>PeerConnectedEvent</code>. To do this we&rsquo;ll need to add a <code>NetPacketProcessor</code> as a field on the server.</p>
-
-<pre><code class="language-c#">public class Server : MonoBehaviour {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
     EventBasedNetListener netListener;
     NetManager netManager;
-    NetPacketProcessor netProcessor; // Add this
-
-    // Start is called before the first frame update
-    void Start() {
-        netListener = new EventBasedNetListener();
-        netManager = new NetManager(netListener);
-        netProcessor = new NetPacketProcessor(); // Don't forget to initialize it
-
-        netManager.Start(9050);
+    NetPacketProcessor netProcessor; <span style="color:#75715e">// Add this
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// Start is called before the first frame update
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start() {
+        netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
+        netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
+        netProcessor = <span style="color:#66d9ef">new</span> NetPacketProcessor(); <span style="color:#75715e">// Don&#39;t forget to initialize it
+</span><span style="color:#75715e"></span>
+        netManager.Start(<span style="color:#ae81ff">9050</span>);
 
         netListener.ConnectionRequestEvent += (request) =&gt; {
             request.Accept();
         };
 
         netListener.PeerConnectedEvent += (client) =&gt; {
-            Debug.LogError($&quot;Client connected: {client}&quot;);
+            Debug.LogError(<span style="color:#e6db74">$&#34;Client connected: {client}&#34;</span>);
         };
     }
 
-    // Update is called once per frame
-    void Update() {
+    <span style="color:#75715e">// Update is called once per frame
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
         netManager.PollEvents();
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Then in the <code>PeerConnectedEvent</code> delegate we&rsquo;ll add a new call to <code>NetPacketProcessor.Send()</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.PeerConnectedEvent += (client) =&gt; {
+    Debug.LogError(<span style="color:#e6db74">$&#34;Client connected: {client}&#34;</span>);
 
-<pre><code class="language-c#">netListener.PeerConnectedEvent += (client) =&gt; {
-    Debug.LogError($&quot;Client connected: {client}&quot;);
-
-    netProcessor.Send(client, new FooPacket() { NumberValue = 1, StringValue = &quot;Test&quot; }, DeliveryMethod.ReliableOrdered);
-};
-</code></pre>
-
+    netProcessor.Send(client, <span style="color:#66d9ef">new</span> FooPacket() { NumberValue = <span style="color:#ae81ff">1</span>, StringValue = <span style="color:#e6db74">&#34;Test&#34;</span> }, DeliveryMethod.ReliableOrdered);
+};</code></pre></div>
 <p>If we wanted to send a <code>FooPacket</code> to every client connected to the server when a new client connects we could achieve this by using the following line instead:</p>
-
-<pre><code class="language-c#">netManager.SendToAll(netProcessor.Write(new FooPacket() { NumberValue = 3, StringValue = &quot;Cat&quot;}), DeliveryMethod.ReliableOrdered);
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.SendToAll(netProcessor.Write(<span style="color:#66d9ef">new</span> FooPacket() { NumberValue = <span style="color:#ae81ff">3</span>, StringValue = <span style="color:#e6db74">&#34;Cat&#34;</span>}), DeliveryMethod.ReliableOrdered);</code></pre></div>
 <p>With the server set up to send a <code>FooPacket</code> to the client upon successful connection, we need to update the client to listen for the <code>FooPacket</code>. We&rsquo;ll do this by adding a <code>NetPacketProcessor</code> field to the <code>Client</code>.</p>
-
-<pre><code class="language-c#">public class Client : MonoBehaviour {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
     EventBasedNetListener netListener;
     NetManager netManager;
-    NetPacketProcessor netPacketProcessor; // New field
-
-    void Start() {
-        netListener = new EventBasedNetListener();
-        netPacketProcessor = new NetPacketProcessor(); // Same thing to initalize as the server
-
+    NetPacketProcessor netPacketProcessor; <span style="color:#75715e">// New field
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">void</span> Start() {
+        netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
+        netPacketProcessor = <span style="color:#66d9ef">new</span> NetPacketProcessor(); <span style="color:#75715e">// Same thing to initalize as the server
+</span><span style="color:#75715e"></span>
         netListener.PeerConnectedEvent += (server) =&gt; {
-            Debug.LogError($&quot;Connected to server: {server}&quot;);
+            Debug.LogError(<span style="color:#e6db74">$&#34;Connected to server: {server}&#34;</span>);
         };
 
-        netManager = new NetManager(netListener);
+        netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
         netManager.Start();
-        netManager.Connect(&quot;localhost&quot;, 9050);
+        netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>);
     }
 
-    // Update is called once per frame
-    void Update() {
+    <span style="color:#75715e">// Update is called once per frame
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
         netManager.PollEvents();
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Then we&rsquo;ll set it up so the packet processor reads all incoming data. Put this in <code>Start()</code> with the other initialization logic.</p>
-
-<pre><code class="language-c#">netListener.NetworkReceiveEvent += (server, reader, deliveryMethod) =&gt; {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.NetworkReceiveEvent += (server, reader, deliveryMethod) =&gt; {
     netPacketProcessor.ReadAllPackets(reader, server);
-};
-</code></pre>
-
+};</code></pre></div>
 <p>And lastly, we need to tell the packet processor to notify us when a <code>FooPacket</code> comes in. This will also be done in <code>Start()</code>.</p>
-
-<pre><code class="language-c#">netPacketProcessor.SubscribeReusable&lt;FooPacket&gt;((packet) =&gt; {
-    Debug.Log(&quot;Got a foo packet!&quot;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netPacketProcessor.SubscribeReusable&lt;FooPacket&gt;((packet) =&gt; {
+    Debug.Log(<span style="color:#e6db74">&#34;Got a foo packet!&#34;</span>);
     Debug.Log(packet.NumberValue);
-});
-</code></pre>
-
+});</code></pre></div>
 <p>Running the server and client we can see that the <code>FooPacket</code> is sent to the client from the server and contains the correct <code>NumberValue</code> of 1.</p>
 
-
-<figure>
-    
-        <img src="https://eddieabbondanz.io/img/unity/litenetlib-sending-data/1.png" />
-    
-    
-</figure>
-
+<p><img src="images/1.png" alt="" /></p>
 
 <h1 id="limitations">Limitations</h1>
 
 <p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
 
 <h2 id="properties-must-have-public-getters-setters-or-classes-structs-implement-inetserializable">Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
-
-<pre><code class="language-c#">// Bad!
-public class BarPacket {
-    public string Key { get; private set; }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Bad!
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BarPacket</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Key { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
 }
 
-// Good
-public class BarPacket : INetSerializable {
-    public string Key { get; private set; }
+<span style="color:#75715e">// Good
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BarPacket</span> : INetSerializable {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Key { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
 
-    public void Serialize(NetDataWriter writer) {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Serialize(NetDataWriter writer) {
         writer.Put(Key);
     }
 
-    public void Deserialize(NetDataReader reader) {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Deserialize(NetDataReader reader) {
         Key = reader.GetString();
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <h2 id="nested-types-are-not-supported-the-following-types-for-properties-are-supported">Nested types are not supported. The following types for properties are supported:</h2>
-
-<pre><code>byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
-byte[] short[] ushort[] int[] uint[] long[] ulong[] float[] double[] bool[] string[]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
+byte[] short[] ushort[] int[] uint[] long[] ulong[] float[] double[] bool[] string[]</pre></div>
 <p>However, there are two workarounds. The first option is to register the nested type with a static <code>Serialize</code> and <code>Deserialize</code> method to parse them. This is useful for types that we do not have control over such as <code>Vector3</code> in Unity.</p>
-
-<pre><code class="language-c#">public class FakePacket {
-    public Vector3 Position { get; set; }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FakePacket</span> {
+    <span style="color:#66d9ef">public</span> Vector3 Position { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 
-public class Vector3Utils {
-    public static void Serialize(NetDataWriter writer, Vector3 vector) {
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vector3Utils</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Serialize(NetDataWriter writer, Vector3 vector) {
         writer.Put(vector.x);
         writer.Put(vector.y);
         writer.Put(vector.z);
     }
 
-    public static Vector3 Deserialize(NetDataReader reader) {
-        return new Vector3(reader.GetFloat(), reader.GetFloat(), reader.GetFloat());
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Vector3 Deserialize(NetDataReader reader) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Vector3(reader.GetFloat(), reader.GetFloat(), reader.GetFloat());
     }
 }
 
-netPacketProcessor = new NetPacketProcessor();
-netPacketProcessor.RegisterNestedType(Vector3Utils.Serialize, Vector3Utils.Deserialize);
-</code></pre>
-
+netPacketProcessor = <span style="color:#66d9ef">new</span> NetPacketProcessor();
+netPacketProcessor.RegisterNestedType(Vector3Utils.Serialize, Vector3Utils.Deserialize);</code></pre></div>
 <p>The second option is for the nested type to implement <code>INetSerializable</code>. This is the better choice to use when we have control over the type definition.</p>
-
-<pre><code class="language-c#">public class CatPacket {
-    public Cat Cat { get; set; }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CatPacket</span> {
+    <span style="color:#66d9ef">public</span> Cat Cat { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 
-public class Cat : INetSerializable {
-    public string Name { get; set; }
-    public int Age { get; set; }
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> : INetSerializable {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Name { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Age { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 
-    public void Serialize(NetDataWriter writer) {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Serialize(NetDataWriter writer) {
         writer.Put(Name);
         writer.Put(Age);
     }
 
-    public void Deserialize(NetDataReader reader) {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Deserialize(NetDataReader reader) {
         Name = reader.GetString();
         Age = reader.GetInt();
     }
 }
 
-netPacketProcessor = new NetPacketProcessor();
-netPacketProcessor.RegisterNestedType&lt;Cat&gt;(() =&gt; new Cat()); // We need to pass the constructor when it's not a struct.
-</code></pre>
-
+netPacketProcessor = <span style="color:#66d9ef">new</span> NetPacketProcessor();
+netPacketProcessor.RegisterNestedType&lt;Cat&gt;(() =&gt; <span style="color:#66d9ef">new</span> Cat()); // We need to pass the constructor when it<span style="color:#960050;background-color:#1e0010">&#39;</span>s not a struct.</code></pre></div>
 <h1 id="source-code">Source Code</h1>
 
 <script type="application/javascript" src="//gist.github.com/EddieAbbondanzio/0344b09faaadf5b6adea3ec91c7efebf.js"></script>
 
-</section>
-<div class="entry-links"></div>
 </article>
-<div class="share-icons-body">
-  <a href="http://www.twitter.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-  <g>
-    <g>
-      <path d="M437.219,245.162c0-3.088-0.056-6.148-0.195-9.18c13.214-9.848,24.675-22.171,33.744-36.275
-        c-12.129,5.453-25.148,9.097-38.835,10.626c13.965-8.596,24.675-22.338,29.738-38.834c-13.075,7.928-27.54,13.603-42.924,16.552
-        c-12.323-14.021-29.904-22.95-49.35-23.284c-37.332-0.612-67.598,30.934-67.598,70.463c0,5.619,0.584,11.072,1.752,16.329
-        c-56.22-3.616-106.042-32.881-139.369-77c-5.814,10.571-9.152,22.922-9.152,36.164c0,25.037,11.934,47.291,30.071,60.421
-        c-11.099-0.5-21.503-3.866-30.627-9.375c0,0.306,0,0.612,0,0.918c0,34.996,23.312,64.316,54.245,71.159
-        c-5.675,1.613-11.656,2.448-17.804,2.421c-4.367-0.028-8.596-0.501-12.713-1.392c8.596,28.681,33.577,49.628,63.147,50.323
-        c-23.145,19.194-52.298,30.655-83.955,30.572c-5.453,0-10.849-0.361-16.135-1.029c29.933,20.53,65.456,32.491,103.65,32.491
-        C369.23,447.261,437.219,339.048,437.219,245.162z"/>
-      <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-        C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-        S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-    </g>
-  </svg></a>
-  <a href="http://plus.google.com/share?url=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-    <g>
-      <g>
-        <path d="M349.146,402.251c0-30.016-17.387-44.815-36.525-60.922l-15.662-12.185c-4.785-3.895-11.294-9.124-11.294-18.693
-          c0-9.57,6.537-15.662,12.184-21.309c18.249-14.354,36.526-29.571,36.526-61.756c0-33.076-20.892-50.462-30.878-58.724l0,0h26.956
-          L358.271,153h-89.603c-23.479,0-53.049,3.478-77.863,23.924c-18.693,16.079-27.818,38.278-27.818,58.279
-          c0,33.911,26.093,68.294,72.188,68.294c4.368,0,9.125-0.445,13.937-0.863c-2.17,5.23-4.34,9.569-4.34,16.97
-          c0,13.464,6.955,21.753,13.047,29.57c-19.556,1.308-56.109,3.478-83.065,20.001c-25.676,15.217-33.493,37.416-33.493,53.077
-          c0,32.186,30.461,62.201,93.525,62.201C309.561,484.454,349.146,443.116,349.146,402.251z M255.621,291.34
-          c-37.415,0-54.384-48.292-54.384-77.418c0-11.322,2.17-23.034,9.569-32.186c6.955-8.707,19.139-14.382,30.461-14.382
-          c36.108,0,54.802,48.738,54.802,80.033c0,7.845-0.862,21.754-10.877,31.768C278.237,286.11,266.498,291.312,255.621,291.34z
-           M256.066,466.177c-46.54,0-76.556-22.171-76.556-53.049s27.846-41.311,37.416-44.787c18.276-6.093,41.755-6.982,45.677-6.982
-          c4.34,0,6.51,0,9.987,0.445c33.076,23.479,47.402,35.218,47.402,57.416C319.992,446.176,297.821,466.177,256.066,466.177z"/>
-        <polygon points="353.068,317.768 400.164,317.768 400.164,364.836 423.699,364.836 423.699,317.768 470.768,317.768 
-          470.768,294.233 423.699,294.233 423.699,247.165 400.164,247.165 400.164,294.233 353.068,294.233     "/>
-        <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-          C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-          S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-      </g>
-  </svg></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2feddieabbondanz.io%2fpost%2funity%2flitenetlib-sending-data%2f" target="_blank">
-  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-  <g>
-    <g>
-      <path d="M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306
-        C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306
-        S459.64,584.182,306,584.182S27.818,459.64,27.818,306z"/>
-      <path d="M317.739,482.617V306h58.279l9.208-58.529h-67.487v-29.348c0-15.272,5.007-29.849,26.928-29.849h43.813v-58.418h-62.201
-        c-52.298,0-66.569,34.438-66.569,82.175v35.413h-35.885V306h35.885v176.617H317.739L317.739,482.617z"/>
-    </g>
-  </svg>
-  </a>
-</div>
-<div class="clearfix"></div>
-<figure class="author-bio">
-<img class="bio-image" src="https://eddieabbondanz.io/img/avatar.jpg" />
-<figcaption class="bio-text">My name&#39;s Eddie Abbondanzio, and this is my blog. I mostly write about game dev / web dev, but I&#39;ll throw in the occasional car post.</figcaption>
-</figure>
-<hr>
 
-</section>
-<div class="clear"></div>
-</div>
-<footer id="footer" style="color: #7A7B7C; background-color: #141414;background-repeat: repeat, no-repeat; background-position: left top, left top; background-size: 100px 100px, 100% 100%;">
-  <div id="footer-container">
-    <div class="clearfix"></div>
-  </div>
-  <div id="copyright">&copy; 2019. All rights reserved.</div>
+    </main>
 
-</footer>
-<script src="https://eddieabbondanz.io/js/highlight.pack.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-128571017-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-</div>
-</body>
-<link rel="shortcut icon" href="https://eddieabbondanz.io/img/favicon.ico" />
-<link rel="apple-touch-icon" href="https://eddieabbondanz.io/img/apple-touch-icon.jpg" />
+    <footer>
+    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
 
 </html>
