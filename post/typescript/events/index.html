@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -110,30 +110,23 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    
-
-<h1 id="intro">Intro</h1>
-
-<p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
-
-<p>Polling in Computer Science is &ldquo;the process where the computer or controlling device waits for an external device to check for its readiness or state.&rdquo; [1] It&rsquo;s often used for low level applications such as listening for incoming data from the network, or interacting with an IO device.</p>
-
+    <h1 id="intro">Intro</h1>
+<p>If you were expecting a phone call from a friend, you (hopefully) wouldn't sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you'd wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what's known as polling.</p>
+<p>Polling in Computer Science is &ldquo;the process where the computer or controlling device waits for an external device to check for its readiness or state.&rdquo; [1] It's often used for low level applications such as listening for incoming data from the network, or interacting with an IO device.</p>
 <p>We could represent a very basic form of polling from a network as follows:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">hasData</span>()) {
     <span style="color:#75715e">//Do work
 </span><span style="color:#75715e"></span>  }
-}</code></pre></div>
-<p>Since the network doesn&rsquo;t &ldquo;announce&rdquo; when data comes in, we have to manually check it over and over again via the <code>network.hasData()</code> conditional. Polling can be a costly operation depending on how often it occurs, and should only be used when there are no other options. Fortunately, for most problems we can take advantage of events to write reactive code that only executes when needed.</p>
-
+}
+</code></pre></div><p>Since the network doesn't &ldquo;announce&rdquo; when data comes in, we have to manually check it over and over again via the <code>network.hasData()</code> conditional. Polling can be a costly operation depending on how often it occurs, and should only be used when there are no other options. Fortunately, for most problems we can take advantage of events to write reactive code that only executes when needed.</p>
 <h1 id="enter-typescript">Enter TypeScript</h1>
-
-<p>TypeScript may not support events directly out of the box, but that doesn&rsquo;t mean we can&rsquo;t create our own. We&rsquo;ll start off by defining a type to represent event handlers that can subscribe to events.</p>
+<p>TypeScript may not support events directly out of the box, but that doesn't mean we can't create our own. We'll start off by defining a type to represent event handlers that can subscribe to events.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * Event handler that can subscribe to a dispatcher.
 </span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">E</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>;</code></pre></div>
-<p>Now let&rsquo;s define an interface to represent events. By defining an interface we can restrict the ability to invoke events to within the class that owns them.</p>
+<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">E</span>) <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">void</span>;
+</code></pre></div><p>Now let's define an interface to represent events. By defining an interface we can restrict the ability to invoke events to within the class that owns them.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * Event that can be subscribed to.
 </span><span style="color:#75715e"> */</span>
@@ -151,14 +144,12 @@ if (!doNotTrack) {
 </span><span style="color:#75715e">   */</span>
   <span style="color:#a6e22e">unregister</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
 }
-</code></pre></div>
-<p>After that we&rsquo;ll need an event dispatcher. This will need to implement our <code>Event&lt;E&gt;</code> interface.</p>
+</code></pre></div><p>After that we'll need an event dispatcher. This will need to implement our <code>Event&lt;E&gt;</code> interface.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * Dispatcher that can propogate events to subscribers.
 </span><span style="color:#75715e"> */</span>
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {}
-</code></pre></div>
-<p>The dispatcher maintains a collection of handlers that should be notified anytime the event is dispatched.</p>
+</code></pre></div><p>The dispatcher maintains a collection of handlers that should be notified anytime the event is dispatched.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {
     <span style="color:#75715e">/**
 </span><span style="color:#75715e">     * The handlers that want to be notified when an event occurs.
@@ -172,8 +163,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span> <span style="color:#f92672">=</span> [];
     }
 }
-</code></pre></div>
-<p>Then to satisfy the <code>Event&lt;E&gt;</code> interface we&rsquo;ll implement <code>register()</code> and <code>unregister()</code> like so:</p>
+</code></pre></div><p>Then to satisfy the <code>Event&lt;E&gt;</code> interface we'll implement <code>register()</code> and <code>unregister()</code> like so:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#75715e">/**
 </span><span style="color:#75715e">     * Register a new handler with the dispatcher. Any time the event is
 </span><span style="color:#75715e">     * dispatched, the handler will be notified.
@@ -194,8 +184,7 @@ if (!doNotTrack) {
             }
         }
     }
-</code></pre></div>
-<p>To finish off our <code>EventDispatcher&lt;E&gt;</code> class, we&rsquo;ll define a <code>dispatch()</code> method that can notify all the subscribers when the event is invoked.</p>
+</code></pre></div><p>To finish off our <code>EventDispatcher&lt;E&gt;</code> class, we'll define a <code>dispatch()</code> method that can notify all the subscribers when the event is invoked.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#75715e">/**
 </span><span style="color:#75715e">     * Dispatch an event to all the subscribers.
 </span><span style="color:#75715e">     * @param event The data of the event that occured.
@@ -205,14 +194,12 @@ if (!doNotTrack) {
             <span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">event</span>);
         }
     }
-</code></pre></div>
-<h1 id="example">Example</h1>
-
-<p>Imagine we we&rsquo;re working on a login form that accepts an input of an email, and password. The form needs to notify the parent page when the user hits the login button so a request can be sent off to the server.</p>
+</code></pre></div><h1 id="example">Example</h1>
+<p>Imagine we we're working on a login form that accepts an input of an email, and password. The form needs to notify the parent page when the user hits the login button so a request can be sent off to the server.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">UserCredentials</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> };
 
     <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
-        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_email</span><span style="color:#f92672">!:</span> <span style="color:#a6e22e">string</span>;
+        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_email</span><span style="color:#f92672">!</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
 
         <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_password</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">string</span>;
 
@@ -222,19 +209,14 @@ if (!doNotTrack) {
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
         }
     }
-</code></pre></div>
-<p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
+</code></pre></div><p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span>.<span style="color:#a6e22e">dispatch</span>({
   <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;john.smith@mail.com&#34;</span>,
   <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>
 });
-</code></pre></div>
-<h2 id="sources">Sources</h2>
-
+</code></pre></div><h2 id="sources">Sources</h2>
 <p>[1] Wikipedia contributors. (2018, June 3). Polling (computer science). In Wikipedia, The Free Encyclopedia. Retrieved 12:12, January 22, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740">https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740</a></p>
-
 <h2 id="photo">Photo</h2>
-
 <p><a href="https://unsplash.com/photos/yV-an6f_rqo">By Lance Anderson</a></p>
 
 </article>
@@ -242,7 +224,6 @@ if (!doNotTrack) {
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>

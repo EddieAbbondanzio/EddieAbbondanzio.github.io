@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -108,20 +108,14 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    
-
-<h2 id="building-up-the-network-logic">Building Up the Network Logic</h2>
-
-<p>While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&rsquo;s message events. I also didn&rsquo;t care for how each message had it&rsquo;s own event. To try to curtail this redundancy I came up with the following solution.</p>
-
-<p>This networking set up is built on top of the Lidgren networking library. I wanted to abstract away from the Lidgren aspect since it&rsquo;s kinda low level, but I didn&rsquo;t want to go over the top at the same time. I based my setup from this <a href="https://dirkkok.wordpress.com/2012/02/20/lets-make-a-multiplayer-game-part-1/">site&rsquo;s</a> tutorial and applied a few custom tweaks to it.</p>
-
+    <h2 id="building-up-the-network-logic">Building Up the Network Logic</h2>
+<p>While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn't like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it's message events. I also didn't care for how each message had it's own event. To try to curtail this redundancy I came up with the following solution.</p>
+<p>This networking set up is built on top of the Lidgren networking library. I wanted to abstract away from the Lidgren aspect since it's kinda low level, but I didn't want to go over the top at the same time. I based my setup from this <a href="https://dirkkok.wordpress.com/2012/02/20/lets-make-a-multiplayer-game-part-1/">site's</a> tutorial and applied a few custom tweaks to it.</p>
 <p>To reduce redundant code and prevent potential logic errors from arising I changed NetMessage to an abstract class, and added a message category to the class. Now instead of requiring an unique event for each message type I only had to add one per category. Since most components of the game would require several messages it made sense to group them together instead of having to track multiple events per component.</p>
-
 <p>The NetManager base class is responsible for checking and sending out message over the network. It allows for the server and client to be abstract away from the regular game logic as well. Below is the method for checking for messages.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Check to see if any messages have come in from the network.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// Check to see if any messages have come in from the network.
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> CheckForMessages() {
     NetIncomingMessage inMsg;
 
@@ -155,11 +149,11 @@ if (!doNotTrack) {
 
         Recycle(inMsg);
     }
-}</code></pre></div>
-<p>As each category is added this will be expanded upon but I can&rsquo;t see there being too many categories. By the end of this coming week I should have all lobby data synced along with a working chat system. This may seem fairly basic, and it really is because most of the magic is occuring in NetMessage.DecodeMessage(). DecodeMessage is similar to the factory pattern as it is responsible for creating every message recieved over the net.</p>
+}
+</code></pre></div><p>As each category is added this will be expanded upon but I can't see there being too many categories. By the end of this coming week I should have all lobby data synced along with a working chat system. This may seem fairly basic, and it really is because most of the magic is occuring in NetMessage.DecodeMessage(). DecodeMessage is similar to the factory pattern as it is responsible for creating every message recieved over the net.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Decode a message that was recieved from over the network.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// Decode a message that was recieved from over the network.
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> NetMessage DecodeMessage(NetIncomingMessage inMsg) {
     <span style="color:#66d9ef">switch</span> (inMsg.MessageType) {
         <span style="color:#66d9ef">case</span> NetIncomingMessageType.VerboseDebugMessage:
@@ -179,12 +173,12 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">default</span>:
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
     }
-}</code></pre></div>
-<p>It takes an input of NetIncomingMessage (lidgren&rsquo;s message class) and converts them into the new custom message that is specialized. Info messages are nothing more than a string so they can be returned instantly. Things get a bit trickier with connection messages, and data messages though.</p>
+}
+</code></pre></div><p>It takes an input of NetIncomingMessage (lidgren's message class) and converts them into the new custom message that is specialized. Info messages are nothing more than a string so they can be returned instantly. Things get a bit trickier with connection messages, and data messages though.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Decodes a connection message such as connection request, connect,
-</span><span style="color:#75715e">/// or disconnect that was recieved from over the network.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// Decodes a connection message such as connection request, connect,
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// or disconnect that was recieved from over the network.
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> NetMessage DecodeConnectionMessage(NetIncomingMessage inMsg) {
     <span style="color:#66d9ef">if</span> (inMsg == <span style="color:#66d9ef">null</span>) {
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
@@ -211,13 +205,12 @@ if (!doNotTrack) {
     }
 
     <span style="color:#66d9ef">return</span> connMsg;
-}</code></pre></div>
-<p>This method handles a few different tasks. It&rsquo;s responsible for processing ConnectionRequest, Connected, and Disconnect messages. A ConnectionRequestMessage occurs when a new client wants to join the server. This allows the server to get the player&rsquo;s desired name, and check if they are a known banned connection. Connection messages are nothing more than an acknowledgement that the client has joined in, but perhaps in the future they&rsquo;ll have some data attached to them. A Disconnect message is also nothing more than a courtesy to server instead of having the client time out.</p>
-
-<p>Rebuilding data messages is simpler. It&rsquo;s nothing more than a switch statement that reads the first byte of each message to get the NetMessageType.</p>
+}
+</code></pre></div><p>This method handles a few different tasks. It's responsible for processing ConnectionRequest, Connected, and Disconnect messages. A ConnectionRequestMessage occurs when a new client wants to join the server. This allows the server to get the player's desired name, and check if they are a known banned connection. Connection messages are nothing more than an acknowledgement that the client has joined in, but perhaps in the future they'll have some data attached to them. A Disconnect message is also nothing more than a courtesy to server instead of having the client time out.</p>
+<p>Rebuilding data messages is simpler. It's nothing more than a switch statement that reads the first byte of each message to get the NetMessageType.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Decodes a custom data message that was recieved from over the network.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// Decodes a custom data message that was recieved from over the network.
+</span><span style="color:#75715e"></span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> NetMessage DecodeDataMessage(NetIncomingMessage inMsg) {
     NetMessageType msgType = (NetMessageType)inMsg.ReadByte();
 
@@ -240,15 +233,14 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">default</span>:
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
     }
-}</code></pre></div>
-<p>In the near future once the network is solidified I plan on writing up a nice networking tutorial with Lidgren and Unity to help out others.</p>
+}
+</code></pre></div><p>In the near future once the network is solidified I plan on writing up a nice networking tutorial with Lidgren and Unity to help out others.</p>
 
 </article>
 
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>

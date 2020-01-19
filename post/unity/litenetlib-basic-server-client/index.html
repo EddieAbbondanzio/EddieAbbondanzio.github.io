@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -117,13 +117,9 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    
-
-<p>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&rsquo;s a few extra steps we&rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: <a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">How to Setup LiteNetLib With Unity</a></p>
-
+    <p>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there's a few extra steps we'll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: <a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">How to Setup LiteNetLib With Unity</a></p>
 <h1 id="implementing-the-client">Implementing the Client</h1>
-
-<p>Let&rsquo;s start by creating our client script. We&rsquo;ll call it (wait for it) <code>Client.cs</code></p>
+<p>Let's start by creating our client script. We'll call it (wait for it) <code>Client.cs</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -137,8 +133,8 @@ if (!doNotTrack) {
     <span style="color:#75715e">// Update is called once per frame
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
     }
-}</code></pre></div>
-<p>We&rsquo;ll need to give the client a <code>NetManager</code> that interacts with the network, and an <code>EventBasedNetListener</code> that will be used to trigger events any time input is received from the network.</p>
+}
+</code></pre></div><p>We'll need to give the client a <code>NetManager</code> that interacts with the network, and an <code>EventBasedNetListener</code> that will be used to trigger events any time input is received from the network.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -157,8 +153,8 @@ if (!doNotTrack) {
     <span style="color:#75715e">// Update is called once per frame
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
     }
-}</code></pre></div>
-<p>In <code>Start()</code> we&rsquo;ll go ahead and prepare the <code>netListener</code>, and then initialize the <code>netManager</code> by passing it our listener. The <code>netListener</code> provides several different events we can subscribe to such as <code>OnPeerConnected</code>, <code>OnPeerDisconnected</code>, <code>OnNetworkRecieve</code> and more. Since this is a basic server / client set up, we&rsquo;re only going to listen for the <code>OnPeerConnected</code> event.</p>
+}
+</code></pre></div><p>In <code>Start()</code> we'll go ahead and prepare the <code>netListener</code>, and then initialize the <code>netManager</code> by passing it our listener. The <code>netListener</code> provides several different events we can subscribe to such as <code>OnPeerConnected</code>, <code>OnPeerDisconnected</code>, <code>OnNetworkRecieve</code> and more. Since this is a basic server / client set up, we're only going to listen for the <code>OnPeerConnected</code> event.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Start() {
     netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
@@ -167,8 +163,8 @@ if (!doNotTrack) {
     };
 
     client = <span style="color:#66d9ef">new</span> NetManager(netListener);
-}</code></pre></div>
-<p>With the <code>netManager</code> set up, we&rsquo;ll call <code>Start()</code> to fire it up and then <code>Connect()</code> to pass it the IP address of our server (localhost in this case).</p>
+}
+</code></pre></div><p>With the <code>netManager</code> set up, we'll call <code>Start()</code> to fire it up and then <code>Connect()</code> to pass it the IP address of our server (localhost in this case).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Start() {
     netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
@@ -178,16 +174,15 @@ if (!doNotTrack) {
 
     netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
     netManager.Start(); <span style="color:#75715e">// Don&#39;t forget to call .Start()!
-</span><span style="color:#75715e"></span>    netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>);
-}</code></pre></div>
-<p>The client is all set up, and can now connect to the server, but there&rsquo;s one last thing we need to add. LiteNetLib expects us to manually poll for events from the network as it doesn&rsquo;t know how often we want to check for these. This can be accomplished by adding a call to <code>PollEvents()</code> in `Update().</p>
+</span><span style="color:#75715e"></span>    netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9</span><span style="color:#ae81ff">0</span><span style="color:#ae81ff">5</span><span style="color:#ae81ff">0</span>);
+}
+</code></pre></div><p>The client is all set up, and can now connect to the server, but there's one last thing we need to add. LiteNetLib expects us to manually poll for events from the network as it doesn't know how often we want to check for these. This can be accomplished by adding a call to <code>PollEvents()</code> in `Update().</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
     netManager.PollEvents();
-}</code></pre></div>
-<h1 id="implementing-the-server">Implementing the Server</h1>
-
-<p>With the client all ready, let&rsquo;s go ahead and create another MonoBehaviour called <code>Server.cs</code>.</p>
+}
+</code></pre></div><h1 id="implementing-the-server">Implementing the Server</h1>
+<p>With the client all ready, let's go ahead and create another MonoBehaviour called <code>Server.cs</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -201,8 +196,8 @@ if (!doNotTrack) {
     <span style="color:#75715e">// Update is called once per frame
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
     }
-}</code></pre></div>
-<p>Just like the client, the server will also need a <code>NetManager</code> and <code>NetListener</code>. Let&rsquo;s add these as fields.</p>
+}
+</code></pre></div><p>Just like the client, the server will also need a <code>NetManager</code> and <code>NetListener</code>. Let's add these as fields.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -220,8 +215,8 @@ if (!doNotTrack) {
     <span style="color:#75715e">// Update is called once per frame
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
     }
-}</code></pre></div>
-<p>And again we&rsquo;ll initialize our <code>netListener</code> and <code>netManager</code> in <code>Start()</code>. However, this time we&rsquo;ll need to listen for a new event: <code>ConnectionRequestEvent</code>. Like its name implies, this event is fired off when a new client wants to connect to the server. Here we can decide if we want to allow the client to connect, or reject them. For now we&rsquo;ll just always accept the connection.</p>
+}
+</code></pre></div><p>And again we'll initialize our <code>netListener</code> and <code>netManager</code> in <code>Start()</code>. However, this time we'll need to listen for a new event: <code>ConnectionRequestEvent</code>. Like its name implies, this event is fired off when a new client wants to connect to the server. Here we can decide if we want to allow the client to connect, or reject them. For now we'll just always accept the connection.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -247,54 +242,33 @@ if (!doNotTrack) {
 
         netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
     }
-}</code></pre></div>
-<p>With the server ready to accept new clients that wish to connect we just need to add a call to <code>PollEvents()</code> in <code>Update()</code>.</p>
+}
+</code></pre></div><p>With the server ready to accept new clients that wish to connect we just need to add a call to <code>PollEvents()</code> in <code>Update()</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
-</span><span style="color:#75715e">// Update is called once per frame
+</span><span style="color:#75715e"></span><span style="color:#75715e">// Update is called once per frame
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
     netManager.PollEvents();
-}</code></pre></div>
-<h1 id="running-unity-as-a-client-and-server">Running Unity as a Client and Server</h1>
-
+}
+</code></pre></div><h1 id="running-unity-as-a-client-and-server">Running Unity as a Client and Server</h1>
 <p>With the scripts all set, we need to set up Unity so it can run as either a server, or a client. The easiest way to do this would be to take advantage of scenes. Create a new scene and save it off as <code>Client.unity</code>. Then in the new scene add a new empty GameObject and add the <code>Client</code> script to it.
-<img src="images/1.png" alt="" /></p>
-
+<img src="images/1.png" alt=""></p>
 <p>After that create a second scene and save it off as <code>Server.unity</code>. Then add an empty GameObject to it and attach the <code>Server</code> script.</p>
-
-<p><img src="images/2.png" alt="" /></p>
-
+<p><img src="images/2.png" alt=""></p>
 <p>With both scenes prepared, keep the server scene open and bring up the Build Settings (<code>Shift+Ctrl+B</code>) window. We need to add the server scene to the build by clicking &ldquo;Add Open Scenes&rdquo;.</p>
-
-<p><img src="images/3.png" alt="" /></p>
-
+<p><img src="images/3.png" alt=""></p>
 <p>Also ensure that the &ldquo;Development Build&rdquo; checkbox is checked otherwise we wont see any of our <code>Debug.LogError()</code> messages.</p>
-
-<p><img src="images/4.png" alt="" /></p>
-
-<p>Close out of the Build Settings window and switch Unity back to the client scene. We&rsquo;re ready to test things out. We&rsquo;ve set things up so anytime we build and run the app Unity will fire up a server instance for us. Then once that&rsquo;s running we can simply hit play in the editor to start our client.</p>
-
-
-
-
-<div class="alert message is-info">
-    <div class="message-body is-flex is-flex-row is-align-center">
-        <i class="material-icons pr-3">
-            info
-        </i>
-        <p>It comes down to user preference if the client or server should run within the editor, or the standalone build. I personally find that until a menu is added to control when the client connects to a server that it&rsquo;s better to have the server running in the build since we need it active first.</p>
-
-    </div>
-</div>
-
-
+<p><img src="images/4.png" alt=""></p>
+<p>Close out of the Build Settings window and switch Unity back to the client scene. We're ready to test things out. We've set things up so anytime we build and run the app Unity will fire up a server instance for us. Then once that's running we can simply hit play in the editor to start our client.</p>
+<!-- raw HTML omitted -->
+<p>It comes down to user preference if the client or server should run within the editor, or the standalone build. I personally find that until a menu is added to control when the client connects to a server that it's better to have the server running in the build since we need it active first.</p>
+<pre><code>&lt;/div&gt;
+</code></pre>
+<!-- raw HTML omitted -->
 <p>Build and run the server by hitting <code>Ctrl+B</code>. Unity will popup a loading bar and after a few seconds our server will appear. Now hit play in the editor.</p>
-
-<p>It&rsquo;s not much, but the server and client will print out their &ldquo;error&rdquo; messages showing that they connected to each other.
-<img src="images/5.png" alt="" />
-<img src="images/6.png" alt="" /></p>
-
+<p>It's not much, but the server and client will print out their &ldquo;error&rdquo; messages showing that they connected to each other.
+<img src="images/5.png" alt="">
+<img src="images/6.png" alt=""></p>
 <h1 id="connection-limit">Connection Limit</h1>
-
 <p>Adding a connection limit to the server is an easy to add feature that only requires a few extra lines. Jump back over to <code>Server.cs</code> and adjust the event handler for <code>ConnectionRequestEvent</code> to:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
     <span style="color:#66d9ef">int</span> connectionLimit = <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Arbitrary connection limit.
@@ -304,33 +278,27 @@ if (!doNotTrack) {
     } <span style="color:#66d9ef">else</span> {
         request.Accept();
     }
-};</code></pre></div>
-<h1 id="connection-key">Connection Key</h1>
-
+};
+</code></pre></div><h1 id="connection-key">Connection Key</h1>
 <p>Another quick feature we can add to the server is a connection key. We can set it up so the server requires this key from clients before accepting them. This is useful if we wanted to ensure only instances of our game are connecting, or if we want to ensure the client is running a specific version.</p>
-
-<p>Again we&rsquo;ll apply a quick tweak to the event handler for <code>ConnectionRequestEvent</code> in <code>Server.cs</code>.</p>
+<p>Again we'll apply a quick tweak to the event handler for <code>ConnectionRequestEvent</code> in <code>Server.cs</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
     request.AcceptIfKey(<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
-};</code></pre></div>
-<p>And when we call <code>Connect()</code> in <code>Client.cs</code> we&rsquo;ll need to pass the key as an extra parameter.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);</code></pre></div>
-<h1 id="wrapping-up">Wrapping Up</h1>
-
-<p>This tutorial is only the tip of the iceberg in what LiteNetLib can do and offer. It&rsquo;s library is a low level API but it provides the building blocks needed to bring a multiplayer game to life.</p>
-
-<p>LiteNetLib doesn&rsquo;t have the most detailed documentation but it&rsquo;s still worth taking a <a href="https://github.com/RevenantX/LiteNetLib">read</a>.</p>
-
+};
+</code></pre></div><p>And when we call <code>Connect()</code> in <code>Client.cs</code> we'll need to pass the key as an extra parameter.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9</span><span style="color:#ae81ff">0</span><span style="color:#ae81ff">5</span><span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
+</code></pre></div><h1 id="wrapping-up">Wrapping Up</h1>
+<p>This tutorial is only the tip of the iceberg in what LiteNetLib can do and offer. It's library is a low level API but it provides the building blocks needed to bring a multiplayer game to life.</p>
+<p>LiteNetLib doesn't have the most detailed documentation but it's still worth taking a <a href="https://github.com/RevenantX/LiteNetLib">read</a>.</p>
 <h1 id="source-code">Source Code</h1>
+<script type="application/javascript" src="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3.js"></script>
 
-<script type="application/javascript" src="//gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3.js"></script>
 
 </article>
 
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>

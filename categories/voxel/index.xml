@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Voxel on Eddie Abbondanzio</title>
@@ -19,7 +19,7 @@
       
       <guid>https://eddieabbondanz.io/post/voxel/greedy-mesh/</guid>
       <description>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
-This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&amp;rsquo;Leary, with a few alterations made.
+This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&#39;Leary, with a few alterations made.
 The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.</description>
     </item>
     

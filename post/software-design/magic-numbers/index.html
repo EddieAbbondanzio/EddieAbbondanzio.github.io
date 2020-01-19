@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -108,17 +108,11 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    
-
-<h1 id="what-are-they">What Are They?</h1>
-
+    <h1 id="what-are-they">What Are They?</h1>
 <p>Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&rdquo;. [1]</p>
-
 <p>However, this does not mean that all constants should be blindly replaced with pre-defined constants. A good rule of thumb to follow when deciding if a number should be changed to a constant is if the number is a well known value (number of hours in a day, etc&hellip;),compared to a lesser known value (the average air velocity of a laiden swallow). If the number is not well known, then it should be changed to a constant with a comment explaining it.</p>
-
 <h1 id="example">Example</h1>
-
-<p>Imagine you&rsquo;re designing a user system for a web site. To help enforce better security practices, you&rsquo;ve decided there will be a minimum password length of at least 7 characters. To achieve this we could define a <code>User</code> class like so:</p>
+<p>Imagine you're designing a user system for a web site. To help enforce better security practices, you've decided there will be a minimum password length of at least 7 characters. To achieve this we could define a <code>User</code> class like so:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
     <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> password;
 
@@ -132,16 +126,15 @@ if (!doNotTrack) {
             password = <span style="color:#66d9ef">value</span>;
         }
     }
-}</code></pre></div>
-<p>This satisfies our security requirement, but what if instead of catching exceptions when attempting to set a password we want to take advantage of the
+}
+</code></pre></div><p>This satisfies our security requirement, but what if instead of catching exceptions when attempting to set a password we want to take advantage of the
 <a href="https://eddieabbondanz.io/post/software-design/validator-pattern/">validator pattern</a>? An improper solution to would be to define a <code>PasswordValidator</code> as:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PasswordValidator</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(<span style="color:#66d9ef">string</span> password) {
         <span style="color:#66d9ef">return</span> password.length &gt;= <span style="color:#ae81ff">7</span>;
     }
-}</code></pre></div>
-<p>Why is this bad? Because it violates the DRY (don&rsquo;t repeat yourself) principle. We now have two locations that maintain a minimum password length. In larger projects when a single magic number is used in more than 1 places it can turn into a nightmare hunting down all the instances if the magic number ever needs to be changed.</p>
-
+}
+</code></pre></div><p>Why is this bad? Because it violates the DRY (don't repeat yourself) principle. We now have two locations that maintain a minimum password length. In larger projects when a single magic number is used in more than 1 places it can turn into a nightmare hunting down all the instances if the magic number ever needs to be changed.</p>
 <p>We could refactor the example above to be more maintainable by introducing a <code>MinPasswordLength</code> constant for the <code>User</code> class.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MinPasswordLength = <span style="color:#ae81ff">7</span>;
@@ -164,11 +157,9 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(<span style="color:#66d9ef">string</span> password) {
         <span style="color:#66d9ef">return</span> password.length &gt;= User.MinPasswordLength;
     }
-}</code></pre></div>
-<p>Constants are your friend and should be used whenever (reasonably) possible.</p>
-
+}
+</code></pre></div><p>Constants are your friend and should be used whenever (reasonably) possible.</p>
 <h1 id="sources">Sources</h1>
-
 <ol>
 <li>Martin, Robert C. (2009). &ldquo;Chapter 17: Smells and Heuristics - G25 Replace Magic Numbers with Named Constants&rdquo;. Clean Code - A handbook of agile software craftsmanship. Boston: Prentice Hall. p. 300. ISBN 0-13-235088-2.</li>
 </ol>
@@ -178,7 +169,6 @@ if (!doNotTrack) {
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>

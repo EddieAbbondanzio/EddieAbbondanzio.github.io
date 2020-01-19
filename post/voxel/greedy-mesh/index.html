@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -111,11 +111,8 @@ if (!doNotTrack) {
         
 <article>
     <p><strong>TL;DR</strong> Full algorithm is at the bottom. Classes for <code>Block</code>, <code>Chunk</code>, and <code>MeshData</code> are defined below the intro.</p>
-
-<p>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from <a href="https://github.com/roboleary/GreedyMesh">Robert O&rsquo;Leary</a>, with a few alterations made.</p>
-
-<p>The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn&rsquo;t be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I&rsquo;ve left it up to the reader.</p>
-
+<p>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from <a href="https://github.com/roboleary/GreedyMesh">Robert O'Leary</a>, with a few alterations made.</p>
+<p>The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn't be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I've left it up to the reader.</p>
 <p>I prefer colored blocks over typed blocks. As such each block in my implementation holds 4 bytes of data for the color (red, green, blue, and alpha). A block is considered &ldquo;solid&rdquo; if the alpha value is maxed out.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Block.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Block</span> {
@@ -133,8 +130,8 @@ if (!doNotTrack) {
 
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsSolid() =&gt; A == <span style="color:#66d9ef">byte</span>.MaxValue;
     <span style="color:#66d9ef">public</span> Color32 GetColor() =&gt; <span style="color:#66d9ef">new</span> Color32(R, G, B, A);
-}</code></pre></div>
-<p>Blocks are held within a chunk. For performance reasons the chunk utilizes a flattened 3d array, but helper methods <code>ContainsIndex()</code> and <code>FlattenIndex()</code> are provided.</p>
+}
+</code></pre></div><p>Blocks are held within a chunk. For performance reasons the chunk utilizes a flattened 3d array, but helper methods <code>ContainsIndex()</code> and <code>FlattenIndex()</code> are provided.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Chunk.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections;
@@ -142,15 +139,15 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">using</span> UnityEngine;
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Chunk</span> {
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> Vector3Int Dimensions = <span style="color:#66d9ef">new</span> Vector3Int(<span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">128</span>, <span style="color:#ae81ff">32</span>);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> Vector3Int Dimensions = <span style="color:#66d9ef">new</span> Vector3Int(<span style="color:#ae81ff">3</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span><span style="color:#ae81ff">2</span><span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span><span style="color:#ae81ff">2</span>);
 
     <span style="color:#66d9ef">public</span> Vector3Int Position { <span style="color:#66d9ef">get</span>; }
 
-    <span style="color:#66d9ef">private</span> Block<span style="color:#a6e22e">[]</span> blocks { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">private</span> Block[] blocks { <span style="color:#66d9ef">get</span>; }
 
     <span style="color:#66d9ef">public</span> Chunk(Vector3Int position) {
         Position = position;
-        blocks = <span style="color:#66d9ef">new</span> Block<span style="color:#a6e22e">[Dimensions.x * Dimensions.y * Dimensions.z]</span>;
+        blocks = <span style="color:#66d9ef">new</span> Block[Dimensions.x * Dimensions.y * Dimensions.z];
     }
 
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> SetBlock(Vector3Int index, Block block) {
@@ -158,7 +155,7 @@ if (!doNotTrack) {
             <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IndexOutOfRangeException(<span style="color:#e6db74">$&#34;Chunk does not contain index: {index}&#34;</span>);
         }
 
-        blocks<span style="color:#a6e22e">[FlattenIndex(index)]</span> = block;
+        blocks[FlattenIndex(index)] = block;
     }
 
     <span style="color:#66d9ef">public</span> Block GetBlock(Vector3Int index) {
@@ -166,7 +163,7 @@ if (!doNotTrack) {
             <span style="color:#66d9ef">return</span> Block.Air();
         }
 
-        <span style="color:#66d9ef">return</span> blocks<span style="color:#a6e22e">[FlattenIndex(index)]</span>;
+        <span style="color:#66d9ef">return</span> blocks[FlattenIndex(index)];
     }
 
     <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> ContainsIndex(Vector3Int index) =&gt;
@@ -178,24 +175,24 @@ if (!doNotTrack) {
         (index.z * Dimensions.x * Dimensions.y) +
         (index.y * Dimensions.x) +
         index.x;
-}</code></pre></div>
-<p>A <code>MeshData</code> class has been created to ease passing vertices, triangles, and colors around.</p>
+}
+</code></pre></div><p>A <code>MeshData</code> class has been created to ease passing vertices, triangles, and colors around.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// MeshData.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> UnityEngine;
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshData</span> {
-    <span style="color:#66d9ef">public</span> Vector3<span style="color:#a6e22e">[]</span> Vertices { <span style="color:#66d9ef">get</span>; }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span><span style="color:#a6e22e">[]</span> Triangles { <span style="color:#66d9ef">get</span>; }
-    <span style="color:#66d9ef">public</span> Color32<span style="color:#a6e22e">[]</span> Colors { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> Vector3[] Vertices { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span>[] Triangles { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> Color32[] Colors { <span style="color:#66d9ef">get</span>; }
 
-    <span style="color:#66d9ef">public</span> MeshData(Vector3<span style="color:#a6e22e">[]</span> vertices, <span style="color:#66d9ef">int</span><span style="color:#a6e22e">[]</span> triangles, Color32<span style="color:#a6e22e">[]</span> colors) {
+    <span style="color:#66d9ef">public</span> MeshData(Vector3[] vertices, <span style="color:#66d9ef">int</span>[] triangles, Color32[] colors) {
         Vertices = vertices;
         Triangles = triangles;
         Colors = colors;
     }
-}</code></pre></div>
-<p>And lastly, a helper class for building meshes.</p>
+}
+</code></pre></div><p>And lastly, a helper class for building meshes.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// MeshBuilder.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -212,14 +209,14 @@ if (!doNotTrack) {
         colors = <span style="color:#66d9ef">new</span> List&lt;Color32&gt;();
     }
 
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AddSquareFace(Vector3<span style="color:#a6e22e">[]</span> vertices, Color32 color, <span style="color:#66d9ef">bool</span> isBackFace) {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AddSquareFace(Vector3[] vertices, Color32 color, <span style="color:#66d9ef">bool</span> isBackFace) {
         <span style="color:#66d9ef">if</span> (vertices.Length != <span style="color:#ae81ff">4</span>) {
             <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;A square face requires 4 vertices&#34;</span>);
         }
 
         <span style="color:#75715e">// Add the 4 vertices, and color for each vertex.
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; vertices.Length; i++) {
-            <span style="color:#66d9ef">this</span>.vertices.Add(vertices<span style="color:#a6e22e">[i]</span>);
+            <span style="color:#66d9ef">this</span>.vertices.Add(vertices[i]);
             colors.Add(color);
         }
 
@@ -255,21 +252,21 @@ if (!doNotTrack) {
 
         <span style="color:#66d9ef">return</span> data;
     }
-}</code></pre></div>
-<p>Let&rsquo;s go ahead and define a <code>GenerateMesh()</code> method on our <code>Chunk</code>.</p>
+}
+</code></pre></div><p>Let's go ahead and define a <code>GenerateMesh()</code> method on our <code>Chunk</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Chunk.cs
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Chunk</span> {
     <span style="color:#66d9ef">public</span> MeshData GenerateMesh() {
 
     }
-}</code></pre></div>
-<p>Within <code>GenerateMesh()</code> well want to add a loop that runs through all 6 faces of the blocks. We&rsquo;ll also want to know if the current face is a &ldquo;back&rdquo; face.</p>
+}
+</code></pre></div><p>Within <code>GenerateMesh()</code> well want to add a loop that runs through all 6 faces of the blocks. We'll also want to know if the current face is a &ldquo;back&rdquo; face.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Iterate over each face of the blocks.
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
         <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
-    }</code></pre></div>
-<p>To simplify things, we&rsquo;ll break down the problem into building slices of the mesh on 1 plane
+    }
+</code></pre></div><p>To simplify things, we'll break down the problem into building slices of the mesh on 1 plane
 at a time. Lets add some work variables for tracking which two axes we are working on. We will work
 on the planes YZ, ZX, XY. Each plane will be visited twice, once to do the front faces, then
 again to do the back faces.</p>
@@ -280,17 +277,17 @@ again to do the back faces.</p>
         direction = face % <span style="color:#ae81ff">3</span>;
         workAxis1 = (direction + <span style="color:#ae81ff">1</span>) % <span style="color:#ae81ff">3</span>;
         workAxis2 = (direction + <span style="color:#ae81ff">2</span>) % <span style="color:#ae81ff">3</span>;
-    }</code></pre></div>
-<p>We still need a few more work variables. Go ahead and add the following above the for loop.</p>
+    }
+</code></pre></div><p>We still need a few more work variables. Go ahead and add the following above the for loop.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    MeshBuilder builder = <span style="color:#66d9ef">new</span> MeshBuilder();
 
-    <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[,]</span> merged;
+    <span style="color:#66d9ef">bool</span>[,] merged;
 
     Vector3Int startPos, currPos, quadSize, m, n, offsetPos;
-    Vector3<span style="color:#a6e22e">[]</span> vertices;
+    Vector3[] vertices;
 
-    Block startBlock;</code></pre></div>
-<p>Now add an inner for loop as seen below. This will work it&rsquo;s way through the chunk 1 layer at a time.</p>
+    Block startBlock;
+</code></pre></div><p>Now add an inner for loop as seen below. This will work it's way through the chunk 1 layer at a time.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
         <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
         direction = face % <span style="color:#ae81ff">3</span>;
@@ -301,97 +298,97 @@ again to do the back faces.</p>
         currPos = <span style="color:#66d9ef">new</span> Vector3Int();
 
         <span style="color:#75715e">// Iterate over the chunk layer by layer.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[direction]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[direction]</span> &lt; Dimensions<span style="color:#a6e22e">[direction]</span>; startPos<span style="color:#a6e22e">[direction]</span>++) {
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (startPos[direction] = <span style="color:#ae81ff">0</span>; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
 
         }
-    }</code></pre></div>
-<p>We&rsquo;ll want to prep our bool array now. Since we want to be able to handle non cubic chunks we can&rsquo;t initialize it until we know which axis we are slicing. The next step is to begin building the mesh slices.</p>
-
+    }
+</code></pre></div><p>We'll want to prep our bool array now. Since we want to be able to handle non cubic chunks we can't initialize it until we know which axis we are slicing. The next step is to begin building the mesh slices.</p>
 <p>Start by getting the block at the current position and check to ensure that it
-hasn&rsquo;t already been merged, is not an air block, and can be seen by the player. A block is considered visible to the player if the adjacent block to it is air. This will be checked via <code>IsBlockFaceVisible()</code></p>
+hasn't already been merged, is not an air block, and can be seen by the player. A block is considered visible to the player if the adjacent block to it is air. This will be checked via <code>IsBlockFaceVisible()</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsBlockFaceVisible(Vector3Int blockPosition, <span style="color:#66d9ef">int</span> axis, <span style="color:#66d9ef">bool</span> backFace) {
-        blockPosition<span style="color:#a6e22e">[axis]</span> += backFace ? -<span style="color:#ae81ff">1</span> : <span style="color:#ae81ff">1</span>;
+        blockPosition[axis] += backFace ? -<span style="color:#ae81ff">1</span> : <span style="color:#ae81ff">1</span>;
         <span style="color:#66d9ef">return</span> !GetBlock(blockPosition).IsSolid();
-    }</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Iterate over the chunk layer by layer.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[direction]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[direction]</span> &lt; Dimensions<span style="color:#a6e22e">[direction]</span>; startPos<span style="color:#a6e22e">[direction]</span>++) {
-        merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[Dimensions[workAxis1]</span>, Dimensions<span style="color:#a6e22e">[workAxis2]</span>];
+    }
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Iterate over the chunk layer by layer.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (startPos[direction] = <span style="color:#ae81ff">0</span>; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
+        merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span>[Dimensions[workAxis1], Dimensions[workAxis2]];
 
         <span style="color:#75715e">// Build the slices of the mesh.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis1]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span>; startPos<span style="color:#a6e22e">[workAxis1]</span>++) {
-            <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis2]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span>; startPos<span style="color:#a6e22e">[workAxis2]</span>++) {
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (startPos[workAxis1] = <span style="color:#ae81ff">0</span>; startPos[workAxis1] &lt; Dimensions[workAxis1]; startPos[workAxis1]++) {
+            <span style="color:#66d9ef">for</span> (startPos[workAxis2] = <span style="color:#ae81ff">0</span>; startPos[workAxis2] &lt; Dimensions[workAxis2]; startPos[workAxis2]++) {
                 startBlock = GetBlock(startPos);
 
                 <span style="color:#75715e">// If this block has already been merged, is air, or not visible skip it.
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (merged<span style="color:#a6e22e">[startPos[workAxis1]</span>, startPos<span style="color:#a6e22e">[workAxis2]</span>] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (merged[startPos[workAxis1], startPos[workAxis2]] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
                     <span style="color:#66d9ef">continue</span>;
                 }
             }
         }
-    }</code></pre></div>
-<p>Reset the quad size variable (q) back to zero. This tracks how big the current face
+    }
+</code></pre></div><p>Reset the quad size variable (q) back to zero. This tracks how big the current face
 we are creating will be.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">//Reset the work var
-</span><span style="color:#75715e"></span>    quadSize = <span style="color:#66d9ef">new</span> Vector3Int();</code></pre></div>
-<p>Now we want to figure out how wide this face of the mesh will be. This for loop continuously
+</span><span style="color:#75715e"></span>    quadSize = <span style="color:#66d9ef">new</span> Vector3Int();
+</code></pre></div><p>Now we want to figure out how wide this face of the mesh will be. This for loop continuously
 compares the next neighbor to see if it is a match to the current one.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Figure out the width, then save it
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis2]</span>++; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
-    quadSize<span style="color:#a6e22e">[workAxis2]</span> = currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span>;</code></pre></div>
-<p>For completeness here is <code>CompareStep()</code></p>
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (currPos = startPos, currPos[workAxis2]++; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
+    quadSize[workAxis2] = currPos[workAxis2] - startPos[workAxis2];
+</code></pre></div><p>For completeness here is <code>CompareStep()</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> CompareStep(Vector3Int a, Vector3Int b, <span style="color:#66d9ef">int</span> direction, <span style="color:#66d9ef">bool</span> backFace) {
     Block blockA = GetBlock(a);
     Block blockB = GetBlock(b);
 
     <span style="color:#66d9ef">return</span> blockA == blockB &amp;&amp; blockB.IsSolid() &amp;&amp; IsBlockFaceVisible(b, direction, backFace);
-}</code></pre></div>
-<p>Now we want to repeat the same process for the height of the face.</p>
+}
+</code></pre></div><p>Now we want to repeat the same process for the height of the face.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Figure out the height, then save it
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis1]</span>++; currPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis1]</span>++) {
-        <span style="color:#66d9ef">for</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (currPos = startPos, currPos[workAxis1]++; currPos[workAxis1] &lt; Dimensions[workAxis1] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis1]++) {
+        <span style="color:#66d9ef">for</span> (currPos[workAxis2] = startPos[workAxis2]; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
 
         <span style="color:#75715e">// If we didn&#39;t reach the end then its not a good add.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>) {
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (currPos[workAxis2] - startPos[workAxis2] &lt; quadSize[workAxis2]) {
             <span style="color:#66d9ef">break</span>;
         } <span style="color:#66d9ef">else</span> {
-            currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>;
+            currPos[workAxis2] = startPos[workAxis2];
         }
     }
-    quadSize<span style="color:#a6e22e">[workAxis1]</span> = currPos<span style="color:#a6e22e">[workAxis1]</span> - startPos<span style="color:#a6e22e">[workAxis1]</span>;</code></pre></div>
-<p>Once we have figured out the height and width of the face, we can go ahead and add it to our mesh.</p>
+    quadSize[workAxis1] = currPos[workAxis1] - startPos[workAxis1];
+</code></pre></div><p>Once we have figured out the height and width of the face, we can go ahead and add it to our mesh.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Now we add the quad to the mesh
 </span><span style="color:#75715e"></span>    m = <span style="color:#66d9ef">new</span> Vector3Int();
-    m<span style="color:#a6e22e">[workAxis1]</span> = quadSize<span style="color:#a6e22e">[workAxis1]</span>;
+    m[workAxis1] = quadSize[workAxis1];
 
     n = <span style="color:#66d9ef">new</span> Vector3Int();
-    n<span style="color:#a6e22e">[workAxis2]</span> = quadSize<span style="color:#a6e22e">[workAxis2]</span>;
+    n[workAxis2] = quadSize[workAxis2];
 
     <span style="color:#75715e">// We need to add a slight offset when working with front faces.
 </span><span style="color:#75715e"></span>    offsetPos = startPos;
-    offsetPos<span style="color:#a6e22e">[direction]</span> += isBackFace ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
+    offsetPos[direction] += isBackFace ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
 
     <span style="color:#75715e">//Draw the face to the mesh
-</span><span style="color:#75715e"></span>    vertices = <span style="color:#66d9ef">new</span> Vector3<span style="color:#a6e22e">[]</span> {
+</span><span style="color:#75715e"></span>    vertices = <span style="color:#66d9ef">new</span> Vector3[] {
         offsetPos,
         offsetPos + m,
         offsetPos + m + n,
         offsetPos + n
     };
 
-    builder.AddSquareFace(vertices, startBlock.GetColor(), isBackFace);</code></pre></div>
-<p>And lastly we need to mark all the blocks we visited as merged.</p>
+    builder.AddSquareFace(vertices, startBlock.GetColor(), isBackFace);
+</code></pre></div><p>And lastly we need to mark all the blocks we visited as merged.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Mark it merged
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; quadSize<span style="color:#a6e22e">[workAxis1]</span>; f++) {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>; g++) {
-            merged<span style="color:#a6e22e">[startPos[workAxis1]</span> + f, startPos<span style="color:#a6e22e">[workAxis2]</span> + g] = <span style="color:#66d9ef">true</span>;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; quadSize[workAxis1]; f++) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; quadSize[workAxis2]; g++) {
+            merged[startPos[workAxis1] + f, startPos[workAxis2] + g] = <span style="color:#66d9ef">true</span>;
         }
-    }</code></pre></div>
-<p>Here&rsquo;s the full algorithm for those who like to see the big picture.</p>
+    }
+</code></pre></div><p>Here's the full algorithm for those who like to see the big picture.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> MeshData GenerateMesh() {
         MeshBuilder builder = <span style="color:#66d9ef">new</span> MeshBuilder();
-        <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[,]</span> merged;
+        <span style="color:#66d9ef">bool</span>[,] merged;
 
         Vector3Int startPos, currPos, quadSize, m, n, offsetPos;
-        Vector3<span style="color:#a6e22e">[]</span> vertices;
+        Vector3[] vertices;
 
         Block startBlock;
         <span style="color:#66d9ef">int</span> direction, workAxis1, workAxis2;
@@ -407,16 +404,16 @@ compares the next neighbor to see if it is a match to the current one.</p>
             currPos = <span style="color:#66d9ef">new</span> Vector3Int();
 
             <span style="color:#75715e">// Iterate over the chunk layer by layer.
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[direction]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[direction]</span> &lt; Dimensions<span style="color:#a6e22e">[direction]</span>; startPos<span style="color:#a6e22e">[direction]</span>++) {
-                merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span><span style="color:#a6e22e">[Dimensions[workAxis1]</span>, Dimensions<span style="color:#a6e22e">[workAxis2]</span>];
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (startPos[direction] = <span style="color:#ae81ff">0</span>; startPos[direction] &lt; Dimensions[direction]; startPos[direction]++) {
+                merged = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span>[Dimensions[workAxis1], Dimensions[workAxis2]];
 
                 <span style="color:#75715e">// Build the slices of the mesh.
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis1]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span>; startPos<span style="color:#a6e22e">[workAxis1]</span>++) {
-                    <span style="color:#66d9ef">for</span> (startPos<span style="color:#a6e22e">[workAxis2]</span> = <span style="color:#ae81ff">0</span>; startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span>; startPos<span style="color:#a6e22e">[workAxis2]</span>++) {
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (startPos[workAxis1] = <span style="color:#ae81ff">0</span>; startPos[workAxis1] &lt; Dimensions[workAxis1]; startPos[workAxis1]++) {
+                    <span style="color:#66d9ef">for</span> (startPos[workAxis2] = <span style="color:#ae81ff">0</span>; startPos[workAxis2] &lt; Dimensions[workAxis2]; startPos[workAxis2]++) {
                         startBlock = GetBlock(startPos);
 
                         <span style="color:#75715e">// If this block has already been merged, is air, or not visible skip it.
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">if</span> (merged<span style="color:#a6e22e">[startPos[workAxis1]</span>, startPos<span style="color:#a6e22e">[workAxis2]</span>] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">if</span> (merged[startPos[workAxis1], startPos[workAxis2]] || !startBlock.IsSolid() || !IsBlockFaceVisible(startPos, direction, isBackFace)) {
                             <span style="color:#66d9ef">continue</span>;
                         }
 
@@ -424,35 +421,35 @@ compares the next neighbor to see if it is a match to the current one.</p>
 </span><span style="color:#75715e"></span>                        quadSize = <span style="color:#66d9ef">new</span> Vector3Int();
 
                         <span style="color:#75715e">// Figure out the width, then save it
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis2]</span>++; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
-                        quadSize<span style="color:#a6e22e">[workAxis2]</span> = currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span>;
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (currPos = startPos, currPos[workAxis2]++; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
+                        quadSize[workAxis2] = currPos[workAxis2] - startPos[workAxis2];
 
                         <span style="color:#75715e">// Figure out the height, then save it
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (currPos = startPos, currPos<span style="color:#a6e22e">[workAxis1]</span>++; currPos<span style="color:#a6e22e">[workAxis1]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis1]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis1]</span>++) {
-                            <span style="color:#66d9ef">for</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>; currPos<span style="color:#a6e22e">[workAxis2]</span> &lt; Dimensions<span style="color:#a6e22e">[workAxis2]</span> &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged<span style="color:#a6e22e">[currPos[workAxis1]</span>, currPos<span style="color:#a6e22e">[workAxis2]</span>]; currPos<span style="color:#a6e22e">[workAxis2]</span>++) { }
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (currPos = startPos, currPos[workAxis1]++; currPos[workAxis1] &lt; Dimensions[workAxis1] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis1]++) {
+                            <span style="color:#66d9ef">for</span> (currPos[workAxis2] = startPos[workAxis2]; currPos[workAxis2] &lt; Dimensions[workAxis2] &amp;&amp; CompareStep(startPos, currPos, direction, isBackFace) &amp;&amp; !merged[currPos[workAxis1], currPos[workAxis2]]; currPos[workAxis2]++) { }
 
                             <span style="color:#75715e">// If we didn&#39;t reach the end then its not a good add.
-</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">if</span> (currPos<span style="color:#a6e22e">[workAxis2]</span> - startPos<span style="color:#a6e22e">[workAxis2]</span> &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>) {
+</span><span style="color:#75715e"></span>                            <span style="color:#66d9ef">if</span> (currPos[workAxis2] - startPos[workAxis2] &lt; quadSize[workAxis2]) {
                                 <span style="color:#66d9ef">break</span>;
                             } <span style="color:#66d9ef">else</span> {
-                                currPos<span style="color:#a6e22e">[workAxis2]</span> = startPos<span style="color:#a6e22e">[workAxis2]</span>;
+                                currPos[workAxis2] = startPos[workAxis2];
                             }
                         }
-                        quadSize<span style="color:#a6e22e">[workAxis1]</span> = currPos<span style="color:#a6e22e">[workAxis1]</span> - startPos<span style="color:#a6e22e">[workAxis1]</span>;
+                        quadSize[workAxis1] = currPos[workAxis1] - startPos[workAxis1];
 
                         <span style="color:#75715e">// Now we add the quad to the mesh
 </span><span style="color:#75715e"></span>                        m = <span style="color:#66d9ef">new</span> Vector3Int();
-                        m<span style="color:#a6e22e">[workAxis1]</span> = quadSize<span style="color:#a6e22e">[workAxis1]</span>;
+                        m[workAxis1] = quadSize[workAxis1];
 
                         n = <span style="color:#66d9ef">new</span> Vector3Int();
-                        n<span style="color:#a6e22e">[workAxis2]</span> = quadSize<span style="color:#a6e22e">[workAxis2]</span>;
+                        n[workAxis2] = quadSize[workAxis2];
 
                         <span style="color:#75715e">// We need to add a slight offset when working with front faces.
 </span><span style="color:#75715e"></span>                        offsetPos = startPos;
-                        offsetPos<span style="color:#a6e22e">[direction]</span> += isBackFace ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
+                        offsetPos[direction] += isBackFace ? <span style="color:#ae81ff">0</span> : <span style="color:#ae81ff">1</span>;
 
                         <span style="color:#75715e">//Draw the face to the mesh
-</span><span style="color:#75715e"></span>                        vertices = <span style="color:#66d9ef">new</span> Vector3<span style="color:#a6e22e">[]</span> {
+</span><span style="color:#75715e"></span>                        vertices = <span style="color:#66d9ef">new</span> Vector3[] {
                             offsetPos,
                             offsetPos + m,
                             offsetPos + m + n,
@@ -462,9 +459,9 @@ compares the next neighbor to see if it is a match to the current one.</p>
                         builder.AddSquareFace(vertices, startBlock.GetColor(), isBackFace);
 
                         <span style="color:#75715e">// Mark it merged
-</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; quadSize<span style="color:#a6e22e">[workAxis1]</span>; f++) {
-                            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; quadSize<span style="color:#a6e22e">[workAxis2]</span>; g++) {
-                                merged<span style="color:#a6e22e">[startPos[workAxis1]</span> + f, startPos<span style="color:#a6e22e">[workAxis2]</span> + g] = <span style="color:#66d9ef">true</span>;
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> f = <span style="color:#ae81ff">0</span>; f &lt; quadSize[workAxis1]; f++) {
+                            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> g = <span style="color:#ae81ff">0</span>; g &lt; quadSize[workAxis2]; g++) {
+                                merged[startPos[workAxis1] + f, startPos[workAxis2] + g] = <span style="color:#66d9ef">true</span>;
                             }
                         }
                     }
@@ -473,8 +470,8 @@ compares the next neighbor to see if it is a match to the current one.</p>
         }
 
         <span style="color:#66d9ef">return</span> builder.ToMeshData();
-    }</code></pre></div>
-<p>And last but not least, if we want to render our mesh we generated we&rsquo;ll need to pass the data to a MeshFilter. For extra bonus points we could implement an extension method to make it even cleaner.</p>
+    }
+</code></pre></div><p>And last but not least, if we want to render our mesh we generated we'll need to pass the data to a MeshFilter. For extra bonus points we could implement an extension method to make it even cleaner.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEngine;
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshFilterExts</span> {
@@ -487,18 +484,18 @@ compares the next neighbor to see if it is a match to the current one.</p>
 </span><span style="color:#75715e"></span>        meshFilter.mesh.colors32 = meshData.Colors;
         meshFilter.mesh.RecalculateNormals();
     }
-}</code></pre></div>
-<p>Then to render our mesh we would use it like so.</p>
+}
+</code></pre></div><p>Then to render our mesh we would use it like so.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    MeshData mesh = chunk.GenerateMesh();
 
     MeshFilter meshFilter = GetComponent&lt;MeshFilter&gt;();
-    meshFilter.ApplyMeshData(mesh);</code></pre></div>
+    meshFilter.ApplyMeshData(mesh);
+</code></pre></div>
 </article>
 
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>

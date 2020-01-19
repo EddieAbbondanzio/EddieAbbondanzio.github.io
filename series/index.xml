@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Eddie Abbondanzio</title>
@@ -7,44 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 09 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Acura Build</title>
-      <link>https://eddieabbondanz.io/series/acura-build/</link>
-      <pubDate>Tue, 09 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Side Hustles</title>
+      <link>https://eddieabbondanz.io/series/side-hustles/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://eddieabbondanz.io/series/acura-build/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cherokee Build</title>
-      <link>https://eddieabbondanz.io/series/cherokee-build/</link>
-      <pubDate>Sun, 03 Feb 2019 17:28:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/series/cherokee-build/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Civic Build</title>
-      <link>https://eddieabbondanz.io/series/civic-build/</link>
-      <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/series/civic-build/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Desk</title>
-      <link>https://eddieabbondanz.io/series/desk/</link>
-      <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/series/desk/</guid>
+      <guid>https://eddieabbondanz.io/series/side-hustles/</guid>
       <description></description>
     </item>
     
@@ -58,11 +31,47 @@
     </item>
     
     <item>
-      <title>Setting Up a Mysql Server With Ubuntu</title>
+      <title>Cherokee Build</title>
+      <link>https://eddieabbondanz.io/series/cherokee-build/</link>
+      <pubDate>Sun, 03 Feb 2019 17:28:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/series/cherokee-build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Desk</title>
+      <link>https://eddieabbondanz.io/series/desk/</link>
+      <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/series/desk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Setting Up a MySQL Server With Ubuntu</title>
       <link>https://eddieabbondanz.io/series/setting-up-a-mysql-server-with-ubuntu/</link>
       <pubDate>Mon, 23 Jul 2018 06:59:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/series/setting-up-a-mysql-server-with-ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Civic Build</title>
+      <link>https://eddieabbondanz.io/series/civic-build/</link>
+      <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/series/civic-build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Acura Build</title>
+      <link>https://eddieabbondanz.io/series/acura-build/</link>
+      <pubDate>Tue, 09 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/series/acura-build/</guid>
       <description></description>
     </item>
     

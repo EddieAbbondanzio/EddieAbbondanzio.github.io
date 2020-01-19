@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Design on Eddie Abbondanzio</title>
@@ -18,7 +18,7 @@
       <pubDate>Fri, 07 Dec 2018 19:59:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</guid>
-      <description>Admit it, we&amp;rsquo;ve all written bad code at some point in our software development careers. One could even argue it&amp;rsquo;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
+      <description>Admit it, we&#39;ve all written bad code at some point in our software development careers. One could even argue it&#39;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
 The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it.</description>
     </item>
     
@@ -28,7 +28,7 @@ The catch-22 however, is that bad code should only be brought to life when it wi
       <pubDate>Thu, 08 Nov 2018 17:20:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/abstraction/</guid>
-      <description>The Less You Know, The Better Do you think the automotive designers who carefully crafted each body line and roll of your car&amp;rsquo;s chassis cared about the engine&amp;rsquo;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&amp;rsquo;s hemis?
+      <description>The Less You Know, The Better Do you think the automotive designers who carefully crafted each body line and roll of your car&#39;s chassis cared about the engine&#39;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&#39;s hemis?
 Of course not, all they cared about were the more important details such as dimensions, mounting positions, electrical connections, and plumbing points.</description>
     </item>
     
@@ -58,7 +58,7 @@ However, this does not mean that all constants should be blindly replaced with p
       <pubDate>Thu, 18 Oct 2018 06:34:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
-      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</description>
+      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&#39;ve likely used it yourself in the past and just didn&#39;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</description>
     </item>
     
     <item>
@@ -77,7 +77,7 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
       <pubDate>Wed, 10 Oct 2018 05:16:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/validator-pattern/</guid>
-      <description>Validating Objects Based on Context It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
+      <description>Validating Objects Based on Context It&#39;s quite typical for a Domain Driven Design (DDD) project to need validation for it&#39;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
     </item>
     
   </channel>

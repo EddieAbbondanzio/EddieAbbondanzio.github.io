@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -108,39 +108,22 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    
-
-<p>Admit it, we&rsquo;ve all written bad code at some point in our software development careers. One could even argue it&rsquo;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out <a href="https://effectivesoftwaredesign.com/2014/11/02/the-minimum-viable-product-and-incremental-software-development/">minimum viable products</a>, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.</p>
-
-<p>The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it. It occurs all too often that a developer allows a piece of bad code to fester and spread it&rsquo;s disease across the entire code-base, until one day it reaches a point where it has become so entwined with the code-base such that it is no longer feasible to remove it.</p>
-
-<p>In the developer&rsquo;s defense, it&rsquo;s not always easy to spot bad code. Bad code doesn&rsquo;t have an exact definition, nor is there some catalog we can use to identify the various species of bad code we find in the wild like those used by bird watchers. What we can do though, is learn to recognize bad code through common symptoms or <a href="https://martinfowler.com/bliki/CodeSmell.html">smells</a> it emits. The rest of this article will cover some of the more common symptoms emitted by bad code. It should not be assumed to be a complete set, but instead a stepping stone to help you on your journey as you strive to become a more self-aware developer.</p>
-
+    <p>Admit it, we've all written bad code at some point in our software development careers. One could even argue it's perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out <a href="https://effectivesoftwaredesign.com/2014/11/02/the-minimum-viable-product-and-incremental-software-development/">minimum viable products</a>, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.</p>
+<p>The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it. It occurs all too often that a developer allows a piece of bad code to fester and spread it's disease across the entire code-base, until one day it reaches a point where it has become so entwined with the code-base such that it is no longer feasible to remove it.</p>
+<p>In the developer's defense, it's not always easy to spot bad code. Bad code doesn't have an exact definition, nor is there some catalog we can use to identify the various species of bad code we find in the wild like those used by bird watchers. What we can do though, is learn to recognize bad code through common symptoms or <a href="https://martinfowler.com/bliki/CodeSmell.html">smells</a> it emits. The rest of this article will cover some of the more common symptoms emitted by bad code. It should not be assumed to be a complete set, but instead a stepping stone to help you on your journey as you strive to become a more self-aware developer.</p>
 <h1 id="mountains-of-indentation">Mountains of Indentation</h1>
-
-<p><img src="images/1.jpg" alt="" /></p>
-
-<p>Escaping from society and exploring nature can be relaxing. For some, going hiking allows them to unplug, and gives them a chance to truly appreciate nature&rsquo;s beauty. However, this is not how other developers feel when traversing through your code. They don&rsquo;t want to discover hidden little streams in the bottoms of valleys, or finally reach the peak only to discover there&rsquo;s a larger peak in the horizon.</p>
-
+<p><img src="images/1.jpg" alt=""></p>
+<p>Escaping from society and exploring nature can be relaxing. For some, going hiking allows them to unplug, and gives them a chance to truly appreciate nature's beauty. However, this is not how other developers feel when traversing through your code. They don't want to discover hidden little streams in the bottoms of valleys, or finally reach the peak only to discover there's a larger peak in the horizon.</p>
 <p>Indentation is a way of showing flow control. Therefore, with more indentation, the number of possible unique paths in a program from start to finish increases. Like most topics in Computer Science we have an overly jargony name for this known as <a href="https://www.tutorialspoint.com/software_testing_dictionary/cyclomatic_complexity.htm">cyclomatic complexity</a>.</p>
-
-<p>Cyclomatic complexity can be thought of as a numeric representation of the control flow graph, and the higher the value, the harder the program becomes to comprehend. This requires a developer to understand more of the program before they can safely make a modification to it that won&rsquo;t have unintended consequences.</p>
-
-<p>Not every developer has the time to fully dig their heels in and learn the ins-and-outs of your code. Often times they&rsquo;ll have a looming deadline that is pressuring them to complete the task as quickly as possible. They&rsquo;ll make what they believe to be the &ldquo;correct&rdquo; change and move on.</p>
-
+<p>Cyclomatic complexity can be thought of as a numeric representation of the control flow graph, and the higher the value, the harder the program becomes to comprehend. This requires a developer to understand more of the program before they can safely make a modification to it that won't have unintended consequences.</p>
+<p>Not every developer has the time to fully dig their heels in and learn the ins-and-outs of your code. Often times they'll have a looming deadline that is pressuring them to complete the task as quickly as possible. They'll make what they believe to be the &ldquo;correct&rdquo; change and move on.</p>
 <h1 id="every-class-is-a-manager">Every Class Is a Manager</h1>
-
-<p><img src="images/2.jpg" alt="" /></p>
-
-<p>This symptom can occur from two different problems. The first possibility, is a poor naming scheme. <code>Manager</code> is such a broad term that it&rsquo;s hard to pin it to an exact purpose. Therefore an <code>XManager</code> provides nothing useful other than the fact that it does something with <code>X</code>.</p>
-
-<p>If a class is tasked with building <code>Foo</code> objects then call it something such as a <code>FooBuilder</code>, <code>FooFactory</code>, or <code>FooGenerator</code>. If your designing a class that handles CRUD (Create, Read, Update, Delete) actions on <code>User</code> objects then call it something such as a <code>UserService</code>, or <code>UserHandler</code>. If your really can&rsquo;t think of something other than <code>Manager</code>, then perhaps it might be the best choice, but before you make your decision look at some of the other <a href="https://stackoverflow.com/questions/1866794/naming-classes-how-to-avoid-calling-everything-a-whatevermanager">recommendations</a>.</p>
-
+<p><img src="images/2.jpg" alt=""></p>
+<p>This symptom can occur from two different problems. The first possibility, is a poor naming scheme. <code>Manager</code> is such a broad term that it's hard to pin it to an exact purpose. Therefore an <code>XManager</code> provides nothing useful other than the fact that it does something with <code>X</code>.</p>
+<p>If a class is tasked with building <code>Foo</code> objects then call it something such as a <code>FooBuilder</code>, <code>FooFactory</code>, or <code>FooGenerator</code>. If your designing a class that handles CRUD (Create, Read, Update, Delete) actions on <code>User</code> objects then call it something such as a <code>UserService</code>, or <code>UserHandler</code>. If your really can't think of something other than <code>Manager</code>, then perhaps it might be the best choice, but before you make your decision look at some of the other <a href="https://stackoverflow.com/questions/1866794/naming-classes-how-to-avoid-calling-everything-a-whatevermanager">recommendations</a>.</p>
 <p>The second problem that can be causing this symptom is poorly designed code. If every class handles multiple tasks then your likely in violation of the first principle when it comes to the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">SOLID</a>
 design principles.</p>
-
 <p>For those unfamilar with SOLID, it stands for:</p>
-
 <ul>
 <li><strong>S</strong>ingle-responsibility principle</li>
 <li><strong>O</strong>pen-closed principle</li>
@@ -148,44 +131,28 @@ design principles.</p>
 <li><strong>I</strong>nerface segregation principle</li>
 <li><strong>D</strong>ependency inversion principle</li>
 </ul>
-
 <p>The single responsibility principle means that each class should only be capable of performing a single task. Therefore, if every class is a manager, then likely the design is to blame as each class wears too many hats.</p>
-
 <h1 id="useless-comments">Useless Comments</h1>
-
-<p><img src="images/3.jpg" alt="" /></p>
-
-<p>Without a doubt, if I told you right now to always make sure to comment your code, your eyes would start to glaze over in an involuntary reaction that we all have developed from having this statement drilled into our heads from every article, tutorial, or teacher we&rsquo;ve had over the years.</p>
-
+<p><img src="images/3.jpg" alt=""></p>
+<p>Without a doubt, if I told you right now to always make sure to comment your code, your eyes would start to glaze over in an involuntary reaction that we all have developed from having this statement drilled into our heads from every article, tutorial, or teacher we've had over the years.</p>
 <p>Every developer has their own opinion when it comes to comments. Some argue that code should be &ldquo;self-documenting&rdquo; and if comments are needed for clarity then the code itself is the issue. On the other hand, some developers argue that code is inherently bad without comments.</p>
-
-<p>One thing we can all agree on though, is that useless comments truly are useless. Sure it may go against what most teachers have ingrained into us, but if a comment serves no purpose other than to take up a line or two, just remove it. Comments should provide context as to why things are the way they are. If a change was made for a bug fix, then leave a little comment explaining what was going wrong, and why the change was made. Don&rsquo;t simply leave a comment with the ticket number forcing other developers to have to load up a secondary resource for more info.</p>
-
+<p>One thing we can all agree on though, is that useless comments truly are useless. Sure it may go against what most teachers have ingrained into us, but if a comment serves no purpose other than to take up a line or two, just remove it. Comments should provide context as to why things are the way they are. If a change was made for a bug fix, then leave a little comment explaining what was going wrong, and why the change was made. Don't simply leave a comment with the ticket number forcing other developers to have to load up a secondary resource for more info.</p>
 <p>And no, rewording a property, method, or variable name is not clever, nor useful.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Classroom</span> {
         <span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">/// The count of students.
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> StudentCount { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
-    }</code></pre></div>
-<h1 id="it-uses-a-design-pattern-therefore-it-must-be-good">It Uses a Design Pattern, Therefore it Must be Good</h1>
-
-<p><img src="images/4.jpg" alt="" /></p>
-
-<p>Software design patterns are like hand tools, each one is designed for a specific purpose. While a saw may be great at cutting a 2x4, use that same saw to hammer in a nail and you&rsquo;re gonna have a bad time. Sure some tools such as a flat head screwdriver may suffice as a pry-bar, but if pushed too far, that screwdriver will begin to bend under pressure and now you have a useless bent screwdriver.</p>
-
-<p>If your using a design pattern simply because you feel it makes your code <em>correct</em> then what your actually doing is lowering your code&rsquo;s quality. If the code doesn&rsquo;t feel natural, and in some cases has increased in complexity, then it&rsquo;ll be in your best interest to take a step back and reevaluate your implementation.</p>
-
-<p>Ever heard of the <a href="http://wiki.c2.com/?YouArentGonnaNeedIt">YAGNI</a> principle? YAGNI stands for &ldquo;You Aren&rsquo;t Gonna Need It&rdquo; and it comes from <a href="https://martinfowler.com/bliki/ExtremeProgramming.html">ExtremeProgramming</a>. It encourages developer to reduce the amount of bloat in their projects by not adding or implementing un-needed features. This helps speed up the development process, and often times when a feature is added preemptively it will be a sub-par solution. This isn&rsquo;t the developer fault, but instead due to the fact that it&rsquo;s hard to plan out exactly what&rsquo;s needed, and how it will be used.</p>
-
-<p>If you were tasked with creating <a href="http://wiki.c2.com/?FizzBuzzTest">FizzBuzz</a> your first thought (hopefully) wouldn&rsquo;t be to use the <a href="https://blog.codinghorror.com/understanding-model-view-controller/">Model-View-Controller</a> pattern right? FizzBuzz is one of the infinitely many simple problems out there that don&rsquo;t require, nor need an over-engineered solution.</p>
-
-<p>Imagine your a web developer at a new startup that hasn&rsquo;t launched their website yet. Your boss decides that the company needs to get their name out there and needs a landing page. Hes tasked you with the challenge of creating it, and has given you a mere day to complete it. Your a well experienced developer that knows several JavaScript frameworks (React, Angular, etc&hellip;) and you know that the task shouldn&rsquo;t take long, and React would be a perfect candidate, but is it really?</p>
-
-<p>A single webpage is just that, a little HTML, some CSS, and maybe even a sprinkle of JavaScript to make it interactive. There&rsquo;s no need to over complicate a solution and develop using a large framework simply because it uses a proper architecture pattern. Always pick the right tool for the job because in the end, no one cares about how you drilled the hole, they only care about the <a href="https://hbswk.hbs.edu/item/what-customers-want-from-your-products">hole</a>.</p>
-
+    }
+</code></pre></div><h1 id="it-uses-a-design-pattern-therefore-it-must-be-good">It Uses a Design Pattern, Therefore it Must be Good</h1>
+<p><img src="images/4.jpg" alt=""></p>
+<p>Software design patterns are like hand tools, each one is designed for a specific purpose. While a saw may be great at cutting a 2x4, use that same saw to hammer in a nail and you're gonna have a bad time. Sure some tools such as a flat head screwdriver may suffice as a pry-bar, but if pushed too far, that screwdriver will begin to bend under pressure and now you have a useless bent screwdriver.</p>
+<p>If your using a design pattern simply because you feel it makes your code <em>correct</em> then what your actually doing is lowering your code's quality. If the code doesn't feel natural, and in some cases has increased in complexity, then it'll be in your best interest to take a step back and reevaluate your implementation.</p>
+<p>Ever heard of the <a href="http://wiki.c2.com/?YouArentGonnaNeedIt">YAGNI</a> principle? YAGNI stands for &ldquo;You Aren't Gonna Need It&rdquo; and it comes from <a href="https://martinfowler.com/bliki/ExtremeProgramming.html">ExtremeProgramming</a>. It encourages developer to reduce the amount of bloat in their projects by not adding or implementing un-needed features. This helps speed up the development process, and often times when a feature is added preemptively it will be a sub-par solution. This isn't the developer fault, but instead due to the fact that it's hard to plan out exactly what's needed, and how it will be used.</p>
+<p>If you were tasked with creating <a href="http://wiki.c2.com/?FizzBuzzTest">FizzBuzz</a> your first thought (hopefully) wouldn't be to use the <a href="https://blog.codinghorror.com/understanding-model-view-controller/">Model-View-Controller</a> pattern right? FizzBuzz is one of the infinitely many simple problems out there that don't require, nor need an over-engineered solution.</p>
+<p>Imagine your a web developer at a new startup that hasn't launched their website yet. Your boss decides that the company needs to get their name out there and needs a landing page. Hes tasked you with the challenge of creating it, and has given you a mere day to complete it. Your a well experienced developer that knows several JavaScript frameworks (React, Angular, etc&hellip;) and you know that the task shouldn't take long, and React would be a perfect candidate, but is it really?</p>
+<p>A single webpage is just that, a little HTML, some CSS, and maybe even a sprinkle of JavaScript to make it interactive. There's no need to over complicate a solution and develop using a large framework simply because it uses a proper architecture pattern. Always pick the right tool for the job because in the end, no one cares about how you drilled the hole, they only care about the <a href="https://hbswk.hbs.edu/item/what-customers-want-from-your-products">hole</a>.</p>
 <h2 id="photos">Photos</h2>
-
 <ul>
 <li><a href="https://unsplash.com/photos/tvleqH3p1os">&ldquo;The view from Lac Blanc&hellip;&rdquo; by Simon Fitfall</a></li>
 <li><a href="https://unsplash.com/photos/_yVRLC75Ma8">&ldquo;Size matters&rdquo; by Joshua Coleman</a></li>
@@ -198,7 +165,6 @@ design principles.</p>
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>

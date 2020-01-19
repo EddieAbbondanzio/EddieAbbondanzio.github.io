@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nomansblocks on Eddie Abbondanzio</title>
+    <title>NoMansBlocks on Eddie Abbondanzio</title>
     <link>https://eddieabbondanz.io/categories/nomansblocks/</link>
-    <description>Recent content in Nomansblocks on Eddie Abbondanzio</description>
+    <description>Recent content in NoMansBlocks on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sat, 13 Oct 2018 15:05:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
-      <description>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&amp;rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.</description>
+      <description>Where I&#39;ve Been, and Where I&#39;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&#39;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@
       <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
-      <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
-Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
+      <description>Creating Time (literally!) I have a knack for forgetting what I&#39;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&#39;ve started writing down each accomplishment on a sticky note.
+Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&#39;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
     </item>
     
     <item>
@@ -37,8 +37,8 @@ Every Friday I hope to write a small blurb, and post some code showing off the c
       <pubDate>Fri, 20 Apr 2018 23:05:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
-      <description>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&amp;rsquo;t want to handle serialization with 2 different methods I&amp;rsquo;ve decided to bite the bullet and roll my own set up.
-To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</description>
+      <description>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&#39;t want to handle serialization with 2 different methods I&#39;ve decided to bite the bullet and roll my own set up.
+To help prepare for this task I&#39;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that
       <pubDate>Sun, 08 Apr 2018 18:25:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
-      <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events.</description>
+      <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&#39;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&#39;s message events.</description>
     </item>
     
     <item>
@@ -56,7 +56,7 @@ To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that
       <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
-      <description>Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:</description>
+      <description>Stepping back into Networking These past few months I&#39;ve been on a tangent that wasn&#39;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&#39;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&#39;t exactly remember every change some of the key ones are:</description>
     </item>
     
   </channel>

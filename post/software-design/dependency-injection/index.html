@@ -14,7 +14,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.4767b7b4fbb488f473e1c01fdf29ee5692949db8e9724296f5d6a8393bc08961.css" integrity="sha256-R2e3tPu0iPRz4cAf3ynuVpKUnbjpckKW9daoOTvAiWE=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.cfaf5a82ddb1997768713c5494447077b834f7a9145e7079037250a4029c50af.css" integrity="sha256-z69agt2xmXdocTxUlERwd7g096kUXnB5A3JQpAKcUK8=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -108,32 +108,20 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    
-
-<h2 id="what-are-they">What are they?</h2>
-
-<p>While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&rsquo;ve likely used it yourself in the past and just didn&rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</p>
-
+    <h2 id="what-are-they">What are they?</h2>
+<p>While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you've likely used it yourself in the past and just didn't know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</p>
 <p>Dependency inversion sounds similar but is a slightly different principle. In simple terms, dependency inversion prevents high level modules from relying upon low level modules through the use of an abstraction. This inverts the dependency such that the higher level class no longer relies upon a concrete implementation, and can utilize any resource that complies with the dependency contract defined through the abstraction.</p>
-
 <p>Dependency injection comes in three different flavors:</p>
-
 <ul>
 <li>Constructor injection</li>
 <li>Method injection</li>
 <li>Property injection</li>
 </ul>
-
 <h2 id="constructor-injection">Constructor injection</h2>
-
-<p>Constructor injection is where the dependency is passed to the dependent class directly through it&rsquo;s constructor. This method should be used when the dependent is reliant upon the dependency in such a way that the dependent cannot function without it.</p>
-
-<h2 id="method-property-injection">Method / Property injection</h2>
-
-<p>Since these two are similar in nature we&rsquo;ll combine them. Method injection is when the dependency is passed to the dependent class via a method. Property injection on the other hand, is where the dependency is injected via a setter property on the dependent. These should be used when a class has a dependency but isn&rsquo;t fully reliant upon it. The dependent class should be able to still function in some manner without it.</p>
-
+<p>Constructor injection is where the dependency is passed to the dependent class directly through it's constructor. This method should be used when the dependent is reliant upon the dependency in such a way that the dependent cannot function without it.</p>
+<h2 id="method--property-injection">Method / Property injection</h2>
+<p>Since these two are similar in nature we'll combine them. Method injection is when the dependency is passed to the dependent class via a method. Property injection on the other hand, is where the dependency is injected via a setter property on the dependent. These should be used when a class has a dependency but isn't fully reliant upon it. The dependent class should be able to still function in some manner without it.</p>
 <h2 id="a-working-example">A Working Example</h2>
-
 <p>Imagine we are designing an <code>EmailInbox</code> that needs to be able to send and receive emails. The <code>EmailInbox</code> will depend on an <code>EmailService</code> for communicating with the network.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
         <span style="color:#66d9ef">public</span> List&lt;Email&gt; CheckForEmails() {
@@ -143,30 +131,30 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> SendEmail(Email email){
             <span style="color:#75715e">//Blah blah blah
 </span><span style="color:#75715e"></span>        }
-    }</code></pre></div>
-<p>Since an <code>EmailInbox</code> would be pretty useless without the <code>EmailService</code>, we could argue this would be a good use of constructor injection.</p>
+    }
+</code></pre></div><p>Since an <code>EmailInbox</code> would be pretty useless without the <code>EmailService</code>, we could argue this would be a good use of constructor injection.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
         <span style="color:#66d9ef">private</span> EmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 
         <span style="color:#66d9ef">public</span> EmailInbox(EmailService emailService) {
             <span style="color:#66d9ef">this</span>.EmailService = emailService;
         }
-    }</code></pre></div>
-<p>This works decently, but our <code>EmailInbox</code> is restricted to a single email service. What if we want to expand it&rsquo;s compatibility to support other email services? For this, we could take advantage of dependency inversion. The first step would be to define our dependencies contract via an interface.</p>
+    }
+</code></pre></div><p>This works decently, but our <code>EmailInbox</code> is restricted to a single email service. What if we want to expand it's compatibility to support other email services? For this, we could take advantage of dependency inversion. The first step would be to define our dependencies contract via an interface.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IEmailService {
         List&lt;Email&gt; CheckForEmails();
 
         <span style="color:#66d9ef">void</span> SendEmail(Email email);
-    }</code></pre></div>
-<p>Now we need to update our <code>EmailInbox</code> to rely on interface references.</p>
+    }
+</code></pre></div><p>Now we need to update our <code>EmailInbox</code> to rely on interface references.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
         <span style="color:#66d9ef">private</span> IEmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 
         <span style="color:#66d9ef">public</span> EmailInbox(IEmailService emailService) {
             <span style="color:#66d9ef">this</span>.EmailService = emailService;
         }
-    }</code></pre></div>
-<p>And just like that we have utilized dependency inversion to no longer be reliant upon the lower level module (<code>EmailService</code>). Now the <code>EmailInbox</code> can be created with any <code>EmailService</code> that can implements the interface <code>IEmailService</code>.</p>
+    }
+</code></pre></div><p>And just like that we have utilized dependency inversion to no longer be reliant upon the lower level module (<code>EmailService</code>). Now the <code>EmailInbox</code> can be created with any <code>EmailService</code> that can implements the interface <code>IEmailService</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GmailEmailService</span> : IEmailService {
         ...
     }
@@ -181,15 +169,14 @@ if (!doNotTrack) {
 
     <span style="color:#75715e">//Create a new Hotmail based inbox.
 </span><span style="color:#75715e"></span>    IEmailService hotmailService = <span style="color:#66d9ef">new</span> HotmailEmailService();
-    EmailInbox hotmailInbox = <span style="color:#66d9ef">new</span> EmailInbox(hotmailService);</code></pre></div>
-<p>These two concepts can be easy to confuse since they share such similar names, and are used together. Hopefully this article helped clarify them.</p>
+    EmailInbox hotmailInbox = <span style="color:#66d9ef">new</span> EmailInbox(hotmailService);
+</code></pre></div><p>These two concepts can be easy to confuse since they share such similar names, and are used together. Hopefully this article helped clarify them.</p>
 
 </article>
 
     </main>
 
     <footer>
-    <p>&copy; 2019 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+    <p>&copy; 2020 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
 </footer> </body>
-
 </html>
