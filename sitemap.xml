@@ -59,26 +59,16 @@
   
   <url>
     <loc>https://eddieabbondanz.io/categories/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/post/saas/launching-a-saas-pt2/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/saas/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/laptop/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://eddieabbondanz.io/series/laptop/</loc>
+    <lastmod>2019-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eddieabbondanz.io/categories/laptop/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -143,28 +133,13 @@
   </url>
   
   <url>
-    <loc>https://eddieabbondanz.io/post/saas/launching-a-saas-pt1/</loc>
-    <lastmod>2018-12-21T06:59:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/software-design/</loc>
-    <lastmod>2018-12-07T19:59:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</loc>
-    <lastmod>2018-12-07T19:59:42-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</loc>
     <lastmod>2018-11-26T06:57:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eddieabbondanz.io/post/software-design/abstraction/</loc>
-    <lastmod>2018-11-08T17:20:42-04:00</lastmod>
+    <loc>https://eddieabbondanz.io/categories/software-design/</loc>
+    <lastmod>2018-11-02T05:12:42-04:00</lastmod>
   </url>
   
   <url>

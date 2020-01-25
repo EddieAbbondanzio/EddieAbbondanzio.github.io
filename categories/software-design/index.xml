@@ -7,30 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 07 Dec 2018 19:59:42 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 02 Nov 2018 05:12:42 -0400</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/categories/software-design/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Software Design - Symptoms of Bad Code</title>
-      <link>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</link>
-      <pubDate>Fri, 07 Dec 2018 19:59:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/software-design/symptons-of-bad-code/</guid>
-      <description>Admit it, we&#39;ve all written bad code at some point in our software development careers. One could even argue it&#39;s perfectly acceptable to write bad code when the situation calls for it. Bad code is perfect for cranking out minimum viable products, or implementing a last minute fix for a critical bug in production that has management breathing down the back of your neck waiting for a solution.
-The catch-22 however, is that bad code should only be brought to life when it will have a life-span so short that death is already looming in the shadows waiting to snatch it.</description>
-    </item>
-    
-    <item>
-      <title>Software Design - Abstraction</title>
-      <link>https://eddieabbondanz.io/post/software-design/abstraction/</link>
-      <pubDate>Thu, 08 Nov 2018 17:20:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/software-design/abstraction/</guid>
-      <description>The Less You Know, The Better Do you think the automotive designers who carefully crafted each body line and roll of your car&#39;s chassis cared about the engine&#39;s cylinder bore or stroke? Or perhaps the firing order, or whether the engine had 2 spark plugs per cylinder akin to Chrysler&#39;s hemis?
-Of course not, all they cared about were the more important details such as dimensions, mounting positions, electrical connections, and plumbing points.</description>
-    </item>
     
     <item>
       <title>Software Design - Marker Interfaces</title>
