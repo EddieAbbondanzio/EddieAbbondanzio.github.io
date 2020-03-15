@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 Feb 2019 16:52:42 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://eddieabbondanz.io/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TypeScript - Await Promise.All() And Get The Results</title>
+      <link>https://eddieabbondanz.io/post/typescript/await-promise-all/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/typescript/await-promise-all/</guid>
+      <description>I&#39;m a big fan of the async await syntax in ES2017. In my opionion it just feels a lot more natural than and then and then and then&amp;hellip;. I digress. I&#39;ll keep this one short.
+Promise.all() allows us to run multiple async operations in parallel instead of running them in series. This is great for times when we need to make multiple API calls that are independent of each other.</description>
+    </item>
     
     <item>
       <title>TypeScript - Interpolated Strings</title>
