@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C Sharp on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/categories/c-sharp/</link>
+    <description>Recent content in C Sharp on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 09 May 2018 19:04:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://eddieabbondanz.io/categories/c-sharp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C# Threadable Queue</title>
+      <link>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</link>
+      <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
+      <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&#39;t thread-safe by default. Thankfully it&#39;s easy enough to implement your own as we will do today. Let&#39;s start by defining our class.
+public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.
+private Queue&amp;lt;T&amp;gt; queue; privare readonly object lockObj; The queue needs to be kept private so we can control access to it.</description>
+    </item>
+    
+  </channel>
+</rss>

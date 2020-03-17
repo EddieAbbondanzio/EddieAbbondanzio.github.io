@@ -105,7 +105,7 @@ if (!doNotTrack) {
         <div class="dropdown-menu" role="menu">
             <div class="dropdown-content">
                 
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/c">C#</a>
+                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/c-sharp">C-Sharp</a>
                 <hr class="dropdown-divider">
                 
                 <a class="dropdown-item" href="https://eddieabbondanz.io/categories/http">Http</a>
@@ -115,9 +115,6 @@ if (!doNotTrack) {
                 <hr class="dropdown-divider">
                 
                 <a class="dropdown-item" href="https://eddieabbondanz.io/categories/meta">Meta</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/mysql">Mysql</a>
                 <hr class="dropdown-divider">
                 
                 <a class="dropdown-item" href="https://eddieabbondanz.io/categories/nomansblocks">Nomansblocks</a>
@@ -140,87 +137,6 @@ if (!doNotTrack) {
 
 </div>
 
-
-<article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/civic/18-04-12/">Civic Build - 4/12/18</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Apr 12, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Apr 12, 2018</time>
-        </div>
-
-        
-        <div class="is-flex is-flex-row is-align-middle" title="Category">
-            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
-            
-            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
-            
-        </div>
-        
-    </div>
-
-    <p>
-        Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn't able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn't really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&hellip;). Here's how it looked before touching it at all.
-        
-        <a href="https://eddieabbondanz.io/post/civic/18-04-12/">Read more...</a>
-        
-    </p>
-</article>
-
-<article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/nomansblocks/18-04-08/">No Mans Blocks - 4/8/18</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Apr 8, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Apr 8, 2018</time>
-        </div>
-
-        
-    </div>
-
-    <p>
-        Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn't like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it's message events.
-        
-        <a href="https://eddieabbondanz.io/post/nomansblocks/18-04-08/">Read more...</a>
-        
-    </p>
-</article>
-
-<article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/civic/18-04-08/">Civic Build - 4/8/18</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Apr 8, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Apr 8, 2018</time>
-        </div>
-
-        
-        <div class="is-flex is-flex-row is-align-middle" title="Category">
-            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
-            
-            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
-            
-        </div>
-        
-    </div>
-
-    <p>
-        New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn't feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.
-I remembered I had some left over 3m vinyl wrap sitting in the basement and decided to try something different.
-        
-        <a href="https://eddieabbondanz.io/post/civic/18-04-08/">Read more...</a>
-        
-    </p>
-</article>
 
 <article class="summary has-padding-bottom-4">
     <h1><a href="https://eddieabbondanz.io/post/civic/18-04-06/">Civic Build - 4/6/18</a></h1>
@@ -408,6 +324,90 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
         GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you'll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.
         
         <a href="https://eddieabbondanz.io/post/unity/object-pool/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Greedy Meshing for Vertex Colored Voxels In Unity</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Mar 25, 2018">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Mar 25, 2018</time>
+        </div>
+
+        
+    </div>
+
+    <p>
+        TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
+This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O'Leary, with a few alterations made.
+The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.
+        
+        <a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/civic/15-09-07/">Civic Build - 09/07/15</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Sep 7, 2015">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Sep 7, 2015</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        Now that I'm back at college it's been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
+I wasn't a fan of the stock antenna and it was broken so I figured we should delete it. My Dad helped out by soldering in a small patch to cover the antenna hole then skim coated it with body filler until you couldn't even tell it was ever there.
+        
+        <a href="https://eddieabbondanz.io/post/civic/15-09-07/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1><a href="https://eddieabbondanz.io/post/civic/15-08-22/">Civic Build - 08/22/15</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Aug 22, 2015">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Aug 22, 2015</time>
+        </div>
+
+        
+        <div class="is-flex is-flex-row is-align-middle" title="Category">
+            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
+            
+            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
+            
+        </div>
+        
+    </div>
+
+    <p>
+        I've been quite busy working on the Civic in the past month. I'm verfy excited to shared the journey I'm embarking on, and can't wait to see how the finished product looks.
+Like every other civic / older Honda out there the wiper arms had basically all but lost their OEM paint. I wanted to fix them up so instead of buying new ones I sandblasted and powder coated mine with a nice matte black powder coat.
+        
+        <a href="https://eddieabbondanz.io/post/civic/15-08-22/">Read more...</a>
         
     </p>
 </article>
