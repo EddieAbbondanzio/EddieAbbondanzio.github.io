@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Clap Button</title>
-      <link>https://eddieabbondanz.io/portfolio/clapbutton/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eddieabbondanz.io/portfolio/clapbutton/</guid>
-      <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times. The more a user liked the post, the more they would clap in response. The widget had several animations to make it feel more lively and enjoyable. Clapbutton.com was the admin panel to manage the widget.</description>
-    </item>
-    
-    <item>
       <title>Detailing Arsenal</title>
       <link>https://eddieabbondanz.io/portfolio/detailingarsenal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -28,6 +19,15 @@
       <guid>https://eddieabbondanz.io/portfolio/detailingarsenal/</guid>
       <description>Detailing Arsenal is a SaaS (software as a service) for managing and scheduling appointments for auto detailing businesses. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue. The app is focused towards auto detailing as the industry has some unique requirements such as vehicle check-in inspections and more that generic scheduling apps didn&#39;t offer.
 Features  Create, update, delete appointments View schedule in week or daily format Track revenue per service Time management reports Generate custom invoices      Why I Built It Like Mechanic Log I built this to scratch my own itch.</description>
+    </item>
+    
+    <item>
+      <title>Updog</title>
+      <link>https://eddieabbondanz.io/portfolio/updog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/portfolio/updog/</guid>
+      <description>Updog was a Reddit clone where users could share links, and create text posts. Users could submit comments to posts, or reply to other comments. A voting system was implemented to allow users to upvote or downvote posts they liked or disliked. Posts could be shared to any of the sub spaces that were topic specific. The home page of the site aggregated all posts into a list ordered by most recent.</description>
     </item>
     
     <item>
@@ -41,12 +41,12 @@ Features  Store vehicle information (VIN, license plate) Track maintenance and r
     </item>
     
     <item>
-      <title>Updog</title>
-      <link>https://eddieabbondanz.io/portfolio/updog/</link>
+      <title>Clap Button</title>
+      <link>https://eddieabbondanz.io/portfolio/clapbutton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://eddieabbondanz.io/portfolio/updog/</guid>
-      <description>Updog was a Reddit clone where users could share links, and create text posts. Users could submit comments to posts, or reply to other comments. A voting system was implemented to allow users to upvote or downvote posts they liked or disliked. Posts could be shared to any of the sub spaces that were topic specific. The home page of the site aggregated all posts into a list ordered by most recent.</description>
+      <guid>https://eddieabbondanz.io/portfolio/clapbutton/</guid>
+      <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times. The more a user liked the post, the more they would clap in response. The widget had several animations to make it feel more lively and enjoyable. Clapbutton.com was the admin panel to manage the widget.</description>
     </item>
     
   </channel>
