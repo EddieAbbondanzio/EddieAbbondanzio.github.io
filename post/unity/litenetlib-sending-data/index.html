@@ -42,42 +42,37 @@ if (!doNotTrack) {
 
       <div class="hero-head">
         <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
-            Eddie Abbondanzio
-        </a>
+  <div class="navbar-brand">
+    <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+      Eddie Abbondanzio
+    </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="hamburger-menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="hamburger-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="hamburger-menu" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/post" style="text-decoration: none!important;">Posts</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/about" style="text-decoration: none!important;">About Me</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none!important;">Portfolio</a>
+       
+      <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+        GitHub
+      </a>
+      
     </div>
-
-    <div id="hamburger-menu" class="navbar-menu">
-        <div class="navbar-end">
-            <a class="navbar-item" href="https://eddieabbondanz.io/about">
-                About Me
-            </a>
-
-            
-            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
-                GitHub
-            </a>
-            
-
-            
-            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
-                Twitter
-            </a>
-            
-        </div>
-    </div>
+  </div>
 </nav>
+
       </div>
 
-       
       <div class="hero-foot">
         <div class="container">
           <header>
@@ -94,10 +89,12 @@ if (!doNotTrack) {
 
         
         <div class="is-flex-desktop flex-row  has-text-grey-lighter">
-            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+            
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Date posted">
                 <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
                 <time class="has-text-grey-lighter">Nov 13, 2019</time>
             </div>
+            
 
             
             <div class="is-flex is-flex-row is-align-middle" title="Category">
@@ -112,7 +109,6 @@ if (!doNotTrack) {
 </header>
         </div>
       </div>
-      
     </section>
   </section>
 </section>
@@ -154,11 +150,15 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> NumberValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> StringValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div><div class="alert message is-info">
+    <div class="message-body is-flex is-flex-row is-align-center">
+        <i class="material-icons pr-3">
+            info
+        </i>
 <p><a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-client-cs"><code>Client.cs</code></a> and <a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-server-cs"><code>Server.cs</code></a> from the previous section will be reused to reduce redundancy.</p>
 <pre><code>&lt;/div&gt;
 </code></pre>
-<!-- raw HTML omitted -->
+</div>
 <p>First up, we're going to modify the server to send a <code>FooPacket</code> to the newly connected client in <code>PeerConnectedEvent</code>. To do this we'll need to add a <code>NetPacketProcessor</code> as a field on the server.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
     EventBasedNetListener netListener;

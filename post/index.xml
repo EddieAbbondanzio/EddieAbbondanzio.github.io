@@ -59,7 +59,7 @@ As we already know, we listen for incoming messages from the network via an IEve
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
       <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
-&amp;lt;/div&amp;gt;  LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&#39;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&#39;s a popular choice.
+&amp;lt;/div&amp;gt;   LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&#39;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&#39;s a popular choice.
 Create a Plugins Folder Open up your Unity project.</description>
     </item>
     

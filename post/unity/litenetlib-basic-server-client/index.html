@@ -42,42 +42,37 @@ if (!doNotTrack) {
 
       <div class="hero-head">
         <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
-            Eddie Abbondanzio
-        </a>
+  <div class="navbar-brand">
+    <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+      Eddie Abbondanzio
+    </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="hamburger-menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="hamburger-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="hamburger-menu" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/post" style="text-decoration: none!important;">Posts</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/about" style="text-decoration: none!important;">About Me</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none!important;">Portfolio</a>
+       
+      <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+        GitHub
+      </a>
+      
     </div>
-
-    <div id="hamburger-menu" class="navbar-menu">
-        <div class="navbar-end">
-            <a class="navbar-item" href="https://eddieabbondanz.io/about">
-                About Me
-            </a>
-
-            
-            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
-                GitHub
-            </a>
-            
-
-            
-            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
-                Twitter
-            </a>
-            
-        </div>
-    </div>
+  </div>
 </nav>
+
       </div>
 
-       
       <div class="hero-foot">
         <div class="container">
           <header>
@@ -94,10 +89,12 @@ if (!doNotTrack) {
 
         
         <div class="is-flex-desktop flex-row  has-text-grey-lighter">
-            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+            
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Date posted">
                 <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
                 <time class="has-text-grey-lighter">Nov 13, 2019</time>
             </div>
+            
 
             
             <div class="is-flex is-flex-row is-align-middle" title="Category">
@@ -112,7 +109,6 @@ if (!doNotTrack) {
 </header>
         </div>
       </div>
-      
     </section>
   </section>
 </section>
@@ -263,11 +259,15 @@ if (!doNotTrack) {
 <p>Also ensure that the &ldquo;Development Build&rdquo; checkbox is checked otherwise we wont see any of our <code>Debug.LogError()</code> messages.</p>
 <p><img src="images/4.png" alt=""></p>
 <p>Close out of the Build Settings window and switch Unity back to the client scene. We're ready to test things out. We've set things up so anytime we build and run the app Unity will fire up a server instance for us. Then once that's running we can simply hit play in the editor to start our client.</p>
-<!-- raw HTML omitted -->
+<div class="alert message is-info">
+    <div class="message-body is-flex is-flex-row is-align-center">
+        <i class="material-icons pr-3">
+            info
+        </i>
 <p>It comes down to user preference if the client or server should run within the editor, or the standalone build. I personally find that until a menu is added to control when the client connects to a server that it's better to have the server running in the build since we need it active first.</p>
 <pre><code>&lt;/div&gt;
 </code></pre>
-<!-- raw HTML omitted -->
+</div>
 <p>Build and run the server by hitting <code>Ctrl+B</code>. Unity will popup a loading bar and after a few seconds our server will appear. Now hit play in the editor.</p>
 <p>It's not much, but the server and client will print out their &ldquo;error&rdquo; messages showing that they connected to each other.
 <img src="images/5.png" alt="">

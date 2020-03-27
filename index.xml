@@ -59,7 +59,7 @@ As we already know, we listen for incoming messages from the network via an IEve
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
       <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
-&amp;lt;/div&amp;gt;  LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&#39;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&#39;s a popular choice.
+&amp;lt;/div&amp;gt;   LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&#39;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&#39;s a popular choice.
 Create a Plugins Folder Open up your Unity project.</description>
     </item>
     
@@ -409,12 +409,12 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
     </item>
     
     <item>
-      <title>About</title>
+      <title>About Me</title>
       <link>https://eddieabbondanz.io/about/</link>
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/about/</guid>
-      <description>Who Am I? Welcome! My name&#39;s Eddie Abbondanzio, and this is my personal blog. I&#39;m a software developer who loves to work on his own projects whenever possible. I graduated from the University of Maine in Orono in 2018 with a BS in Computer Science. I&#39;m currently self-employed as an automotive detailer and run my own business: Ed&#39;s Auto Detailing. Blog posts will cover anything from software architecture, design patterns, web development, and occasionally updates from working on my cars.</description>
+      <description>Welcome to my website! My name&#39;s Eddie Abbondanzio, and this is my personal blog. I&#39;m a full stack web developer who enjoys working on websites and web apps. I graduated from the University of Maine in Orono in 2018 with a BS in computer science. I&#39;m currently self-employed and running my own auto detailing business (Ed&#39;s Auto Detailing). I am looking for part-time development work, and if you&#39;d like my resume send me an email: me@eddieabbondanz.</description>
     </item>
     
     <item>
@@ -643,6 +643,44 @@ The shrouds needed a little trimming to fit in place but things are starting to 
       <guid>https://eddieabbondanz.io/post/acura/13-12-16/</guid>
       <description>I bought my first car off my Grandmother. It&#39;s a 1999 Acura 3.5RL in rough condition. I&#39;ve owned it for about 3 years now and only done a few small mods to it since. Over this winter I plan on restoring it bit by bit to get it back to it&#39;s former glorly.
 The photos don&#39;t really do it justice but the car has scratches and was missing paint all over the bumpers.</description>
+    </item>
+    
+    <item>
+      <title>Clap Button</title>
+      <link>https://eddieabbondanz.io/portfolio/clapbutton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/portfolio/clapbutton/</guid>
+      <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times. The more a user liked the post, the more they would clap in response. The widget had several animations to make it feel more lively and enjoyable. Clapbutton.com was the admin panel to manage the widget.</description>
+    </item>
+    
+    <item>
+      <title>Detailing Arsenal</title>
+      <link>https://eddieabbondanz.io/portfolio/detailingarsenal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/portfolio/detailingarsenal/</guid>
+      <description>Detailing Arsenal is a SaaS (software as a service) for managing and scheduling appointments for auto detailing businesses. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue. The app is focused towards auto detailing as the industry has some unique requirements such as vehicle check-in inspections and more that generic scheduling apps didn&#39;t offer.
+Features  Create, update, delete appointments View schedule in week or daily format Track revenue per service Time management reports Generate custom invoices  Why I Built It Like Mechanic Log I built this to scratch my own itch.</description>
+    </item>
+    
+    <item>
+      <title>Mechanic Log</title>
+      <link>https://eddieabbondanz.io/portfolio/mechaniclog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/portfolio/mechaniclog/</guid>
+      <description>Mechanic Log was a web app where users could log repairs and maintenance performed on their vehicle(s). Users could also track fuel mileage to see how much they spent in fuel, gallons consumed, and lifetime MPG. Receipts and invoices could also be saved along with the exact mileage and date services were performed on.
+Features  Store vehicle information (VIN, license plate) Track maintenance and repairs including receipts and invoices Track fuel mileage and fill-ups  Why I Built It I built Mechanic Log to scratch my own itch.</description>
+    </item>
+    
+    <item>
+      <title>Updog</title>
+      <link>https://eddieabbondanz.io/portfolio/updog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/portfolio/updog/</guid>
+      <description>Updog was a Reddit clone where users could share links, and create text posts. Users could submit comments to posts, or reply to other comments. A voting system was implemented to allow users to upvote or downvote posts they liked or disliked. Posts could be shared to any of the sub spaces that were topic specific. The home page of the site aggregated all posts into a list ordered by most recent.</description>
     </item>
     
   </channel>

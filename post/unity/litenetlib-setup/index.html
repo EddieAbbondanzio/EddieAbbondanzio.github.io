@@ -42,42 +42,37 @@ if (!doNotTrack) {
 
       <div class="hero-head">
         <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
-            Eddie Abbondanzio
-        </a>
+  <div class="navbar-brand">
+    <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+      Eddie Abbondanzio
+    </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="hamburger-menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="hamburger-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="hamburger-menu" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/post" style="text-decoration: none!important;">Posts</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/about" style="text-decoration: none!important;">About Me</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none!important;">Portfolio</a>
+       
+      <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+        GitHub
+      </a>
+      
     </div>
-
-    <div id="hamburger-menu" class="navbar-menu">
-        <div class="navbar-end">
-            <a class="navbar-item" href="https://eddieabbondanz.io/about">
-                About Me
-            </a>
-
-            
-            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
-                GitHub
-            </a>
-            
-
-            
-            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
-                Twitter
-            </a>
-            
-        </div>
-    </div>
+  </div>
 </nav>
+
       </div>
 
-       
       <div class="hero-foot">
         <div class="container">
           <header>
@@ -94,10 +89,12 @@ if (!doNotTrack) {
 
         
         <div class="is-flex-desktop flex-row  has-text-grey-lighter">
-            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+            
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Date posted">
                 <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
                 <time class="has-text-grey-lighter">Nov 12, 2019</time>
             </div>
+            
 
             
             <div class="is-flex is-flex-row is-align-middle" title="Category">
@@ -112,7 +109,6 @@ if (!doNotTrack) {
 </header>
         </div>
       </div>
-      
     </section>
   </section>
 </section>
@@ -121,11 +117,12 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    <!-- raw HTML omitted -->
+    <div class="alert message is-secondary">
+    <div class="message-body is-flex is-flex-row is-align-center">
 <p><strong>TL;DR</strong> Download the most recent stable release source code zip and copy the <code>/LiteNetLib</code> folder to the <code>Plugins</code> folder in your Unity project.</p>
 <pre><code>&lt;/div&gt;
 </code></pre>
-<!-- raw HTML omitted -->
+</div>
 <p><a href="https://github.com/RevenantX/LiteNetLib">LiteNetLib</a> is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with <a href="https://github.com/lidgren/lidgren-network-gen3">Lidgren</a> you'll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it's a popular choice.</p>
 <h1 id="create-a-plugins-folder">Create a <code>Plugins</code> Folder</h1>
 <p>Open up your Unity project. If you haven't already, create a <code>Plugins</code> folder directly under your <code>Assets</code> folder. The <code>Plugins</code> folder is one of several <a href="https://docs.unity3d.com/Manual/SpecialFolders.html">special folders</a> Unity supports. <code>Plugins</code> is a bit of an odd name, but Unity will check here for any 3rd party libraries you may want to use. These can be in the form of DLLs, or raw source files (Unity will compile .cs files).</p>
@@ -137,11 +134,15 @@ if (!doNotTrack) {
 <p>Swing over to the <a href="https://github.com/RevenantX/LiteNetLib">LiteNetLib GitHub repo</a>. We need to navigate to the release page and find the most recent stable release.</p>
 <p><img src="images/1.png" alt=""></p>
 <p>At the time of writing this <a href="https://github.com/RevenantX/LiteNetLib/releases/tag/v0.8.3">0.8.3</a> is the most recent stable release. Go ahead and download the source code zip, or tar.</p>
-<!-- raw HTML omitted -->
+<div class="alert message is-info">
+    <div class="message-body is-flex is-flex-row is-align-center">
+        <i class="material-icons pr-3">
+            info
+        </i>
 <p>It's best not to use the DLL as there are some platform specific #ifdefs for Unity in the source code. That's why we extract</p>
 <pre><code>&lt;/div&gt;
 </code></pre>
-<!-- raw HTML omitted -->
+</div>
 <p><img src="images/2.png" alt=""></p>
 <h1 id="extract-litenetlib-to-your-plugins-folder">Extract <code>/LiteNetLib</code> to Your <code>Plugins</code> Folder</h1>
 <p>Once the download completes, extract the <code>LiteNetLib</code> folder from the zip into your <code>Plugins</code> folder. Your project directory should be as follows.</p>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <title>About Me</title>
     
     
     
@@ -38,42 +38,70 @@ if (!doNotTrack) {
 
       <div class="hero-head">
         <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
-            Eddie Abbondanzio
-        </a>
+  <div class="navbar-brand">
+    <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+      Eddie Abbondanzio
+    </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="hamburger-menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="hamburger-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="hamburger-menu" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/post" style="text-decoration: none!important;">Posts</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/about" style="text-decoration: none!important;">About Me</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none!important;">Portfolio</a>
+       
+      <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+        GitHub
+      </a>
+      
     </div>
+  </div>
+</nav>
 
-    <div id="hamburger-menu" class="navbar-menu">
-        <div class="navbar-end">
-            <a class="navbar-item" href="https://eddieabbondanz.io/about">
+      </div>
+
+      <div class="hero-foot">
+        <div class="container">
+          <header>
+    <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
+
+        
+        <div class="has-margin-bottom-3">
+            <h1 class="is-marginless is-size-3-touch is-size-1-desktop">
                 About Me
-            </a>
+            </h1>
 
             
-            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
-                GitHub
-            </a>
+            <h3 class="has-text-grey-white-ter is-size-5-touch is-size-3-desktop">
+                About me, and this site.
+            </h3>
+            
+        </div>
+
+        
+        <div class="is-flex-desktop flex-row  has-text-grey-lighter">
+            
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Date posted">
+                <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
+                <time class="has-text-grey-lighter">Apr 1, 2018</time>
+            </div>
             
 
-            
-            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
-                Twitter
-            </a>
             
         </div>
     </div>
-</nav>
+</header>
+        </div>
       </div>
-
-       
     </section>
   </section>
 </section>
@@ -82,23 +110,13 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    <h1 id="who-am-i">Who Am I?</h1>
-<p><img src="images/me.jpg" alt=""></p>
-<p>Welcome! My name's Eddie Abbondanzio, and this is my personal blog. I'm a software developer who loves to work on his own projects whenever possible. I graduated from the University of Maine in Orono in 2018 with a BS in Computer Science. I'm currently self-employed as an automotive detailer and run my own business: <!-- raw HTML omitted -->Ed's Auto Detailing<!-- raw HTML omitted -->. Blog posts will cover anything from software architecture, design patterns, web development, and occasionally updates from working on my cars.</p>
-<h2 id="hobbies">Hobbies</h2>
-<ul>
-<li>Anything automotive (detailing, restoration, mods, etc..)</li>
-<li>Software development (front-end, back-end, you name it).</li>
-<li>Running</li>
-<li>Cooking</li>
-<li>Long walks on the beach&hellip; Oh woops, wrong site.</li>
-</ul>
-<h2 id="projects">Projects</h2>
-<p>I always have several projects in progress. I like staying busy, and seeing what I can come up with. While it may seem contradictive to my career, I prefer to drive older vehicles. During the summer I cruise around in a 1993 Honda Civic (EG hatch), and during the harsh Maine winters I blast around in the snow in my trusty 2000 Jeep Cherokee (XJ).</p>
+    <p><img src="images/me.jpg" alt=""></p>
+<p>Welcome to my website! My name's Eddie Abbondanzio, and this is my personal blog. I'm a full stack web developer who enjoys working on websites and web apps. I graduated from the University of Maine in Orono in 2018 with a BS in computer science. I'm currently self-employed and running my own auto detailing business <a href="https://edsautodetailing.com" target="_blank">(Ed's Auto Detailing)</a>. I am looking for part-time development work, and if you'd like my resume send me an email: <a href="mailto:me@eddieabbondanz.io">me@eddieabbondanz.io</a></p>
+<p>Besides developing, cars are my other hobby. I have an older 2000 Jeep Cherokee that I daily drive year round, and a 1993 Honda Civic project car. The civic has been torn down to a shell and painted, engine swapped, and converted to a manual transmission. Occasionally I auto-cross it and hope to make it more of a regular occurance soon.</p>
 <p><img src="images/civic.jpg" alt="">
 <img src="images/jeep.jpg" alt=""></p>
 <h1 id="site-tech-stack">Site Tech Stack</h1>
-<p>This site is built using <!-- raw HTML omitted -->Hugo<!-- raw HTML omitted -->. While I'm not too familar with the Go language, I'm learning as I go (haha). I'm not the biggest fan of WordPress and prefer to run a static site since this blog doesn't need any stellar features. Most of the site is built with the classic web trio (html, css, js), and posts are written using markdown files. I highly recommend it for anyone looking for a good static site framework.</p>
+<p>This site is built using <a href="https://gohugo.io/" target="_blank">Hugo</a>. I opted to use Hugo because I wanted a static site as a SPA (Single Page Application) would be overkill for my needs. <a href="https://bulma.io" target="_blank">Bulma</a> is used for styling.</p>
 
 </article>
 

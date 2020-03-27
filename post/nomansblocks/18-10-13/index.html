@@ -38,42 +38,37 @@ if (!doNotTrack) {
 
       <div class="hero-head">
         <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
-            Eddie Abbondanzio
-        </a>
+  <div class="navbar-brand">
+    <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
+      Eddie Abbondanzio
+    </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="hamburger-menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="hamburger-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="hamburger-menu" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/post" style="text-decoration: none!important;">Posts</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/about" style="text-decoration: none!important;">About Me</a>
+      
+      <a class="navbar-item" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none!important;">Portfolio</a>
+       
+      <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+        GitHub
+      </a>
+      
     </div>
-
-    <div id="hamburger-menu" class="navbar-menu">
-        <div class="navbar-end">
-            <a class="navbar-item" href="https://eddieabbondanz.io/about">
-                About Me
-            </a>
-
-            
-            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
-                GitHub
-            </a>
-            
-
-            
-            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
-                Twitter
-            </a>
-            
-        </div>
-    </div>
+  </div>
 </nav>
+
       </div>
 
-       
       <div class="hero-foot">
         <div class="container">
           <header>
@@ -90,10 +85,12 @@ if (!doNotTrack) {
 
         
         <div class="is-flex-desktop flex-row  has-text-grey-lighter">
-            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Author">
+            
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Date posted">
                 <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
                 <time class="has-text-grey-lighter">Oct 13, 2018</time>
             </div>
+            
 
             
         </div>
@@ -101,7 +98,6 @@ if (!doNotTrack) {
 </header>
         </div>
       </div>
-      
     </section>
   </section>
 </section>
@@ -126,7 +122,7 @@ if (!doNotTrack) {
 <li>MySQL</li>
 <li>Ubuntu</li>
 </ul>
-<p>The master server follows the standard <!-- raw HTML omitted -->REST principles<!-- raw HTML omitted -->, and all interaction with the server are done via HTTP. To help out with handling HTTP requests the well known node module <!-- raw HTML omitted -->Express<!-- raw HTML omitted --> is being used. For database interactions I'm using <!-- raw HTML omitted -->TypeORM<!-- raw HTML omitted -->. I decided on TypeORM since it seemed more user friendly than Sequelize, and I haven't been dissapointed at all. I highly recommend it for anyone who needs a good ORM. I'm also taking advantage of TypeScript to help create a code base that will scale easier than plain JS. TypeScript is a nice addition to JavaScript and I do recommend it, but at the same time it's a leaky abstraction and unless your familiar with the quirks of JavaScript you might have some trouble working with it.</p>
+<p>The master server follows the standard <a href="https://restfulapi.net/">REST principles</a>, and all interaction with the server are done via HTTP. To help out with handling HTTP requests the well known node module <a href="https://expressjs.com/">Express</a> is being used. For database interactions I'm using <a href="http://typeorm.io/">TypeORM</a>. I decided on TypeORM since it seemed more user friendly than Sequelize, and I haven't been dissapointed at all. I highly recommend it for anyone who needs a good ORM. I'm also taking advantage of TypeScript to help create a code base that will scale easier than plain JS. TypeScript is a nice addition to JavaScript and I do recommend it, but at the same time it's a leaky abstraction and unless your familiar with the quirks of JavaScript you might have some trouble working with it.</p>
 <p>The master server is structured using the layered architecture pattern. The highest layer is the server layer which handles http requests and builds responses. In the middle is the business logic layer, and at the bottom is the data layer.</p>
 <p><img src="images/2.jpg" alt=""></p>
 <p>The server layer only handles incoming requests. It does not know any of the underlying logic, and simply redirects user requests to their corresponding logic handler. Once the business logic has finished it's job the server layer will build and return back a response to the request.</p>
