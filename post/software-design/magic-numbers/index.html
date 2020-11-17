@@ -110,7 +110,7 @@ if (!doNotTrack) {
 <p>Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&rdquo;. [1]</p>
 <p>However, this does not mean that all constants should be blindly replaced with pre-defined constants. A good rule of thumb to follow when deciding if a number should be changed to a constant is if the number is a well known value (number of hours in a day, etc&hellip;),compared to a lesser known value (the average air velocity of a laiden swallow). If the number is not well known, then it should be changed to a constant with a comment explaining it.</p>
 <h1 id="example">Example</h1>
-<p>Imagine you're designing a user system for a web site. To help enforce better security practices, you've decided there will be a minimum password length of at least 7 characters. To achieve this we could define a <code>User</code> class like so:</p>
+<p>Imagine you&rsquo;re designing a user system for a web site. To help enforce better security practices, you&rsquo;ve decided there will be a minimum password length of at least 7 characters. To achieve this we could define a <code>User</code> class like so:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
     <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> password;
 
@@ -132,7 +132,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">return</span> password.length &gt;= <span style="color:#ae81ff">7</span>;
     }
 }
-</code></pre></div><p>Why is this bad? Because it violates the DRY (don't repeat yourself) principle. We now have two locations that maintain a minimum password length. In larger projects when a single magic number is used in more than 1 places it can turn into a nightmare hunting down all the instances if the magic number ever needs to be changed.</p>
+</code></pre></div><p>Why is this bad? Because it violates the DRY (don&rsquo;t repeat yourself) principle. We now have two locations that maintain a minimum password length. In larger projects when a single magic number is used in more than 1 places it can turn into a nightmare hunting down all the instances if the magic number ever needs to be changed.</p>
 <p>We could refactor the example above to be more maintainable by introducing a <code>MinPasswordLength</code> constant for the <code>User</code> class.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MinPasswordLength = <span style="color:#ae81ff">7</span>;

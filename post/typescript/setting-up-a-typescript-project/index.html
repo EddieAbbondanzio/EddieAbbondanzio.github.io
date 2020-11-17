@@ -107,14 +107,14 @@ if (!doNotTrack) {
         
 <article>
     <h1 id="summary">Summary</h1>
-<p>For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it's <a href="https://www.typescriptlang.org/">&ldquo;JavaScript that scales&rdquo;</a>, and once you use it you'll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</p>
+<p>For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&rsquo;s <a href="https://www.typescriptlang.org/">&ldquo;JavaScript that scales&rdquo;</a>, and once you use it you&rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</p>
 <p>This tutorial attempts to cover a no bs approach to setting up a new TypeScript project that builds and runs via <code>npm run build</code>, and <code>npm start</code> without any additional node modules. However, it does assume you have some familiarity with the command prompt, and node. If this were a medium article it would probably be titled &ldquo;How To Set Up a TypeScript Project In 5 Minutes Or Less&rdquo;.</p>
 <h1 id="steps">Steps</h1>
-<p>1 - Create a new folder to hold the project. Then open up a command prompt and navigate to the newly created folder using the <code>cd</code> command. For this example we'll be working in a <code>test-project</code> folder.
+<p>1 - Create a new folder to hold the project. Then open up a command prompt and navigate to the newly created folder using the <code>cd</code> command. For this example we&rsquo;ll be working in a <code>test-project</code> folder.
 <img src="images/1.png" alt=""></p>
 <p>2 - Run the standard node initialization command <code>npm init</code> or if you want to accept the defaults for the questionnaire <code>npm init -y</code>
 <img src="images/2.png" alt=""></p>
-<p>3 - Create two folders (<code>dist</code>, and <code>src</code>) within the project directory. The <code>dist</code> folder will be used to store our transpiled JavaScript files, and the <code>src</code> folder will hold all our TypeScript files. It's in your best interest to keep the two seperated or else things will become cluttered fast. The project structure should now be:
+<p>3 - Create two folders (<code>dist</code>, and <code>src</code>) within the project directory. The <code>dist</code> folder will be used to store our transpiled JavaScript files, and the <code>src</code> folder will hold all our TypeScript files. It&rsquo;s in your best interest to keep the two seperated or else things will become cluttered fast. The project structure should now be:
 <img src="images/3.png" alt=""></p>
 <p>4 - Open up the <code>src</code> folder and create a new <code>index.ts</code> file. This will be our very first TypeScript file.
 <img src="images/4.png" alt=""></p>
@@ -124,13 +124,13 @@ if (!doNotTrack) {
 <img src="images/6.png" alt=""></p>
 <p>7 - With TypeScript installed, we can run the init command: <code>tsc --init</code>
 <img src="images/7.png" alt=""></p>
-<p>8 - You should see a tsconfig.json file in the project directory. Go ahead and open it up. We'll need to un-comment the <code>outDir</code> and <code>rootDir</code> line. Then fill them out with the following values:
+<p>8 - You should see a tsconfig.json file in the project directory. Go ahead and open it up. We&rsquo;ll need to un-comment the <code>outDir</code> and <code>rootDir</code> line. Then fill them out with the following values:
 <img src="images/8.png" alt=""></p>
 <p>9 - Switch over to <code>package.json</code> and add a build command, and start command.
 <img src="images/9.png" alt=""></p>
 <p>10 - With everything set up we can build the project. Enter <code>npm run build</code> in the command prompt.
 <img src="images/10.png" alt=""></p>
-<p>If things went correctly it won't print out anything, but we can see a new .js file under <code>dist</code>.
+<p>If things went correctly it won&rsquo;t print out anything, but we can see a new .js file under <code>dist</code>.
 <img src="images/10b.png" alt=""></p>
 <p>11 - Finally we can run it via the <code>npm start</code> command.
 <img src="images/11.png" alt=""></p>

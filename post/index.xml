@@ -7,10 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XJ - Ass Cancer Rehab Part 1: A New Rear Crossmember</title>
+      <link>https://eddieabbondanz.io/post/cherokee/ass-cancer-rehab-part-1/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/cherokee/ass-cancer-rehab-part-1/</guid>
+      <description>I like to joke and say that anyone else would have sent my XJ to the junkyard.
+Somedays if I&amp;rsquo;m in an especially sour mood from working on it, I&amp;rsquo;ll joke and say that anyone smart would have sent my XJ to the junkyard.
+My Cherokee is rusty, has a laundry list of issues, gets 17 MPG on the good days, and is literally a brick on wheels. But I love it.</description>
+    </item>
     
     <item>
       <title>TypeScript - Await Promise.All() And Get The Results</title>
@@ -18,7 +25,7 @@
       <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/await-promise-all/</guid>
-      <description>I&#39;m a big fan of the async await syntax in ES2017. In my opionion it just feels a lot more natural than and then and then and then&amp;hellip;. I digress. I&#39;ll keep this one short.
+      <description>I&amp;rsquo;m a big fan of the async await syntax in ES2017. In my opionion it just feels a lot more natural than and then and then and then&amp;hellip;. I digress. I&amp;rsquo;ll keep this one short.
 Promise.all() allows us to run multiple async operations in parallel instead of running them in series. This is great for times when we need to make multiple API calls that are independent of each other.</description>
     </item>
     
@@ -39,7 +46,7 @@ In total, LiteNetLib offers 5 different delivery methods for sending packets to 
       <pubDate>Wed, 13 Nov 2019 19:04:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</guid>
-      <description>Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&#39;s time to talk about sending data. Because, well, a network set up that doesn&#39;t actually send any data is kind of useless.
+      <description>Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.
 As we already know, we listen for incoming messages from the network via an IEventListener that we pass to our NetManager. IEventListener contains an event called NetworkReceiveEvent which is triggered anytime the network receives data from another connection.</description>
     </item>
     
@@ -49,7 +56,7 @@ As we already know, we listen for incoming messages from the network via an IEve
       <pubDate>Wed, 13 Nov 2019 06:10:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</guid>
-      <description>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&#39;s a few extra steps we&#39;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: How to Setup LiteNetLib With Unity</description>
+      <description>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: How to Setup LiteNetLib With Unity</description>
     </item>
     
     <item>
@@ -59,7 +66,7 @@ As we already know, we listen for incoming messages from the network via an IEve
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
       <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
-&amp;lt;/div&amp;gt;   LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&#39;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&#39;s a popular choice.
+&amp;lt;/div&amp;gt;   LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with Lidgren you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.
 Create a Plugins Folder Open up your Unity project.</description>
     </item>
     
@@ -79,8 +86,8 @@ Claims Claims are the foundation behind claims-based authentication (who would h
       <pubDate>Sat, 29 Jun 2019 14:50:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
-      <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&#39;re a fan of Uncle Bob&#39;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.
-Let&#39;s imagine we&#39;re building an API that has a UserController to provide an endpoint for retrieving users via their numeric id from the database.</description>
+      <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.
+Let&amp;rsquo;s imagine we&amp;rsquo;re building an API that has a UserController to provide an endpoint for retrieving users via their numeric id from the database.</description>
     </item>
     
     <item>
@@ -89,7 +96,7 @@ Let&#39;s imagine we&#39;re building an API that has a UserController to provide
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/laptop/kubuntu/</guid>
-      <description>I&#39;ve been using Windows for as long as I can remember. Back when Windows 2000 was a big deal I remember using it to play Space Cadet pinball although I was never very good at it.
+      <description>I&amp;rsquo;ve been using Windows for as long as I can remember. Back when Windows 2000 was a big deal I remember using it to play Space Cadet pinball although I was never very good at it.
 With the rise of Windows 10 it feels as if Microsoft is going downhill and no longer gives you &amp;ldquo;full control&amp;rdquo; of your own computer. My biggest gripe with Windows 10 is the automatic updates that it forces upon you.</description>
     </item>
     
@@ -99,7 +106,7 @@ With the rise of Windows 10 it feels as if Microsoft is going downhill and no lo
       <pubDate>Fri, 15 Feb 2019 21:17:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/laptop/more-ram/</guid>
-      <description>Mo&amp;rsquo; RAM, Mo&amp;rsquo; Problems I use my laptop for a ton of software development. I&#39;ve been working on launching a SaaS and I often need to have a development build of the backend running along with the frontend. Both of those and a database and I&#39;m easily eating up 5-6 gigabytes of RAM. My laptop is a Dell Inspirion 7559, and it came with 8 gigs of RAM from the factory.</description>
+      <description>Mo&#39; RAM, Mo&#39; Problems I use my laptop for a ton of software development. I&amp;rsquo;ve been working on launching a SaaS and I often need to have a development build of the backend running along with the frontend. Both of those and a database and I&amp;rsquo;m easily eating up 5-6 gigabytes of RAM. My laptop is a Dell Inspirion 7559, and it came with 8 gigs of RAM from the factory.</description>
     </item>
     
     <item>
@@ -108,7 +115,7 @@ With the rise of Windows 10 it feels as if Microsoft is going downhill and no lo
       <pubDate>Sun, 03 Feb 2019 17:28:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/cherokee/19-02-03/</guid>
-      <description>The Cherokee strikes again. A couple weeks back when my exhaust snapped just before the catalytic converter I noticed my muffler had a minor leak. It wasn&#39;t anything major and wasn&#39;t loud so I figured I could probably just run it till spring and deal with it when it was warmer out.
+      <description>The Cherokee strikes again. A couple weeks back when my exhaust snapped just before the catalytic converter I noticed my muffler had a minor leak. It wasn&amp;rsquo;t anything major and wasn&amp;rsquo;t loud so I figured I could probably just run it till spring and deal with it when it was warmer out.
 The Jeep had other plans though as the leak grew in size, and became extremely obnoxious. Due to the internals of the muffler rusting and coming loose, the muffler developed a horrendous rattle that sounded like a trumpet blasting a low note when at 2300RPM.</description>
     </item>
     
@@ -118,8 +125,8 @@ The Jeep had other plans though as the leak grew in size, and became extremely o
       <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/interpolated-strings/</guid>
-      <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&#39;t so bad, after all console.log() allows us to pass multiple parameters and has no trouble logging them.
-let foo = { bar: 1 };console.log(&amp;#34;Foo is &amp;#34;, foo);//Prints: Foo is Object { bar : 1 }But this only covers one of the many use cases I used String.</description>
+      <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&amp;rsquo;t so bad, after all console.log() allows us to pass multiple parameters and has no trouble logging them.
+let foo = { bar: 1 }; console.log(&amp;#34;Foo is &amp;#34;, foo); //Prints: Foo is Object { bar : 1 } But this only covers one of the many use cases I used String.</description>
     </item>
     
     <item>
@@ -128,7 +135,7 @@ let foo = { bar: 1 };console.log(&amp;#34;Foo is &amp;#34;, foo);//Prints: Foo
       <pubDate>Tue, 29 Jan 2019 18:29:29 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/http/status-codes-for-rest/</guid>
-      <description>Intro Hyper Text Transfer Protocol (HTTP) powers the web. It&#39;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making requests that are sent to servers which then reply back with responses. Only servers can make responses, and only clients can make requests.</description>
+      <description>Intro Hyper Text Transfer Protocol (HTTP) powers the web. It&amp;rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making requests that are sent to servers which then reply back with responses. Only servers can make responses, and only clients can make requests.</description>
     </item>
     
     <item>
@@ -137,7 +144,7 @@ let foo = { bar: 1 };console.log(&amp;#34;Foo is &amp;#34;, foo);//Prints: Foo
       <pubDate>Sat, 26 Jan 2019 16:51:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/cherokee/19-01-26/</guid>
-      <description>I&#39;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average $100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so.</description>
+      <description>I&amp;rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average $100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so.</description>
     </item>
     
     <item>
@@ -146,7 +153,7 @@ let foo = { bar: 1 };console.log(&amp;#34;Foo is &amp;#34;, foo);//Prints: Foo
       <pubDate>Thu, 24 Jan 2019 18:37:24 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/http/cookies/</guid>
-      <description>What Are They? HTTP cookies are small bits of text that are included with each HTTP request made from a user&#39;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&#39;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.</description>
+      <description>What Are They? HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&amp;rsquo;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.</description>
     </item>
     
     <item>
@@ -155,7 +162,7 @@ let foo = { bar: 1 };console.log(&amp;#34;Foo is &amp;#34;, foo);//Prints: Foo
       <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/events/</guid>
-      <description>Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&#39;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&#39;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&#39;s known as polling.</description>
+      <description>Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&amp;rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&amp;rsquo;s known as polling.</description>
     </item>
     
     <item>
@@ -164,7 +171,7 @@ let foo = { bar: 1 };console.log(&amp;#34;Foo is &amp;#34;, foo);//Prints: Foo
       <pubDate>Sat, 05 Jan 2019 09:53:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/magic-strings/</guid>
-      <description>What&#39;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
+      <description>What&amp;rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
 They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</description>
     </item>
     
@@ -174,7 +181,7 @@ They are often considered an anti-pattern due to how to they introduce the poten
       <pubDate>Mon, 26 Nov 2018 06:57:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</guid>
-      <description>Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&#39;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&#39;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</description>
+      <description>Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&amp;rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).</description>
     </item>
     
     <item>
@@ -223,7 +230,7 @@ Initially the plan for this weekend was to finish welding in the new driver side
       <pubDate>Thu, 18 Oct 2018 06:34:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
-      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&#39;ve likely used it yourself in the past and just didn&#39;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</description>
+      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</description>
     </item>
     
     <item>
@@ -242,7 +249,7 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
       <pubDate>Sat, 13 Oct 2018 15:05:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
-      <description>Where I&#39;ve Been, and Where I&#39;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&#39;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.</description>
+      <description>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&amp;rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.</description>
     </item>
     
     <item>
@@ -251,7 +258,7 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
       <pubDate>Wed, 10 Oct 2018 05:16:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/validator-pattern/</guid>
-      <description>Validating Objects Based on Context It&#39;s quite typical for a Domain Driven Design (DDD) project to need validation for it&#39;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
+      <description>Validating Objects Based on Context It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
     </item>
     
     <item>
@@ -261,7 +268,7 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
       
       <guid>https://eddieabbondanz.io/post/cherokee/18-10-08/</guid>
       <description>Passenger side rocker replacement This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.
-Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&amp;rdquo; in length and about 3&amp;rdquo; wide.</description>
+Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&amp;quot; in length and about 3&amp;quot; wide.</description>
     </item>
     
     <item>
@@ -270,7 +277,7 @@ Like most xjs out there, especially those in the rustier parts of the US, the ro
       <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/misc/desk2-0/</guid>
-      <description>Going all out This post is a successor to my first attempt at [building a standing desk] ( /post/misc/desk/). Back during college when I built my first desk I didn&#39;t have much of a budget since it was a spur of the moment decision. Because of this the solution I came up with ended up being a permanent standing desk built using misc. parts from Lowe&#39;s. Ever since graduating from college however, I&#39;ve found it less than thrilling to come home and stand at my desk after standing all day at work.</description>
+      <description>Going all out This post is a successor to my first attempt at [building a standing desk] ( /post/misc/desk/). Back during college when I built my first desk I didn&amp;rsquo;t have much of a budget since it was a spur of the moment decision. Because of this the solution I came up with ended up being a permanent standing desk built using misc. parts from Lowe&amp;rsquo;s. Ever since graduating from college however, I&amp;rsquo;ve found it less than thrilling to come home and stand at my desk after standing all day at work.</description>
     </item>
     
     <item>
@@ -279,7 +286,7 @@ Like most xjs out there, especially those in the rustier parts of the US, the ro
       <pubDate>Sun, 02 Sep 2018 12:57:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/cherokee/18-09-03/</guid>
-      <description>Repainting the Cherokee&#39;s roof I&#39;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&#39;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&#39;s never let me down, and has successfully travelled 20,000 miles in it&#39;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.</description>
+      <description>Repainting the Cherokee&amp;rsquo;s roof I&amp;rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&amp;rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&amp;rsquo;s never let me down, and has successfully travelled 20,000 miles in it&amp;rsquo;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.</description>
     </item>
     
     <item>
@@ -288,7 +295,7 @@ Like most xjs out there, especially those in the rustier parts of the US, the ro
       <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-06-23/</guid>
-      <description>Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&#39;t been gassed up since last September and was pretty much on E.</description>
+      <description>Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&amp;rsquo;t been gassed up since last September and was pretty much on E.</description>
     </item>
     
     <item>
@@ -297,7 +304,7 @@ Like most xjs out there, especially those in the rustier parts of the US, the ro
       <pubDate>Sat, 09 Jun 2018 12:57:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-06-09/</guid>
-      <description>Getting ready for the test drive While the car may not be on the road yet, it&#39;s come quite a bit closer to getting there. Lately I&#39;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&#39;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap. I ended up buying just a generic pin for the clutch master cylinder to hook it to the clutch pedal.</description>
+      <description>Getting ready for the test drive While the car may not be on the road yet, it&amp;rsquo;s come quite a bit closer to getting there. Lately I&amp;rsquo;ve been working on fixing everything that was sub-optimally done previously by me. One of the things I didn&amp;rsquo;t do quite right was the clutch pedal pin. Since the car was an automatic initially, I had to source out some parts for the swap. I ended up buying just a generic pin for the clutch master cylinder to hook it to the clutch pedal.</description>
     </item>
     
     <item>
@@ -306,8 +313,8 @@ Like most xjs out there, especially those in the rustier parts of the US, the ro
       <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
-      <description>Creating Time (literally!) I have a knack for forgetting what I&#39;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&#39;ve started writing down each accomplishment on a sticky note.
-Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&#39;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
+      <description>Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.
+Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While the networking implementation is still early, I&amp;rsquo;ve managed to get a sever-authoratative set up running that handles syncing up lobby of players together.</description>
     </item>
     
     <item>
@@ -316,8 +323,8 @@ Every Friday I hope to write a small blurb, and post some code showing off the c
       <pubDate>Sun, 20 May 2018 12:57:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-05-20/</guid>
-      <description>Finishing things up With the weather warming up it&#39;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.
-I had thought this task would be difficult but it really wasn&#39;t that bad.</description>
+      <description>Finishing things up With the weather warming up it&amp;rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.
+I had thought this task would be difficult but it really wasn&amp;rsquo;t that bad.</description>
     </item>
     
     <item>
@@ -326,7 +333,7 @@ I had thought this task would be difficult but it really wasn&#39;t that bad.</d
       <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
-      <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&#39;t thread-safe by default. Thankfully it&#39;s easy enough to implement your own as we will do today. Let&#39;s start by defining our class.
+      <description>Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.
 public class ThreadableQueue&amp;lt;T&amp;gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.
 private Queue&amp;lt;T&amp;gt; queue; privare readonly object lockObj; The queue needs to be kept private so we can control access to it.</description>
     </item>
@@ -337,8 +344,8 @@ private Queue&amp;lt;T&amp;gt; queue; privare readonly object lockObj; The queue
       <pubDate>Fri, 20 Apr 2018 23:05:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
-      <description>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&#39;t want to handle serialization with 2 different methods I&#39;ve decided to bite the bullet and roll my own set up.
-To help prepare for this task I&#39;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</description>
+      <description>Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&amp;rsquo;t want to handle serialization with 2 different methods I&amp;rsquo;ve decided to bite the bullet and roll my own set up.
+To help prepare for this task I&amp;rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array.</description>
     </item>
     
     <item>
@@ -347,8 +354,8 @@ To help prepare for this task I&#39;ve created a BitManipulator class that allow
       <pubDate>Sun, 15 Apr 2018 20:57:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-15/</guid>
-      <description>Connecting the Pieces It&#39;s easy to forget just how many parts you&#39;ve removed until it comes time to put them all back together. I know I&#39;m probably not alone when I say I&#39;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&amp;hellip;
-To help keep costs down I try to buy cheap things when I know they&#39;ll only be used temporarily.</description>
+      <description>Connecting the Pieces It&amp;rsquo;s easy to forget just how many parts you&amp;rsquo;ve removed until it comes time to put them all back together. I know I&amp;rsquo;m probably not alone when I say I&amp;rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&amp;hellip;
+To help keep costs down I try to buy cheap things when I know they&amp;rsquo;ll only be used temporarily.</description>
     </item>
     
     <item>
@@ -357,8 +364,8 @@ To help keep costs down I try to buy cheap things when I know they&#39;ll only b
       <pubDate>Sat, 14 Apr 2018 20:40:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-14/</guid>
-      <description>Getting Closer. I ran into a few set backs this weekend, and I&#39;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.
-Last year everytime I pushed the clutch in it made a real nice squeek that let everyone in a 15 foot radius know what was going on. Thankfully this time I didn&#39;t forget to grease the pivot point on the clutch fork.</description>
+      <description>Getting Closer. I ran into a few set backs this weekend, and I&amp;rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.
+Last year everytime I pushed the clutch in it made a real nice squeek that let everyone in a 15 foot radius know what was going on. Thankfully this time I didn&amp;rsquo;t forget to grease the pivot point on the clutch fork.</description>
     </item>
     
     <item>
@@ -367,7 +374,7 @@ Last year everytime I pushed the clutch in it made a real nice squeek that let e
       <pubDate>Thu, 12 Apr 2018 13:13:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-12/</guid>
-      <description>Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&#39;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&#39;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&amp;hellip;). Here&#39;s how it looked before touching it at all.</description>
+      <description>Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&amp;rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&amp;rsquo;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&amp;hellip;). Here&amp;rsquo;s how it looked before touching it at all.</description>
     </item>
     
     <item>
@@ -376,7 +383,7 @@ Last year everytime I pushed the clutch in it made a real nice squeek that let e
       <pubDate>Sun, 08 Apr 2018 18:25:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
-      <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&#39;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&#39;s message events.</description>
+      <description>Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events.</description>
     </item>
     
     <item>
@@ -385,7 +392,7 @@ Last year everytime I pushed the clutch in it made a real nice squeek that let e
       <pubDate>Sun, 08 Apr 2018 18:04:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-08/</guid>
-      <description>New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&#39;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.
+      <description>New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&amp;rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.
 I remembered I had some left over 3m vinyl wrap sitting in the basement and decided to try something different.</description>
     </item>
     
@@ -395,7 +402,7 @@ I remembered I had some left over 3m vinyl wrap sitting in the basement and deci
       <pubDate>Fri, 06 Apr 2018 16:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-06/</guid>
-      <description>Wrapping it up It&#39;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
+      <description>Wrapping it up It&amp;rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
 Initially I wanted to work on finishing up the engine bay but with how cold it was outside I decided to focus on the motor instead.</description>
     </item>
     
@@ -405,7 +412,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <pubDate>Fri, 06 Apr 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/honda/b-series-bolts/</guid>
-      <description>Trying to find the size of a missing bolt? I&#39;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try to help any others who are partaking in a similar project I&#39;ve compiled a list of what I found below.</description>
+      <description>Trying to find the size of a missing bolt? I&amp;rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try to help any others who are partaking in a similar project I&amp;rsquo;ve compiled a list of what I found below.</description>
     </item>
     
     <item>
@@ -414,7 +421,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-01/</guid>
-      <description>I like projects And I&#39;m the kind of person that can&#39;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&#39;s totally different, it&#39;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&#39;s full history check out my build thread on D-Series.</description>
+      <description>I like projects And I&amp;rsquo;m the kind of person that can&amp;rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&amp;rsquo;s totally different, it&amp;rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&amp;rsquo;s full history check out my build thread on D-Series.</description>
     </item>
     
     <item>
@@ -423,7 +430,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/misc/desk/</guid>
-      <description>My Budget Build At my work, I&#39;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home. However I&#39;m on a college student budget, and don&#39;t want to spend an arm and a leg right now. In the end I came up with this solution that&#39;s left me pretty happy.</description>
+      <description>My Budget Build At my work, I&amp;rsquo;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home. However I&amp;rsquo;m on a college student budget, and don&amp;rsquo;t want to spend an arm and a leg right now. In the end I came up with this solution that&amp;rsquo;s left me pretty happy.</description>
     </item>
     
     <item>
@@ -432,7 +439,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <pubDate>Sat, 31 Mar 2018 15:56:01 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/debug-logging/</guid>
-      <description>Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&#39;s own set of methods for writing to it&#39;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&#39;ll need a way to differentiate between the running environments.</description>
+      <description>Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&amp;rsquo;ll need a way to differentiate between the running environments.</description>
     </item>
     
     <item>
@@ -441,7 +448,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
-      <description>Stepping back into Networking These past few months I&#39;ve been on a tangent that wasn&#39;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&#39;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&#39;t exactly remember every change some of the key ones are:</description>
+      <description>Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:</description>
     </item>
     
     <item>
@@ -450,7 +457,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       <pubDate>Fri, 30 Mar 2018 10:06:59 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/object-pool/</guid>
-      <description>GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&#39;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.</description>
+      <description>GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.</description>
     </item>
     
     <item>
@@ -460,7 +467,7 @@ Initially I wanted to work on finishing up the engine bay but with how cold it w
       
       <guid>https://eddieabbondanz.io/post/voxel/greedy-mesh/</guid>
       <description>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
-This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&#39;Leary, with a few alterations made.
+This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&amp;rsquo;Leary, with a few alterations made.
 The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.</description>
     </item>
     
@@ -470,8 +477,8 @@ The setup has been simplified, and assumes the world is only comprised of a sing
       <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/15-09-07/</guid>
-      <description>Now that I&#39;m back at college it&#39;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
-I wasn&#39;t a fan of the stock antenna and it was broken so I figured we should delete it. My Dad helped out by soldering in a small patch to cover the antenna hole then skim coated it with body filler until you couldn&#39;t even tell it was ever there.</description>
+      <description>Now that I&amp;rsquo;m back at college it&amp;rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
+I wasn&amp;rsquo;t a fan of the stock antenna and it was broken so I figured we should delete it. My Dad helped out by soldering in a small patch to cover the antenna hole then skim coated it with body filler until you couldn&amp;rsquo;t even tell it was ever there.</description>
     </item>
     
     <item>
@@ -480,7 +487,7 @@ I wasn&#39;t a fan of the stock antenna and it was broken so I figured we should
       <pubDate>Sat, 22 Aug 2015 20:44:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/15-08-22/</guid>
-      <description>I&#39;ve been quite busy working on the Civic in the past month. I&#39;m verfy excited to shared the journey I&#39;m embarking on, and can&#39;t wait to see how the finished product looks.
+      <description>I&amp;rsquo;ve been quite busy working on the Civic in the past month. I&amp;rsquo;m verfy excited to shared the journey I&amp;rsquo;m embarking on, and can&amp;rsquo;t wait to see how the finished product looks.
 Like every other civic / older Honda out there the wiper arms had basically all but lost their OEM paint. I wanted to fix them up so instead of buying new ones I sandblasted and powder coated mine with a nice matte black powder coat.</description>
     </item>
     
@@ -490,7 +497,7 @@ Like every other civic / older Honda out there the wiper arms had basically all 
       <pubDate>Wed, 15 Jul 2015 20:44:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/15-07-06/</guid>
-      <description>The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&#39;t resist making the switch.
+      <description>The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&amp;rsquo;t resist making the switch.
 While it was kinda gross, it actually cleaned up pretty nicely. After a lot of scrubbing and cleaning it was finally ready for paint.</description>
     </item>
     
@@ -500,7 +507,7 @@ While it was kinda gross, it actually cleaned up pretty nicely. After a lot of s
       <pubDate>Wed, 15 Jul 2015 19:43:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/15-07-03/</guid>
-      <description>I don&#39;t know why, but I&#39;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&#39;s a fact.
+      <description>I don&amp;rsquo;t know why, but I&amp;rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&amp;rsquo;s a fact.
 My first car was a 1999 Acura RL that I purchased from my Grandmother. The car was in rough shape, and needed some love but it was an amazing first car. I put over 36k miles on the car in 3 years, and loved everything about it.</description>
     </item>
     
@@ -510,7 +517,7 @@ My first car was a 1999 Acura RL that I purchased from my Grandmother. The car w
       <pubDate>Tue, 09 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/acura/14-09-09/</guid>
-      <description>I&#39;ve been fairly quiet since I&#39;ve just been enjoying the car. I&#39;ve moved up North for college and have decided to sell the RL. There&#39;s nothing wrong with it I&#39;m just bored of it. I really want something that can be modded a little more. There&#39;s almost no aftermarket support for the RL so everything has to be done custom.
+      <description>I&amp;rsquo;ve been fairly quiet since I&amp;rsquo;ve just been enjoying the car. I&amp;rsquo;ve moved up North for college and have decided to sell the RL. There&amp;rsquo;s nothing wrong with it I&amp;rsquo;m just bored of it. I really want something that can be modded a little more. There&amp;rsquo;s almost no aftermarket support for the RL so everything has to be done custom.
 It took a month to sell but this is the last pic of it.</description>
     </item>
     
@@ -533,7 +540,7 @@ I also made another custom debadged grill.</description>
       
       <guid>https://eddieabbondanz.io/post/acura/14-05-10/</guid>
       <description>With a stock exhaust the car was fairly quiet. I decided it was time to let the 3.5 V6 under the hood make some noise and ordered a Borla exhaust.
-Lou&#39;s Exhaust in Portland did the install job. He even made some custom tips for it. I really like how it&#39;s tucked up nice and high and can&#39;t be seen.
+Lou&amp;rsquo;s Exhaust in Portland did the install job. He even made some custom tips for it. I really like how it&amp;rsquo;s tucked up nice and high and can&amp;rsquo;t be seen.
 Overall it sounds nice albeit a little loud.</description>
     </item>
     
@@ -544,7 +551,7 @@ Overall it sounds nice albeit a little loud.</description>
       
       <guid>https://eddieabbondanz.io/post/acura/14-04-04/</guid>
       <description>The RL looks nice but a luxury sedan should really have some tint to it. Initially I planned on doing 35% all around but they shipped me the wrong tint so it ended up with 5% in the rear.
-This was my first time tinting, and has a few flaws but I&#39;m happy with the outcome.</description>
+This was my first time tinting, and has a few flaws but I&amp;rsquo;m happy with the outcome.</description>
     </item>
     
     <item>
@@ -553,7 +560,7 @@ This was my first time tinting, and has a few flaws but I&#39;m happy with the o
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/acura/14-03-14/</guid>
-      <description>Made a little more progress on the tablet. I&#39;m using a Nexus 7 Gen 2 tablet.
+      <description>Made a little more progress on the tablet. I&amp;rsquo;m using a Nexus 7 Gen 2 tablet.
 I had to open up the tablet to solder in wires to the power button. Other than that everything is 100% stock.
 Installed. I was hoping to match the bezel closer to the radio but it was pretty hard finding the right black.
 Winter shot.
@@ -566,9 +573,9 @@ I love the color that the projectors give off. That and the custom lighting in t
       <pubDate>Tue, 04 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/acura/14-03-04/</guid>
-      <description>In 2002 the RL came with clear corner tail lights. I&#39;ve been envious of the since my 1999 features amber corners but tail lights on Ebay are too expensive.
+      <description>In 2002 the RL came with clear corner tail lights. I&amp;rsquo;ve been envious of the since my 1999 features amber corners but tail lights on Ebay are too expensive.
 I decided to cut open my tail lights and remove the amber manually. I also made custom sequential blinkers with Cree LEDs that are bright as hell.
-I really like how they came out. I&#39;m a huge fan of the minimalistic look and the tail lights paired with the debadge of the &amp;ldquo;Acura&amp;rdquo; logo looks nice.</description>
+I really like how they came out. I&amp;rsquo;m a huge fan of the minimalistic look and the tail lights paired with the debadge of the &amp;ldquo;Acura&amp;rdquo; logo looks nice.</description>
     </item>
     
     <item>
@@ -577,7 +584,7 @@ I really like how they came out. I&#39;m a huge fan of the minimalistic look and
       <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/acura/14-01-22/</guid>
-      <description>For 1999 the RL was pretty advanced. It came fitted with a built in GPS system that was probably pretty slick for it&#39;s time. However, it hasn&#39;t aged too well and is no longer really useful with out of date maps and it&#39;s failing hard drive. I&#39;ve decided to attempt a tablet retrofit using the bezel of a newer GPS system that came in the 2002+ RL.
+      <description>For 1999 the RL was pretty advanced. It came fitted with a built in GPS system that was probably pretty slick for it&amp;rsquo;s time. However, it hasn&amp;rsquo;t aged too well and is no longer really useful with out of date maps and it&amp;rsquo;s failing hard drive. I&amp;rsquo;ve decided to attempt a tablet retrofit using the bezel of a newer GPS system that came in the 2002+ RL.
 This is after seperating the rest of the GPS display from the bezel.</description>
     </item>
     
@@ -588,8 +595,8 @@ This is after seperating the rest of the GPS display from the bezel.</descriptio
       
       <guid>https://eddieabbondanz.io/post/acura/14-01-09/</guid>
       <description>The projector retrofit is finally coming to an end.
-There isn&#39;t too much gap between the reflector and shroud which isn&#39;t too bad.
-The new D2S bulbs also came in. They&#39;re much brighter than the D2Rs. Vertical height is different because I didn&#39;t bother to align that since it was so cold out. All glare in the second photo is due to the ice, and lack of shrouds around the projectors.</description>
+There isn&amp;rsquo;t too much gap between the reflector and shroud which isn&amp;rsquo;t too bad.
+The new D2S bulbs also came in. They&amp;rsquo;re much brighter than the D2Rs. Vertical height is different because I didn&amp;rsquo;t bother to align that since it was so cold out. All glare in the second photo is due to the ice, and lack of shrouds around the projectors.</description>
     </item>
     
     <item>
@@ -610,7 +617,7 @@ I made some cuts with a dremel and then used the heat gun to reshape the cap to 
       
       <guid>https://eddieabbondanz.io/post/acura/13-12-30/</guid>
       <description>I like doing little things to fix things up. The speaker grills on the car are showing their age so I decided to re upholster them to look new again. Left is original, right is new.
-I did a test fit of how everything will look. I&#39;m liking how it&#39;s coming out but I may re-install my side blinker defusers as I don&#39;t like the look as much due to the projector.</description>
+I did a test fit of how everything will look. I&amp;rsquo;m liking how it&amp;rsquo;s coming out but I may re-install my side blinker defusers as I don&amp;rsquo;t like the look as much due to the projector.</description>
     </item>
     
     <item>
@@ -619,7 +626,7 @@ I did a test fit of how everything will look. I&#39;m liking how it&#39;s coming
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/acura/13-12-18/</guid>
-      <description>I&#39;ve decided to do a projector retrofit. There&#39;s nothing wrong with the current headlights I just really like the appeal of the crisp cutoff.
+      <description>I&amp;rsquo;ve decided to do a projector retrofit. There&amp;rsquo;s nothing wrong with the current headlights I just really like the appeal of the crisp cutoff.
 I separated the lense from the headlight house so I could begin to mount things in place. Took a little bit of work with the heat gun but I managed to remove them safely.
 Test fit of the Apollo shroud.
 Future look to come.
@@ -632,8 +639,8 @@ The shrouds needed a little trimming to fit in place but things are starting to 
       <pubDate>Sun, 15 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/acura/13-12-16/</guid>
-      <description>I bought my first car off my Grandmother. It&#39;s a 1999 Acura 3.5RL in rough condition. I&#39;ve owned it for about 3 years now and only done a few small mods to it since. Over this winter I plan on restoring it bit by bit to get it back to it&#39;s former glorly.
-The photos don&#39;t really do it justice but the car has scratches and was missing paint all over the bumpers.</description>
+      <description>I bought my first car off my Grandmother. It&amp;rsquo;s a 1999 Acura 3.5RL in rough condition. I&amp;rsquo;ve owned it for about 3 years now and only done a few small mods to it since. Over this winter I plan on restoring it bit by bit to get it back to it&amp;rsquo;s former glorly.
+The photos don&amp;rsquo;t really do it justice but the car has scratches and was missing paint all over the bumpers.</description>
     </item>
     
   </channel>

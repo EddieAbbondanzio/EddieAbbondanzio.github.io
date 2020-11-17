@@ -107,7 +107,7 @@ if (!doNotTrack) {
         
 <article>
     <h2 id="implementing-a-thread-safe-queue">Implementing a Thread-Safe Queue</h2>
-<p>One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren't thread-safe by default. Thankfully it's easy enough to implement your own as we will do today. Let's start by defining our class.</p>
+<p>One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&rsquo;t thread-safe by default. Thankfully it&rsquo;s easy enough to implement your own as we will do today. Let&rsquo;s start by defining our class.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadableQueue</span>&lt;T&gt; {
 
 }
@@ -115,7 +115,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> Queue&lt;T&gt; queue;
 
 privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">object</span> lockObj;
-</code></pre></div><p>The queue needs to be kept private so we can control access to it. Anytime it's modified we need to ensure we lock the semaphore object (lockObj) first.</p>
+</code></pre></div><p>The queue needs to be kept private so we can control access to it. Anytime it&rsquo;s modified we need to ensure we lock the semaphore object (lockObj) first.</p>
 <p>Now lets define two constructors. The second one is optional but provides an easy way to convert a regular queue into a threadable one.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> ThreadableQueue&lt;T&gt;() {
     queue = <span style="color:#66d9ef">new</span> Queue&lt;T&gt;;
@@ -138,8 +138,8 @@ privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">
         <span style="color:#66d9ef">return</span> queue.Dequeue();
     }
 }
-</code></pre></div><p>When it comes to locking you want to call it as little as possible. This is because it can cause performance issues, especially when it's not needed.</p>
-<p>Let's wrap things up by adding a few more functions that are expected of any queue.</p>
+</code></pre></div><p>When it comes to locking you want to call it as little as possible. This is because it can cause performance issues, especially when it&rsquo;s not needed.</p>
+<p>Let&rsquo;s wrap things up by adding a few more functions that are expected of any queue.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Clear() {
     <span style="color:#66d9ef">lock</span> (lockObj) {
         queue.Clear();
@@ -166,7 +166,7 @@ privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">
         }
     }
 }
-</code></pre></div><p>It's easy enough to expand the class if desired. Just ensure your calling lock() first before modifying the underlying queue.</p>
+</code></pre></div><p>It&rsquo;s easy enough to expand the class if desired. Just ensure your calling lock() first before modifying the underlying queue.</p>
 
 </article>
 

@@ -7,10 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://eddieabbondanz.io/series/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cherokee Build</title>
+      <link>https://eddieabbondanz.io/series/cherokee-build/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/series/cherokee-build/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Laptop</title>
@@ -18,15 +23,6 @@
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/series/laptop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cherokee Build</title>
-      <link>https://eddieabbondanz.io/series/cherokee-build/</link>
-      <pubDate>Sun, 03 Feb 2019 17:28:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/series/cherokee-build/</guid>
       <description></description>
     </item>
     

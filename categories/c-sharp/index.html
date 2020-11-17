@@ -127,7 +127,7 @@ if (!doNotTrack) {
     </div>
 
     <p>
-        Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren't thread-safe by default. Thankfully it's easy enough to implement your own as we will do today. Let's start by defining our class.
+        Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&rsquo;t thread-safe by default. Thankfully it&rsquo;s easy enough to implement your own as we will do today. Let&rsquo;s start by defining our class.
 public class ThreadableQueue&lt;T&gt; { } If your unfamiliar with generics check out this link. Within the class we need to define two members.
 private Queue&lt;T&gt; queue; privare readonly object lockObj; The queue needs to be kept private so we can control access to it.
         

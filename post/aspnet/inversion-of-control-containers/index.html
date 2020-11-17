@@ -113,9 +113,9 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    <p>ASP.NET Core supports <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">dependency injection</a> directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you're a fan of Uncle Bob's Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</p>
-<p>Let's imagine we're building an API that has a <code>UserController</code> to provide an endpoint for retrieving users via their numeric id from the database. Since we don't want the <code>UserController</code> to directly interact with the database as it would violate the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">single responsibility principle</a> we will rely upon a <code>UserService</code> to do the dirty work for us.</p>
-<p>We'll even take it one step further and assume our <code>UserService</code> implements an <code>IUserService</code> interface to support dependency inversion by coding against the <code>IUserService</code> interface in the <code>UserController</code>.</p>
+    <p>ASP.NET Core supports <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">dependency injection</a> directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</p>
+<p>Let&rsquo;s imagine we&rsquo;re building an API that has a <code>UserController</code> to provide an endpoint for retrieving users via their numeric id from the database. Since we don&rsquo;t want the <code>UserController</code> to directly interact with the database as it would violate the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">single responsibility principle</a> we will rely upon a <code>UserService</code> to do the dirty work for us.</p>
+<p>We&rsquo;ll even take it one step further and assume our <code>UserService</code> implements an <code>IUserService</code> interface to support dependency inversion by coding against the <code>IUserService</code> interface in the <code>UserController</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IUserService {
   Task&lt;User&gt; GetUser(<span style="color:#66d9ef">int</span> id);
 }
@@ -150,18 +150,18 @@ if (!doNotTrack) {
   }
 </code></pre></div><p>The parameter <code>services</code> of type <code>IServiceCollection</code> is the IoC container we need to set up. When it comes to registering a dependency with the container we have three different lifetimes available: transient, singleton, or scoped.</p>
 <h2 id="transient">Transient</h2>
-<p>Dependencies registered via <code>AddTransient()</code> will return a new instance each time the dependency is resolved. This is useful for lightweight, stateless classes that don't require initialization.</p>
+<p>Dependencies registered via <code>AddTransient()</code> will return a new instance each time the dependency is resolved. This is useful for lightweight, stateless classes that don&rsquo;t require initialization.</p>
 <h2 id="singleton">Singleton</h2>
-<p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it's resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it&rsquo;s resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
 <h2 id="scoped">Scoped</h2>
 <p>Lastly, a scoped dependency registered with <code>AddScoped()</code> will return a new instance per connection (request). For example if Client A made an API request it would be given one instance of the dependency but if Client B made a request it would be given another.</p>
-<p>None of the three methods accept any parameters, instead the dependency type is passed in via generics. Each method is also overloaded to allow for registering a dependency to it's exact type, or to an interface / abstract class (useful for dependency inversion).</p>
+<p>None of the three methods accept any parameters, instead the dependency type is passed in via generics. Each method is also overloaded to allow for registering a dependency to it&rsquo;s exact type, or to an interface / abstract class (useful for dependency inversion).</p>
 <p>Continuing on with our example, if we want to register our <code>UserService</code> as a transient we could do so:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
     services.AddTransient&lt;UserService&gt;();
   }
-</code></pre></div><p>But, if we want to fully utilize dependency inversion we would need to reference the interface <code>UserService</code> implements, or else ASP.NET won't be able to resolve a <code>IUserService</code> dependency with our service.</p>
+</code></pre></div><p>But, if we want to fully utilize dependency inversion we would need to reference the interface <code>UserService</code> implements, or else ASP.NET won&rsquo;t be able to resolve a <code>IUserService</code> dependency with our service.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
     services.AddTransient&lt;IUserService, UserService&gt;();
@@ -185,8 +185,8 @@ if (!doNotTrack) {
 <span style="color:#75715e">//Bad
 </span><span style="color:#75715e"></span>services.AddTransient&lt;UserService&gt;();
 </code></pre></div><h1 id="nested-dependencies">Nested Dependencies</h1>
-<p>The IoC container provided by ASP.NET supports nested dependencies. If our example of the <code>UserController</code> and <code>UserService</code> from earlier was a standard N-Tier structured project, there's a good chance our <code>UserService</code> needs some kind of way to interact with the data persistance layer. In a project with no objet relational mapping (ORM) library this would typically be a <code>UserRepo</code> to allow for CRUD (Create, Read, Update, and Delete) actions of users in the database.</p>
-<p>To ensure we keep the layers of the project loosely-coupled we wouldn't want the <code>UserService</code> to have to create it's own <code>UserRepo</code> instance. Instead we would want to code against a <code>IUserRepo</code> interface and pass the instance of the repo into the service via it's constructor.</p>
+<p>The IoC container provided by ASP.NET supports nested dependencies. If our example of the <code>UserController</code> and <code>UserService</code> from earlier was a standard N-Tier structured project, there&rsquo;s a good chance our <code>UserService</code> needs some kind of way to interact with the data persistance layer. In a project with no objet relational mapping (ORM) library this would typically be a <code>UserRepo</code> to allow for CRUD (Create, Read, Update, and Delete) actions of users in the database.</p>
+<p>To ensure we keep the layers of the project loosely-coupled we wouldn&rsquo;t want the <code>UserService</code> to have to create it&rsquo;s own <code>UserRepo</code> instance. Instead we would want to code against a <code>IUserRepo</code> interface and pass the instance of the repo into the service via it&rsquo;s constructor.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> {
   <span style="color:#66d9ef">private</span> IUserRepo userRepo;
 

@@ -111,8 +111,8 @@ if (!doNotTrack) {
         
 <article>
     <p><strong>TL;DR</strong> Full algorithm is at the bottom. Classes for <code>Block</code>, <code>Chunk</code>, and <code>MeshData</code> are defined below the intro.</p>
-<p>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from <a href="https://github.com/roboleary/GreedyMesh">Robert O'Leary</a>, with a few alterations made.</p>
-<p>The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn't be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I've left it up to the reader.</p>
+<p>This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from <a href="https://github.com/roboleary/GreedyMesh">Robert O&rsquo;Leary</a>, with a few alterations made.</p>
+<p>The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks. With a few tweaks it wouldn&rsquo;t be hard to add support for multiple chunks, but since there are several different solutions to achieve this, I&rsquo;ve left it up to the reader.</p>
 <p>I prefer colored blocks over typed blocks. As such each block in my implementation holds 4 bytes of data for the color (red, green, blue, and alpha). A block is considered &ldquo;solid&rdquo; if the alpha value is maxed out.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Block.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Block</span> {
@@ -139,7 +139,7 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">using</span> UnityEngine;
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Chunk</span> {
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> Vector3Int Dimensions = <span style="color:#66d9ef">new</span> Vector3Int(<span style="color:#ae81ff">3</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span><span style="color:#ae81ff">2</span><span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span><span style="color:#ae81ff">2</span>);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> Vector3Int Dimensions = <span style="color:#66d9ef">new</span> Vector3Int(<span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">128</span>, <span style="color:#ae81ff">32</span>);
 
     <span style="color:#66d9ef">public</span> Vector3Int Position { <span style="color:#66d9ef">get</span>; }
 
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">return</span> data;
     }
 }
-</code></pre></div><p>Let's go ahead and define a <code>GenerateMesh()</code> method on our <code>Chunk</code>.</p>
+</code></pre></div><p>Let&rsquo;s go ahead and define a <code>GenerateMesh()</code> method on our <code>Chunk</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">// Chunk.cs
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Chunk</span> {
@@ -261,12 +261,12 @@ if (!doNotTrack) {
 
     }
 }
-</code></pre></div><p>Within <code>GenerateMesh()</code> well want to add a loop that runs through all 6 faces of the blocks. We'll also want to know if the current face is a &ldquo;back&rdquo; face.</p>
+</code></pre></div><p>Within <code>GenerateMesh()</code> well want to add a loop that runs through all 6 faces of the blocks. We&rsquo;ll also want to know if the current face is a &ldquo;back&rdquo; face.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#75715e">// Iterate over each face of the blocks.
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
         <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
     }
-</code></pre></div><p>To simplify things, we'll break down the problem into building slices of the mesh on 1 plane
+</code></pre></div><p>To simplify things, we&rsquo;ll break down the problem into building slices of the mesh on 1 plane
 at a time. Lets add some work variables for tracking which two axes we are working on. We will work
 on the planes YZ, ZX, XY. Each plane will be visited twice, once to do the front faces, then
 again to do the back faces.</p>
@@ -287,7 +287,7 @@ again to do the back faces.</p>
     Vector3[] vertices;
 
     Block startBlock;
-</code></pre></div><p>Now add an inner for loop as seen below. This will work it's way through the chunk 1 layer at a time.</p>
+</code></pre></div><p>Now add an inner for loop as seen below. This will work it&rsquo;s way through the chunk 1 layer at a time.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> face = <span style="color:#ae81ff">0</span>; face &lt; <span style="color:#ae81ff">6</span>; face++) {
         <span style="color:#66d9ef">bool</span> isBackFace = face &gt; <span style="color:#ae81ff">2</span>;
         direction = face % <span style="color:#ae81ff">3</span>;
@@ -302,9 +302,9 @@ again to do the back faces.</p>
 
         }
     }
-</code></pre></div><p>We'll want to prep our bool array now. Since we want to be able to handle non cubic chunks we can't initialize it until we know which axis we are slicing. The next step is to begin building the mesh slices.</p>
+</code></pre></div><p>We&rsquo;ll want to prep our bool array now. Since we want to be able to handle non cubic chunks we can&rsquo;t initialize it until we know which axis we are slicing. The next step is to begin building the mesh slices.</p>
 <p>Start by getting the block at the current position and check to ensure that it
-hasn't already been merged, is not an air block, and can be seen by the player. A block is considered visible to the player if the adjacent block to it is air. This will be checked via <code>IsBlockFaceVisible()</code></p>
+hasn&rsquo;t already been merged, is not an air block, and can be seen by the player. A block is considered visible to the player if the adjacent block to it is air. This will be checked via <code>IsBlockFaceVisible()</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsBlockFaceVisible(Vector3Int blockPosition, <span style="color:#66d9ef">int</span> axis, <span style="color:#66d9ef">bool</span> backFace) {
         blockPosition[axis] += backFace ? -<span style="color:#ae81ff">1</span> : <span style="color:#ae81ff">1</span>;
         <span style="color:#66d9ef">return</span> !GetBlock(blockPosition).IsSolid();
@@ -382,7 +382,7 @@ compares the next neighbor to see if it is a match to the current one.</p>
             merged[startPos[workAxis1] + f, startPos[workAxis2] + g] = <span style="color:#66d9ef">true</span>;
         }
     }
-</code></pre></div><p>Here's the full algorithm for those who like to see the big picture.</p>
+</code></pre></div><p>Here&rsquo;s the full algorithm for those who like to see the big picture.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> MeshData GenerateMesh() {
         MeshBuilder builder = <span style="color:#66d9ef">new</span> MeshBuilder();
         <span style="color:#66d9ef">bool</span>[,] merged;
@@ -471,7 +471,7 @@ compares the next neighbor to see if it is a match to the current one.</p>
 
         <span style="color:#66d9ef">return</span> builder.ToMeshData();
     }
-</code></pre></div><p>And last but not least, if we want to render our mesh we generated we'll need to pass the data to a MeshFilter. For extra bonus points we could implement an extension method to make it even cleaner.</p>
+</code></pre></div><p>And last but not least, if we want to render our mesh we generated we&rsquo;ll need to pass the data to a MeshFilter. For extra bonus points we could implement an extension method to make it even cleaner.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEngine;
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshFilterExts</span> {

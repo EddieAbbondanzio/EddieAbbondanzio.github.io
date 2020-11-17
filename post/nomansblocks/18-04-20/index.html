@@ -107,8 +107,8 @@ if (!doNotTrack) {
         
 <article>
     <h2 id="playing-around-at-the-bit-level">Playing Around at the Bit Level</h2>
-<p>This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don't want to handle serialization with 2 different methods I've decided to bite the bullet and roll my own set up.</p>
-<p>To help prepare for this task I've created a BitManipulator class that allows for individual bits to be written to in a byte array. This was done to allow for writing bools as single bits vew an entire byte. The BitManipulator will be used by the ByteBuffer to help pack data as tight as possible for network traversal.</p>
+<p>This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&rsquo;t want to handle serialization with 2 different methods I&rsquo;ve decided to bite the bullet and roll my own set up.</p>
+<p>To help prepare for this task I&rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array. This was done to allow for writing bools as single bits vew an entire byte. The BitManipulator will be used by the ByteBuffer to help pack data as tight as possible for network traversal.</p>
 <p>To limit the use of the bit manipulator it only allows for writing between 1 to 8 bits at a time. Any more than that would be unreasonable since it would be no different than writing bytes. Also by setting the upper limit to 8 it only requires us to handle 2 cases. The first when modifying only 1 byte, and the second where two (adjacent) bytes are being modified.</p>
 <p>Reading bits is fairly simple.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">byte</span> ReadBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount) {
@@ -176,7 +176,7 @@ if (!doNotTrack) {
         bytes[byteIndex + <span style="color:#ae81ff">1</span>] |= (<span style="color:#66d9ef">byte</span>)(splitVal &gt;&gt; <span style="color:#ae81ff">8</span>);
     }
 }
-</code></pre></div><p>I played around with using a short pointer for writing bits but it didn't seem worth it to require the unsafe compile flag for a single method. It was still a fun task though. I've also learned about the joys of Unit Testing and have started using it for validating all my serialization methods. Once details are a little more concrete regarding the ByteBuffer set up I'll provide a detailed write up on it.</p>
+</code></pre></div><p>I played around with using a short pointer for writing bits but it didn&rsquo;t seem worth it to require the unsafe compile flag for a single method. It was still a fun task though. I&rsquo;ve also learned about the joys of Unit Testing and have started using it for validating all my serialization methods. Once details are a little more concrete regarding the ByteBuffer set up I&rsquo;ll provide a detailed write up on it.</p>
 
 </article>
 

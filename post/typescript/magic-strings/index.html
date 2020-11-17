@@ -110,12 +110,12 @@ if (!doNotTrack) {
     <main class="container has-background-white">
         
 <article>
-    <h1 id="whats-so-magical-about-magic-strings">What's so Magical About Magic Strings?</h1>
+    <h1 id="whats-so-magical-about-magic-strings">What&rsquo;s so Magical About Magic Strings?</h1>
 <p>Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</p>
 <p>They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</p>
 <p>If the need to change a magic string does ever arise, it will require the developer to hunt down each and every use of the string throughout the code base. This is no easy task, especially for larger, or legacy code bases.</p>
 <h1 id="typescript-to-the-rescue">TypeScript to the Rescue</h1>
-<p>TypeScript has a powerful type system that when used properly can improve a developers life seven fold. Personally, I've come from a C# background, and TypeScript has often felt quirky when dealing with it, but I've slowly grown to love this.</p>
+<p>TypeScript has a powerful type system that when used properly can improve a developers life seven fold. Personally, I&rsquo;ve come from a C# background, and TypeScript has often felt quirky when dealing with it, but I&rsquo;ve slowly grown to love this.</p>
 <p>One of the capabilities offered by TypeScript is to create types limited to specific instances of strings. This ability can be used to create string based enums that reduce the amount of typing requried by the developer, while at the same time producing code that is clear and concise.</p>
 <h1 id="a-working-example">A Working Example</h1>
 <p>Imagine we were working with objects that represent database columns, and needed an enum to represent the various data types. While we could simply define an enum as follows:</p>

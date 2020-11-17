@@ -121,7 +121,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
-<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn't feel quite right. This is where marker interfaces can be taken advantage of.</p>
+<p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
 <p>Our marker interface would look like so:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//The marker interface
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IService { 

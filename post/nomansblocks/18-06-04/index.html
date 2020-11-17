@@ -107,10 +107,10 @@ if (!doNotTrack) {
         
 <article>
     <h2 id="creating-time-literally">Creating Time (literally!)</h2>
-<p>I have a knack for forgetting what I've managed to accomplish on the game during the week. To try to overcome this
-so I have updates I can post on it, I've started writing down each accomplishment on a sticky note.</p>
+<p>I have a knack for forgetting what I&rsquo;ve managed to accomplish on the game during the week. To try to overcome this
+so I have updates I can post on it, I&rsquo;ve started writing down each accomplishment on a sticky note.</p>
 <p>Every Friday I hope to write a small blurb, and post some code showing off the current state of No Mans Blocks. While
-the networking implementation is still early, I've managed to get a sever-authoratative set up running that handles
+the networking implementation is still early, I&rsquo;ve managed to get a sever-authoratative set up running that handles
 syncing up lobby of players together. Players can specify their own nicknames, which will be ensured to be unique. Chat with
 each other through text based messages, and some moderator functions such as kicking players are included.</p>
 <p>Changelog:</p>
@@ -133,7 +133,7 @@ network the following steps need to be taken.</p>
 <li>When a client connects have them send a time sync request and track when it was sent</li>
 </ol>
 <ul>
-<li>The server then responds back with it's current time.</li>
+<li>The server then responds back with it&rsquo;s current time.</li>
 <li>On the return of the sync request to the client calculate the offset from server time to
 local time by subtracting the round trip time from the recieved value.</li>
 </ul>
@@ -178,7 +178,7 @@ process incoming messages from over the network.</p>
             <span style="color:#66d9ef">break</span>;
     }
 }
-</code></pre></div><p>This process isn't quite perfect and a variance of several milliseconds can occur but this can be overcome by repeating these steps occasionally. It could be
+</code></pre></div><p>This process isn&rsquo;t quite perfect and a variance of several milliseconds can occur but this can be overcome by repeating these steps occasionally. It could be
 taken one step further and several time syncs could be sent when a player first joins, then the average offset can be calculated from them which can reduce bad
 data due to a lag spike.</p>
 
