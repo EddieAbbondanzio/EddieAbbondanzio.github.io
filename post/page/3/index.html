@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Posts</title>
     
+    <meta name="description" content="I build things">
     
     <link rel="alternate" type="application/rss+xml" href="https://eddieabbondanz.io/post/index.xml" title="Eddie Abbondanzio">
 
@@ -33,14 +34,15 @@ if (!doNotTrack) {
 
 <body class="has-background-light">
     
-    <section id="hero-header" class="hero is-fullheight is-primary">
+
+    <section class="hero is-halfheight is-primary">
       
 
       <div class="hero-head">
         <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item title is-marginless has-text-white" href="https://eddieabbondanz.io">
-      Eddie Abbondanzio
+    <a class="navbar-item title is-uppercase is-marginless has-text-white is-size-5" href="https://eddieabbondanz.io">
+      EddieAbbondanz.io
     </a>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="hamburger-menu">
@@ -66,7 +68,6 @@ if (!doNotTrack) {
     </div>
   </div>
 </nav>
-
       </div>
 
       <div class="hero-foot">
@@ -75,11 +76,15 @@ if (!doNotTrack) {
     <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
 
         
-        <div class="has-margin-bottom-3">
-            <h1 class="is-marginless is-size-3-touch is-size-1-desktop">
+        <div class="has-margin-bottom-0">
+            
+            <h1 class="has-margin-bottom-0 is-size-2 is-size-4-touch">
                 Posts
             </h1>
+            
 
+            
+            
             
         </div>
 
@@ -88,10 +93,8 @@ if (!doNotTrack) {
             
             <div class="is-flex is-flex-row is-align-middle  has-margin-right-3" title="Date posted">
                 <i class="material-icons has-text-grey-light has-margin-right-1">today</i>
-                <time class="has-text-grey-lighter">Nov 14, 2020</time>
+                <time class="has-text-grey-lighter">Nov 22, 2020</time>
             </div>
-            
-
             
         </div>
     </div>
@@ -163,7 +166,69 @@ if (!doNotTrack) {
 
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/typescript/magic-strings/">TypeScript - Taking The Magic Out of Magic Strings</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Jan 5, 2019">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Jan 5, 2019</time>
+        </div>
+    </div>
+
+    <p class="is-size-5">
+        What&rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.
+They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.
+        
+        <a href="https://eddieabbondanz.io/post/typescript/magic-strings/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/">TypeScript - How To Set Up A New Project</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Nov 26, 2018">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Nov 26, 2018</time>
+        </div>
+    </div>
+
+    <p class="is-size-5">
+        Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&rsquo;s &ldquo;JavaScript that scales&rdquo;, and once you use it you&rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).
+        
+        <a href="https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/software-design/marker-interfaces/">Software Design - Marker Interfaces</a></h1>
+
+    <div class="is-flex is-flex-row has-margin-bottom-3">
+
+        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+            title="Posted on Nov 2, 2018">
+            <i class="material-icons has-text-grey has-margin-right-1">today</i>
+            <time class="has-text-grey">Nov 2, 2018</time>
+        </div>
+    </div>
+
+    <p class="is-size-5">
+        What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.
+It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution.
+        
+        <a href="https://eddieabbondanz.io/post/software-design/marker-interfaces/">Read more...</a>
+        
+    </p>
+</article>
+
+<article class="summary has-padding-bottom-4">
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/software-design/magic-numbers/">Software Design - Magic Numbers</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -172,11 +237,9 @@ if (!doNotTrack) {
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 29, 2018</time>
         </div>
-
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&rdquo;. [1]
 However, this does not mean that all constants should be blindly replaced with pre-defined constants.
         
@@ -186,7 +249,7 @@ However, this does not mean that all constants should be blindly replaced with p
 </article>
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/cherokee/18-10-26/">Cherokee Build - 10/26/18</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/xj/18-10-26/">XJ Build - 10/26/18</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -195,28 +258,19 @@ However, this does not mean that all constants should be blindly replaced with p
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 26, 2018</time>
         </div>
-
-        
-        <div class="is-flex is-flex-row is-align-middle" title="Category">
-            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
-            
-            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
-            
-        </div>
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         Finishing Up With winter approaching fast, and my Civic only having summer tires I needed to hurry up and finish the Cherokee. The Civic was also suffering from a stuck open thermostat that ensured the engine temperature never reached operating temp, and my heat was always cold.
 The funny thing is, when I was preparing to drop the B20B engine into the Civic I clearly remember thinking how pointless it would be to replace the thermostat.
         
-        <a href="https://eddieabbondanz.io/post/cherokee/18-10-26/">Read more...</a>
+        <a href="https://eddieabbondanz.io/post/xj/18-10-26/">Read more...</a>
         
     </p>
 </article>
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/cherokee/18-10-21/">Cherokee Build - 10/21/18</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/xj/18-10-21/">XJ Build - 10/21/18</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -225,28 +279,19 @@ The funny thing is, when I was preparing to drop the B20B engine into the Civic 
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 21, 2018</time>
         </div>
-
-        
-        <div class="is-flex is-flex-row is-align-middle" title="Category">
-            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
-            
-            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
-            
-        </div>
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         Patching Holes This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about cutting out and welding in a new rocker panel.
 Initially the plan for this weekend was to finish welding in the new driver side rocker panel. However, I managed to screw up trimming it to fit and had to order another replacement which wont be in for about a week.
         
-        <a href="https://eddieabbondanz.io/post/cherokee/18-10-21/">Read more...</a>
+        <a href="https://eddieabbondanz.io/post/xj/18-10-21/">Read more...</a>
         
     </p>
 </article>
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">Software Design - Dependency Injection and Inversion</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">Software Design - Dependency Injection and Inversion</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -255,11 +300,9 @@ Initially the plan for this weekend was to finish welding in the new driver side
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 18, 2018</time>
         </div>
-
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&rsquo;ve likely used it yourself in the past and just didn&rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.
         
         <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">Read more...</a>
@@ -268,7 +311,7 @@ Initially the plan for this weekend was to finish welding in the new driver side
 </article>
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/">Software Design - Unit Tests vs Integration Tests</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/">Software Design - Unit Tests vs Integration Tests</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -277,11 +320,9 @@ Initially the plan for this weekend was to finish welding in the new driver side
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 15, 2018</time>
         </div>
-
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
 What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.
         
@@ -291,7 +332,7 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
 </article>
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/nomansblocks/18-10-13/">No Mans Blocks - 10/13/2018</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/nomansblocks/18-10-13/">No Mans Blocks - 10/13/2018</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -300,11 +341,9 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 13, 2018</time>
         </div>
-
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         Where I&rsquo;ve Been, and Where I&rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects.
         
         <a href="https://eddieabbondanz.io/post/nomansblocks/18-10-13/">Read more...</a>
@@ -313,7 +352,7 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
 </article>
 
 <article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/software-design/validator-pattern/">Software Design - Validator Pattern</a></h1>
+    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/software-design/validator-pattern/">Software Design - Validator Pattern</a></h1>
 
     <div class="is-flex is-flex-row has-margin-bottom-3">
 
@@ -322,95 +361,12 @@ What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situatio
             <i class="material-icons has-text-grey has-margin-right-1">today</i>
             <time class="has-text-grey">Oct 10, 2018</time>
         </div>
-
-        
     </div>
 
-    <p>
+    <p class="is-size-5">
         Validating Objects Based on Context It&rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.
         
         <a href="https://eddieabbondanz.io/post/software-design/validator-pattern/">Read more...</a>
-        
-    </p>
-</article>
-
-<article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/cherokee/18-10-08/">Cherokee Build - 10/8/18</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Oct 8, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Oct 8, 2018</time>
-        </div>
-
-        
-        <div class="is-flex is-flex-row is-align-middle" title="Category">
-            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
-            
-            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
-            
-        </div>
-        
-    </div>
-
-    <p>
-        Passenger side rocker replacement This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.
-Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&quot; in length and about 3&quot; wide.
-        
-        <a href="https://eddieabbondanz.io/post/cherokee/18-10-08/">Read more...</a>
-        
-    </p>
-</article>
-
-<article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/misc/desk2-0/">My Work Station 2.0</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Oct 8, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Oct 8, 2018</time>
-        </div>
-
-        
-    </div>
-
-    <p>
-        Going all out This post is a successor to my first attempt at [building a standing desk] ( /post/misc/desk/). Back during college when I built my first desk I didn&rsquo;t have much of a budget since it was a spur of the moment decision. Because of this the solution I came up with ended up being a permanent standing desk built using misc. parts from Lowe&rsquo;s. Ever since graduating from college however, I&rsquo;ve found it less than thrilling to come home and stand at my desk after standing all day at work.
-        
-        <a href="https://eddieabbondanz.io/post/misc/desk2-0/">Read more...</a>
-        
-    </p>
-</article>
-
-<article class="summary has-padding-bottom-4">
-    <h1><a href="https://eddieabbondanz.io/post/cherokee/18-09-03/">Cherokee Build - 9/03/18</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Sep 2, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Sep 2, 2018</time>
-        </div>
-
-        
-        <div class="is-flex is-flex-row is-align-middle" title="Category">
-            <i class="material-icons has-text-grey has-margin-right-1">folder</i>
-            
-            <a class="has-text-grey" href="category/car-builds">Car Builds</a>
-            
-        </div>
-        
-    </div>
-
-    <p>
-        Repainting the Cherokee&rsquo;s roof I&rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest vehicle out there but it&rsquo;s never let me down, and has successfully travelled 20,000 miles in it&rsquo;s first year of owner ship with a couple road trips ranging in the 800-1000 mile range.
-        
-        <a href="https://eddieabbondanz.io/post/cherokee/18-09-03/">Read more...</a>
         
     </p>
 </article>
