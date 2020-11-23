@@ -14,8 +14,7 @@
       <pubDate>Fri, 02 Nov 2018 05:12:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/marker-interfaces/</guid>
-      <description>What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.
-It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution.</description>
+      <description>What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</description>
     </item>
     
     <item>
@@ -24,8 +23,7 @@ It should be noted that the purpose of marker interfaces is a perfect job for th
       <pubDate>Mon, 29 Oct 2018 19:16:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/magic-numbers/</guid>
-      <description>What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;. [1]
-However, this does not mean that all constants should be blindly replaced with pre-defined constants.</description>
+      <description>What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -34,7 +32,7 @@ However, this does not mean that all constants should be blindly replaced with p
       <pubDate>Thu, 18 Oct 2018 06:34:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
-      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</description>
+      <description>What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name.</description>
     </item>
     
     <item>
@@ -43,8 +41,7 @@ However, this does not mean that all constants should be blindly replaced with p
       <pubDate>Mon, 15 Oct 2018 05:16:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
-      <description>Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.
-What is a Unit Test? Unit is somewhat of an ambiguous term, but in this situation it can be thought of as the smallest piece of code that can be isolated from the rest of the program.</description>
+      <description>Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.</description>
     </item>
     
     <item>

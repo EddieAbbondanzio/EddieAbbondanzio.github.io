@@ -110,269 +110,319 @@ if (!doNotTrack) {
 
 
 
-<div class="is-flex is-align-center has-margin-bottom-5">
-    <h2 class="is-size-4 has-text-grey has-margin-right-2">Filter By:</h2>
-    
-    
-    <i class="material-icons has-margin-right-2 is-size-3 has-text-grey">folder</i>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
+    </div>
 
 
-    <div class="dropdown">
-        <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-                <span>Category</span>
-                <span class="icon is-small">
-                    <i class="material-icons" aria-hidden="true">expand_more</i>
-                </span>
-            </button>
-        </div>
-        <div class="dropdown-menu" role="menu">
-            <div class="dropdown-content">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/c-sharp">C-Sharp</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/http">Http</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/laptop">Laptop</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/meta">Meta</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/nomansblocks">Nomansblocks</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/software-design">Software-Design</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/typescript">Typescript</a>
-                <hr class="dropdown-divider">
-                
-                <a class="dropdown-item" href="https://eddieabbondanz.io/categories/voxel">Voxel</a>
-                <hr class="dropdown-divider">
-                
+
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/unity/object-pool/">Object Pooling in Unity</a>
+        </h1>
+
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Mar 30, 2018">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Mar 30, 2018</time>
             </div>
         </div>
+
+        <p class="is-size-5">
+            GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS.
+            
+            <a href="https://eddieabbondanz.io/post/unity/object-pool/">Read more...</a>
+            
+        </p>
     </div>
-
-    
-
 </div>
 
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+        <img style="max-height:240px" src="https://eddieabbondanz.io/post/voxel/greedy-mesh/images/hero.png" />
+        
 
-
-
-
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/unity/object-pool/">Object Pooling in Unity</a></h1>
-
-    <div class="is-flex is-flex-row has-margin-bottom-3">
-
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Mar 30, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Mar 30, 2018</time>
-        </div>
     </div>
 
-    <p class="is-size-5">
-        GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance.
-        
-        <a href="https://eddieabbondanz.io/post/unity/object-pool/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Greedy Meshing for Vertex Colored Voxels In Unity</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Greedy Meshing for Vertex Colored Voxels In Unity</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Mar 25, 2018">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Mar 25, 2018</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Mar 25, 2018">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Mar 25, 2018</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
+This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity.
+            
+            <a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
-This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&rsquo;Leary, with a few alterations made.
-The setup has been simplified, and assumes the world is only comprised of a single chunk that holds all the blocks.
-        
-        <a href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/civic/15-09-07/">Civic Build - 09/07/15</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/civic/15-09-07/">Civic Build - 09/07/15</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Sep 7, 2015">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Sep 7, 2015</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Sep 7, 2015">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Sep 7, 2015</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            Now that I&rsquo;m back at college it&rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
+            
+            <a href="https://eddieabbondanz.io/post/civic/15-09-07/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        Now that I&rsquo;m back at college it&rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
-I wasn&rsquo;t a fan of the stock antenna and it was broken so I figured we should delete it. My Dad helped out by soldering in a small patch to cover the antenna hole then skim coated it with body filler until you couldn&rsquo;t even tell it was ever there.
-        
-        <a href="https://eddieabbondanz.io/post/civic/15-09-07/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/civic/15-08-22/">Civic Build - 08/22/15</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/civic/15-08-22/">Civic Build - 08/22/15</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Aug 22, 2015">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Aug 22, 2015</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Aug 22, 2015">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Aug 22, 2015</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            I&rsquo;ve been quite busy working on the Civic in the past month. I&rsquo;m verfy excited to shared the journey I&rsquo;m embarking on, and can&rsquo;t wait to see how the finished product looks.
+            
+            <a href="https://eddieabbondanz.io/post/civic/15-08-22/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        I&rsquo;ve been quite busy working on the Civic in the past month. I&rsquo;m verfy excited to shared the journey I&rsquo;m embarking on, and can&rsquo;t wait to see how the finished product looks.
-Like every other civic / older Honda out there the wiper arms had basically all but lost their OEM paint. I wanted to fix them up so instead of buying new ones I sandblasted and powder coated mine with a nice matte black powder coat.
-        
-        <a href="https://eddieabbondanz.io/post/civic/15-08-22/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/civic/15-07-06/">Civic Build - 07/06/15</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/civic/15-07-06/">Civic Build - 07/06/15</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Jul 15, 2015">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Jul 15, 2015</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Jul 15, 2015">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Jul 15, 2015</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&rsquo;t resist making the switch.
+            
+            <a href="https://eddieabbondanz.io/post/civic/15-07-06/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&rsquo;t resist making the switch.
-While it was kinda gross, it actually cleaned up pretty nicely. After a lot of scrubbing and cleaning it was finally ready for paint.
-        
-        <a href="https://eddieabbondanz.io/post/civic/15-07-06/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/civic/15-07-03/">Civic Build - 07/03/15</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/civic/15-07-03/">Civic Build - 07/03/15</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Jul 15, 2015">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Jul 15, 2015</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Jul 15, 2015">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Jul 15, 2015</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            I don&rsquo;t know why, but I&rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&rsquo;s a fact.
+            
+            <a href="https://eddieabbondanz.io/post/civic/15-07-03/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        I don&rsquo;t know why, but I&rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&rsquo;s a fact.
-My first car was a 1999 Acura RL that I purchased from my Grandmother. The car was in rough shape, and needed some love but it was an amazing first car. I put over 36k miles on the car in 3 years, and loved everything about it.
-        
-        <a href="https://eddieabbondanz.io/post/civic/15-07-03/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/acura/14-09-09/">Acura Build - 09/09/2014</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/acura/14-09-09/">Acura Build - 09/09/2014</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Sep 9, 2014">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Sep 9, 2014</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Sep 9, 2014">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Sep 9, 2014</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            I&rsquo;ve been fairly quiet since I&rsquo;ve just been enjoying the car. I&rsquo;ve moved up North for college and have decided to sell the RL. There&rsquo;s nothing wrong with it I&rsquo;m just bored of it.
+            
+            <a href="https://eddieabbondanz.io/post/acura/14-09-09/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        I&rsquo;ve been fairly quiet since I&rsquo;ve just been enjoying the car. I&rsquo;ve moved up North for college and have decided to sell the RL. There&rsquo;s nothing wrong with it I&rsquo;m just bored of it. I really want something that can be modded a little more. There&rsquo;s almost no aftermarket support for the RL so everything has to be done custom.
-It took a month to sell but this is the last pic of it.
-        
-        <a href="https://eddieabbondanz.io/post/acura/14-09-09/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/acura/14-05-25/">Acura Build - 05/25/2014</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/acura/14-05-25/">Acura Build - 05/25/2014</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on May 25, 2014">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">May 25, 2014</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on May 25, 2014">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">May 25, 2014</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            The fog lights were a little too squarish for my taste so I made some custom overlays to give them a slight &ldquo;curve&rdquo;. The grill is also the custom debadged one I made a couple months back.
+            
+            <a href="https://eddieabbondanz.io/post/acura/14-05-25/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        The fog lights were a little too squarish for my taste so I made some custom overlays to give them a slight &ldquo;curve&rdquo;. The grill is also the custom debadged one I made a couple months back.
-On the newer RLs they came with paint matched side skirts. I decided I want them as well.
-Not bad for spray paint. This was after hitting them with a buff.
-I also made another custom debadged grill.
-        
-        <a href="https://eddieabbondanz.io/post/acura/14-05-25/">Read more...</a>
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/acura/14-05-10/">Acura Build - 05/10/2014</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/acura/14-05-10/">Acura Build - 05/10/2014</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on May 10, 2014">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">May 10, 2014</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on May 10, 2014">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">May 10, 2014</time>
+            </div>
         </div>
+
+        <p class="is-size-5">
+            With a stock exhaust the car was fairly quiet. I decided it was time to let the 3.5 V6 under the hood make some noise and ordered a Borla exhaust.
+            
+            <a href="https://eddieabbondanz.io/post/acura/14-05-10/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
+
+<div class="columns has-padding-bottom-4">
+    <div class="column is-one-third is-flex is-align-center">
+        
+
     </div>
 
-    <p class="is-size-5">
-        With a stock exhaust the car was fairly quiet. I decided it was time to let the 3.5 V6 under the hood make some noise and ordered a Borla exhaust.
-Lou&rsquo;s Exhaust in Portland did the install job. He even made some custom tips for it. I really like how it&rsquo;s tucked up nice and high and can&rsquo;t be seen.
-Overall it sounds nice albeit a little loud.
-        
-    </p>
-</article>
 
-<article class="summary has-padding-bottom-4">
-    <h1 class="is-size-3-desktop is-size-5-touch"><a href="https://eddieabbondanz.io/post/acura/14-04-04/">Acura Build - 04/04/2014</a></h1>
 
-    <div class="is-flex is-flex-row has-margin-bottom-3">
+    <div class="column">
+        <h1 class="is-size-4-desktop is-size-5-touch has-margin-bottom-0"><a class="has-text-dark"
+                href="https://eddieabbondanz.io/post/acura/14-04-04/">Acura Build - 04/04/2014</a>
+        </h1>
 
-        <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
-            title="Posted on Apr 4, 2014">
-            <i class="material-icons has-text-grey has-margin-right-1">today</i>
-            <time class="has-text-grey">Apr 4, 2014</time>
+        <div class="is-flex is-flex-row has-margin-bottom-3">
+
+            <div class="is-flex is-flex-row is-align-middle  has-margin-right-3"
+                title="Posted on Apr 4, 2014">
+                <i class="material-icons has-text-grey has-margin-right-1">today</i>
+                <time class="has-text-grey">Apr 4, 2014</time>
+            </div>
         </div>
-    </div>
 
-    <p class="is-size-5">
-        The RL looks nice but a luxury sedan should really have some tint to it. Initially I planned on doing 35% all around but they shipped me the wrong tint so it ended up with 5% in the rear.
-This was my first time tinting, and has a few flaws but I&rsquo;m happy with the outcome.
-        
-    </p>
-</article>
+        <p class="is-size-5">
+            The RL looks nice but a luxury sedan should really have some tint to it. Initially I planned on doing 35% all around but they shipped me the wrong tint so it ended up with 5% in the rear.
+            
+            <a href="https://eddieabbondanz.io/post/acura/14-04-04/">Read more...</a>
+            
+        </p>
+    </div>
+</div>
 
 
 <div class="is-flex is-flex-row is-align-center has-margin-y-5 is-justify-center">
