@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C Sharp</title>
+      <link>https://eddieabbondanz.io/categories/c-sharp/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/categories/c-sharp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>TypeScript</title>
       <link>https://eddieabbondanz.io/categories/typescript/</link>
@@ -59,15 +68,6 @@
       <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/categories/meta/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C Sharp</title>
-      <link>https://eddieabbondanz.io/categories/c-sharp/</link>
-      <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/categories/c-sharp/</guid>
       <description></description>
     </item>
     
