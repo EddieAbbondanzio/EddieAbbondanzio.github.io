@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/categories/c-sharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/categories/c-sharp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Abusing C# For Loops For Job Security</title>
       <link>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</link>
-      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</guid>
       <description>Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&amp;rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.</description>
