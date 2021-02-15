@@ -14,7 +14,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/portfolio/detailingarsenal/</guid>
-      <description>Detailing Arsenal is a SaaS (software as a service) for managing and scheduling appointments for auto detailing businesses. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue.</description>
+      <description>Detailing Arsenal is a SaaS (software as a service) for managing and scheduling appointments for auto detailers. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue.</description>
     </item>
     
     <item>
@@ -515,15 +515,6 @@ Somedays if I&amp;rsquo;m in an especially sour mood from working on it, I&amp;r
     </item>
     
     <item>
-      <title>About Me</title>
-      <link>https://eddieabbondanz.io/about/</link>
-      <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/about/</guid>
-      <description>Welcome to my website! My name&amp;rsquo;s Eddie Abbondanzio, and this is my personal blog. I&amp;rsquo;m a full stack web developer who enjoys working on websites and web apps. I graduated from the University of Maine in Orono in 2018 with a BS in computer science.</description>
-    </item>
-    
-    <item>
       <title>Civic Build - 4/1/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-04-01/</link>
       <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
@@ -726,6 +717,26 @@ I separated the lense from the headlight house so I could begin to mount things 
       
       <guid>https://eddieabbondanz.io/post/acura/13-12-16/</guid>
       <description>I bought my first car off my Grandmother. It&amp;rsquo;s a 1999 Acura 3.5RL in rough condition. I&amp;rsquo;ve owned it for about 3 years now and only done a few small mods to it since.</description>
+    </item>
+    
+    <item>
+      <title>Ed Abbondanzio</title>
+      <link>https://eddieabbondanz.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/about/</guid>
+      <description>My name&amp;rsquo;s Ed Abbondanzio, and as you&amp;rsquo;ve probably already figured out this is my personal blog. I&amp;rsquo;m a full stack developer (.NET + Vue) who builds and deploys web apps. I graduated from the University of Maine in Orono in 2018 with a bachelors of science in computer science.</description>
+    </item>
+    
+    <item>
+      <title>Ed Abbondanzio&#39;s Resume</title>
+      <link>https://eddieabbondanz.io/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/resume/</guid>
+      <description>Thanks for checking out my resume. Here&amp;rsquo;s a download link
+Or if you&amp;rsquo;d prefer it embedded in the browser:
+  #the-canvas { border: 1px solid black; direction: ltr; width: 100%; height: auto; } #paginator{ text-align: center; margin-bottom: 10px; }  Previous Next &amp;nbsp; &amp;nbsp; Page:  /     window.</description>
     </item>
     
   </channel>
