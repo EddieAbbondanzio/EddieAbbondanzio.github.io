@@ -245,13 +245,17 @@ if (!doNotTrack) {
 }
 </code></pre></div><h1 id="running-unity-as-a-client-and-server">Running Unity as a Client and Server</h1>
 <p>With the scripts all set, we need to set up Unity so it can run as either a server, or a client. The easiest way to do this would be to take advantage of scenes. Create a new scene and save it off as <code>Client.unity</code>. Then in the new scene add a new empty GameObject and add the <code>Client</code> script to it.
-<img src="images/1.png" alt=""></p>
+<img loading="lazy" src="images/1.png" alt=""  />
+</p>
 <p>After that create a second scene and save it off as <code>Server.unity</code>. Then add an empty GameObject to it and attach the <code>Server</code> script.</p>
-<p><img src="images/2.png" alt=""></p>
+<p><img loading="lazy" src="images/2.png" alt=""  />
+</p>
 <p>With both scenes prepared, keep the server scene open and bring up the Build Settings (<code>Shift+Ctrl+B</code>) window. We need to add the server scene to the build by clicking &ldquo;Add Open Scenes&rdquo;.</p>
-<p><img src="images/3.png" alt=""></p>
+<p><img loading="lazy" src="images/3.png" alt=""  />
+</p>
 <p>Also ensure that the &ldquo;Development Build&rdquo; checkbox is checked otherwise we wont see any of our <code>Debug.LogError()</code> messages.</p>
-<p><img src="images/4.png" alt=""></p>
+<p><img loading="lazy" src="images/4.png" alt=""  />
+</p>
 <p>Close out of the Build Settings window and switch Unity back to the client scene. We&rsquo;re ready to test things out. We&rsquo;ve set things up so anytime we build and run the app Unity will fire up a server instance for us. Then once that&rsquo;s running we can simply hit play in the editor to start our client.</p>
 <div class="alert message is-info">
     <div class="message-body is-flex is-flex-row is-align-center">
@@ -264,8 +268,10 @@ if (!doNotTrack) {
 </div>
 <p>Build and run the server by hitting <code>Ctrl+B</code>. Unity will popup a loading bar and after a few seconds our server will appear. Now hit play in the editor.</p>
 <p>It&rsquo;s not much, but the server and client will print out their &ldquo;error&rdquo; messages showing that they connected to each other.
-<img src="images/5.png" alt="">
-<img src="images/6.png" alt=""></p>
+<img loading="lazy" src="images/5.png" alt=""  />
+
+<img loading="lazy" src="images/6.png" alt=""  />
+</p>
 <h1 id="connection-limit">Connection Limit</h1>
 <p>Adding a connection limit to the server is an easy to add feature that only requires a few extra lines. Jump back over to <code>Server.cs</code> and adjust the event handler for <code>ConnectionRequestEvent</code> to:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {

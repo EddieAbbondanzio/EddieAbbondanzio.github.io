@@ -223,7 +223,8 @@ if (!doNotTrack) {
     Debug.Log(packet.NumberValue);
 });
 </code></pre></div><p>Running the server and client we can see that the <code>FooPacket</code> is sent to the client from the server and contains the correct <code>NumberValue</code> of 1.</p>
-<p><img src="images/1.png" alt=""></p>
+<p><img loading="lazy" src="images/1.png" alt=""  />
+</p>
 <h1 id="limitations">Limitations</h1>
 <p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
 <h2 id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
