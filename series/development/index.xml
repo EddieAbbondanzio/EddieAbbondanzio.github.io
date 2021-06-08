@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/series/development/</link>
+    <description>Recent content in Development on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abusing For Loops In C# For Job Security</title>
+      <link>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</guid>
+      <description>Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&amp;rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
+      <link>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
+      <pubDate>Mon, 14 Oct 2019 14:50:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
+      <description>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core - Inversion of Control Container</title>
+      <link>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</link>
+      <pubDate>Sat, 29 Jun 2019 14:50:42 -0400</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
+      <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</description>
+    </item>
+    
+  </channel>
+</rss>

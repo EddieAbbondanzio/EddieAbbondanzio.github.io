@@ -1,494 +1,272 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://eddieabbondanz.io/portfolio/detailingarsenal/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/portfolio/updog/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/portfolio/mechaniclog/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/portfolio/clapbutton/</loc>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/series/cherokee-build/</loc>
-    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/</loc>
     <lastmod>2021-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/</loc>
     <lastmod>2021-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/series/</loc>
-    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/replacing-a-saggy-headliner/</loc>
     <lastmod>2021-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/</loc>
+    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/xj-build/</loc>
+    <lastmod>2021-06-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/gentex-177-mirror-install/</loc>
     <lastmod>2021-04-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/c-sharp/</loc>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/development/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-10/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-9/</loc>
     <lastmod>2020-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-8/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-7/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-6/</loc>
     <lastmod>2020-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-5/</loc>
     <lastmod>2020-11-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-4/</loc>
     <lastmod>2020-11-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-3/</loc>
     <lastmod>2020-11-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-2/</loc>
     <lastmod>2020-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-1/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/typescript/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/typescript/await-promise-all/</loc>
     <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</loc>
     <lastmod>2019-11-17T12:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</loc>
     <lastmod>2019-11-13T19:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</loc>
     <lastmod>2019-11-13T06:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/unity/litenetlib-setup/</loc>
     <lastmod>2019-11-12T21:01:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</loc>
     <lastmod>2019-10-14T14:50:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</loc>
     <lastmod>2019-06-29T14:50:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/series/laptop/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/laptop/</loc>
-    <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/laptop/kubuntu/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/laptop/more-ram/</loc>
     <lastmod>2019-02-15T21:17:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/19-02-03/</loc>
     <lastmod>2019-02-03T17:28:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/typescript/interpolated-strings/</loc>
     <lastmod>2019-02-01T16:52:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/http/</loc>
-    <lastmod>2019-01-29T18:29:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/http/status-codes-for-rest/</loc>
     <lastmod>2019-01-29T18:29:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/19-01-26/</loc>
     <lastmod>2019-01-26T16:51:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/http/cookies/</loc>
     <lastmod>2019-01-24T18:37:24-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/typescript/events/</loc>
     <lastmod>2019-01-21T18:37:24-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/typescript/magic-strings/</loc>
     <lastmod>2019-01-05T09:53:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</loc>
     <lastmod>2018-11-26T06:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/software-design/</loc>
-    <lastmod>2018-11-02T05:12:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/software-design/marker-interfaces/</loc>
     <lastmod>2018-11-02T05:12:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/software-design/magic-numbers/</loc>
     <lastmod>2018-10-29T19:16:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/18-10-26/</loc>
     <lastmod>2018-10-26T16:51:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/18-10-21/</loc>
     <lastmod>2018-10-21T16:51:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/software-design/dependency-injection/</loc>
     <lastmod>2018-10-18T06:34:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</loc>
     <lastmod>2018-10-15T05:16:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</loc>
     <lastmod>2018-10-13T15:05:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/nomansblocks/</loc>
-    <lastmod>2018-10-13T15:05:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/software-design/validator-pattern/</loc>
     <lastmod>2018-10-10T05:16:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/18-10-08/</loc>
     <lastmod>2018-10-08T17:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/series/desk/</loc>
     <lastmod>2018-10-08T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/meta/</loc>
-    <lastmod>2018-10-08T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/misc/desk2-0/</loc>
     <lastmod>2018-10-08T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/xj/18-09-03/</loc>
     <lastmod>2018-09-02T12:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/series/civic-build/</loc>
-    <lastmod>2018-06-23T12:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-06-23/</loc>
     <lastmod>2018-06-23T12:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/eg-build/</loc>
+    <lastmod>2018-06-23T12:57:42-04:00</lastmod>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-06-09/</loc>
     <lastmod>2018-06-09T12:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</loc>
     <lastmod>2018-06-04T20:05:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-05-20/</loc>
     <lastmod>2018-05-20T12:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</loc>
     <lastmod>2018-05-09T19:04:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</loc>
     <lastmod>2018-04-20T23:05:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-04-15/</loc>
     <lastmod>2018-04-15T20:57:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-04-14/</loc>
     <lastmod>2018-04-14T20:40:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-04-12/</loc>
     <lastmod>2018-04-12T13:13:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</loc>
     <lastmod>2018-04-08T18:25:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-04-08/</loc>
     <lastmod>2018-04-08T18:04:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-04-06/</loc>
     <lastmod>2018-04-06T16:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/honda/b-series-bolts/</loc>
     <lastmod>2018-04-06T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/18-04-01/</loc>
     <lastmod>2018-04-01T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/misc/desk/</loc>
     <lastmod>2018-04-01T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/unity/debug-logging/</loc>
     <lastmod>2018-03-31T15:56:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</loc>
     <lastmod>2018-03-31T15:22:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/unity/object-pool/</loc>
     <lastmod>2018-03-30T10:06:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/voxel/greedy-mesh/</loc>
     <lastmod>2018-03-25T10:06:59-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/categories/voxel/</loc>
-    <lastmod>2018-03-25T10:06:59-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/15-09-07/</loc>
     <lastmod>2015-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/15-08-22/</loc>
     <lastmod>2015-08-22T20:44:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/15-07-06/</loc>
     <lastmod>2015-07-15T20:44:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/civic/15-07-03/</loc>
     <lastmod>2015-07-15T19:43:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eddieabbondanz.io/series/acura-build/</loc>
-    <lastmod>2014-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-09-09/</loc>
     <lastmod>2014-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/rl-build/</loc>
+    <lastmod>2014-09-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-05-25/</loc>
     <lastmod>2014-05-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-05-10/</loc>
     <lastmod>2014-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-04-04/</loc>
     <lastmod>2014-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-03-14/</loc>
     <lastmod>2014-03-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-03-04/</loc>
     <lastmod>2014-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-01-22/</loc>
     <lastmod>2014-01-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-01-09/</loc>
     <lastmod>2014-01-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/14-01-05/</loc>
     <lastmod>2014-01-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/13-12-30/</loc>
     <lastmod>2013-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/13-12-18/</loc>
     <lastmod>2013-12-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/acura/13-12-16/</loc>
     <lastmod>2013-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://eddieabbondanz.io/portfolio/</loc>
   </url>
-  
 </urlset>
