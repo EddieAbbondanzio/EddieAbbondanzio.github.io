@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detailing Arsenal</title>
       <link>https://eddieabbondanz.io/portfolio/detailingarsenal/</link>
@@ -42,6 +42,15 @@
       
       <guid>https://eddieabbondanz.io/portfolio/clapbutton/</guid>
       <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times.</description>
+    </item>
+    
+    <item>
+      <title>I, For One, Welcome Self-Driving Microtransactions</title>
+      <link>https://eddieabbondanz.io/post/software-distopia/self-driving-microtransactions/</link>
+      <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/software-distopia/self-driving-microtransactions/</guid>
+      <description>You&amp;rsquo;re late for work. Again. It may be 2050 but to everyone&amp;rsquo;s dismay, offices are still a thing. You pack up your belongings and run out the door, barely stopping to kiss your wife goodbye.</description>
     </item>
     
     <item>
