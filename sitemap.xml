@@ -34,10 +34,10 @@
     <loc>https://eddieabbondanz.io/post/xj/gentex-177-mirror-install/</loc>
     <lastmod>2021-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</loc>
+    <loc>https://eddieabbondanz.io/post/the-disillusioned-developer/abusing-for-loops-for-job-security/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://eddieabbondanz.io/series/development/</loc>
+    <loc>https://eddieabbondanz.io/series/the-disillusioned-developer/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-10/</loc>
@@ -88,6 +88,9 @@
     <loc>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</loc>
     <lastmod>2019-10-14T14:50:42-04:00</lastmod>
   </url><url>
+    <loc>https://eddieabbondanz.io/series/development/</loc>
+    <lastmod>2019-10-14T14:50:42-04:00</lastmod>
+  </url><url>
     <loc>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</loc>
     <lastmod>2019-06-29T14:50:42-04:00</lastmod>
   </url><url>
@@ -115,14 +118,8 @@
     <loc>https://eddieabbondanz.io/post/http/cookies/</loc>
     <lastmod>2019-01-24T18:37:24-04:00</lastmod>
   </url><url>
-    <loc>https://eddieabbondanz.io/post/typescript/events/</loc>
-    <lastmod>2019-01-21T18:37:24-04:00</lastmod>
-  </url><url>
     <loc>https://eddieabbondanz.io/post/typescript/magic-strings/</loc>
     <lastmod>2019-01-05T09:53:42-04:00</lastmod>
-  </url><url>
-    <loc>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</loc>
-    <lastmod>2018-11-26T06:57:42-04:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/post/software-design/marker-interfaces/</loc>
     <lastmod>2018-11-02T05:12:42-04:00</lastmod>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Abusing For Loops In C# For Job Security</title>
+    <meta name="description" content="I build things. Sometimes good.">
+        
+    
+
+    
+    
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+
+    <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+<body class="has-background-light">
+    
+
+    <section
+        class="hero is-halfheight"
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://eddieabbondanz.io/post/the-disillusioned-developer/abusing-for-loops-for-job-security/images/hero.jpg); "
+        role="banner"
+    >
+        
+        
+
+            <div class="hero-head"><nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item title is-uppercase is-marginless has-text-white is-size-5" href="https://eddieabbondanz.io">
+            EddieAbbondanz.io
+        </a>
+
+        <a
+            role="button"
+            class="navbar-burger burger has-text-white"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="hamburger-menu"
+        >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu has-text-white">
+        <div class="navbar-end">
+             
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link has-text-white"> Posts </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
+
+                    
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
+                    
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
+                    
+                </div>
+            </div>
+
+              
+            <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/about" style="text-decoration: none !important"
+                >About Me</a
+            >
+              
+            <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none !important"
+                >Portfolio</a
+            >
+              
+            <a class="navbar-item has-text-white" href="http://github.com/EddieAbbondanzio" target="_blank">
+                <span class="icon is-medium">
+                    <i class="fab fa-github fa-lg"></i>
+                </span>
+            </a>
+             
+            <a class="navbar-item has-text-white" href="https://twitter.com/EAbbondanzio" target="_blank">
+                <span class="icon is-medium">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </span>
+            </a>
+            
+            <a class="navbar-item has-text-white" href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+                <span class="icon is-medium">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </span>
+            </a>
+            
+        </div>
+    </div>
+
+    <div id="hamburger-menu" class="navbar-menu is-hidden-desktop">
+         
+
+        <div class="has-dropdown is-hoverable">
+            <a class="navbar-link has-text-white is-arrowless"> Posts </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
+
+                
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
+                
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
+                
+            </div>
+        </div>
+         
+        <a class="navbar-item" href="https://eddieabbondanz.io/about" style="text-decoration: none !important">About Me</a>
+         
+        <a class="navbar-item" href="https://eddieabbondanz.io/portfolio" style="text-decoration: none !important">Portfolio</a>
+        
+
+        <div class="is-flex is-flex-direction-row is-justify-content-space-evenly">
+            
+            <a class="navbar-item" href="http://github.com/EddieAbbondanzio" target="_blank">
+                <span class="icon is-medium">
+                    <i class="fab fa-github fa-lg"></i>
+                </span>
+            </a>
+             
+            <a class="navbar-item" href="https://twitter.com/EAbbondanzio" target="_blank">
+                <span class="icon is-medium">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </span>
+            </a>
+            
+            <a class="navbar-item" href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+                <span class="icon is-medium">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+</div>
+
+            <div class="hero-foot">
+                <div class="container"><header>
+    <div class="post-header has-text-white has-margin-all-4-touch has-margin-bottom-4-desktop">
+        
+        <div class="has-margin-bottom-0">
+            
+            <h1 class="has-margin-bottom-0 is-size-2 is-size-4-touch">Abusing For Loops In C# For Job Security</h1>
+               
+        </div>
+
+        
+        
+        <div class="is-flex is-flex-direction-row">
+            
+            <div class="is-flex-desktop flex-row has-text-grey-lighter">
+                <div class="is-flex is-flex-row is-align-items-baseline has-margin-right-3" title="Date posted">
+                    <i class="fas fa-calendar-day has-text-grey-light has-margin-right-1"></i>
+                    <time class="has-text-grey-lighter">Jan 11, 2021</time>
+                </div>
+            </div>
+             
+            <a
+                class="is-flex is-flex-row is-align-items-baseline has-text-grey-lighter"
+                href="https://eddieabbondanz.io/series/the-disillusioned-developer"
+            >
+                <i class="fas fa-book has-text-grey-lighter has-margin-right-1"></i>
+                The Disillusioned Developer
+            </a>
+
+            
+        </div>
+        
+    </div>
+</header>
+</div>
+            </div>
+        </section>
+    </section>
+</section>
+
+
+    <main class="container has-background-white">
+        
+<article>
+    <p>Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.</p>
+<p>We&rsquo;re going to work with a simplified example for the rest of this article. Imagine your boss has asked you to write a program that will count from 1 to 9 and print out the number, along with if it is even. A valid output would be as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">1 is even: False
+2 is even: True
+3 is even: False
+4 is even: True
+5 is even: False
+6 is even: True
+7 is even: False
+8 is even: True
+9 is even: False
+</code></pre></div><p>Your boss might&rsquo;ve said this would be part of the test suite for the NPM package <a href="https://www.npmjs.com/package/is-even">is-even</a> but you stopped listening about halfway through to figure out how many story points this would be on the next sprint.</p>
+<p>Oh well, sounds easy enough right? Any developer worth their salt knows a simple for loop could solve this problem.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (int i = 1; i &lt; 10; i++) {
+  Console.WriteLine($&#34;{i} is even: {i % 2 == 0}&#34;);
+}
+</code></pre></div><p>But as correct as this solution might be, it doesn&rsquo;t guarantee us job security which is after all the most important principle of good code.</p>
+<p>Time to add a little complexity to ensure no one else will dare touch the code, or try to understand it.</p>
+<h1 id="anatomy-of-a-for-loop">Anatomy of a For Loop</h1>
+<p>Just so we&rsquo;re all on the same page, a for loop is comprised of a statement, and a body.</p>
+<p>The statement is the portion which sits atop the loop and is within parenthesis. It&rsquo;s divided into three parts. Each of which is separated by a semi-colon.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for(initializer; condition; iterator) {}
+</code></pre></div><ol>
+<li>initializer: The initializer is the first part, and usually instantiates a variable. Say <code>int i = 0;</code></li>
+<li>condition: The condition is the middle portion and is checked each pass of the loop to ensure it&rsquo;s true. When the condition tests false, the loop is exited.</li>
+<li>iterator: The last portion is the iterator, this is typically used to increment the loop variable ex: <code>i++</code>.</li>
+</ol>
+<p>All 3 parts of the statement are optional, and an empty for loop <code>for (; ;) { }</code> will act like an infinite while loop <code>while(1) { }</code>.</p>
+<p>The body is the portion of the loop below the statement. Usually surrounded by curly braces, unless it&rsquo;s one line (as they&rsquo;re optional then). I should also mention that the body is optional too.</p>
+<p>Let&rsquo;s go ahead and start writing our <em>ahem</em> abomination.</p>
+<h1 id="moving-the-domain-logic-into-the-for-statement">Moving the Domain Logic Into the For Statement</h1>
+<p>First off we&rsquo;ve got some domain logic operating inside the for loop body. The ternary that detects if the number is even: <code>i % 2 == 0</code>. Let&rsquo;s go ahead and squeeze it into the for statement because after all that&rsquo;s where it belongs.</p>
+<p>We&rsquo;re going to need an extra variable to hold a <code>isEven</code> flag. But, there&rsquo;s a bit of a problem. C# only allows for defining multiple variables of the same type in one line. So while the following is perfectly valid:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for(int a = 0, b = 0; i &lt; 10; i++) {}
+</code></pre></div><p>This is not:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for(int a = 0, bool isEven = false; i &lt; 10; i++) {}
+</code></pre></div><p>But that&rsquo;s okay because we&rsquo;ll slap it in a value tuple and deconstruct it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for(var (i, isEven) = (1, false); i &lt; 10; i++) {}
+</code></pre></div><p>Now that&rsquo;s beautiful.</p>
+<p>With the bool instantiated we just need to recalculate it each time in the iterator. Thankfully C# is cool with assigning multiple variables of different types on the same line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i &lt; 10; i++, isEven = i % 2 == 0) { }
+</code></pre></div><p>And now our for loop body has been devoided of any logic. It&rsquo;s clean and concise.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i &lt; 10; i++, isEven = i % 2 == 0) {
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><h1 id="obfuscating-the-start-and-end">Obfuscating The Start And End</h1>
+<p>I&rsquo;d argue <code>i &lt; 10</code> is too readable. Since the condition just needs to be a boolean we can substitute it with anything we please provided it evaluates to <code>true</code> or <code>false</code>. Which basically makes it a no-brainer to swap it out with a switch expression.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 10 =&gt; false, _ =&gt; true }; i++, isEven = i % 2 == 0) {
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><p>The switch expression will still run our loop from 1 to 9 as intended. Each iteration of the loop it&rsquo;ll see which case it matches i against. The underscore (or discard) is equivalent to the default case of a switch statement. Therefore while i is not 10 it&rsquo;ll return true which means keep running the loop, and once it hits 10 the switch will return false saying it&rsquo;s time to stop.</p>
+<p>But we can take this a step further and add erroneous cases. As long as the switch never hits said cases it doesn&rsquo;t mess with the logic.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 10 =&gt; false, 14 =&gt; true, 69 =&gt; false, 420 =&gt; true,_ =&gt; true }; i++, isEven = i % 2 == 0) {
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><p>And on top of that they don&rsquo;t even have to be in order. Also note that erroneous cases can return <code>true</code> or <code>false</code>. This is extra important to add another layer of confusion.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 14 =&gt; false, 69 =&gt; true, 10 =&gt; false, 420 =&gt; true, _ =&gt; true }; i++, isEven = i % 2 == 0) {
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><p>For the finishing touch let&rsquo;s kick it up a notch. A switch case has to be a literal or constant, which removes the usages of methods, and the such but still leaves math on the table.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 14 * 4 =&gt; false, 69 * 250 / 84 =&gt; true, 10 =&gt; false, 420 =&gt; true, _ =&gt; true }; i++, isEven = i % 2 == 0) {
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><p>I recommend leaving the math a fifth grade level. We want to give the reader a flash back to their day in grade school learning their multiplication tables.</p>
+<p>Oh and did I mention we can add some math and more to the return values? After all they just need to be booleans.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 14 * 4 =&gt; false, 69 * 250 / 84 =&gt; 8 / 2 == 4, 10 =&gt; false, 420 =&gt; 7 * 6 == 92, _ =&gt; true }; i++, isEven = i % 2 == 0) {
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><h1 id="finishing-up-in-1-line">Finishing Up In 1 Line</h1>
+<p>We&rsquo;re not done yet. Our solution is optimal, but everyone knows that a 1 line solution is <strong>always</strong> better. Right now you&rsquo;re either begging for mercy or thinking there&rsquo;s no way it&rsquo;s possible. Even if we removed the brackets it&rsquo;s still 2 lines.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 14 * 4 =&gt; false, 69 * 250 / 84 =&gt; 8 / 2 == 4, 10 =&gt; false, 420 =&gt; 7 * 6 == 92, _ =&gt; true }; i++, isEven = i % 2 == 0)
+  Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+</code></pre></div><p>But if there&rsquo;s a will there&rsquo;s a way.</p>
+<p>Our next magic trick is going to involve a little inspiration from JavaScript. Have you ever heard of a self invoking function? It&rsquo;s basically a function declaration that immediately executes itself.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">(function () {
+  console.log(&#34;foo&#34;);
+})();
+// prints &#34;foo&#34; to the console
+</code></pre></div><p>And while we may be in the .NET world, who&rsquo;s to say we can&rsquo;t borrow a little inspiration?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">new Action(() =&gt; Console.WriteLine(&#34;foo&#34;))();
+// prints &#34;foo&#34; to the console
+</code></pre></div><p>Let&rsquo;s take our new found knowledge and replace the iterator of our loop. Because after all when all you&rsquo;ve got is a hammer, everything looks like a nail.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 14 * 4 =&gt; false, 69 * 250 / 84 =&gt; 8 / 2 == 4, 10 =&gt; false, 420 =&gt; 7 * 6 == 92, _ =&gt; true }; (i, isEven) = new Func&lt;int, (int, bool)&gt;((i) =&gt; (i + 1, !(i % 2 == 0)))(i)) {
+    Console.WriteLine($&#34;{i} is even: {isEven}&#34;);
+}
+</code></pre></div><p>This is the little bit we added.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">new Func&lt;int, (int, bool)&gt;((i) =&gt; (i + 1, !(i % 2 == 0)))(i)
+</code></pre></div><p>A Func&lt;&gt; is the same thing as an Action except it can have parameters, and a return value. In our instance, the function takes an int parameter, and returns a value tuple containing an int, and bool. Make sure you name your function parameters the same as the variable being passed in.</p>
+<p>The real reason why we added in the self invoking function isn&rsquo;t to make it more confusing. No. We just needed a new location to place our <code>Console.WriteLine()</code> call.</p>
+<p>That my friends is how we can achieve our glorious one liner solution.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for (var (i, isEven) = (1, false); i switch { 14 * 4 =&gt; false, 69 * 250 / 84 =&gt; 8 / 2 == 4, 10 =&gt; false, 420 =&gt; 7 * 6 == 92, _ =&gt; true }; (i, isEven) = new Func&lt;int, (int, bool)&gt;((i) =&gt; { Console.WriteLine($&#34;{i} is even: {isEven}&#34;); return (i + 1, !(i % 2 == 0)); })(i));
+
+</code></pre></div><p>Here&rsquo;s the self invoking function for those who somehow have trouble reading our work of art.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">new Func&lt;int, (int, bool)&gt;((i) =&gt; { Console.WriteLine($&#34;{i} is even: {isEven}&#34;); return (i + 1, !(i % 2 == 0); }(i)
+</code></pre></div><h1 id="wrapping-up">Wrapping Up</h1>
+<p>We could take things further, but before doing some I&rsquo;d recommend assessing the rankings of your co-workers. If you work alongside a lot of junior devs, it&rsquo;s probably sufficient, but if you work with more senior developers we could always break out a few more tricks. I&rsquo;ll leave this as an exercise for the reader.</p>
+<p>With everything coded up, and testing good, it&rsquo;s time to commit your masterpiece and send off some requests for code reviews. Come to think of it it&rsquo;s probably about time to head on home as this likely took most the day. Go home and enjoy some brews. Because tomorrow when your boss calls you into his office it&rsquo;s gonna be for that promotion you&rsquo;ve been wanting.</p>
+<h1 id="acknowledgements">Acknowledgements</h1>
+<p>Thank you Chris Cattano for pointing out I had a logic error in the code bits after switching to the self invoking function. The program was incorrectly reporting which numbers were odd. Turns out even I fell prey to the complexity.</p>
+
+</article>
+
+    </main>
+
+    <footer>
+    <p>&copy; 2021 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+</footer> </body>
+</html>

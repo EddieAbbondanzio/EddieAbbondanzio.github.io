@@ -14,7 +14,7 @@
       <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-distopia/self-driving-microtransactions/</guid>
-      <description>You&amp;rsquo;re late for work. Again. It may be 2050 but to everyone&amp;rsquo;s dismay, offices are still a thing. You pack up your belongings and run out the door, barely stopping to kiss your wife goodbye.</description>
+      <description>You&amp;rsquo;re late for work. Again. You pack up your belongings and run out the door, barely stopping to kiss your wife goodbye. Outside of your apartment the air is cool. The tiring heat of summer has begun to wean off for the year and the chills of fall slowly start arriving each morning.</description>
     </item>
     
     <item>
@@ -37,10 +37,10 @@
     
     <item>
       <title>Abusing For Loops In C# For Job Security</title>
-      <link>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</link>
+      <link>https://eddieabbondanz.io/post/the-disillusioned-developer/abusing-for-loops-for-job-security/</link>
       <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</guid>
+      <guid>https://eddieabbondanz.io/post/the-disillusioned-developer/abusing-for-loops-for-job-security/</guid>
       <description>Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&amp;rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.</description>
     </item>
     
@@ -262,30 +262,12 @@ My Cherokee is rusty, has a laundry list of issues, gets 17 MPG on the good days
     </item>
     
     <item>
-      <title>TypeScript - Events</title>
-      <link>https://eddieabbondanz.io/post/typescript/events/</link>
-      <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/typescript/events/</guid>
-      <description>Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end.</description>
-    </item>
-    
-    <item>
       <title>TypeScript - Taking The Magic Out of Magic Strings</title>
       <link>https://eddieabbondanz.io/post/typescript/magic-strings/</link>
       <pubDate>Sat, 05 Jan 2019 09:53:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/magic-strings/</guid>
       <description>What&amp;rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</description>
-    </item>
-    
-    <item>
-      <title>TypeScript - How To Set Up A New Project</title>
-      <link>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</link>
-      <pubDate>Mon, 26 Nov 2018 06:57:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</guid>
-      <description>Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&amp;rsquo;ll never go back.</description>
     </item>
     
     <item>
