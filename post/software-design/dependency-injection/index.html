@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -64,9 +64,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -113,9 +111,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -202,7 +198,7 @@ if (!doNotTrack) {
 <p>Since these two are similar in nature we&rsquo;ll combine them. Method injection is when the dependency is passed to the dependent class via a method. Property injection on the other hand, is where the dependency is injected via a setter property on the dependent. These should be used when a class has a dependency but isn&rsquo;t fully reliant upon it. The dependent class should be able to still function in some manner without it.</p>
 <h2 id="a-working-example">A Working Example</h2>
 <p>Imagine we are designing an <code>EmailInbox</code> that needs to be able to send and receive emails. The <code>EmailInbox</code> will depend on an <code>EmailService</code> for communicating with the network.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
         <span style="color:#66d9ef">public</span> List&lt;Email&gt; CheckForEmails() {
             <span style="color:#75715e">//Non-important implementation...
 </span><span style="color:#75715e"></span>        }
@@ -212,7 +208,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>        }
     }
 </code></pre></div><p>Since an <code>EmailInbox</code> would be pretty useless without the <code>EmailService</code>, we could argue this would be a good use of constructor injection.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
         <span style="color:#66d9ef">private</span> EmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 
         <span style="color:#66d9ef">public</span> EmailInbox(EmailService emailService) {
@@ -220,13 +216,13 @@ if (!doNotTrack) {
         }
     }
 </code></pre></div><p>This works decently, but our <code>EmailInbox</code> is restricted to a single email service. What if we want to expand it&rsquo;s compatibility to support other email services? For this, we could take advantage of dependency inversion. The first step would be to define our dependencies contract via an interface.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IEmailService {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IEmailService {
         List&lt;Email&gt; CheckForEmails();
 
         <span style="color:#66d9ef">void</span> SendEmail(Email email);
     }
 </code></pre></div><p>Now we need to update our <code>EmailInbox</code> to rely on interface references.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
         <span style="color:#66d9ef">private</span> IEmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 
         <span style="color:#66d9ef">public</span> EmailInbox(IEmailService emailService) {
@@ -234,7 +230,7 @@ if (!doNotTrack) {
         }
     }
 </code></pre></div><p>And just like that we have utilized dependency inversion to no longer be reliant upon the lower level module (<code>EmailService</code>). Now the <code>EmailInbox</code> can be created with any <code>EmailService</code> that can implements the interface <code>IEmailService</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GmailEmailService</span> : IEmailService {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GmailEmailService</span> : IEmailService {
         ...
     }
 

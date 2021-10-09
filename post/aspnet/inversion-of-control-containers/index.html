@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -64,9 +64,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -113,9 +111,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -199,7 +195,7 @@ if (!doNotTrack) {
     <p>ASP.NET Core supports <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">dependency injection</a> directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</p>
 <p>Let&rsquo;s imagine we&rsquo;re building an API that has a <code>UserController</code> to provide an endpoint for retrieving users via their numeric id from the database. Since we don&rsquo;t want the <code>UserController</code> to directly interact with the database as it would violate the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">single responsibility principle</a> we will rely upon a <code>UserService</code> to do the dirty work for us.</p>
 <p>We&rsquo;ll even take it one step further and assume our <code>UserService</code> implements an <code>IUserService</code> interface to support dependency inversion by coding against the <code>IUserService</code> interface in the <code>UserController</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IUserService {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IUserService {
   Task&lt;User&gt; GetUser(<span style="color:#66d9ef">int</span> id);
 }
 
@@ -209,7 +205,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  }
 }
 </code></pre></div><p>And for completeness the <code>UserController</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Route(&#34;api/user&#34;)]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Route(&#34;api/user&#34;)]</span>
 <span style="color:#a6e22e">[ApiController]</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> : ControllerBase {
   <span style="color:#66d9ef">private</span> IUserService userService; <span style="color:#75715e">//Need a way to instantiate this...
@@ -227,7 +223,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><h1 id="registering-dependencies">Registering Dependencies</h1>
 <p>In order for ASP.NET to be able to resolve a dependency, we need to register it with the IoC container. In older versions of ASP.NET this would be done in <code>global.asax</code>. However, this file is no longer present and the IoC container is now configured in <code>Startup.cs</code>. By default, <code>Startup.cs</code> is located within the root directory of your project. Open it up and locate the following method:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
 
   }
@@ -240,18 +236,18 @@ if (!doNotTrack) {
 <p>Lastly, a scoped dependency registered with <code>AddScoped()</code> will return a new instance per connection (request). For example if Client A made an API request it would be given one instance of the dependency but if Client B made a request it would be given another.</p>
 <p>None of the three methods accept any parameters, instead the dependency type is passed in via generics. Each method is also overloaded to allow for registering a dependency to it&rsquo;s exact type, or to an interface / abstract class (useful for dependency inversion).</p>
 <p>Continuing on with our example, if we want to register our <code>UserService</code> as a transient we could do so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
     services.AddTransient&lt;UserService&gt;();
   }
 </code></pre></div><p>But, if we want to fully utilize dependency inversion we would need to reference the interface <code>UserService</code> implements, or else ASP.NET won&rsquo;t be able to resolve a <code>IUserService</code> dependency with our service.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
     services.AddTransient&lt;IUserService, UserService&gt;();
   }
 </code></pre></div><h1 id="resolving-dependencies">Resolving Dependencies</h1>
 <p>We need to make a minor tweak to the constructor of <code>UserController</code> so ASP.NET knows to pass it a dependecy when creating the controller.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Route(&#34;api/user&#34;)]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Route(&#34;api/user&#34;)]</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> : BaseController {
   <span style="color:#66d9ef">private</span> IUserService userService;
 
@@ -262,7 +258,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>Now ASP.NET will automatically inject our depedency of the <code>IUserService</code> when it instantiates an instance of the <code>UserController</code>.</p>
 <p>*<strong>*Note</strong>: Since the <code>UserController</code> constructor expects a parameter of type <code>IUserService</code> it is crucial we register the <code>UserService</code> with its interface. If we register <code>UserService</code> without its interface then ASP.NET will throw an exception due to being unable to find the dependency.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">//Good
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">//Good
 </span><span style="color:#75715e"></span>services.AddTransient&lt;IUserService, UserService&gt;();
 
 <span style="color:#75715e">//Bad
@@ -270,7 +266,7 @@ if (!doNotTrack) {
 </code></pre></div><h1 id="nested-dependencies">Nested Dependencies</h1>
 <p>The IoC container provided by ASP.NET supports nested dependencies. If our example of the <code>UserController</code> and <code>UserService</code> from earlier was a standard N-Tier structured project, there&rsquo;s a good chance our <code>UserService</code> needs some kind of way to interact with the data persistance layer. In a project with no objet relational mapping (ORM) library this would typically be a <code>UserRepo</code> to allow for CRUD (Create, Read, Update, and Delete) actions of users in the database.</p>
 <p>To ensure we keep the layers of the project loosely-coupled we wouldn&rsquo;t want the <code>UserService</code> to have to create it&rsquo;s own <code>UserRepo</code> instance. Instead we would want to code against a <code>IUserRepo</code> interface and pass the instance of the repo into the service via it&rsquo;s constructor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> {
   <span style="color:#66d9ef">private</span> IUserRepo userRepo;
 
   <span style="color:#66d9ef">public</span> UserService(IUserRepo uRepo) {
@@ -288,7 +284,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  }
 }
 </code></pre></div><p>Then when we set up our IoC container we need to register the new dependency (the UserRepo)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
     services.AddTransient&lt;IUserRepo, UserRepo&gt;();
     services.AddTransient&lt;IUserService, UserService&gt;();

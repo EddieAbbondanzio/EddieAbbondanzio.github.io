@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -64,9 +64,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -113,9 +111,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -192,7 +188,7 @@ if (!doNotTrack) {
 <p>To help prepare for this task I&rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array. This was done to allow for writing bools as single bits vew an entire byte. The BitManipulator will be used by the ByteBuffer to help pack data as tight as possible for network traversal.</p>
 <p>To limit the use of the bit manipulator it only allows for writing between 1 to 8 bits at a time. Any more than that would be unreasonable since it would be no different than writing bytes. Also by setting the upper limit to 8 it only requires us to handle 2 cases. The first when modifying only 1 byte, and the second where two (adjacent) bytes are being modified.</p>
 <p>Reading bits is fairly simple.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">byte</span> ReadBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">byte</span> ReadBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount) {
     <span style="color:#75715e">//Ensure valid use of the method.
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (bitCount &lt; <span style="color:#ae81ff">1</span> || bitCount &gt; <span style="color:#ae81ff">8</span>) {
         <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;Bit count should be within the range of 1 to 8!&#34;</span>);
@@ -221,7 +217,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>Writing bits is only a little more challenging.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> WriteBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount, <span style="color:#66d9ef">byte</span> <span style="color:#66d9ef">value</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> WriteBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount, <span style="color:#66d9ef">byte</span> <span style="color:#66d9ef">value</span>) {
     <span style="color:#75715e">//Ensure valid use of the method.
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (bitCount &lt; <span style="color:#ae81ff">1</span> || bitCount &gt; <span style="color:#ae81ff">8</span>) {
         <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;Bit count should be within the range of 1 to 8!&#34;</span>);

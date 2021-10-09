@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -64,9 +64,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -113,9 +111,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -192,7 +188,7 @@ if (!doNotTrack) {
 <p>It should be noted that the purpose of marker interfaces is a perfect job for the decorator pattern. However, in some languages (C# for example) attributes lack the support we need to implement a quick solution. For now, in order to keep things simple it seems best to stick with marker interfaces.</p>
 <h1 id="example">Example</h1>
 <p>Your tasked with writing a <code>ServiceLocator</code> that will be used to register, and retrieve various business logic services for a web server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceLocator</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceLocator</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Register&lt;???&gt;() {
         <span style="color:#75715e">//Implementation details...
 </span><span style="color:#75715e"></span>    }
@@ -204,12 +200,12 @@ if (!doNotTrack) {
 </code></pre></div><p>While we could create a <code>ServiceAttribute</code> to indicate which classes are services, this would require additional work and the use of reflection to determine which classes have the attribute at runtime. This is unnecessary overhead that could introduce bugs, and will take longer to develop.</p>
 <p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
 <p>Our marker interface would look like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//The marker interface
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//The marker interface
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IService { 
 
 }
 </code></pre></div><p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceLocator</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceLocator</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Register&lt;IService&gt;() {
         <span style="color:#75715e">//Implementation details...
 </span><span style="color:#75715e"></span>    }

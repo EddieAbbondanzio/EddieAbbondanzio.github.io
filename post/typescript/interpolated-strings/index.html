@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -69,9 +69,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -118,9 +116,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -193,14 +189,14 @@ if (!doNotTrack) {
         
 <article>
     <p>Coming from the .NET world <code>String.Format()</code> was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&rsquo;t so bad, after all <code>console.log()</code> allows us to pass multiple parameters and has no trouble logging them.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> };
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Foo is &#34;</span>, <span style="color:#a6e22e">foo</span>);
 <span style="color:#75715e">//Prints: Foo is Object { bar : 1 }
 </span></code></pre></div><p>But this only covers one of the many use cases I used <code>String.Format()</code> for. Disappointed with TypeScript, I decided to do some searching online. Surely I couldn&rsquo;t be the only one with this frustration?</p>
 <p>Thanks to my scrutinizing research efforts (aka a couple Google searches) I discovered it was not TypeScript that was lacking, but instead it was a failure on my part to understand string interpolation. Things didn&rsquo;t really click until I came across a StackOverflow question from someone else who was facing a similar issue. The top answer of the post advised them to use string interpolation.</p>
 <p>String interpolation sounds intimidating. I actually remember reading about it awhile ago when I came across an article covering the new features of C# 6.0. At the time however, it never clicked to me how useful it truly was and I assumed it was simply above my pay-grade.</p>
 <p>Without <code>String.Format()</code> as my crutch though, my only other option was to manually join strings together and it felt gross.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> };
 <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Foo is &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span>);
 <span style="color:#75715e">//Yuck
 </span></code></pre></div><p>I decided to look up the definition of interpolation since it sounded like jargon to me. Google defines interpolation as:</p>
@@ -215,23 +211,23 @@ if (!doNotTrack) {
 <p>Hmm, that sounds kinda useful. A bit more research and I learned that in JavaScript / TypeScript they are referred to as <em>template strings</em>. And just like that, the fog of several months of ignorance lifted. All this time I had been overlooking such a simple concept because it had a daunting name.</p>
 <p>String interpolation had fallen victim to the classic Computer Science theme of overly complicated, jargony names for simple concepts such as <em>Dependency Injection</em>.</p>
 <p>String interpolation allow us to create strings using local variables as if we were writing a standard line of code.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bert&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bert&#34;</span>;
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Hello there </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>);
 <span style="color:#75715e">//Prints: Hello there Bert!
 </span></code></pre></div><p>The only requirement to use them in TypeScript is to change the quotation marks surronding the string to the backquote character `. Then anytime we want to insert a value into the string we use the <code>${}</code> syntax.</p>
 <p>When inside a <code>${}</code> we can even use class methods.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bert&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bert&#39;</span>;
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">HI</span> <span style="color:#a6e22e">$</span>{<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">toUpperCase</span>()});
     <span style="color:#75715e">//Prints: HI BERT
 </span></code></pre></div><p>Functions are also fair game.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doubleIt</span>(<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> Number)<span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doubleIt</span>(<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> Number)<span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> {
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
 }
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`2 * 2 is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">doubleIt</span>(<span style="color:#ae81ff">2</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
 <span style="color:#75715e">//Prints: 2 * 2 is 4
 </span></code></pre></div><p>And lastly, if we wanted to print a variable but we are unsure if the variable is null, we could perform a quick null check directly in the string.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Players name is: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;Unknown&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">);
 </span><span style="color:#e6db74">    //Prints: Players name is Unknown
 </span></code></pre></div><p>Interpolated strings have quickly grown to be one my favorite features. Even on the C# side I find myself using interpolated strings over <code>String.Format()</code> as it feels cleaner in my opinion. Looking back my only regret is not giving string interpolation a chance sooner. I mistakenly judged a book by it&rsquo;s cover instead of taking the time to learn more.</p>

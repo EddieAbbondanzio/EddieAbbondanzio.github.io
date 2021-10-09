@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -69,9 +69,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -118,9 +116,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -195,7 +191,7 @@ if (!doNotTrack) {
     <p>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&rsquo;s a few extra steps we&rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: <a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">How to Setup LiteNetLib With Unity</a></p>
 <h1 id="implementing-the-client">Implementing the Client</h1>
 <p>Let&rsquo;s start by creating our client script. We&rsquo;ll call it (wait for it) <code>Client.cs</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> UnityEngine;
@@ -210,7 +206,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>We&rsquo;ll need to give the client a <code>NetManager</code> that interacts with the network, and an <code>EventBasedNetListener</code> that will be used to trigger events any time input is received from the network.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> UnityEngine;
@@ -230,7 +226,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>In <code>Start()</code> we&rsquo;ll go ahead and prepare the <code>netListener</code>, and then initialize the <code>netManager</code> by passing it our listener. The <code>netListener</code> provides several different events we can subscribe to such as <code>OnPeerConnected</code>, <code>OnPeerDisconnected</code>, <code>OnNetworkRecieve</code> and more. Since this is a basic server / client set up, we&rsquo;re only going to listen for the <code>OnPeerConnected</code> event.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Start() {
     netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
     netListener.PeerConnectedEvent += (server) =&gt; {
@@ -240,7 +236,7 @@ if (!doNotTrack) {
     client = <span style="color:#66d9ef">new</span> NetManager(netListener);
 }
 </code></pre></div><p>With the <code>netManager</code> set up, we&rsquo;ll call <code>Start()</code> to fire it up and then <code>Connect()</code> to pass it the IP address of our server (localhost in this case).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Start() {
     netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
     netListener.PeerConnectedEvent += (server) =&gt; {
@@ -252,13 +248,13 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>    netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>);
 }
 </code></pre></div><p>The client is all set up, and can now connect to the server, but there&rsquo;s one last thing we need to add. LiteNetLib expects us to manually poll for events from the network as it doesn&rsquo;t know how often we want to check for these. This can be accomplished by adding a call to <code>PollEvents()</code> in `Update().</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
     netManager.PollEvents();
 }
 </code></pre></div><h1 id="implementing-the-server">Implementing the Server</h1>
 <p>With the client all ready, let&rsquo;s go ahead and create another MonoBehaviour called <code>Server.cs</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> UnityEngine;
@@ -273,7 +269,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>Just like the client, the server will also need a <code>NetManager</code> and <code>NetListener</code>. Let&rsquo;s add these as fields.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> UnityEngine;
@@ -292,7 +288,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>And again we&rsquo;ll initialize our <code>netListener</code> and <code>netManager</code> in <code>Start()</code>. However, this time we&rsquo;ll need to listen for a new event: <code>ConnectionRequestEvent</code>. Like its name implies, this event is fired off when a new client wants to connect to the server. Here we can decide if we want to allow the client to connect, or reject them. For now we&rsquo;ll just always accept the connection.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> LiteNetLib;
@@ -319,7 +315,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>With the server ready to accept new clients that wish to connect we just need to add a call to <code>PollEvents()</code> in <code>Update()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e">// Update is called once per frame
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
     netManager.PollEvents();
@@ -353,7 +349,7 @@ if (!doNotTrack) {
 </p>
 <h1 id="connection-limit">Connection Limit</h1>
 <p>Adding a connection limit to the server is an easy to add feature that only requires a few extra lines. Jump back over to <code>Server.cs</code> and adjust the event handler for <code>ConnectionRequestEvent</code> to:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
     <span style="color:#66d9ef">int</span> connectionLimit = <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Arbitrary connection limit.
 </span><span style="color:#75715e"></span>
     <span style="color:#66d9ef">if</span> (netManager.PeersCount &gt; connectionLimit) {
@@ -365,11 +361,11 @@ if (!doNotTrack) {
 </code></pre></div><h1 id="connection-key">Connection Key</h1>
 <p>Another quick feature we can add to the server is a connection key. We can set it up so the server requires this key from clients before accepting them. This is useful if we wanted to ensure only instances of our game are connecting, or if we want to ensure the client is running a specific version.</p>
 <p>Again we&rsquo;ll apply a quick tweak to the event handler for <code>ConnectionRequestEvent</code> in <code>Server.cs</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
     request.AcceptIfKey(<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
 };
 </code></pre></div><p>And when we call <code>Connect()</code> in <code>Client.cs</code> we&rsquo;ll need to pass the key as an extra parameter.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
 </code></pre></div><h1 id="wrapping-up">Wrapping Up</h1>
 <p>This tutorial is only the tip of the iceberg in what LiteNetLib can do and offer. It&rsquo;s library is a low level API but it provides the building blocks needed to bring a multiplayer game to life.</p>
 <p>LiteNetLib doesn&rsquo;t have the most detailed documentation but it&rsquo;s still worth taking a <a href="https://github.com/RevenantX/LiteNetLib">read</a>.</p>

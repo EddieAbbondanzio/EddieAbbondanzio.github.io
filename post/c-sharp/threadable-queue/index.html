@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -64,9 +64,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -113,9 +111,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -189,16 +185,16 @@ if (!doNotTrack) {
 <article>
     <h2 id="implementing-a-thread-safe-queue">Implementing a Thread-Safe Queue</h2>
 <p>One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&rsquo;t thread-safe by default. Thankfully it&rsquo;s easy enough to implement your own as we will do today. Let&rsquo;s start by defining our class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadableQueue</span>&lt;T&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadableQueue</span>&lt;T&gt; {
 
 }
 </code></pre></div><p>If your unfamiliar with generics check out this <a href="https://www.dotnetperls.com/generic">link.</a> Within the class we need to define two members.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> Queue&lt;T&gt; queue;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> Queue&lt;T&gt; queue;
 
 privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">object</span> lockObj;
 </code></pre></div><p>The queue needs to be kept private so we can control access to it. Anytime it&rsquo;s modified we need to ensure we lock the semaphore object (lockObj) first.</p>
 <p>Now lets define two constructors. The second one is optional but provides an easy way to convert a regular queue into a threadable one.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> ThreadableQueue&lt;T&gt;() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> ThreadableQueue&lt;T&gt;() {
     queue = <span style="color:#66d9ef">new</span> Queue&lt;T&gt;;
     lockObj = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">object</span>();
 }
@@ -208,7 +204,7 @@ privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">
     lockObj = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">object</span>();
 }
 </code></pre></div><p>Next up lets add a way to add, and remove items from the queue. We call lock() around the queue actions as a way to ensure only one thread can access it at once.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Enqueue(T <span style="color:#66d9ef">value</span>){
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Enqueue(T <span style="color:#66d9ef">value</span>){
     <span style="color:#66d9ef">lock</span>(lockObj){
         queue.Enqueue(<span style="color:#66d9ef">value</span>);
     }
@@ -221,7 +217,7 @@ privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">
 }
 </code></pre></div><p>When it comes to locking you want to call it as little as possible. This is because it can cause performance issues, especially when it&rsquo;s not needed.</p>
 <p>Let&rsquo;s wrap things up by adding a few more functions that are expected of any queue.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Clear() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Clear() {
     <span style="color:#66d9ef">lock</span> (lockObj) {
         queue.Clear();
     }
@@ -240,7 +236,7 @@ privare <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">
     }
 }
 </code></pre></div><p>And how can we forget .count?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count {
     <span style="color:#66d9ef">get</span> {
         <span style="color:#66d9ef">lock</span> (lockObj) {
             <span style="color:#66d9ef">return</span> queue.Count;

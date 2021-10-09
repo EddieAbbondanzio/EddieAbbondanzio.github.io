@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -69,9 +69,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -118,9 +116,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -195,12 +191,12 @@ if (!doNotTrack) {
     <p>Continuing off the previous post about <a href="https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/">how to build a basic server / client set up with LiteNetLib</a> it&rsquo;s time to talk about sending data. Because, well, a network set up that doesn&rsquo;t actually send any data is kind of useless.</p>
 <p>As we already know, we listen for incoming messages from the network via an <code>IEventListener</code> that we pass to our <code>NetManager</code>. <code>IEventListener</code> contains an event called <code>NetworkReceiveEvent</code> which is triggered anytime the network receives data from another connection. (If we were a server this would be one of the clients sending us something.)</p>
 <p>In the <code>NetworkReceiveEvent</code> delegate we&rsquo;re given a few parameters. The <code>NetPeer</code> that the message came from, a <code>NetDataReader</code> for reading the incoming data, and the <code>DeliveryMethod</code> of how it was sent (see <a href="https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/">LiteNetLib&rsquo;s Delivery Methods</a>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
 
 }
 </code></pre></div><p><code>NetDataReader</code> provides us with a lot of great helpers to interpret the data received, such as <code>GetByte()</code>, <code>GetInt()</code>, or even <code>GetStringArray()</code> but what do we do if we don&rsquo;t know what kind of data was sent?</p>
 <p>One option would be to ensure our data is always sent with a type flag as the first byte which we could then use to recreate the original object but then our handler would grow linearly as the number of packet types increases.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> HandleNetworkRecieveEvent(NetPeer sender, NetDataReader data, DeliveryMethod deliveryMethod) {
     PacketType = (PacketType)data.PeekByte()
 
     <span style="color:#66d9ef">switch</span>(PacketType) {
@@ -221,7 +217,7 @@ if (!doNotTrack) {
 </code></pre></div><h1 id="enter-the-netpacketprocessor">Enter the <code>NetPacketProcessor</code></h1>
 <p>On the other hand, we could offload some of this logic to the <code>NetPacketProcessor</code> and leave it up to the processor to rebuild our incoming data. This convenience does come with a price though. The <code>NetPacketProcessor</code> will add 64 bits (8 bytes) to the beginning of each message we send. There&rsquo;s no doubt that there are some situations where every bit matters and this may be a deal breaker, but for most applications it&rsquo;s a reasonable price to pay.</p>
 <p>Let&rsquo;s define a packet that we want to send over the network.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FooPacket</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FooPacket</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> NumberValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> StringValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
@@ -233,7 +229,7 @@ if (!doNotTrack) {
 </code></pre>
 </div>
 <p>First up, we&rsquo;re going to modify the server to send a <code>FooPacket</code> to the newly connected client in <code>PeerConnectedEvent</code>. To do this we&rsquo;ll need to add a <code>NetPacketProcessor</code> as a field on the server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
     EventBasedNetListener netListener;
     NetManager netManager;
     NetPacketProcessor netProcessor; <span style="color:#75715e">// Add this
@@ -261,15 +257,15 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>Then in the <code>PeerConnectedEvent</code> delegate we&rsquo;ll add a new call to <code>NetPacketProcessor.Send()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.PeerConnectedEvent += (client) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.PeerConnectedEvent += (client) =&gt; {
     Debug.LogError(<span style="color:#e6db74">$&#34;Client connected: {client}&#34;</span>);
 
     netProcessor.Send(client, <span style="color:#66d9ef">new</span> FooPacket() { NumberValue = <span style="color:#ae81ff">1</span>, StringValue = <span style="color:#e6db74">&#34;Test&#34;</span> }, DeliveryMethod.ReliableOrdered);
 };
 </code></pre></div><p>If we wanted to send a <code>FooPacket</code> to every client connected to the server when a new client connects we could achieve this by using the following line instead:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.SendToAll(netProcessor.Write(<span style="color:#66d9ef">new</span> FooPacket() { NumberValue = <span style="color:#ae81ff">3</span>, StringValue = <span style="color:#e6db74">&#34;Cat&#34;</span>}), DeliveryMethod.ReliableOrdered);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.SendToAll(netProcessor.Write(<span style="color:#66d9ef">new</span> FooPacket() { NumberValue = <span style="color:#ae81ff">3</span>, StringValue = <span style="color:#e6db74">&#34;Cat&#34;</span>}), DeliveryMethod.ReliableOrdered);
 </code></pre></div><p>With the server set up to send a <code>FooPacket</code> to the client upon successful connection, we need to update the client to listen for the <code>FooPacket</code>. We&rsquo;ll do this by adding a <code>NetPacketProcessor</code> field to the <code>Client</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
     EventBasedNetListener netListener;
     NetManager netManager;
     NetPacketProcessor netPacketProcessor; <span style="color:#75715e">// New field
@@ -293,11 +289,11 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>Then we&rsquo;ll set it up so the packet processor reads all incoming data. Put this in <code>Start()</code> with the other initialization logic.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.NetworkReceiveEvent += (server, reader, deliveryMethod) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.NetworkReceiveEvent += (server, reader, deliveryMethod) =&gt; {
     netPacketProcessor.ReadAllPackets(reader, server);
 };
 </code></pre></div><p>And lastly, we need to tell the packet processor to notify us when a <code>FooPacket</code> comes in. This will also be done in <code>Start()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netPacketProcessor.SubscribeReusable&lt;FooPacket&gt;((packet) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netPacketProcessor.SubscribeReusable&lt;FooPacket&gt;((packet) =&gt; {
     Debug.Log(<span style="color:#e6db74">&#34;Got a foo packet!&#34;</span>);
     Debug.Log(packet.NumberValue);
 });
@@ -307,7 +303,7 @@ if (!doNotTrack) {
 <h1 id="limitations">Limitations</h1>
 <p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
 <h2 id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Bad!
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Bad!
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BarPacket</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Key { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
 }
@@ -325,10 +321,10 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><h2 id="nested-types-are-not-supported-the-following-types-for-properties-are-supported">Nested types are not supported. The following types for properties are supported:</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
 byte[] short[] ushort[] int[] uint[] long[] ulong[] float[] double[] bool[] string[]
 </code></pre></div><p>However, there are two workarounds. The first option is to register the nested type with a static <code>Serialize</code> and <code>Deserialize</code> method to parse them. This is useful for types that we do not have control over such as <code>Vector3</code> in Unity.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FakePacket</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FakePacket</span> {
     <span style="color:#66d9ef">public</span> Vector3 Position { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 
@@ -347,7 +343,7 @@ byte[] short[] ushort[] int[] uint[] long[] ulong[] float[] double[] bool[] stri
 netPacketProcessor = <span style="color:#66d9ef">new</span> NetPacketProcessor();
 netPacketProcessor.RegisterNestedType(Vector3Utils.Serialize, Vector3Utils.Deserialize);
 </code></pre></div><p>The second option is for the nested type to implement <code>INetSerializable</code>. This is the better choice to use when we have control over the type definition.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CatPacket</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CatPacket</span> {
     <span style="color:#66d9ef">public</span> Cat Cat { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 

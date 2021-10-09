@@ -12,7 +12,7 @@
 
     
     
-    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.2ba91e557a411cfb5bcfaee003c60eff46537304f83d0ea33f9a47c454d53cdc.css" integrity="sha256-K6keVXpBHPtbz67gA8YO/0ZTcwT4PQ6jP5pHxFTVPNw=" media="screen">
+    <link rel="stylesheet" href="https://eddieabbondanz.io/sass/main.min.ddc940f3909625eacd937ae0bafcdfbc72ddabb22c17897e06beb942e6f1ffdd.css" integrity="sha256-3clA85CWJerNk3rguvzfvHLdq7IsF4l&#43;Br65Qubx/90=" media="screen">
 
     <script src="https://eddieabbondanz.io/js/interactivity.js"></script>
     
@@ -69,9 +69,7 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                    
-                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                     
@@ -118,9 +116,7 @@ if (!doNotTrack) {
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
                 
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/a-software-distopia"> A Software Distopia </a>
-                
-                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/the-disillusioned-developer"> The Disillusioned Developer </a>
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
                 
@@ -201,22 +197,22 @@ if (!doNotTrack) {
 <p>One of the capabilities offered by TypeScript is to create types limited to specific instances of strings. This ability can be used to create string based enums that reduce the amount of typing requried by the developer, while at the same time producing code that is clear and concise.</p>
 <h1 id="a-working-example">A Working Example</h1>
 <p>Imagine we were working with objects that represent database columns, and needed an enum to represent the various data types. While we could simply define an enum as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">DatabaseColumnType</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">DatabaseColumnType</span> {
     Boolean,
     Date,
     String
 }
 </code></pre></div><p>TypeScript offers us the ability to represent these as a collection of string literals.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">DatabaseColumnType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boolean&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;Date&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;String&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">DatabaseColumnType</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boolean&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;Date&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;String&#34;</span>;
 </code></pre></div><p>If we had a <code>DatabaseColumn</code> object like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DatabaseColumn</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DatabaseColumn</span> {
     <span style="color:#a6e22e">constructor</span>(<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DatabaseColumnType</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) {
     }
 }
 </code></pre></div><p>Then we could specify the column type directly through strings instead of having to append <code>DatabaseColumnType</code> before the enum each time we used it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DatabaseColumn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DatabaseColumn</span>(<span style="color:#e6db74">&#34;Boolean&#34;</span>, <span style="color:#66d9ef">true</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DatabaseColumn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DatabaseColumn</span>(<span style="color:#e6db74">&#34;Boolean&#34;</span>, <span style="color:#66d9ef">true</span>);
 </code></pre></div><p>The TypeScript compiler is smart enough to reject invalid strings that do not exist on the type.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DatabaseColumn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DatabaseColumn</span>(<span style="color:#e6db74">&#34;Foo&#34;</span>, <span style="color:#ae81ff">1</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DatabaseColumn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DatabaseColumn</span>(<span style="color:#e6db74">&#34;Foo&#34;</span>, <span style="color:#ae81ff">1</span>);
 <span style="color:#75715e">//Throws compile time error
 </span></code></pre></div><p>While this may seem seem lazy on the developers end, it does offer us an advantage to produce simple, and highly readable code.</p>
 <h1 id="photo">Photo</h1>
