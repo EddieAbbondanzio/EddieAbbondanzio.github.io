@@ -69,6 +69,8 @@ if (!doNotTrack) {
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/post/"> All </a>
 
                     
+                    <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+                    
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/development"> Development </a>
                     
                     <a class="navbar-item has-text-dark" href="https://eddieabbondanz.io/series/xj-build"> XJ Build </a>
@@ -115,6 +117,8 @@ if (!doNotTrack) {
             <div class="navbar-dropdown">
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/post/"> All </a>
 
+                
+                <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
                 
                 <a class="navbar-item has-text-white" href="https://eddieabbondanz.io/series/development"> Development </a>
                 
@@ -232,13 +236,13 @@ if (!doNotTrack) {
     <span style="color:#75715e">/**
 </span><span style="color:#75715e">     * The handlers that want to be notified when an event occurs.
 </span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">private</span> <span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>[];
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_handlers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>[];
 
     <span style="color:#75715e">/**
 </span><span style="color:#75715e">     * Create a new event dispatcher.
 </span><span style="color:#75715e">     */</span>
     <span style="color:#a6e22e">constructor</span>() {
-        <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span> <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span> <span style="color:#f92672">=</span> [];
     }
 }
 </code></pre></div><p>Then to satisfy the <code>Event&lt;E&gt;</code> interface we&rsquo;ll implement <code>register()</code> and <code>unregister()</code> like so:</p>
@@ -248,7 +252,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e">     * @param handler The handler to register.
 </span><span style="color:#75715e">     */</span>
     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">register</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-        <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">handler</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">handler</span>);
     }
 
     <span style="color:#75715e">/**
@@ -256,9 +260,9 @@ if (!doNotTrack) {
 </span><span style="color:#75715e">     * @param handler The handler to remove.
 </span><span style="color:#75715e">     */</span>
     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">unregister</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">handler</span>) {
-                <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">handler</span>) {
+                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>);
             }
         }
     }
@@ -268,7 +272,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e">     * @param event The data of the event that occured.
 </span><span style="color:#75715e">     */</span>
     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">event</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">E</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">handler</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">handlers</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">handler</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>) {
             <span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">event</span>);
         }
     }
@@ -277,18 +281,18 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">UserCredentials</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> };
 
     <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
-        <span style="color:#66d9ef">private</span> <span style="color:#ae81ff">_</span><span style="color:#a6e22e">email</span><span style="color:#f92672">!:</span> <span style="color:#a6e22e">string</span>;
+        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_email</span><span style="color:#f92672">!:</span> <span style="color:#a6e22e">string</span>;
 
-        <span style="color:#66d9ef">private</span> <span style="color:#ae81ff">_</span><span style="color:#a6e22e">password</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">string</span>;
+        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_password</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">string</span>;
 
-        <span style="color:#66d9ef">private</span> <span style="color:#ae81ff">_</span><span style="color:#a6e22e">onLoginDispatcher</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
+        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_onLoginDispatcher</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
 
         <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">onLogin</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span> {
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">onLoginDispatcher</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
         }
     }
 </code></pre></div><p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">onLoginDispatcher</span>.<span style="color:#a6e22e">dispatch</span>({
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span>.<span style="color:#a6e22e">dispatch</span>({
   <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;john.smith@mail.com&#34;</span>,
   <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>
 });
