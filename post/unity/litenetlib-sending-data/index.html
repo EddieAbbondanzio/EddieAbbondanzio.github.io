@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Unity - How to Send Data With LiteNetLib</title>
-    <meta name="description" content="I build things. Sometimes good.">
+    <meta name="description" content="I build things">
         
     
 
@@ -302,8 +302,9 @@ if (!doNotTrack) {
     Debug.Log(packet.NumberValue);
 });
 </code></pre></div><p>Running the server and client we can see that the <code>FooPacket</code> is sent to the client from the server and contains the correct <code>NumberValue</code> of 1.</p>
-<p><img loading="lazy" src="images/1.png" alt=""  />
-</p>
+<p><a href="images/1.png" target="_blank">
+  <img loading="lazy" src="images/1.png" alt=""  />
+</a></p>
 <h1 id="limitations">Limitations</h1>
 <p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
 <h2 id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
@@ -377,6 +378,6 @@ netPacketProcessor.RegisterNestedType&lt;Cat&gt;(() =&gt; <span style="color:#66
     </main>
 
     <footer>
-    <p>&copy; 2022 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+  <p>&copy; 2022 Eddie Abbondanzio</p>
 </footer> </body>
 </html>

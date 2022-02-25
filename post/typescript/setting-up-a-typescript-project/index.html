@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TypeScript - How To Set Up A New Project</title>
-    <meta name="description" content="I build things. Sometimes good.">
+    <meta name="description" content="I build things">
         
     
 
@@ -192,41 +192,53 @@ if (!doNotTrack) {
 <p>This tutorial attempts to cover a no bs approach to setting up a new TypeScript project that builds and runs via <code>npm run build</code>, and <code>npm start</code> without any additional node modules. However, it does assume you have some familiarity with the command prompt, and node. If this were a medium article it would probably be titled &ldquo;How To Set Up a TypeScript Project In 5 Minutes Or Less&rdquo;.</p>
 <h1 id="steps">Steps</h1>
 <p>1 - Create a new folder to hold the project. Then open up a command prompt and navigate to the newly created folder using the <code>cd</code> command. For this example we&rsquo;ll be working in a <code>test-project</code> folder.
-<img loading="lazy" src="images/1.png" alt=""  />
-</p>
+<a href="images/1.png" target="_blank">
+  <img loading="lazy" src="images/1.png" alt=""  />
+</a></p>
 <p>2 - Run the standard node initialization command <code>npm init</code> or if you want to accept the defaults for the questionnaire <code>npm init -y</code>
-<img loading="lazy" src="images/2.png" alt=""  />
-</p>
+<a href="images/2.png" target="_blank">
+  <img loading="lazy" src="images/2.png" alt=""  />
+</a></p>
 <p>3 - Create two folders (<code>dist</code>, and <code>src</code>) within the project directory. The <code>dist</code> folder will be used to store our transpiled JavaScript files, and the <code>src</code> folder will hold all our TypeScript files. It&rsquo;s in your best interest to keep the two seperated or else things will become cluttered fast. The project structure should now be:
-<img loading="lazy" src="images/3.png" alt=""  />
-</p>
+<a href="images/3.png" target="_blank">
+  <img loading="lazy" src="images/3.png" alt=""  />
+</a></p>
 <p>4 - Open up the <code>src</code> folder and create a new <code>index.ts</code> file. This will be our very first TypeScript file.
-<img loading="lazy" src="images/4.png" alt=""  />
-</p>
+<a href="images/4.png" target="_blank">
+  <img loading="lazy" src="images/4.png" alt=""  />
+</a></p>
 <p>5 - Open up <code>index.ts</code>, and write a classic hello world line. Save it, and close out.
-<img loading="lazy" src="images/5.png" alt=""  />
-</p>
+<a href="images/5.png" target="_blank">
+  <img loading="lazy" src="images/5.png" alt=""  />
+</a></p>
 <p>6 - Now we need to install TypeScript globally. <code>npm install typescript -g</code>
-<img loading="lazy" src="images/6.png" alt=""  />
-</p>
+<a href="images/6.png" target="_blank">
+  <img loading="lazy" src="images/6.png" alt=""  />
+</a></p>
 <p>7 - With TypeScript installed, we can run the init command: <code>tsc --init</code>
-<img loading="lazy" src="images/7.png" alt=""  />
-</p>
+<a href="images/7.png" target="_blank">
+  <img loading="lazy" src="images/7.png" alt=""  />
+</a></p>
 <p>8 - You should see a tsconfig.json file in the project directory. Go ahead and open it up. We&rsquo;ll need to un-comment the <code>outDir</code> and <code>rootDir</code> line. Then fill them out with the following values:
-<img loading="lazy" src="images/8.png" alt=""  />
-</p>
+<a href="images/8.png" target="_blank">
+  <img loading="lazy" src="images/8.png" alt=""  />
+</a></p>
 <p>9 - Switch over to <code>package.json</code> and add a build command, and start command.
-<img loading="lazy" src="images/9.png" alt=""  />
-</p>
+<a href="images/9.png" target="_blank">
+  <img loading="lazy" src="images/9.png" alt=""  />
+</a></p>
 <p>10 - With everything set up we can build the project. Enter <code>npm run build</code> in the command prompt.
-<img loading="lazy" src="images/10.png" alt=""  />
-</p>
+<a href="images/10.png" target="_blank">
+  <img loading="lazy" src="images/10.png" alt=""  />
+</a></p>
 <p>If things went correctly it won&rsquo;t print out anything, but we can see a new .js file under <code>dist</code>.
-<img loading="lazy" src="images/10b.png" alt=""  />
-</p>
+<a href="images/10b.png" target="_blank">
+  <img loading="lazy" src="images/10b.png" alt=""  />
+</a></p>
 <p>11 - Finally we can run it via the <code>npm start</code> command.
-<img loading="lazy" src="images/11.png" alt=""  />
-</p>
+<a href="images/11.png" target="_blank">
+  <img loading="lazy" src="images/11.png" alt=""  />
+</a></p>
 <p>Success! The project runs our JavaScript file that we transpiled from TypeScript. From here I recommend checking out some of the settings available in the <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig</a> file. This tutorial is merely skimming the surface of TypeScript, but should be enough to help get your feet wet. Happy coding!</p>
 
 </article>
@@ -234,6 +246,6 @@ if (!doNotTrack) {
     </main>
 
     <footer>
-    <p>&copy; 2022 <a href="https://eddieabbondanz.io">Eddie Abbondanzio</a></p>
+  <p>&copy; 2022 Eddie Abbondanzio</p>
 </footer> </body>
 </html>
