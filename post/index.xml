@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electrical Gremlins, a Blown Clutch, and a Massive Oil Leak</title>
+      <link>https://eddieabbondanz.io/post/88-integra/electrical-gremlins-and-a-blown-clutch/</link>
+      <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/88-integra/electrical-gremlins-and-a-blown-clutch/</guid>
+      <description>Having driven over 2,500 miles and raced in 2 auto cross events, the Integra has had a few issues pop up along the way, but is still holding strong.
+For what it&amp;rsquo;s worth though, the car&amp;rsquo;s never left me stranded and even when the clutch failed I was still able to limp it home.</description>
+    </item>
+    
     <item>
       <title>Back on the Road After a Decade</title>
       <link>https://eddieabbondanz.io/post/88-integra/back-on-the-road-after-a-decade/</link>
@@ -27,7 +37,7 @@
     </item>
     
     <item>
-      <title>D16A1 Headgasket and Timing Belt</title>
+      <title>Replacing a D16A1 Headgasket and Timing Belt</title>
       <link>https://eddieabbondanz.io/post/88-integra/d16a1-headgasket-and-timing-belt/</link>
       <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
       
@@ -45,7 +55,7 @@
     </item>
     
     <item>
-      <title>Fixing The Brakes And More</title>
+      <title>Fixing the Brakes</title>
       <link>https://eddieabbondanz.io/post/88-integra/fixing-the-brakes-and-more/</link>
       <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -181,7 +191,7 @@ My Cherokee is rusty, has a laundry list of issues, gets 17 MPG on the good days
     </item>
     
     <item>
-      <title>Dana 30 Rebuild</title>
+      <title>Dana 30 Front Axle Rebuild</title>
       <link>https://eddieabbondanz.io/post/xj/dana-30-rebuild/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -231,7 +241,8 @@ My Cherokee is rusty, has a laundry list of issues, gets 17 MPG on the good days
       <pubDate>Tue, 12 Nov 2019 21:01:01 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
-      <description>**TL;DR** Download the most recent stable release source code zip and copy the `/LiteNetLib` folder to the `Plugins` folder in your Unity project.   LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity.</description>
+      <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
+LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity.</description>
     </item>
     
     <item>

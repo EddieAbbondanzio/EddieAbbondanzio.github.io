@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/app/</link>
+    <description>Recent content in Apps on Eddie Abbondanzio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright><atom:link href="https://eddieabbondanz.io/app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Detailing Arsenal</title>
+      <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/app/detailingarsenal/</guid>
+      <description>Detailing Arsenal is a SaaS (software as a service) for managing and scheduling appointments for auto detailers. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue.</description>
+    </item>
+    
+    <item>
+      <title>Updog</title>
+      <link>https://eddieabbondanz.io/app/updog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/app/updog/</guid>
+      <description>Updog was a Reddit clone where users could share links, and create text posts. Users could submit comments to posts, or reply to other comments. A voting system was implemented to allow users to upvote or downvote posts they liked or disliked.</description>
+    </item>
+    
+    <item>
+      <title>Mechanic Log</title>
+      <link>https://eddieabbondanz.io/app/mechaniclog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/app/mechaniclog/</guid>
+      <description>Mechanic Log was a web app where users could log repairs and maintenance performed on their vehicle(s). Users could also track fuel mileage to see how much they spent in fuel, gallons consumed, and lifetime MPG.</description>
+    </item>
+    
+    <item>
+      <title>Clap Button</title>
+      <link>https://eddieabbondanz.io/app/clapbutton/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
+      <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times.</description>
+    </item>
+    
+  </channel>
+</rss>
