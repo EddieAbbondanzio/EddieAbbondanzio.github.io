@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/xj-build/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/xj-build/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Repair Part 11: Finishing What I Started</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-11/</link>
+      <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-11/</guid>
+      <description>Just shy of two years ago now, I embarked on the largest rust repair job I&amp;rsquo;ve ever done on my XJ. It took me several months, but I was able to replace the entire rear cargo floor including the crossmembers, gas tank bracing, and unibody frame rails along with welding in rear frame stiffeners over my newly made frame rails.</description>
+    </item>
+    
     <item>
       <title>Replacing a Saggy Headliner</title>
       <link>https://eddieabbondanz.io/post/xj/replacing-a-saggy-headliner/</link>
@@ -27,7 +36,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 10: The Finishing Touches</title>
+      <title>Rust Repair Part 10: The Finishing Touches</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-10/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -36,7 +45,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 9: Closing Up The Floor</title>
+      <title>Rust Repair Part 9: Closing Up The Floor</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-9/</link>
       <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -45,7 +54,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 8: Welding on Frame Stiffeners</title>
+      <title>Rust Repair Part 8: Welding on Frame Stiffeners</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-8/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -54,7 +63,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 7: A New Fuel Neck Housing And Making Cut N Fold Panels</title>
+      <title>Rust Repair Part 7: A New Fuel Neck Housing And Making Cut N Fold Panels</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-7/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -63,7 +72,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 6: Turning A Patch Panel Into A New Cargo Floor Pan</title>
+      <title>Rust Repair Part 6: Turning A Patch Panel Into A New Cargo Floor Pan</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-6/</link>
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -72,7 +81,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 5: Designing A Custom Gas Tank Cradle</title>
+      <title>Rust Repair Part 5: Designing A Custom Gas Tank Cradle</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-5/</link>
       <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -81,7 +90,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 4: Hooking Up The Suspension</title>
+      <title>Rust Repair Part 4: Hooking Up The Suspension</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-4/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -90,7 +99,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail</title>
+      <title>Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-3/</link>
       <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -99,7 +108,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 2: Bending a New Passenger Frame Rail</title>
+      <title>Rust Repair Part 2: Bending a New Passenger Frame Rail</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-2/</link>
       <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -108,7 +117,7 @@
     </item>
     
     <item>
-      <title>Unibody Rust Repair Part 1: Fabricating A New Rear Crossmember</title>
+      <title>Rust Repair Part 1: Fabricating A New Rear Crossmember</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-1/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
