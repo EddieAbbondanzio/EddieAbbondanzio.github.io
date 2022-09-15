@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rust Repair Part 12: Welding in the New Passenger Drip Rail</title>
+  
+  
+  
+
+  
+  
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.8e9e277275c3b75c5596a98ad842d1eb5dfcfd0d7fc0a847bdcce49576ed9ad6.css" integrity="sha256-jp4ncnXDt1xVlqmK2ELR6138/Q1/wKhHvczklXbtmtY=" media="screen">
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128571017-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+<body>
+  <nav class="navbar fr jcsb aic mt2-phone">
+  <a class="title h100 fr aic tdn fwb" href="https://eddieabbondanz.io">
+    <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    Eddie Abbondanzio
+  </a>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+    
+    
+    <div class="item dropdown">
+      <a class="trigger" href="https://eddieabbondanz.io/post">Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+
+      <div class="content">
+        <a href="https://eddieabbondanz.io/post/"> All </a>
+
+        
+        <a href="https://eddieabbondanz.io/series/development"> Development </a>
+        
+        <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+      </div>
+    </div>
+    
+    
+    
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+    
+    
+    
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+    
+    
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://twitter.com/EAbbondanzio" target="_blank" title="Twitter">
+        <span class="icon"><i class="fab fa-twitter fa-lg"></i></span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger " href="#" title="Linkedin">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+
+</nav>
+  <div id="hamburger-menu" class="hamburger-menu">
+     
+
+    <div>
+      <a> Blog </a>
+
+      <div class="ml2">
+        <a href="https://eddieabbondanz.io/post/"> All </a>
+
+        
+        <a href="https://eddieabbondanz.io/series/development"> Development </a>
+        
+        <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+      </div>
+    </div>
+     
+    <a href="https://eddieabbondanz.io/app">Apps</a>
+     
+    <a href="https://eddieabbondanz.io/about">About</a>
+    
+
+    <div class="fr jcse">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+       
+      <a href="https://twitter.com/EAbbondanzio" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-twitter fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <main>
+    
+    <h1 class="title">Rust Repair Part 12: Welding in the New Passenger Drip Rail</h1>
+    
+    
+<article>
+  <div class="meta pb3-phone">
+    
+    <a class="series" href="https://eddieabbondanz.io/series/xj-build" title="More XJ Build posts">
+      <i class="fas fa-th-list"></i>
+      XJ Build
+    </a>
+    
+
+    
+    <div class="date" title="Posted on Sep 14, 2022">
+      <i class="fas fa-calendar-day"></i>
+      <time>Sep 14, 2022</time>
+    </div>
+    
+  </div>
+
+  <p>My new metal brake finally arrived.
+<a href="images/1.jpg" target="_blank">
+  <img loading="lazy" src="images/1.jpg" alt=""  />
+</a></p>
+<p>Before settling on the Woodward Fab Boss 16, I spent several hours researching metal brakes and looked at a ton of different models across various manufacturers such as Baileigh, Tennsmith, Grizzly, JET, Eastwood, and Enco.</p>
+<p>I picked the Boss 16 because I primarily do 16ga or thinner metal work, and also wanted something that was 48&quot; long so I could bend the roof patch panel in one piece. If you want to get pedantic it can actually bend up to 48.25&quot; which was perfect because the patch I needed to make was actually a hair over 48&quot; long.</p>
+<p>I haven&rsquo;t needed to bend anything yet that takes advantage of the fingers but I&rsquo;m looking forward to when I eventually need to bend up a box because my old brake could never do that.</p>
+<p>Pictures don&rsquo;t really do it justice but it&rsquo;s officially my largest piece of machinery now in the shop. It weighs in at just under 600lbs and makes my old Harbor Freight metal brake look tiny.
+<a href="images/2.jpg" target="_blank">
+  <img loading="lazy" src="images/2.jpg" alt=""  />
+</a></p>
+<p>As soon as I had my new metal brake assembled I wasted no time getting ready to make the new patch panel for my roof. Using some measurments from the other side I came up with a plan to make a 3/8&quot; wide channel. This ended up being a hair too wide for my liking but I figured it&rsquo;s better to have too large of a rain gutter than not enough.
+<a href="images/3.jpg" target="_blank">
+  <img loading="lazy" src="images/3.jpg" alt=""  />
+</a>
+Don&rsquo;t trust the 70* angle. That was a total guess on my part. I eyeballed the bend until it lined up perfect with the roof itself.</p>
+<p>After a lot of cutting to trim down the patch panel so it&rsquo;d mate up with the body this is what I ended up with.
+<a href="images/4.jpg" target="_blank">
+  <img loading="lazy" src="images/4.jpg" alt=""  />
+</a>
+<a href="images/5.jpg" target="_blank">
+  <img loading="lazy" src="images/5.jpg" alt=""  />
+</a></p>
+<p>To prep the body I started off by removing any epoxy over the spots I&rsquo;d be plug welding.
+<a href="images/6.jpg" target="_blank">
+  <img loading="lazy" src="images/6.jpg" alt=""  />
+</a></p>
+<p>I also drilled a bunch of holes in the drip rail panel.
+<a href="images/7.jpg" target="_blank">
+  <img loading="lazy" src="images/7.jpg" alt=""  />
+</a></p>
+<p>And some welding and grinding later the very first piece of new metal was installed.
+<a href="images/8.jpg" target="_blank">
+  <img loading="lazy" src="images/8.jpg" alt=""  />
+</a>
+<a href="images/9.jpg" target="_blank">
+  <img loading="lazy" src="images/9.jpg" alt=""  />
+</a></p>
+<p>If you look close you can see that the drip rail is arched ever so slightly. This was intentionally done to ensure water would drain off it and not pool up at any low spots.
+<a href="images/10.jpg" target="_blank">
+  <img loading="lazy" src="images/10.jpg" alt=""  />
+</a>
+<a href="images/11.jpg" target="_blank">
+  <img loading="lazy" src="images/11.jpg" alt=""  />
+</a>
+<a href="images/12.jpg" target="_blank">
+  <img loading="lazy" src="images/12.jpg" alt=""  />
+</a></p>
+<p>I Also plug welded where the drip rail mates to the windshield pillar on the passenger side.
+<a href="images/13.jpg" target="_blank">
+  <img loading="lazy" src="images/13.jpg" alt=""  />
+</a></p>
+<p>It took a lot of trial and error to get the patch to fit in nicely but after several iterations I was able to get it almost perfect.
+<a href="images/14.jpg" target="_blank">
+  <img loading="lazy" src="images/14.jpg" alt=""  />
+</a></p>
+<p>This is gonna take some time to tack weld in given it&rsquo;s 4' long.
+<a href="images/15.jpg" target="_blank">
+  <img loading="lazy" src="images/15.jpg" alt=""  />
+</a></p>
+<p>The roof is a little warped in some places because I made some mistakes when removing the original drip rail and the roof ended up getting a little banged up. Something tells me there&rsquo;s gonna be a ton of block sanding in the future to fix this.
+<a href="images/16.jpg" target="_blank">
+  <img loading="lazy" src="images/16.jpg" alt=""  />
+</a>
+<a href="images/17.jpg" target="_blank">
+  <img loading="lazy" src="images/17.jpg" alt=""  />
+</a></p>
+<p>Removing some epoxy to prep for welding.
+<a href="images/18.jpg" target="_blank">
+  <img loading="lazy" src="images/18.jpg" alt=""  />
+</a></p>
+<p>The first tacks! Super happy with the fitment.
+<a href="images/19.jpg" target="_blank">
+  <img loading="lazy" src="images/19.jpg" alt=""  />
+</a></p>
+<p>The tacks are intentionally spaced out to avoid putting too much heat into the roof.
+<a href="images/20.jpg" target="_blank">
+  <img loading="lazy" src="images/20.jpg" alt=""  />
+</a>
+<a href="images/21.jpg" target="_blank">
+  <img loading="lazy" src="images/21.jpg" alt=""  />
+</a></p>
+<p>About two hours later and more tacks than I could count I finally had the new piece of the roof welded in. To clean things up I used my die grinder with some 3m grinding discs. I made sure not to over grind the welds down so the roof wouldn&rsquo;t end up too thin.
+<a href="images/22.jpg" target="_blank">
+  <img loading="lazy" src="images/22.jpg" alt=""  />
+</a>
+<a href="images/23.jpg" target="_blank">
+  <img loading="lazy" src="images/23.jpg" alt=""  />
+</a></p>
+<p>When it came time to plug weld the drip rail to the roof I used a piece of stainless rod and two clamps to ensure a tight fit.
+<a href="images/24.jpg" target="_blank">
+  <img loading="lazy" src="images/24.jpg" alt=""  />
+</a></p>
+<p>These are some of my best overhead plug welds yet!
+<a href="images/25.jpg" target="_blank">
+  <img loading="lazy" src="images/25.jpg" alt=""  />
+</a></p>
+<p>Some more grinding later&hellip;
+<a href="images/26.jpg" target="_blank">
+  <img loading="lazy" src="images/26.jpg" alt=""  />
+</a></p>
+<p>And the roof starts to look normal again!
+<a href="images/27.jpg" target="_blank">
+  <img loading="lazy" src="images/27.jpg" alt=""  />
+</a></p>
+<p>Prepping the chunk of the pillar between the doors I cut off to weld back in place took some time. There&rsquo;s an abundance of spot welds all over it and I had to remove all the paint around them.</p>
+<p><a href="images/29.jpg" target="_blank">
+  <img loading="lazy" src="images/29.jpg" alt=""  />
+</a></p>
+<p>Not perfect but should be strong enough.
+<a href="images/30.jpg" target="_blank">
+  <img loading="lazy" src="images/30.jpg" alt=""  />
+</a></p>
+<p>After that, all that was left was to weld up the small hole above the rear quarter window. I used my new metal brake to bend a piece of 18ga to fill it.
+<a href="images/31.jpg" target="_blank">
+  <img loading="lazy" src="images/31.jpg" alt=""  />
+</a></p>
+<p><a href="images/28.jpg" target="_blank">
+  <img loading="lazy" src="images/28.jpg" alt=""  />
+</a>
+<a href="images/32.jpg" target="_blank">
+  <img loading="lazy" src="images/32.jpg" alt=""  />
+</a></p>
+<p>And since it&rsquo;ll be several months before I&rsquo;m ready to start body work I gave everything a quick coat of epoxy to protect it in the mean time. Normally I opt for 2 coats but I only did 1 in this case since it&rsquo;s not permanent.
+<a href="images/33.jpg" target="_blank">
+  <img loading="lazy" src="images/33.jpg" alt=""  />
+</a>
+<a href="images/34.jpg" target="_blank">
+  <img loading="lazy" src="images/34.jpg" alt=""  />
+</a></p>
+<p>Next up I&rsquo;ll be tackling is replacing the passenger inner / outer rocker panel.
+<a href="images/35.jpg" target="_blank">
+  <img loading="lazy" src="images/35.jpg" alt=""  />
+</a></p>
+
+</article>
+
+  </main>
+
+  <footer>
+  <p>&copy; 2013 - 2022 Eddie Abbondanzio</p>
+</footer>
+  <script src="https://eddieabbondanz.io/js/lol.js"></script>
+</body>
+
+
+</html>
