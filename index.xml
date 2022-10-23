@@ -6,7 +6,7 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detailing Arsenal</title>
       <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
@@ -41,6 +41,16 @@
       
       <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
       <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times.</description>
+    </item>
+    
+    <item>
+      <title>Rust Repair Part 14: Welding in the Passenger 2x6 Rocker</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-14/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-14/</guid>
+      <description>In this post we&amp;rsquo;ll continue building out the 2x6 rocker for the passenger side.
+Finishing Up The A Pillar Before I could weld up the outer rocker I needed to finish the A / B Pillars so I&amp;rsquo;d have something to weld it to.</description>
     </item>
     
     <item>
