@@ -6,7 +6,25 @@
     <description>Recent content in XJ Build on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/xj-build/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/xj-build/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-18/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-18/</guid>
+      <description>Having finished the passenger side, it was a little daunting looking at the completely untouched driver side knowing I had so much work ahead of me. I was a little worried I&amp;rsquo;d lose my motivation from analysis paralysis on where to start so I decided to dive right into it and start with the roof like I did on the passenger side.</description>
+    </item>
+    
+    <item>
+      <title>Rust Repair Part 17: Finally Finishing the Passenger Quarter Panel</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-17/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-17/</guid>
+      <description>It&amp;rsquo;s taken me roughly 3 times as long as I imagined to finish all the work on the passenger side, but it&amp;rsquo;s been well worth the effort. To recap the past 6 months I&amp;rsquo;ve replaced:</description>
+    </item>
+    
     <item>
       <title>Rust Repair Part 16: A New Rear Passenger Inner Wheel Well</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-16/</link>
