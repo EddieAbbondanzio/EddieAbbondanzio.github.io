@@ -6,7 +6,16 @@
     <description>Recent content in Series on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EG Build</title>
+      <link>https://eddieabbondanz.io/series/eg-build/</link>
+      <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/series/eg-build/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>88 Integra Build</title>
       <link>https://eddieabbondanz.io/series/88-integra-build/</link>
@@ -49,15 +58,6 @@
       <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
       
       <guid>https://eddieabbondanz.io/series/desk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EG Build</title>
-      <link>https://eddieabbondanz.io/series/eg-build/</link>
-      <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/series/eg-build/</guid>
       <description></description>
     </item>
     
