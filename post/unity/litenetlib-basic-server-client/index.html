@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -148,8 +140,10 @@ if (!doNotTrack) {
   </div>
 
   <p>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&rsquo;s a few extra steps we&rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: <a href="https://eddieabbondanz.io/post/unity/litenetlib-setup/">How to Setup LiteNetLib With Unity</a></p>
-<h1 id="implementing-the-client">Implementing the Client</h1>
-<p>Let&rsquo;s start by creating our client script. We&rsquo;ll call it (wait for it) <code>Client.cs</code></p>
+<div class="anchor-heading">
+  <a href="#implementing-the-client" id="implementing-the-client">#</a>
+  <h1>Implementing the Client</h1>
+</div><p>Let&rsquo;s start by creating our client script. We&rsquo;ll call it (wait for it) <code>Client.cs</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -211,8 +205,10 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
     netManager.PollEvents();
 }
-</code></pre></div><h1 id="implementing-the-server">Implementing the Server</h1>
-<p>With the client all ready, let&rsquo;s go ahead and create another MonoBehaviour called <code>Server.cs</code>.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#implementing-the-server" id="implementing-the-server">#</a>
+  <h1>Implementing the Server</h1>
+</div><p>With the client all ready, let&rsquo;s go ahead and create another MonoBehaviour called <code>Server.cs</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
@@ -279,8 +275,10 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
     netManager.PollEvents();
 }
-</code></pre></div><h1 id="running-unity-as-a-client-and-server">Running Unity as a Client and Server</h1>
-<p>With the scripts all set, we need to set up Unity so it can run as either a server, or a client. The easiest way to do this would be to take advantage of scenes. Create a new scene and save it off as <code>Client.unity</code>. Then in the new scene add a new empty GameObject and add the <code>Client</code> script to it.
+</code></pre></div><div class="anchor-heading">
+  <a href="#running-unity-as-a-client-and-server" id="running-unity-as-a-client-and-server">#</a>
+  <h1>Running Unity as a Client and Server</h1>
+</div><p>With the scripts all set, we need to set up Unity so it can run as either a server, or a client. The easiest way to do this would be to take advantage of scenes. Create a new scene and save it off as <code>Client.unity</code>. Then in the new scene add a new empty GameObject and add the <code>Client</code> script to it.
 <a href="images/1.png" target="_blank">
   <img loading="lazy" src="images/1.png" alt=""  />
 </a></p>
@@ -306,8 +304,10 @@ if (!doNotTrack) {
 <a href="images/6.png" target="_blank">
   <img loading="lazy" src="images/6.png" alt=""  />
 </a></p>
-<h1 id="connection-limit">Connection Limit</h1>
-<p>Adding a connection limit to the server is an easy to add feature that only requires a few extra lines. Jump back over to <code>Server.cs</code> and adjust the event handler for <code>ConnectionRequestEvent</code> to:</p>
+<div class="anchor-heading">
+  <a href="#connection-limit" id="connection-limit">#</a>
+  <h1>Connection Limit</h1>
+</div><p>Adding a connection limit to the server is an easy to add feature that only requires a few extra lines. Jump back over to <code>Server.cs</code> and adjust the event handler for <code>ConnectionRequestEvent</code> to:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
     <span style="color:#66d9ef">int</span> connectionLimit = <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Arbitrary connection limit.
 </span><span style="color:#75715e"></span>
@@ -317,19 +317,25 @@ if (!doNotTrack) {
         request.Accept();
     }
 };
-</code></pre></div><h1 id="connection-key">Connection Key</h1>
-<p>Another quick feature we can add to the server is a connection key. We can set it up so the server requires this key from clients before accepting them. This is useful if we wanted to ensure only instances of our game are connecting, or if we want to ensure the client is running a specific version.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#connection-key" id="connection-key">#</a>
+  <h1>Connection Key</h1>
+</div><p>Another quick feature we can add to the server is a connection key. We can set it up so the server requires this key from clients before accepting them. This is useful if we wanted to ensure only instances of our game are connecting, or if we want to ensure the client is running a specific version.</p>
 <p>Again we&rsquo;ll apply a quick tweak to the event handler for <code>ConnectionRequestEvent</code> in <code>Server.cs</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
     request.AcceptIfKey(<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
 };
 </code></pre></div><p>And when we call <code>Connect()</code> in <code>Client.cs</code> we&rsquo;ll need to pass the key as an extra parameter.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
-</code></pre></div><h1 id="wrapping-up">Wrapping Up</h1>
-<p>This tutorial is only the tip of the iceberg in what LiteNetLib can do and offer. It&rsquo;s library is a low level API but it provides the building blocks needed to bring a multiplayer game to life.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#wrapping-up" id="wrapping-up">#</a>
+  <h1>Wrapping Up</h1>
+</div><p>This tutorial is only the tip of the iceberg in what LiteNetLib can do and offer. It&rsquo;s library is a low level API but it provides the building blocks needed to bring a multiplayer game to life.</p>
 <p>LiteNetLib doesn&rsquo;t have the most detailed documentation but it&rsquo;s still worth taking a <a href="https://github.com/RevenantX/LiteNetLib">read</a>.</p>
-<h1 id="source-code">Source Code</h1>
-<script type="application/javascript" src="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3.js"></script>
+<div class="anchor-heading">
+  <a href="#source-code" id="source-code">#</a>
+  <h1>Source Code</h1>
+</div><script type="application/javascript" src="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3.js"></script>
 
 
 </article>

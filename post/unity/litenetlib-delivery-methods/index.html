@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -156,18 +148,30 @@ if (!doNotTrack) {
 <li>ReliableOrdered</li>
 <li>ReliableSequenced</li>
 </ul>
-<h1 id="unreliable">Unreliable</h1>
-<p><code>Unreliable</code> is standard UDP. There is no guarentee that a packet will be succesfully delivered to it&rsquo;s destination, and if it does, there&rsquo;s a chance more than 1 copy of it could arrive. Unreliable is best for data that needs to be sent over and over as quickly as possible. Player positions in a first person shooter would be a perfect example since they&rsquo;re constantly changing and a lost packet or two doesn&rsquo;t have much effect overall.</p>
-<h1 id="reliableunordered">ReliableUnordered</h1>
-<p><code>ReliableUnordered</code> provides a reliable channel with the smallest performance hit possible. Any packet sent will be delivered, and only 1 copy of it will ever be delivered. The only downside is there&rsquo;s no promise what order the packets are delivered in. If packet A and packet B were sent in order AB they could arrive as AB, or BA. This channel is useful for sending duplicates such as a weapon firing event. It&rsquo;s irrelevant which bullet was fired, we just need to know that a bullet was fired, and ensure that every bullet is accounted for.</p>
-<h1 id="sequenced">Sequenced</h1>
-<p><code>Sequenced</code> is another unreliable delivery method. Unlike unreliable, it ensures only 1 copy of a packet will be delivered (if it is delivered), and the packets always arrive in order.</p>
-<h1 id="reliableordered">ReliableOrdered</h1>
-<p><code>ReliableOrdered</code> is as the name implies, a reliable delivery method that prevents duplicates. It also ensures packets are delivered in the same exact order they&rsquo;re sent. Unlike ReliableUnordered if packet A and packet B were sent in order AB they&rsquo;ll always arrive in order AB. Because of the slight performance hit only use ReliableOrdered if the order is truly a requirement. Otherwise, opt for ReliableUnordered.</p>
-<h1 id="reliablesequenced">ReliableSequenced</h1>
-<p>Last but not least, <code>ReliableSequenced</code>. Similar to <code>ReliableOrdered</code> it ensures packets will always be delivered in order, and no duplicates will be delivered. It does not guarentee that every packet will be delivered, instead only the last packet is guarenteed to be delivered. This would be useful for something such as a countdown timer sending out updates to listeners. It&rsquo;s not the end of the world if a packet is lost during the countdown, but the last packet (timer ending) is important.</p>
-<h1 id="summary">Summary</h1>
-<p>Always be sure to pick the least restrictive delivery method when sending data. The more restrictions the delivery method enforces, the higher performance cost it comes with.</p>
+<div class="anchor-heading">
+  <a href="#unreliable" id="unreliable">#</a>
+  <h1>Unreliable</h1>
+</div><p><code>Unreliable</code> is standard UDP. There is no guarentee that a packet will be succesfully delivered to it&rsquo;s destination, and if it does, there&rsquo;s a chance more than 1 copy of it could arrive. Unreliable is best for data that needs to be sent over and over as quickly as possible. Player positions in a first person shooter would be a perfect example since they&rsquo;re constantly changing and a lost packet or two doesn&rsquo;t have much effect overall.</p>
+<div class="anchor-heading">
+  <a href="#reliableunordered" id="reliableunordered">#</a>
+  <h1>ReliableUnordered</h1>
+</div><p><code>ReliableUnordered</code> provides a reliable channel with the smallest performance hit possible. Any packet sent will be delivered, and only 1 copy of it will ever be delivered. The only downside is there&rsquo;s no promise what order the packets are delivered in. If packet A and packet B were sent in order AB they could arrive as AB, or BA. This channel is useful for sending duplicates such as a weapon firing event. It&rsquo;s irrelevant which bullet was fired, we just need to know that a bullet was fired, and ensure that every bullet is accounted for.</p>
+<div class="anchor-heading">
+  <a href="#sequenced" id="sequenced">#</a>
+  <h1>Sequenced</h1>
+</div><p><code>Sequenced</code> is another unreliable delivery method. Unlike unreliable, it ensures only 1 copy of a packet will be delivered (if it is delivered), and the packets always arrive in order.</p>
+<div class="anchor-heading">
+  <a href="#reliableordered" id="reliableordered">#</a>
+  <h1>ReliableOrdered</h1>
+</div><p><code>ReliableOrdered</code> is as the name implies, a reliable delivery method that prevents duplicates. It also ensures packets are delivered in the same exact order they&rsquo;re sent. Unlike ReliableUnordered if packet A and packet B were sent in order AB they&rsquo;ll always arrive in order AB. Because of the slight performance hit only use ReliableOrdered if the order is truly a requirement. Otherwise, opt for ReliableUnordered.</p>
+<div class="anchor-heading">
+  <a href="#reliablesequenced" id="reliablesequenced">#</a>
+  <h1>ReliableSequenced</h1>
+</div><p>Last but not least, <code>ReliableSequenced</code>. Similar to <code>ReliableOrdered</code> it ensures packets will always be delivered in order, and no duplicates will be delivered. It does not guarentee that every packet will be delivered, instead only the last packet is guarenteed to be delivered. This would be useful for something such as a countdown timer sending out updates to listeners. It&rsquo;s not the end of the world if a packet is lost during the countdown, but the last packet (timer ending) is important.</p>
+<div class="anchor-heading">
+  <a href="#summary" id="summary">#</a>
+  <h1>Summary</h1>
+</div><p>Always be sure to pick the least restrictive delivery method when sending data. The more restrictions the delivery method enforces, the higher performance cost it comes with.</p>
 <table>
 <thead>
 <tr>

@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -147,15 +139,21 @@ if (!doNotTrack) {
     
   </div>
 
-  <h1 id="whats-so-magical-about-magic-strings">What&rsquo;s so Magical About Magic Strings?</h1>
-<p>Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</p>
+  <div class="anchor-heading">
+  <a href="#whats-so-magical-about-magic-strings" id="whats-so-magical-about-magic-strings">#</a>
+  <h1>What&amp;rsquo;s so Magical About Magic Strings?</h1>
+</div><p>Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</p>
 <p>They are often considered an anti-pattern due to how to they introduce the potential for bugs when typos occur, or by the difficulty they create when the need to change a magic string occurs.</p>
 <p>If the need to change a magic string does ever arise, it will require the developer to hunt down each and every use of the string throughout the code base. This is no easy task, especially for larger, or legacy code bases.</p>
-<h1 id="typescript-to-the-rescue">TypeScript to the Rescue</h1>
-<p>TypeScript has a powerful type system that when used properly can improve a developers life seven fold. Personally, I&rsquo;ve come from a C# background, and TypeScript has often felt quirky when dealing with it, but I&rsquo;ve slowly grown to love this.</p>
+<div class="anchor-heading">
+  <a href="#typescript-to-the-rescue" id="typescript-to-the-rescue">#</a>
+  <h1>TypeScript to the Rescue</h1>
+</div><p>TypeScript has a powerful type system that when used properly can improve a developers life seven fold. Personally, I&rsquo;ve come from a C# background, and TypeScript has often felt quirky when dealing with it, but I&rsquo;ve slowly grown to love this.</p>
 <p>One of the capabilities offered by TypeScript is to create types limited to specific instances of strings. This ability can be used to create string based enums that reduce the amount of typing requried by the developer, while at the same time producing code that is clear and concise.</p>
-<h1 id="a-working-example">A Working Example</h1>
-<p>Imagine we were working with objects that represent database columns, and needed an enum to represent the various data types. While we could simply define an enum as follows:</p>
+<div class="anchor-heading">
+  <a href="#a-working-example" id="a-working-example">#</a>
+  <h1>A Working Example</h1>
+</div><p>Imagine we were working with objects that represent database columns, and needed an enum to represent the various data types. While we could simply define an enum as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">DatabaseColumnType</span> {
     Boolean,
     Date,
@@ -174,8 +172,10 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">DatabaseColumn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DatabaseColumn</span>(<span style="color:#e6db74">&#34;Foo&#34;</span>, <span style="color:#ae81ff">1</span>);
 <span style="color:#75715e">//Throws compile time error
 </span></code></pre></div><p>While this may seem seem lazy on the developers end, it does offer us an advantage to produce simple, and highly readable code.</p>
-<h1 id="photo">Photo</h1>
-<p><a href="https://unsplash.com/photos/iMwiPZNX3SI">By Clever Visuals</a></p>
+<div class="anchor-heading">
+  <a href="#photo" id="photo">#</a>
+  <h1>Photo</h1>
+</div><p><a href="https://unsplash.com/photos/iMwiPZNX3SI">By Clever Visuals</a></p>
 
 </article>
 

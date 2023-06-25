@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -153,8 +145,10 @@ if (!doNotTrack) {
   </div>
 
   <p>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the <code>User</code> property on <code>HttpContext</code> is now of type <code>ClaimsPrincipal</code> instead of <code>IPrincipal</code>. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.</p>
-<h2 id="claims">Claims</h2>
-<p>Claims are the foundation behind claims-based authentication (who would have guessed). A claim is simply a piece of information about a subject. A claim does not dictate what a subject can, or cannot do.</p>
+<div class="anchor-heading">
+  <a href="#claims" id="claims">#</a>
+  <h2>Claims</h2>
+</div><p>Claims are the foundation behind claims-based authentication (who would have guessed). A claim is simply a piece of information about a subject. A claim does not dictate what a subject can, or cannot do.</p>
 <blockquote>
 <p>The term &ldquo;subject&rdquo; is used because claims are not restricted to only describing users. Claims can be about an application, service, or device.</p>
 </blockquote>
@@ -183,8 +177,10 @@ if (!doNotTrack) {
 <span style="color:#75715e">// dobClaim.Name == &#34;dob&#34;
 </span><span style="color:#75715e">// dobClaim.Value == &#34;04/20/1969&#34;
 </span><span style="color:#75715e">// dobClaim.ValueType == &#34;Date&#34;
-</span></code></pre></div><h2 id="identities">Identities</h2>
-<p>Claims representing the same subject can be grouped together and placed in a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0"><code>ClaimsIdentity</code></a>.</p>
+</span></code></pre></div><div class="anchor-heading">
+  <a href="#identities" id="identities">#</a>
+  <h2>Identities</h2>
+</div><p>Claims representing the same subject can be grouped together and placed in a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0"><code>ClaimsIdentity</code></a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsIdentity</span> {
   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Name { <span style="color:#66d9ef">get</span>; }
   <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
@@ -203,8 +199,10 @@ if (!doNotTrack) {
 );
 
 <span style="color:#75715e">//userIdentity.IsAuthenticated == true since we passed &#34;Bearer&#34; as AuthenticationType.
-</span></code></pre></div><h2 id="principals">Principals</h2>
-<p>A <code>ClaimsIdentity</code> is convenient for representing a subject via a collection of claims but what if we want to assign more than one identity to a subject? Returning back to our previous example of the API, what would happen if we wanted to also identify the device being used by the user to ensure it&rsquo;s whitelisted? Sure we could add a new Claim with device IP address, or agent string to the user identity, but what if the user accesses the API from more than one device?</p>
+</span></code></pre></div><div class="anchor-heading">
+  <a href="#principals" id="principals">#</a>
+  <h2>Principals</h2>
+</div><p>A <code>ClaimsIdentity</code> is convenient for representing a subject via a collection of claims but what if we want to assign more than one identity to a subject? Returning back to our previous example of the API, what would happen if we wanted to also identify the device being used by the user to ensure it&rsquo;s whitelisted? Sure we could add a new Claim with device IP address, or agent string to the user identity, but what if the user accesses the API from more than one device?</p>
 <p>To handle this use case without duplicating user information we&rsquo;d be best off to create a new identity to represent the device that holds the IP address, and agent string.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">ClaimsIdentity deviceIdentity = <span style="color:#66d9ef">new</span> ClaimsIdentity(
   <span style="color:#66d9ef">new</span> Claim[] {

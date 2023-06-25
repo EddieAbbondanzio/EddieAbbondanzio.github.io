@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -104,6 +94,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -170,8 +162,10 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>But as correct as this solution might be, it doesn&rsquo;t guarantee us job security which is after all the most important principle of good code.</p>
 <p>Time to add a little complexity to ensure no one else will dare touch the code, or try to understand it.</p>
-<h1 id="anatomy-of-a-for-loop">Anatomy of a For Loop</h1>
-<p>Just so we&rsquo;re all on the same page, a for loop is comprised of a statement, and a body.</p>
+<div class="anchor-heading">
+  <a href="#anatomy-of-a-for-loop" id="anatomy-of-a-for-loop">#</a>
+  <h1>Anatomy of a For Loop</h1>
+</div><p>Just so we&rsquo;re all on the same page, a for loop is comprised of a statement, and a body.</p>
 <p>The statement is the portion which sits atop the loop and is within parenthesis. It&rsquo;s divided into three parts. Each of which is separated by a semi-colon.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">for</span>(initializer; condition; iterator) {}
 </code></pre></div><ol>
@@ -182,8 +176,10 @@ if (!doNotTrack) {
 <p>All 3 parts of the statement are optional, and an empty for loop <code>for (; ;) { }</code> will act like an infinite while loop <code>while(1) { }</code>.</p>
 <p>The body is the portion of the loop below the statement. Usually surrounded by curly braces, unless it&rsquo;s one line (as they&rsquo;re optional then). I should also mention that the body is optional too.</p>
 <p>Let&rsquo;s go ahead and start writing our <em>ahem</em> abomination.</p>
-<h1 id="moving-the-domain-logic-into-the-for-statement">Moving the Domain Logic Into the For Statement</h1>
-<p>First off we&rsquo;ve got some domain logic operating inside the for loop body. The ternary that detects if the number is even: <code>i % 2 == 0</code>. Let&rsquo;s go ahead and squeeze it into the for statement because after all that&rsquo;s where it belongs.</p>
+<div class="anchor-heading">
+  <a href="#moving-the-domain-logic-into-the-for-statement" id="moving-the-domain-logic-into-the-for-statement">#</a>
+  <h1>Moving the Domain Logic Into the For Statement</h1>
+</div><p>First off we&rsquo;ve got some domain logic operating inside the for loop body. The ternary that detects if the number is even: <code>i % 2 == 0</code>. Let&rsquo;s go ahead and squeeze it into the for statement because after all that&rsquo;s where it belongs.</p>
 <p>We&rsquo;re going to need an extra variable to hold a <code>isEven</code> flag. But, there&rsquo;s a bit of a problem. C# only allows for defining multiple variables of the same type in one line. So while the following is perfectly valid:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> a = <span style="color:#ae81ff">0</span>, b = <span style="color:#ae81ff">0</span>; i &lt; <span style="color:#ae81ff">10</span>; i++) {}
 </code></pre></div><p>This is not:</p>
@@ -197,8 +193,10 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> (i, isEven) = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>); i &lt; <span style="color:#ae81ff">10</span>; i++, isEven = i % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">0</span>) {
   Console.WriteLine(<span style="color:#e6db74">$&#34;{i} is even: {isEven}&#34;</span>);
 }
-</code></pre></div><h1 id="obfuscating-the-start-and-end">Obfuscating The Start And End</h1>
-<p>I&rsquo;d argue <code>i &lt; 10</code> is too readable. Since the condition just needs to be a boolean we can substitute it with anything we please provided it evaluates to <code>true</code> or <code>false</code>. Which basically makes it a no-brainer to swap it out with a switch expression.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#obfuscating-the-start-and-end" id="obfuscating-the-start-and-end">#</a>
+  <h1>Obfuscating The Start And End</h1>
+</div><p>I&rsquo;d argue <code>i &lt; 10</code> is too readable. Since the condition just needs to be a boolean we can substitute it with anything we please provided it evaluates to <code>true</code> or <code>false</code>. Which basically makes it a no-brainer to swap it out with a switch expression.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> (i, isEven) = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>); i <span style="color:#66d9ef">switch</span> { <span style="color:#ae81ff">10</span> =&gt; <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">_</span> =&gt; <span style="color:#66d9ef">true</span> }; i++, isEven = i % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">0</span>) {
   Console.WriteLine(<span style="color:#e6db74">$&#34;{i} is even: {isEven}&#34;</span>);
 }
@@ -220,8 +218,10 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> (i, isEven) = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>); i <span style="color:#66d9ef">switch</span> { <span style="color:#ae81ff">14</span> * <span style="color:#ae81ff">4</span> =&gt; <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">69</span> * <span style="color:#ae81ff">250</span> / <span style="color:#ae81ff">84</span> =&gt; <span style="color:#ae81ff">8</span> / <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span> =&gt; <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">420</span> =&gt; <span style="color:#ae81ff">7</span> * <span style="color:#ae81ff">6</span> == <span style="color:#ae81ff">92</span>, <span style="color:#ae81ff">_</span> =&gt; <span style="color:#66d9ef">true</span> }; i++, isEven = i % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">0</span>) {
   Console.WriteLine(<span style="color:#e6db74">$&#34;{i} is even: {isEven}&#34;</span>);
 }
-</code></pre></div><h1 id="finishing-up-in-1-line">Finishing Up In 1 Line</h1>
-<p>We&rsquo;re not done yet. Our solution is optimal, but everyone knows that a 1 line solution is <strong>always</strong> better. Right now you&rsquo;re either begging for mercy or thinking there&rsquo;s no way it&rsquo;s possible. Even if we removed the brackets it&rsquo;s still 2 lines.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#finishing-up-in-1-line" id="finishing-up-in-1-line">#</a>
+  <h1>Finishing Up In 1 Line</h1>
+</div><p>We&rsquo;re not done yet. Our solution is optimal, but everyone knows that a 1 line solution is <strong>always</strong> better. Right now you&rsquo;re either begging for mercy or thinking there&rsquo;s no way it&rsquo;s possible. Even if we removed the brackets it&rsquo;s still 2 lines.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> (i, isEven) = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>); i <span style="color:#66d9ef">switch</span> { <span style="color:#ae81ff">14</span> * <span style="color:#ae81ff">4</span> =&gt; <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">69</span> * <span style="color:#ae81ff">250</span> / <span style="color:#ae81ff">84</span> =&gt; <span style="color:#ae81ff">8</span> / <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span> =&gt; <span style="color:#66d9ef">false</span>, <span style="color:#ae81ff">420</span> =&gt; <span style="color:#ae81ff">7</span> * <span style="color:#ae81ff">6</span> == <span style="color:#ae81ff">92</span>, <span style="color:#ae81ff">_</span> =&gt; <span style="color:#66d9ef">true</span> }; i++, isEven = i % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">0</span>)
   Console.WriteLine(<span style="color:#e6db74">$&#34;{i} is even: {isEven}&#34;</span>);
 </code></pre></div><p>But if there&rsquo;s a will there&rsquo;s a way.</p>
@@ -246,11 +246,15 @@ if (!doNotTrack) {
 
 </code></pre></div><p>Here&rsquo;s the self invoking function for those who somehow have trouble reading our work of art.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">new</span> Func&lt;<span style="color:#66d9ef">int</span>, (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">bool</span>)&gt;((i) =&gt; { Console.WriteLine(<span style="color:#e6db74">$&#34;{i} is even: {isEven}&#34;</span>); <span style="color:#66d9ef">return</span> (i + <span style="color:#ae81ff">1</span>, !(i % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">0</span>); }(i)
-</code></pre></div><h1 id="wrapping-up">Wrapping Up</h1>
-<p>We could take things further, but before doing some I&rsquo;d recommend assessing the rankings of your co-workers. If you work alongside a lot of junior devs, it&rsquo;s probably sufficient, but if you work with more senior developers we could always break out a few more tricks. I&rsquo;ll leave this as an exercise for the reader.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#wrapping-up" id="wrapping-up">#</a>
+  <h1>Wrapping Up</h1>
+</div><p>We could take things further, but before doing some I&rsquo;d recommend assessing the rankings of your co-workers. If you work alongside a lot of junior devs, it&rsquo;s probably sufficient, but if you work with more senior developers we could always break out a few more tricks. I&rsquo;ll leave this as an exercise for the reader.</p>
 <p>With everything coded up, and testing good, it&rsquo;s time to commit your masterpiece and send off some requests for code reviews. Come to think of it it&rsquo;s probably about time to head on home as this likely took most the day. Go home and enjoy some brews. Because tomorrow when your boss calls you into his office it&rsquo;s gonna be for that promotion you&rsquo;ve been wanting.</p>
-<h1 id="acknowledgements">Acknowledgements</h1>
-<p>Thank you Chris Cattano for pointing out I had a logic error in the code bits after switching to the self invoking function. The program was incorrectly reporting which numbers were odd. Turns out even I fell prey to the complexity.</p>
+<div class="anchor-heading">
+  <a href="#acknowledgements" id="acknowledgements">#</a>
+  <h1>Acknowledgements</h1>
+</div><p>Thank you Chris Cattano for pointing out I had a logic error in the code bits after switching to the self invoking function. The program was incorrectly reporting which numbers were odd. Turns out even I fell prey to the complexity.</p>
 
 </article>
 

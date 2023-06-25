@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -104,6 +94,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -173,8 +165,10 @@ if (!doNotTrack) {
         <span style="color:#75715e">// And so on...
 </span><span style="color:#75715e"></span>    }
 }
-</code></pre></div><h1 id="enter-the-netpacketprocessor">Enter the <code>NetPacketProcessor</code></h1>
-<p>On the other hand, we could offload some of this logic to the <code>NetPacketProcessor</code> and leave it up to the processor to rebuild our incoming data. This convenience does come with a price though. The <code>NetPacketProcessor</code> will add 64 bits (8 bytes) to the beginning of each message we send. There&rsquo;s no doubt that there are some situations where every bit matters and this may be a deal breaker, but for most applications it&rsquo;s a reasonable price to pay.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#enter-the-netpacketprocessor" id="enter-the-netpacketprocessor">#</a>
+  <h1>Enter the &lt;code&gt;NetPacketProcessor&lt;/code&gt;</h1>
+</div><p>On the other hand, we could offload some of this logic to the <code>NetPacketProcessor</code> and leave it up to the processor to rebuild our incoming data. This convenience does come with a price though. The <code>NetPacketProcessor</code> will add 64 bits (8 bytes) to the beginning of each message we send. There&rsquo;s no doubt that there are some situations where every bit matters and this may be a deal breaker, but for most applications it&rsquo;s a reasonable price to pay.</p>
 <p>Let&rsquo;s define a packet that we want to send over the network.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FooPacket</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> NumberValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
@@ -254,10 +248,14 @@ if (!doNotTrack) {
 <p><a href="images/1.png" target="_blank">
   <img loading="lazy" src="images/1.png" alt=""  />
 </a></p>
-<h1 id="limitations">Limitations</h1>
-<p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
-<h2 id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Bad!
+<div class="anchor-heading">
+  <a href="#limitations" id="limitations">#</a>
+  <h1>Limitations</h1>
+</div><p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
+<div class="anchor-heading">
+  <a href="#properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable" id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">#</a>
+  <h2>Properties must have public getters / setters or classes / structs implement &lt;code&gt;INetSerializable&lt;/code&gt;.</h2>
+</div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Bad!
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BarPacket</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Key { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
 }
@@ -274,8 +272,10 @@ if (!doNotTrack) {
         Key = reader.GetString();
     }
 }
-</code></pre></div><h2 id="nested-types-are-not-supported-the-following-types-for-properties-are-supported">Nested types are not supported. The following types for properties are supported:</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
+</code></pre></div><div class="anchor-heading">
+  <a href="#nested-types-are-not-supported-the-following-types-for-properties-are-supported" id="nested-types-are-not-supported-the-following-types-for-properties-are-supported">#</a>
+  <h2>Nested types are not supported. The following types for properties are supported:</h2>
+</div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">byte sbyte short ushort int uint long ulong float double bool string char IPEndPoint
 byte[] short[] ushort[] int[] uint[] long[] ulong[] float[] double[] bool[] string[]
 </code></pre></div><p>However, there are two workarounds. The first option is to register the nested type with a static <code>Serialize</code> and <code>Deserialize</code> method to parse them. This is useful for types that we do not have control over such as <code>Vector3</code> in Unity.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FakePacket</span> {
@@ -318,8 +318,10 @@ netPacketProcessor.RegisterNestedType(Vector3Utils.Serialize, Vector3Utils.Deser
 
 netPacketProcessor = <span style="color:#66d9ef">new</span> NetPacketProcessor();
 netPacketProcessor.RegisterNestedType&lt;Cat&gt;(() =&gt; <span style="color:#66d9ef">new</span> Cat()); <span style="color:#75715e">// We need to pass the constructor when it&#39;s not a struct.
-</span></code></pre></div><h1 id="source-code">Source Code</h1>
-<script type="application/javascript" src="https://gist.github.com/EddieAbbondanzio/0344b09faaadf5b6adea3ec91c7efebf.js"></script>
+</span></code></pre></div><div class="anchor-heading">
+  <a href="#source-code" id="source-code">#</a>
+  <h1>Source Code</h1>
+</div><script type="application/javascript" src="https://gist.github.com/EddieAbbondanzio/0344b09faaadf5b6adea3ec91c7efebf.js"></script>
 
 
 </article>

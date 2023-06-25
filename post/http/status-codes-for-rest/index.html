@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -147,12 +139,16 @@ if (!doNotTrack) {
     
   </div>
 
-  <h1 id="intro">Intro</h1>
-<p>Hyper Text Transfer Protocol (HTTP) powers the web. It&rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making <em>requests</em> that are sent to servers which then reply back with <em>responses</em>. Only servers can make responses, and only clients can make requests.</p>
+  <div class="anchor-heading">
+  <a href="#intro" id="intro">#</a>
+  <h1>Intro</h1>
+</div><p>Hyper Text Transfer Protocol (HTTP) powers the web. It&rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making <em>requests</em> that are sent to servers which then reply back with <em>responses</em>. Only servers can make responses, and only clients can make requests.</p>
 <p>HTTP also powers many application programming interfaces (APIs). Since HTTP is a stateless protocol, it acts as the perfect medium to promote RESTful design principles. &ldquo;Representational State Transfer (REST) is a software architectural style that defines a set of constraints to be used for creating web services.&rdquo; [1] Simply put, REST is a stateless protocol that assumes all actions can be performed independently of each other, and all data needed to perform each action is included with each request.</p>
 <p>REST was created by Roy Fielding who is one of the principle authors of the HTTP specification (<a href="https://tools.ietf.org/html/rfc2068">RFC-2616</a>). REST APIs are not restricted to using HTTP, but for the rest of this article we will assume so for simplicity.</p>
-<h1 id="apis-need-a-way-to-indicate-errors">APIs Need a Way To Indicate Errors</h1>
-<p>In the perfect world, errors would never occur. Sadly, we live in a far from perfect world, and errors are something we must deal with all the time. These errors can vary from incorrect syntax, to the server has imploded. A well designed API takes these issues into account and handles errors in a uniform, and easy to understand manner.</p>
+<div class="anchor-heading">
+  <a href="#apis-need-a-way-to-indicate-errors" id="apis-need-a-way-to-indicate-errors">#</a>
+  <h1>APIs Need a Way To Indicate Errors</h1>
+</div><p>In the perfect world, errors would never occur. Sadly, we live in a far from perfect world, and errors are something we must deal with all the time. These errors can vary from incorrect syntax, to the server has imploded. A well designed API takes these issues into account and handles errors in a uniform, and easy to understand manner.</p>
 <p>Atop of each HTTP response is what&rsquo;s known as the status-line. The status line contains the HTTP version being used, and the HTTP status code.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTTP" data-lang="HTTP"><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
 Server<span style="color:#f92672">:</span> <span style="color:#ae81ff">Apache</span>
@@ -162,8 +158,10 @@ Hello World!
 
 </code></pre></div><p>In the example request above, 200 is the status code, and OK is the message</p>
 <p>HTTP status codes can be used as a way to convey if a request completed successfully, or errored out. They&rsquo;re the original source of 404 (NOT FOUND) pages, and why servers return 500 INTERNAL ERROR when they become overloaded. HTTP status codes should be used to classify errors, and more info such as an error code, and error message should always be included in the body of the response.</p>
-<h1 id="the-various-types-of-http-status-codes">The Various Types of HTTP Status Codes</h1>
-<p>The first digit of each status code indicate which class it belongs to. The classes are as follows:</p>
+<div class="anchor-heading">
+  <a href="#the-various-types-of-http-status-codes" id="the-various-types-of-http-status-codes">#</a>
+  <h1>The Various Types of HTTP Status Codes</h1>
+</div><p>The first digit of each status code indicate which class it belongs to. The classes are as follows:</p>
 <ul>
 <li>1xx Informational - Transfer protocol related information.</li>
 <li>2xx Success - The request was successful.</li>
@@ -172,15 +170,21 @@ Hello World!
 <li>5xx Server Errors - The request failed due to an error with the server.</li>
 </ul>
 <p>For simplicity sake, RESTful APIs don&rsquo;t typically utilize the full spectrum of HTTP status codes. For those interested, a list of all the available status codes can be found in this excellent <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">MDN article</a>.</p>
-<h2 id="success-status-codes">Success Status Codes</h2>
-<p>Success status codes are used to notify the client that their requested action completed successfully. 200 is the most commonly used status, but if the request was a POST or PUT, then 201 can be used to indicate that the resource was created.</p>
+<div class="anchor-heading">
+  <a href="#success-status-codes" id="success-status-codes">#</a>
+  <h2>Success Status Codes</h2>
+</div><p>Success status codes are used to notify the client that their requested action completed successfully. 200 is the most commonly used status, but if the request was a POST or PUT, then 201 can be used to indicate that the resource was created.</p>
 <p><strong>200 OK</strong> - The request completed successfully.</p>
 <p><strong>201 CREATED</strong> - The request was successful, and a new resource was created.</p>
-<h2 id="redirection-status-codes">Redirection Status Codes</h2>
-<p>These aren&rsquo;t as commonly used by REST APIs but they do have some use. Typically these are used when an API changes it&rsquo;s endpoints, and the developer wants to notify any legacy users of the change.</p>
+<div class="anchor-heading">
+  <a href="#redirection-status-codes" id="redirection-status-codes">#</a>
+  <h2>Redirection Status Codes</h2>
+</div><p>These aren&rsquo;t as commonly used by REST APIs but they do have some use. Typically these are used when an API changes it&rsquo;s endpoints, and the developer wants to notify any legacy users of the change.</p>
 <p><strong>300 MOVED PERMANENTLY</strong> - The endpoint has been changed, and the client needs to use the new one.</p>
-<h2 id="client-error-status-codes">Client Error Status Codes</h2>
-<p>Client error codes are for issues such as invalid syntax, bad authentication, and more. These are used to indicate that the client needs to fix their mistake.</p>
+<div class="anchor-heading">
+  <a href="#client-error-status-codes" id="client-error-status-codes">#</a>
+  <h2>Client Error Status Codes</h2>
+</div><p>Client error codes are for issues such as invalid syntax, bad authentication, and more. These are used to indicate that the client needs to fix their mistake.</p>
 <p><strong>400 BAD REQUEST</strong> - Bad input. Typically used when the body of the request was poorly formed.</p>
 <p><strong>401 UNAUTHORIZED</strong> - Bad, or missing authentication.</p>
 <p><strong>403 FORBIDDEN</strong> - A forbidden resource was requested.</p>
@@ -188,15 +192,21 @@ Hello World!
 <p><strong>405 METHOD NOT FOUND</strong> - The HTTP verb used is not supported.</p>
 <p><strong>409 CONFLICT</strong> - The resource requested to be created is a duplicate, and cannot be created.</p>
 <p><strong>429 TOO MANY REQUESTS</strong> - The client is spamming the server with requests, and has been rate limited.</p>
-<h2 id="server-error-status-codes">Server Error Status Codes</h2>
-<p>These are the worst of the bunch, as they usually mean we can&rsquo;t blame someone else for the issue. They are typically used to indicate that something failed on the server.</p>
+<div class="anchor-heading">
+  <a href="#server-error-status-codes" id="server-error-status-codes">#</a>
+  <h2>Server Error Status Codes</h2>
+</div><p>These are the worst of the bunch, as they usually mean we can&rsquo;t blame someone else for the issue. They are typically used to indicate that something failed on the server.</p>
 <p><strong>500 INTERNAL ERROR</strong> - Something went really wrong.</p>
 <p><strong>502 BAD GATEWAY</strong> - Service is down, or being upgraded.</p>
 <p><strong>503 SERVICE UNAVAILABLE</strong> - Service is overloaded. Try again later.</p>
-<h1 id="conclusion">Conclusion</h1>
-<p>In the end it comes down to the personal preference of the developer designing the API. Some developers prefer to use only a select few status codes, whereas others take advantage of the full spectrum. However you decide to handle errors, be sure to kept it uniform, and predictable.</p>
-<h1 id="sources">Sources</h1>
-<p>[1] Wikipedia contributors. (2019, January 22). Representational state transfer. In Wikipedia, The Free Encyclopedia. Retrieved 23:35, January 29, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Representational_state_transfer&amp;oldid=879684769">https://en.wikipedia.org/w/index.php?title=Representational_state_transfer&amp;oldid=879684769</a></p>
+<div class="anchor-heading">
+  <a href="#conclusion" id="conclusion">#</a>
+  <h1>Conclusion</h1>
+</div><p>In the end it comes down to the personal preference of the developer designing the API. Some developers prefer to use only a select few status codes, whereas others take advantage of the full spectrum. However you decide to handle errors, be sure to kept it uniform, and predictable.</p>
+<div class="anchor-heading">
+  <a href="#sources" id="sources">#</a>
+  <h1>Sources</h1>
+</div><p>[1] Wikipedia contributors. (2019, January 22). Representational state transfer. In Wikipedia, The Free Encyclopedia. Retrieved 23:35, January 29, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Representational_state_transfer&amp;oldid=879684769">https://en.wikipedia.org/w/index.php?title=Representational_state_transfer&amp;oldid=879684769</a></p>
 <p>[Exit photo] By Michael Jasmund on Unsplash
 <a href="https://unsplash.com/photos/t-WxNy6CMyU">https://unsplash.com/photos/t-WxNy6CMyU</a></p>
 

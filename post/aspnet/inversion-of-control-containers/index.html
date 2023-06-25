@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -104,6 +94,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -181,19 +173,27 @@ if (!doNotTrack) {
     }
   }
 }
-</code></pre></div><h1 id="registering-dependencies">Registering Dependencies</h1>
-<p>In order for ASP.NET to be able to resolve a dependency, we need to register it with the IoC container. In older versions of ASP.NET this would be done in <code>global.asax</code>. However, this file is no longer present and the IoC container is now configured in <code>Startup.cs</code>. By default, <code>Startup.cs</code> is located within the root directory of your project. Open it up and locate the following method:</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#registering-dependencies" id="registering-dependencies">#</a>
+  <h1>Registering Dependencies</h1>
+</div><p>In order for ASP.NET to be able to resolve a dependency, we need to register it with the IoC container. In older versions of ASP.NET this would be done in <code>global.asax</code>. However, this file is no longer present and the IoC container is now configured in <code>Startup.cs</code>. By default, <code>Startup.cs</code> is located within the root directory of your project. Open it up and locate the following method:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
 
   }
 </code></pre></div><p>The parameter <code>services</code> of type <code>IServiceCollection</code> is the IoC container we need to set up. When it comes to registering a dependency with the container we have three different lifetimes available: transient, singleton, or scoped.</p>
-<h2 id="transient">Transient</h2>
-<p>Dependencies registered via <code>AddTransient()</code> will return a new instance each time the dependency is resolved. This is useful for lightweight, stateless classes that don&rsquo;t require initialization.</p>
-<h2 id="singleton">Singleton</h2>
-<p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it&rsquo;s resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
-<h2 id="scoped">Scoped</h2>
-<p>Lastly, a scoped dependency registered with <code>AddScoped()</code> will return a new instance per connection (request). For example if Client A made an API request it would be given one instance of the dependency but if Client B made a request it would be given another.</p>
+<div class="anchor-heading">
+  <a href="#transient" id="transient">#</a>
+  <h2>Transient</h2>
+</div><p>Dependencies registered via <code>AddTransient()</code> will return a new instance each time the dependency is resolved. This is useful for lightweight, stateless classes that don&rsquo;t require initialization.</p>
+<div class="anchor-heading">
+  <a href="#singleton" id="singleton">#</a>
+  <h2>Singleton</h2>
+</div><p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it&rsquo;s resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
+<div class="anchor-heading">
+  <a href="#scoped" id="scoped">#</a>
+  <h2>Scoped</h2>
+</div><p>Lastly, a scoped dependency registered with <code>AddScoped()</code> will return a new instance per connection (request). For example if Client A made an API request it would be given one instance of the dependency but if Client B made a request it would be given another.</p>
 <p>None of the three methods accept any parameters, instead the dependency type is passed in via generics. Each method is also overloaded to allow for registering a dependency to it&rsquo;s exact type, or to an interface / abstract class (useful for dependency inversion).</p>
 <p>Continuing on with our example, if we want to register our <code>UserService</code> as a transient we could do so:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#75715e">// This method gets called by the runtime. Use this method to add services to the container.
@@ -205,8 +205,10 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services) {
     services.AddTransient&lt;IUserService, UserService&gt;();
   }
-</code></pre></div><h1 id="resolving-dependencies">Resolving Dependencies</h1>
-<p>We need to make a minor tweak to the constructor of <code>UserController</code> so ASP.NET knows to pass it a dependecy when creating the controller.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#resolving-dependencies" id="resolving-dependencies">#</a>
+  <h1>Resolving Dependencies</h1>
+</div><p>We need to make a minor tweak to the constructor of <code>UserController</code> so ASP.NET knows to pass it a dependecy when creating the controller.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Route(&#34;api/user&#34;)]</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> : BaseController {
   <span style="color:#66d9ef">private</span> IUserService userService;
@@ -223,8 +225,10 @@ if (!doNotTrack) {
 
 <span style="color:#75715e">//Bad
 </span><span style="color:#75715e"></span>services.AddTransient&lt;UserService&gt;();
-</code></pre></div><h1 id="nested-dependencies">Nested Dependencies</h1>
-<p>The IoC container provided by ASP.NET supports nested dependencies. If our example of the <code>UserController</code> and <code>UserService</code> from earlier was a standard N-Tier structured project, there&rsquo;s a good chance our <code>UserService</code> needs some kind of way to interact with the data persistance layer. In a project with no objet relational mapping (ORM) library this would typically be a <code>UserRepo</code> to allow for CRUD (Create, Read, Update, and Delete) actions of users in the database.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#nested-dependencies" id="nested-dependencies">#</a>
+  <h1>Nested Dependencies</h1>
+</div><p>The IoC container provided by ASP.NET supports nested dependencies. If our example of the <code>UserController</code> and <code>UserService</code> from earlier was a standard N-Tier structured project, there&rsquo;s a good chance our <code>UserService</code> needs some kind of way to interact with the data persistance layer. In a project with no objet relational mapping (ORM) library this would typically be a <code>UserRepo</code> to allow for CRUD (Create, Read, Update, and Delete) actions of users in the database.</p>
 <p>To ensure we keep the layers of the project loosely-coupled we wouldn&rsquo;t want the <code>UserService</code> to have to create it&rsquo;s own <code>UserRepo</code> instance. Instead we would want to code against a <code>IUserRepo</code> interface and pass the instance of the repo into the service via it&rsquo;s constructor.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> {
   <span style="color:#66d9ef">private</span> IUserRepo userRepo;
@@ -250,8 +254,10 @@ if (!doNotTrack) {
     services.AddTransient&lt;IUserService, UserService&gt;();
   }
 </code></pre></div><p>And now the IoC container will correctly resolve our <code>UserService</code> dependency and give it an instance of the <code>UserRepo</code>.</p>
-<h1 id="3rd-party-ioc-containers">3rd Party IoC Containers</h1>
-<p>While the IoC container provided by ASP.NET should suffice for most uses, it does have some drawbacks. As noted by the <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement">official documentation</a> it lacks the following features:</p>
+<div class="anchor-heading">
+  <a href="#3rd-party-ioc-containers" id="3rd-party-ioc-containers">#</a>
+  <h1>3rd Party IoC Containers</h1>
+</div><p>While the IoC container provided by ASP.NET should suffice for most uses, it does have some drawbacks. As noted by the <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement">official documentation</a> it lacks the following features:</p>
 <ul>
 <li>Property injection</li>
 <li>Injection based on name</li>

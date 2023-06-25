@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -147,8 +139,10 @@ if (!doNotTrack) {
     
   </div>
 
-  <h2 id="what-are-they">What are they?</h2>
-<p>While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&rsquo;ve likely used it yourself in the past and just didn&rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</p>
+  <div class="anchor-heading">
+  <a href="#what-are-they" id="what-are-they">#</a>
+  <h2>What are they?</h2>
+</div><p>While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&rsquo;ve likely used it yourself in the past and just didn&rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.</p>
 <p>Dependency inversion sounds similar but is a slightly different principle. In simple terms, dependency inversion prevents high level modules from relying upon low level modules through the use of an abstraction. This inverts the dependency such that the higher level class no longer relies upon a concrete implementation, and can utilize any resource that complies with the dependency contract defined through the abstraction.</p>
 <p>Dependency injection comes in three different flavors:</p>
 <ul>
@@ -156,12 +150,18 @@ if (!doNotTrack) {
 <li>Method injection</li>
 <li>Property injection</li>
 </ul>
-<h2 id="constructor-injection">Constructor injection</h2>
-<p>Constructor injection is where the dependency is passed to the dependent class directly through it&rsquo;s constructor. This method should be used when the dependent is reliant upon the dependency in such a way that the dependent cannot function without it.</p>
-<h2 id="method--property-injection">Method / Property injection</h2>
-<p>Since these two are similar in nature we&rsquo;ll combine them. Method injection is when the dependency is passed to the dependent class via a method. Property injection on the other hand, is where the dependency is injected via a setter property on the dependent. These should be used when a class has a dependency but isn&rsquo;t fully reliant upon it. The dependent class should be able to still function in some manner without it.</p>
-<h2 id="a-working-example">A Working Example</h2>
-<p>Imagine we are designing an <code>EmailInbox</code> that needs to be able to send and receive emails. The <code>EmailInbox</code> will depend on an <code>EmailService</code> for communicating with the network.</p>
+<div class="anchor-heading">
+  <a href="#constructor-injection" id="constructor-injection">#</a>
+  <h2>Constructor injection</h2>
+</div><p>Constructor injection is where the dependency is passed to the dependent class directly through it&rsquo;s constructor. This method should be used when the dependent is reliant upon the dependency in such a way that the dependent cannot function without it.</p>
+<div class="anchor-heading">
+  <a href="#method--property-injection" id="method--property-injection">#</a>
+  <h2>Method / Property injection</h2>
+</div><p>Since these two are similar in nature we&rsquo;ll combine them. Method injection is when the dependency is passed to the dependent class via a method. Property injection on the other hand, is where the dependency is injected via a setter property on the dependent. These should be used when a class has a dependency but isn&rsquo;t fully reliant upon it. The dependent class should be able to still function in some manner without it.</p>
+<div class="anchor-heading">
+  <a href="#a-working-example" id="a-working-example">#</a>
+  <h2>A Working Example</h2>
+</div><p>Imagine we are designing an <code>EmailInbox</code> that needs to be able to send and receive emails. The <code>EmailInbox</code> will depend on an <code>EmailService</code> for communicating with the network.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
         <span style="color:#66d9ef">public</span> List&lt;Email&gt; CheckForEmails() {
             <span style="color:#75715e">//Non-important implementation...

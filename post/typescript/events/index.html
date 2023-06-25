@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -147,8 +139,10 @@ if (!doNotTrack) {
     
   </div>
 
-  <h1 id="intro">Intro</h1>
-<p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
+  <div class="anchor-heading">
+  <a href="#intro" id="intro">#</a>
+  <h1>Intro</h1>
+</div><p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
 <p>Polling in Computer Science is &ldquo;the process where the computer or controlling device waits for an external device to check for its readiness or state.&rdquo; [1] It&rsquo;s often used for low level applications such as listening for incoming data from the network, or interacting with an IO device.</p>
 <p>We could represent a very basic form of polling from a network as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
@@ -157,8 +151,10 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  }
 }
 </code></pre></div><p>Since the network doesn&rsquo;t &ldquo;announce&rdquo; when data comes in, we have to manually check it over and over again via the <code>network.hasData()</code> conditional. Polling can be a costly operation depending on how often it occurs, and should only be used when there are no other options. Fortunately, for most problems we can take advantage of events to write reactive code that only executes when needed.</p>
-<h1 id="enter-typescript">Enter TypeScript</h1>
-<p>TypeScript may not support events directly out of the box, but that doesn&rsquo;t mean we can&rsquo;t create our own. We&rsquo;ll start off by defining a type to represent event handlers that can subscribe to events.</p>
+<div class="anchor-heading">
+  <a href="#enter-typescript" id="enter-typescript">#</a>
+  <h1>Enter TypeScript</h1>
+</div><p>TypeScript may not support events directly out of the box, but that doesn&rsquo;t mean we can&rsquo;t create our own. We&rsquo;ll start off by defining a type to represent event handlers that can subscribe to events.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * Event handler that can subscribe to a dispatcher.
 </span><span style="color:#75715e"> */</span>
@@ -231,8 +227,10 @@ if (!doNotTrack) {
             <span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">event</span>);
         }
     }
-</code></pre></div><h1 id="example">Example</h1>
-<p>Imagine we we&rsquo;re working on a login form that accepts an input of an email, and password. The form needs to notify the parent page when the user hits the login button so a request can be sent off to the server.</p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#example" id="example">#</a>
+  <h1>Example</h1>
+</div><p>Imagine we we&rsquo;re working on a login form that accepts an input of an email, and password. The form needs to notify the parent page when the user hits the login button so a request can be sent off to the server.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">UserCredentials</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> };
 
     <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
@@ -251,10 +249,14 @@ if (!doNotTrack) {
   <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;john.smith@mail.com&#34;</span>,
   <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>
 });
-</code></pre></div><h2 id="sources">Sources</h2>
-<p>[1] Wikipedia contributors. (2018, June 3). Polling (computer science). In Wikipedia, The Free Encyclopedia. Retrieved 12:12, January 22, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740">https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740</a></p>
-<h2 id="photo">Photo</h2>
-<p><a href="https://unsplash.com/photos/yV-an6f_rqo">By Lance Anderson</a></p>
+</code></pre></div><div class="anchor-heading">
+  <a href="#sources" id="sources">#</a>
+  <h2>Sources</h2>
+</div><p>[1] Wikipedia contributors. (2018, June 3). Polling (computer science). In Wikipedia, The Free Encyclopedia. Retrieved 12:12, January 22, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740">https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&amp;oldid=844171740</a></p>
+<div class="anchor-heading">
+  <a href="#photo" id="photo">#</a>
+  <h2>Photo</h2>
+</div><p><a href="https://unsplash.com/photos/yV-an6f_rqo">By Lance Anderson</a></p>
 
 </article>
 

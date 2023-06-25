@@ -12,19 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7ecc86afb56bd02bd5fd6c39a8dfc1d8b9a1edaec7dd390f8ac9b52cfea86bad.css" integrity="sha256-fsyGr7Vr0CvV/Ww5qN/B2Lmh7a7H3TkPism1LP6oa60=" media="screen">
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-128571017-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.a02df88ebb0922827388d4dde406c2ad3156372ea14742f06061d1911d305f3b.css" integrity="sha256-oC34jrsJIoJziNTd5AbCrTFWNy6hR0LwYGHRkR0wXzs=" media="screen">
 
 </head>
 
@@ -52,6 +40,8 @@ if (!doNotTrack) {
         <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
       </div>
     </div>
@@ -105,6 +95,8 @@ if (!doNotTrack) {
         
         <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
         
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
       </div>
     </div>
      
@@ -147,19 +139,25 @@ if (!doNotTrack) {
     
   </div>
 
-  <h1 id="where-ive-been-and-where-im-heading">Where I&rsquo;ve Been, and Where I&rsquo;m Heading</h1>
-<p>I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects. During my adventure I also picked up TypeScript and dived into the intriguing world of NodeJS.</p>
+  <div class="anchor-heading">
+  <a href="#where-ive-been-and-where-im-heading" id="where-ive-been-and-where-im-heading">#</a>
+  <h1>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading</h1>
+</div><p>I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects. During my adventure I also picked up TypeScript and dived into the intriguing world of NodeJS.</p>
 <p>NodeJS was an interesting experience coming from C#. I never really understood async well until getting into Node, and let&rsquo;s just say it was a little rough getting started. Promises were another concept I had never dealt with before but honestly they can produce some elegant solutions. Typescript also helps keep one from entering the dreaded call back hell thanks to it&rsquo;s async and await features.</p>
 <p>But anyways that enough rambling. I want to talk about the progress of No Mans Blocks. For anyone who is new to my blog, No Mans Blocks is a voxel first person shooter multiplayer game I&rsquo;ve been working on in my spare time. It&rsquo;s built in Unity and uses a custom voxel engine I like to call Voxelated. My vision for this project is to develop a game akin to the Ace of Spades beta before Jagex took over.</p>
-<h2 id="network-set-up">Network Set Up</h2>
-<p>These past two weeks I&rsquo;ve been working on building a master server. The master server will be used as an account server, and used by game servers to validate users are who they claim to be. Game servers can be ran by anyone as the master server is only used to prevent malicious users from pretending to be someone they aren&rsquo;t. Here&rsquo;s a poorly drawn diagram of the network model.</p>
+<div class="anchor-heading">
+  <a href="#network-set-up" id="network-set-up">#</a>
+  <h2>Network Set Up</h2>
+</div><p>These past two weeks I&rsquo;ve been working on building a master server. The master server will be used as an account server, and used by game servers to validate users are who they claim to be. Game servers can be ran by anyone as the master server is only used to prevent malicious users from pretending to be someone they aren&rsquo;t. Here&rsquo;s a poorly drawn diagram of the network model.</p>
 <p><a href="images/1.jpg" target="_blank">
   <img loading="lazy" src="images/1.jpg" alt=""  />
 </a></p>
 <p>Whenever a user first logs in the client will send a login request to the master server. The master server will then verify their credentials against the database and return back a json web token (JWT) and a unique login id if their username and password were valid. The values returned from the master server will be saved by the client for later on when they finally join a match. Game servers are responsible for running game matches. When a client wishes to join a match they will send their username and login id to the game server. The game server will then check with the master server to verify the client is who they claim to be. If the client is legitimate, the client is accepted, otherwise their kicked.</p>
 <p>This set up protects the user&rsquo;s password from having to be sent to each game server. The JWT the client recieves will be stored in the config file of the game so they can re-login later on without having to re-enter their username and password each time. JWTs have a life span of 6 months, but will be continually rolling as each one will only be valid for one login. Passwords are salted and hashed before being stored in the database.</p>
-<h2 id="the-master-server">The Master Server</h2>
-<p>Let&rsquo;s talk about the design details for those interested in software design. The tech stack of the master server is as follows:</p>
+<div class="anchor-heading">
+  <a href="#the-master-server" id="the-master-server">#</a>
+  <h2>The Master Server</h2>
+</div><p>Let&rsquo;s talk about the design details for those interested in software design. The tech stack of the master server is as follows:</p>
 <ul>
 <li>NodeJS</li>
 <li>MySQL</li>
