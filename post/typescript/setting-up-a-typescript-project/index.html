@@ -12,7 +12,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.6431904c316ae0b980d65bd42c6d77fae91ffa39e59532f7eaa3d08199571caf.css" integrity="sha256-ZDGQTDFq4LmA1lvULG13&#43;ukf&#43;jnllTL36qPQgZlXHK8=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.b1521db57baf3e5cb3575dbda9da74620aaa391fe45c8ffe3b45e1fb62a26fbf.css" integrity="sha256-sVIdtXuvPlyzV129qdp0YgqqOR/kXI/&#43;O0Xh&#43;2Kib78=" media="screen">
 
 </head>
 
@@ -148,75 +148,111 @@
   <a href="#steps" id="steps">#</a>
   <h1>Steps</h1>
 </div><p>1 - Create a new folder to hold the project. Then open up a command prompt and navigate to the newly created folder using the <code>cd</code> command. For this example we&rsquo;ll be working in a <code>test-project</code> folder.
+
+
 <div class="image">
   <a href="images/1.png" target="_blank">
-    <img loading="lazy" src="images/1.png" alt=""  />
+    <img loading="lazy" src="images/1.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>2 - Run the standard node initialization command <code>npm init</code> or if you want to accept the defaults for the questionnaire <code>npm init -y</code>
+
+
 <div class="image">
   <a href="images/2.png" target="_blank">
-    <img loading="lazy" src="images/2.png" alt=""  />
+    <img loading="lazy" src="images/2.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>3 - Create two folders (<code>dist</code>, and <code>src</code>) within the project directory. The <code>dist</code> folder will be used to store our transpiled JavaScript files, and the <code>src</code> folder will hold all our TypeScript files. It&rsquo;s in your best interest to keep the two seperated or else things will become cluttered fast. The project structure should now be:
+
+
 <div class="image">
   <a href="images/3.png" target="_blank">
-    <img loading="lazy" src="images/3.png" alt=""  />
+    <img loading="lazy" src="images/3.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>4 - Open up the <code>src</code> folder and create a new <code>index.ts</code> file. This will be our very first TypeScript file.
+
+
 <div class="image">
   <a href="images/4.png" target="_blank">
-    <img loading="lazy" src="images/4.png" alt=""  />
+    <img loading="lazy" src="images/4.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>5 - Open up <code>index.ts</code>, and write a classic hello world line. Save it, and close out.
+
+
 <div class="image">
   <a href="images/5.png" target="_blank">
-    <img loading="lazy" src="images/5.png" alt=""  />
+    <img loading="lazy" src="images/5.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>6 - Now we need to install TypeScript globally. <code>npm install typescript -g</code>
+
+
 <div class="image">
   <a href="images/6.png" target="_blank">
-    <img loading="lazy" src="images/6.png" alt=""  />
+    <img loading="lazy" src="images/6.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>7 - With TypeScript installed, we can run the init command: <code>tsc --init</code>
+
+
 <div class="image">
   <a href="images/7.png" target="_blank">
-    <img loading="lazy" src="images/7.png" alt=""  />
+    <img loading="lazy" src="images/7.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>8 - You should see a tsconfig.json file in the project directory. Go ahead and open it up. We&rsquo;ll need to un-comment the <code>outDir</code> and <code>rootDir</code> line. Then fill them out with the following values:
+
+
 <div class="image">
   <a href="images/8.png" target="_blank">
-    <img loading="lazy" src="images/8.png" alt=""  />
+    <img loading="lazy" src="images/8.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>9 - Switch over to <code>package.json</code> and add a build command, and start command.
+
+
 <div class="image">
   <a href="images/9.png" target="_blank">
-    <img loading="lazy" src="images/9.png" alt=""  />
+    <img loading="lazy" src="images/9.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>10 - With everything set up we can build the project. Enter <code>npm run build</code> in the command prompt.
+
+
 <div class="image">
   <a href="images/10.png" target="_blank">
-    <img loading="lazy" src="images/10.png" alt=""  />
+    <img loading="lazy" src="images/10.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>If things went correctly it won&rsquo;t print out anything, but we can see a new .js file under <code>dist</code>.
+
+
 <div class="image">
   <a href="images/10b.png" target="_blank">
-    <img loading="lazy" src="images/10b.png" alt=""  />
+    <img loading="lazy" src="images/10b.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>11 - Finally we can run it via the <code>npm start</code> command.
+
+
 <div class="image">
   <a href="images/11.png" target="_blank">
-    <img loading="lazy" src="images/11.png" alt=""  />
+    <img loading="lazy" src="images/11.png" alt="" title="" 
+      max-width="800" max-height="600"  />
   </a>
 </div></p>
 <p>Success! The project runs our JavaScript file that we transpiled from TypeScript. From here I recommend checking out some of the settings available in the <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig</a> file. This tutorial is merely skimming the surface of TypeScript, but should be enough to help get your feet wet. Happy coding!</p>
