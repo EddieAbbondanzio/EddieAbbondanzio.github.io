@@ -167,7 +167,7 @@
 }
 </code></pre></div><div class="anchor-heading">
   <a href="#enter-the-netpacketprocessor" id="enter-the-netpacketprocessor">#</a>
-  <h1>Enter the &lt;code&gt;NetPacketProcessor&lt;/code&gt;</h1>
+  <h1>Enter the <code>NetPacketProcessor</code></h1>
 </div><p>On the other hand, we could offload some of this logic to the <code>NetPacketProcessor</code> and leave it up to the processor to rebuild our incoming data. This convenience does come with a price though. The <code>NetPacketProcessor</code> will add 64 bits (8 bytes) to the beginning of each message we send. There&rsquo;s no doubt that there are some situations where every bit matters and this may be a deal breaker, but for most applications it&rsquo;s a reasonable price to pay.</p>
 <p>Let&rsquo;s define a packet that we want to send over the network.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FooPacket</span> {
@@ -249,8 +249,8 @@
 
 <div class="image">
   <a href="images/1.png" target="_blank">
-    <img loading="lazy" src="images/1.png" alt="" title="" 
-      max-width="1920" max-height="1007"  />
+    <img loading="lazy" src="images/1.png" alt="" title=""
+       max-width="1920" max-height="1007"  />
   </a>
 </div></p>
 <div class="anchor-heading">
@@ -259,7 +259,7 @@
 </div><p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
 <div class="anchor-heading">
   <a href="#properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable" id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">#</a>
-  <h2>Properties must have public getters / setters or classes / structs implement &lt;code&gt;INetSerializable&lt;/code&gt;.</h2>
+  <h2>Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>
 </div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Bad!
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BarPacket</span> {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Key { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }

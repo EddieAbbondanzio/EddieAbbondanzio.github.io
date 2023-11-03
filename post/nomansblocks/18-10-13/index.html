@@ -141,7 +141,7 @@
 
   <div class="anchor-heading">
   <a href="#where-ive-been-and-where-im-heading" id="where-ive-been-and-where-im-heading">#</a>
-  <h1>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading</h1>
+  <h1>Where I&rsquo;ve Been, and Where I&rsquo;m Heading</h1>
 </div><p>I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects. During my adventure I also picked up TypeScript and dived into the intriguing world of NodeJS.</p>
 <p>NodeJS was an interesting experience coming from C#. I never really understood async well until getting into Node, and let&rsquo;s just say it was a little rough getting started. Promises were another concept I had never dealt with before but honestly they can produce some elegant solutions. Typescript also helps keep one from entering the dreaded call back hell thanks to it&rsquo;s async and await features.</p>
 <p>But anyways that enough rambling. I want to talk about the progress of No Mans Blocks. For anyone who is new to my blog, No Mans Blocks is a voxel first person shooter multiplayer game I&rsquo;ve been working on in my spare time. It&rsquo;s built in Unity and uses a custom voxel engine I like to call Voxelated. My vision for this project is to develop a game akin to the Ace of Spades beta before Jagex took over.</p>
@@ -153,8 +153,8 @@
 
 <div class="image">
   <a href="images/1.jpg" target="_blank">
-    <img loading="lazy" src="images/1.jpg" alt="" title="" 
-      max-width="640" max-height="476"  />
+    <img loading="lazy" src="images/1.jpg" alt="" title=""
+       max-width="640" max-height="476"  />
   </a>
 </div></p>
 <p>Whenever a user first logs in the client will send a login request to the master server. The master server will then verify their credentials against the database and return back a json web token (JWT) and a unique login id if their username and password were valid. The values returned from the master server will be saved by the client for later on when they finally join a match. Game servers are responsible for running game matches. When a client wishes to join a match they will send their username and login id to the game server. The game server will then check with the master server to verify the client is who they claim to be. If the client is legitimate, the client is accepted, otherwise their kicked.</p>
@@ -174,8 +174,8 @@
 
 <div class="image">
   <a href="images/2.jpg" target="_blank">
-    <img loading="lazy" src="images/2.jpg" alt="" title="" 
-      max-width="640" max-height="480"  />
+    <img loading="lazy" src="images/2.jpg" alt="" title=""
+       max-width="640" max-height="480"  />
   </a>
 </div></p>
 <p>The server layer only handles incoming requests. It does not know any of the underlying logic, and simply redirects user requests to their corresponding logic handler. Once the business logic has finished it&rsquo;s job the server layer will build and return back a response to the request.</p>
