@@ -464,40 +464,40 @@ My Cherokee is rusty, has a laundry list of issues, gets 17 MPG on the good days
       <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/await-promise-all/</guid>
-      <description>I&amp;rsquo;m a big fan of the async await syntax in ES2017. In my opionion it just feels a lot more natural than and then and then and then&amp;hellip;. I digress. I&amp;rsquo;ll keep this one short.</description>
+      <description>I&amp;rsquo;m a big fan of the async await syntax in ES2017. In my opinion it just feels a lot more natural than and then and then and then&amp;hellip;. I digress. I&amp;rsquo;ll keep this one short.</description>
     </item>
     
     <item>
       <title>Unity - LiteNetLib&#39;s Delivery Methods</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</link>
-      <pubDate>Thu, 14 Nov 2019 21:31:00 +0000</pubDate>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</guid>
       <description>While LiteNetLib may run on UDP (User Datagram Protocol) which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &amp;ldquo;reliability&amp;rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).</description>
     </item>
     
     <item>
-      <title>Unity - How to Send Data With LiteNetLib</title>
-      <link>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</link>
-      <pubDate>Wed, 13 Nov 2019 19:04:00 +0000</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</guid>
-      <description>Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.</description>
-    </item>
-    
-    <item>
       <title>Unity - How to Create a Basic Server / Client With LiteNetLib</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</link>
-      <pubDate>Wed, 13 Nov 2019 06:10:00 +0000</pubDate>
+      <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</guid>
       <description>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take.</description>
     </item>
     
     <item>
+      <title>Unity - How to Send Data With LiteNetLib</title>
+      <link>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</link>
+      <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</guid>
+      <description>Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.</description>
+    </item>
+    
+    <item>
       <title>Unity - How to Set Up LiteNetLib</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-setup/</link>
-      <pubDate>Tue, 12 Nov 2019 21:01:01 -0400</pubDate>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
       <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
@@ -507,7 +507,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
       <link>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
-      <pubDate>Mon, 14 Oct 2019 14:50:42 -0400</pubDate>
+      <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
       <description>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal.</description>
@@ -516,7 +516,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>ASP.NET Core - Inversion of Control Container</title>
       <link>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</link>
-      <pubDate>Sat, 29 Jun 2019 14:50:42 -0400</pubDate>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
       <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</description>
@@ -534,7 +534,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>WorkStation - More RAM</title>
       <link>https://eddieabbondanz.io/post/laptop/more-ram/</link>
-      <pubDate>Fri, 15 Feb 2019 21:17:42 -0400</pubDate>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/laptop/more-ram/</guid>
       <description># Mo&#39; RAM, Mo&#39; Problems I use my laptop for a ton of software development. I&amp;rsquo;ve been working on launching a SaaS and I often need to have a development build of the backend running along with the frontend.</description>
@@ -543,7 +543,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>XJ Build - 02/03/19</title>
       <link>https://eddieabbondanz.io/post/xj/19-02-03/</link>
-      <pubDate>Sun, 03 Feb 2019 17:28:42 -0400</pubDate>
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/xj/19-02-03/</guid>
       <description>The Cherokee strikes again. A couple weeks back when my exhaust snapped just before the catalytic converter I noticed my muffler had a minor leak. It wasn&amp;rsquo;t anything major and wasn&amp;rsquo;t loud so I figured I could probably just run it till spring and deal with it when it was warmer out.</description>
@@ -552,7 +552,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>TypeScript - Interpolated Strings</title>
       <link>https://eddieabbondanz.io/post/typescript/interpolated-strings/</link>
-      <pubDate>Fri, 01 Feb 2019 16:52:42 -0400</pubDate>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/interpolated-strings/</guid>
       <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed.</description>
@@ -561,16 +561,16 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>HTTP Status Codes For a RESTful API</title>
       <link>https://eddieabbondanz.io/post/http/status-codes-for-rest/</link>
-      <pubDate>Tue, 29 Jan 2019 18:29:29 -0400</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/http/status-codes-for-rest/</guid>
-      <description># Intro Hyper Text Transfer Protocol (HTTP) powers the web. It&amp;rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS.</description>
+      <description>Hyper Text Transfer Protocol (HTTP) powers the web. It&amp;rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS.</description>
     </item>
     
     <item>
       <title>XJ Build - 01/26/19</title>
       <link>https://eddieabbondanz.io/post/xj/19-01-26/</link>
-      <pubDate>Sat, 26 Jan 2019 16:51:42 -0400</pubDate>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/xj/19-01-26/</guid>
       <description>I&amp;rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership.</description>
@@ -579,25 +579,25 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>HTTP Cookies</title>
       <link>https://eddieabbondanz.io/post/http/cookies/</link>
-      <pubDate>Thu, 24 Jan 2019 18:37:24 -0400</pubDate>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/http/cookies/</guid>
-      <description># What Are They? HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained.</description>
+      <description>HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained.</description>
     </item>
     
     <item>
       <title>TypeScript - Events</title>
       <link>https://eddieabbondanz.io/post/typescript/events/</link>
-      <pubDate>Mon, 21 Jan 2019 18:37:24 -0400</pubDate>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/events/</guid>
-      <description># Intro If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end.</description>
+      <description>If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end.</description>
     </item>
     
     <item>
       <title>TypeScript - Taking The Magic Out of Magic Strings</title>
       <link>https://eddieabbondanz.io/post/typescript/magic-strings/</link>
-      <pubDate>Sat, 05 Jan 2019 09:53:42 -0400</pubDate>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/magic-strings/</guid>
       <description># What&amp;rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</description>
@@ -606,16 +606,16 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>TypeScript - How To Set Up A New Project</title>
       <link>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</link>
-      <pubDate>Mon, 26 Nov 2018 06:57:42 -0400</pubDate>
+      <pubDate>Mon, 26 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</guid>
-      <description># Summary For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&amp;rsquo;ll never go back.</description>
+      <description>For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&amp;rsquo;ll never go back.</description>
     </item>
     
     <item>
       <title>Software Design - Marker Interfaces</title>
       <link>https://eddieabbondanz.io/post/software-design/marker-interfaces/</link>
-      <pubDate>Fri, 02 Nov 2018 05:12:42 -0400</pubDate>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/marker-interfaces/</guid>
       <description># What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</description>
@@ -624,7 +624,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Software Design - Magic Numbers</title>
       <link>https://eddieabbondanz.io/post/software-design/magic-numbers/</link>
-      <pubDate>Mon, 29 Oct 2018 19:16:42 -0400</pubDate>
+      <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/magic-numbers/</guid>
       <description># What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;.</description>
@@ -633,16 +633,16 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>XJ Build - 10/26/18</title>
       <link>https://eddieabbondanz.io/post/xj/18-10-26/</link>
-      <pubDate>Fri, 26 Oct 2018 16:51:42 -0400</pubDate>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/xj/18-10-26/</guid>
-      <description># Finishing Up With winter approaching fast, and my Civic only having summer tires I needed to hurry up and finish the Cherokee. The Civic was also suffering from a stuck open thermostat that ensured the engine temperature never reached operating temp, and my heat was always cold.</description>
+      <description>With winter approaching fast, and my Civic only having summer tires I needed to hurry up and finish the Cherokee. The Civic was also suffering from a stuck open thermostat that ensured the engine temperature never reached operating temp, and my heat was always cold.</description>
     </item>
     
     <item>
       <title>XJ Build - 10/21/18</title>
       <link>https://eddieabbondanz.io/post/xj/18-10-21/</link>
-      <pubDate>Sun, 21 Oct 2018 16:51:42 -0400</pubDate>
+      <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/xj/18-10-21/</guid>
       <description># Patching Holes This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about cutting out and welding in a new rocker panel.</description>
@@ -651,7 +651,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Software Design - Dependency Injection and Inversion</title>
       <link>https://eddieabbondanz.io/post/software-design/dependency-injection/</link>
-      <pubDate>Thu, 18 Oct 2018 06:34:42 -0400</pubDate>
+      <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
       <description># What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name.</description>
@@ -660,7 +660,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Software Design - Unit Tests vs Integration Tests</title>
       <link>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</link>
-      <pubDate>Mon, 15 Oct 2018 05:16:42 -0400</pubDate>
+      <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
       <description># Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.</description>
@@ -669,7 +669,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>No Mans Blocks - 10/13/2018</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</link>
-      <pubDate>Sat, 13 Oct 2018 15:05:42 -0400</pubDate>
+      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
       <description># Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone.</description>
@@ -678,43 +678,43 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Software Design - Validator Pattern</title>
       <link>https://eddieabbondanz.io/post/software-design/validator-pattern/</link>
-      <pubDate>Wed, 10 Oct 2018 05:16:42 -0400</pubDate>
+      <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/validator-pattern/</guid>
-      <description># Validating Objects Based on Context It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
-    </item>
-    
-    <item>
-      <title>XJ Build - 10/8/18</title>
-      <link>https://eddieabbondanz.io/post/xj/18-10-08/</link>
-      <pubDate>Mon, 08 Oct 2018 17:22:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/xj/18-10-08/</guid>
-      <description># Passenger side rocker replacement This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.</description>
+      <description>It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
     </item>
     
     <item>
       <title>My Work Station 2.0</title>
       <link>https://eddieabbondanz.io/post/misc/desk2-0/</link>
-      <pubDate>Mon, 08 Oct 2018 15:22:42 -0400</pubDate>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/misc/desk2-0/</guid>
-      <description># Going all out This post is a successor to my first attempt at [building a standing desk] ( /post/misc/desk/). Back during college when I built my first desk I didn&amp;rsquo;t have much of a budget since it was a spur of the moment decision.</description>
+      <description>This post is a successor to my first attempt at [building a standing desk] ( /post/misc/desk/). Back during college when I built my first desk I didn&amp;rsquo;t have much of a budget since it was a spur of the moment decision.</description>
+    </item>
+    
+    <item>
+      <title>XJ Build - 10/8/18</title>
+      <link>https://eddieabbondanz.io/post/xj/18-10-08/</link>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/xj/18-10-08/</guid>
+      <description>This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the rusty roof.</description>
     </item>
     
     <item>
       <title>XJ Build - 9/03/18</title>
       <link>https://eddieabbondanz.io/post/xj/18-09-03/</link>
-      <pubDate>Sun, 02 Sep 2018 12:57:42 -0400</pubDate>
+      <pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/xj/18-09-03/</guid>
-      <description># Repainting the Cherokee&amp;rsquo;s roof I&amp;rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&amp;rsquo;t be beat.</description>
+      <description>I&amp;rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of parts really can&amp;rsquo;t be beat.</description>
     </item>
     
     <item>
       <title>Civic Build - 6/23/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-06-23/</link>
-      <pubDate>Sat, 23 Jun 2018 12:57:42 -0400</pubDate>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-06-23/</guid>
       <description># Ten months of work finally pays off I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait.</description>
@@ -723,7 +723,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Civic Build - 6/9/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-06-09/</link>
-      <pubDate>Sat, 09 Jun 2018 12:57:42 -0400</pubDate>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-06-09/</guid>
       <description># Getting ready for the test drive While the car may not be on the road yet, it&amp;rsquo;s come quite a bit closer to getting there. Lately I&amp;rsquo;ve been working on fixing everything that was sub-optimally done previously by me.</description>
@@ -732,7 +732,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>No Mans Blocks - 6/4/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</link>
-      <pubDate>Mon, 04 Jun 2018 20:05:42 -0400</pubDate>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
       <description># Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.</description>
@@ -741,7 +741,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Civic Build - 5/20/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-05-20/</link>
-      <pubDate>Sun, 20 May 2018 12:57:42 -0400</pubDate>
+      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-05-20/</guid>
       <description># Finishing things up With the weather warming up it&amp;rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it.</description>
@@ -750,7 +750,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>C# Threadable Queue</title>
       <link>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</link>
-      <pubDate>Wed, 09 May 2018 19:04:42 -0400</pubDate>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
       <description># Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today.</description>
@@ -759,7 +759,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>No Mans Blocks - 4/20/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</link>
-      <pubDate>Fri, 20 Apr 2018 23:05:42 -0400</pubDate>
+      <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
       <description># Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal.</description>
@@ -768,7 +768,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Civic Build - 4/15/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-04-15/</link>
-      <pubDate>Sun, 15 Apr 2018 20:57:42 -0400</pubDate>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-15/</guid>
       <description># Connecting the Pieces It&amp;rsquo;s easy to forget just how many parts you&amp;rsquo;ve removed until it comes time to put them all back together. I know I&amp;rsquo;m probably not alone when I say I&amp;rsquo;ve fallen victim to scope creep many times now.</description>
@@ -777,7 +777,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Civic Build - 4/14/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-04-14/</link>
-      <pubDate>Sat, 14 Apr 2018 20:40:42 -0400</pubDate>
+      <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-14/</guid>
       <description># Getting Closer. I ran into a few set backs this weekend, and I&amp;rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.</description>
@@ -786,52 +786,52 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Civic Build - 4/12/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-04-12/</link>
-      <pubDate>Thu, 12 Apr 2018 13:13:42 -0400</pubDate>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-12/</guid>
       <description># Restoring the transmission My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&amp;rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy.</description>
     </item>
     
     <item>
-      <title>No Mans Blocks - 4/8/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</link>
-      <pubDate>Sun, 08 Apr 2018 18:25:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
-      <description># Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up.</description>
-    </item>
-    
-    <item>
       <title>Civic Build - 4/8/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-04-08/</link>
-      <pubDate>Sun, 08 Apr 2018 18:04:42 -0400</pubDate>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-08/</guid>
       <description># New Transmission Mount Installed Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&amp;rsquo;t feeling too motivated after that.</description>
     </item>
     
     <item>
-      <title>Civic Build - 4/6/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-06/</link>
-      <pubDate>Fri, 06 Apr 2018 16:22:42 -0400</pubDate>
+      <title>No Mans Blocks - 4/8/18</title>
+      <link>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://eddieabbondanz.io/post/civic/18-04-06/</guid>
-      <description># Wrapping it up It&amp;rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it.</description>
+      <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
+      <description># Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up.</description>
     </item>
     
     <item>
       <title>B-Series Bolt Sizes</title>
       <link>https://eddieabbondanz.io/post/honda/b-series-bolts/</link>
-      <pubDate>Fri, 06 Apr 2018 15:22:42 -0400</pubDate>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/honda/b-series-bolts/</guid>
       <description>I&amp;rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many.</description>
     </item>
     
     <item>
+      <title>Civic Build - 4/6/18</title>
+      <link>https://eddieabbondanz.io/post/civic/18-04-06/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/civic/18-04-06/</guid>
+      <description># Wrapping it up It&amp;rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it.</description>
+    </item>
+    
+    <item>
       <title>Civic Build - 4/1/18</title>
       <link>https://eddieabbondanz.io/post/civic/18-04-01/</link>
-      <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/18-04-01/</guid>
       <description># I like projects And I&amp;rsquo;m the kind of person that can&amp;rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago.</description>
@@ -840,25 +840,25 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>My Work Station</title>
       <link>https://eddieabbondanz.io/post/misc/desk/</link>
-      <pubDate>Sun, 01 Apr 2018 15:22:42 -0400</pubDate>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/misc/desk/</guid>
-      <description># My Budget Build At my work, I&amp;rsquo;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home.</description>
+      <description>At my work, I&amp;rsquo;m fortunate enough to have one of those adjustable desks that allow for you to stand or sit while you work. Since I almost always have it in the standing mode I decided to build my own standing desk at home.</description>
     </item>
     
     <item>
       <title>Logging to Unity or Console</title>
       <link>https://eddieabbondanz.io/post/unity/debug-logging/</link>
-      <pubDate>Sat, 31 Mar 2018 15:56:01 -0400</pubDate>
+      <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/debug-logging/</guid>
-      <description># Sometimes we want code that can run outside of Unity And that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.</description>
+      <description>Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.</description>
     </item>
     
     <item>
       <title>No Mans Blocks - 3/31/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</link>
-      <pubDate>Sat, 31 Mar 2018 15:22:42 -0400</pubDate>
+      <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
       <description># Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out.</description>
@@ -867,16 +867,16 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
     <item>
       <title>Object Pooling in Unity</title>
       <link>https://eddieabbondanz.io/post/unity/object-pool/</link>
-      <pubDate>Fri, 30 Mar 2018 10:06:59 -0400</pubDate>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/unity/object-pool/</guid>
-      <description># GameObject.Instantiate() is Expensive Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS.</description>
+      <description>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling.</description>
     </item>
     
     <item>
       <title>Greedy Meshing for Vertex Colored Voxels In Unity</title>
       <link>https://eddieabbondanz.io/post/voxel/greedy-mesh/</link>
-      <pubDate>Sun, 25 Mar 2018 10:06:59 -0400</pubDate>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/voxel/greedy-mesh/</guid>
       <description>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
@@ -895,28 +895,28 @@ This article goes over how to implement a greedy meshing algorithm for generatin
     <item>
       <title>Civic Build - 08/22/15</title>
       <link>https://eddieabbondanz.io/post/civic/15-08-22/</link>
-      <pubDate>Sat, 22 Aug 2015 20:44:42 -0400</pubDate>
+      <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/15-08-22/</guid>
       <description>I&amp;rsquo;ve been quite busy working on the Civic in the past month. I&amp;rsquo;m verfy excited to shared the journey I&amp;rsquo;m embarking on, and can&amp;rsquo;t wait to see how the finished product looks.</description>
     </item>
     
     <item>
-      <title>Civic Build - 07/06/15</title>
-      <link>https://eddieabbondanz.io/post/civic/15-07-06/</link>
-      <pubDate>Wed, 15 Jul 2015 20:44:42 -0400</pubDate>
-      
-      <guid>https://eddieabbondanz.io/post/civic/15-07-06/</guid>
-      <description>The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&amp;rsquo;t resist making the switch.</description>
-    </item>
-    
-    <item>
       <title>Civic Build - 07/03/15</title>
       <link>https://eddieabbondanz.io/post/civic/15-07-03/</link>
-      <pubDate>Wed, 15 Jul 2015 19:43:42 -0400</pubDate>
+      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/civic/15-07-03/</guid>
       <description>I don&amp;rsquo;t know why, but I&amp;rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&amp;rsquo;s a fact.</description>
+    </item>
+    
+    <item>
+      <title>Civic Build - 07/06/15</title>
+      <link>https://eddieabbondanz.io/post/civic/15-07-06/</link>
+      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/civic/15-07-06/</guid>
+      <description>The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&amp;rsquo;t resist making the switch.</description>
     </item>
     
     <item>

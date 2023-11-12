@@ -43,6 +43,8 @@
         
         <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
       </div>
     </div>
     
@@ -97,6 +99,8 @@
         
         <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
       </div>
     </div>
      
@@ -130,6 +134,11 @@
 <article>
   <div class="meta pb3-phone">
     
+    <a class="series" href="https://eddieabbondanz.io/series/development" title="More Development posts">
+      <i class="fas fa-th-list"></i>
+      Development
+    </a>
+    
 
     
     <div class="date" title="Posted on Nov 2, 2018">
@@ -161,7 +170,7 @@
 <p>On the other hand we could leave the <code>ServiceLocator</code> wide open and allow any object to be registered and retrieved, but this could lead to abuse, and doesn&rsquo;t feel quite right. This is where marker interfaces can be taken advantage of.</p>
 <p>Our marker interface would look like so:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//The marker interface
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IService { 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IService {
 
 }
 </code></pre></div><p>Now we can update the generic type on the <code>ServiceLocator</code> as such:</p>

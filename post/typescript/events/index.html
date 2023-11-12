@@ -43,6 +43,8 @@
         
         <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
       </div>
     </div>
     
@@ -97,6 +99,8 @@
         
         <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
       </div>
     </div>
      
@@ -130,6 +134,11 @@
 <article>
   <div class="meta pb3-phone">
     
+    <a class="series" href="https://eddieabbondanz.io/series/development" title="More Development posts">
+      <i class="fas fa-th-list"></i>
+      Development
+    </a>
+    
 
     
     <div class="date" title="Posted on Jan 21, 2019">
@@ -139,10 +148,7 @@
     
   </div>
 
-  <div class="anchor-heading">
-  <a href="#intro" id="intro">#</a>
-  <h1>Intro</h1>
-</div><p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
+  <p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
 <p>Polling in Computer Science is &ldquo;the process where the computer or controlling device waits for an external device to check for its readiness or state.&rdquo; [1] It&rsquo;s often used for low level applications such as listening for incoming data from the network, or interacting with an IO device.</p>
 <p>We could represent a very basic form of polling from a network as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
@@ -247,7 +253,7 @@
 </code></pre></div><p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span>.<span style="color:#a6e22e">dispatch</span>({
   <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;john.smith@mail.com&#34;</span>,
-  <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>
+  <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>,
 });
 </code></pre></div><div class="anchor-heading">
   <a href="#sources" id="sources">#</a>

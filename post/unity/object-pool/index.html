@@ -43,6 +43,8 @@
         
         <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
       </div>
     </div>
     
@@ -97,6 +99,8 @@
         
         <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
         
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
       </div>
     </div>
      
@@ -130,6 +134,11 @@
 <article>
   <div class="meta pb3-phone">
     
+    <a class="series" href="https://eddieabbondanz.io/series/development" title="More Development posts">
+      <i class="fas fa-th-list"></i>
+      Development
+    </a>
+    
 
     
     <div class="date" title="Posted on Mar 30, 2018">
@@ -139,10 +148,7 @@
     
   </div>
 
-  <div class="anchor-heading">
-  <a href="#gameobjectinstantiate-is-expensive" id="gameobjectinstantiate-is-expensive">#</a>
-  <h2>GameObject.Instantiate() is Expensive</h2>
-</div><p>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.</p>
+  <p>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.</p>
 <p>To prepare my project for some of the new features coming up I decided to finally implement a better system for handling object pools. This implementation doesn&rsquo;t use a data structure to maintain references of the objects in the pools. Instead it uses the sibling index of Unity&rsquo;s transforms to keep all of the in use objects at the top, and object sitting in standby at the bottom. Now we only need an integer that tracks the index of the next free object.</p>
 <p>To get started we&rsquo;ll need a way to differentiate between our objects. Create a new enum and add some values to represent the prefabs you wish to pool. I&rsquo;ve added the PrefabType cube since in this tutorial we&rsquo;ll be building a cube object pool.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
