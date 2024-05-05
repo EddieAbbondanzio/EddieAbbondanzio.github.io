@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>B18 / B20 Torque Specs</title>
+  <title>OBD1 Check Engine Light Codes</title>
   
   
   
@@ -131,7 +131,7 @@
 
   <main>
     
-    <h1 class="title">B18 / B20 Torque Specs</h1>
+    <h1 class="title">OBD1 Check Engine Light Codes</h1>
     
     
 <article>
@@ -144,100 +144,123 @@
     
 
     
-    <div class="date" title="Posted on Apr 25, 2024">
+    <div class="date" title="Posted on May 4, 2024">
       <i class="fas fa-calendar-day"></i>
-      <time>Apr 25, 2024</time>
+      <time>May 4, 2024</time>
     </div>
     
   </div>
 
-  <p>The ultimate list of torque specs for B18A1, B18B1, B20B, B20Z2 engines. I made this list because I was tired of digging through the 94-01 Integra and 97 - 02 CRV factory service manuals to find them all.</p>
-<p><strong>Note</strong>: VTEC engines (B16A, B18C1, B18C5, etc&hellip;) have different specs and shouldn&rsquo;t use this list!</p>
-<div class="anchor-heading">
-  <a href="#head" id="head">#</a>
-  <h2>Head</h2>
-</div><ul>
-<li>Head bolts: 61 lb-ft (Torque in 2 steps, with proper sequence)</li>
-<li>Cam gears: 27 lb-ft</li>
-<li>Cam caps: 7.2 lb-ft</li>
-<li>Valve lash nuts: 18 lb-ft</li>
-<li>Valve cover nuts: 7.2 lb-ft</li>
-<li>Intake manifold nuts: 17 lb-ft</li>
-<li>Exhaust manifold nuts: 23 lb-ft</li>
-<li>Throttle body: 14 lb-ft</li>
-<li>IACV: 16 lb-ft</li>
-<li>FITV: 17 lb-ft</li>
-<li>Fuel rail: 9 lb-ft</li>
-<li>Distributor: 17 lb-ft</li>
-</ul>
-<div class="anchor-heading">
-  <a href="#block" id="block">#</a>
-  <h2>Block</h2>
-</div><ul>
-<li>Timing belt tensioner: 40 lb-ft</li>
-<li>Crank pulley: 130 lb-ft</li>
-<li>Timing belt cover bolts: 7.2 lb-ft</li>
-<li>Water pump bolts: 8.7 lb-ft</li>
-<li>Oil pickup: 8 lb-ft</li>
-<li>Oil baffle plate: 8 lb-ft</li>
-<li>Oil pan: 9 lb-ft</li>
-<li>Oil pump m8x1.25 bolts: 17 lb-ft</li>
-<li>Oil pump m6x1.0 bolts: 8 lb-ft</li>
-<li>Rear main seal: 8 lb-ft</li>
-<li>Thermostat housing: 8.7 lb-ft</li>
-<li>Thermostat cover: 8 lb-ft</li>
-<li>Upper radiator outlet: 8 lb-ft</li>
-<li>Half shaft: 28 lb-ft</li>
-<li>Crankshaft bearing caps: 56 lb-ft</li>
-<li>Rod bearing caps: 23 lb-ft</li>
-</ul>
-<div class="anchor-heading">
-  <a href="#accessories" id="accessories">#</a>
-  <h2>Accessories</h2>
-</div><ul>
-<li>PS pump: 17 lb-ft</li>
-<li>PS pump bracket: 33 lb-ft</li>
-<li>Alternator bracket: 33 lb-ft</li>
-<li>Alternator top bolt: 17 lb-ft</li>
-<li>Alternator bottom bolt: 33 lb-ft</li>
-<li>AC compressor: 17 lb-ft</li>
-<li>AC compressor bracket bolts: 33 lb-ft</li>
-</ul>
-<div class="anchor-heading">
-  <a href="#transmission" id="transmission">#</a>
-  <h2>Transmission</h2>
-</div><ul>
-<li>Bell housing bolts: 47 lb-ft</li>
-<li>Shift linkage bolt: 16 lb-ft</li>
-<li>Flywheel: 76 lb-ft (Don&rsquo;t use this if you have ARP bolts)</li>
-<li>Pressure plate: 19 lb-ft (Don&rsquo;t use this if you have ARP bolts)</li>
-<li>Slave cylinder: 16 lb-ft</li>
-<li>Starter: 33 lb-ft</li>
-</ul>
-<div class="anchor-heading">
-  <a href="#arp-bolts" id="arp-bolts">#</a>
-  <h2>ARP Bolts</h2>
-</div><ul>
-<li>Flywheel: 95 lb-ft <a href="https://tech.arp-bolts.com/instructions/208-2802.pdf">https://tech.arp-bolts.com/instructions/208-2802.pdf</a></li>
-<li>Pressure plate: 25 lb-ft <a href="https://tech.arp-bolts.com/instructions/108-2202.pdf">https://tech.arp-bolts.com/instructions/108-2202.pdf</a></li>
-</ul>
+  <p>Pulling CEL codes for an OBD1 Honda is actually pretty easy. All you need to do is locate the service connector (a 2 pin connector usually behind the glove box) and jump it. Then when the key is set to IGN the check engine light will start blinking.</p>
+<p>Long blinks are 10, and short blinks are 1.</p>
+<p>For example, code 22 (VTEC pressure switch) would look like: long blink - long blink - short blink - short blink</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Engine Control Module (ECM)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Heated Oxygen Sensor (H02S)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Manifold Absolute Pressure (MAP Sensor)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Crankshaft Position (CKP Sensor)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Engine Coolant Temperature (ECT Sensor)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Throttle Position (TP Sensor)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Top Dead Center Position (TDC Sensor)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>No. 1 Cylinder Position (CYP Sensor)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Intake Air Temperature (IAT Sensor)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Engine Overheating**</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Barometric Pressure (BARO Sensor)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Idle Air Control (IAC Valve)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Ignition Output Signal</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Fuel Injector</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Vehicle Speed Sensor (VSS)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Electrical Load Detector (ELD)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>VTEC Solenoid</td>
+</tr>
+<tr>
+<td>22</td>
+<td>VTEC Pressure Switch</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Knock Sensor (KS)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>AT FI Signal A</td>
+</tr>
+<tr>
+<td>31</td>
+<td>AT FI Signal B</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Heated Oxygen Sensor (H02S) Heater</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Fuel Supply System</td>
+</tr>
+</tbody>
+</table>
+<p>** Code 11 is Hondata S300 specific and doesn&rsquo;t apply to stock Honda ECUs. Hondata sets it to activate if coolant temp goes above 212F by default.</p>
 <div class="anchor-heading">
   <a href="#references" id="references">#</a>
-  <h2>References</h2>
-</div><p>94-01 Integra Factory Service Manual</p>
-<ul>
-<li>5-18 (Engine accessories)</li>
-<li>6-14 (Cam caps, cam gears)</li>
-<li>7-23 (Crankshaft and rod bearing caps)</li>
-<li>7-24 (Rear main seal)</li>
-<li>8-3 (Oil pan, oil pump, pickup tube, baffle plate)</li>
-<li>9-2 (Intake manifold)</li>
-<li>10-5 (Thermostat)</li>
-<li>10-9 (Water pump)</li>
-<li>11-105 (Fuel rail)</li>
-<li>12-3 (Flywheel, pressure plate)</li>
-<li>23-92 (Distributor)</li>
-</ul>
+  <h1>References</h1>
+</div><p>These codes were taken from the 94-01 service manual. I cross referenced them against the 92 - 95 Civic service manual, and 97 - 01 CRV service manual.</p>
 
 </article>
 

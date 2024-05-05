@@ -6,7 +6,7 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detailing Arsenal</title>
       <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
@@ -44,12 +44,21 @@
     </item>
     
     <item>
+      <title>OBD1 Check Engine Light Codes</title>
+      <link>https://eddieabbondanz.io/post/honda/obd1-cel-codes/</link>
+      <pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/honda/obd1-cel-codes/</guid>
+      <description>Pulling CEL codes for an OBD1 Honda is actually pretty easy. All you need to do is locate the service connector (a 2 pin connector usually behind the glove box) and jump it.</description>
+    </item>
+    
+    <item>
       <title>B18 / B20 Torque Specs</title>
       <link>https://eddieabbondanz.io/post/honda/b18-b20-torque-specs/</link>
       <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/honda/b18-b20-torque-specs/</guid>
-      <description>The ultimate list of torque specs for B18A1, B18B1, B20B, B20Z2 engines. I made this list because I was tired of digging through the 94-01 Integra factory service manual to find them all.</description>
+      <description>The ultimate list of torque specs for B18A1, B18B1, B20B, B20Z2 engines. I made this list because I was tired of digging through the 94-01 Integra and 97 - 02 CRV factory service manuals to find them all.</description>
     </item>
     
     <item>
