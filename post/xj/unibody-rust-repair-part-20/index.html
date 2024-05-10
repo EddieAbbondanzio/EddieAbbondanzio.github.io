@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rust Repair Part 20: Blowing off the dust a year later</title>
+  
+  
+  
+
+  
+  
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.e9a72d3874c72d5524441b58f39e1593e629371cb417d0812963d9946cb8556b.css" integrity="sha256-6actOHTHLVUkRBtY854Vk&#43;YpNxy0F9CBKWPZlGy4VWs=" media="screen">
+
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
+    src="//tgpo.eddieabbondanz.io/count.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar fr jcsb aic mt2-phone">
+  <a class="title h100 fr aic tdn fwb" href="https://eddieabbondanz.io">
+    <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    Eddie Abbondanzio
+  </a>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+    
+    
+    <div class="item dropdown">
+      <a class="trigger" href="https://eddieabbondanz.io/post">Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+
+      <div class="content">
+        <a href="https://eddieabbondanz.io/post/"> All </a>
+
+        
+        <a href="https://eddieabbondanz.io/series/development"> Development </a>
+        
+        <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
+      </div>
+    </div>
+    
+    
+    
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+    
+    
+    
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+    
+    
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger " href="#" title="Linkedin">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+
+</nav>
+  <div id="hamburger-menu" class="hamburger-menu">
+     
+
+    <div>
+      <a> Blog </a>
+
+      <div class="ml2">
+        <a href="https://eddieabbondanz.io/post/"> All </a>
+
+        
+        <a href="https://eddieabbondanz.io/series/development"> Development </a>
+        
+        <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        
+      </div>
+    </div>
+     
+    <a href="https://eddieabbondanz.io/app">Apps</a>
+     
+    <a href="https://eddieabbondanz.io/about">About</a>
+    
+
+    <div class="fr jcse">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+        <span class="icon is-medium">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <main>
+    
+    <h1 class="title">Rust Repair Part 20: Blowing off the dust a year later</h1>
+    
+    
+<article>
+  <div class="meta pb3-phone">
+    
+    <a class="series" href="https://eddieabbondanz.io/series/xj-build" title="More XJ Build posts">
+      <i class="fas fa-th-list"></i>
+      XJ Build
+    </a>
+    
+
+    
+    <div class="date" title="Posted on May 10, 2024">
+      <i class="fas fa-calendar-day"></i>
+      <time>May 10, 2024</time>
+    </div>
+    
+  </div>
+
+  <p>I can&rsquo;t believe it&rsquo;s a been a year since I last worked on the XJ. When I first paused working on the XJ <a href="https://eddieabbondanz.io/post/civic/the-revival-part-1/">to get my EG hatch back on the road</a> I didn&rsquo;t think it&rsquo;d be for more a few months but sure enough here we are a year later.</p>
+<p>At this point I&rsquo;ve basically forgotten where I left off, what the next steps were, and can&rsquo;t remember where most of the parts are. But, I&rsquo;m motivated to finally finish it so I&rsquo;m not gonna let any of that hold me back.</p>
+<p>Some of the work in this post was actually done last year but I never posted it before I stopped on the XJ.</p>
+<div class="anchor-heading">
+  <a href="#welding-in-the-driver-outer-rocker" id="welding-in-the-driver-outer-rocker">#</a>
+  <h1>Welding in the driver outer rocker</h1>
+</div><p>One of the last todos needing to be addressed before I could weld in the new outer rocker was the B pillar.</p>
+<p>It was pretty rusted on the bottom and needed some patches so I opted to temporarily remove it.
+
+
+<div class="image">
+  <a href="images/1.jpg" target="_blank">
+    <img loading="lazy" src="images/1.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>The rust on the inner layer was a little deeper than I had hoped, but it&rsquo;s still salvageable.
+
+
+<div class="image">
+  <a href="images/2.jpg" target="_blank">
+    <img loading="lazy" src="images/2.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>With the B pillar good to go, I started prepping to weld in the new outer rocker.</p>
+<p>One of the nice things about this being the 2nd side is that my outer rocker is already trimmed down and I have the braces for the 2x6 rocker ready.
+
+
+<div class="image">
+  <a href="images/3.jpg" target="_blank">
+    <img loading="lazy" src="images/3.jpg" alt="" title=""
+       max-width="1080" max-height="1920"  />
+  </a>
+</div></p>
+<p>The little pilot holes make it easy for me to know where to drill my spot weld holes on the inner rocker.
+
+
+<div class="image">
+  <a href="images/4.jpg" target="_blank">
+    <img loading="lazy" src="images/4.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Test fitting the new rocker.
+
+
+<div class="image">
+  <a href="images/5.jpg" target="_blank">
+    <img loading="lazy" src="images/5.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Fitment actually looks pretty legit.
+
+
+<div class="image">
+  <a href="images/6.jpg" target="_blank">
+    <img loading="lazy" src="images/6.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/7.jpg" target="_blank">
+    <img loading="lazy" src="images/7.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/8.jpg" target="_blank">
+    <img loading="lazy" src="images/8.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Just need to do some prep on the B pillar before the rocker goes in.
+
+
+<div class="image">
+  <a href="images/10.jpg" target="_blank">
+    <img loading="lazy" src="images/10.jpg" alt="" title=""
+       max-width="1080" max-height="1920"  />
+  </a>
+</div></p>
+<p>Rusted bit cut out.
+
+
+<div class="image">
+  <a href="images/11.jpg" target="_blank">
+    <img loading="lazy" src="images/11.jpg" alt="" title=""
+       max-width="1080" max-height="1920"  />
+  </a>
+</div></p>
+<p>Cleaned up the inner layer of any rust.
+
+
+<div class="image">
+  <a href="images/12.jpg" target="_blank">
+    <img loading="lazy" src="images/12.jpg" alt="" title=""
+       max-width="1080" max-height="1920"  />
+  </a>
+</div></p>
+<p>Ready to weld. (Also welded an extension onto the inner layer of the B pillar since it was missing.)
+
+
+<div class="image">
+  <a href="images/13.jpg" target="_blank">
+    <img loading="lazy" src="images/13.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>All done.
+
+
+<div class="image">
+  <a href="images/14.jpg" target="_blank">
+    <img loading="lazy" src="images/14.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/15.jpg" target="_blank">
+    <img loading="lazy" src="images/15.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/16.jpg" target="_blank">
+    <img loading="lazy" src="images/16.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Everything cleaned up nicely.
+
+
+<div class="image">
+  <a href="images/17.jpg" target="_blank">
+    <img loading="lazy" src="images/17.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<div class="anchor-heading">
+  <a href="#finishing-the-b-pillar" id="finishing-the-b-pillar">#</a>
+  <h1>Finishing the B pillar</h1>
+</div><p>The bottom bit of the pillar that I had removed earlier on was in pretty rough shape.
+
+
+<div class="image">
+  <a href="images/18.jpg" target="_blank">
+    <img loading="lazy" src="images/18.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>I removed all the paint I could from it to try and get an idea of how the metal was holding up. Most of it looked fine but there were some parts that needed to go.
+
+
+<div class="image">
+  <a href="images/19.jpg" target="_blank">
+    <img loading="lazy" src="images/19.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/20.jpg" target="_blank">
+    <img loading="lazy" src="images/20.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Don&rsquo;t judge that gap. I messed up measuring the size of my patch.
+
+
+<div class="image">
+  <a href="images/21.jpg" target="_blank">
+    <img loading="lazy" src="images/21.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Skipping ahead a couple steps and the patch was looking more normal again.
+
+
+<div class="image">
+  <a href="images/22.jpg" target="_blank">
+    <img loading="lazy" src="images/22.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Prepping the rocker for paint. This is the last photo I took of the XJ in 2023.
+
+
+<div class="image">
+  <a href="images/23.jpg" target="_blank">
+    <img loading="lazy" src="images/23.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>One year later, and the XJ didn&rsquo;t change much other than a drastic increase in dust.</p>
+<p>
+
+<div class="image">
+  <a href="images/24.jpg" target="_blank">
+    <img loading="lazy" src="images/24.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<div class="anchor-heading">
+  <a href="#its-first-move-in-2-years" id="its-first-move-in-2-years">#</a>
+  <h2>It&rsquo;s first move in 2 years</h2>
+</div><p>Having worked on my Civic in the back corner of the shop I realized I should move the XJ over there since it&rsquo;s perfect for staying out the way and leaves both my garage bays open.</p>
+<p>The rear brakes were dragging pretty bad but I was able to push the XJ solo.</p>
+<p>
+
+<div class="image">
+  <a href="images/25.jpg" target="_blank">
+    <img loading="lazy" src="images/25.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>A bit of de-dusting and some welding later I finally had the B pillar done after a year.
+
+
+<div class="image">
+  <a href="images/26.jpg" target="_blank">
+    <img loading="lazy" src="images/26.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/27.jpg" target="_blank">
+    <img loading="lazy" src="images/27.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div>
+
+
+<div class="image">
+  <a href="images/28.jpg" target="_blank">
+    <img loading="lazy" src="images/28.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Painted.
+
+
+<div class="image">
+  <a href="images/29.jpg" target="_blank">
+    <img loading="lazy" src="images/29.jpg" alt="" title=""
+       max-width="1080" max-height="1920"  />
+  </a>
+</div></p>
+<div class="anchor-heading">
+  <a href="#test-mounting-the-driver-doors" id="test-mounting-the-driver-doors">#</a>
+  <h1>Test mounting the driver doors</h1>
+</div><p>I still need to weld in the new rear door hinges but needed the front door mocked up so I could properly position the hinges.
+
+
+<div class="image">
+  <a href="images/30.jpg" target="_blank">
+    <img loading="lazy" src="images/30.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>New driver door mounted up, rear hinges tacked into place for testing.
+
+
+<div class="image">
+  <a href="images/31.jpg" target="_blank">
+    <img loading="lazy" src="images/31.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>A bit of repositioning later and the new hinges were welded in.
+
+
+<div class="image">
+  <a href="images/32.jpg" target="_blank">
+    <img loading="lazy" src="images/32.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>I had to make some new door hinge shims since I was missing some. Bottom two are 3/16&quot; thick and top two are 1/16&quot; thick.</p>
+<p>Bottom left one is the original.
+
+
+<div class="image">
+  <a href="images/33.jpg" target="_blank">
+    <img loading="lazy" src="images/33.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>New rear door mounted up.
+
+
+<div class="image">
+  <a href="images/35.jpg" target="_blank">
+    <img loading="lazy" src="images/35.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>I couldn&rsquo;t resist popping the quarter panel on to get a sneak peak of the new driver side.
+
+
+<div class="image">
+  <a href="images/34.jpg" target="_blank">
+    <img loading="lazy" src="images/34.jpg" alt="" title=""
+       max-width="1920" max-height="1080"  />
+  </a>
+</div></p>
+<p>Up next is to weld in the 2x6</p>
+
+</article>
+
+  </main>
+
+  <footer>
+  <p>&copy; 2013 - 2024 Eddie Abbondanzio</p>
+</footer>
+  <script src="https://eddieabbondanz.io/js/lol.js"></script>
+</body>
+
+
+</html>

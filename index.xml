@@ -6,7 +6,7 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detailing Arsenal</title>
       <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
@@ -41,6 +41,15 @@
       
       <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
       <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times.</description>
+    </item>
+    
+    <item>
+      <title>Rust Repair Part 20: Blowing off the dust a year later</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-20/</link>
+      <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-20/</guid>
+      <description>I can&amp;rsquo;t believe it&amp;rsquo;s a been a year since I last worked on the XJ. When I first paused working on the XJ to get my EG hatch back on the road I didn&amp;rsquo;t think it&amp;rsquo;d be for more a few months but sure enough here we are a year later.</description>
     </item>
     
     <item>
