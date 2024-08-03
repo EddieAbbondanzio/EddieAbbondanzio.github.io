@@ -155,7 +155,7 @@
     
   </div>
 
-  <p>I&rsquo;m a big fan of the <code>async</code> <code>await</code> syntax in ES2017. In my opinion it just feels a lot more natural than <a href="https://www.youtube.com/watch?v=CkdyU_eUm1U">and then and then and then&hellip;</a>. I digress. I&rsquo;ll keep this one short.</p>
+  <p>I&rsquo;m a big fan of the <code>async</code> <code>await</code> syntax in ES2017. In my opinion it just feels a lot more natural than <a href="https://www.youtube.com/watch?v=CkdyU_eUm1U" target="_blank" rel="noopener">and then and then and then&hellip;</a>. I digress. I&rsquo;ll keep this one short.</p>
 <p><code>Promise.all()</code> allows us to run multiple async operations in parallel instead of running them in series. This is great for times when we need to make multiple API calls that are independent of each other.</p>
 <p>Imagine we had two long running task like so:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getFoo</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">Foo</span>&gt; {
@@ -175,7 +175,7 @@
 
 <span style="color:#75715e">// good!
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">getFoo</span>(), <span style="color:#a6e22e">getBar</span>()]);
-</code></pre></div><p>When awaited <code>Promise.all()</code> returns an array of results that matches up with the inputs. Therefore when we pass an input of <code>[Promise&lt;Foo&gt;, Promise&lt;Bar&gt;]</code> the output will be <code>[Foo, Bar]</code>. And best of all when paired up with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">array destructuring</a> it feels perfectly natural.</p>
+</code></pre></div><p>When awaited <code>Promise.all()</code> returns an array of results that matches up with the inputs. Therefore when we pass an input of <code>[Promise&lt;Foo&gt;, Promise&lt;Bar&gt;]</code> the output will be <code>[Foo, Bar]</code>. And best of all when paired up with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">array destructuring</a> it feels perfectly natural.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>, <span style="color:#a6e22e">bar</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">getFoo</span>(), <span style="color:#a6e22e">getBar</span>()]);
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>);

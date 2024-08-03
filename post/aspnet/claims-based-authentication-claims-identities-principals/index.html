@@ -170,7 +170,7 @@
 <li>IP Address</li>
 <li>Location</li>
 </ul>
-<p>Claims are name-key values and are represented via the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0"><code>System.Security.Claim</code></a> class.</p>
+<p>Claims are name-key values and are represented via the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0" target="_blank" rel="noopener"><code>System.Security.Claim</code></a> class.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Claim</span> {
   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Type { <span style="color:#66d9ef">get</span>; }
   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Value { <span style="color:#66d9ef">get</span>; }
@@ -191,7 +191,7 @@
 </span></code></pre></div><div class="anchor-heading">
   <a href="#identities" id="identities">#</a>
   <h2>Identities</h2>
-</div><p>Claims representing the same subject can be grouped together and placed in a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0"><code>ClaimsIdentity</code></a>.</p>
+</div><p>Claims representing the same subject can be grouped together and placed in a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0" target="_blank" rel="noopener"><code>ClaimsIdentity</code></a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsIdentity</span> {
   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Name { <span style="color:#66d9ef">get</span>; }
   <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
@@ -223,14 +223,14 @@
 );
 
 <span style="color:#75715e">// Note the lack of AuthenticationType
-</span></code></pre></div><p>Seperating the user claims from the device claims into two seperate identities allows us to indicate that each can exist without the other. This works great, but how do we show that the identies are related? Enter the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal?view=netcore-3.0"><code>ClaimsPrincipal</code></a>.</p>
+</span></code></pre></div><p>Seperating the user claims from the device claims into two seperate identities allows us to indicate that each can exist without the other. This works great, but how do we show that the identies are related? Enter the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal?view=netcore-3.0" target="_blank" rel="noopener"><code>ClaimsPrincipal</code></a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsPrincipal</span> {
   <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
   <span style="color:#66d9ef">public</span> IEnumerable&lt;ClaimsIdentity&gt; { <span style="color:#66d9ef">get</span>; }
   <span style="color:#66d9ef">public</span> ClaimsIdentity Identity { <span style="color:#66d9ef">get</span>; }
   <span style="color:#75715e">// some properties have been omitted.
 </span><span style="color:#75715e"></span>}
-</code></pre></div><p>&ldquo;A principal object represents the security context of the user on whose behalf the code is running, including that user&rsquo;s identity&rdquo; <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.principal.iprincipal?view=netcore-3.0">[1]</a>. By using a <code>ClaimsPrincipal</code> we can group the user identity, and device identity into one context without having to duplicate any info.</p>
+</code></pre></div><p>&ldquo;A principal object represents the security context of the user on whose behalf the code is running, including that user&rsquo;s identity&rdquo; <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.principal.iprincipal?view=netcore-3.0" target="_blank" rel="noopener">[1]</a>. By using a <code>ClaimsPrincipal</code> we can group the user identity, and device identity into one context without having to duplicate any info.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#66d9ef">var</span> principal = <span style="color:#66d9ef">new</span> ClaimsPrincipal(<span style="color:#66d9ef">new</span> IIdentity[] { userIdentity, deviceIdentity });
 </code></pre></div><p><code>ClaimsPrincipal</code> provides a handful of helper methods / properties to check things such as if a claim exists (<code>HasClaim()</code>) in any of the associated identities. When working within an API controller in ASP.NET we can access the current principal via the <code>User</code> property.</p>
 

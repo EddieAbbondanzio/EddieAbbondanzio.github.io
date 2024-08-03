@@ -190,7 +190,7 @@
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> NumberValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> StringValue { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
-</code></pre></div><p><a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-client-cs"><code>Client.cs</code></a> and <a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-server-cs"><code>Server.cs</code></a> from the previous section will be reused to reduce redundancy.</p>
+</code></pre></div><p><a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-client-cs" target="_blank" rel="noopener"><code>Client.cs</code></a> and <a href="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3#file-server-cs" target="_blank" rel="noopener"><code>Server.cs</code></a> from the previous section will be reused to reduce redundancy.</p>
 <p>First up, we&rsquo;re going to modify the server to send a <code>FooPacket</code> to the newly connected client in <code>PeerConnectedEvent</code>. To do this we&rsquo;ll need to add a <code>NetPacketProcessor</code> as a field on the server.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
     EventBasedNetListener netListener;
@@ -272,7 +272,7 @@
 <div class="anchor-heading">
   <a href="#limitations" id="limitations">#</a>
   <h1>Limitations</h1>
-</div><p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-(NetSerializer)-usage">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
+</div><p>As noted by the <a href="https://github.com/RevenantX/LiteNetLib/wiki/NetPacketProcessor-%28NetSerializer%29-usage" target="_blank" rel="noopener">wiki page</a> the <code>NetPacketProcessor</code> has several limitations.</p>
 <div class="anchor-heading">
   <a href="#properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable" id="properties-must-have-public-getters--setters-or-classes--structs-implement-inetserializable">#</a>
   <h2>Properties must have public getters / setters or classes / structs implement <code>INetSerializable</code>.</h2>

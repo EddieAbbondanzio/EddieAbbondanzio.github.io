@@ -183,7 +183,7 @@
         }
     }
 </code></pre></div><p>This solves the problem by checking that both a Username, and Password have been defined, and if not returns false. However, what do we do when we also need to handle validating that a user hasn&rsquo;t been deleted already before allowing it to be deleted? We could add an IsValidToDelete() method to the class but this is just starting to clutter things, and seems like a pretty bad approach. On the other hand we could simply call IsValid before deleting but then any user we want to delete would have to have a valid username, and password which makes no sense.</p>
-<p>To overcome this issue we can introduce the concept of validators. Validators utilize the <a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor pattern</a> to separate the validaiton logic from the model itself. Let&rsquo;s define an interface for all validators to derive from.</p>
+<p>To overcome this issue we can introduce the concept of validators. Validators utilize the <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel="noopener">visitor pattern</a> to separate the validaiton logic from the model itself. Let&rsquo;s define an interface for all validators to derive from.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IValidator&lt;T&gt; {
         <span style="color:#66d9ef">bool</span> Validate(T entity);
     }

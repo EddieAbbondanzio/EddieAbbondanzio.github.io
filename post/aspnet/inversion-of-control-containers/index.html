@@ -155,8 +155,8 @@
     
   </div>
 
-  <p>ASP.NET Core supports <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/">dependency injection</a> directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</p>
-<p>Let&rsquo;s imagine we&rsquo;re building an API that has a <code>UserController</code> to provide an endpoint for retrieving users via their numeric id from the database. Since we don&rsquo;t want the <code>UserController</code> to directly interact with the database as it would violate the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">single responsibility principle</a> we will rely upon a <code>UserService</code> to do the dirty work for us.</p>
+  <p>ASP.NET Core supports <a href="https://eddieabbondanz.io/post/software-design/dependency-injection/" target="_blank" rel="noopener">dependency injection</a> directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&rsquo;re a fan of Uncle Bob&rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</p>
+<p>Let&rsquo;s imagine we&rsquo;re building an API that has a <code>UserController</code> to provide an endpoint for retrieving users via their numeric id from the database. Since we don&rsquo;t want the <code>UserController</code> to directly interact with the database as it would violate the <a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design" target="_blank" rel="noopener">single responsibility principle</a> we will rely upon a <code>UserService</code> to do the dirty work for us.</p>
 <p>We&rsquo;ll even take it one step further and assume our <code>UserService</code> implements an <code>IUserService</code> interface to support dependency inversion by coding against the <code>IUserService</code> interface in the <code>UserController</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IUserService {
   Task&lt;User&gt; GetUser(<span style="color:#66d9ef">int</span> id);
@@ -200,7 +200,7 @@
 <div class="anchor-heading">
   <a href="#singleton" id="singleton">#</a>
   <h2>Singleton</h2>
-</div><p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it&rsquo;s resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
+</div><p>A <a href="https://en.wikipedia.org/wiki/Singleton_pattern" target="_blank" rel="noopener">singleton</a> dependency registered via <code>AddSingleton()</code> will always return the same instance each time it&rsquo;s resolved from the container. This is useful for large classes that are expensive to instantiate, or require set up.</p>
 <div class="anchor-heading">
   <a href="#scoped" id="scoped">#</a>
   <h2>Scoped</h2>
@@ -268,7 +268,7 @@
 <div class="anchor-heading">
   <a href="#3rd-party-ioc-containers" id="3rd-party-ioc-containers">#</a>
   <h1>3rd Party IoC Containers</h1>
-</div><p>While the IoC container provided by ASP.NET should suffice for most uses, it does have some drawbacks. As noted by the <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement">official documentation</a> it lacks the following features:</p>
+</div><p>While the IoC container provided by ASP.NET should suffice for most uses, it does have some drawbacks. As noted by the <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement" target="_blank" rel="noopener">official documentation</a> it lacks the following features:</p>
 <ul>
 <li>Property injection</li>
 <li>Injection based on name</li>
@@ -276,7 +276,7 @@
 <li>Custom lifetime management</li>
 <li><code>Func&lt;T&gt;</code> support for lazy initialization</li>
 </ul>
-<p>If any of these missing features are deal breakers for you, the default IoC container can be swapped out with an external library such as <a href="https://www.nuget.org/packages/Autofac/">AutoFac</a> and following the instructions available <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement">here</a>.</p>
+<p>If any of these missing features are deal breakers for you, the default IoC container can be swapped out with an external library such as <a href="https://www.nuget.org/packages/Autofac/" target="_blank" rel="noopener">AutoFac</a> and following the instructions available <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#default-service-container-replacement" target="_blank" rel="noopener">here</a>.</p>
 
 </article>
 
