@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Marqus</title>
+      <link>https://eddieabbondanz.io/app/marqus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/app/marqus/</guid>
+      <description>Marqus is a desktop note taking app that allows users to organize and maintain their knowledge base. The app has support for custom keyboard shortcuts for power users and also keeps track of state so each time you open the app you can pick right up where you last left off.</description>
+    </item>
+    
+    <item>
       <title>Detailing Arsenal</title>
       <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1254,7 +1263,7 @@ I separated the lense from the headlight house so I could begin to mount things 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/about/</guid>
-      <description>My name&amp;rsquo;s Eddie Abbondanzio, and as you&amp;rsquo;ve probably already figured out this is my personal blog. Most of my posts will be technical writeups on projects I&amp;rsquo;ve completed but occasionally I&amp;rsquo;ll thrown in some humorous content.</description>
+      <description>My name&amp;rsquo;s Eddie Abbondanzio, and as you&amp;rsquo;ve probably already figured out this is my personal blog. I enjoy writing up posts on the various projects I work on in my spare time.</description>
     </item>
     
   </channel>
