@@ -6,7 +6,16 @@
     <description>Recent content in Honda Info and DIYs on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/honda-info-and-diys/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/honda-info-and-diys/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OBD0 Check Engine Light Codes</title>
+      <link>https://eddieabbondanz.io/post/honda/obd0-cel-codes/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/honda/obd0-cel-codes/</guid>
+      <description>Reading CEL codes for an OBD0 Honda is easy since you don&amp;rsquo;t need to jump a service connector like the OBD1 Hondas, but you do need to find the ECU so you can count how many times the red LED in the ECU blinks.</description>
+    </item>
+    
     <item>
       <title>88 - 89 Integra OBD0 ECU Capacitors</title>
       <link>https://eddieabbondanz.io/post/honda/88-89-integra-ecu-capacitors/</link>

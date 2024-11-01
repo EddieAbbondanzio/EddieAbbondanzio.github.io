@@ -6,7 +6,7 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Marqus</title>
       <link>https://eddieabbondanz.io/app/marqus/</link>
@@ -50,6 +50,15 @@
       
       <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
       <description>Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times.</description>
+    </item>
+    
+    <item>
+      <title>OBD0 Check Engine Light Codes</title>
+      <link>https://eddieabbondanz.io/post/honda/obd0-cel-codes/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eddieabbondanz.io/post/honda/obd0-cel-codes/</guid>
+      <description>Reading CEL codes for an OBD0 Honda is easy since you don&amp;rsquo;t need to jump a service connector like the OBD1 Hondas, but you do need to find the ECU so you can count how many times the red LED in the ECU blinks.</description>
     </item>
     
     <item>
