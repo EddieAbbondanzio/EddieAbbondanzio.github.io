@@ -122,7 +122,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/typescript/magic-strings/</guid>
-      <description># What&amp;rsquo;s so Magical About Magic Strings? Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</description>
+      <description>What&amp;rsquo;s so Magical About Magic Strings?  Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</description>
     </item>
     
     <item>
@@ -140,7 +140,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/marker-interfaces/</guid>
-      <description># What Are They? A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</description>
+      <description>What Are They?  A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</description>
     </item>
     
     <item>
@@ -149,7 +149,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/magic-numbers/</guid>
-      <description># What Are They? Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;.</description>
+      <description>What Are They?  Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -158,7 +158,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
-      <description># What are they? While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name.</description>
+      <description>What are they?  While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name.</description>
     </item>
     
     <item>
@@ -167,7 +167,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
-      <description># Preface Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.</description>
+      <description>Preface  Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.</description>
     </item>
     
     <item>
@@ -176,7 +176,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
-      <description># Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone.</description>
+      <description>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading  I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone.</description>
     </item>
     
     <item>
@@ -194,7 +194,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
-      <description># Creating Time (literally!) I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.</description>
+      <description>Creating Time (literally!)  I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.</description>
     </item>
     
     <item>
@@ -203,7 +203,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
-      <description># Implementing a Thread-Safe Queue One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today.</description>
+      <description>Implementing a Thread-Safe Queue  One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today.</description>
     </item>
     
     <item>
@@ -212,7 +212,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
-      <description># Playing Around at the Bit Level This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal.</description>
+      <description>Playing Around at the Bit Level  This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal.</description>
     </item>
     
     <item>
@@ -221,7 +221,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
-      <description># Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up.</description>
+      <description>Building Up the Network Logic  While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up.</description>
     </item>
     
     <item>
@@ -239,7 +239,7 @@ LiteNetLib is an UDP networking library that can be used for building multiplaye
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
-      <description># Stepping back into Networking These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out.</description>
+      <description>Stepping back into Networking  These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out.</description>
     </item>
     
     <item>

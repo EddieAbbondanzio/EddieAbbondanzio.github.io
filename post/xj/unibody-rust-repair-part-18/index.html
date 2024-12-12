@@ -7,12 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</title>
   
+  <meta name="description" content="My blog about my project cars and other contraptions">
   
+  <meta name="author" content="Eddie Abbondanzio">
   
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.e9a72d3874c72d5524441b58f39e1593e629371cb417d0812963d9946cb8556b.css" integrity="sha256-6actOHTHLVUkRBtY854Vk&#43;YpNxy0F9CBKWPZlGy4VWs=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.8db035f3cd4dd42cecd8278923212daa9b25a32b3d6874ac8332efdbf5d44c87.css" integrity="sha256-jbA1881N1Czs2CeJIyEtqpsloys9aHSsgzLv2/XUTIc=" media="screen">
 
   <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
     src="//tgpo.eddieabbondanz.io/count.js"></script>
@@ -30,7 +32,7 @@
     
     
     <div class="item dropdown">
-      <a class="trigger" href="https://eddieabbondanz.io/post">Blog
+      <a class="trigger">Blog
         <span class="icon"><i class="fas fa-chevron-down"></i></span>
       </a>
 
@@ -38,19 +40,19 @@
         <a href="https://eddieabbondanz.io/post/"> All </a>
 
         
-        <a href="https://eddieabbondanz.io/series/development"> Development </a>
+        <a href="https://eddieabbondanz.io/series/development">Development</a>
         
-        <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
+        <a href="https://eddieabbondanz.io/series/xj-build">00 XJ Build</a>
         
-        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
         
-        <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+        <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
         
-        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
         
-        <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+        <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
         
-        <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+        <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
         
       </div>
     </div>
@@ -81,71 +83,71 @@
     </div>
   </div>
 
-  <a id="hamburger" class="hamburger " href="#" title="Linkedin">
+  <a id="hamburger" class="hamburger" href="#">
     <span class="icon">
       <i class="fa fa-bars fa-lg"></i>
     </span>
   </a>
 
 </nav>
-  <div id="hamburger-menu" class="hamburger-menu">
-     
+  
+<div id="hamburger-menu" class="hamburger-menu">
+   
 
-    <div>
-      <a> Blog </a>
+  <div>
+    <a> Blog </a>
 
-      <div class="ml2">
-        <a href="https://eddieabbondanz.io/post/"> All </a>
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
 
-        
-        <a href="https://eddieabbondanz.io/series/development"> Development </a>
-        
-        <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
-        
-        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
-        
-        <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
-        
-        <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
-        
-        <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
-        
-        <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
-        
-      </div>
-    </div>
-     
-    <a href="https://eddieabbondanz.io/app">Apps</a>
-     
-    <a href="https://eddieabbondanz.io/about">About</a>
-    
-
-    <div class="fr jcse">
       
-      <a href="http://github.com/EddieAbbondanzio" target="_blank">
-        <span class="icon is-medium">
-          <i class="fab fa-github fa-lg"></i>
-        </span>
-      </a>
+      <a href="https://eddieabbondanz.io/series/development"> Development </a>
       
-      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
-        <span class="icon is-medium">
-          <i class="fab fa-linkedin fa-lg"></i>
-        </span>
-      </a>
+      <a href="https://eddieabbondanz.io/series/xj-build"> 00 XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
       
     </div>
   </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
 
   <main>
     
-    <h1 class="title">Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</h1>
+<article class="post">
+  <h1 class="h1 mb2">Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</h1>
+
+  <div class="fr meta pb3">
     
-    
-<article>
-  <div class="meta pb3-phone">
-    
-    <a class="series" href="https://eddieabbondanz.io/series/xj-build" title="More XJ Build posts">
+    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/xj-build" title="More XJ Build posts">
       <i class="fas fa-th-list"></i>
       XJ Build
     </a>
@@ -159,511 +161,243 @@
     
   </div>
 
-  <p>Having finished the passenger side, it was a little daunting looking at the completely untouched driver side knowing I had so much work ahead of me. I was a little worried I&rsquo;d lose my motivation from analysis paralysis on where to start so I decided to dive right into it and start with the roof like I did on the passenger side.
-
-
-<div class="image">
-  <a href="images/1.jpg" target="_blank">
-    <img loading="lazy" src="images/1.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+  <div class="markdown-body">
+    <p>Having finished the passenger side, it was a little daunting looking at the completely untouched driver side knowing I had so much work ahead of me. I was a little worried I&rsquo;d lose my motivation from analysis paralysis on where to start so I decided to dive right into it and start with the roof like I did on the passenger side.
+<a href="images/1.jpg" target="_blank">
+  <img loading="lazy" src="images/1.jpg" alt="" title="" />
+</a></p>
 <p>To work on the roof I needed to remove those pesky doors first.</p>
 <p>Removing the front door was a cake walk as all 6 bolts came out with just some PB blaster.
-
-
-<div class="image">
-  <a href="images/2.jpg" target="_blank">
-    <img loading="lazy" src="images/2.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/2.jpg" target="_blank">
+  <img loading="lazy" src="images/2.jpg" alt="" title="" />
+</a></p>
 <p>The rear door wasn&rsquo;t as easy though as I had to cut both hinges in half in order to remove the door since the bolts were completely seized in place.
-
-
-<div class="image">
-  <a href="images/3.jpg" target="_blank">
-    <img loading="lazy" src="images/3.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#why-im-replacing-the-drip-rail" id="why-im-replacing-the-drip-rail">#</a>
-  <h1>Why I&rsquo;m Replacing the Drip Rail</h1>
-</div><p>It may look like I&rsquo;m being over the top by replacing the drip rail, but don&rsquo;t let the photos deceive you. The drip rail doesn&rsquo;t look bad on the outside but all of that rust is coming from the inside.
-
-
-<div class="image">
-  <a href="images/4.jpg" target="_blank">
-    <img loading="lazy" src="images/4.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/3.jpg" target="_blank">
+  <img loading="lazy" src="images/3.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Why I&rsquo;m Replacing the Drip Rail
+  <a href="#why-im-replacing-the-drip-rail" id="why-im-replacing-the-drip-rail" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>It may look like I&rsquo;m being over the top by replacing the drip rail, but don&rsquo;t let the photos deceive you. The drip rail doesn&rsquo;t look bad on the outside but all of that rust is coming from the inside.
+<a href="images/4.jpg" target="_blank">
+  <img loading="lazy" src="images/4.jpg" alt="" title="" />
+</a></p>
 <p>The drip rail is super prone to rusting out because it&rsquo;s basically two layers of metal stamped together. It&rsquo;s where the roof skin attaches to the sides which is why it&rsquo;s necessary.</p>
 <p>And If I really wanted to I could grind down the rust on the outside and call it good, but eventually the rust would return since it&rsquo;s on the inside. This is why I&rsquo;ve decided to bite the bullet and do it now vs waiting and see the future paint job get ruined within just a few years.</p>
-<div class="anchor-heading">
-  <a href="#no-turning-back-now" id="no-turning-back-now">#</a>
-  <h1>No Turning Back Now</h1>
-</div><p>I started off by removing a piece of the B pillar since it&rsquo;s the easiest of the three to work with.
-
-
-<div class="image">
-  <a href="images/5.jpg" target="_blank">
-    <img loading="lazy" src="images/5.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/6.jpg" target="_blank">
-    <img loading="lazy" src="images/6.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<h1>
+  No Turning Back Now
+  <a href="#no-turning-back-now" id="no-turning-back-now" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>I started off by removing a piece of the B pillar since it&rsquo;s the easiest of the three to work with.
+<a href="images/5.jpg" target="_blank">
+  <img loading="lazy" src="images/5.jpg" alt="" title="" />
+</a>
+<a href="images/6.jpg" target="_blank">
+  <img loading="lazy" src="images/6.jpg" alt="" title="" />
+</a></p>
 <p>Then from there I cut a chunk of the upper rear quarter panel. I had to cut further than expected here because the rust has crawled it&rsquo;s way down the seam further than anticipated.
-
-
-<div class="image">
-  <a href="images/7.jpg" target="_blank">
-    <img loading="lazy" src="images/7.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/7.jpg" target="_blank">
+  <img loading="lazy" src="images/7.jpg" alt="" title="" />
+</a></p>
 <p>Up front by the windshield wasn&rsquo;t too bad. There was actually a pin hole in the roof there that I had forgotten about.
-
-
-<div class="image">
-  <a href="images/8.jpg" target="_blank">
-    <img loading="lazy" src="images/8.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/8.jpg" target="_blank">
+  <img loading="lazy" src="images/8.jpg" alt="" title="" />
+</a></p>
 <p>Once the top of the pillars were trimmed, I drilled out all the spot welds holding the lower drip rail in and also cut along the edge of the roof so I could remove everything.</p>
 <p>The lower seam isn&rsquo;t too bad. There&rsquo;s some rust but it&rsquo;s primarily on the front half.
-
-
-<div class="image">
-  <a href="images/9.jpg" target="_blank">
-    <img loading="lazy" src="images/9.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/10.jpg" target="_blank">
-    <img loading="lazy" src="images/10.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/11.jpg" target="_blank">
-    <img loading="lazy" src="images/11.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#unleashing-the-sandblaster" id="unleashing-the-sandblaster">#</a>
-  <h1>Unleashing the Sandblaster</h1>
-</div><p>While cleaning out the rust on the inside of the roof I noticed one of my old roof rail bolt holes that I had deleted by welding it up had built up a good amount of rust on it.
-
-
-<div class="image">
-  <a href="images/12.jpg" target="_blank">
-    <img loading="lazy" src="images/12.jpg" alt="" title=""
-       max-width="1920" max-height="3413"  />
-  </a>
-</div>
+<a href="images/9.jpg" target="_blank">
+  <img loading="lazy" src="images/9.jpg" alt="" title="" />
+</a>
+<a href="images/10.jpg" target="_blank">
+  <img loading="lazy" src="images/10.jpg" alt="" title="" />
+</a>
+<a href="images/11.jpg" target="_blank">
+  <img loading="lazy" src="images/11.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Unleashing the Sandblaster
+  <a href="#unleashing-the-sandblaster" id="unleashing-the-sandblaster" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>While cleaning out the rust on the inside of the roof I noticed one of my old roof rail bolt holes that I had deleted by welding it up had built up a good amount of rust on it.
+<a href="images/12.jpg" target="_blank">
+  <img loading="lazy" src="images/12.jpg" alt="" title="" />
+</a>
 It&rsquo;s not easy to tell by the photo but the roof rail mounts are directly above the inner roof structure so it&rsquo;s hard to access them. Way back when, I had sprayed them with paint from the inside but this left the back side (the side closest to the edge of the Jeep) bare.</p>
 <p>Knowing now would be my only time to clean it up properly I decided to break out the sandblaster and clean everything up since I had no way of reaching it with my bare hands.</p>
-<p>
-
-<div class="image">
-  <a href="images/13.jpg" target="_blank">
-    <img loading="lazy" src="images/13.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/14.jpg" target="_blank">
-    <img loading="lazy" src="images/14.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/15.jpg" target="_blank">
-    <img loading="lazy" src="images/15.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<p><a href="images/13.jpg" target="_blank">
+  <img loading="lazy" src="images/13.jpg" alt="" title="" />
+</a>
+<a href="images/14.jpg" target="_blank">
+  <img loading="lazy" src="images/14.jpg" alt="" title="" />
+</a>
+<a href="images/15.jpg" target="_blank">
+  <img loading="lazy" src="images/15.jpg" alt="" title="" />
+</a></p>
 <p>Much better!
-
-
-<div class="image">
-  <a href="images/16.jpg" target="_blank">
-    <img loading="lazy" src="images/16.jpg" alt="" title=""
-       max-width="1920" max-height="3413"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#starting-to-rebuild" id="starting-to-rebuild">#</a>
-  <h1>Starting to Rebuild</h1>
-</div><p>With everything cleaned up I was safe to start the rebuild. I started off by welding up the inner layers I had split in order to access trapped rust.
-
-
-<div class="image">
-  <a href="images/17.jpg" target="_blank">
-    <img loading="lazy" src="images/17.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/18.jpg" target="_blank">
-    <img loading="lazy" src="images/18.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/19.jpg" target="_blank">
-    <img loading="lazy" src="images/19.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/16.jpg" target="_blank">
+  <img loading="lazy" src="images/16.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Starting to Rebuild
+  <a href="#starting-to-rebuild" id="starting-to-rebuild" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>With everything cleaned up I was safe to start the rebuild. I started off by welding up the inner layers I had split in order to access trapped rust.
+<a href="images/17.jpg" target="_blank">
+  <img loading="lazy" src="images/17.jpg" alt="" title="" />
+</a>
+<a href="images/18.jpg" target="_blank">
+  <img loading="lazy" src="images/18.jpg" alt="" title="" />
+</a>
+<a href="images/19.jpg" target="_blank">
+  <img loading="lazy" src="images/19.jpg" alt="" title="" />
+</a></p>
 <p>Then everything was coated with fresh epoxy.
-
-
-<div class="image">
-  <a href="images/20.jpg" target="_blank">
-    <img loading="lazy" src="images/20.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/21.jpg" target="_blank">
-    <img loading="lazy" src="images/21.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/22.jpg" target="_blank">
-    <img loading="lazy" src="images/22.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/20.jpg" target="_blank">
+  <img loading="lazy" src="images/20.jpg" alt="" title="" />
+</a>
+<a href="images/21.jpg" target="_blank">
+  <img loading="lazy" src="images/21.jpg" alt="" title="" />
+</a>
+<a href="images/22.jpg" target="_blank">
+  <img loading="lazy" src="images/22.jpg" alt="" title="" />
+</a></p>
 <p>The backside of the drip rail was also sprayed with a couple of coats for extra protection.
-
-
-<div class="image">
-  <a href="images/23.jpg" target="_blank">
-    <img loading="lazy" src="images/23.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/23.jpg" target="_blank">
+  <img loading="lazy" src="images/23.jpg" alt="" title="" />
+</a></p>
 <p>The old roof rail hole delete should never rust again.
-
-
-<div class="image">
-  <a href="images/24.jpg" target="_blank">
-    <img loading="lazy" src="images/24.jpg" alt="" title=""
-       max-width="1080" max-height="1920"  />
-  </a>
-</div></p>
+<a href="images/24.jpg" target="_blank">
+  <img loading="lazy" src="images/24.jpg" alt="" title="" />
+</a></p>
 <p>Doing some test fits to plan out where to weld in the new panel.
-
-
-<div class="image">
-  <a href="images/25.jpg" target="_blank">
-    <img loading="lazy" src="images/25.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/25.jpg" target="_blank">
+  <img loading="lazy" src="images/25.jpg" alt="" title="" />
+</a></p>
 <p>Placement of the drip rail is actually super important. It needs to be slightly bowed to ensure water will drain off it, while at the same time not being too bowed otherwise the door gaps will look to big.
-
-
-<div class="image">
-  <a href="images/26.jpg" target="_blank">
-    <img loading="lazy" src="images/26.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/27.jpg" target="_blank">
-    <img loading="lazy" src="images/27.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#welded-in" id="welded-in">#</a>
-  <h1>Welded In</h1>
-</div><p>Many spot welds later and some cleaning up with the grinder, the lower drip rail was officially reinstalled.
-
-
-<div class="image">
-  <a href="images/28.jpg" target="_blank">
-    <img loading="lazy" src="images/28.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/29.jpg" target="_blank">
-    <img loading="lazy" src="images/29.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/30.jpg" target="_blank">
-    <img loading="lazy" src="images/30.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/26.jpg" target="_blank">
+  <img loading="lazy" src="images/26.jpg" alt="" title="" />
+</a>
+<a href="images/27.jpg" target="_blank">
+  <img loading="lazy" src="images/27.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Welded In
+  <a href="#welded-in" id="welded-in" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Many spot welds later and some cleaning up with the grinder, the lower drip rail was officially reinstalled.
+<a href="images/28.jpg" target="_blank">
+  <img loading="lazy" src="images/28.jpg" alt="" title="" />
+</a>
+<a href="images/29.jpg" target="_blank">
+  <img loading="lazy" src="images/29.jpg" alt="" title="" />
+</a>
+<a href="images/30.jpg" target="_blank">
+  <img loading="lazy" src="images/30.jpg" alt="" title="" />
+</a></p>
 <p>With the drip rail looking good it was time to finish up welding the pillars.
-
-
-<div class="image">
-  <a href="images/31.jpg" target="_blank">
-    <img loading="lazy" src="images/31.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/32.jpg" target="_blank">
-    <img loading="lazy" src="images/32.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#addressing-the-hole-in-the-quarter-panel" id="addressing-the-hole-in-the-quarter-panel">#</a>
-  <h1>Addressing the Hole in the Quarter Panel</h1>
-</div><p>Because of the rust in the seam, I had to cut a lot more of the roof off than I had initially planned. The OEM replacement panel I had bought didn&rsquo;t extend this far though I was basically on my own to close things up.
-
-
-<div class="image">
-  <a href="images/33.jpg" target="_blank">
-    <img loading="lazy" src="images/33.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/31.jpg" target="_blank">
+  <img loading="lazy" src="images/31.jpg" alt="" title="" />
+</a>
+<a href="images/32.jpg" target="_blank">
+  <img loading="lazy" src="images/32.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Addressing the Hole in the Quarter Panel
+  <a href="#addressing-the-hole-in-the-quarter-panel" id="addressing-the-hole-in-the-quarter-panel" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Because of the rust in the seam, I had to cut a lot more of the roof off than I had initially planned. The OEM replacement panel I had bought didn&rsquo;t extend this far though I was basically on my own to close things up.
+<a href="images/33.jpg" target="_blank">
+  <img loading="lazy" src="images/33.jpg" alt="" title="" />
+</a></p>
 <p>With a bit of experimenting using my bead roller I was able to replicate the OEM bends. I&rsquo;m actually super proud of this piece!
-
-
-<div class="image">
-  <a href="images/34.jpg" target="_blank">
-    <img loading="lazy" src="images/34.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/34.jpg" target="_blank">
+  <img loading="lazy" src="images/34.jpg" alt="" title="" />
+</a></p>
 <p>It took 6 tries to perfect it.
-
-
-<div class="image">
-  <a href="images/35.jpg" target="_blank">
-    <img loading="lazy" src="images/35.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/35.jpg" target="_blank">
+  <img loading="lazy" src="images/35.jpg" alt="" title="" />
+</a></p>
 <p>Prepping to weld it in.
-
-
-<div class="image">
-  <a href="images/36.jpg" target="_blank">
-    <img loading="lazy" src="images/36.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/37.jpg" target="_blank">
-    <img loading="lazy" src="images/37.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div>
-
-
-<div class="image">
-  <a href="images/39.jpg" target="_blank">
-    <img loading="lazy" src="images/39.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/36.jpg" target="_blank">
+  <img loading="lazy" src="images/36.jpg" alt="" title="" />
+</a>
+<a href="images/37.jpg" target="_blank">
+  <img loading="lazy" src="images/37.jpg" alt="" title="" />
+</a>
+<a href="images/39.jpg" target="_blank">
+  <img loading="lazy" src="images/39.jpg" alt="" title="" />
+</a></p>
 <p>Boom!
-
-
-<div class="image">
-  <a href="images/40.jpg" target="_blank">
-    <img loading="lazy" src="images/40.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#patching-the-roof" id="patching-the-roof">#</a>
-  <h1>Patching the Roof</h1>
-</div><p>With the last piece of the lower drip rail done all I had to do now was weld up the roof. The gap looks absolutely massive because when the roof was cut it pulled inwards due to some unreleased tension.
-
-
-<div class="image">
-  <a href="images/38.jpg" target="_blank">
-    <img loading="lazy" src="images/38.jpg" alt="" title=""
-       max-width="1080" max-height="1920"  />
-  </a>
-</div></p>
+<a href="images/40.jpg" target="_blank">
+  <img loading="lazy" src="images/40.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Patching the Roof
+  <a href="#patching-the-roof" id="patching-the-roof" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>With the last piece of the lower drip rail done all I had to do now was weld up the roof. The gap looks absolutely massive because when the roof was cut it pulled inwards due to some unreleased tension.
+<a href="images/38.jpg" target="_blank">
+  <img loading="lazy" src="images/38.jpg" alt="" title="" />
+</a></p>
 <p>But from the side it looks perfectly normal lol.
-
-
-<div class="image">
-  <a href="images/41.jpg" target="_blank">
-    <img loading="lazy" src="images/41.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/41.jpg" target="_blank">
+  <img loading="lazy" src="images/41.jpg" alt="" title="" />
+</a></p>
 <p>Building the drip rail is pretty tricky. The bends are so tight that any tighter and my metal brake wouldn&rsquo;t be able to do it.
-
-
-<div class="image">
-  <a href="images/42.jpg" target="_blank">
-    <img loading="lazy" src="images/42.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/42.jpg" target="_blank">
+  <img loading="lazy" src="images/42.jpg" alt="" title="" />
+</a></p>
 <p>I actually had to make it from two 30&quot; long pieces that were welded together to create a 60&quot; long drip rail. My metal brake is only good for 48&quot;.
-
-
-<div class="image">
-  <a href="images/43.jpg" target="_blank">
-    <img loading="lazy" src="images/43.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/43.jpg" target="_blank">
+  <img loading="lazy" src="images/43.jpg" alt="" title="" />
+</a></p>
 <p>Trimming it down to fit ended up slightly warping it. I think it was the heat of the angle grinder or something. No worries though, it was easy to straighten out.
-
-
-<div class="image">
-  <a href="images/44.jpg" target="_blank">
-    <img loading="lazy" src="images/44.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/44.jpg" target="_blank">
+  <img loading="lazy" src="images/44.jpg" alt="" title="" />
+</a></p>
 <p>Making some holes to plug weld it from below.
-
-
-<div class="image">
-  <a href="images/45.jpg" target="_blank">
-    <img loading="lazy" src="images/45.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/45.jpg" target="_blank">
+  <img loading="lazy" src="images/45.jpg" alt="" title="" />
+</a></p>
 <p>After plug welding it on the bottom I began to work the roof and make tacks to hold it in place.
-
-
-<div class="image">
-  <a href="images/46.jpg" target="_blank">
-    <img loading="lazy" src="images/46.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/46.jpg" target="_blank">
+  <img loading="lazy" src="images/46.jpg" alt="" title="" />
+</a></p>
 <p>Working the center of the roof was tricky. I had to push outwards from inside the roof using a custom tool (some bent 1/8 flat stock) to reach up behind the inner structure of the roof.</p>
 <p>I got things pretty close though.
-
-
-<div class="image">
-  <a href="images/47.jpg" target="_blank">
-    <img loading="lazy" src="images/47.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/47.jpg" target="_blank">
+  <img loading="lazy" src="images/47.jpg" alt="" title="" />
+</a></p>
 <p>Tack, tack, tack.
-
-
-<div class="image">
-  <a href="images/48.jpg" target="_blank">
-    <img loading="lazy" src="images/48.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/48.jpg" target="_blank">
+  <img loading="lazy" src="images/48.jpg" alt="" title="" />
+</a></p>
 <p>Two hours later&hellip;
-
-
-<div class="image">
-  <a href="images/49.jpg" target="_blank">
-    <img loading="lazy" src="images/49.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/49.jpg" target="_blank">
+  <img loading="lazy" src="images/49.jpg" alt="" title="" />
+</a></p>
 <p>And then another hour later after a ton of grinding.
-
-
-<div class="image">
-  <a href="images/50.jpg" target="_blank">
-    <img loading="lazy" src="images/50.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
-<div class="anchor-heading">
-  <a href="#finishing-up" id="finishing-up">#</a>
-  <h1>Finishing up</h1>
-</div><p>And just like that I can officially announce the roof is rust free.</p>
+<a href="images/50.jpg" target="_blank">
+  <img loading="lazy" src="images/50.jpg" alt="" title="" />
+</a></p>
+<h1>
+  Finishing up
+  <a href="#finishing-up" id="finishing-up" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>And just like that I can officially announce the roof is rust free.</p>
 <p>I did a quick test fitment of the old drip rail cover to see if it still fit.
-
-
-<div class="image">
-  <a href="images/51.jpg" target="_blank">
-    <img loading="lazy" src="images/51.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/51.jpg" target="_blank">
+  <img loading="lazy" src="images/51.jpg" alt="" title="" />
+</a></p>
 <p>Before painting the outside I dripped a ton of paint down into the new seam. Doing this protects all the exposed metal in the seam, and also fills up the seam so water can&rsquo;t get down into it
-
-
-<div class="image">
-  <a href="images/52.jpg" target="_blank">
-    <img loading="lazy" src="images/52.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/52.jpg" target="_blank">
+  <img loading="lazy" src="images/52.jpg" alt="" title="" />
+</a></p>
 <p>Looking from the inside you can tell that the seam is fully filled due to the painting dripping out.
-
-
-<div class="image">
-  <a href="images/53.jpg" target="_blank">
-    <img loading="lazy" src="images/53.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/53.jpg" target="_blank">
+  <img loading="lazy" src="images/53.jpg" alt="" title="" />
+</a></p>
 <p>And lastly, two coats of epoxy were sprayed over everything.
-
-
-<div class="image">
-  <a href="images/54.jpg" target="_blank">
-    <img loading="lazy" src="images/54.jpg" alt="" title=""
-       max-width="1920" max-height="1080"  />
-  </a>
-</div></p>
+<a href="images/54.jpg" target="_blank">
+  <img loading="lazy" src="images/54.jpg" alt="" title="" />
+</a></p>
 <p>Next up will be replacing the inner rocker.</p>
 <p><a href="https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-19/">Continue on to Part 19</a></p>
 
+  </div>
 </article>
 
   </main>
@@ -673,6 +407,5 @@ It&rsquo;s not easy to tell by the photo but the roof rail mounts are directly a
 </footer>
   <script src="https://eddieabbondanz.io/js/lol.js"></script>
 </body>
-
 
 </html>
