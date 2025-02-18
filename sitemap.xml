@@ -72,10 +72,10 @@
     <loc>https://eddieabbondanz.io/post/honda/low-comp-or-high-comp-b20b/</loc>
     <lastmod>2024-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-20/</loc>
+    <loc>https://eddieabbondanz.io/series/xj-build/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://eddieabbondanz.io/series/xj-build/</loc>
+    <loc>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-20/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/post/honda/obd1-cel-codes/</loc>
@@ -465,5 +465,7 @@
     <loc>https://eddieabbondanz.io/about/</loc>
   </url><url>
     <loc>https://eddieabbondanz.io/app/</loc>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/oemplus-xj-build/</loc>
   </url>
 </urlset>
