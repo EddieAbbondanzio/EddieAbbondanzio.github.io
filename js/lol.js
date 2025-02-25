@@ -3,13 +3,13 @@ const hamburgerMenu = document.getElementById("hamburger-menu");
 
 if (hamburger && hamburgerMenu) {
   hamburger.addEventListener("click", e => {
-    hamburgerMenu.classList.toggle("active");
+    hamburgerMenu.classList.add("active")
     e.stopPropagation();
   });
 
-  window.addEventListener("click", () => {
-    if (hamburgerMenu.classList.contains("active")) {
-      hamburgerMenu.classList.remove("active");
+  window.addEventListener("click", ev => {
+    if(!ev.target.closest("#hamburger-menu")) {
+      hamburgerMenu.classList.remove("active")
     }
   });
 }

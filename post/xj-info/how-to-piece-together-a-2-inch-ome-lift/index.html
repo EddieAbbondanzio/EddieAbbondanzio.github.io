@@ -14,7 +14,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.8db035f3cd4dd42cecd8278923212daa9b25a32b3d6874ac8332efdbf5d44c87.css" integrity="sha256-jbA1881N1Czs2CeJIyEtqpsloys9aHSsgzLv2/XUTIc=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7cc6d797d44d395c38183d6a5bf884c9f40488a196a1c2fd51d6d44c7f57f25d.css" integrity="sha256-fMbXl9RNOVw4GD1qW/iEyfQEiKGWocL9UdbUTH9X8l0=" media="screen">
 
   <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
     src="//tgpo.eddieabbondanz.io/count.js"></script>
@@ -27,6 +27,10 @@
     <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     Eddie Abbondanzio
   </a>
+
+  <div id="desktop-search" class="pr2 hidden-phone" >
+    
+  </div>
 
   <div class="menu h100 aic fr-tablet dn-phone">
     
@@ -97,8 +101,10 @@
    
 
   <div>
-    <a> Blog </a>
-
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
     <div class="ml2">
       <a href="https://eddieabbondanz.io/post/"> All </a>
 
@@ -146,8 +152,8 @@
 
   <main>
     
-<article class="post">
-  <h1 class="h1 mb2">How to Piece Together a 2&#34; Old Man Emu Lift</h1>
+<article class="post" data-pagefind-meta="image:/post/xj-info/how-to-piece-together-a-2-inch-ome-lift/images/thumbnail.jpg">
+  <h1 class="h1 mb2" data-pagefind-meta="title">How to Piece Together a 2&#34; Old Man Emu Lift</h1>
 
   <div class="fr meta pb3">
     
@@ -165,7 +171,7 @@
     
   </div>
 
-  <div class="markdown-body">
+  <div class="markdown-body" data-pagefind-body>
     <p>Old Man Emu is a great choice for lifting your XJ, but hunting down the correct part numbers can be difficult. I spent the last couple weeks DIYing a lift for my second XJ so I figured I&rsquo;d post up everything I found.</p>
 <p>Lifting an XJ is pretty easy in theory as all you need to do is swap the rear leaf springs, front coil springs, track bar, and shocks but in reality it tends to be much more difficult than that. XJs are old and this means you&rsquo;re very likely to encountered issues such as seized bolts that may snap, worn out or damaged components, and more.</p>
 <p>Because of that you may find yourself needing a bunch of extra parts that lift kit normally don&rsquo;t offer, and are mentioned below.</p>
@@ -351,6 +357,75 @@
   <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
 </footer>
   <script src="https://eddieabbondanz.io/js/lol.js"></script>
+  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
 </body>
 
 </html>

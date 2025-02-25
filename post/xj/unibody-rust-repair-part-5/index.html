@@ -14,7 +14,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.8db035f3cd4dd42cecd8278923212daa9b25a32b3d6874ac8332efdbf5d44c87.css" integrity="sha256-jbA1881N1Czs2CeJIyEtqpsloys9aHSsgzLv2/XUTIc=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.7cc6d797d44d395c38183d6a5bf884c9f40488a196a1c2fd51d6d44c7f57f25d.css" integrity="sha256-fMbXl9RNOVw4GD1qW/iEyfQEiKGWocL9UdbUTH9X8l0=" media="screen">
 
   <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
     src="//tgpo.eddieabbondanz.io/count.js"></script>
@@ -27,6 +27,10 @@
     <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     Eddie Abbondanzio
   </a>
+
+  <div id="desktop-search" class="pr2 hidden-phone" >
+    
+  </div>
 
   <div class="menu h100 aic fr-tablet dn-phone">
     
@@ -97,8 +101,10 @@
    
 
   <div>
-    <a> Blog </a>
-
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
     <div class="ml2">
       <a href="https://eddieabbondanz.io/post/"> All </a>
 
@@ -146,8 +152,8 @@
 
   <main>
     
-<article class="post">
-  <h1 class="h1 mb2">Rust Repair Part 5: Designing A Custom Gas Tank Cradle</h1>
+<article class="post" data-pagefind-meta="image:/post/xj/unibody-rust-repair-part-5/images/thumbnail.jpg">
+  <h1 class="h1 mb2" data-pagefind-meta="title">Rust Repair Part 5: Designing A Custom Gas Tank Cradle</h1>
 
   <div class="fr meta pb3">
     
@@ -165,7 +171,7 @@
     
   </div>
 
-  <div class="markdown-body">
+  <div class="markdown-body" data-pagefind-body>
     <p>Directly below the floor of the XJ in the cargo area sits the gas tank. Tucked tight between the frame rails it rests a mere 1/2&quot; from the floor. The mount for the gas tank is also what braces the floor in the cargo area.
 <a href="images/1.jpg" target="_blank">
   <img loading="lazy" src="images/1.jpg" alt="" title="" />
@@ -271,6 +277,75 @@
   <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
 </footer>
   <script src="https://eddieabbondanz.io/js/lol.js"></script>
+  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
 </body>
 
 </html>
