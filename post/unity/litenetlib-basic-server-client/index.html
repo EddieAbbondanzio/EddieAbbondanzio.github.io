@@ -14,7 +14,7 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.b7b7b0ed5f4f60e68c3c1ba63bd74cffcfe791ac130650b063c1a66378400d15.css" integrity="sha256-t7ew7V9PYOaMPBumO9dM/8/nkawTBlCwY8GmY3hADRU=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
 
   <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
     src="//tgpo.eddieabbondanz.io/count.js"></script>
@@ -317,31 +317,43 @@
   Running Unity as a Client and Server
   <a href="#running-unity-as-a-client-and-server" id="running-unity-as-a-client-and-server" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>With the scripts all set, we need to set up Unity so it can run as either a server, or a client. The easiest way to do this would be to take advantage of scenes. Create a new scene and save it off as <code>Client.unity</code>. Then in the new scene add a new empty GameObject and add the <code>Client</code> script to it.
+<div class="image">
 <a href="images/1.png" target="_blank">
   <img loading="lazy" src="images/1.png" alt="" title="" />
-</a></p>
+</a>
+</div></p>
 <p>After that create a second scene and save it off as <code>Server.unity</code>. Then add an empty GameObject to it and attach the <code>Server</code> script.</p>
-<p><a href="images/2.png" target="_blank">
+<p><div class="image">
+<a href="images/2.png" target="_blank">
   <img loading="lazy" src="images/2.png" alt="" title="" />
-</a></p>
+</a>
+</div></p>
 <p>With both scenes prepared, keep the server scene open and bring up the Build Settings (<code>Shift+Ctrl+B</code>) window. We need to add the server scene to the build by clicking &ldquo;Add Open Scenes&rdquo;.</p>
-<p><a href="images/3.png" target="_blank">
+<p><div class="image">
+<a href="images/3.png" target="_blank">
   <img loading="lazy" src="images/3.png" alt="" title="" />
-</a></p>
+</a>
+</div></p>
 <p>Also ensure that the &ldquo;Development Build&rdquo; checkbox is checked otherwise we wont see any of our <code>Debug.LogError()</code> messages.</p>
-<p><a href="images/4.png" target="_blank">
+<p><div class="image">
+<a href="images/4.png" target="_blank">
   <img loading="lazy" src="images/4.png" alt="" title="" />
-</a></p>
+</a>
+</div></p>
 <p>Close out of the Build Settings window and switch Unity back to the client scene. We&rsquo;re ready to test things out. We&rsquo;ve set things up so anytime we build and run the app Unity will fire up a server instance for us. Then once that&rsquo;s running we can simply hit play in the editor to start our client.</p>
 <p>It comes down to user preference if the client or server should run within the editor, or the standalone build. I personally find that until a menu is added to control when the client connects to a server that it&rsquo;s better to have the server running in the build since we need it active first.</p>
 <p>Build and run the server by hitting <code>Ctrl+B</code>. Unity will popup a loading bar and after a few seconds our server will appear. Now hit play in the editor.</p>
 <p>It&rsquo;s not much, but the server and client will print out their &ldquo;error&rdquo; messages showing that they connected to each other.
+<div class="image">
 <a href="images/5.png" target="_blank">
   <img loading="lazy" src="images/5.png" alt="" title="" />
 </a>
+</div>
+<div class="image">
 <a href="images/6.png" target="_blank">
   <img loading="lazy" src="images/6.png" alt="" title="" />
-</a></p>
+</a>
+</div></p>
 <h1>
   Connection Limit
   <a href="#connection-limit" id="connection-limit" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
