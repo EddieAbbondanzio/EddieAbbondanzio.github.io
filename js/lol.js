@@ -3,7 +3,7 @@ const hamburgerMenu = document.getElementById("hamburger-menu");
 
 if (hamburger && hamburgerMenu) {
   hamburger.addEventListener("click", e => {
-    hamburgerMenu.classList.add("active")
+    hamburgerMenu.classList.toggle("active")
     e.stopPropagation();
   });
 
