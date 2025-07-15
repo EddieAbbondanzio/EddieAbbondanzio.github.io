@@ -4,262 +4,205 @@
     <title>Development on Eddie Abbondanzio</title>
     <link>https://eddieabbondanz.io/series/development/</link>
     <description>Recent content in Development on Eddie Abbondanzio</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://eddieabbondanz.io/series/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/series/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Abusing For Loops In C# For Job Security</title>
       <link>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</link>
       <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</guid>
-      <description>Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&amp;rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.</description>
+      <description>&lt;p&gt;Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&amp;rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>TypeScript - Await Promise.All() And Get The Results</title>
       <link>https://eddieabbondanz.io/post/typescript/await-promise-all/</link>
       <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/typescript/await-promise-all/</guid>
-      <description>I&amp;rsquo;m a big fan of the async await syntax in ES2017. In my opinion it just feels a lot more natural than and then and then and then&amp;hellip;. I digress. I&amp;rsquo;ll keep this one short.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m a big fan of the &lt;code&gt;async&lt;/code&gt; &lt;code&gt;await&lt;/code&gt; syntax in ES2017. In my opinion it just feels a lot more natural than &lt;a href=&#34;https://www.youtube.com/watch?v=CkdyU_eUm1U&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;and then and then and then&amp;hellip;&lt;/a&gt;. I digress. I&amp;rsquo;ll keep this one short.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Unity - LiteNetLib&#39;s Delivery Methods</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</link>
       <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</guid>
-      <description>While LiteNetLib may run on UDP (User Datagram Protocol) which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &amp;ldquo;reliability&amp;rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).</description>
+      <description>&lt;p&gt;While LiteNetLib may run on &lt;a href=&#34;https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UDP (User Datagram Protocol)&lt;/a&gt; which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &amp;ldquo;reliability&amp;rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Unity - How to Create a Basic Server / Client With LiteNetLib</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</link>
       <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</guid>
-      <description>LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take.</description>
+      <description>&lt;p&gt;LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: &lt;a href=&#34;https://eddieabbondanz.io/post/unity/litenetlib-setup/&#34;&gt;How to Setup LiteNetLib With Unity&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Unity - How to Send Data With LiteNetLib</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</link>
       <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</guid>
-      <description>Continuing off the previous post about how to build a basic server / client set up with LiteNetLib it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.</description>
+      <description>&lt;p&gt;Continuing off the previous post about &lt;a href=&#34;https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/&#34;&gt;how to build a basic server / client set up with LiteNetLib&lt;/a&gt; it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Unity - How to Set Up LiteNetLib</title>
       <link>https://eddieabbondanz.io/post/unity/litenetlib-setup/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
-      <description>TL;DR Download the most recent stable release source code zip and copy the /LiteNetLib folder to the Plugins folder in your Unity project.
-LiteNetLib is an UDP networking library that can be used for building multiplayer games with Unity.</description>
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Download the most recent stable release source code zip and copy the &lt;code&gt;/LiteNetLib&lt;/code&gt; folder to the &lt;code&gt;Plugins&lt;/code&gt; folder in your Unity project.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/RevenantX/LiteNetLib&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LiteNetLib&lt;/a&gt; is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with &lt;a href=&#34;https://github.com/lidgren/lidgren-network-gen3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lidgren&lt;/a&gt; you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
       <link>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
       <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
-      <description>With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the User property on HttpContext is now of type ClaimsPrincipal instead of IPrincipal.</description>
+      <description>&lt;p&gt;With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the &lt;code&gt;User&lt;/code&gt; property on &lt;code&gt;HttpContext&lt;/code&gt; is now of type &lt;code&gt;ClaimsPrincipal&lt;/code&gt; instead of &lt;code&gt;IPrincipal&lt;/code&gt;. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ASP.NET Core - Inversion of Control Container</title>
       <link>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
-      <description>ASP.NET Core supports dependency injection directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.</description>
+      <description>&lt;p&gt;ASP.NET Core supports &lt;a href=&#34;https://eddieabbondanz.io/post/software-design/dependency-injection/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dependency injection&lt;/a&gt; directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>TypeScript - Interpolated Strings</title>
       <link>https://eddieabbondanz.io/post/typescript/interpolated-strings/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/typescript/interpolated-strings/</guid>
-      <description>Coming from the .NET world String.Format() was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed.</description>
+      <description>&lt;p&gt;Coming from the .NET world &lt;code&gt;String.Format()&lt;/code&gt; was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&amp;rsquo;t so bad, after all &lt;code&gt;console.log()&lt;/code&gt; allows us to pass multiple parameters and has no trouble logging them.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HTTP Status Codes For a RESTful API</title>
       <link>https://eddieabbondanz.io/post/http/status-codes-for-rest/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/http/status-codes-for-rest/</guid>
-      <description>Hyper Text Transfer Protocol (HTTP) powers the web. It&amp;rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS.</description>
+      <description>&lt;p&gt;Hyper Text Transfer Protocol (HTTP) powers the web. It&amp;rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making &lt;em&gt;requests&lt;/em&gt; that are sent to servers which then reply back with &lt;em&gt;responses&lt;/em&gt;. Only servers can make responses, and only clients can make requests.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HTTP Cookies</title>
       <link>https://eddieabbondanz.io/post/http/cookies/</link>
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/http/cookies/</guid>
-      <description>HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained.</description>
+      <description>&lt;p&gt;HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&amp;rsquo;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>TypeScript - Events</title>
       <link>https://eddieabbondanz.io/post/typescript/events/</link>
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/typescript/events/</guid>
-      <description>If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end.</description>
+      <description>&lt;p&gt;If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&amp;rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&amp;rsquo;s known as polling.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>TypeScript - Taking The Magic Out of Magic Strings</title>
       <link>https://eddieabbondanz.io/post/typescript/magic-strings/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/typescript/magic-strings/</guid>
-      <description>What&amp;rsquo;s so Magical About Magic Strings?  Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.</description>
+      <description>&lt;h1&gt;&#xA;  What&amp;rsquo;s so Magical About Magic Strings?&#xA;  &lt;a href=&#34;#whats-so-magical-about-magic-strings&#34; id=&#34;whats-so-magical-about-magic-strings&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>TypeScript - How To Set Up A New Project</title>
       <link>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</link>
       <pubDate>Mon, 26 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</guid>
-      <description>For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &amp;ldquo;JavaScript that scales&amp;rdquo;, and once you use it you&amp;rsquo;ll never go back.</description>
+      <description>&lt;p&gt;For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &lt;a href=&#34;https://www.typescriptlang.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;JavaScript that scales&amp;rdquo;&lt;/a&gt;, and once you use it you&amp;rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software Design - Marker Interfaces</title>
       <link>https://eddieabbondanz.io/post/software-design/marker-interfaces/</link>
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/software-design/marker-interfaces/</guid>
-      <description>What Are They?  A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.</description>
+      <description>&lt;h1&gt;&#xA;  What Are They?&#xA;  &lt;a href=&#34;#what-are-they&#34; id=&#34;what-are-they&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software Design - Magic Numbers</title>
       <link>https://eddieabbondanz.io/post/software-design/magic-numbers/</link>
       <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/software-design/magic-numbers/</guid>
-      <description>What Are They?  Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;.</description>
+      <description>&lt;h1&gt;&#xA;  What Are They?&#xA;  &lt;a href=&#34;#what-are-they&#34; id=&#34;what-are-they&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;. [1]&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software Design - Dependency Injection and Inversion</title>
       <link>https://eddieabbondanz.io/post/software-design/dependency-injection/</link>
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
-      <description>What are they?  While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name.</description>
+      <description>&lt;h2&gt;&#xA;  What are they?&#xA;  &lt;a href=&#34;#what-are-they&#34; id=&#34;what-are-they&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software Design - Unit Tests vs Integration Tests</title>
       <link>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
-      <description>Preface  Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.</description>
+      <description>&lt;h2&gt;&#xA;  Preface&#xA;  &lt;a href=&#34;#preface&#34; id=&#34;preface&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Mans Blocks - 10/13/2018</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</link>
       <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
-      <description>Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading  I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone.</description>
+      <description>&lt;h1&gt;&#xA;  Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading&#xA;  &lt;a href=&#34;#where-ive-been-and-where-im-heading&#34; id=&#34;where-ive-been-and-where-im-heading&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&amp;rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects. During my adventure I also picked up TypeScript and dived into the intriguing world of NodeJS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software Design - Validator Pattern</title>
       <link>https://eddieabbondanz.io/post/software-design/validator-pattern/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/software-design/validator-pattern/</guid>
-      <description>It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise.</description>
+      <description>&lt;p&gt;It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise. Let&amp;rsquo;s work with an example.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Mans Blocks - 6/4/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
-      <description>Creating Time (literally!)  I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.</description>
+      <description>&lt;h2&gt;&#xA;  Creating Time (literally!)&#xA;  &lt;a href=&#34;#creating-time-literally&#34; id=&#34;creating-time-literally&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this&#xA;so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>C# Threadable Queue</title>
       <link>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
-      <description>Implementing a Thread-Safe Queue  One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today.</description>
+      <description>&lt;h2&gt;&#xA;  Implementing a Thread-Safe Queue&#xA;  &lt;a href=&#34;#implementing-a-thread-safe-queue&#34; id=&#34;implementing-a-thread-safe-queue&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Mans Blocks - 4/20/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</link>
       <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
-      <description>Playing Around at the Bit Level  This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal.</description>
+      <description>&lt;h2&gt;&#xA;  Playing Around at the Bit Level&#xA;  &lt;a href=&#34;#playing-around-at-the-bit-level&#34; id=&#34;playing-around-at-the-bit-level&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&amp;rsquo;t want to handle serialization with 2 different methods I&amp;rsquo;ve decided to bite the bullet and roll my own set up.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Mans Blocks - 4/8/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</link>
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
-      <description>Building Up the Network Logic  While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up.</description>
+      <description>&lt;h2&gt;&#xA;  Building Up the Network Logic&#xA;  &lt;a href=&#34;#building-up-the-network-logic&#34; id=&#34;building-up-the-network-logic&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events. I also didn&amp;rsquo;t care for how each message had it&amp;rsquo;s own event. To try to curtail this redundancy I came up with the following solution.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Logging to Unity or Console</title>
       <link>https://eddieabbondanz.io/post/unity/debug-logging/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/unity/debug-logging/</guid>
-      <description>Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.</description>
+      <description>&lt;p&gt;Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&amp;rsquo;ll need a way to differentiate between the running environments. Instead of wrapping all our Debug.Log() calls in preprocessor directives such as #IF UNITY_EDITOR we can write a simple logging class to handle it for us. While we&amp;rsquo;re at it well add the ability to write log files since they can be quite useful.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Mans Blocks - 3/31/18</title>
       <link>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
-      <description>Stepping back into Networking  These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out.</description>
+      <description>&lt;h2&gt;&#xA;  Stepping back into Networking&#xA;  &lt;a href=&#34;#stepping-back-into-networking&#34; id=&#34;stepping-back-into-networking&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Object Pooling in Unity</title>
       <link>https://eddieabbondanz.io/post/unity/object-pool/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/unity/object-pool/</guid>
-      <description>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling.</description>
+      <description>&lt;p&gt;Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Greedy Meshing for Vertex Colored Voxels In Unity</title>
       <link>https://eddieabbondanz.io/post/voxel/greedy-mesh/</link>
       <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://eddieabbondanz.io/post/voxel/greedy-mesh/</guid>
-      <description>TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
-This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity.</description>
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Full algorithm is at the bottom. Classes for &lt;code&gt;Block&lt;/code&gt;, &lt;code&gt;Chunk&lt;/code&gt;, and &lt;code&gt;MeshData&lt;/code&gt; are defined below the intro.&lt;/p&gt;&#xA;&lt;p&gt;This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from &lt;a href=&#34;https://github.com/roboleary/GreedyMesh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Robert O&amp;rsquo;Leary&lt;/a&gt;, with a few alterations made.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

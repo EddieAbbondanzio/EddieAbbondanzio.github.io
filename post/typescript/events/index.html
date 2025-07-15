@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -180,111 +178,111 @@
     <p>If you were expecting a phone call from a friend, you (hopefully) wouldn&rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&rsquo;s known as polling.</p>
 <p>Polling in Computer Science is &ldquo;the process where the computer or controlling device waits for an external device to check for its readiness or state.&rdquo; [1] It&rsquo;s often used for low level applications such as listening for incoming data from the network, or interacting with an IO device.</p>
 <p>We could represent a very basic form of polling from a network as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">hasData</span>()) {
-    <span style="color:#75715e">//Do work
-</span><span style="color:#75715e"></span>  }
-}
-</code></pre></div><p>Since the network doesn&rsquo;t &ldquo;announce&rdquo; when data comes in, we have to manually check it over and over again via the <code>network.hasData()</code> conditional. Polling can be a costly operation depending on how often it occurs, and should only be used when there are no other options. Fortunately, for most problems we can take advantage of events to write reactive code that only executes when needed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">network</span>.<span style="color:#a6e22e">hasData</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Do work
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since the network doesn&rsquo;t &ldquo;announce&rdquo; when data comes in, we have to manually check it over and over again via the <code>network.hasData()</code> conditional. Polling can be a costly operation depending on how often it occurs, and should only be used when there are no other options. Fortunately, for most problems we can take advantage of events to write reactive code that only executes when needed.</p>
 <h1>
   Enter TypeScript
   <a href="#enter-typescript" id="enter-typescript" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>TypeScript may not support events directly out of the box, but that doesn&rsquo;t mean we can&rsquo;t create our own. We&rsquo;ll start off by defining a type to represent event handlers that can subscribe to events.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Event handler that can subscribe to a dispatcher.
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">EventHandler</span>&lt;<span style="color:#f92672">E</span>&gt; <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">E</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>;
-</code></pre></div><p>Now let&rsquo;s define an interface to represent events. By defining an interface we can restrict the ability to invoke events to within the class that owns them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Event that can be subscribed to.
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * Register a new handler with the dispatcher. Any time the event is
-</span><span style="color:#75715e">   * dispatched, the handler will be notified.
-</span><span style="color:#75715e">   * @param handler The handler to register.
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#a6e22e">register</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
-
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">   * Desubscribe a handler from the dispatcher.
-</span><span style="color:#75715e">   * @param handler The handler to remove.
-</span><span style="color:#75715e">   */</span>
-  <span style="color:#a6e22e">unregister</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
-}
-</code></pre></div><p>After that we&rsquo;ll need an event dispatcher. This will need to implement our <code>Event&lt;E&gt;</code> interface.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Dispatcher that can propogate events to subscribers.
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {}
-</code></pre></div><p>The dispatcher maintains a collection of handlers that should be notified anytime the event is dispatched.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {
-    <span style="color:#75715e">/**
-</span><span style="color:#75715e">     * The handlers that want to be notified when an event occurs.
-</span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_handlers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>[];
-
-    <span style="color:#75715e">/**
-</span><span style="color:#75715e">     * Create a new event dispatcher.
-</span><span style="color:#75715e">     */</span>
-    <span style="color:#a6e22e">constructor</span>() {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span> <span style="color:#f92672">=</span> [];
-    }
-}
-</code></pre></div><p>Then to satisfy the <code>Event&lt;E&gt;</code> interface we&rsquo;ll implement <code>register()</code> and <code>unregister()</code> like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#75715e">/**
-</span><span style="color:#75715e">     * Register a new handler with the dispatcher. Any time the event is
-</span><span style="color:#75715e">     * dispatched, the handler will be notified.
-</span><span style="color:#75715e">     * @param handler The handler to register.
-</span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">register</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">handler</span>);
-    }
-
-    <span style="color:#75715e">/**
-</span><span style="color:#75715e">     * Desubscribe a handler from the dispatcher.
-</span><span style="color:#75715e">     * @param handler The handler to remove.
-</span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">unregister</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">handler</span>) {
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>);
-            }
-        }
-    }
-</code></pre></div><p>To finish off our <code>EventDispatcher&lt;E&gt;</code> class, we&rsquo;ll define a <code>dispatch()</code> method that can notify all the subscribers when the event is invoked.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#75715e">/**
-</span><span style="color:#75715e">     * Dispatch an event to all the subscribers.
-</span><span style="color:#75715e">     * @param event The data of the event that occured.
-</span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">event</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">E</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">handler</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>) {
-            <span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">event</span>);
-        }
-    }
-</code></pre></div><h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Event handler that can subscribe to a dispatcher.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">EventHandler</span>&lt;<span style="color:#f92672">E</span>&gt; <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">E</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>;
+</span></span></code></pre></div><p>Now let&rsquo;s define an interface to represent events. By defining an interface we can restrict the ability to invoke events to within the class that owns them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Event that can be subscribed to.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Register a new handler with the dispatcher. Any time the event is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * dispatched, the handler will be notified.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * @param handler The handler to register.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">register</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Desubscribe a handler from the dispatcher.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * @param handler The handler to remove.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unregister</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>After that we&rsquo;ll need an event dispatcher. This will need to implement our <code>Event&lt;E&gt;</code> interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Dispatcher that can propogate events to subscribers.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {}
+</span></span></code></pre></div><p>The dispatcher maintains a collection of handlers that should be notified anytime the event is dispatched.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * The handlers that want to be notified when an event occurs.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_handlers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>[];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Create a new event dispatcher.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">constructor</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then to satisfy the <code>Event&lt;E&gt;</code> interface we&rsquo;ll implement <code>register()</code> and <code>unregister()</code> like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Register a new handler with the dispatcher. Any time the event is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * dispatched, the handler will be notified.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param handler The handler to register.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">register</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">handler</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Desubscribe a handler from the dispatcher.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param handler The handler to remove.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">unregister</span>(<span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventHandler</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">E</span><span style="color:#f92672">&gt;</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">handler</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>To finish off our <code>EventDispatcher&lt;E&gt;</code> class, we&rsquo;ll define a <code>dispatch()</code> method that can notify all the subscribers when the event is invoked.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Dispatch an event to all the subscribers.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param event The data of the event that occured.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">event</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">E</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">handler</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_handlers</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">event</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h1>
   Example
   <a href="#example" id="example" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>Imagine we we&rsquo;re working on a login form that accepts an input of an email, and password. The form needs to notify the parent page when the user hits the login button so a request can be sent off to the server.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">UserCredentials</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> };
-
-    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
-        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_email</span><span style="color:#f92672">!:</span> <span style="color:#a6e22e">string</span>;
-
-        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_password</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">string</span>;
-
-        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_onLoginDispatcher</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
-
-        <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">onLogin</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span> {
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
-        }
-    }
-</code></pre></div><p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span>.<span style="color:#a6e22e">dispatch</span>({
-  <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;john.smith@mail.com&#34;</span>,
-  <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>,
-});
-</code></pre></div><h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">UserCredentials</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_email</span><span style="color:#f92672">!:</span> <span style="color:#a6e22e">string</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_password</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">string</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_onLoginDispatcher</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">EventDispatcher</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">onLogin</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Event</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">UserCredentials</span><span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>By making use of a getter property to publicize <code>onLogin</code> we prevent the chance of any external sources from invoking the <code>dispatch()</code> property on the event dispatcher. This helps create a similar set up to how C# restricts events to be invoked only within the class their defined. And lastly to invoke our event we would do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_onLoginDispatcher</span>.<span style="color:#a6e22e">dispatch</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;john.smith@mail.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hunter2&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2>
   Sources
   <a href="#sources" id="sources" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h2><p>[1] Wikipedia contributors. (2018, June 3). Polling (computer science). In Wikipedia, The Free Encyclopedia. Retrieved 12:12, January 22, 2019, from <a href="https://en.wikipedia.org/w/index.php?title=Polling_%28computer_science%29&amp;oldid=844171740" target="_blank" rel="noopener">https://en.wikipedia.org/w/index.php?title=Polling_(computer_science)&oldid=844171740</a></p>

@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -183,8 +181,7 @@
   <a href="#claims" id="claims" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h2><p>Claims are the foundation behind claims-based authentication (who would have guessed). A claim is simply a piece of information about a subject. A claim does not dictate what a subject can, or cannot do.</p>
 <blockquote>
-<p>The term &ldquo;subject&rdquo; is used because claims are not restricted to only describing users. Claims can be about an application, service, or device.</p>
-</blockquote>
+<p>The term &ldquo;subject&rdquo; is used because claims are not restricted to only describing users. Claims can be about an application, service, or device.</p></blockquote>
 <p>Some examples of claims a subject may have are:</p>
 <ul>
 <li>Username</li>
@@ -193,68 +190,68 @@
 <li>Location</li>
 </ul>
 <p>Claims are name-key values and are represented via the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0" target="_blank" rel="noopener"><code>System.Security.Claim</code></a> class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Claim</span> {
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Type { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Value { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> ValueType { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#75715e">// some properties have been omitted.
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>Each claim has a <code>Type</code> property that is used to identify it, and a <code>Value</code> property which holds the data of the claim. For simplicity, <code>Claim</code> stores <code>Value</code> as a string, but if the data type of <code>Value</code> is not a string then the <code>ValueType</code> property can be set so the claim consumer knows how to interpret the <code>Value</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Claim</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Type { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Value { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> ValueType { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// some properties have been omitted.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Each claim has a <code>Type</code> property that is used to identify it, and a <code>Value</code> property which holds the data of the claim. For simplicity, <code>Claim</code> stores <code>Value</code> as a string, but if the data type of <code>Value</code> is not a string then the <code>ValueType</code> property can be set so the claim consumer knows how to interpret the <code>Value</code>.</p>
 <p>We could represent a claim for a user&rsquo;s Id as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">Claim idClaim = <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Id&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;Integer&#34;</span>);
-<span style="color:#75715e">// idClaim.Name == &#34;Id&#34;
-</span><span style="color:#75715e">// idClaim.Value = &#34;1&#34;
-</span><span style="color:#75715e">// idClaim.ValueType == &#34;Integer&#34;
-</span></code></pre></div><p>Or if we needed one for a user&rsquo;s birthday:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">Claim dobClaim = <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;dob&#34;</span>, <span style="color:#e6db74">&#34;04/20/1969&#34;</span>, <span style="color:#e6db74">&#34;Date&#34;</span>);
-<span style="color:#75715e">// dobClaim.Name == &#34;dob&#34;
-</span><span style="color:#75715e">// dobClaim.Value == &#34;04/20/1969&#34;
-</span><span style="color:#75715e">// dobClaim.ValueType == &#34;Date&#34;
-</span></code></pre></div><h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Claim idClaim = <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Id&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;Integer&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// idClaim.Name == &#34;Id&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// idClaim.Value = &#34;1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// idClaim.ValueType == &#34;Integer&#34;</span>
+</span></span></code></pre></div><p>Or if we needed one for a user&rsquo;s birthday:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Claim dobClaim = <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;dob&#34;</span>, <span style="color:#e6db74">&#34;04/20/1969&#34;</span>, <span style="color:#e6db74">&#34;Date&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// dobClaim.Name == &#34;dob&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// dobClaim.Value == &#34;04/20/1969&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// dobClaim.ValueType == &#34;Date&#34;</span>
+</span></span></code></pre></div><h2>
   Identities
   <a href="#identities" id="identities" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h2><p>Claims representing the same subject can be grouped together and placed in a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsidentity?view=netcore-3.0" target="_blank" rel="noopener"><code>ClaimsIdentity</code></a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsIdentity</span> {
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Name { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> AuthenticationType { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsAuthenticated { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#75715e">// some properties have been omitted.
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p><code>ClaimsIdentity</code> also has an <code>AuthenticationType</code> property that holds the authentication method used such as &ldquo;Bearer&rdquo; or &ldquo;Basic&rdquo; and <code>IsAuthenticated</code> which returns true as long as <code>AuthenticationType</code> is not null.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsIdentity</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Name { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> AuthenticationType { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsAuthenticated { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// some properties have been omitted.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>ClaimsIdentity</code> also has an <code>AuthenticationType</code> property that holds the authentication method used such as &ldquo;Bearer&rdquo; or &ldquo;Basic&rdquo; and <code>IsAuthenticated</code> which returns true as long as <code>AuthenticationType</code> is not null.</p>
 <p>Imagine we we&rsquo;re working on an API where users are identified via their unique Id, and Name. After validating a bearer token (JWT, etc&hellip;) recieved from the user we could create a ClaimsIdentity to represent them:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">ClaimsIdentity userIdentity = <span style="color:#66d9ef">new</span> ClaimsIdentity(
-  <span style="color:#66d9ef">new</span> Claim[] {
-    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Id&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>),
-    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Username&#34;</span>, <span style="color:#e6db74">&#34;Bert&#34;</span>)
-  },
-  <span style="color:#e6db74">&#34;Bearer&#34;</span>
-);
-
-<span style="color:#75715e">//userIdentity.IsAuthenticated == true since we passed &#34;Bearer&#34; as AuthenticationType.
-</span></code></pre></div><h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>ClaimsIdentity userIdentity = <span style="color:#66d9ef">new</span> ClaimsIdentity(
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> Claim[] {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Id&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Username&#34;</span>, <span style="color:#e6db74">&#34;Bert&#34;</span>)
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Bearer&#34;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//userIdentity.IsAuthenticated == true since we passed &#34;Bearer&#34; as AuthenticationType.</span>
+</span></span></code></pre></div><h2>
   Principals
   <a href="#principals" id="principals" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h2><p>A <code>ClaimsIdentity</code> is convenient for representing a subject via a collection of claims but what if we want to assign more than one identity to a subject? Returning back to our previous example of the API, what would happen if we wanted to also identify the device being used by the user to ensure it&rsquo;s whitelisted? Sure we could add a new Claim with device IP address, or agent string to the user identity, but what if the user accesses the API from more than one device?</p>
 <p>To handle this use case without duplicating user information we&rsquo;d be best off to create a new identity to represent the device that holds the IP address, and agent string.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">ClaimsIdentity deviceIdentity = <span style="color:#66d9ef">new</span> ClaimsIdentity(
-  <span style="color:#66d9ef">new</span> Claim[] {
-    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;IP&#34;</span>, <span style="color:#e6db74">&#34;192.168.1.1&#34;</span>),
-    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Agent&#34;</span>, <span style="color:#e6db74">&#34;Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0&#34;</span>)
-  }
-);
-
-<span style="color:#75715e">// Note the lack of AuthenticationType
-</span></code></pre></div><p>Seperating the user claims from the device claims into two seperate identities allows us to indicate that each can exist without the other. This works great, but how do we show that the identies are related? Enter the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal?view=netcore-3.0" target="_blank" rel="noopener"><code>ClaimsPrincipal</code></a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsPrincipal</span> {
-  <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> IEnumerable&lt;ClaimsIdentity&gt; { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#66d9ef">public</span> ClaimsIdentity Identity { <span style="color:#66d9ef">get</span>; }
-  <span style="color:#75715e">// some properties have been omitted.
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>&ldquo;A principal object represents the security context of the user on whose behalf the code is running, including that user&rsquo;s identity&rdquo; <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.principal.iprincipal?view=netcore-3.0" target="_blank" rel="noopener">[1]</a>. By using a <code>ClaimsPrincipal</code> we can group the user identity, and device identity into one context without having to duplicate any info.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">  <span style="color:#66d9ef">var</span> principal = <span style="color:#66d9ef">new</span> ClaimsPrincipal(<span style="color:#66d9ef">new</span> IIdentity[] { userIdentity, deviceIdentity });
-</code></pre></div><p><code>ClaimsPrincipal</code> provides a handful of helper methods / properties to check things such as if a claim exists (<code>HasClaim()</code>) in any of the associated identities. When working within an API controller in ASP.NET we can access the current principal via the <code>User</code> property.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>ClaimsIdentity deviceIdentity = <span style="color:#66d9ef">new</span> ClaimsIdentity(
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> Claim[] {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;IP&#34;</span>, <span style="color:#e6db74">&#34;192.168.1.1&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> Claim(<span style="color:#e6db74">&#34;Agent&#34;</span>, <span style="color:#e6db74">&#34;Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Note the lack of AuthenticationType</span>
+</span></span></code></pre></div><p>Seperating the user claims from the device claims into two seperate identities allows us to indicate that each can exist without the other. This works great, but how do we show that the identies are related? Enter the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal?view=netcore-3.0" target="_blank" rel="noopener"><code>ClaimsPrincipal</code></a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClaimsPrincipal</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> IEnumerable&lt;Claim&gt; Claims { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> IEnumerable&lt;ClaimsIdentity&gt; { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> ClaimsIdentity Identity { <span style="color:#66d9ef">get</span>; }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// some properties have been omitted.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>&ldquo;A principal object represents the security context of the user on whose behalf the code is running, including that user&rsquo;s identity&rdquo; <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.principal.iprincipal?view=netcore-3.0" target="_blank" rel="noopener">[1]</a>. By using a <code>ClaimsPrincipal</code> we can group the user identity, and device identity into one context without having to duplicate any info.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> principal = <span style="color:#66d9ef">new</span> ClaimsPrincipal(<span style="color:#66d9ef">new</span> IIdentity[] { userIdentity, deviceIdentity });
+</span></span></code></pre></div><p><code>ClaimsPrincipal</code> provides a handful of helper methods / properties to check things such as if a claim exists (<code>HasClaim()</code>) in any of the associated identities. When working within an API controller in ASP.NET we can access the current principal via the <code>User</code> property.</p>
 
   </div>
 </article>

@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -182,138 +180,138 @@
   Implementing the Client
   <a href="#implementing-the-client" id="implementing-the-client" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>Let&rsquo;s start by creating our client script. We&rsquo;ll call it (wait for it) <code>Client.cs</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> UnityEngine;
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
-    <span style="color:#75715e">// Start is called before the first frame update
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start() {
-    }
-
-    <span style="color:#75715e">// Update is called once per frame
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
-    }
-}
-</code></pre></div><p>We&rsquo;ll need to give the client a <code>NetManager</code> that interacts with the network, and an <code>EventBasedNetListener</code> that will be used to trigger events any time input is received from the network.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> UnityEngine;
-<span style="color:#66d9ef">using</span> LiteNetLib;
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
-    NetManager netManager;
-    EventBasedNetListener netListener;
-
-    <span style="color:#75715e">// Start is called before the first frame update
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start() {
-
-    }
-
-    <span style="color:#75715e">// Update is called once per frame
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
-    }
-}
-</code></pre></div><p>In <code>Start()</code> we&rsquo;ll go ahead and prepare the <code>netListener</code>, and then initialize the <code>netManager</code> by passing it our listener. The <code>netListener</code> provides several different events we can subscribe to such as <code>OnPeerConnected</code>, <code>OnPeerDisconnected</code>, <code>OnNetworkRecieve</code> and more. Since this is a basic server / client set up, we&rsquo;re only going to listen for the <code>OnPeerConnected</code> event.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Start() {
-    netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
-    netListener.PeerConnectedEvent += (server) =&gt; {
-        Debug.LogError(<span style="color:#e6db74">$&#34;Connected to server: {server}&#34;</span>);
-    };
-
-    client = <span style="color:#66d9ef">new</span> NetManager(netListener);
-}
-</code></pre></div><p>With the <code>netManager</code> set up, we&rsquo;ll call <code>Start()</code> to fire it up and then <code>Connect()</code> to pass it the IP address of our server (localhost in this case).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Start() {
-    netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
-    netListener.PeerConnectedEvent += (server) =&gt; {
-        Debug.LogError(<span style="color:#e6db74">$&#34;Connected to server: {server}&#34;</span>);
-    };
-
-    netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
-    netManager.Start(); <span style="color:#75715e">// Don&#39;t forget to call .Start()!
-</span><span style="color:#75715e"></span>    netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>);
-}
-</code></pre></div><p>The client is all set up, and can now connect to the server, but there&rsquo;s one last thing we need to add. LiteNetLib expects us to manually poll for events from the network as it doesn&rsquo;t know how often we want to check for these. This can be accomplished by adding a call to <code>PollEvents()</code> in `Update().</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Client.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
-    netManager.PollEvents();
-}
-</code></pre></div><h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Client.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We&rsquo;ll need to give the client a <code>NetManager</code> that interacts with the network, and an <code>EventBasedNetListener</code> that will be used to trigger events any time input is received from the network.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Client.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> LiteNetLib;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    NetManager netManager;
+</span></span><span style="display:flex;"><span>    EventBasedNetListener netListener;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In <code>Start()</code> we&rsquo;ll go ahead and prepare the <code>netListener</code>, and then initialize the <code>netManager</code> by passing it our listener. The <code>netListener</code> provides several different events we can subscribe to such as <code>OnPeerConnected</code>, <code>OnPeerDisconnected</code>, <code>OnNetworkRecieve</code> and more. Since this is a basic server / client set up, we&rsquo;re only going to listen for the <code>OnPeerConnected</code> event.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Client.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>    netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
+</span></span><span style="display:flex;"><span>    netListener.PeerConnectedEvent += (server) =&gt; {
+</span></span><span style="display:flex;"><span>        Debug.LogError(<span style="color:#e6db74">$&#34;Connected to server: {server}&#34;</span>);
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    client = <span style="color:#66d9ef">new</span> NetManager(netListener);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With the <code>netManager</code> set up, we&rsquo;ll call <code>Start()</code> to fire it up and then <code>Connect()</code> to pass it the IP address of our server (localhost in this case).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Client.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>    netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
+</span></span><span style="display:flex;"><span>    netListener.PeerConnectedEvent += (server) =&gt; {
+</span></span><span style="display:flex;"><span>        Debug.LogError(<span style="color:#e6db74">$&#34;Connected to server: {server}&#34;</span>);
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
+</span></span><span style="display:flex;"><span>    netManager.Start(); <span style="color:#75715e">// Don&#39;t forget to call .Start()!</span>
+</span></span><span style="display:flex;"><span>    netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The client is all set up, and can now connect to the server, but there&rsquo;s one last thing we need to add. LiteNetLib expects us to manually poll for events from the network as it doesn&rsquo;t know how often we want to check for these. This can be accomplished by adding a call to <code>PollEvents()</code> in `Update().</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Client.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    netManager.PollEvents();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1>
   Implementing the Server
   <a href="#implementing-the-server" id="implementing-the-server" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>With the client all ready, let&rsquo;s go ahead and create another MonoBehaviour called <code>Server.cs</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> UnityEngine;
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
-    <span style="color:#75715e">// Start is called before the first frame update
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start() {
-    }
-
-    <span style="color:#75715e">// Update is called once per frame
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
-    }
-}
-</code></pre></div><p>Just like the client, the server will also need a <code>NetManager</code> and <code>NetListener</code>. Let&rsquo;s add these as fields.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> UnityEngine;
-<span style="color:#66d9ef">using</span> LiteNetLib;
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
-    NetManager netManager;
-    NetListener netListener;
-
-    <span style="color:#75715e">// Start is called before the first frame update
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start() {
-    }
-
-    <span style="color:#75715e">// Update is called once per frame
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update() {
-    }
-}
-</code></pre></div><p>And again we&rsquo;ll initialize our <code>netListener</code> and <code>netManager</code> in <code>Start()</code>. However, this time we&rsquo;ll need to listen for a new event: <code>ConnectionRequestEvent</code>. Like its name implies, this event is fired off when a new client wants to connect to the server. Here we can decide if we want to allow the client to connect, or reject them. For now we&rsquo;ll just always accept the connection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.Collections;
-<span style="color:#66d9ef">using</span> System.Collections.Generic;
-<span style="color:#66d9ef">using</span> LiteNetLib;
-<span style="color:#66d9ef">using</span> UnityEngine;
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
-    EventBasedNetListener netListener;
-    NetManager netManager;
-
-    <span style="color:#75715e">// Start is called before the first frame update
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start() {
-        Debug.LogError(<span style="color:#e6db74">&#34;starting server&#34;</span>);
-        netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
-
-        netListener.ConnectionRequestEvent += (request) =&gt; {
-            request.Accept();
-        };
-
-        netListener.PeerConnectedEvent += (client) =&gt; {
-            Debug.LogError(<span style="color:#e6db74">$&#34;Client connected: {client}&#34;</span>);
-        };
-
-        netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
-    }
-}
-</code></pre></div><p>With the server ready to accept new clients that wish to connect we just need to add a call to <code>PollEvents()</code> in <code>Update()</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// Server.cs
-</span><span style="color:#75715e">// Update is called once per frame
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> Update() {
-    netManager.PollEvents();
-}
-</code></pre></div><h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Server.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Just like the client, the server will also need a <code>NetManager</code> and <code>NetListener</code>. Let&rsquo;s add these as fields.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Server.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> LiteNetLib;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    NetManager netManager;
+</span></span><span style="display:flex;"><span>    NetListener netListener;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And again we&rsquo;ll initialize our <code>netListener</code> and <code>netManager</code> in <code>Start()</code>. However, this time we&rsquo;ll need to listen for a new event: <code>ConnectionRequestEvent</code>. Like its name implies, this event is fired off when a new client wants to connect to the server. Here we can decide if we want to allow the client to connect, or reject them. For now we&rsquo;ll just always accept the connection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Server.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> LiteNetLib;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Server</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    EventBasedNetListener netListener;
+</span></span><span style="display:flex;"><span>    NetManager netManager;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start() {
+</span></span><span style="display:flex;"><span>        Debug.LogError(<span style="color:#e6db74">&#34;starting server&#34;</span>);
+</span></span><span style="display:flex;"><span>        netListener = <span style="color:#66d9ef">new</span> EventBasedNetListener();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        netListener.ConnectionRequestEvent += (request) =&gt; {
+</span></span><span style="display:flex;"><span>            request.Accept();
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        netListener.PeerConnectedEvent += (client) =&gt; {
+</span></span><span style="display:flex;"><span>            Debug.LogError(<span style="color:#e6db74">$&#34;Client connected: {client}&#34;</span>);
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        netManager = <span style="color:#66d9ef">new</span> NetManager(netListener);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With the server ready to accept new clients that wish to connect we just need to add a call to <code>PollEvents()</code> in <code>Update()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// Server.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    netManager.PollEvents();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1>
   Running Unity as a Client and Server
   <a href="#running-unity-as-a-client-and-server" id="running-unity-as-a-client-and-server" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>With the scripts all set, we need to set up Unity so it can run as either a server, or a client. The easiest way to do this would be to take advantage of scenes. Create a new scene and save it off as <code>Client.unity</code>. Then in the new scene add a new empty GameObject and add the <code>Client</code> script to it.
@@ -358,26 +356,26 @@
   Connection Limit
   <a href="#connection-limit" id="connection-limit" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>Adding a connection limit to the server is an easy to add feature that only requires a few extra lines. Jump back over to <code>Server.cs</code> and adjust the event handler for <code>ConnectionRequestEvent</code> to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
-    <span style="color:#66d9ef">int</span> connectionLimit = <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Arbitrary connection limit.
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">if</span> (netManager.PeersCount &gt; connectionLimit) {
-        request.Reject();
-    } <span style="color:#66d9ef">else</span> {
-        request.Accept();
-    }
-};
-</code></pre></div><h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>netListener.ConnectionRequestEvent += (request) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> connectionLimit = <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// Arbitrary connection limit.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (netManager.PeersCount &gt; connectionLimit) {
+</span></span><span style="display:flex;"><span>        request.Reject();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        request.Accept();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h1>
   Connection Key
   <a href="#connection-key" id="connection-key" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>Another quick feature we can add to the server is a connection key. We can set it up so the server requires this key from clients before accepting them. This is useful if we wanted to ensure only instances of our game are connecting, or if we want to ensure the client is running a specific version.</p>
 <p>Again we&rsquo;ll apply a quick tweak to the event handler for <code>ConnectionRequestEvent</code> in <code>Server.cs</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netListener.ConnectionRequestEvent += (request) =&gt; {
-    request.AcceptIfKey(<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
-};
-</code></pre></div><p>And when we call <code>Connect()</code> in <code>Client.cs</code> we&rsquo;ll need to pass the key as an extra parameter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
-</code></pre></div><h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>netListener.ConnectionRequestEvent += (request) =&gt; {
+</span></span><span style="display:flex;"><span>    request.AcceptIfKey(<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>And when we call <code>Connect()</code> in <code>Client.cs</code> we&rsquo;ll need to pass the key as an extra parameter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>netManager.Connect(<span style="color:#e6db74">&#34;localhost&#34;</span>, <span style="color:#ae81ff">9050</span>, <span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>);
+</span></span></code></pre></div><h1>
   Wrapping Up
   <a href="#wrapping-up" id="wrapping-up" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>This tutorial is only the tip of the iceberg in what LiteNetLib can do and offer. It&rsquo;s library is a low level API but it provides the building blocks needed to bring a multiplayer game to life.</p>
@@ -385,7 +383,7 @@
 <h1>
   Source Code
   <a href="#source-code" id="source-code" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
-</h1><script type="application/javascript" src="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3.js"></script>
+</h1><script src="https://gist.github.com/EddieAbbondanzio/81eb3675f8cb8b51acbdc8888f9ab1a3.js"></script>
 
 
   </div>

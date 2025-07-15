@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -184,72 +182,72 @@
 <p>To help prepare for this task I&rsquo;ve created a BitManipulator class that allows for individual bits to be written to in a byte array. This was done to allow for writing bools as single bits vew an entire byte. The BitManipulator will be used by the ByteBuffer to help pack data as tight as possible for network traversal.</p>
 <p>To limit the use of the bit manipulator it only allows for writing between 1 to 8 bits at a time. Any more than that would be unreasonable since it would be no different than writing bytes. Also by setting the upper limit to 8 it only requires us to handle 2 cases. The first when modifying only 1 byte, and the second where two (adjacent) bytes are being modified.</p>
 <p>Reading bits is fairly simple.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">byte</span> ReadBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount) {
-    <span style="color:#75715e">//Ensure valid use of the method.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (bitCount &lt; <span style="color:#ae81ff">1</span> || bitCount &gt; <span style="color:#ae81ff">8</span>) {
-        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;Bit count should be within the range of 1 to 8!&#34;</span>);
-    }
-
-    <span style="color:#75715e">//Figure out byte index, and where to start in the byte
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> byteIndex = bitIndex / <span style="color:#ae81ff">8</span>;
-    <span style="color:#66d9ef">int</span> bitOffset = bitIndex % <span style="color:#ae81ff">8</span>;
-
-    <span style="color:#75715e">//Reading from 1 byte
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (bitCount + bitOffset &lt;= <span style="color:#ae81ff">8</span>) {
-        <span style="color:#75715e">//Build the mask
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">byte</span> mask = (<span style="color:#66d9ef">byte</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
-
-        <span style="color:#75715e">//Get the bits and shift them to proper location.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">byte</span>)((bytes[byteIndex] &amp; mask) &gt;&gt; bitOffset);
-    }
-    <span style="color:#75715e">//Reading from 2 bytes
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">//Gets the two bytes combined
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">short</span> <span style="color:#66d9ef">value</span> = SerializeUtils.GetShort(bytes, byteIndex);
-
-        <span style="color:#75715e">//Then we can pull out the data we want.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">short</span> mask = (<span style="color:#66d9ef">short</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
-        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">byte</span>)((<span style="color:#66d9ef">value</span> &amp; mask) &gt;&gt; bitOffset);
-    }
-}
-</code></pre></div><p>Writing bits is only a little more challenging.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> WriteBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount, <span style="color:#66d9ef">byte</span> <span style="color:#66d9ef">value</span>) {
-    <span style="color:#75715e">//Ensure valid use of the method.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (bitCount &lt; <span style="color:#ae81ff">1</span> || bitCount &gt; <span style="color:#ae81ff">8</span>) {
-        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;Bit count should be within the range of 1 to 8!&#34;</span>);
-    }
-
-    <span style="color:#75715e">//Divide it by 8, and find bit offset.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> byteIndex = bitIndex / <span style="color:#ae81ff">8</span>;
-    <span style="color:#66d9ef">int</span> bitOffset = bitIndex % <span style="color:#ae81ff">8</span>;
-
-    <span style="color:#75715e">//Writing into 1 byte case
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (bitCount + bitOffset &lt;= <span style="color:#ae81ff">8</span>) {
-        <span style="color:#75715e">//shift to account for offset
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">value</span> &lt;&lt;= bitOffset;
-
-        <span style="color:#75715e">//Build the mask
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">byte</span> mask = (<span style="color:#66d9ef">byte</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
-
-        bytes[byteIndex] &amp;= (<span style="color:#66d9ef">byte</span>)~mask;
-        bytes[byteIndex] |= <span style="color:#66d9ef">value</span>;
-    }
-    <span style="color:#75715e">//Writing into 2 bytes case
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">//Build a short
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">short</span> splitVal = (<span style="color:#66d9ef">short</span>)(<span style="color:#66d9ef">value</span> &lt;&lt; bitOffset);
-        <span style="color:#66d9ef">short</span> mask = (<span style="color:#66d9ef">short</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
-
-        <span style="color:#75715e">//Wipe the bits
-</span><span style="color:#75715e"></span>        bytes[byteIndex] &amp;= (<span style="color:#66d9ef">byte</span>)~mask;
-        bytes[byteIndex] |= (<span style="color:#66d9ef">byte</span>)splitVal;
-
-        <span style="color:#75715e">//Write the bits
-</span><span style="color:#75715e"></span>        bytes[byteIndex + <span style="color:#ae81ff">1</span>] &amp;= (<span style="color:#66d9ef">byte</span>)~(mask &gt;&gt; <span style="color:#ae81ff">8</span>);
-        bytes[byteIndex + <span style="color:#ae81ff">1</span>] |= (<span style="color:#66d9ef">byte</span>)(splitVal &gt;&gt; <span style="color:#ae81ff">8</span>);
-    }
-}
-</code></pre></div><p>I played around with using a short pointer for writing bits but it didn&rsquo;t seem worth it to require the unsafe compile flag for a single method. It was still a fun task though. I&rsquo;ve also learned about the joys of Unit Testing and have started using it for validating all my serialization methods. Once details are a little more concrete regarding the ByteBuffer set up I&rsquo;ll provide a detailed write up on it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">byte</span> ReadBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Ensure valid use of the method.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (bitCount &lt; <span style="color:#ae81ff">1</span> || bitCount &gt; <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;Bit count should be within the range of 1 to 8!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Figure out byte index, and where to start in the byte</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> byteIndex = bitIndex / <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> bitOffset = bitIndex % <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Reading from 1 byte</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (bitCount + bitOffset &lt;= <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Build the mask</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span> mask = (<span style="color:#66d9ef">byte</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Get the bits and shift them to proper location.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">byte</span>)((bytes[byteIndex] &amp; mask) &gt;&gt; bitOffset);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Reading from 2 bytes</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Gets the two bytes combined</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">short</span> <span style="color:#66d9ef">value</span> = SerializeUtils.GetShort(bytes, byteIndex);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Then we can pull out the data we want.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">short</span> mask = (<span style="color:#66d9ef">short</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">byte</span>)((<span style="color:#66d9ef">value</span> &amp; mask) &gt;&gt; bitOffset);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Writing bits is only a little more challenging.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> WriteBits(<span style="color:#66d9ef">byte</span>[] bytes, <span style="color:#66d9ef">int</span> bitIndex, <span style="color:#66d9ef">int</span> bitCount, <span style="color:#66d9ef">byte</span> <span style="color:#66d9ef">value</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Ensure valid use of the method.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (bitCount &lt; <span style="color:#ae81ff">1</span> || bitCount &gt; <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ArgumentException(<span style="color:#e6db74">&#34;Bit count should be within the range of 1 to 8!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Divide it by 8, and find bit offset.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> byteIndex = bitIndex / <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> bitOffset = bitIndex % <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Writing into 1 byte case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (bitCount + bitOffset &lt;= <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//shift to account for offset</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">value</span> &lt;&lt;= bitOffset;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Build the mask</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span> mask = (<span style="color:#66d9ef">byte</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        bytes[byteIndex] &amp;= (<span style="color:#66d9ef">byte</span>)~mask;
+</span></span><span style="display:flex;"><span>        bytes[byteIndex] |= <span style="color:#66d9ef">value</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Writing into 2 bytes case</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Build a short</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">short</span> splitVal = (<span style="color:#66d9ef">short</span>)(<span style="color:#66d9ef">value</span> &lt;&lt; bitOffset);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">short</span> mask = (<span style="color:#66d9ef">short</span>)(((<span style="color:#ae81ff">1</span> &lt;&lt; bitCount) - <span style="color:#ae81ff">1</span>) &lt;&lt; bitOffset);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Wipe the bits</span>
+</span></span><span style="display:flex;"><span>        bytes[byteIndex] &amp;= (<span style="color:#66d9ef">byte</span>)~mask;
+</span></span><span style="display:flex;"><span>        bytes[byteIndex] |= (<span style="color:#66d9ef">byte</span>)splitVal;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Write the bits</span>
+</span></span><span style="display:flex;"><span>        bytes[byteIndex + <span style="color:#ae81ff">1</span>] &amp;= (<span style="color:#66d9ef">byte</span>)~(mask &gt;&gt; <span style="color:#ae81ff">8</span>);
+</span></span><span style="display:flex;"><span>        bytes[byteIndex + <span style="color:#ae81ff">1</span>] |= (<span style="color:#66d9ef">byte</span>)(splitVal &gt;&gt; <span style="color:#ae81ff">8</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I played around with using a short pointer for writing bits but it didn&rsquo;t seem worth it to require the unsafe compile flag for a single method. It was still a fun task though. I&rsquo;ve also learned about the joys of Unit Testing and have started using it for validating all my serialization methods. Once details are a little more concrete regarding the ByteBuffer set up I&rsquo;ll provide a detailed write up on it.</p>
 
   </div>
 </article>

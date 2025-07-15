@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -197,11 +195,11 @@
 </h1><p>Cookies are represented as strings, and are composed of a name, value, and several attributes. Cookies must be kept small in size, and may not have a length greater than 4096 bytes. To calculate the length of a cookie it should be &ldquo;measured by the sum of the length of the cookie&rsquo;s name, value, and attributes&rdquo; [1].</p>
 <p>Cookies are constrained to such a small size by design as they are automatically sent with every HTTP request a browser makes. While 4096 bytes may seem small in size, you should remember that a single site may use multiple cookies (up to 50), and each extra byte increases the amount of time a round trip from the client to server takes.</p>
 <p>At minimum, a server can set a cookie on the user with only a name, and value. For example a site may offer multiple color themes that the user can choose from, and to prevent the user from having to select the theme each page they visit, the site could store a theme cookie on the user via a <code>Set-Cookie</code> header on it&rsquo;s HTTP response.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Set-Cookie: theme=dark
-</span></code></pre></div><p>The above cookie has a name of &lsquo;theme&rsquo;, and a value of &lsquo;dark&rsquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Set-Cookie: theme=dark
+</span></span></span></code></pre></div><p>The above cookie has a name of &rsquo;theme&rsquo;, and a value of &lsquo;dark&rsquo;</p>
 <p>It&rsquo;s worth mentioning that when the domain / path attributes of a cookie are omitted, the browser will automatically apply the domain / path that the cookie was received from. Therefore if the above cookie was sent from <code>youtube.com</code> a web browser would interpret the header as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Set-Cookie: theme=dark Domain=youtube.com; Path=/
-</span></code></pre></div><p>Cookies can be set by both the web browser, and the web server. A web server can set a cookie in the user&rsquo;s browser using the <code>Set-Cookie</code> header on HTTP responses. There is no set limit on how many <code>Set-Cookie</code> headers may be included per HTTP response. Web browsers on the other hand can set cookies via JavaScript, and can access any cookie that does not have an <code>HttpOnly</code> attribute.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Set-Cookie: theme=dark Domain=youtube.com; Path=/
+</span></span></span></code></pre></div><p>Cookies can be set by both the web browser, and the web server. A web server can set a cookie in the user&rsquo;s browser using the <code>Set-Cookie</code> header on HTTP responses. There is no set limit on how many <code>Set-Cookie</code> headers may be included per HTTP response. Web browsers on the other hand can set cookies via JavaScript, and can access any cookie that does not have an <code>HttpOnly</code> attribute.</p>
 <h2>
   Fun Fact
   <a href="#fun-fact" id="fun-fact" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
@@ -220,45 +218,45 @@ guarantee the cookie will be kept for that long as user&rsquo;s can purge cookie
 <h5>
   Example
   <a href="#example" id="example" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
-</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">foo=bar Expires=Thu, 24 Jan 2019 00:00:00 UTC
-</span></code></pre></div><h4>
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">foo=bar Expires=Thu, 24 Jan 2019 00:00:00 UTC
+</span></span></span></code></pre></div><h4>
   Max-Age
   <a href="#max-age" id="max-age" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h4><p>The max-age attribute is the number of seconds a cookie has to live before it is considered expired. Cookies may have both a max-age, and expires attribute but the max-age attribute will take precedence.</p>
 <h5>
   Example
   <a href="#example-1" id="example-1" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
-</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">foo=bar Max-Age=3600
-</span></code></pre></div><h4>
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">foo=bar Max-Age=3600
+</span></span></span></code></pre></div><h4>
   Domain
   <a href="#domain" id="domain" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h4><p>The domain attribute indicates the site that owns the cookie. A site such as <code>widgets.com</code> would specify their domain with the attribute as: <code>Domain=widgets.com;</code> It should be noted that a server may only set a domain with a URL that indicates the origin. Referring back to <code>widgets.com</code> while a domain attribute of <code>Domain=widgets.com;</code> is perfectly acceptable a domain attribute of <code>Domain=google.com</code> would be rejected.</p>
 <h5>
   Example
   <a href="#example-2" id="example-2" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
-</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">foo=bar Domain=google.com
-</span></code></pre></div><h4>
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">foo=bar Domain=google.com
+</span></span></span></code></pre></div><h4>
   Path
   <a href="#path" id="path" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h4><p>The path attribute can be used to further limit the scope of a cookie. If a cookie was set with a path of <code>Path=/store</code> for <code>widgets.com</code> then the cookie would only be supplied by the user when they visited a matching URL such as <code>widgets.com/store</code></p>
 <h5>
   Example
   <a href="#example-3" id="example-3" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
-</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">foo=bar Domain=google.com; Path=/
-</span></code></pre></div><h4>
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">foo=bar Domain=google.com; Path=/
+</span></span></span></code></pre></div><h4>
   Secure
   <a href="#secure" id="secure" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h4><p>The secure attribute restricts cookies to only be used when the user is navigating the site via HTTPS. A cookie may not be set with the secure attribute unless the server is already communicating with the user through HTTPS.</p>
 <h5>
   Example
   <a href="#example-4" id="example-4" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
-</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">foo=bar Secure
-</span></code></pre></div><h4>
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">foo=bar Secure
+</span></span></span></code></pre></div><h4>
   HttpOnly
   <a href="#httponly" id="httponly" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h4><p>Normally cookies can be accessed by browsers via the <code>document.cookie</code> property in JavaScript. However, when the HttpOnly attribute is set, the cookie cannot be accessed by any code on the web page, and <code>document.cookie</code> will not include it. This attribute can be set with or without the secure attribute as they are independent of each other.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">foo=bar HttpOnly
-</span></code></pre></div><h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">foo=bar HttpOnly
+</span></span></span></code></pre></div><h1>
   Sources
   <a href="#sources" id="sources" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>[1] RFC6265 HTTP State Management Mechanism. A. Barth. April 2011. (Format: TXT=79724 bytes) (Obsoletes RFC2965) (Status: PROPOSED STANDARD) (DOI: 10.17487/RFC6265)

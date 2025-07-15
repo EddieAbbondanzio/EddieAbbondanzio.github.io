@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -200,54 +198,54 @@
   A Working Example
   <a href="#a-working-example" id="a-working-example" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h2><p>Imagine we are designing an <code>EmailInbox</code> that needs to be able to send and receive emails. The <code>EmailInbox</code> will depend on an <code>EmailService</code> for communicating with the network.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
-        <span style="color:#66d9ef">public</span> List&lt;Email&gt; CheckForEmails() {
-            <span style="color:#75715e">//Non-important implementation...
-</span><span style="color:#75715e"></span>        }
-
-        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> SendEmail(Email email){
-            <span style="color:#75715e">//Blah blah blah
-</span><span style="color:#75715e"></span>        }
-    }
-</code></pre></div><p>Since an <code>EmailInbox</code> would be pretty useless without the <code>EmailService</code>, we could argue this would be a good use of constructor injection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
-        <span style="color:#66d9ef">private</span> EmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-        <span style="color:#66d9ef">public</span> EmailInbox(EmailService emailService) {
-            <span style="color:#66d9ef">this</span>.EmailService = emailService;
-        }
-    }
-</code></pre></div><p>This works decently, but our <code>EmailInbox</code> is restricted to a single email service. What if we want to expand it&rsquo;s compatibility to support other email services? For this, we could take advantage of dependency inversion. The first step would be to define our dependencies contract via an interface.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IEmailService {
-        List&lt;Email&gt; CheckForEmails();
-
-        <span style="color:#66d9ef">void</span> SendEmail(Email email);
-    }
-</code></pre></div><p>Now we need to update our <code>EmailInbox</code> to rely on interface references.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
-        <span style="color:#66d9ef">private</span> IEmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-        <span style="color:#66d9ef">public</span> EmailInbox(IEmailService emailService) {
-            <span style="color:#66d9ef">this</span>.EmailService = emailService;
-        }
-    }
-</code></pre></div><p>And just like that we have utilized dependency inversion to no longer be reliant upon the lower level module (<code>EmailService</code>). Now the <code>EmailInbox</code> can be created with any <code>EmailService</code> that can implements the interface <code>IEmailService</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GmailEmailService</span> : IEmailService {
-        ...
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HotmailEmailService</span> : IEmailService {
-        ...
-    }
-
-    <span style="color:#75715e">//Create a new Gmail based inbox.
-</span><span style="color:#75715e"></span>    IEmailService gmailService = <span style="color:#66d9ef">new</span> GmailEmailService();
-    EmailInbox gmailInbox = <span style="color:#66d9ef">new</span> EmailInbox(gmailService);
-
-    <span style="color:#75715e">//Create a new Hotmail based inbox.
-</span><span style="color:#75715e"></span>    IEmailService hotmailService = <span style="color:#66d9ef">new</span> HotmailEmailService();
-    EmailInbox hotmailInbox = <span style="color:#66d9ef">new</span> EmailInbox(hotmailService);
-</code></pre></div><p>These two concepts can be easy to confuse since they share such similar names, and are used together. Hopefully this article helped clarify them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> List&lt;Email&gt; CheckForEmails() {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Non-important implementation...</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> SendEmail(Email email){
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//Blah blah blah</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Since an <code>EmailInbox</code> would be pretty useless without the <code>EmailService</code>, we could argue this would be a good use of constructor injection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> EmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> EmailInbox(EmailService emailService) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.EmailService = emailService;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>This works decently, but our <code>EmailInbox</code> is restricted to a single email service. What if we want to expand it&rsquo;s compatibility to support other email services? For this, we could take advantage of dependency inversion. The first step would be to define our dependencies contract via an interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IEmailService</span> {
+</span></span><span style="display:flex;"><span>        List&lt;Email&gt; CheckForEmails();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> SendEmail(Email email);
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Now we need to update our <code>EmailInbox</code> to rely on interface references.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailInbox</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> IEmailService EmailService { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> EmailInbox(IEmailService emailService) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.EmailService = emailService;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>And just like that we have utilized dependency inversion to no longer be reliant upon the lower level module (<code>EmailService</code>). Now the <code>EmailInbox</code> can be created with any <code>EmailService</code> that can implements the interface <code>IEmailService</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GmailEmailService</span> : IEmailService {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HotmailEmailService</span> : IEmailService {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Create a new Gmail based inbox.</span>
+</span></span><span style="display:flex;"><span>    IEmailService gmailService = <span style="color:#66d9ef">new</span> GmailEmailService();
+</span></span><span style="display:flex;"><span>    EmailInbox gmailInbox = <span style="color:#66d9ef">new</span> EmailInbox(gmailService);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Create a new Hotmail based inbox.</span>
+</span></span><span style="display:flex;"><span>    IEmailService hotmailService = <span style="color:#66d9ef">new</span> HotmailEmailService();
+</span></span><span style="display:flex;"><span>    EmailInbox hotmailInbox = <span style="color:#66d9ef">new</span> EmailInbox(hotmailService);
+</span></span></code></pre></div><p>These two concepts can be easy to confuse since they share such similar names, and are used together. Hopefully this article helped clarify them.</p>
 
   </div>
 </article>

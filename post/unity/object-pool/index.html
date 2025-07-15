@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -180,262 +178,262 @@
     <p>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.</p>
 <p>To prepare my project for some of the new features coming up I decided to finally implement a better system for handling object pools. This implementation doesn&rsquo;t use a data structure to maintain references of the objects in the pools. Instead it uses the sibling index of Unity&rsquo;s transforms to keep all of the in use objects at the top, and object sitting in standby at the bottom. Now we only need an integer that tracks the index of the next free object.</p>
 <p>To get started we&rsquo;ll need a way to differentiate between our objects. Create a new enum and add some values to represent the prefabs you wish to pool. I&rsquo;ve added the PrefabType cube since in this tutorial we&rsquo;ll be building a cube object pool.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Unique identifier to quickly differentiate
-</span><span style="color:#75715e">/// between our different prefabs
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> PrefabType {
-	Cube
-}
-</code></pre></div><p>Next we&rsquo;ll add a component that can be attached to our prefabs to allow for us to always have an easy way to return each object to their pool.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabInstance</span> : MonoBehaviour {
-    <span style="color:#75715e">#region Properties
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// What type of object it is.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> PrefabType Type;
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The pool that owns this object
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> PrefabPool Pool;
-    <span style="color:#75715e">#endregion
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">#region Publics
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Return the object back to it&#39;s pool.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnToPool() {
-        <span style="color:#66d9ef">if</span>(Pool != <span style="color:#66d9ef">null</span>) {
-            Pool.ReturnInstance(<span style="color:#66d9ef">this</span>.gameObject);
-        }
-        <span style="color:#66d9ef">else</span> {
-            Debug.LogError(<span style="color:#e6db74">&#34;PrefabInstance: Pool reference was never set!&#34;</span>);
-        }
-    }
-    <span style="color:#75715e">#endregion
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>While an error may seem harsh, we don&rsquo;t want pool objects floating around in purgatory. Now lets move on to the prefab pool class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#a6e22e">[ExecuteInEditMode]</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabPool</span> : MonoBehaviour {
-    <span style="color:#75715e">#region Properties
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The prefab to use for instantiating. This must
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// have PrefabInstance.cs attached to it!
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> GameObject Prefab;
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The type of objects this pool contains
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> PrefabType Type;
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The target size of the pool.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Size;
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// How many objects we can adjust the pool by each frame
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> MaxChangesPerTick;
-    <span style="color:#75715e">#endregion
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">#region Members
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// The next free object child index.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span>  currentInstance;
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// If the pool is currently going through a size adjustment.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> updatingSize;
-    <span style="color:#75715e">#endregion
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>First thing the pool will need to handle is settng up it&rsquo;s local variables. While it comes down to personal preference I prefer to initialize variables that pertain to the local object within Awake(), and those that rely on other objects in Start(). This prevents the need of knowing the execution order of the Monobehaviours.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Sets the pool up.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake() {
-    updatingSize = <span style="color:#66d9ef">false</span>;
-    currentInstance = <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>Now lets add a way for the pool to adjust it&rsquo;s size as needed. This way when the pool runs out of objects it won&rsquo;t start returning null instances during gameplay.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Adjusts pool size during play.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Update() {
-    <span style="color:#75715e">//If the pool is not being modified, and should be do so.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (!updatingSize &amp;&amp; transform.childCount != Size &amp;&amp; currentInstance &lt; Size) {
-        StartCoroutine(UpdatePoolCoroutine());
-    }
-}
-</code></pre></div><p>Add an OnValidate() method to the class. This is called by Unity anytime a value on the monobehaviour script is modified. By validating our field values it helps prevent any absurd run time errors that could occur.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Called when an editor field is modified.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnValidate() {
-        <span style="color:#75715e">//Ensure pool is greater than or equal to 1.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (Size &lt; <span style="color:#ae81ff">1</span>) {
-            Size = <span style="color:#ae81ff">1</span>;
-        }
-
-        <span style="color:#75715e">//Ensure the max change isn&#39;t invalid.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(MaxChangesPerTick &lt; <span style="color:#ae81ff">1</span>) {
-            MaxChangesPerTick = <span style="color:#ae81ff">1</span>;
-        }
-
-        <span style="color:#75715e">//Lastly check that the prefab has the PrefabInstace
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//script attached to it.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(Prefab != <span style="color:#66d9ef">null</span>) {
-            <span style="color:#66d9ef">if</span> (Prefab.GetComponent&lt;PrefabInstance&gt;() == <span style="color:#66d9ef">null</span>) {
-                Prefab = <span style="color:#66d9ef">null</span>;
-                Debug.LogError(<span style="color:#e6db74">&#34;PrefabPool: Prefab reference must have the PrefabInstance attached!&#34;</span>);
-            }
-        }
-    }
-</code></pre></div><p>The Coroutine for adjusting pool size is the trickiest part of the pool. It may seem redundant but I&rsquo;ve implemented it in this way for clarity. If you prefer you could find the delta size via Mathf.ABS() then checking if objects should be added, or removed and perform the operation delta times.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Handles adjusting the pool size when needed.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> IEnumerator UpdatePoolCoroutine() {
-    <span style="color:#75715e">//Gets us out of OnValidate()
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-
-    <span style="color:#75715e">//The pool is below target size. Add some
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (transform.childCount &lt; Size) {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; Size - transform.childCount + <span style="color:#ae81ff">1</span>; i++) {
-            AddInstance();
-
-            <span style="color:#75715e">//If we&#39;ve done too much take a break.
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(i != <span style="color:#ae81ff">0</span> &amp;&amp; i % MaxChangesPerTick == <span style="color:#ae81ff">0</span>) {
-                <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-            }
-        }
-    }
-    <span style="color:#75715e">//The pool is above target size. Remove some
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (transform.childCount &gt; Size) {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; transform.childCount - Size; i++) {
-            RemoveInstance();
-
-            <span style="color:#75715e">//If we&#39;ve done too much take a break.
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (i != <span style="color:#ae81ff">0</span> &amp;&amp; i % MaxChangesPerTick == <span style="color:#ae81ff">0</span>) {
-                <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-            }
-        }
-    }
-
-    updatingSize = <span style="color:#66d9ef">false</span>;
-}
-</code></pre></div><p>You&rsquo;ll want to adjust MaxChangesPerTick based on how complex your prefab object is. For larger complex objects reduce the number closer to one, but for simple objects such as the cube primitive MaxChangesPerTick could be fairly high.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Unique identifier to quickly differentiate</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// between our different prefabs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> PrefabType {
+</span></span><span style="display:flex;"><span>	Cube
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Next we&rsquo;ll add a component that can be attached to our prefabs to allow for us to always have an easy way to return each object to their pool.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabInstance</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#region</span> Properties
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// What type of object it is.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> PrefabType Type;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The pool that owns this object</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> PrefabPool Pool;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endregion</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#region</span> Publics
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// Return the object back to it&#39;s pool.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnToPool() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(Pool != <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            Pool.ReturnInstance(<span style="color:#66d9ef">this</span>.gameObject);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            Debug.LogError(<span style="color:#e6db74">&#34;PrefabInstance: Pool reference was never set!&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endregion</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>While an error may seem harsh, we don&rsquo;t want pool objects floating around in purgatory. Now lets move on to the prefab pool class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#a6e22e">[ExecuteInEditMode]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabPool</span> : MonoBehaviour {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#region</span> Properties
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The prefab to use for instantiating. This must</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// have PrefabInstance.cs attached to it!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> GameObject Prefab;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The type of objects this pool contains</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> PrefabType Type;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The target size of the pool.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Size;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// How many objects we can adjust the pool by each frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> MaxChangesPerTick;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endregion</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#region</span> Members
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// The next free object child index.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span>  currentInstance;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// If the pool is currently going through a size adjustment.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> updatingSize;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endregion</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>First thing the pool will need to handle is settng up it&rsquo;s local variables. While it comes down to personal preference I prefer to initialize variables that pertain to the local object within Awake(), and those that rely on other objects in Start(). This prevents the need of knowing the execution order of the Monobehaviours.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Sets the pool up.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake() {
+</span></span><span style="display:flex;"><span>    updatingSize = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    currentInstance = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now lets add a way for the pool to adjust it&rsquo;s size as needed. This way when the pool runs out of objects it won&rsquo;t start returning null instances during gameplay.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Adjusts pool size during play.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Update() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//If the pool is not being modified, and should be do so.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (!updatingSize &amp;&amp; transform.childCount != Size &amp;&amp; currentInstance &lt; Size) {
+</span></span><span style="display:flex;"><span>        StartCoroutine(UpdatePoolCoroutine());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Add an OnValidate() method to the class. This is called by Unity anytime a value on the monobehaviour script is modified. By validating our field values it helps prevent any absurd run time errors that could occur.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Called when an editor field is modified.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnValidate() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Ensure pool is greater than or equal to 1.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Size &lt; <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>            Size = <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Ensure the max change isn&#39;t invalid.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(MaxChangesPerTick &lt; <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>            MaxChangesPerTick = <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Lastly check that the prefab has the PrefabInstace</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//script attached to it.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(Prefab != <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (Prefab.GetComponent&lt;PrefabInstance&gt;() == <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                Prefab = <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>                Debug.LogError(<span style="color:#e6db74">&#34;PrefabPool: Prefab reference must have the PrefabInstance attached!&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>The Coroutine for adjusting pool size is the trickiest part of the pool. It may seem redundant but I&rsquo;ve implemented it in this way for clarity. If you prefer you could find the delta size via Mathf.ABS() then checking if objects should be added, or removed and perform the operation delta times.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Handles adjusting the pool size when needed.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> IEnumerator UpdatePoolCoroutine() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Gets us out of OnValidate()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//The pool is below target size. Add some</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (transform.childCount &lt; Size) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; Size - transform.childCount + <span style="color:#ae81ff">1</span>; i++) {
+</span></span><span style="display:flex;"><span>            AddInstance();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//If we&#39;ve done too much take a break.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(i != <span style="color:#ae81ff">0</span> &amp;&amp; i % MaxChangesPerTick == <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//The pool is above target size. Remove some</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (transform.childCount &gt; Size) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; transform.childCount - Size; i++) {
+</span></span><span style="display:flex;"><span>            RemoveInstance();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//If we&#39;ve done too much take a break.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (i != <span style="color:#ae81ff">0</span> &amp;&amp; i % MaxChangesPerTick == <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    updatingSize = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You&rsquo;ll want to adjust MaxChangesPerTick based on how complex your prefab object is. For larger complex objects reduce the number closer to one, but for simple objects such as the cube primitive MaxChangesPerTick could be fairly high.</p>
 <p>Since adding or removing an instance could require some additional work that could clutter the Coroutine we&rsquo;ll move them to their own specialized methods.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Adds a new instances to the bottom of the pool.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> AddInstance() {
-    GameObject newInstance = GameObject.InstantiatePrefab(Prefab, <span style="color:#66d9ef">this</span>.transform) <span style="color:#66d9ef">as</span> GameObject;
-
-    newInstance.SetActive(<span style="color:#66d9ef">false</span>);
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Removes the lastmost instance from the pool.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RemoveInstance() {
-    GameObject lastInstance = transform.GetChild(currentInstance).gameObject;
-
-    <span style="color:#75715e">//Since this can run in the Editor we can&#39;t call the regular Destroy()
-</span><span style="color:#75715e"></span>    DestroyImmediate(lastInstance);
-}
-</code></pre></div><p>Finally we&rsquo;ll need a way to return and retrieve objects from the pool. I&rsquo;ve added a few overloads for getting objects from the pool as examples of what can be done.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Returns an instance from the pool. If the
-</span><span style="color:#75715e">/// pool is of fixed type, it may return null.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance() {
-    <span style="color:#66d9ef">return</span> GetInstance();
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Returns an instance from the pool at the
-</span><span style="color:#75715e">/// desired location. If the pool is fixed,
-</span><span style="color:#75715e">/// and it may return null.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance(Vector3 pos) {
-    GameObject instance = GetInstance();
-    instance.transform.position = pos;
-
-    <span style="color:#66d9ef">return</span> instance;
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Returns an instance from the pool at the desired location.
-</span><span style="color:#75715e">/// If the pool is fixed, it may return null. The prefab is also
-</span><span style="color:#75715e">/// set to static.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance(Vector3 pos, <span style="color:#66d9ef">bool</span> isStatic) {
-    GameObject instance = GetInstance();
-    instance.transform.position = pos;
-    instance.isStatic = isStatic;
-
-    <span style="color:#66d9ef">return</span> instance;
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Get an instance from the pool. If the pool has none
-</span><span style="color:#75715e">/// to give out, create one.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> GameObject GetInstance() {
-    <span style="color:#66d9ef">if</span> (currentInstance == transform.childCount) {
-        AddInstance();
-    }
-
-    GameObject instance = transform.GetChild(currentInstance).gameObject;
-    instance.SetActive(<span style="color:#66d9ef">true</span>);
-
-    PrefabInstance prefabInstance = instance.GetComponent&lt;PrefabInstance&gt;();
-    <span style="color:#66d9ef">if</span> (prefabInstance != <span style="color:#66d9ef">null</span>) {
-        prefabInstance.Pool = <span style="color:#66d9ef">this</span>;
-    }
-
-    currentInstance++;
-    <span style="color:#66d9ef">return</span> instance;
-}
-</code></pre></div><p>And to wrap things up let&rsquo;s add the return object method.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">//PrefabPool.cs
-</span><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Return an instance back to the pool.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnInstance(GameObject obj) {
-    <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>) {
-        <span style="color:#66d9ef">return</span>;
-    }
-
-    PrefabInstance instance = obj.GetComponent&lt;PrefabInstance&gt;();
-
-    <span style="color:#75715e">//Ensure it has a prefab pool component.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(instance == <span style="color:#66d9ef">null</span>) {
-        <span style="color:#66d9ef">return</span>;
-    }
-
-    <span style="color:#66d9ef">if</span> (instance.Type == Type &amp;&amp; instance.Pool == <span style="color:#66d9ef">this</span>) {
-        obj.SetActive(<span style="color:#66d9ef">false</span>);
-        currentInstance--;
-
-        obj.isStatic = <span style="color:#66d9ef">false</span>;
-        obj.transform.SetSiblingIndex(currentInstance);
-        obj.transform.position = Vector3.zero;
-    }
-}
-</code></pre></div><p>You&rsquo;ll notice that Unity doesn&rsquo;t like to add all the objects right away in Editor Mode. While the pool may not appear to be at it&rsquo;s correct size you can trigger updates in the Editor by clicking objects in the Hierarchy tab. This pool could use some expanding upon, but is atleast a good base to build off of.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Adds a new instances to the bottom of the pool.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> AddInstance() {
+</span></span><span style="display:flex;"><span>    GameObject newInstance = GameObject.InstantiatePrefab(Prefab, <span style="color:#66d9ef">this</span>.transform) <span style="color:#66d9ef">as</span> GameObject;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    newInstance.SetActive(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Removes the lastmost instance from the pool.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RemoveInstance() {
+</span></span><span style="display:flex;"><span>    GameObject lastInstance = transform.GetChild(currentInstance).gameObject;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Since this can run in the Editor we can&#39;t call the regular Destroy()</span>
+</span></span><span style="display:flex;"><span>    DestroyImmediate(lastInstance);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Finally we&rsquo;ll need a way to return and retrieve objects from the pool. I&rsquo;ve added a few overloads for getting objects from the pool as examples of what can be done.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Returns an instance from the pool. If the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// pool is of fixed type, it may return null.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> GetInstance();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Returns an instance from the pool at the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// desired location. If the pool is fixed,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// and it may return null.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance(Vector3 pos) {
+</span></span><span style="display:flex;"><span>    GameObject instance = GetInstance();
+</span></span><span style="display:flex;"><span>    instance.transform.position = pos;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> instance;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Returns an instance from the pool at the desired location.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// If the pool is fixed, it may return null. The prefab is also</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// set to static.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> GameObject GetPooledInstance(Vector3 pos, <span style="color:#66d9ef">bool</span> isStatic) {
+</span></span><span style="display:flex;"><span>    GameObject instance = GetInstance();
+</span></span><span style="display:flex;"><span>    instance.transform.position = pos;
+</span></span><span style="display:flex;"><span>    instance.isStatic = isStatic;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> instance;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Get an instance from the pool. If the pool has none</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// to give out, create one.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> GameObject GetInstance() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (currentInstance == transform.childCount) {
+</span></span><span style="display:flex;"><span>        AddInstance();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    GameObject instance = transform.GetChild(currentInstance).gameObject;
+</span></span><span style="display:flex;"><span>    instance.SetActive(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    PrefabInstance prefabInstance = instance.GetComponent&lt;PrefabInstance&gt;();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (prefabInstance != <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        prefabInstance.Pool = <span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    currentInstance++;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> instance;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And to wrap things up let&rsquo;s add the return object method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">//PrefabPool.cs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Return an instance back to the pool.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnInstance(GameObject obj) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    PrefabInstance instance = obj.GetComponent&lt;PrefabInstance&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Ensure it has a prefab pool component.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(instance == <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (instance.Type == Type &amp;&amp; instance.Pool == <span style="color:#66d9ef">this</span>) {
+</span></span><span style="display:flex;"><span>        obj.SetActive(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>        currentInstance--;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        obj.isStatic = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        obj.transform.SetSiblingIndex(currentInstance);
+</span></span><span style="display:flex;"><span>        obj.transform.position = Vector3.zero;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You&rsquo;ll notice that Unity doesn&rsquo;t like to add all the objects right away in Editor Mode. While the pool may not appear to be at it&rsquo;s correct size you can trigger updates in the Editor by clicking objects in the Hierarchy tab. This pool could use some expanding upon, but is atleast a good base to build off of.</p>
 
   </div>
 </article>

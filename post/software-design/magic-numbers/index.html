@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -186,52 +184,52 @@
   Example
   <a href="#example" id="example" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
 </h1><p>Imagine you&rsquo;re designing a user system for a web site. To help enforce better security practices, you&rsquo;ve decided there will be a minimum password length of at least 7 characters. To achieve this we could define a <code>User</code> class like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> password;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Password {
-        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> password; }
-        <span style="color:#66d9ef">set</span> {
-            <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">value</span>.length &lt; <span style="color:#ae81ff">7</span>) {
-                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidArgumentException(<span style="color:#e6db74">&#34;Password is too short&#34;</span>);
-            }
-
-            password = <span style="color:#66d9ef">value</span>;
-        }
-    }
-}
-</code></pre></div><p>This satisfies our security requirement, but what if instead of catching exceptions when attempting to set a password we want to take advantage of the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> password;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Password {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> password; }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">set</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">value</span>.length &lt; <span style="color:#ae81ff">7</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidArgumentException(<span style="color:#e6db74">&#34;Password is too short&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            password = <span style="color:#66d9ef">value</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This satisfies our security requirement, but what if instead of catching exceptions when attempting to set a password we want to take advantage of the
 <a href="https://eddieabbondanz.io/post/software-design/validator-pattern/">validator pattern</a>? An improper solution to would be to define a <code>PasswordValidator</code> as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PasswordValidator</span> {
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(<span style="color:#66d9ef">string</span> password) {
-        <span style="color:#66d9ef">return</span> password.length &gt;= <span style="color:#ae81ff">7</span>;
-    }
-}
-</code></pre></div><p>Why is this bad? Because it violates the DRY (don&rsquo;t repeat yourself) principle. We now have two locations that maintain a minimum password length. In larger projects when a single magic number is used in more than 1 places it can turn into a nightmare hunting down all the instances if the magic number ever needs to be changed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PasswordValidator</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(<span style="color:#66d9ef">string</span> password) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> password.length &gt;= <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Why is this bad? Because it violates the DRY (don&rsquo;t repeat yourself) principle. We now have two locations that maintain a minimum password length. In larger projects when a single magic number is used in more than 1 places it can turn into a nightmare hunting down all the instances if the magic number ever needs to be changed.</p>
 <p>We could refactor the example above to be more maintainable by introducing a <code>MinPasswordLength</code> constant for the <code>User</code> class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MinPasswordLength = <span style="color:#ae81ff">7</span>;
-
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> password;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Password {
-        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> password; }
-        <span style="color:#66d9ef">set</span> {
-            <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">value</span>.length &lt; User.MinPasswordLength) {
-                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidArgumentException(<span style="color:#e6db74">&#34;Password is too short&#34;</span>);
-            }
-
-            password = <span style="color:#66d9ef">value</span>;
-        }
-    }
-}
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PasswordValidator</span> {
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(<span style="color:#66d9ef">string</span> password) {
-        <span style="color:#66d9ef">return</span> password.length &gt;= User.MinPasswordLength;
-    }
-}
-</code></pre></div><p>Constants are your friend and should be used whenever (reasonably) possible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MinPasswordLength = <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> password;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Password {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> password; }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">set</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">value</span>.length &lt; User.MinPasswordLength) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidArgumentException(<span style="color:#e6db74">&#34;Password is too short&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            password = <span style="color:#66d9ef">value</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PasswordValidator</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Validate(<span style="color:#66d9ef">string</span> password) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> password.length &gt;= User.MinPasswordLength;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Constants are your friend and should be used whenever (reasonably) possible.</p>
 <h1>
   Sources
   <a href="#sources" id="sources" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>

@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -179,289 +177,289 @@
   <div class="markdown-body" data-pagefind-body>
     <p>Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&rsquo;s own set of methods for writing to it&rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&rsquo;ll need a way to differentiate between the running environments. Instead of wrapping all our Debug.Log() calls in preprocessor directives such as #IF UNITY_EDITOR we can write a simple logging class to handle it for us. While we&rsquo;re at it well add the ability to write log files since they can be quite useful.</p>
 <p>Before we go ahead and dive into creating the new logger we&rsquo;ll need to add a few helpers first.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> LogLevel : <span style="color:#66d9ef">byte</span> {
-    None = <span style="color:#ae81ff">0</span>,
-    Normal = <span style="color:#ae81ff">1</span>,
-    Verbose = <span style="color:#ae81ff">2</span>
-}
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> LogOutput : <span style="color:#66d9ef">byte</span> {
-    Unity = <span style="color:#ae81ff">0</span>,
-    Console = <span style="color:#ae81ff">1</span>,
-    FileOnly = <span style="color:#ae81ff">2</span>
-}
-</code></pre></div><p>The LogLevel lets us control what log messages are displayed. Say for example you want to run in a minimal logging mode, by setting the log level to normal, it would hide
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> LogLevel : <span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>    None = <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    Normal = <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    Verbose = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> LogOutput : <span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>    Unity = <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    Console = <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    FileOnly = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The LogLevel lets us control what log messages are displayed. Say for example you want to run in a minimal logging mode, by setting the log level to normal, it would hide
 any message that has a level of verbose from being displayed. Verbose messages would still be written to the log file however.</p>
 <p>LogOuput is just an easy way to track if we should be using Debug.Log() or Console.WriteLine(). Lastly lets go ahead and define a struct for storing all of the log settings. This will allow us to store &lsquo;profiles&rsquo; of how the logger should behave.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Contains info regarding how the Logger
-</span><span style="color:#75715e">/// should operate. Contains some predefined
-</span><span style="color:#75715e">/// profiles to simplify the process.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">LogProfile</span> {
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Allows for different levels of log statements
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// to be picked. If verbose, then every log statement
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// is printed.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> LogLevel Level { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// What method should be used for outputting
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// log statements.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> LogOutput Output { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// If the log history should be saved to file when
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// the application closes.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> SaveToFile { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-    <span style="color:#75715e">#endregion
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">#region Constructor(s)
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Create a new log profile that doesn&#39;t
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// save to file.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> LogProfile(LogLevel level, LogOutput output) {
-        Level = level;
-        Output = output;
-        SaveToFile = <span style="color:#66d9ef">false</span>;
-    }
-
-    <span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Create a new log profile that can save to file.
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> LogProfile(LogLevel level, LogOutput output, <span style="color:#66d9ef">bool</span> saveFile) {
-        Level = level;
-        Output = output;
-        SaveToFile = saveFile;
-    }
-}
-</code></pre></div><p>Then we can define some static instances as such:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// The default logging profile for when running in unity debug.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> LogProfile UnityDebug = <span style="color:#66d9ef">new</span> LogProfile(LogLevel.Verbose, LogOutput.Unity);
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Used for debugging the server.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> LogProfile ConsoleDebug = <span style="color:#66d9ef">new</span> LogProfile(LogLevel.Verbose, LogOutput.Console);
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Used for release builds.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> LogProfile Release = <span style="color:#66d9ef">new</span> LogProfile(LogLevel.None, LogOutput.FileOnly, <span style="color:#66d9ef">true</span>);
-</code></pre></div><p>Now Let&rsquo;s go ahead and define our new logging class. You&rsquo;ll want this to be static to prevent needing a reference to an instance of it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Logger utility for logging custom error or log messages to
-</span><span style="color:#75715e">/// console and file.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoggerUtils</span> {
-
-
-}
-</code></pre></div><p>We&rsquo;ll want to create a few settings for the file writer to follow. The directory name doesn&rsquo;t matter, and the max count can be whatever. We just don&rsquo;t want to fill the users storage space with thousands of log files.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// The file extension to use for log files.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> LogFileExtension = <span style="color:#e6db74">&#34;txt&#34;</span>;
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// The folder to save logs in.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> LogFileDirectory = <span style="color:#e6db74">&#34;VoxLogs&#34;</span>;
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// The max number of log files allowed in the folder
-</span><span style="color:#75715e">/// at one time.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MaxLogCount = <span style="color:#ae81ff">8</span>;
-</code></pre></div><p>Now lets add a list to track all the messages that have been logged. Along with a profile for the settings</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// The collection of log messages to store.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> List&lt;<span style="color:#66d9ef">string</span>&gt; Messages { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Controls how the logger operates.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LogProfile profile;
-</code></pre></div><p>Let&rsquo;s add a static constructor to initialize the local variables. This will default the Logger to release mode. I&rsquo;ll explain what the destructor is in a minute.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">static</span> LoggerUtils() {
-    profile = LogProfile.Release;
-
-    Messages = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt;();
-    destructor = <span style="color:#66d9ef">new</span> Destructor();
-}
-</code></pre></div><p>Add in some public methods. One to allow setting of the log profile, and several for logging statements. Feel free to change them to your liking as these are just provided as basic examples. The switch statment checks to see where logging should be outputted to. If LogOutput is set to none, nothing will be printed but the message will be saved in the list. I didn&rsquo;t apply the log level to the error method as in my opinion, an error shouldn&rsquo;t be hidden.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Set what profile the logger should follow.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> SetLogProfile(LogProfile logProfile) {
-    profile = logProfile;
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Log an error to console and to the log file.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> LogError(<span style="color:#66d9ef">string</span> message) {
-    <span style="color:#66d9ef">string</span> fullError = DateTime.Now.ToString(<span style="color:#e6db74">&#34;h:mm:ss tt&#34;</span>) + <span style="color:#e6db74">&#34;: ERROR: &#34;</span> + message;
-    Messages.Add(fullError);
-
-    <span style="color:#66d9ef">switch</span> (profile.Output) {
-        <span style="color:#66d9ef">case</span> LogOutput.Unity:
-            Debug.Log(fullError);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> LogOutput.Console:
-            Console.WriteLine(fullError);
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Log a warning to the console and add to the log file.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> LogWarning(<span style="color:#66d9ef">string</span> message, LogLevel level = LogLevel.Normal) {
-    <span style="color:#66d9ef">string</span> fullWarn = DateTime.Now.ToString(<span style="color:#e6db74">&#34;h:mm:ss tt&#34;</span>) + <span style="color:#e6db74">&#34;: WARNING: &#34;</span> + message;
-    Messages.Add(fullWarn);
-
-    <span style="color:#66d9ef">if</span> (level &lt;= profile.Level &amp;&amp; level &gt; <span style="color:#ae81ff">0</span>) {
-        <span style="color:#66d9ef">switch</span> (profile.Output) {
-            <span style="color:#66d9ef">case</span> LogOutput.Unity:
-                Debug.LogWarning(fullWarn);
-                <span style="color:#66d9ef">break</span>;
-            <span style="color:#66d9ef">case</span> LogOutput.Console:
-                Console.WriteLine(fullWarn);
-                <span style="color:#66d9ef">break</span>;
-        }
-    }
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Log a message to console and to the log file.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Log(<span style="color:#66d9ef">string</span> message, LogLevel level = LogLevel.Normal) {
-    <span style="color:#66d9ef">string</span> fullLog = DateTime.Now.ToString(<span style="color:#e6db74">&#34;h:mm:ss tt&#34;</span>) + <span style="color:#e6db74">&#34;: &#34;</span> + message;
-    Messages.Add(fullLog);
-
-    <span style="color:#66d9ef">if</span>(level &lt;= profile.Level &amp;&amp; level &gt; <span style="color:#ae81ff">0</span>) {
-        <span style="color:#66d9ef">switch</span> (profile.Output) {
-            <span style="color:#66d9ef">case</span> LogOutput.Unity:
-                Debug.Log(fullLog);
-                <span style="color:#66d9ef">break</span>;
-            <span style="color:#66d9ef">case</span> LogOutput.Console:
-                Console.WriteLine(fullLog);
-                <span style="color:#66d9ef">break</span>;
-        }
-    }
-}
-</code></pre></div><p>Since a static class can&rsquo;t have a destructor we need to create a work around. The destructor is responsible for calling SaveLogFile() when the application closes. If you don&rsquo;t want to use this method just make sure to have some external instance call SaveLogFile() elsewhere when the application is closing. Place this sealed class anywhere within the LoggerUtils class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// This is a little rigged contraption to allow for
-</span><span style="color:#75715e">/// saving of the log file when the app is closed.
-</span><span style="color:#75715e">/// Source: https://stackoverflow.com/questions/4364665/static-destructor
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Destructor</span> {
-    ~Destructor() {
-        <span style="color:#66d9ef">if</span> (profile.SaveToFile) {
-            SaveLogFile();
-        }
-    }
-}
-</code></pre></div><p>Lastly lets add the SaveLogFile() method. I use some helper functions which I will include but you can use your own if you prefer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Store all of the log calls made to file.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> SaveLogFile() {
-    Log(<span style="color:#e6db74">&#34;Saving log file&#34;</span>);
-
-    List&lt;<span style="color:#66d9ef">byte</span>&gt; logBytes = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">byte</span>&gt;();
-
-    <span style="color:#75715e">//Add each message to the byte array and add a new line after each.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">string</span> msg <span style="color:#66d9ef">in</span> Messages) {
-        logBytes.AddRange(Encoding.ASCII.GetBytes(msg));
-        logBytes.AddRange(Encoding.ASCII.GetBytes(Environment.NewLine));
-    }
-
-    <span style="color:#75715e">//Don&#39;t save more than 8 files at any time.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(FileUtils.GetFileCount(LogFileDirectory) &gt;= MaxLogCount) {
-        FileUtils.DeleteFileAtIndex(LogFileDirectory, <span style="color:#ae81ff">0</span>);
-    }
-
-    <span style="color:#75715e">//Save the file.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">string</span> fullLogFileName = <span style="color:#e6db74">&#34;VoxLogFile&#34;</span> + DateTime.Now.ToString(<span style="color:#e6db74">&#34;yyyy-MM-dd-HH-mm-ss&#34;</span>) + <span style="color:#e6db74">&#34;.&#34;</span> + LogFileExtension;
-    FileUtils.SaveFile(LogFileDirectory, fullLogFileName, logBytes.ToArray(), <span style="color:#66d9ef">false</span>);
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Returns the number of files in the directory.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> GetFileCount(<span style="color:#66d9ef">string</span> directory) {
-    <span style="color:#66d9ef">if</span> (Directory.Exists(directory)) {
-        <span style="color:#66d9ef">return</span> Directory.GetFiles(directory).Length;
-    }
-    <span style="color:#66d9ef">else</span> {
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-    }
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Save an array of bytes to file. Set overwrite
-</span><span style="color:#75715e">/// to true to over write any pre existing files.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> SaveFile(<span style="color:#66d9ef">string</span> directory, <span style="color:#66d9ef">string</span> fileName, <span style="color:#66d9ef">byte</span>[] fileContent, <span style="color:#66d9ef">bool</span> overwrite = <span style="color:#66d9ef">false</span>) {
-    <span style="color:#66d9ef">string</span> fullFileName = directory + <span style="color:#e6db74">&#34;/&#34;</span> + fileName;
-
-    <span style="color:#75715e">//If the folder doesn&#39;t exist. Make it.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (!Directory.Exists(directory)) {
-        Directory.CreateDirectory(directory);
-    }
-
-    <span style="color:#75715e">//File already exists. Check if overwrite is enabled.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (File.Exists(fullFileName)) {
-        <span style="color:#66d9ef">if</span> (overwrite) {
-            File.Delete(fullFileName);
-        }
-        <span style="color:#66d9ef">else</span> {
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-        }
-    }
-
-    <span style="color:#75715e">//Create the new filestream.
-</span><span style="color:#75715e"></span>    FileStream fileStream = <span style="color:#66d9ef">new</span> FileStream(fullFileName, FileMode.Create, FileAccess.Write, FileShare.None);
-
-    <span style="color:#75715e">//Write the content to file.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">using</span> (BinaryWriter binWriter = <span style="color:#66d9ef">new</span> BinaryWriter(fileStream)) {
-        binWriter.Write(fileContent);
-    }
-
-    fileStream.Close();
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
-}
-
-<span style="color:#75715e">/// &lt;summary&gt;
-</span><span style="color:#75715e">/// Delete the file at specified index in the directory.
-</span><span style="color:#75715e">/// &lt;/summary&gt;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> DeleteFileAtIndex(<span style="color:#66d9ef">string</span> directory, <span style="color:#66d9ef">int</span> index) {
-    <span style="color:#66d9ef">if</span>(index &gt;= <span style="color:#ae81ff">0</span> &amp;&amp; index &lt; Directory.GetFiles(directory).Length) {
-        <span style="color:#66d9ef">string</span> fileName = Directory.GetFiles(directory)[index];
-        File.Delete(fileName);
-
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-}
-</code></pre></div><p>To use the new LoggerUtils class simple call LoggerUtils.SetLogProfile(YOUR_PROFILE_HERE). Then use any of it&rsquo;s .Log() methods. If you want to add a way to automatically set the log profile to Unity debug when in the Unity editor add the following tidbit in an Awake() method of a monoBehaviour in your game.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake(){
-    <span style="color:#75715e">#if UNITY_EDITOR
-</span><span style="color:#75715e"></span>        LoggerUtils.SetLogProfile(LogProfile.UnityDebug);
-    <span style="color:#75715e">#endif
-</span><span style="color:#75715e"></span>}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Contains info regarding how the Logger</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// should operate. Contains some predefined</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// profiles to simplify the process.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">LogProfile</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// Allows for different levels of log statements</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// to be picked. If verbose, then every log statement</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// is printed.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LogLevel Level { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// What method should be used for outputting</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// log statements.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LogOutput Output { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// If the log history should be saved to file when</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// the application closes.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> SaveToFile { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endregion</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#region</span> Constructor(s)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// Create a new log profile that doesn&#39;t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// save to file.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LogProfile(LogLevel level, LogOutput output) {
+</span></span><span style="display:flex;"><span>        Level = level;
+</span></span><span style="display:flex;"><span>        Output = output;
+</span></span><span style="display:flex;"><span>        SaveToFile = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// Create a new log profile that can save to file.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LogProfile(LogLevel level, LogOutput output, <span style="color:#66d9ef">bool</span> saveFile) {
+</span></span><span style="display:flex;"><span>        Level = level;
+</span></span><span style="display:flex;"><span>        Output = output;
+</span></span><span style="display:flex;"><span>        SaveToFile = saveFile;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then we can define some static instances as such:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// The default logging profile for when running in unity debug.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> LogProfile UnityDebug = <span style="color:#66d9ef">new</span> LogProfile(LogLevel.Verbose, LogOutput.Unity);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Used for debugging the server.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> LogProfile ConsoleDebug = <span style="color:#66d9ef">new</span> LogProfile(LogLevel.Verbose, LogOutput.Console);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Used for release builds.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">readonly</span> LogProfile Release = <span style="color:#66d9ef">new</span> LogProfile(LogLevel.None, LogOutput.FileOnly, <span style="color:#66d9ef">true</span>);
+</span></span></code></pre></div><p>Now Let&rsquo;s go ahead and define our new logging class. You&rsquo;ll want this to be static to prevent needing a reference to an instance of it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Logger utility for logging custom error or log messages to</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// console and file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoggerUtils</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We&rsquo;ll want to create a few settings for the file writer to follow. The directory name doesn&rsquo;t matter, and the max count can be whatever. We just don&rsquo;t want to fill the users storage space with thousands of log files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// The file extension to use for log files.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> LogFileExtension = <span style="color:#e6db74">&#34;txt&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// The folder to save logs in.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> LogFileDirectory = <span style="color:#e6db74">&#34;VoxLogs&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// The max number of log files allowed in the folder</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// at one time.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MaxLogCount = <span style="color:#ae81ff">8</span>;
+</span></span></code></pre></div><p>Now lets add a list to track all the messages that have been logged. Along with a profile for the settings</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// The collection of log messages to store.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> List&lt;<span style="color:#66d9ef">string</span>&gt; Messages { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Controls how the logger operates.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LogProfile profile;
+</span></span></code></pre></div><p>Let&rsquo;s add a static constructor to initialize the local variables. This will default the Logger to release mode. I&rsquo;ll explain what the destructor is in a minute.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> LoggerUtils() {
+</span></span><span style="display:flex;"><span>    profile = LogProfile.Release;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Messages = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt;();
+</span></span><span style="display:flex;"><span>    destructor = <span style="color:#66d9ef">new</span> Destructor();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Add in some public methods. One to allow setting of the log profile, and several for logging statements. Feel free to change them to your liking as these are just provided as basic examples. The switch statment checks to see where logging should be outputted to. If LogOutput is set to none, nothing will be printed but the message will be saved in the list. I didn&rsquo;t apply the log level to the error method as in my opinion, an error shouldn&rsquo;t be hidden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Set what profile the logger should follow.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> SetLogProfile(LogProfile logProfile) {
+</span></span><span style="display:flex;"><span>    profile = logProfile;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Log an error to console and to the log file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> LogError(<span style="color:#66d9ef">string</span> message) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> fullError = DateTime.Now.ToString(<span style="color:#e6db74">&#34;h:mm:ss tt&#34;</span>) + <span style="color:#e6db74">&#34;: ERROR: &#34;</span> + message;
+</span></span><span style="display:flex;"><span>    Messages.Add(fullError);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (profile.Output) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> LogOutput.Unity:
+</span></span><span style="display:flex;"><span>            Debug.Log(fullError);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> LogOutput.Console:
+</span></span><span style="display:flex;"><span>            Console.WriteLine(fullError);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Log a warning to the console and add to the log file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> LogWarning(<span style="color:#66d9ef">string</span> message, LogLevel level = LogLevel.Normal) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> fullWarn = DateTime.Now.ToString(<span style="color:#e6db74">&#34;h:mm:ss tt&#34;</span>) + <span style="color:#e6db74">&#34;: WARNING: &#34;</span> + message;
+</span></span><span style="display:flex;"><span>    Messages.Add(fullWarn);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (level &lt;= profile.Level &amp;&amp; level &gt; <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (profile.Output) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> LogOutput.Unity:
+</span></span><span style="display:flex;"><span>                Debug.LogWarning(fullWarn);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> LogOutput.Console:
+</span></span><span style="display:flex;"><span>                Console.WriteLine(fullWarn);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Log a message to console and to the log file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Log(<span style="color:#66d9ef">string</span> message, LogLevel level = LogLevel.Normal) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> fullLog = DateTime.Now.ToString(<span style="color:#e6db74">&#34;h:mm:ss tt&#34;</span>) + <span style="color:#e6db74">&#34;: &#34;</span> + message;
+</span></span><span style="display:flex;"><span>    Messages.Add(fullLog);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(level &lt;= profile.Level &amp;&amp; level &gt; <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (profile.Output) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> LogOutput.Unity:
+</span></span><span style="display:flex;"><span>                Debug.Log(fullLog);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> LogOutput.Console:
+</span></span><span style="display:flex;"><span>                Console.WriteLine(fullLog);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since a static class can&rsquo;t have a destructor we need to create a work around. The destructor is responsible for calling SaveLogFile() when the application closes. If you don&rsquo;t want to use this method just make sure to have some external instance call SaveLogFile() elsewhere when the application is closing. Place this sealed class anywhere within the LoggerUtils class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// This is a little rigged contraption to allow for</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// saving of the log file when the app is closed.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Source: https://stackoverflow.com/questions/4364665/static-destructor</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Destructor</span> {
+</span></span><span style="display:flex;"><span>    ~Destructor() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (profile.SaveToFile) {
+</span></span><span style="display:flex;"><span>            SaveLogFile();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Lastly lets add the SaveLogFile() method. I use some helper functions which I will include but you can use your own if you prefer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Store all of the log calls made to file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> SaveLogFile() {
+</span></span><span style="display:flex;"><span>    Log(<span style="color:#e6db74">&#34;Saving log file&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    List&lt;<span style="color:#66d9ef">byte</span>&gt; logBytes = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">byte</span>&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Add each message to the byte array and add a new line after each.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">string</span> msg <span style="color:#66d9ef">in</span> Messages) {
+</span></span><span style="display:flex;"><span>        logBytes.AddRange(Encoding.ASCII.GetBytes(msg));
+</span></span><span style="display:flex;"><span>        logBytes.AddRange(Encoding.ASCII.GetBytes(Environment.NewLine));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Don&#39;t save more than 8 files at any time.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(FileUtils.GetFileCount(LogFileDirectory) &gt;= MaxLogCount) {
+</span></span><span style="display:flex;"><span>        FileUtils.DeleteFileAtIndex(LogFileDirectory, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Save the file.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> fullLogFileName = <span style="color:#e6db74">&#34;VoxLogFile&#34;</span> + DateTime.Now.ToString(<span style="color:#e6db74">&#34;yyyy-MM-dd-HH-mm-ss&#34;</span>) + <span style="color:#e6db74">&#34;.&#34;</span> + LogFileExtension;
+</span></span><span style="display:flex;"><span>    FileUtils.SaveFile(LogFileDirectory, fullLogFileName, logBytes.ToArray(), <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Returns the number of files in the directory.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> GetFileCount(<span style="color:#66d9ef">string</span> directory) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Directory.Exists(directory)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Directory.GetFiles(directory).Length;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Save an array of bytes to file. Set overwrite</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// to true to over write any pre existing files.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> SaveFile(<span style="color:#66d9ef">string</span> directory, <span style="color:#66d9ef">string</span> fileName, <span style="color:#66d9ef">byte</span>[] fileContent, <span style="color:#66d9ef">bool</span> overwrite = <span style="color:#66d9ef">false</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> fullFileName = directory + <span style="color:#e6db74">&#34;/&#34;</span> + fileName;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//If the folder doesn&#39;t exist. Make it.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (!Directory.Exists(directory)) {
+</span></span><span style="display:flex;"><span>        Directory.CreateDirectory(directory);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//File already exists. Check if overwrite is enabled.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (File.Exists(fullFileName)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (overwrite) {
+</span></span><span style="display:flex;"><span>            File.Delete(fullFileName);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Create the new filestream.</span>
+</span></span><span style="display:flex;"><span>    FileStream fileStream = <span style="color:#66d9ef">new</span> FileStream(fullFileName, FileMode.Create, FileAccess.Write, FileShare.None);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Write the content to file.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> (BinaryWriter binWriter = <span style="color:#66d9ef">new</span> BinaryWriter(fileStream)) {
+</span></span><span style="display:flex;"><span>        binWriter.Write(fileContent);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fileStream.Close();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// Delete the file at specified index in the directory.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> DeleteFileAtIndex(<span style="color:#66d9ef">string</span> directory, <span style="color:#66d9ef">int</span> index) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(index &gt;= <span style="color:#ae81ff">0</span> &amp;&amp; index &lt; Directory.GetFiles(directory).Length) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> fileName = Directory.GetFiles(directory)[index];
+</span></span><span style="display:flex;"><span>        File.Delete(fileName);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To use the new LoggerUtils class simple call LoggerUtils.SetLogProfile(YOUR_PROFILE_HERE). Then use any of it&rsquo;s .Log() methods. If you want to add a way to automatically set the log profile to Unity debug when in the Unity editor add the following tidbit in an Awake() method of a monoBehaviour in your game.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake(){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#if</span> UNITY_EDITOR
+</span></span><span style="display:flex;"><span>        LoggerUtils.SetLogProfile(LogProfile.UnityDebug);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endif</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
   </div>
 </article>
 

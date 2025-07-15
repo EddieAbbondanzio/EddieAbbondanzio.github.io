@@ -14,21 +14,19 @@
 
   
   
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.436a85436cc9250bb766c4f35d517e953d33f24e7ecabbee263c51d31fbe2d7d.css" integrity="sha256-Q2qFQ2zJJQu3ZsTzXVF&#43;lT0z8k5&#43;yrvuJjxR0x&#43;&#43;LX0=" media="screen">
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.dc9cd9a7861d2ce9cc663bf4b362fab0efae725a797598924fd9b1d7dbc8f781.css" integrity="sha256-3JzZp4YdLOnMZjv0s2L6sO&#43;uclp5dZiST9mx19vI94E=" media="screen">
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async
-    src="//tgpo.eddieabbondanz.io/count.js"></script>
-
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
 </head>
 
 <body>
   <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
-    <a href="https://eddieabbondanz.io">
+    <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
     </a>
 
-    <a class="tdn fwb" href="https://eddieabbondanz.io">
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
       <span>Eddie Abbondanzio</span>
     </a>
   </div>  
@@ -212,46 +210,46 @@ local time by subtracting the round trip time from the recieved value.</li>
 </ul>
 <p>These code snippets are from my TimeSynchronizer class. They are the message handlers that
 process incoming messages from over the network.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnConnectionMessage(<span style="color:#66d9ef">object</span> sender, NetMessageArgs e) {
-    <span style="color:#66d9ef">switch</span> (e.Message?.Type) {
-        <span style="color:#75715e">//Step 1 (Client side):
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//When a new server is connected to. Send it a time request.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> NetMessageType.ConnectionAccepted:
-            SendSyncRequest();
-            <span style="color:#66d9ef">break</span>;
-
-        <span style="color:#75715e">//Disconnected from server. Wipe offset.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> NetMessageType.Disconnected:
-            time.SetServerOffset(<span style="color:#ae81ff">0</span>);
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-
-<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnTimeMessage(<span style="color:#66d9ef">object</span> sender, NetMessageArgs e) {
-    <span style="color:#66d9ef">switch</span> (e.Message?.Type) {
-        <span style="color:#75715e">//Step 3 (Client Side)
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//Time sync message was recieved.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> NetMessageType.TimeSync:
-            TimeSyncMessage incomingSync = e.Message <span style="color:#66d9ef">as</span> TimeSyncMessage;
-
-            <span style="color:#66d9ef">if</span> (incomingSync != <span style="color:#66d9ef">null</span>) {
-                time.SetServerOffset(incomingSync.ServerTime - timeSyncSentAt);
-            }
-
-            <span style="color:#66d9ef">break</span>;
-
-        <span style="color:#75715e">//Step 2 (Server Side)
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">//Client is requesting a time sync message.
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">case</span> NetMessageType.TimeSyncRequest:
-            LiteNetLib.NetPeer msgSender = e.Message.Sender;
-            <span style="color:#66d9ef">if</span> (msgSender != <span style="color:#66d9ef">null</span>) {
-                TimeSyncMessage outgoingSync = <span style="color:#66d9ef">new</span> TimeSyncMessage(Time.LocalTime);
-                netManager.SendMessage(outgoingSync, msgSender, LiteNetLib.SendOptions.ReliableOrdered);
-            }
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p>This process isn&rsquo;t quite perfect and a variance of several milliseconds can occur but this can be overcome by repeating these steps occasionally. It could be
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnConnectionMessage(<span style="color:#66d9ef">object</span> sender, NetMessageArgs e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (e.Message?.Type) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Step 1 (Client side):</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//When a new server is connected to. Send it a time request.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> NetMessageType.ConnectionAccepted:
+</span></span><span style="display:flex;"><span>            SendSyncRequest();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Disconnected from server. Wipe offset.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> NetMessageType.Disconnected:
+</span></span><span style="display:flex;"><span>            time.SetServerOffset(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnTimeMessage(<span style="color:#66d9ef">object</span> sender, NetMessageArgs e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (e.Message?.Type) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Step 3 (Client Side)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Time sync message was recieved.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> NetMessageType.TimeSync:
+</span></span><span style="display:flex;"><span>            TimeSyncMessage incomingSync = e.Message <span style="color:#66d9ef">as</span> TimeSyncMessage;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (incomingSync != <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                time.SetServerOffset(incomingSync.ServerTime - timeSyncSentAt);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Step 2 (Server Side)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//Client is requesting a time sync message.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> NetMessageType.TimeSyncRequest:
+</span></span><span style="display:flex;"><span>            LiteNetLib.NetPeer msgSender = e.Message.Sender;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (msgSender != <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                TimeSyncMessage outgoingSync = <span style="color:#66d9ef">new</span> TimeSyncMessage(Time.LocalTime);
+</span></span><span style="display:flex;"><span>                netManager.SendMessage(outgoingSync, msgSender, LiteNetLib.SendOptions.ReliableOrdered);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This process isn&rsquo;t quite perfect and a variance of several milliseconds can occur but this can be overcome by repeating these steps occasionally. It could be
 taken one step further and several time syncs could be sent when a player first joins, then the average offset can be calculated from them which can reduce bad
 data due to a lag spike.</p>
 
