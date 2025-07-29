@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/series/linux/</link>
+    <description>Recent content in Linux on Eddie Abbondanzio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/series/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Install Syncthing on Ubuntu</title>
+      <link>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</guid>
+      <description>&lt;p&gt;Syncthing rocks. I use it to keep my notes and docs synced between my two laptops and it&amp;rsquo;s never let me down. Recently one of my laptops went kaput after an OS upgrade and I was forced to set everything up from scratch (including Syncthing). Thankfully it&amp;rsquo;s pretty easy to set up.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

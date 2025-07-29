@@ -6,7 +6,7 @@
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Marqus</title>
@@ -42,6 +42,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
       <description>&lt;p&gt;Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times. The more a user liked the post, the more they would clap in response. The widget had several animations to make it feel more lively and enjoyable. Clapbutton.com was the admin panel to manage the widget.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Install Syncthing on Ubuntu</title>
+      <link>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</guid>
+      <description>&lt;p&gt;Syncthing rocks. I use it to keep my notes and docs synced between my two laptops and it&amp;rsquo;s never let me down. Recently one of my laptops went kaput after an OS upgrade and I was forced to set everything up from scratch (including Syncthing). Thankfully it&amp;rsquo;s pretty easy to set up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>B-Series Gear Calculator</title>
