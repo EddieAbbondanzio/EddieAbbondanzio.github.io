@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>FreeCAD AppImage Fails to Start Due to SquashFS Error</title>
+  
+  <meta name="description" content="My blog about my project cars and other contraptions">
+  
+  <meta name="author" content="Eddie Abbondanzio">
+  
+
+  
+  
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.6543c26e4316c968ce4140f54801d8242777197ad9587a175e4cfd02a7219086.css" integrity="sha256-ZUPCbkMWyWjOQUD1SAHYJCd3GXrZWHoXXkz9AqchkIY=" media="screen">
+
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
+</head>
+
+<body>
+  <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>  
+
+  <div id="desktop-search" class="pr2 hidden-phone" >
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+    
+    
+    <div class="item dropdown">
+      <a class="trigger">Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+
+      <div class="content">
+        <a href="https://eddieabbondanz.io/post/"> All </a>
+
+        
+        <a href="https://eddieabbondanz.io/series/development">Development</a>
+        
+        <a href="https://eddieabbondanz.io/series/xj-build">OG XJ Build</a>
+        
+        <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+        
+        <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+        
+        <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+        
+        <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+        
+        <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+        
+        <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+        
+      </div>
+    </div>
+    
+    
+    
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+    
+    
+    
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+    
+    
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+
+</nav>
+  
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/series/xj-build"> OG XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+  <main>
+    
+<article class="post" data-pagefind-meta="image:/post/linux/freecad-appimage-fails-to-start/images/freeCAD.svg">
+  <h1 class="h1 mb2" data-pagefind-meta="title">FreeCAD AppImage Fails to Start Due to SquashFS Error</h1>
+
+  <div class="fr meta pb3">
+    
+    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/linux" title="More Linux posts">
+      <i class="fas fa-th-list"></i>
+      Linux
+    </a>
+    
+
+    
+    <div class="date" title="Posted on Aug 4, 2025">
+      <i class="fas fa-calendar-day"></i>
+      <time>Aug 4, 2025</time>
+    </div>
+    
+  </div>
+
+  <div class="markdown-body" data-pagefind-body>
+    <p>If you&rsquo;re trying to install FreeCAD on Linux via an appimage and your running into a <code>Squashfs image uses (null) compression, this version supports only xz, zlib</code> error on startup it&rsquo;s due to a bug in AppImageLauncher. This is a <a href="https://github.com/TheAssassin/AppImageLauncher/issues/585" target="_blank" rel="noopener">known bug</a> that&rsquo;s been <a href="https://github.com/TheAssassin/AppImageLauncher/pull/690" target="_blank" rel="noopener">fixed</a> for a few months but at the time of writing this (2025-08-04) the fix hasn&rsquo;t been included in any releases yet.</p>
+<p>AppImageLauncher hasn&rsquo;t published any releases since 2020 so it could be awhile before it&rsquo;s actually released though. I didn&rsquo;t want to wait for them to publish a release before I can use FreeCAD so I opted to uninstall it and set up the appimage myself.</p>
+<p>Manually installing an appimage is actually pretty easy. You just need to create a <code>.desktop</code> file for it in <code>~/.local/share/applications</code> and place the appimage somewhere appropriate. (usually <code>~/Applications</code>)</p>
+<h2>
+  Manual Install Steps
+  <a href="#manual-install-steps" id="manual-install-steps" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><ol>
+<li>Uninstall AppImageLauncher <code>sudo apt purge appimagelauncher</code> (this was the only way I could circumvent AppImageLauncher from trying to start the appimage each time)</li>
+<li>Reboot your machine</li>
+<li>Download the latest stable FreeCAD appimage from <a href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="noopener">GitHub</a></li>
+<li>Move the appimage to <code>~/Applications</code></li>
+<li>Ensure the appimage has execution permissions. <code>sudo chmod +x $APP_IMAGE_NAME</code></li>
+<li>Create the desktop file. <code>nano ~/.local/share/applications/freecad.desktop</code> and enter the following:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[Desktop Entry]
+</span></span><span style="display:flex;"><span>Type=Application
+</span></span><span style="display:flex;"><span>Name=FreeCAD
+</span></span><span style="display:flex;"><span># NOTE: Your path will be different. Be sure to update accordingly.
+</span></span><span style="display:flex;"><span>Exec=/home/ed/Applications/FreeCAD_1.0.1-conda-Linux-x86_64-py311_fdcc6ae07806cc916b7b460da658191f.AppImage
+</span></span></code></pre></div><ol start="7">
+<li><code>ctrl+s</code> to save the file and close it out.</li>
+</ol>
+<p>You should now be able to run FreeCAD like any other application.</p>
+<h3>
+  Fixing the Desktop Icon (Optional)
+  <a href="#fixing-the-desktop-icon-optional" id="fixing-the-desktop-icon-optional" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h3><p>If you followed the steps above and noticed that the FreeCAD icon isn&rsquo;t properly showing it&rsquo;s because your OS doesn&rsquo;t know how to find it. This can be fixed by adding an <code>icon</code> path in the <code>.desktop</code> file.</p>
+<ol>
+<li>Navigate to the directory where you put the appimage and open up a terminal prompt.</li>
+<li>Open a terminal and run <code>$APP_IMAGE_NAME.AppImage --appimage-extract *.FreeCAD.svg</code>.</li>
+<li>A new <code>squashfs-root</code> directory should have appeared. Copy the icon <code>org.freecad.FreeCAD.svg</code> from inside it over to <code>~/.local/share/icons</code>. (Don&rsquo;t forget to delete the <code>squashfs-root</code> dir after)</li>
+<li>Edit the <code>.desktop</code> file <code>nano ~/.local/share/applications/freecad.desktop</code> and add a new line:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span># (Your path will be different unless your username is also ed)
+</span></span><span style="display:flex;"><span>Icon=/home/ed/.local/share/icons/org.freecad.FreeCAD.svg
+</span></span></code></pre></div><ol start="5">
+<li>Save and close out the file.</li>
+</ol>
+<p>Now the icon should show up.</p>
+<p><div class="image">
+<a href="./images/launcher.png" target="_blank">
+  <img loading="lazy" src="./images/launcher.png" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Further Reading
+  <a href="#further-reading" id="further-reading" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><ul>
+<li>If you&rsquo;d like to learn more about desktop files. See the <a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/" target="_blank" rel="noopener">specs</a></li>
+</ul>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+  <script src="https://eddieabbondanz.io/js/lol.js"></script>
+  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+</body>
+
+</html>
