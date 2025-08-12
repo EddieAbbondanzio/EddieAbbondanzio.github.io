@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Custom Rear Hitch To Haul My Mini Bike</title>
+      <link>https://eddieabbondanz.io/post/civic/custom-rear-hitch-receiver/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/civic/custom-rear-hitch-receiver/</guid>
+      <description>&lt;p&gt;I recently built a &lt;a href=&#34;https://eddieabbondanz.io/post/shop/mini-bike-build/&#34;&gt;mini bike&lt;/a&gt; and needed a way to haul it around with my 93 Civic hatch. Even though the bike is small enough that it&amp;rsquo;d fit inside the Civic, I&amp;rsquo;d have to lay it sideways and I didn&amp;rsquo;t like that because it could potentially leak oil or gas so I figured my best option would be to use a hitch cargo tray.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>FreeCAD AppImage Fails to Start Due to SquashFS Error</title>
       <link>https://eddieabbondanz.io/post/linux/freecad-appimage-fails-to-start/</link>
