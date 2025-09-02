@@ -2,1151 +2,1158 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eddie Abbondanzio</title>
-    <link>https://eddieabbondanz.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://eddieabbondanz.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Marqus</title>
-      <link>https://eddieabbondanz.io/app/marqus/</link>
+      <link>http://localhost:1313/app/marqus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/marqus/</guid>
+      <guid>http://localhost:1313/app/marqus/</guid>
       <description>&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/hero.png&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/hero.png&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/EddieAbbondanzio/marqus&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marqus&lt;/a&gt; is a desktop note taking app that allows users to organize and maintain their knowledge base. The app has support for custom keyboard shortcuts for power users and also keeps track of state so each time you open the app you can pick right up where you last left off.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Detailing Arsenal</title>
-      <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
+      <link>http://localhost:1313/app/detailingarsenal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/detailingarsenal/</guid>
+      <guid>http://localhost:1313/app/detailingarsenal/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/EddieAbbondanzio/detailingarsenal.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Detailing Arsenal&lt;/a&gt; is a SaaS (software as a service) for managing and scheduling appointments for auto detailers. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue. The app is focused towards auto detailing as the industry has some unique requirements such as vehicle check-in inspections and more that generic scheduling apps didn&amp;rsquo;t offer.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Updog</title>
-      <link>https://eddieabbondanz.io/app/updog/</link>
+      <link>http://localhost:1313/app/updog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/updog/</guid>
+      <guid>http://localhost:1313/app/updog/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/EddieAbbondanzio/Updog.in&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Updog&lt;/a&gt; was a Reddit clone where users could share links, and create text posts. Users could submit comments to posts, or reply to other comments. A voting system was implemented to allow users to upvote or downvote posts they liked or disliked. Posts could be shared to any of the sub spaces that were topic specific. The home page of the site aggregated all posts into a list ordered by most recent.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mechanic Log</title>
-      <link>https://eddieabbondanz.io/app/mechaniclog/</link>
+      <link>http://localhost:1313/app/mechaniclog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/mechaniclog/</guid>
+      <guid>http://localhost:1313/app/mechaniclog/</guid>
       <description>&lt;p&gt;Mechanic Log was a web app where users could log repairs and maintenance performed on their vehicle(s). Users could also track fuel mileage to see how much they spent in fuel, gallons consumed, and lifetime MPG. Receipts and invoices could also be saved along with the exact mileage and date services were performed on.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Clap Button</title>
-      <link>https://eddieabbondanz.io/app/clapbutton/</link>
+      <link>http://localhost:1313/app/clapbutton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
+      <guid>http://localhost:1313/app/clapbutton/</guid>
       <description>&lt;p&gt;Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times. The more a user liked the post, the more they would clap in response. The widget had several animations to make it feel more lively and enjoyable. Clapbutton.com was the admin panel to manage the widget.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Spring Rate Converter</title>
+      <link>http://localhost:1313/post/honda/spring-rate-converter/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/honda/spring-rate-converter/</guid>
+      <description>Easily convert spring rates from lb/in to kg/mm or vice versa</description>
+    </item>
+    <item>
       <title>Two Seasons of Autocross Under It&#39;s Belt</title>
-      <link>https://eddieabbondanz.io/post/civic/two-seasons-of-autocross/</link>
+      <link>http://localhost:1313/post/civic/two-seasons-of-autocross/</link>
       <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/two-seasons-of-autocross/</guid>
+      <guid>http://localhost:1313/post/civic/two-seasons-of-autocross/</guid>
       <description>&lt;p&gt;The Civic has completed almost two full seasons of auto cross without any major issues and has been an absolute blast to drive. I&amp;rsquo;ve been slowly making changes to it so I could see how each change feels and at this point I think it&amp;rsquo;s about perfect for my driving style.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 23: Fixing The Windshield Pillar Gaps And Adding Bracing</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-23/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-23/</link>
       <pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-23/</guid>
-      <description>&lt;p&gt;With the XJ sitting on the chassis table I felt it was time to address the windshield pillars not lining up with the front doors. The pillars are almost touching the top corner of each door because &lt;a href=&#34;https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-21/#the-mistake&#34;&gt;back when I was replacing the drip rails I didn&amp;rsquo;t brace the roof enough and it shifted&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-23/</guid>
+      <description>&lt;p&gt;With the XJ sitting on the chassis table I felt it was time to address the windshield pillars not lining up with the front doors. The pillars are almost touching the top corner of each door because &lt;a href=&#34;http://localhost:1313/post/xj/unibody-rust-repair-part-21/#the-mistake&#34;&gt;back when I was replacing the drip rails I didn&amp;rsquo;t brace the roof enough and it shifted&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Custom Rear Hitch To Haul My Mini Bike</title>
-      <link>https://eddieabbondanz.io/post/civic/custom-rear-hitch-receiver/</link>
+      <link>http://localhost:1313/post/civic/custom-rear-hitch-receiver/</link>
       <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/custom-rear-hitch-receiver/</guid>
-      <description>&lt;p&gt;I recently built a &lt;a href=&#34;https://eddieabbondanz.io/post/shop/mini-bike-build/&#34;&gt;mini bike&lt;/a&gt; and needed a way to haul it around with my 93 Civic hatch. Even though the bike is small enough that it&amp;rsquo;d fit inside the Civic, I&amp;rsquo;d have to lay it sideways and I didn&amp;rsquo;t like that because it could potentially leak oil or gas so I figured my best option would be to use a hitch cargo tray.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/civic/custom-rear-hitch-receiver/</guid>
+      <description>&lt;p&gt;I recently built a &lt;a href=&#34;http://localhost:1313/post/shop/mini-bike-build/&#34;&gt;mini bike&lt;/a&gt; and needed a way to haul it around with my 93 Civic hatch. Even though the bike is small enough that it&amp;rsquo;d fit inside the Civic, I&amp;rsquo;d have to lay it sideways and I didn&amp;rsquo;t like that because it could potentially leak oil or gas so I figured my best option would be to use a hitch cargo tray.&lt;/p&gt;</description>
     </item>
     <item>
       <title>FreeCAD AppImage Fails to Start Due to SquashFS Error</title>
-      <link>https://eddieabbondanz.io/post/linux/freecad-appimage-fails-to-start/</link>
+      <link>http://localhost:1313/post/linux/freecad-appimage-fails-to-start/</link>
       <pubDate>Mon, 04 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/linux/freecad-appimage-fails-to-start/</guid>
+      <guid>http://localhost:1313/post/linux/freecad-appimage-fails-to-start/</guid>
       <description>&lt;p&gt;If you&amp;rsquo;re trying to install FreeCAD on Linux via an appimage and your running into a &lt;code&gt;Squashfs image uses (null) compression, this version supports only xz, zlib&lt;/code&gt; error on startup it&amp;rsquo;s due to a bug in AppImageLauncher. This is a &lt;a href=&#34;https://github.com/TheAssassin/AppImageLauncher/issues/585&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;known bug&lt;/a&gt; that&amp;rsquo;s been &lt;a href=&#34;https://github.com/TheAssassin/AppImageLauncher/pull/690&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fixed&lt;/a&gt; for a few months but at the time of writing this (2025-08-04) the fix hasn&amp;rsquo;t been included in any releases yet.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arco Mini Bike Build With a Predator 212 Swap</title>
-      <link>https://eddieabbondanz.io/post/shop/mini-bike-build/</link>
+      <link>http://localhost:1313/post/shop/mini-bike-build/</link>
       <pubDate>Sun, 03 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/shop/mini-bike-build/</guid>
+      <guid>http://localhost:1313/post/shop/mini-bike-build/</guid>
       <description>&lt;p&gt;At some of the larger autocross venues I go to it can be a pain to walk around on foot because of how long it takes you to get from point A to B. To get around faster people usually bring an assortment of transporation mechanisms such as bicycles, e-bikes, drift trikes, or even ATVs to get around.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Install Syncthing on Ubuntu</title>
-      <link>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</link>
+      <link>http://localhost:1313/post/linux/how-to-install-syncthing/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</guid>
+      <guid>http://localhost:1313/post/linux/how-to-install-syncthing/</guid>
       <description>&lt;p&gt;Syncthing rocks. I use it to keep my notes and docs synced between my two laptops and it&amp;rsquo;s never let me down. Recently one of my laptops went kaput after an OS upgrade and I was forced to set everything up from scratch (including Syncthing). Thankfully it&amp;rsquo;s pretty easy to set up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>B-Series Gear Calculator</title>
-      <link>https://eddieabbondanz.io/post/honda/b-series-gear-calculator/</link>
+      <link>http://localhost:1313/post/honda/b-series-gear-calculator/</link>
       <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/b-series-gear-calculator/</guid>
+      <guid>http://localhost:1313/post/honda/b-series-gear-calculator/</guid>
       <description>Helpful calculator for comparing different b-series transmissions. Allows for custom gear ratios, and tire sizes.</description>
     </item>
     <item>
       <title>Rust Repair Part 22: Getting Jiggy With the XJ and Putting It on a Chassis Table</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-22/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-22/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-22/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-22/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve made it pretty far on the metal work for my XJ without a chassis table but once I finish up the driver side I&amp;rsquo;ll need to start replacing the floor and frame rails so the rear suspension needs to come out and that means the XJ won&amp;rsquo;t have any wheels. That&amp;rsquo;s gonna be a problem because every so often I need to move the XJ around to make space for other projects like repairs on my daily so a chassis table just seems like the best option.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LS Swap Part 2: Converting a NP241C Transfer Case For the XJ With a SYE</title>
-      <link>https://eddieabbondanz.io/post/xj/ls-swap-part-2-transfer-case/</link>
+      <link>http://localhost:1313/post/xj/ls-swap-part-2-transfer-case/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/ls-swap-part-2-transfer-case/</guid>
+      <guid>http://localhost:1313/post/xj/ls-swap-part-2-transfer-case/</guid>
       <description>&lt;p&gt;There&amp;rsquo;s several options for transfer cases when LS swapping an XJ. Two of the more popular options are running the stock NP231 / NP242 with an adapter so it&amp;rsquo;ll mate up to the GM transmission or use a GM transfer case such as the NP241 that can be adapted to work with the XJ&amp;rsquo;s driveshafts.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How I Built My Chassis Table</title>
-      <link>https://eddieabbondanz.io/post/tools/diy-chassis-table/</link>
+      <link>http://localhost:1313/post/tools/diy-chassis-table/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/tools/diy-chassis-table/</guid>
-      <description>&lt;p&gt;I recently built a chassis table for &lt;a href=&#34;https://eddieabbondanz.io/series/xj-build/&#34;&gt;the XJ I&amp;rsquo;m restoring&lt;/a&gt; and figured I&amp;rsquo;d do a brief writeup. I&amp;rsquo;ve never built a chassis table before and from researching them online I quickly learned there&amp;rsquo;s no one size fits all solution.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/tools/diy-chassis-table/</guid>
+      <description>&lt;p&gt;I recently built a chassis table for &lt;a href=&#34;http://localhost:1313/series/xj-build/&#34;&gt;the XJ I&amp;rsquo;m restoring&lt;/a&gt; and figured I&amp;rsquo;d do a brief writeup. I&amp;rsquo;ve never built a chassis table before and from researching them online I quickly learned there&amp;rsquo;s no one size fits all solution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 21: Blowing Off the Dust a Year Later AGAIN</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-21/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-21/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-21/</guid>
-      <description>&lt;p&gt;Another year has come and gone and the XJ remains in pieces. I truly intended on starting to fix it last time I posted about the XJ &lt;a href=&#34;https://eddieabbondanz.io/post/oemplus-xj-build/1-buying-a-second-xj/&#34;&gt;but then I impulsively bought a second XJ &lt;/a&gt; and it needed some work of it&amp;rsquo;s own that ended up taking me almost a year to finish.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-21/</guid>
+      <description>&lt;p&gt;Another year has come and gone and the XJ remains in pieces. I truly intended on starting to fix it last time I posted about the XJ &lt;a href=&#34;http://localhost:1313/post/oemplus-xj-build/1-buying-a-second-xj/&#34;&gt;but then I impulsively bought a second XJ &lt;/a&gt; and it needed some work of it&amp;rsquo;s own that ended up taking me almost a year to finish.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Engine Stand Bolts For The 84-01 XJ 4.0</title>
-      <link>https://eddieabbondanz.io/post/xj-info/xj-engine-stand-bolts/</link>
+      <link>http://localhost:1313/post/xj-info/xj-engine-stand-bolts/</link>
       <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/xj-engine-stand-bolts/</guid>
+      <guid>http://localhost:1313/post/xj-info/xj-engine-stand-bolts/</guid>
       <description>&lt;p&gt;The OEM bell housing bolts are too short for an engine stand so you&amp;rsquo;ll need to pick up some longer bolts.&lt;/p&gt;&#xA;&lt;p&gt;Every engine stand is a little different but for the HF engine stand I used:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Swapping Another Dana 30 In</title>
-      <link>https://eddieabbondanz.io/post/oemplus-xj-build/4-swapping-another-dana-30-in/</link>
+      <link>http://localhost:1313/post/oemplus-xj-build/4-swapping-another-dana-30-in/</link>
       <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/oemplus-xj-build/4-swapping-another-dana-30-in/</guid>
+      <guid>http://localhost:1313/post/oemplus-xj-build/4-swapping-another-dana-30-in/</guid>
       <description>&lt;p&gt;Having just passed 215k miles, the XJ from Colorado has proven to be a reliable daily over the past few months. It did have a recent incident with the alternator intermittently failing where it&amp;rsquo;d just stop charging and the &amp;ldquo;check gauges&amp;rdquo; light would come on but that was an easy fix by swapping in the spare alternator I had laying around.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The End</title>
-      <link>https://eddieabbondanz.io/post/88-integra/the-end/</link>
+      <link>http://localhost:1313/post/88-integra/the-end/</link>
       <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/the-end/</guid>
+      <guid>http://localhost:1313/post/88-integra/the-end/</guid>
       <description>&lt;p&gt;The Integra has been a fun project but after 4 years of ownership I decided it was time to sell and as of last weekend it&amp;rsquo;s no longer mine. For the past several months it hasn&amp;rsquo;t seen much use and I don&amp;rsquo;t see that changing as my XJ from Colorado is my new daily.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Centered vs Offset AW4 Transmission Mounts</title>
-      <link>https://eddieabbondanz.io/post/xj-info/aw4-mounts/</link>
+      <link>http://localhost:1313/post/xj-info/aw4-mounts/</link>
       <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/aw4-mounts/</guid>
+      <guid>http://localhost:1313/post/xj-info/aw4-mounts/</guid>
       <description>&lt;p&gt;There&amp;rsquo;s two different versions of the transmission mount for XJs that came with the AW4 automatic transmission and they&amp;rsquo;re commonly referred to as centered, and offset.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/comparison.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/comparison.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The offset mount (top one in picture above) can be found in 1999 and older XJs. The centered mount (bottom one) can be found in 2000 or 2001 XJs. The main difference between the mounts is how they attach to the crossmember due to different bolt hole locations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Rear Disk Conversion</title>
-      <link>https://eddieabbondanz.io/post/xj-info/dana-35-rear-disk-conversion/</link>
+      <link>http://localhost:1313/post/xj-info/dana-35-rear-disk-conversion/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/dana-35-rear-disk-conversion/</guid>
+      <guid>http://localhost:1313/post/xj-info/dana-35-rear-disk-conversion/</guid>
       <description>&lt;p&gt;If you&amp;rsquo;re tired of the rear drum brakes on your XJ it&amp;rsquo;s easy to swap to rear disks using ZJ (93-98 Grand Cherokee) brakes. Just like some XJs, ZJs have a Dana 35 rear axle and some of the ZJs were built with rear disk brakes which is why the parts will bolt up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>97-01 XJ Interior Bulb Sizes for LEDs</title>
-      <link>https://eddieabbondanz.io/post/xj-info/xj-interior-bulb-sizes-for-leds/</link>
+      <link>http://localhost:1313/post/xj-info/xj-interior-bulb-sizes-for-leds/</link>
       <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/xj-interior-bulb-sizes-for-leds/</guid>
+      <guid>http://localhost:1313/post/xj-info/xj-interior-bulb-sizes-for-leds/</guid>
       <description>&lt;p&gt;Converting the interior lights of a 97-01 XJ to LEDs is easy since there&amp;rsquo;s only 12 bulbs to swap. Plus LEDs are drastically brighter than the stock incandescent bulbs so it&amp;rsquo;ll help improve visibility at night, and they won&amp;rsquo;t turn your interior plastic brittle or burn your fingers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Repairing the Quarter Panels and Rusty Roof</title>
-      <link>https://eddieabbondanz.io/post/oemplus-xj-build/3-repairing-the-roof-and-quarters/</link>
+      <link>http://localhost:1313/post/oemplus-xj-build/3-repairing-the-roof-and-quarters/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/oemplus-xj-build/3-repairing-the-roof-and-quarters/</guid>
+      <guid>http://localhost:1313/post/oemplus-xj-build/3-repairing-the-roof-and-quarters/</guid>
       <description>&lt;p&gt;At this point the XJ was mechanically solid but in desperate need of some cosmetic work.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/42.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/42.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;It was hard deciding where to draw the line in terms of what I&amp;rsquo;d work on vs what I&amp;rsquo;d leave as-is but I settled on repairing both quarter panels, and the roof as they were the worst.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixing All The Mechanical Issues</title>
-      <link>https://eddieabbondanz.io/post/oemplus-xj-build/2-fixing-all-the-mechanical-issues/</link>
+      <link>http://localhost:1313/post/oemplus-xj-build/2-fixing-all-the-mechanical-issues/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/oemplus-xj-build/2-fixing-all-the-mechanical-issues/</guid>
+      <guid>http://localhost:1313/post/oemplus-xj-build/2-fixing-all-the-mechanical-issues/</guid>
       <description>&lt;p&gt;With a rough idea of what it&amp;rsquo;d take to fix up the damage I decided to switch focus and tackle all the mechanical / electrical issues before diving into the bodywork.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Buying a Second XJ From Across the US</title>
-      <link>https://eddieabbondanz.io/post/oemplus-xj-build/1-buying-a-second-xj/</link>
+      <link>http://localhost:1313/post/oemplus-xj-build/1-buying-a-second-xj/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/oemplus-xj-build/1-buying-a-second-xj/</guid>
+      <guid>http://localhost:1313/post/oemplus-xj-build/1-buying-a-second-xj/</guid>
       <description>&lt;p&gt;Back in June of 2024, the night before I was due to fly out to Colorado for a work trip I couldn&amp;rsquo;t resist sifting through the Denver Craigslist to see what I could find. I wasn&amp;rsquo;t actually in the market to buy anything, but whenever I&amp;rsquo;m traveling outside of the Northeast I always like to see whats for sale in the states that don&amp;rsquo;t have to deal with road salt.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Harbor Freight 30-5 Cart Lid Lock Delete Mod</title>
-      <link>https://eddieabbondanz.io/post/tools/hf-30-5-lid-lock-delete-mod/</link>
+      <link>http://localhost:1313/post/tools/hf-30-5-lid-lock-delete-mod/</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/tools/hf-30-5-lid-lock-delete-mod/</guid>
+      <guid>http://localhost:1313/post/tools/hf-30-5-lid-lock-delete-mod/</guid>
       <description>&lt;p&gt;I don&amp;rsquo;t use the locks on my HF 5 drawer carts and wanted to free up some extra space so I decided to delete them. This was a fairly easy mod to do since the parts are held in by small rivets that can be drilled out.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Build a B20 VTEC Part 2: Collecting All the Parts</title>
-      <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-2/</link>
+      <link>http://localhost:1313/post/honda/how-to-build-a-b20-vtec-part-2/</link>
       <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-2/</guid>
-      <description>&lt;p&gt;In order to hit my power goals of 200 - 225whp, the B20V I&amp;rsquo;m building will need some mods to get there. Originally my block was a high compression B20B that had &lt;a href=&#34;https://eddieabbondanz.io/post/honda/low-comp-or-high-comp-b20b/&#34;&gt;the better PHK pistons&lt;/a&gt; but the cylinders were out of round and had to be bored 0.5mm over (not to mention 1 piston was cracked) so I can&amp;rsquo;t use the stock internals.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/honda/how-to-build-a-b20-vtec-part-2/</guid>
+      <description>&lt;p&gt;In order to hit my power goals of 200 - 225whp, the B20V I&amp;rsquo;m building will need some mods to get there. Originally my block was a high compression B20B that had &lt;a href=&#34;http://localhost:1313/post/honda/low-comp-or-high-comp-b20b/&#34;&gt;the better PHK pistons&lt;/a&gt; but the cylinders were out of round and had to be bored 0.5mm over (not to mention 1 piston was cracked) so I can&amp;rsquo;t use the stock internals.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Build a B20 VTEC Part 1: Planning Your Goals and Budget</title>
-      <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-1/</link>
+      <link>http://localhost:1313/post/honda/how-to-build-a-b20-vtec-part-1/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-1/</guid>
+      <guid>http://localhost:1313/post/honda/how-to-build-a-b20-vtec-part-1/</guid>
       <description>&lt;p&gt;Building a B20 VTEC (aka B20V) isn&amp;rsquo;t much more difficult than building a normal B20 but it can be daunting to figure out what you&amp;rsquo;ll need for parts with so many different options out there. You can do anything from slapping a VTEC head on a stock B20 block and sending it, to going all out with high comp pistons, big cams, and a bunch of headwork.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OBD0 Check Engine Light Codes</title>
-      <link>https://eddieabbondanz.io/post/honda/obd0-cel-codes/</link>
+      <link>http://localhost:1313/post/honda/obd0-cel-codes/</link>
       <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/obd0-cel-codes/</guid>
+      <guid>http://localhost:1313/post/honda/obd0-cel-codes/</guid>
       <description>&lt;p&gt;Reading CEL codes for an OBD0 Honda is easy since you don&amp;rsquo;t need to jump a service connector like the OBD1 Hondas, but you do need to find the ECU so you can count how many times the red LED in the ECU blinks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Replacements Bins for the HF 15 and 20 Bin Storage Cases</title>
-      <link>https://eddieabbondanz.io/post/tools/hf-15-20-storage-bin-case-replacement-bins/</link>
+      <link>http://localhost:1313/post/tools/hf-15-20-storage-bin-case-replacement-bins/</link>
       <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/tools/hf-15-20-storage-bin-case-replacement-bins/</guid>
+      <guid>http://localhost:1313/post/tools/hf-15-20-storage-bin-case-replacement-bins/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve got a growing collection of nuts and bolts and started using the &lt;a href=&#34;https://www.harborfreight.com/20-bin-medium-portable-parts-storage-case-93928.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;20 bin storage cases (SKU: 93928)&lt;/a&gt; that Harbor Freight sells to keep them all organized.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/stack.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/stack.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The bins work great for all my larger hardware such as some of my Honda bolts:&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/honda-bolts.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/honda-bolts.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Suspension Torque Specs</title>
-      <link>https://eddieabbondanz.io/post/xj-info/suspension-torque-specs/</link>
+      <link>http://localhost:1313/post/xj-info/suspension-torque-specs/</link>
       <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/suspension-torque-specs/</guid>
+      <guid>http://localhost:1313/post/xj-info/suspension-torque-specs/</guid>
       <description>&lt;p&gt;Working on your XJ&amp;rsquo;s suspension and need a torque spec? This list should have you covered. I grabbed all of these torque specs from the 2001 factory service manual and should apply to any year. (You may want to double check if you&amp;rsquo;ve got an older Renix XJ)&lt;/p&gt;</description>
     </item>
     <item>
       <title>88 - 89 Integra OBD0 ECU Capacitors</title>
-      <link>https://eddieabbondanz.io/post/honda/88-89-integra-ecu-capacitors/</link>
+      <link>http://localhost:1313/post/honda/88-89-integra-ecu-capacitors/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/88-89-integra-ecu-capacitors/</guid>
+      <guid>http://localhost:1313/post/honda/88-89-integra-ecu-capacitors/</guid>
       <description>&lt;p&gt;There&amp;rsquo;s only 6 capacitors in the 1988 - 1989 Integra ECU but getting to them can be a pain since the ECU is hidden underneath the passenger seat. The parts list required is as follows:&lt;/p&gt;</description>
     </item>
     <item>
       <title>AN Transmission Lines Upgrade with Aftermarket Trans Cooler</title>
-      <link>https://eddieabbondanz.io/post/xj-info/an-transmission-lines-with-cooler/</link>
+      <link>http://localhost:1313/post/xj-info/an-transmission-lines-with-cooler/</link>
       <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/an-transmission-lines-with-cooler/</guid>
+      <guid>http://localhost:1313/post/xj-info/an-transmission-lines-with-cooler/</guid>
       <description>&lt;p&gt;The OEM transmission lines on XJs can be difficult to work with due to their quick disconnect fittings, and the lines themselves are known to leak due to rusting out. Swapping out the OEM lines for AN lines isn&amp;rsquo;t overly difficult, and it&amp;rsquo;s easy to add a transmission cooler while you&amp;rsquo;re doing the lines.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ZJ Steering Upgrade with Parts List</title>
-      <link>https://eddieabbondanz.io/post/xj-info/zj-steering-upgrade-with-parts-list/</link>
+      <link>http://localhost:1313/post/xj-info/zj-steering-upgrade-with-parts-list/</link>
       <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/zj-steering-upgrade-with-parts-list/</guid>
+      <guid>http://localhost:1313/post/xj-info/zj-steering-upgrade-with-parts-list/</guid>
       <description>&lt;p&gt;The ZJ steering upgrade is a cheap and easy bolt-on mod that&amp;rsquo;ll beef up your XJ&amp;rsquo;s steering. The upgrade shouldn&amp;rsquo;t take more than a few hours of labor, and parts are super easy to source since they&amp;rsquo;re from a 93 - 98 Grand Cherokee, and can be purchased from sites like RockAuto, or your local auto parts store.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Piece Together a 2&#34; Old Man Emu Lift</title>
-      <link>https://eddieabbondanz.io/post/xj-info/how-to-piece-together-a-2-inch-ome-lift/</link>
+      <link>http://localhost:1313/post/xj-info/how-to-piece-together-a-2-inch-ome-lift/</link>
       <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj-info/how-to-piece-together-a-2-inch-ome-lift/</guid>
+      <guid>http://localhost:1313/post/xj-info/how-to-piece-together-a-2-inch-ome-lift/</guid>
       <description>&lt;p&gt;Old Man Emu is a great choice for lifting your XJ, but hunting down the correct part numbers can be difficult. I spent the last couple weeks DIYing a lift for my second XJ so I figured I&amp;rsquo;d post up everything I found.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ASR 24mm Rear Sway Bar and Brace Install</title>
-      <link>https://eddieabbondanz.io/post/civic/asr-rear-sway-bar-and-subframe-brace/</link>
+      <link>http://localhost:1313/post/civic/asr-rear-sway-bar-and-subframe-brace/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/asr-rear-sway-bar-and-subframe-brace/</guid>
+      <guid>http://localhost:1313/post/civic/asr-rear-sway-bar-and-subframe-brace/</guid>
       <description>&lt;p&gt;After having ran several autocross events with the Civic, I felt it was time to add a rear sway bar. The Civic was handling good on the course but I didn&amp;rsquo;t care for the understeer it had and adding a rear sway bar would be the easiest way to take care of that.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to tell if a B20B is high compression</title>
-      <link>https://eddieabbondanz.io/post/honda/low-comp-or-high-comp-b20b/</link>
+      <link>http://localhost:1313/post/honda/low-comp-or-high-comp-b20b/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/low-comp-or-high-comp-b20b/</guid>
+      <guid>http://localhost:1313/post/honda/low-comp-or-high-comp-b20b/</guid>
       <description>&lt;p&gt;The B20B came in a few different versions. There&amp;rsquo;s a low compression one, a high compression one, and a third variant with the P8R head.&lt;/p&gt;&#xA;&lt;p&gt;Distinguishing a low comp engine from a high comp engine is a little tricky since they don&amp;rsquo;t have any obvious markings but there is two things you can check. The first is if the block has a knock sensor, and the second is if the pistons are marked with PHK.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 20: Blowing Off the Dust a Year Later</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-20/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-20/</link>
       <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-20/</guid>
-      <description>&lt;p&gt;I can&amp;rsquo;t believe it&amp;rsquo;s a been a year since I last worked on the XJ. When I first paused working on the XJ &lt;a href=&#34;https://eddieabbondanz.io/post/civic/the-revival-part-1/&#34;&gt;to get my EG hatch back on the road&lt;/a&gt; I didn&amp;rsquo;t think it&amp;rsquo;d be for more a few months but sure enough here we are a year later.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-20/</guid>
+      <description>&lt;p&gt;I can&amp;rsquo;t believe it&amp;rsquo;s a been a year since I last worked on the XJ. When I first paused working on the XJ &lt;a href=&#34;http://localhost:1313/post/civic/the-revival-part-1/&#34;&gt;to get my EG hatch back on the road&lt;/a&gt; I didn&amp;rsquo;t think it&amp;rsquo;d be for more a few months but sure enough here we are a year later.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OBD1 Check Engine Light Codes</title>
-      <link>https://eddieabbondanz.io/post/honda/obd1-cel-codes/</link>
+      <link>http://localhost:1313/post/honda/obd1-cel-codes/</link>
       <pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/obd1-cel-codes/</guid>
+      <guid>http://localhost:1313/post/honda/obd1-cel-codes/</guid>
       <description>&lt;p&gt;Pulling CEL codes for an OBD1 Honda is actually pretty easy. All you need to do is locate the service connector (a 2 pin connector usually behind the glove box) and jump it. Then when the key is set to IGN the check engine light will start blinking.&lt;/p&gt;</description>
     </item>
     <item>
       <title>B18 / B20 Torque Specs</title>
-      <link>https://eddieabbondanz.io/post/honda/b18-b20-torque-specs/</link>
+      <link>http://localhost:1313/post/honda/b18-b20-torque-specs/</link>
       <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/b18-b20-torque-specs/</guid>
+      <guid>http://localhost:1313/post/honda/b18-b20-torque-specs/</guid>
       <description>&lt;p&gt;The ultimate list of torque specs for B18A1, B18B1, B20B, B20Z2 engines. I made this list because I was tired of digging through the 94-01 Integra and 97 - 02 CRV factory service manuals to find them all.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Goodbye H Street, Hello STS</title>
-      <link>https://eddieabbondanz.io/post/88-integra/a-stiffer-lower-suspension-for-sts/</link>
+      <link>http://localhost:1313/post/88-integra/a-stiffer-lower-suspension-for-sts/</link>
       <pubDate>Sat, 06 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/a-stiffer-lower-suspension-for-sts/</guid>
+      <guid>http://localhost:1313/post/88-integra/a-stiffer-lower-suspension-for-sts/</guid>
       <description>&lt;p&gt;Last year I ran the Integra in almost 20 events and had a great time. Plus with all the seat time I feel like I&amp;rsquo;ve gained a bunch of valuable experience and really improved as a driver.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 23: The Final Push To Get It Road Legal</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-23/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-23/</link>
       <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-23/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-23/</guid>
       <description>&lt;p&gt;Wrapping up the Civic has not been an easy task. The to-do list is basically finished at this point, but since I&amp;rsquo;ve started taking it on short test drives I&amp;rsquo;ve uncovered a few issues that need to be fixed.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 22: Dyeing the Rear Interior and Running Fuel Lines for the First Start</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-22/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-22/</link>
       <pubDate>Tue, 05 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-22/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-22/</guid>
       <description>&lt;p&gt;After 9 months of work the Civic is just about done! It feels pretty weird knowing I&amp;rsquo;ll be shifting focus to another project after spending so much time on it. I&amp;rsquo;m not 100% sure what I&amp;rsquo;ll pivot to next, but I&amp;rsquo;m most likely going to work on the Integra next as it needs a major tune up to be ready for the 2024 autocross season.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How To: 92-95 Civic Coupe/Hatch Power Windows, Locks, and Mirrors DIY Conversion</title>
-      <link>https://eddieabbondanz.io/post/honda/eg-civic-power-windows-locks-mirror-conversion/</link>
+      <link>http://localhost:1313/post/honda/eg-civic-power-windows-locks-mirror-conversion/</link>
       <pubDate>Wed, 28 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/eg-civic-power-windows-locks-mirror-conversion/</guid>
+      <guid>http://localhost:1313/post/honda/eg-civic-power-windows-locks-mirror-conversion/</guid>
       <description>&lt;p&gt;Converting an EG Civic from manual to power windows, locks, and mirrors by building your own wiring harnesses is a moderately challenging task as it&amp;rsquo;ll require you to pull the dash, gut the doors, remove the fenders, dig into the main cabin harness, and get overly familiar with the wiring of the car, but it&amp;rsquo;s definitely doable and the results are well worth it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 21: Jamming out the Cabin Harness so I Can Put the Dash Back In</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-21/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-21/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-21/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-21/</guid>
       <description>&lt;p&gt;The two biggest lessons I&amp;rsquo;ve learned from all the wiring I&amp;rsquo;ve been doing on the Civic are to always double check your work at each step, and try to wire at a desk whenever possible instead of kneeling next to, or inside a car.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 20: Wiring Some DIY Headlight / Radiator Relay Harnesses and Power Door Harnesses </title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-20/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-20/</link>
       <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-20/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-20/</guid>
       <description>&lt;p&gt;Planning out how to wire up the headlights and radiator fan took some time as my new fan had a higher amp rating which meant I couldn&amp;rsquo;t use the stock wiring, and the Denji headlights also required beefier wiring since the low beam bulbs are 55 watt.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 19: The New Duckbill</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-19/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-19/</link>
       <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-19/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-19/</guid>
       <description>&lt;p&gt;In an effort to knock down the size of my TODO list I&amp;rsquo;ve been trying to wrap up the exterior of the car. Plus with how close the exterior is to being done I&amp;rsquo;ve been itching to see how the car is gonna look all buttoned up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 18: Finalizing the New Brakes</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-18/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-18/</link>
       <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-18/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-18/</guid>
       <description>&lt;p&gt;The brakes are officially finished on the car and I figured it was time to post up an overview of them. Previously the car had DX brakes with drums in the rear that were a horrible eyesore, but since I had been wanting brakes with more oomph, it was a no brainer to switch over to a full EX / Integra setup.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 17: Cleaning up the Cabin Harness and Installing Hood Pins</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-17/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-17/</link>
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-17/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-17/</guid>
       <description>&lt;p&gt;The cabin harness has been giving me some grief because there&amp;rsquo;s too much wiring underneath where the dash will sit and it&amp;rsquo;s preventing the HVAC system from fitting. The main issue is that since the engine is wired up via a standalone engine harness there&amp;rsquo;s a lot of unused connectors and wires sitting inside the cabin.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 16: Redoing my Shifter Conversion Plate</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-16/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-16/</link>
       <pubDate>Thu, 18 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-16/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-16/</guid>
       <description>&lt;p&gt;Digging into the smaller details of the car has been pretty enjoyable. Most of the small things I&amp;rsquo;m working on aren&amp;rsquo;t necessary for getting the car back on the road, but it&amp;rsquo;s given me a chance to address all the minor issues the car has had for years.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 15: Bolting More Bits Back On</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-15/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-15/</link>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-15/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-15/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s a relief having finished up all the bodywork on the Civic but I&amp;rsquo;m starting to feel short on time with the beginning of the race seasoning looming closer and closer. The project is approaching the finish line, but at a high level I still need to:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 14: Pushing Through the Final Bodywork</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-14/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-14/</link>
       <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-14/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-14/</guid>
       <description>&lt;p&gt;Having spent so much time on bodywork when prepping the engine bay for paint, I&amp;rsquo;ve been resisting doing anymore of it just because I&amp;rsquo;m somewhat burnt out from it.&lt;/p&gt;&#xA;&lt;p&gt;Sadly though I&amp;rsquo;ve come to realize the remaining bodywork that needs to be done in the engine bay, roof gutters, and hatch area is blocking almost all of the other work I need to do on it so I had to bite the bullet and finally finish it up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 13: Denjis and a Custom Radiator Fan Shroud</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-13/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-13/</link>
       <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-13/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-13/</guid>
       <description>&lt;p&gt;I couldn&amp;rsquo;t resist splurging and picking up a set of Denji headlights for the hatch.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/0.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/0.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The OEM headlights aren&amp;rsquo;t that bad with their light output for halogen units, but I wanted a set of Denji&amp;rsquo;s because I plan on eventually doing a HID projector retrofit with a set of RX-330 projectors I&amp;rsquo;ve had laying around for years and Denji&amp;rsquo;s are perfect for that.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 12: No More Cabin Water Leaks</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-12/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-12/</link>
       <pubDate>Mon, 27 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-12/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-12/</guid>
       <description>&lt;p&gt;As of lately it&amp;rsquo;s been hard for me to see the overall progress being made on the hatch because I&amp;rsquo;m working on too many small steps simultaneously.&lt;/p&gt;&#xA;&lt;p&gt;Unfortunately that&amp;rsquo;s just the nature of the beast when it comes to this phase of a project car as you tend to uncover more and more things that need to be done while working through your TODO list. It&amp;rsquo;s all too easy to dive into another step before finishing the one your currently on.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 11: Beginning Reassembly</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-11/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-11/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-11/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-11/</guid>
       <description>&lt;p&gt;With the engine back in the bay, I couldn&amp;rsquo;t resist starting to reassemble as much of the car as I could.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Right off the bat the battery tray and wiper fluid reservoir were installed.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 10: Dropping the B20B Back In and Fixing Some Mistakes</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-10/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-10/</link>
       <pubDate>Sat, 28 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-10/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-10/</guid>
       <description>&lt;p&gt;Before dropping in the motor, I wanted to make sure there wouldn&amp;rsquo;t be any surprises during re-assembly so I went through the engine bay and cleaned up every bolt / access hole. I found that a lot of the holes had paint built up in them so I used a couple taps and a deburring tool to clean everything up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How To: 92-95 Civic Rear Disk Conversion using Drum Trailing Arms</title>
-      <link>https://eddieabbondanz.io/post/honda/eg-civic-rear-disk-conversion-using-drum-trailing-arms/</link>
+      <link>http://localhost:1313/post/honda/eg-civic-rear-disk-conversion-using-drum-trailing-arms/</link>
       <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/eg-civic-rear-disk-conversion-using-drum-trailing-arms/</guid>
+      <guid>http://localhost:1313/post/honda/eg-civic-rear-disk-conversion-using-drum-trailing-arms/</guid>
       <description>&lt;p&gt;Tired of looking at the rusty rear drums of your 92 - 95 Civic but don&amp;rsquo;t want to dish out the cash for disk trailing arms because of how expensive they are? Depending on which style rear spindles your Civic has, you may be able to convert them to disk on the cheap by repurposing brackets made by Wilwood.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 9: Taking the Engine Bay From Primer to Paint and All the Filler Inbetween</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-9/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-9/</link>
       <pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-9/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-9/</guid>
       <description>&lt;p&gt;Bodywork is probably my least favorite step when it comes to a project. It takes a ton of time and it often feels like your just going in circles. I&amp;rsquo;m grateful I didn&amp;rsquo;t have to worry about painting the entire vehicle but even just doing the engine bay I spent somewhere around 120 hours on it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 8: Raptor Lining the Front Wheel Wells and Finishing the Firewall</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-8/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-8/</link>
       <pubDate>Mon, 25 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-8/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-8/</guid>
       <description>&lt;p&gt;I made a mistake in the wheel wells. I had initially planned to leave portions of the OEM undercoating since it was so difficult to remove, and would use bed liner to recoat everything else that I had stripped, but I didn&amp;rsquo;t consider how it&amp;rsquo;d be next to impossible to blend the two together.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 7: Re-Adding Power Steering, a Full-Sized Radiator and More</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-7/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-7/</link>
       <pubDate>Sat, 16 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-7/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-7/</guid>
       <description>&lt;p&gt;Having finished up the suspension (minus coilovers) I figured the next logical step would be to dive into the engine bay. I&amp;rsquo;m itching to start on the engine bay body work but I felt it&amp;rsquo;d be smarter to address every existing issue, and figure out how/where everything would mount up prior to spraying any paint.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LS Swap Part 1: A New Heart for the XJ</title>
-      <link>https://eddieabbondanz.io/post/xj/ls-swap-part-1/</link>
+      <link>http://localhost:1313/post/xj/ls-swap-part-1/</link>
       <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/ls-swap-part-1/</guid>
+      <guid>http://localhost:1313/post/xj/ls-swap-part-1/</guid>
       <description>&lt;p&gt;For the past year I&amp;rsquo;ve been daydreaming about a 6.0 LQ4 + 4L60E build but after seeing the prices of LQ4s I (the 6.0 tax is real) I decided to go with it&amp;rsquo;s little brother the 5.3 LM7.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 6: Overhauling the Suspension</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-6/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-6/</link>
       <pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-6/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-6/</guid>
       <description>&lt;p&gt;The suspension on my hatch was in rough shape. Nearly every bushings was ripped, the ball joints were original and questionable at best, and all of the various suspension arms were covered in rust and some still had over spray on them from when we painted the car years ago.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 5: Sandblasting the Engine Bay</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-5/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-5/</link>
       <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-5/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-5/</guid>
       <description>&lt;p&gt;With so many spots that needed to be addressed in the engine bay it was hard to pick where to start. To break the ice I decided to start with a small first step of unshaving the headlight adjuster holes that I had accidentally shaved.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 4: Even More Teardown</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-4/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-4/</link>
       <pubDate>Sun, 16 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-4/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-4/</guid>
       <description>&lt;p&gt;Even with the motor and transmission already pulled there was still a good chunk of parts that needed to be removed from the chassis.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The ever growing parts pile.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/2.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/2.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 3: Giving the Motor a Quick Refresh</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-3/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-3/</link>
       <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-3/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-3/</guid>
       <description>&lt;p&gt;The B20B I pulled out of the Civic was still perfectly healthy and didn&amp;rsquo;t really need much.&lt;/p&gt;&#xA;&lt;p&gt;But I figured why not go the extra mile and repaint it with some proper enamel since the original paint I sprayed had just about burnt off it, and I also wanted to replace a couple gaskets while I was at it.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 2: Revamping the Trans with an LSD</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-2/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-2/</link>
       <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-2/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-2/</guid>
       <description>&lt;p&gt;Itching to take a break from all the metal work I&amp;rsquo;ve been doing on my XJ, I decided to start with the transmission for my civic. There&amp;rsquo;s nothing actually wrong with it, but I can&amp;rsquo;t resist adding an LSD to it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adding a Rear Sway Bar</title>
-      <link>https://eddieabbondanz.io/post/88-integra/adding-a-rear-sway-bar/</link>
+      <link>http://localhost:1313/post/88-integra/adding-a-rear-sway-bar/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/adding-a-rear-sway-bar/</guid>
+      <guid>http://localhost:1313/post/88-integra/adding-a-rear-sway-bar/</guid>
       <description>&lt;p&gt;At the last auto-x event I ran in, I managed to get the Integra up on two wheels not once, but twice. While kinda fun, I don&amp;rsquo;t wanna risk rolling the car and I figured it was time to take advantage of the last mod H Street permits and add a rear sway bar to try to dial down the absurd levels of body roll.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Replacing a Damaged B-Series Speedometer Gear</title>
-      <link>https://eddieabbondanz.io/post/honda/replacing-a-damaged-b-series-speedometer-ring-gear/</link>
+      <link>http://localhost:1313/post/honda/replacing-a-damaged-b-series-speedometer-ring-gear/</link>
       <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/replacing-a-damaged-b-series-speedometer-ring-gear/</guid>
+      <guid>http://localhost:1313/post/honda/replacing-a-damaged-b-series-speedometer-ring-gear/</guid>
       <description>&lt;p&gt;While installing an M-Factory LSD into my B18B1 (LS) transmission I made the dreaded mistake of damaging several teeth on the speedometer gear ring that sits on the differential.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Revival of the Hatch Part 1: Restarting a Forgotten Project</title>
-      <link>https://eddieabbondanz.io/post/civic/the-revival-part-1/</link>
+      <link>http://localhost:1313/post/civic/the-revival-part-1/</link>
       <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/the-revival-part-1/</guid>
+      <guid>http://localhost:1313/post/civic/the-revival-part-1/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve owned my 1993 Civic Hatch for about 10 years now but it&amp;rsquo;s sat neglected in my shop for the last 3. It was my first real project car, and the car I learned how to do almost everything on.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stepping up my Auto-X Game</title>
-      <link>https://eddieabbondanz.io/post/88-integra/stepping-up-my-auto-x-game/</link>
+      <link>http://localhost:1313/post/88-integra/stepping-up-my-auto-x-game/</link>
       <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/stepping-up-my-auto-x-game/</guid>
+      <guid>http://localhost:1313/post/88-integra/stepping-up-my-auto-x-game/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been having a blast auto crossing the Integra. It doesn&amp;rsquo;t have the most power, and it&amp;rsquo;s got enough body roll to lift a rear tire when making tight turns but I feel like I&amp;rsquo;m learning a ton and slowly getting better too!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 19: Salvaging What I Can of the Driver Side</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-19/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-19/</link>
       <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-19/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-19/</guid>
       <description>&lt;p&gt;There&amp;rsquo;s a lot of rust on the driver side of my XJ, but it&amp;rsquo;s not as bad as the passenger side used to be. Back when I first began on phase 2 of the rust repair, I purposely started on the passenger side as I thought it&amp;rsquo;d be the easier of the two sides, but it turns out that wasn&amp;rsquo;t the case.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-18/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-18/</link>
       <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-18/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-18/</guid>
       <description>&lt;p&gt;Having finished the passenger side, it was a little daunting looking at the completely untouched driver side knowing I had so much work ahead of me. I was a little worried I&amp;rsquo;d lose my motivation from analysis paralysis on where to start so I decided to dive right into it and start with the roof like I did on the passenger side.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 17: Finally Finishing the Passenger Quarter Panel</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-17/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-17/</link>
       <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-17/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-17/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s taken me roughly 3 times as long as I imagined to finish all the work on the passenger side, but it&amp;rsquo;s been well worth the effort. To recap the past 6 months I&amp;rsquo;ve replaced:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 16: A New Rear Passenger Inner Wheel Well</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-16/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-16/</link>
       <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-16/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-16/</guid>
       <description>&lt;p&gt;Sometimes life does that thing where it gets in the way for awhile. The XJ ended up sitting and collecting dust for a few months due to other priorities eating up my time but I&amp;rsquo;m finally tearing back into it and making progress again.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Building My Ultimate Mig Cart</title>
-      <link>https://eddieabbondanz.io/post/tools/mig-cart/</link>
+      <link>http://localhost:1313/post/tools/mig-cart/</link>
       <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/tools/mig-cart/</guid>
+      <guid>http://localhost:1313/post/tools/mig-cart/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had my OG mig welder for about 8 years now. It&amp;rsquo;s just a little Lincoln Power Mig 140c but the thing has been an absolute unit for only being a 110v welder. I&amp;rsquo;ve pushed it well beyond it&amp;rsquo;s 20% duty cycle many times now and never once hit thermal throttling. And while it&amp;rsquo;s only rated for up to 1/8&amp;quot; steel, I&amp;rsquo;ve managed to weld up to 3/16&amp;quot; on occasion.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Beefing up a Budget Bead Roller</title>
-      <link>https://eddieabbondanz.io/post/tools/bead-roller/</link>
+      <link>http://localhost:1313/post/tools/bead-roller/</link>
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/tools/bead-roller/</guid>
+      <guid>http://localhost:1313/post/tools/bead-roller/</guid>
       <description>&lt;p&gt;Something I&amp;rsquo;ve been wanting for a long time is a bead roller so I can make my patch panels look more authentic.&lt;/p&gt;&#xA;&lt;p&gt;But I always had my standards set really high and thought I needed a high end motorized bead roller that can do up to 36&amp;quot;. I finally came to my senses and realized a budget 18&amp;quot; unit would be far more than sufficient for my needs given I&amp;rsquo;m usually making small patches.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 15: Finalizing the 2x6 Rocker</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-15/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-15/</link>
       <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-15/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-15/</guid>
       <description>&lt;p&gt;Even though I&amp;rsquo;m making progress it sure feels like the parts pile is getting bigger as each week passes.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The doors on the left are the old ones and will eventually be scrapped once I remove all the parts I want to salvage off them, but everything else is waiting to be installed. I also still need to order fenders.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 14: Welding in the Passenger 2x6 Rocker</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-14/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-14/</link>
       <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-14/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-14/</guid>
       <description>&lt;p&gt;In this post we&amp;rsquo;ll continue building out the 2x6 rocker for the passenger side.&lt;/p&gt;&#xA;&lt;h1&gt;&#xA;  Finishing Up The A Pillar&#xA;  &lt;a href=&#34;#finishing-up-the-a-pillar&#34; id=&#34;finishing-up-the-a-pillar&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;Before I could weld up the outer rocker I needed to finish the A / B Pillars so I&amp;rsquo;d have something to weld it to.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 13: Replacing the Passenger Inner Rocker To Prep for 2x6 Rockers</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-13/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-13/</link>
       <pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-13/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-13/</guid>
       <description>&lt;p&gt;With all this metal laying around it was about time I started putting it to use.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;While the 2x6 rocker mod (aka rock sliders) for XJ isn&amp;rsquo;t uncommon by any means, I&amp;rsquo;m planning on taking a slightly different approach in how I tie them into the unibody. My goal is to hide the welds, and also leave some hidden access holes that&amp;rsquo;ll let me spray fluid film down into the rockers each year before winter.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 12: Welding in the New Passenger Drip Rail</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-12/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-12/</link>
       <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-12/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-12/</guid>
       <description>&lt;p&gt;My new metal brake finally arrived.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before settling on the Woodward Fab Boss 16, I spent several hours researching metal brakes and looked at a ton of different models across various manufacturers such as Baileigh, Tennsmith, Grizzly, JET, Eastwood, and Enco.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 11: Finishing What I Started</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-11/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-11/</link>
       <pubDate>Sat, 20 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-11/</guid>
-      <description>&lt;p&gt;Just shy of two years ago now, &lt;a href=&#34;https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-1/&#34;&gt;I embarked on the largest rust repair job I&amp;rsquo;ve ever done on my XJ.&lt;/a&gt; It took me several months, but I was able to replace the entire rear cargo floor including the crossmembers, gas tank bracing, and unibody frame rails along with welding in rear frame stiffeners over my newly made frame rails.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-11/</guid>
+      <description>&lt;p&gt;Just shy of two years ago now, &lt;a href=&#34;http://localhost:1313/post/xj/unibody-rust-repair-part-1/&#34;&gt;I embarked on the largest rust repair job I&amp;rsquo;ve ever done on my XJ.&lt;/a&gt; It took me several months, but I was able to replace the entire rear cargo floor including the crossmembers, gas tank bracing, and unibody frame rails along with welding in rear frame stiffeners over my newly made frame rails.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Electrical Gremlins, a Blown Clutch, and a Massive Oil Leak</title>
-      <link>https://eddieabbondanz.io/post/88-integra/electrical-gremlins-and-a-blown-clutch/</link>
+      <link>http://localhost:1313/post/88-integra/electrical-gremlins-and-a-blown-clutch/</link>
       <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/electrical-gremlins-and-a-blown-clutch/</guid>
+      <guid>http://localhost:1313/post/88-integra/electrical-gremlins-and-a-blown-clutch/</guid>
       <description>&lt;p&gt;Having driven over 2,500 miles and raced in 2 auto cross events, the Integra has had a few issues pop up along the way, but is still holding strong.&lt;/p&gt;&#xA;&lt;p&gt;For what it&amp;rsquo;s worth though, the car&amp;rsquo;s never left me stranded and even when the clutch failed I was still able to limp it home.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Back on the Road After a Decade</title>
-      <link>https://eddieabbondanz.io/post/88-integra/back-on-the-road-after-a-decade/</link>
+      <link>http://localhost:1313/post/88-integra/back-on-the-road-after-a-decade/</link>
       <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/back-on-the-road-after-a-decade/</guid>
+      <guid>http://localhost:1313/post/88-integra/back-on-the-road-after-a-decade/</guid>
       <description>&lt;p&gt;Wrapping up a project isn&amp;rsquo;t always the funnest. The &amp;ldquo;last 10%&amp;rdquo; tends to take up significantly more time than anticipated because it involves addressing all the difficult parts that you&amp;rsquo;ve been putting off.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fabricating a 304 Stainless Catback Exhaust</title>
-      <link>https://eddieabbondanz.io/post/88-integra/304-stainless-catback/</link>
+      <link>http://localhost:1313/post/88-integra/304-stainless-catback/</link>
       <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/304-stainless-catback/</guid>
+      <guid>http://localhost:1313/post/88-integra/304-stainless-catback/</guid>
       <description>&lt;p&gt;The exhaust on my new to me 88 Integra was beyond saving with several holes in the resonator and the muffler having turned questionably brittle. As this is suppose to be a summer daily driver that&amp;rsquo;s pleasant to drive I decided to splurge and build a stainless exhaust setup to save my ears and retain my sanity.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/before1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/before1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Replacing a D16A1 Headgasket and Timing Belt</title>
-      <link>https://eddieabbondanz.io/post/88-integra/d16a1-headgasket-and-timing-belt/</link>
+      <link>http://localhost:1313/post/88-integra/d16a1-headgasket-and-timing-belt/</link>
       <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/d16a1-headgasket-and-timing-belt/</guid>
+      <guid>http://localhost:1313/post/88-integra/d16a1-headgasket-and-timing-belt/</guid>
       <description>&lt;p&gt;With the headgasket and timing belt swap fully completed it feels like the rest of this project will be a piece of cake. Fabricating a custom exhaust is the last major task on the list and I&amp;rsquo;m looking forward to it because that means I have an excuse to break out my welder.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Refreshing the Suspension</title>
-      <link>https://eddieabbondanz.io/post/88-integra/refreshing-the-suspension/</link>
+      <link>http://localhost:1313/post/88-integra/refreshing-the-suspension/</link>
       <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/refreshing-the-suspension/</guid>
+      <guid>http://localhost:1313/post/88-integra/refreshing-the-suspension/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s been just under a month since my last post about fixing up this Integra and I&amp;rsquo;ve made a ton of progress. I&amp;rsquo;ve successfully completed replacing most of the suspension including all four shocks, outer tie rods, ball joints, sway bar bushings, cv axles, and front lower control arms.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fixing the Completely Seized Brakes</title>
-      <link>https://eddieabbondanz.io/post/88-integra/fixing-the-brakes-and-more/</link>
+      <link>http://localhost:1313/post/88-integra/fixing-the-brakes-and-more/</link>
       <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/fixing-the-brakes-and-more/</guid>
-      <description>&lt;p&gt;With February quickly approaching, I&amp;rsquo;m starting to feel like I&amp;rsquo;m running short on time to get my &lt;a href=&#34;https://eddieabbondanz.io/post/88-integra/first-start-in-8-years/&#34;&gt;recently acquired 1988 Acura Integra&lt;/a&gt; road ready. My current goal is to have this vehicle on the road for spring and it&amp;rsquo;s been harder to make progress on it than anticipated.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/88-integra/fixing-the-brakes-and-more/</guid>
+      <description>&lt;p&gt;With February quickly approaching, I&amp;rsquo;m starting to feel like I&amp;rsquo;m running short on time to get my &lt;a href=&#34;http://localhost:1313/post/88-integra/first-start-in-8-years/&#34;&gt;recently acquired 1988 Acura Integra&lt;/a&gt; road ready. My current goal is to have this vehicle on the road for spring and it&amp;rsquo;s been harder to make progress on it than anticipated.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The First Start</title>
-      <link>https://eddieabbondanz.io/post/88-integra/first-start-in-8-years/</link>
+      <link>http://localhost:1313/post/88-integra/first-start-in-8-years/</link>
       <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/88-integra/first-start-in-8-years/</guid>
+      <guid>http://localhost:1313/post/88-integra/first-start-in-8-years/</guid>
       <description>&lt;p&gt;Last weekend I had the opportunity to purchase a &lt;em&gt;bone stock&lt;/em&gt; 1988 Acura Integra from it&amp;rsquo;s original owner. The previous owner is a family friend of ours and has had this sitting in his garage for over 9 years now. There was no way I could pass it up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fabricating a New Rear Bumper</title>
-      <link>https://eddieabbondanz.io/post/xj/fabricating-a-rear-bumper/</link>
+      <link>http://localhost:1313/post/xj/fabricating-a-rear-bumper/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/fabricating-a-rear-bumper/</guid>
-      <description>&lt;h1&gt;&#xA;  Preface&#xA;  &lt;a href=&#34;#preface&#34; id=&#34;preface&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I&amp;rsquo;ve been driving my Jeep around for almost 6 months now with no rear bumper. I know, I know, not the safest choice but I don&amp;rsquo;t drive far. Why? Because 6 months ago I wrapped up an &lt;strong&gt;extensive&lt;/strong&gt; rust repair project on my XJ where &lt;a href=&#34;https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-1/&#34;&gt;I cut out and replaced the entire rear floor along with the unibody frame rails and crossmembers.&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/fabricating-a-rear-bumper/</guid>
+      <description>&lt;h1&gt;&#xA;  Preface&#xA;  &lt;a href=&#34;#preface&#34; id=&#34;preface&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I&amp;rsquo;ve been driving my Jeep around for almost 6 months now with no rear bumper. I know, I know, not the safest choice but I don&amp;rsquo;t drive far. Why? Because 6 months ago I wrapped up an &lt;strong&gt;extensive&lt;/strong&gt; rust repair project on my XJ where &lt;a href=&#34;http://localhost:1313/post/xj/unibody-rust-repair-part-1/&#34;&gt;I cut out and replaced the entire rear floor along with the unibody frame rails and crossmembers.&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Replacing a Saggy Headliner</title>
-      <link>https://eddieabbondanz.io/post/xj/replacing-a-saggy-headliner/</link>
+      <link>http://localhost:1313/post/xj/replacing-a-saggy-headliner/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/replacing-a-saggy-headliner/</guid>
+      <guid>http://localhost:1313/post/xj/replacing-a-saggy-headliner/</guid>
       <description>&lt;h1&gt;&#xA;  Delaying the Inevitable&#xA;  &lt;a href=&#34;#delaying-the-inevitable&#34; id=&#34;delaying-the-inevitable&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;When it comes to my cars, I like to bunch up my repairs / mods into batches where I&amp;rsquo;ll focus on one small sub-category of tasks before moving onto the next. I find this to be a great way to break down massive projects into manageable chunks, and is a technique I learned from my software career.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Installing a Gentex 177 Auto Dimming Rear View Mirror</title>
-      <link>https://eddieabbondanz.io/post/xj/gentex-177-mirror-install/</link>
+      <link>http://localhost:1313/post/xj/gentex-177-mirror-install/</link>
       <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/gentex-177-mirror-install/</guid>
+      <guid>http://localhost:1313/post/xj/gentex-177-mirror-install/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s hard to explain, but driving a car at night that has an auto dimming rear view mirror is a real treat. It&amp;rsquo;s one of those things that you&amp;rsquo;ll never notice when it&amp;rsquo;s working, but as soon as you don&amp;rsquo;t have it you&amp;rsquo;ll notice its absence immediately.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Abusing For Loops In C# For Job Security</title>
-      <link>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</link>
+      <link>http://localhost:1313/post/c-sharp/abusing-for-loops-for-job-security/</link>
       <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</guid>
+      <guid>http://localhost:1313/post/c-sharp/abusing-for-loops-for-job-security/</guid>
       <description>&lt;p&gt;Everyone knows good code is easy to maintain, but that also means anyone can maintain it. That&amp;rsquo;s no bueno for the individual developer who wants a little job security. Writing overly complex code that nobody else can maintain let alone read, will ensure your company holds onto you, and will give you more bargaining power come raise time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 10: The Finishing Touches</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-10/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-10/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-10/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-10/</guid>
       <description>&lt;p&gt;The epoxy primer I used on the underside of my repairs is some pretty good stuff, but I wanted just a hair more protection down there. And after all can you really say you did a rust repair job on your Jeep if bedliner wasn&amp;rsquo;t involved? Because of that I picked up some UPOL Raptor liner to spray. I bought the 4qt spray kit because I wanted some leftover bedliner to spray my new rear bumper later on but I&amp;rsquo;m getting ahead of myself.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 9: Closing Up The Floor</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-9/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-9/</link>
       <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-9/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-9/</guid>
       <description>&lt;p&gt;The least exciting portion of this project by far was closing up the two holes left in the floor directly below where the rear seat goes. I initally cut these holes in the floor way back at the beginning of the project because I needed to remove the original frame rails.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 8: Welding on Frame Stiffeners</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-8/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-8/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-8/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-8/</guid>
       <description>&lt;p&gt;One of my biggest concerns about my custom fabricated frame rails was the vertical welds joining the frame sections. Vertical welds like those are a big no no when it comes to frames because they&amp;rsquo;re especially prone to failing. The common fix for this is to weld on fishplates that help brace the welds but since I&amp;rsquo;d have to weld on 6 fish plates on each frame rail I figured it&amp;rsquo;d be simpler to just go with frame stiffeners.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 7: A New Fuel Neck Housing And Making Cut N Fold Panels</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-7/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-7/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-7/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-7/</guid>
       <description>&lt;h1&gt;&#xA;  The Fuel Neck Housing&#xA;  &lt;a href=&#34;#the-fuel-neck-housing&#34; id=&#34;the-fuel-neck-housing&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I&amp;rsquo;ve been ignoring the gaping hole around where the fuel neck passes through the interior to travel down towards the gas tank. I had a feeling it&amp;rsquo;d be easy to fix so I never put much thought into it. I honestly didn&amp;rsquo;t bother to worry about it until I had the floor fully welded in and no choice but to finally address the issue.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 6: Turning A Patch Panel Into A New Cargo Floor Pan</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-6/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-6/</link>
       <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-6/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-6/</guid>
       <description>&lt;h1&gt;&#xA;  Building Out The Cargo Floor&#xA;  &lt;a href=&#34;#building-out-the-cargo-floor&#34; id=&#34;building-out-the-cargo-floor&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I didn&amp;rsquo;t want to try to salvage the original cargo area floor from my Jeep. It had rusted through in several spots, and I kinda chopped it up into several pieces because I only removed bits of it as a time when I was fabricating the new frame rails.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 5: Designing A Custom Gas Tank Cradle</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-5/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-5/</link>
       <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-5/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-5/</guid>
       <description>&lt;p&gt;Directly below the floor of the XJ in the cargo area sits the gas tank. Tucked tight between the frame rails it rests a mere 1/2&amp;quot; from the floor. The mount for the gas tank is also what braces the floor in the cargo area.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 4: Hooking Up The Suspension</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-4/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-4/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-4/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-4/</guid>
       <description>&lt;p&gt;With the frame squared away I needed something that I could mount up the suspension to. The only thing holding in the rear axle at this point was the rear driveshaft and the front mounts of the leaf springs.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-3/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-3/</link>
       <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-3/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-3/</guid>
       <description>&lt;p&gt;The driver side frame rail was in far worse shape than the passenger side on my XJ. I opted to replace the passenger side first since there&amp;rsquo;s a little less going on on that side. On the driver side the fuel neck hoses pass through the frame, and all of the fuel lines, brake lines, and vacuum lines run parallel down the frame rail.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 2: Bending a New Passenger Frame Rail</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-2/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-2/</link>
       <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-2/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-2/</guid>
       <description>&lt;p&gt;Using a metal brake to bend up new frame rails wasn&amp;rsquo;t my plan A. Nor was it plan B. It was actually plan C. I was trying to fix my Jeep on the cheap because this repair wasn&amp;rsquo;t suppose to happen till spring. That meant no buying extra tools and trying to make do with what I had.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 1: Fabricating A New Rear Crossmember</title>
-      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-1/</link>
+      <link>http://localhost:1313/post/xj/unibody-rust-repair-part-1/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-1/</guid>
+      <guid>http://localhost:1313/post/xj/unibody-rust-repair-part-1/</guid>
       <description>&lt;h1&gt;&#xA;  Background&#xA;  &lt;a href=&#34;#background&#34; id=&#34;background&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I like to joke and say that anyone else would have sent my XJ to the junkyard.&lt;/p&gt;&#xA;&lt;p&gt;My Cherokee is rusty, has a laundry list of issues, gets 17 MPG on the good days, and is literally a brick on wheels. But I love it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dana 30 Front Axle Rebuild</title>
-      <link>https://eddieabbondanz.io/post/xj/dana-30-rebuild/</link>
+      <link>http://localhost:1313/post/xj/dana-30-rebuild/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/dana-30-rebuild/</guid>
+      <guid>http://localhost:1313/post/xj/dana-30-rebuild/</guid>
       <description>&lt;p&gt;The front axle of my Cherokee has been in desperate need of some attention for quite awhile. Just about every component on it was worn to the point of needing to be replaced and the axle housing itself had built up some pretty intense rust.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TypeScript - Await Promise.All() And Get The Results</title>
-      <link>https://eddieabbondanz.io/post/typescript/await-promise-all/</link>
+      <link>http://localhost:1313/post/typescript/await-promise-all/</link>
       <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/typescript/await-promise-all/</guid>
+      <guid>http://localhost:1313/post/typescript/await-promise-all/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a big fan of the &lt;code&gt;async&lt;/code&gt; &lt;code&gt;await&lt;/code&gt; syntax in ES2017. In my opinion it just feels a lot more natural than &lt;a href=&#34;https://www.youtube.com/watch?v=CkdyU_eUm1U&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;and then and then and then&amp;hellip;&lt;/a&gt;. I digress. I&amp;rsquo;ll keep this one short.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unity - LiteNetLib&#39;s Delivery Methods</title>
-      <link>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</link>
+      <link>http://localhost:1313/post/unity/litenetlib-delivery-methods/</link>
       <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/unity/litenetlib-delivery-methods/</guid>
+      <guid>http://localhost:1313/post/unity/litenetlib-delivery-methods/</guid>
       <description>&lt;p&gt;While LiteNetLib may run on &lt;a href=&#34;https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UDP (User Datagram Protocol)&lt;/a&gt; which is an unreliable network protocol, LiteNetLib offers multiple delivery methods, some of which even offer &amp;ldquo;reliability&amp;rdquo;. Reliability is in quotes because when latency is high the chance of a packet being dropped is greater than 0 (although still fairly rare).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unity - How to Create a Basic Server / Client With LiteNetLib</title>
-      <link>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</link>
+      <link>http://localhost:1313/post/unity/litenetlib-basic-server-client/</link>
       <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/</guid>
-      <description>&lt;p&gt;LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: &lt;a href=&#34;https://eddieabbondanz.io/post/unity/litenetlib-setup/&#34;&gt;How to Setup LiteNetLib With Unity&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/unity/litenetlib-basic-server-client/</guid>
+      <description>&lt;p&gt;LiteNetLib already provides a good example for creating a basic server / client set up in their documents, but if we want to use it with Unity there&amp;rsquo;s a few extra steps we&amp;rsquo;ll need to take. This article intends to cover the missing steps, and assume you already have LiteNetLib added to your Unity project. If you need guidance on adding LiteNetLib check out: &lt;a href=&#34;http://localhost:1313/post/unity/litenetlib-setup/&#34;&gt;How to Setup LiteNetLib With Unity&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unity - How to Send Data With LiteNetLib</title>
-      <link>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</link>
+      <link>http://localhost:1313/post/unity/litenetlib-sending-data/</link>
       <pubDate>Wed, 13 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/unity/litenetlib-sending-data/</guid>
-      <description>&lt;p&gt;Continuing off the previous post about &lt;a href=&#34;https://eddieabbondanz.io/post/unity/litenetlib-basic-server-client/&#34;&gt;how to build a basic server / client set up with LiteNetLib&lt;/a&gt; it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/unity/litenetlib-sending-data/</guid>
+      <description>&lt;p&gt;Continuing off the previous post about &lt;a href=&#34;http://localhost:1313/post/unity/litenetlib-basic-server-client/&#34;&gt;how to build a basic server / client set up with LiteNetLib&lt;/a&gt; it&amp;rsquo;s time to talk about sending data. Because, well, a network set up that doesn&amp;rsquo;t actually send any data is kind of useless.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unity - How to Set Up LiteNetLib</title>
-      <link>https://eddieabbondanz.io/post/unity/litenetlib-setup/</link>
+      <link>http://localhost:1313/post/unity/litenetlib-setup/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/unity/litenetlib-setup/</guid>
+      <guid>http://localhost:1313/post/unity/litenetlib-setup/</guid>
       <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Download the most recent stable release source code zip and copy the &lt;code&gt;/LiteNetLib&lt;/code&gt; folder to the &lt;code&gt;Plugins&lt;/code&gt; folder in your Unity project.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/RevenantX/LiteNetLib&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LiteNetLib&lt;/a&gt; is an UDP networking library that can be used for building multiplayer games with Unity. If you have any experience working with &lt;a href=&#34;https://github.com/lidgren/lidgren-network-gen3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lidgren&lt;/a&gt; you&amp;rsquo;ll feel right at home with LiteNetLib. LiteNetLib is not Unity specific, but it&amp;rsquo;s a popular choice.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ASP.NET Core - Claims Based Authentication: Claims vs Identities vs Principals</title>
-      <link>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
+      <link>http://localhost:1313/post/aspnet/claims-based-authentication-claims-identities-principals/</link>
       <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
+      <guid>http://localhost:1313/post/aspnet/claims-based-authentication-claims-identities-principals/</guid>
       <description>&lt;p&gt;With the rise of ASP.NET Core over ASP.NET 4.x, the built in authentication has undergone a shift from role-based access control (RBAC) to claim-based access control (CBAC). The most notable change is the &lt;code&gt;User&lt;/code&gt; property on &lt;code&gt;HttpContext&lt;/code&gt; is now of type &lt;code&gt;ClaimsPrincipal&lt;/code&gt; instead of &lt;code&gt;IPrincipal&lt;/code&gt;. Before we get to far ahead of ourselves though, lets start with the basics and build our way up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ASP.NET Core - Inversion of Control Container</title>
-      <link>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</link>
+      <link>http://localhost:1313/post/aspnet/inversion-of-control-containers/</link>
       <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/aspnet/inversion-of-control-containers/</guid>
+      <guid>http://localhost:1313/post/aspnet/inversion-of-control-containers/</guid>
       <description>&lt;p&gt;ASP.NET Core supports &lt;a href=&#34;https://eddieabbondanz.io/post/software-design/dependency-injection/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dependency injection&lt;/a&gt; directly out of the box. For Web APIs this is useful for automatically resolving dependencies needed by controllers, or if you&amp;rsquo;re a fan of Uncle Bob&amp;rsquo;s Clean Architecture it can be used to inject external dependencies such as the database into the inner layers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Build - 02/03/19</title>
-      <link>https://eddieabbondanz.io/post/xj/19-02-03/</link>
+      <link>http://localhost:1313/post/xj/19-02-03/</link>
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/19-02-03/</guid>
+      <guid>http://localhost:1313/post/xj/19-02-03/</guid>
       <description>&lt;p&gt;The Cherokee strikes again. A couple weeks back when my exhaust snapped just before the catalytic converter I noticed my muffler had a minor leak. It wasn&amp;rsquo;t anything major and wasn&amp;rsquo;t loud so I figured I could probably just run it till spring and deal with it when it was warmer out.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TypeScript - Interpolated Strings</title>
-      <link>https://eddieabbondanz.io/post/typescript/interpolated-strings/</link>
+      <link>http://localhost:1313/post/typescript/interpolated-strings/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/typescript/interpolated-strings/</guid>
+      <guid>http://localhost:1313/post/typescript/interpolated-strings/</guid>
       <description>&lt;p&gt;Coming from the .NET world &lt;code&gt;String.Format()&lt;/code&gt; was by far my most used function for generating user readable error / log messages. After jumping over to TypeScript, I was bummed to learn that no similar function existed. However, it wasn&amp;rsquo;t so bad, after all &lt;code&gt;console.log()&lt;/code&gt; allows us to pass multiple parameters and has no trouble logging them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HTTP Status Codes For a RESTful API</title>
-      <link>https://eddieabbondanz.io/post/http/status-codes-for-rest/</link>
+      <link>http://localhost:1313/post/http/status-codes-for-rest/</link>
       <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/http/status-codes-for-rest/</guid>
+      <guid>http://localhost:1313/post/http/status-codes-for-rest/</guid>
       <description>&lt;p&gt;Hyper Text Transfer Protocol (HTTP) powers the web. It&amp;rsquo;s the silent work horse used to carry data between servers and clients, and is the reason why all URLs start with HTTP, or HTTPS. For those new to HTTP, it can be though of as clients (users) making &lt;em&gt;requests&lt;/em&gt; that are sent to servers which then reply back with &lt;em&gt;responses&lt;/em&gt;. Only servers can make responses, and only clients can make requests.&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Build - 01/26/19</title>
-      <link>https://eddieabbondanz.io/post/xj/19-01-26/</link>
+      <link>http://localhost:1313/post/xj/19-01-26/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/19-01-26/</guid>
+      <guid>http://localhost:1313/post/xj/19-01-26/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve honestly been very lucky with my Jeep. My previous daily driver was a 2009 Subaru Legacy, and while it may have been excellent in the snow it had a very high cost of ownership. I figured out that it was costing me on average $100 in maintenance per 1000 miles travelled. It may sound silly to have sold the Subaru and bought a Jeep that was 9 years older but I have zero regrets doing so. The Jeep has never left me stranded, and never surprised me with an issues until recently.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HTTP Cookies</title>
-      <link>https://eddieabbondanz.io/post/http/cookies/</link>
+      <link>http://localhost:1313/post/http/cookies/</link>
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/http/cookies/</guid>
+      <guid>http://localhost:1313/post/http/cookies/</guid>
       <description>&lt;p&gt;HTTP cookies are small bits of text that are included with each HTTP request made from a user&amp;rsquo;s web browser to web servers. HTTP is a stateless protocol which means each requests is treated as a unique command, and no state data is maintained. Cookies were designed to fill this gap, and allow servers to associate data with user&amp;rsquo;s as they traverse sites. Cookies are commonly used by sites to hold authentication tokens, tracking ids, or save user preferences.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TypeScript - Events</title>
-      <link>https://eddieabbondanz.io/post/typescript/events/</link>
+      <link>http://localhost:1313/post/typescript/events/</link>
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/typescript/events/</guid>
+      <guid>http://localhost:1313/post/typescript/events/</guid>
       <description>&lt;p&gt;If you were expecting a phone call from a friend, you (hopefully) wouldn&amp;rsquo;t sit by the phone and continuously pick it up to see if your friend was on the other end. Instead, you&amp;rsquo;d wait to be notified of an incoming call when the phone started ringing or vibrating. Sitting by the phone and picking it up over and over again is a form of what&amp;rsquo;s known as polling.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TypeScript - Taking The Magic Out of Magic Strings</title>
-      <link>https://eddieabbondanz.io/post/typescript/magic-strings/</link>
+      <link>http://localhost:1313/post/typescript/magic-strings/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/typescript/magic-strings/</guid>
+      <guid>http://localhost:1313/post/typescript/magic-strings/</guid>
       <description>&lt;h1&gt;&#xA;  What&amp;rsquo;s so Magical About Magic Strings?&#xA;  &lt;a href=&#34;#whats-so-magical-about-magic-strings&#34; id=&#34;whats-so-magical-about-magic-strings&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;Magic strings are string literals strewn about a code base that apply some kind of limitation to the code. They can be used to filter valid input, constrain parameters, or control the behavior of code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TypeScript - How To Set Up A New Project</title>
-      <link>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</link>
+      <link>http://localhost:1313/post/typescript/setting-up-a-typescript-project/</link>
       <pubDate>Mon, 26 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/typescript/setting-up-a-typescript-project/</guid>
+      <guid>http://localhost:1313/post/typescript/setting-up-a-typescript-project/</guid>
       <description>&lt;p&gt;For beginners TypeScript is like the carrot on the end of the stick, always just out of reach no matter how hard you try. Everyone touts how it&amp;rsquo;s &lt;a href=&#34;https://www.typescriptlang.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;JavaScript that scales&amp;rdquo;&lt;/a&gt;, and once you use it you&amp;rsquo;ll never go back. But finding a decent tutorial on how to set up a new TypeScript project is quite the challenge. Many tutorials are out-dated and want you to install other packages such as gulp, jump through hoops, or even sacrifice your first born child (okay maybe not but still).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Design - Marker Interfaces</title>
-      <link>https://eddieabbondanz.io/post/software-design/marker-interfaces/</link>
+      <link>http://localhost:1313/post/software-design/marker-interfaces/</link>
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/software-design/marker-interfaces/</guid>
+      <guid>http://localhost:1313/post/software-design/marker-interfaces/</guid>
       <description>&lt;h1&gt;&#xA;  What Are They?&#xA;  &lt;a href=&#34;#what-are-they&#34; id=&#34;what-are-they&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;A marker interface is an empty interface (no methods or properties) that is used to identify classes that implement it belong to a special group. Some might argue that this is a code smell, but in certain situations they can be the best solution for constraining types.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Design - Magic Numbers</title>
-      <link>https://eddieabbondanz.io/post/software-design/magic-numbers/</link>
+      <link>http://localhost:1313/post/software-design/magic-numbers/</link>
       <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/software-design/magic-numbers/</guid>
+      <guid>http://localhost:1313/post/software-design/magic-numbers/</guid>
       <description>&lt;h1&gt;&#xA;  What Are They?&#xA;  &lt;a href=&#34;#what-are-they&#34; id=&#34;what-are-they&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;Magic numbers are numbers in code that appear to be arbitrary, but actually serve a purpose. They are commonly described as an anti-pattern as they diminish code quality, and are &amp;ldquo;referred to as breaking one of the oldest rules of programming, dating back to the COBOL, FORTRAN and PL/1 manuals of the 1960s&amp;rdquo;. [1]&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Build - 10/26/18</title>
-      <link>https://eddieabbondanz.io/post/xj/18-10-26/</link>
+      <link>http://localhost:1313/post/xj/18-10-26/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/18-10-26/</guid>
+      <guid>http://localhost:1313/post/xj/18-10-26/</guid>
       <description>&lt;p&gt;With winter approaching fast, and my Civic only having summer tires I needed to hurry up and finish the Cherokee. The Civic was also suffering from a stuck open thermostat that ensured the engine temperature never reached operating temp, and my heat was always cold.&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Build - 10/21/18</title>
-      <link>https://eddieabbondanz.io/post/xj/18-10-21/</link>
+      <link>http://localhost:1313/post/xj/18-10-21/</link>
       <pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/18-10-21/</guid>
-      <description>&lt;h1&gt;&#xA;  Patching Holes&#xA;  &lt;a href=&#34;#patching-holes&#34; id=&#34;patching-holes&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about &lt;a href=&#34;https://eddieabbondanz.io/post/xj/18-10-08/&#34;&gt;cutting out and welding in a new rocker panel&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/18-10-21/</guid>
+      <description>&lt;h1&gt;&#xA;  Patching Holes&#xA;  &lt;a href=&#34;#patching-holes&#34; id=&#34;patching-holes&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;This post is a continuation of the mini series about restoring my old XJ cherokee. In the previous post I talked about &lt;a href=&#34;http://localhost:1313/post/xj/18-10-08/&#34;&gt;cutting out and welding in a new rocker panel&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Design - Dependency Injection and Inversion</title>
-      <link>https://eddieabbondanz.io/post/software-design/dependency-injection/</link>
+      <link>http://localhost:1313/post/software-design/dependency-injection/</link>
       <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/software-design/dependency-injection/</guid>
+      <guid>http://localhost:1313/post/software-design/dependency-injection/</guid>
       <description>&lt;h2&gt;&#xA;  What are they?&#xA;  &lt;a href=&#34;#what-are-they&#34; id=&#34;what-are-they&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;While it may seem like nothing more than buzz words, dependency injection is a well known principle. In fact, you&amp;rsquo;ve likely used it yourself in the past and just didn&amp;rsquo;t know the technique had a name. Dependency injection can be thought of as passing a resource required by a class to the class through one of several means. While the class could instantiate a new instance of the resource itself, by using dependency injection we introduce an easier way to take advantage of dependency inversion.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Design - Unit Tests vs Integration Tests</title>
-      <link>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</link>
+      <link>http://localhost:1313/post/software-design/unit-tests-vs-integration-tests/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/software-design/unit-tests-vs-integration-tests/</guid>
+      <guid>http://localhost:1313/post/software-design/unit-tests-vs-integration-tests/</guid>
       <description>&lt;h2&gt;&#xA;  Preface&#xA;  &lt;a href=&#34;#preface&#34; id=&#34;preface&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Unit tests and integration tests are designed to serve two different purposes. They are not meant to substitute each other, and each type has a specific focus. However, developers tend to struggle to determine the border that seperates unit tests and integration tests as there is no set hard limit on either one.&lt;/p&gt;</description>
     </item>
     <item>
       <title>No Mans Blocks - 10/13/2018</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</link>
+      <link>http://localhost:1313/post/nomansblocks/18-10-13/</link>
       <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/nomansblocks/18-10-13/</guid>
+      <guid>http://localhost:1313/post/nomansblocks/18-10-13/</guid>
       <description>&lt;h1&gt;&#xA;  Where I&amp;rsquo;ve Been, and Where I&amp;rsquo;m Heading&#xA;  &lt;a href=&#34;#where-ive-been-and-where-im-heading&#34; id=&#34;where-ive-been-and-where-im-heading&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I took somewhat of an unplanned hiatus from working on No Mans Blocks. Initially, I took a break because I wanted to pursue writing a server for a Reddit clone. It wasn&amp;rsquo;t until about two months in that I realized just how over scoped the project was and how long it would take to finish. While I may not have much to show for this time, it did open my eyes up to some of the common software-architecture patterns, and how to utilize these patterns to better organize my projects. During my adventure I also picked up TypeScript and dived into the intriguing world of NodeJS.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Design - Validator Pattern</title>
-      <link>https://eddieabbondanz.io/post/software-design/validator-pattern/</link>
+      <link>http://localhost:1313/post/software-design/validator-pattern/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/software-design/validator-pattern/</guid>
+      <guid>http://localhost:1313/post/software-design/validator-pattern/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s quite typical for a Domain Driven Design (DDD) project to need validation for it&amp;rsquo;s domain models. While it may be sufficient to solve this by adding an IsValid() method to each model, this can cause confusion for the developer by cluttering the model class, and/or by requiring the IsValid() method to be generalized that it covers a large range of validation rules for any situation that may arise. Let&amp;rsquo;s work with an example.&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Build - 10/8/18</title>
-      <link>https://eddieabbondanz.io/post/xj/18-10-08/</link>
+      <link>http://localhost:1313/post/xj/18-10-08/</link>
       <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/18-10-08/</guid>
-      <description>&lt;p&gt;This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the &lt;a href=&#34;https://eddieabbondanz.io/post/xj/18-09-03/&#34;&gt;rusty roof&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&amp;quot; in length and about 3&amp;quot; wide. I finally decided it was time to fix it when I managed to puncture a hole in it using my key. (You can even see the hole in the picture if you look close).&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/2.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/2.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/xj/18-10-08/</guid>
+      <description>&lt;p&gt;This post is the second part in my mini-series of restoring my old xj cherokee. If your interested, check out my attempt at saving the &lt;a href=&#34;http://localhost:1313/post/xj/18-09-03/&#34;&gt;rusty roof&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Like most xjs out there, especially those in the rustier parts of the US, the rocker panels needed some love. I never really captured a good before shot of the rust on the passenger side rocker. It was roughly 9&amp;quot; in length and about 3&amp;quot; wide. I finally decided it was time to fix it when I managed to puncture a hole in it using my key. (You can even see the hole in the picture if you look close).&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/2.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/2.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>XJ Build - 9/03/18</title>
-      <link>https://eddieabbondanz.io/post/xj/18-09-03/</link>
+      <link>http://localhost:1313/post/xj/18-09-03/</link>
       <pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/xj/18-09-03/</guid>
+      <guid>http://localhost:1313/post/xj/18-09-03/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a big fan of older vehicles. I just love the simplicity of them and how easy they are to work on them. Plus the cost of&#xA;parts really can&amp;rsquo;t be beat. Since my civic is far from snow worthy I also own a 2000 Jeep Cherokee. It may not be the prettiest&#xA;vehicle out there but it&amp;rsquo;s never let me down, and has successfully traveled 20,000 miles in it&amp;rsquo;s first year of owner ship with&#xA;a couple road trips ranging in the 800-1000 mile range.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 6/23/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-06-23/</link>
+      <link>http://localhost:1313/post/civic/18-06-23/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-06-23/</guid>
+      <guid>http://localhost:1313/post/civic/18-06-23/</guid>
       <description>&lt;h1&gt;&#xA;  Ten months of work finally pays off&#xA;  &lt;a href=&#34;#ten-months-of-work-finally-pays-off&#34; id=&#34;ten-months-of-work-finally-pays-off&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;I enjoy working on my own vehicles but by far the best part is finishing up. While it took longer than I hoped, and the deadlines I kept setting for myself came and went I can say it was worth the wait. Today was the second day of driving, and started off with topping off the tank. It hadn&amp;rsquo;t been gassed up since last September and was pretty much on E.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 6/9/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-06-09/</link>
+      <link>http://localhost:1313/post/civic/18-06-09/</link>
       <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-06-09/</guid>
+      <guid>http://localhost:1313/post/civic/18-06-09/</guid>
       <description>&lt;h2&gt;&#xA;  Getting ready for the test drive&#xA;  &lt;a href=&#34;#getting-ready-for-the-test-drive&#34; id=&#34;getting-ready-for-the-test-drive&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;While the car may not be on the road yet, it&amp;rsquo;s come quite a bit closer to getting there. Lately I&amp;rsquo;ve been working on&#xA;fixing everything that was sub-optimally done previously by me. One of the things I didn&amp;rsquo;t do quite right was the clutch pedal pin.&#xA;Since the car was an automatic initially, I had to source out some parts for the swap. I ended up buying just a generic pin for the clutch master&#xA;cylinder to hook it to the clutch pedal. Interestingly enough the metal was fairly soft as the pedal has worn a fairly noticable&#xA;grove into the pin itself.&lt;/p&gt;</description>
     </item>
     <item>
       <title>No Mans Blocks - 6/4/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</link>
+      <link>http://localhost:1313/post/nomansblocks/18-06-04/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/nomansblocks/18-06-04/</guid>
+      <guid>http://localhost:1313/post/nomansblocks/18-06-04/</guid>
       <description>&lt;h2&gt;&#xA;  Creating Time (literally!)&#xA;  &lt;a href=&#34;#creating-time-literally&#34; id=&#34;creating-time-literally&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;I have a knack for forgetting what I&amp;rsquo;ve managed to accomplish on the game during the week. To try to overcome this&#xA;so I have updates I can post on it, I&amp;rsquo;ve started writing down each accomplishment on a sticky note.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 5/20/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-05-20/</link>
+      <link>http://localhost:1313/post/civic/18-05-20/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-05-20/</guid>
+      <guid>http://localhost:1313/post/civic/18-05-20/</guid>
       <description>&lt;h2&gt;&#xA;  Finishing things up&#xA;  &lt;a href=&#34;#finishing-things-up&#34; id=&#34;finishing-things-up&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;With the weather warming up it&amp;rsquo;s been making me miss the civic quite a bit. While it may not be the fastest car out there I do enjoy riving it. I had the chance to work on it a bit more this weekend. To get myself motivated I started by getting the radiator mounted in place. After that I wired up the charge harness.&lt;/p&gt;</description>
     </item>
     <item>
       <title>C# Threadable Queue</title>
-      <link>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</link>
+      <link>http://localhost:1313/post/c-sharp/threadable-queue/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/c-sharp/threadable-queue/</guid>
+      <guid>http://localhost:1313/post/c-sharp/threadable-queue/</guid>
       <description>&lt;h2&gt;&#xA;  Implementing a Thread-Safe Queue&#xA;  &lt;a href=&#34;#implementing-a-thread-safe-queue&#34; id=&#34;implementing-a-thread-safe-queue&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;One of the most useful data structures when it comes to multi-threading is the queue. However, queues in c# aren&amp;rsquo;t thread-safe by default. Thankfully it&amp;rsquo;s easy enough to implement your own as we will do today. Let&amp;rsquo;s start by defining our class.&lt;/p&gt;</description>
     </item>
     <item>
       <title>No Mans Blocks - 4/20/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</link>
+      <link>http://localhost:1313/post/nomansblocks/18-04-20/</link>
       <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-20/</guid>
+      <guid>http://localhost:1313/post/nomansblocks/18-04-20/</guid>
       <description>&lt;h2&gt;&#xA;  Playing Around at the Bit Level&#xA;  &lt;a href=&#34;#playing-around-at-the-bit-level&#34; id=&#34;playing-around-at-the-bit-level&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;This weeks adventure has been exploring object serialization. Initially I was using the serializable attribute to convert my objects into byte arrays but for some objects such as the voxel chunks this is far from ideal. Since I don&amp;rsquo;t want to handle serialization with 2 different methods I&amp;rsquo;ve decided to bite the bullet and roll my own set up.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 4/15/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-15/</link>
+      <link>http://localhost:1313/post/civic/18-04-15/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-04-15/</guid>
+      <guid>http://localhost:1313/post/civic/18-04-15/</guid>
       <description>&lt;h2&gt;&#xA;  Connecting the Pieces&#xA;  &lt;a href=&#34;#connecting-the-pieces&#34; id=&#34;connecting-the-pieces&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;It&amp;rsquo;s easy to forget just how many parts you&amp;rsquo;ve removed until it comes time to put them all back together. I know I&amp;rsquo;m probably not alone when I say I&amp;rsquo;ve fallen victim to scope creep many times now. In the end you always tell yourself never again yet it keeps happening&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 4/14/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-14/</link>
+      <link>http://localhost:1313/post/civic/18-04-14/</link>
       <pubDate>Sat, 14 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-04-14/</guid>
+      <guid>http://localhost:1313/post/civic/18-04-14/</guid>
       <description>&lt;h2&gt;&#xA;  Getting Closer.&#xA;  &lt;a href=&#34;#getting-closer&#34; id=&#34;getting-closer&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;I ran into a few set backs this weekend, and I&amp;rsquo;m a little annoyed but at the same time the civic is really close to being done. I started off by prepping the transmission and engine for being mated together.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 4/12/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-12/</link>
+      <link>http://localhost:1313/post/civic/18-04-12/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-04-12/</guid>
+      <guid>http://localhost:1313/post/civic/18-04-12/</guid>
       <description>&lt;h2&gt;&#xA;  Restoring the transmission&#xA;  &lt;a href=&#34;#restoring-the-transmission&#34; id=&#34;restoring-the-transmission&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;My girlfriend and I went on a road trip to Vermont to pick up this transmission. Funny enough I wasn&amp;rsquo;t able to find only a transmission so I had to buy a B18b1 engine to get this guy. I didn&amp;rsquo;t really want to do a B18 swap however so I managed to sell off the engine (for stupid cheap&amp;hellip;). Here&amp;rsquo;s how it looked before touching it at all. The dust shield got a little mangled up but a hammer &amp;rsquo;taps&amp;rsquo; with the hammer straightened it out.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 4/8/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-08/</link>
+      <link>http://localhost:1313/post/civic/18-04-08/</link>
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-04-08/</guid>
+      <guid>http://localhost:1313/post/civic/18-04-08/</guid>
       <description>&lt;h2&gt;&#xA;  New Transmission Mount Installed&#xA;  &lt;a href=&#34;#new-transmission-mount-installed&#34; id=&#34;new-transmission-mount-installed&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;Progress wise not too much more has been done on the Civic this week. I had to help out my girlfriend put new front brakes + an oil change so I wasn&amp;rsquo;t feeling too motivated after that. My Dad helped out and welded in the new transmission bracket though. It came out pretty awesome and should (hopefully) have no problem mounting up the B swap.&lt;/p&gt;</description>
     </item>
     <item>
       <title>No Mans Blocks - 4/8/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</link>
+      <link>http://localhost:1313/post/nomansblocks/18-04-08/</link>
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/nomansblocks/18-04-08/</guid>
+      <guid>http://localhost:1313/post/nomansblocks/18-04-08/</guid>
       <description>&lt;h2&gt;&#xA;  Building Up the Network Logic&#xA;  &lt;a href=&#34;#building-up-the-network-logic&#34; id=&#34;building-up-the-network-logic&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&amp;rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&amp;rsquo;s message events. I also didn&amp;rsquo;t care for how each message had it&amp;rsquo;s own event. To try to curtail this redundancy I came up with the following solution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>B-Series Bolt Sizes</title>
-      <link>https://eddieabbondanz.io/post/honda/b-series-bolts/</link>
+      <link>http://localhost:1313/post/honda/b-series-bolts/</link>
       <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/honda/b-series-bolts/</guid>
+      <guid>http://localhost:1313/post/honda/b-series-bolts/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try and help any others who are partaking in a similar project I&amp;rsquo;ve compiled a list of what I found below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 4/6/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-06/</link>
+      <link>http://localhost:1313/post/civic/18-04-06/</link>
       <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-04-06/</guid>
+      <guid>http://localhost:1313/post/civic/18-04-06/</guid>
       <description>&lt;h2&gt;&#xA;  Wrapping it up&#xA;  &lt;a href=&#34;#wrapping-it-up&#34; id=&#34;wrapping-it-up&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;It&amp;rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 4/1/18</title>
-      <link>https://eddieabbondanz.io/post/civic/18-04-01/</link>
+      <link>http://localhost:1313/post/civic/18-04-01/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/18-04-01/</guid>
+      <guid>http://localhost:1313/post/civic/18-04-01/</guid>
       <description>&lt;h2&gt;&#xA;  I like projects&#xA;  &lt;a href=&#34;#i-like-projects&#34; id=&#34;i-like-projects&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;And I&amp;rsquo;m the kind of person that can&amp;rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&amp;rsquo;s totally different, it&amp;rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&amp;rsquo;s full history check &lt;a href=&#34;http://www.d-series.org/forums/showcase/273858-my-first-honda-build-93-hatch.html&#34; target=&#34;_blank&#34;&gt;out my build thread on D-Series.org&lt;/a&gt;. Currently however it looks like this:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Logging to Unity or Console</title>
-      <link>https://eddieabbondanz.io/post/unity/debug-logging/</link>
+      <link>http://localhost:1313/post/unity/debug-logging/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/unity/debug-logging/</guid>
+      <guid>http://localhost:1313/post/unity/debug-logging/</guid>
       <description>&lt;p&gt;Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&amp;rsquo;s own set of methods for writing to it&amp;rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&amp;rsquo;ll need a way to differentiate between the running environments. Instead of wrapping all our Debug.Log() calls in preprocessor directives such as #IF UNITY_EDITOR we can write a simple logging class to handle it for us. While we&amp;rsquo;re at it well add the ability to write log files since they can be quite useful.&lt;/p&gt;</description>
     </item>
     <item>
       <title>No Mans Blocks - 3/31/18</title>
-      <link>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</link>
+      <link>http://localhost:1313/post/nomansblocks/18-03-31/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/nomansblocks/18-03-31/</guid>
+      <guid>http://localhost:1313/post/nomansblocks/18-03-31/</guid>
       <description>&lt;h2&gt;&#xA;  Stepping back into Networking&#xA;  &lt;a href=&#34;#stepping-back-into-networking&#34; id=&#34;stepping-back-into-networking&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;These past few months I&amp;rsquo;ve been on a tangent that wasn&amp;rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&amp;rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&amp;rsquo;t exactly remember every change some of the key ones are:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Object Pooling in Unity</title>
-      <link>https://eddieabbondanz.io/post/unity/object-pool/</link>
+      <link>http://localhost:1313/post/unity/object-pool/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/unity/object-pool/</guid>
+      <guid>http://localhost:1313/post/unity/object-pool/</guid>
       <description>&lt;p&gt;Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&amp;rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Greedy Meshing for Vertex Colored Voxels In Unity</title>
-      <link>https://eddieabbondanz.io/post/voxel/greedy-mesh/</link>
+      <link>http://localhost:1313/post/voxel/greedy-mesh/</link>
       <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/voxel/greedy-mesh/</guid>
+      <guid>http://localhost:1313/post/voxel/greedy-mesh/</guid>
       <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Full algorithm is at the bottom. Classes for &lt;code&gt;Block&lt;/code&gt;, &lt;code&gt;Chunk&lt;/code&gt;, and &lt;code&gt;MeshData&lt;/code&gt; are defined below the intro.&lt;/p&gt;&#xA;&lt;p&gt;This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from &lt;a href=&#34;https://github.com/roboleary/GreedyMesh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Robert O&amp;rsquo;Leary&lt;/a&gt;, with a few alterations made.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 09/07/15</title>
-      <link>https://eddieabbondanz.io/post/civic/15-09-07/</link>
+      <link>http://localhost:1313/post/civic/15-09-07/</link>
       <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/15-09-07/</guid>
+      <guid>http://localhost:1313/post/civic/15-09-07/</guid>
       <description>&lt;p&gt;Now that I&amp;rsquo;m back at college it&amp;rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 08/22/15</title>
-      <link>https://eddieabbondanz.io/post/civic/15-08-22/</link>
+      <link>http://localhost:1313/post/civic/15-08-22/</link>
       <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/15-08-22/</guid>
+      <guid>http://localhost:1313/post/civic/15-08-22/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been quite busy working on the Civic in the past month. I&amp;rsquo;m verfy excited to shared the journey I&amp;rsquo;m embarking on, and can&amp;rsquo;t wait to see how the finished product looks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 07/03/15</title>
-      <link>https://eddieabbondanz.io/post/civic/15-07-03/</link>
+      <link>http://localhost:1313/post/civic/15-07-03/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/15-07-03/</guid>
+      <guid>http://localhost:1313/post/civic/15-07-03/</guid>
       <description>&lt;p&gt;I don&amp;rsquo;t know why, but I&amp;rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&amp;rsquo;s a fact.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Civic Build - 07/06/15</title>
-      <link>https://eddieabbondanz.io/post/civic/15-07-06/</link>
+      <link>http://localhost:1313/post/civic/15-07-06/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/civic/15-07-06/</guid>
+      <guid>http://localhost:1313/post/civic/15-07-06/</guid>
       <description>&lt;p&gt;The transmission in the Civic was a good deal for the price of $100, but it had a nasty grind anytime you shifted into 3rd gear above 3k RPM. Because of this, and a transmission popping up for sale for $75 bucks I couldn&amp;rsquo;t resist making the switch.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 09/09/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-09-09/</link>
+      <link>http://localhost:1313/post/acura/14-09-09/</link>
       <pubDate>Tue, 09 Sep 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-09-09/</guid>
+      <guid>http://localhost:1313/post/acura/14-09-09/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been fairly quiet since I&amp;rsquo;ve just been enjoying the car. I&amp;rsquo;ve moved up North for college and have decided to sell the RL. There&amp;rsquo;s nothing wrong with it I&amp;rsquo;m just bored of it. I really want something that can be modded a little more. There&amp;rsquo;s almost no aftermarket support for the RL so everything has to be done custom.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 05/25/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-05-25/</link>
+      <link>http://localhost:1313/post/acura/14-05-25/</link>
       <pubDate>Sun, 25 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-05-25/</guid>
+      <guid>http://localhost:1313/post/acura/14-05-25/</guid>
       <description>&lt;p&gt;The fog lights were a little too squarish for my taste so I made some custom overlays to give them a slight &amp;ldquo;curve&amp;rdquo;. The grill is also the custom debadged one I made a couple months back.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 05/10/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-05-10/</link>
+      <link>http://localhost:1313/post/acura/14-05-10/</link>
       <pubDate>Sat, 10 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-05-10/</guid>
+      <guid>http://localhost:1313/post/acura/14-05-10/</guid>
       <description>&lt;p&gt;With a stock exhaust the car was fairly quiet. I decided it was time to let the 3.5 V6 under the hood make some noise and ordered a Borla exhaust.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 04/04/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-04-04/</link>
+      <link>http://localhost:1313/post/acura/14-04-04/</link>
       <pubDate>Fri, 04 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-04-04/</guid>
+      <guid>http://localhost:1313/post/acura/14-04-04/</guid>
       <description>&lt;p&gt;The RL looks nice but a luxury sedan should really have some tint to it. Initially I planned on doing 35% all around but they shipped me the wrong tint so it ended up with 5% in the rear.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 03/14/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-03-14/</link>
+      <link>http://localhost:1313/post/acura/14-03-14/</link>
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-03-14/</guid>
+      <guid>http://localhost:1313/post/acura/14-03-14/</guid>
       <description>&lt;p&gt;Made a little more progress on the tablet. I&amp;rsquo;m using a Nexus 7 Gen 2 tablet.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/2.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/2.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;I had to open up the tablet to solder in wires to the power button. Other than that everything is 100% stock.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 03/04/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-03-04/</link>
+      <link>http://localhost:1313/post/acura/14-03-04/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-03-04/</guid>
+      <guid>http://localhost:1313/post/acura/14-03-04/</guid>
       <description>&lt;p&gt;In 2002 the RL came with clear corner tail lights. I&amp;rsquo;ve been envious of the since my 1999 features amber corners but tail lights on Ebay are too expensive.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/4.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/4.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 01/22/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-01-22/</link>
+      <link>http://localhost:1313/post/acura/14-01-22/</link>
       <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-01-22/</guid>
+      <guid>http://localhost:1313/post/acura/14-01-22/</guid>
       <description>&lt;p&gt;For 1999 the RL was pretty advanced. It came fitted with a built in GPS system that was probably pretty slick for it&amp;rsquo;s time. However, it hasn&amp;rsquo;t aged too well and is no longer really useful with out of date maps and it&amp;rsquo;s failing hard drive. I&amp;rsquo;ve decided to attempt a tablet retrofit using the bezel of a newer GPS system that came in the 2002+ RL.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 01/09/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-01-09/</link>
+      <link>http://localhost:1313/post/acura/14-01-09/</link>
       <pubDate>Thu, 09 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-01-09/</guid>
+      <guid>http://localhost:1313/post/acura/14-01-09/</guid>
       <description>&lt;p&gt;The projector retrofit is finally coming to an end.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;There isn&amp;rsquo;t too much gap between the reflector and shroud which isn&amp;rsquo;t too bad.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/2.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/2.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The new D2S bulbs also came in. They&amp;rsquo;re much brighter than the D2Rs. Vertical height is different because I didn&amp;rsquo;t bother to align that since it was so cold out. All glare in the second photo is due to the ice, and lack of shrouds around the projectors.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 01/05/2014</title>
-      <link>https://eddieabbondanz.io/post/acura/14-01-05/</link>
+      <link>http://localhost:1313/post/acura/14-01-05/</link>
       <pubDate>Sun, 05 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/14-01-05/</guid>
+      <guid>http://localhost:1313/post/acura/14-01-05/</guid>
       <description>&lt;p&gt;I decided to re add the defusers over the blinkers. It looks better in my opinion and feels more OEM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/2.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/2.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Ran into a slight set back. The caps on the back of the headlights are too shallow and will need some modifications. My desk is a mess right now.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 12/30/2013</title>
-      <link>https://eddieabbondanz.io/post/acura/13-12-30/</link>
+      <link>http://localhost:1313/post/acura/13-12-30/</link>
       <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/13-12-30/</guid>
+      <guid>http://localhost:1313/post/acura/13-12-30/</guid>
       <description>&lt;p&gt;I like doing little things to fix things up. The speaker grills on the car are showing their age so I decided to re upholster them to look new again. Left is original, right is new.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 12/18/2013</title>
-      <link>https://eddieabbondanz.io/post/acura/13-12-18/</link>
+      <link>http://localhost:1313/post/acura/13-12-18/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/13-12-18/</guid>
+      <guid>http://localhost:1313/post/acura/13-12-18/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve decided to do a projector retrofit. There&amp;rsquo;s nothing wrong with the current headlights I just really like the appeal of the crisp cutoff.&lt;/p&gt;&#xA;&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;images/1.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;images/1.jpg&#34; alt=&#34;Comparison of projector shrouds&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;I separated the lense from the headlight house so I could begin to mount things in place. Took a little bit of work with the heat gun but I managed to remove them safely.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acura Build - 12/16/2013</title>
-      <link>https://eddieabbondanz.io/post/acura/13-12-16/</link>
+      <link>http://localhost:1313/post/acura/13-12-16/</link>
       <pubDate>Sun, 15 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/acura/13-12-16/</guid>
+      <guid>http://localhost:1313/post/acura/13-12-16/</guid>
       <description>&lt;p&gt;I bought my first car off my Grandmother. It&amp;rsquo;s a 1999 Acura 3.5RL in rough condition. I&amp;rsquo;ve owned it for about 3 years now and only done a few small mods to it since. Over this winter I plan on restoring it bit by bit to get it back to it&amp;rsquo;s former glorly.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Me</title>
-      <link>https://eddieabbondanz.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;My name&amp;rsquo;s Eddie Abbondanzio, and as you&amp;rsquo;ve probably already figured out this is my personal blog. I enjoy writing up posts on the various projects I work on in my spare time.&lt;/p&gt;</description>
     </item>
   </channel>

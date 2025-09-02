@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apps on Eddie Abbondanzio</title>
-    <link>https://eddieabbondanz.io/app/</link>
+    <link>http://localhost:1313/app/</link>
     <description>Recent content in Apps on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://eddieabbondanz.io/app/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Marqus</title>
-      <link>https://eddieabbondanz.io/app/marqus/</link>
+      <link>http://localhost:1313/app/marqus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/marqus/</guid>
+      <guid>http://localhost:1313/app/marqus/</guid>
       <description>&lt;p&gt;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/hero.png&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/hero.png&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/EddieAbbondanzio/marqus&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marqus&lt;/a&gt; is a desktop note taking app that allows users to organize and maintain their knowledge base. The app has support for custom keyboard shortcuts for power users and also keeps track of state so each time you open the app you can pick right up where you last left off.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Detailing Arsenal</title>
-      <link>https://eddieabbondanz.io/app/detailingarsenal/</link>
+      <link>http://localhost:1313/app/detailingarsenal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/detailingarsenal/</guid>
+      <guid>http://localhost:1313/app/detailingarsenal/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/EddieAbbondanzio/detailingarsenal.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Detailing Arsenal&lt;/a&gt; is a SaaS (software as a service) for managing and scheduling appointments for auto detailers. Users can create, update, or delete appointments, along with the ability to view stats about time, services, and revenue. The app is focused towards auto detailing as the industry has some unique requirements such as vehicle check-in inspections and more that generic scheduling apps didn&amp;rsquo;t offer.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Updog</title>
-      <link>https://eddieabbondanz.io/app/updog/</link>
+      <link>http://localhost:1313/app/updog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/updog/</guid>
+      <guid>http://localhost:1313/app/updog/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/EddieAbbondanzio/Updog.in&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Updog&lt;/a&gt; was a Reddit clone where users could share links, and create text posts. Users could submit comments to posts, or reply to other comments. A voting system was implemented to allow users to upvote or downvote posts they liked or disliked. Posts could be shared to any of the sub spaces that were topic specific. The home page of the site aggregated all posts into a list ordered by most recent.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mechanic Log</title>
-      <link>https://eddieabbondanz.io/app/mechaniclog/</link>
+      <link>http://localhost:1313/app/mechaniclog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/mechaniclog/</guid>
+      <guid>http://localhost:1313/app/mechaniclog/</guid>
       <description>&lt;p&gt;Mechanic Log was a web app where users could log repairs and maintenance performed on their vehicle(s). Users could also track fuel mileage to see how much they spent in fuel, gallons consumed, and lifetime MPG. Receipts and invoices could also be saved along with the exact mileage and date services were performed on.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Clap Button</title>
-      <link>https://eddieabbondanz.io/app/clapbutton/</link>
+      <link>http://localhost:1313/app/clapbutton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/app/clapbutton/</guid>
+      <guid>http://localhost:1313/app/clapbutton/</guid>
       <description>&lt;p&gt;Clap Button was a SaaS that offered a Medium like clap button widget for blogs. The widget allowed readers to share their appreciation for a blog post by clicking on it to &amp;ldquo;clap&amp;rdquo; 1 to 50 times. The more a user liked the post, the more they would clap in response. The widget had several animations to make it feel more lively and enjoyable. Clapbutton.com was the admin panel to manage the widget.&lt;/p&gt;</description>
     </item>
   </channel>
