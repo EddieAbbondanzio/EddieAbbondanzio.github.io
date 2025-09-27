@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Get Your Prusa i3 MK3.5S to Pass Fan Calibration</title>
+      <link>https://eddieabbondanz.io/post/3d-printing/mk3.5s-fan-calibration/</link>
+      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/3d-printing/mk3.5s-fan-calibration/</guid>
+      <description>&lt;p&gt;The Prusa MK3.5S is a great printer but it&amp;rsquo;s definitely picky about it&amp;rsquo;s fans. I figured I&amp;rsquo;d write up some of the tricks I learned while tuning mine.&lt;/p&gt;&#xA;&lt;h1&gt;&#xA;  Hotend Fan&#xA;  &lt;a href=&#34;#hotend-fan&#34; id=&#34;hotend-fan&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;i class=&#34;fa fa-link&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;p&gt;If the hotend fan is failing calibration it&amp;rsquo;s very likely the fan is either worn out, or incorrect. The &lt;a href=&#34;https://www.prusa3d.com/product/hotend-fan-mk3-s/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prusa MK3S hotend fan&lt;/a&gt; fits and is the correct model to purchase but because of how Prusa used two different manufacturers for it (Noctua and Delta) it&amp;rsquo;s possible you&amp;rsquo;ll get an incompatible fan.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>I Bought an 05 RSX Type S With a Blown Transmission</title>
       <link>https://eddieabbondanz.io/post/rsx-type-s/1-the-intro/</link>
