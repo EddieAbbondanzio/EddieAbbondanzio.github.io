@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Repair Part 24: Final Tweaks for the Passenger Fender</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-24/</link>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-24/</guid>
+      <description>&lt;p&gt;With the passenger side just about sorted out, the last panel that needed some attention before I switch over to the driver side was the front fender.&lt;/p&gt;&#xA;&lt;p&gt;It wasn&amp;rsquo;t actually in that bad of shape relative to the rest of the Jeep but it did need a new mounting point down by the 2x6 rocker, and also had some rust in the lower front corner by the side marker.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to Get Your Prusa i3 MK3.5S to Pass Fan Calibration</title>
       <link>https://eddieabbondanz.io/post/3d-printing/mk3.5s-fan-calibration/</link>
@@ -97,7 +104,7 @@
       <link>https://eddieabbondanz.io/post/tools/diy-chassis-table/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
       <guid>https://eddieabbondanz.io/post/tools/diy-chassis-table/</guid>
-      <description>&lt;p&gt;I recently built a chassis table for &lt;a href=&#34;https://eddieabbondanz.io/series/xj-build/&#34;&gt;the XJ I&amp;rsquo;m restoring&lt;/a&gt; and figured I&amp;rsquo;d do a brief writeup. I&amp;rsquo;ve never built a chassis table before and from researching them online I quickly learned there&amp;rsquo;s no one size fits all solution.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I recently built a chassis table for &lt;a href=&#34;https://eddieabbondanz.io/series/ls-xj-build/&#34;&gt;the XJ I&amp;rsquo;m restoring&lt;/a&gt; and figured I&amp;rsquo;d do a brief writeup. I&amp;rsquo;ve never built a chassis table before and from researching them online I quickly learned there&amp;rsquo;s no one size fits all solution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust Repair Part 21: Blowing Off the Dust a Year Later AGAIN</title>
@@ -188,7 +195,7 @@
       <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-1/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-1/</guid>
-      <description>&lt;p&gt;Building a B20 VTEC (aka B20V) isn&amp;rsquo;t much more difficult than building a normal B20 but it can be daunting to figure out what you&amp;rsquo;ll need for parts with so many different options out there. You can do anything from slapping a VTEC head on a stock B20 block and sending it, to going all out with high comp pistons, big cams, and a bunch of headwork.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Building a B20 VTEC (aka B20V, aka CRVTEC) isn&amp;rsquo;t much more difficult than building a normal B20 but it can be daunting to figure out what you&amp;rsquo;ll need for parts with so many different options out there. You can do anything from slapping a VTEC head on a stock B20 block and sending it, to going all out with high comp pistons, big cams, and a bunch of headwork.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OBD0 Check Engine Light Codes</title>

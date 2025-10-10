@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>OG XJ Build on Eddie Abbondanzio</title>
-    <link>https://eddieabbondanz.io/series/xj-build/</link>
-    <description>Recent content in OG XJ Build on Eddie Abbondanzio</description>
+    <title>LS XJ Build on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/series/ls-xj-build/</link>
+    <description>Recent content in LS XJ Build on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://eddieabbondanz.io/series/xj-build/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/series/ls-xj-build/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Repair Part 24: Final Tweaks for the Passenger Fender</title>
+      <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-24/</link>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-24/</guid>
+      <description>&lt;p&gt;With the passenger side just about sorted out, the last panel that needed some attention before I switch over to the driver side was the front fender.&lt;/p&gt;&#xA;&lt;p&gt;It wasn&amp;rsquo;t actually in that bad of shape relative to the rest of the Jeep but it did need a new mounting point down by the 2x6 rocker, and also had some rust in the lower front corner by the side marker.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Rust Repair Part 23: Fixing The Windshield Pillar Gaps And Adding Bracing</title>
       <link>https://eddieabbondanz.io/post/xj/unibody-rust-repair-part-23/</link>
