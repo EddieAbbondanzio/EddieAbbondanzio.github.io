@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rust Repair Part 24: Final Tweaks for the Passenger Fender</title>
+  
+  <meta name="description" content="My blog about my project cars and other contraptions">
+  
+  <meta name="author" content="Eddie Abbondanzio">
+  
+
+  
+  
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.79526dae8d29fab82bb520e28634f9db92f9ed4cda79daa0ddbf5508bedda33d.css" integrity="sha256-eVJtro0p&#43;rgrtSDihjT525L57Uzaedqg3b9VCL7doz0=" media="screen">
+
+  <link rel="stylesheet" href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css">
+
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
+</head>
+
+<body>
+  <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/series/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/series/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+  
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/series/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+  <main>
+    
+<article class="post" data-pagefind-meta="image:">
+  <h1 class="h1 mb2" data-pagefind-meta="title">
+    
+    Rust Repair Part 24: Final Tweaks for the Passenger Fender
+  </h1>
+
+  <div class="fr meta pb3">
+    
+    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/ls-xj-build" title="More LS XJ Build posts">
+      <i class="fas fa-th-list"></i>
+      LS XJ Build
+    </a>
+    
+
+    
+    <div class="date" title="Posted on Oct 9, 2025">
+      <i class="fas fa-calendar-day"></i>
+      <time>Oct 9, 2025</time>
+    </div>
+    
+  </div>
+
+  <div class="markdown-body" data-pagefind-body>
+    <p>With the passenger side just about sorted out, the last panel that needed some attention before I switch over to the driver side was the front fender.</p>
+<p>It wasn&rsquo;t actually in that bad of shape relative to the rest of the Jeep but it did need a new mounting point down by the 2x6 rocker, and also had some rust in the lower front corner by the side marker.</p>
+<p><div class="image">
+<a href="./images/1.jpg" target="_blank">
+  <img loading="lazy" src="./images/1.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Fenders aren&rsquo;t super expensive and you can easily find aftermarket ones online but the OEM ones are known for having better fitment so I figured it&rsquo;d be smarter to save my current ones.</p>
+<h2>
+  A New Lower Fender Mount For The 2x6 Rocker
+  <a href="#a-new-lower-fender-mount-for-the-2x6-rocker" id="a-new-lower-fender-mount-for-the-2x6-rocker" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Normally the fender extends all the way to the bottom of the rocker where the OEM pinch weld usually is but with 2x6 rockers that&rsquo;s just not possible. This is problematic because the nearest fender bolt is about halfway up the fender so the bottom edge just flops around.
+<div class="image">
+<a href="./images/2.jpg" target="_blank">
+  <img loading="lazy" src="./images/2.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Most of the solutions out there seem to involve welding the fender to the 2x6 or not extending the 2x6 all the way to the front fender so you can still bolt it to the OEM mounting point but I&rsquo;m not a fan of either of those options.</p>
+<p>Instead I wanted to try and make custom brackets that could be welded to the bottom of each fender and then drill and tap a hole in the 2x6 for the fender.
+<div class="image">
+<a href="./images/4.jpg" target="_blank">
+  <img loading="lazy" src="./images/4.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Each bracket gets plug welded to the fender so it should be reasonably strong. The mounting hole is slotted so you can move the fender forward or back as needed.
+<div class="image">
+<a href="./images/5.jpg" target="_blank">
+  <img loading="lazy" src="./images/5.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>A bit of work with my drill and a m6x1.00 tap and I had my new mounting bracket all done.
+<div class="image">
+<a href="./images/6.jpg" target="_blank">
+  <img loading="lazy" src="./images/6.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Investigating the Rust by the Front Fascia
+  <a href="#investigating-the-rust-by-the-front-fascia" id="investigating-the-rust-by-the-front-fascia" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>The passenger fender had a good amount of rust in the lower front corner just behind the side marker. The rust looked to be fairly isolated but I would still need to cut it out to address it properly since it was coming from between two pieces of metal sandwiched together.
+<div class="image">
+<a href="./images/3.jpg" target="_blank">
+  <img loading="lazy" src="./images/3.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>To prep for making a patch I started grinding the paint off and ended up finding a bunch of body filler so I kept grinding and grinding until all of the filler was gone.
+<div class="image">
+<a href="./images/7.jpg" target="_blank">
+  <img loading="lazy" src="./images/7.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>This wasn&rsquo;t a surprise for me since I knew the Jeep had been in some kind of minor front accident but I was surprised to see how far the filler went. The metal underneath wasn&rsquo;t actually bad, the fender just had a high spot about mid way up and two tiny dents so the filler was there to flatten it out.
+<div class="image">
+<a href="./images/8.jpg" target="_blank">
+  <img loading="lazy" src="./images/8.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Getting back to the task at hand I used my air saw to cut the lower corner off.
+<div class="image">
+<a href="./images/9.jpg" target="_blank">
+  <img loading="lazy" src="./images/9.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The reason why I opted to remove it.
+<div class="image">
+<a href="./images/10.jpg" target="_blank">
+  <img loading="lazy" src="./images/10.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>In terms of fixing it I started off by patching the inner piece.
+<div class="image">
+<a href="./images/11.jpg" target="_blank">
+  <img loading="lazy" src="./images/11.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Then I spent some time replicating the lower corner. This was actually a fun challenge and gave me a chance to really make use of my box brake.
+<div class="image">
+<a href="./images/12.jpg" target="_blank">
+  <img loading="lazy" src="./images/12.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Test fit with the front fascia to dial in it&rsquo;s position.
+<div class="image">
+<a href="./images/13.jpg" target="_blank">
+  <img loading="lazy" src="./images/13.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Tack welded.
+<div class="image">
+<a href="./images/14.jpg" target="_blank">
+  <img loading="lazy" src="./images/14.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welded and grinded.
+<div class="image">
+<a href="./images/15.jpg" target="_blank">
+  <img loading="lazy" src="./images/15.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I&rsquo;m very happy with how that came out.</p>
+<h2>
+  Deleting the Antenna
+  <a href="#deleting-the-antenna" id="deleting-the-antenna" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>I&rsquo;ve opted to delete my antenna because the OG mounting setup was rusted out and didn&rsquo;t survive being removed from the fender. One of my other vehicles (93 Civic) has a deleted antenna as well (it has a hidden one) so I plan on doing the same for the Jeep.</p>
+<p><div class="image">
+<a href="./images/16.jpg" target="_blank">
+  <img loading="lazy" src="./images/16.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>My welds didn&rsquo;t come out as great on this patch but they are solid and will work.
+<div class="image">
+<a href="./images/17.jpg" target="_blank">
+  <img loading="lazy" src="./images/17.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="./images/18.jpg" target="_blank">
+  <img loading="lazy" src="./images/18.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Replacing a Snapped Stud
+  <a href="#replacing-a-snapped-stud" id="replacing-a-snapped-stud" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>One final thing that bugged me about the fender was that one of the studs on the front had snapped years ago. The front fascia never had an issue and always felt secure but it was one of those things where I figured I may as well fix it while I&rsquo;m here.
+<div class="image">
+<a href="./images/19.jpg" target="_blank">
+  <img loading="lazy" src="./images/19.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>To fix it I grinded out the stud from the rear and then welded a new bolt with washer in place.
+<div class="image">
+<a href="./images/20.jpg" target="_blank">
+  <img loading="lazy" src="./images/20.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>It looks kinda silly in the back but it&rsquo;s solid.
+<div class="image">
+<a href="./images/21.jpg" target="_blank">
+  <img loading="lazy" src="./images/21.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Finishing It Up With Some Primer
+  <a href="#finishing-it-up-with-some-primer" id="finishing-it-up-with-some-primer" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>And of course I couldn&rsquo;t leave the fender bare so I gave it a couple fresh coats of epoxy front and back.</p>
+<p><div class="image">
+<a href="./images/22.jpg" target="_blank">
+  <img loading="lazy" src="./images/22.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="./images/23.jpg" target="_blank">
+  <img loading="lazy" src="./images/23.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Much better!
+<div class="image">
+<a href="./images/24.jpg" target="_blank">
+  <img loading="lazy" src="./images/24.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The fender looks and fits great.</p>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+  <script src="https://eddieabbondanz.io/js/lol.js"></script>
+  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+</body>
+
+</html>

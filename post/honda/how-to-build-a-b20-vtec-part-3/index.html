@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How to Build a B20 VTEC Part 3: Measuring Bearing Clearances</title>
+  
+  <meta name="description" content="My blog about my project cars and other contraptions">
+  
+  <meta name="author" content="Eddie Abbondanzio">
+  
+
+  
+  
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.79526dae8d29fab82bb520e28634f9db92f9ed4cda79daa0ddbf5508bedda33d.css" integrity="sha256-eVJtro0p&#43;rgrtSDihjT525L57Uzaedqg3b9VCL7doz0=" media="screen">
+
+  <link rel="stylesheet" href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css">
+
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
+</head>
+
+<body>
+  <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/series/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/series/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+  
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/series/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+  <main>
+    
+<article class="post" data-pagefind-meta="image:">
+  <h1 class="h1 mb2" data-pagefind-meta="title">
+    
+    How to Build a B20 VTEC Part 3: Measuring Bearing Clearances
+  </h1>
+
+  <div class="fr meta pb3">
+    
+    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/honda-info-and-diys" title="More Honda Info and DIYs posts">
+      <i class="fas fa-th-list"></i>
+      Honda Info and DIYs
+    </a>
+    
+
+    
+    <div class="date" title="Posted on Oct 13, 2025">
+      <i class="fas fa-calendar-day"></i>
+      <time>Oct 13, 2025</time>
+    </div>
+    
+  </div>
+
+  <div class="markdown-body" data-pagefind-body>
+    <p>Measuring bearing clearances isn&rsquo;t what I&rsquo;d call the most exciting step when it comes to building an engine but it&rsquo;s an important one that can catch issues that will dramatically shorten your engine&rsquo;s life. Simply put, bearing clearance is how much space exists between your crank journals and the main / rod bearings.</p>
+<p>Bearing clearance is important because too little clearance will result in not enough oil lubricating the bearings and that&rsquo;ll lead to premature engine failure such as spinning a bearing. On the flip side too much clearance can cause poor oil pressure, or worse issues like rod knock.</p>
+<p>Engine manufacturer&rsquo;s like Honda provide optimal clearance ranges (usually one for mains, one for rods) for each engine they make and when building a stock spec engine the goal would be to try and get the bearing clearances within those oem ranges. Given the B20V is a frankenstein of different motors slapped together and this one will be ran hard I&rsquo;ll be deviating by going slightly looser on my bearings.</p>
+<p>Before we get into setting clearances it&rsquo;s important to know how to measure them.</p>
+<h2>
+  Measuring Clearances
+  <a href="#measuring-clearances" id="measuring-clearances" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>The two main techniques for measuring bearing clearances are with plastigage or using a set of micrometers and a dial bore gauge. Plastigage is the more budget friendly option and it does work good but it&rsquo;s also less precise.</p>
+<p>When I first started building this motor I had planned on using plastigage but I recently learned you can buy used name brand micrometers for reasonable prices and decided to go that route.</p>
+<p>For micrometers and a dial bore gauge you&rsquo;ll need:</p>
+<ul>
+<li>1-2&quot; micrometer (crank rod journals, and rod big ends)</li>
+<li>2-3&quot; micrometer (crank main journals, and main caps)</li>
+<li>3-4&quot; micrometer (pistons and cylinder walls. More on this later)</li>
+<li>A ~1.5&quot;-4&quot; dial bore gauge**</li>
+</ul>
+<p>**Dial bore gauge ranges aren&rsquo;t as standardized as micrometers so try to find something that can do 1.7&quot; - 4&quot; at a minimum. I saw a lot of dial bore gauges that would do 2&quot; - 4&quot; or 2&quot; - 6&quot; but for the B20 you need to be able to measure sub 2&quot; measurements (crank rod journals) so those won&rsquo;t work.</p>
+<p>Some good brands to look into are <a href="https://www.garagejournal.com/forum/threads/quality-micrometer-brands.516436/" target="_blank" rel="noopener">Mitutoyo, or Starrett as they are basically the gold standard</a>. You can go cheaper on the dial bore gauge since you&rsquo;ll be zeroing it out with the micrometer but don&rsquo;t go too cheap.</p>
+<p>When buying used micrometers try to find ones that come with the parts necessary to calibrate it so you can ensure you&rsquo;re measurements are accurate.</p>
+<p>Here&rsquo;s what I bought:
+<div class="image">
+<a href="./images/micrometers.jpg" target="_blank">
+  <img loading="lazy" src="./images/micrometers.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Top left is a 1-2&quot; Mitutoyo 103-136, bottom right is a 2-3&quot; Mitutoyo 103-217, and bottom left is a 3-4&quot; Mitutoyo 103-218. I paid $200 for these in total.</p>
+<p><div class="image">
+<a href="./images/dial-bore.jpg" target="_blank">
+  <img loading="lazy" src="./images/dial-bore.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The dial bore gauge set is a 1.4&quot; - 6&quot; Fowler 72-646-400 that I bought for $170.</p>
+<h3>
+  Learning How to Use Them
+  <a href="#learning-how-to-use-them" id="learning-how-to-use-them" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h3><p>There&rsquo;s a lot of great tutorials out there on how to use micrometers and dial bore gauges. I particularly liked the following:</p>
+<ul>
+<li><a href="https://solutions.travers.com/metalworking-machining/measuring-inspection/how-to-read-a-micrometer" target="_blank" rel="noopener">How To Read A Micrometer</a></li>
+<li><a href="https://www.youtube.com/watch?v=q0-2ULbc7qw&amp;t=1s" target="_blank" rel="noopener">How to measure rod bearing oil clearance for ANY engine. Pontiac short block re-build, Part 3</a></li>
+<li><a href="https://www.youtube.com/watch?v=WEuedVJJgIA" target="_blank" rel="noopener">BEARING CLEARANCE - How to MEASURE and PREVENT engine damage</a></li>
+</ul>
+<h2>
+  Measuring The Main Bearings
+  <a href="#measuring-the-main-bearings" id="measuring-the-main-bearings" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>The OEM Honda B20 main bearing clearance specs are as follows:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Main</th>
+          <th>Clearance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>.0009&quot; - .0017&quot;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>.0009&quot; - .0017&quot;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>.0012&quot; - .0019&quot;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>.0009&quot; - .0017&quot;</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>.0009&quot; - .0017&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Source</strong>: 1997 - 2000 Honda CRV factory service manual page 2-3</p>
+<p>But for my build <a href="https://honda-tech.com/forums/forced-induction-16/bearing-clearance-choice-measurement-discussion-3129922/#post48543553" target="_blank" rel="noopener">I plan on targeting .0018&quot; - .0020&quot; for the mains</a>. This is slightly looser than what the factory recommends but the engine will see plenty of high RPM and also be pushing above stock power so I want them on the looser side.</p>
+<p>With the main bearings installed in the block (<a href="https://www.aclperformance.com.au/details/5M1959H" target="_blank" rel="noopener">I&rsquo;m using a set of ACL 5M1959H-STD main bearings</a>) and torqued down to spec I obtained the following measurements:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Main</th>
+          <th>Crank Journal Diameter</th>
+          <th>Bearing Clearance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>2.1649&quot;</td>
+          <td>.0018&quot;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>2.1648&quot;</td>
+          <td>.0019&quot;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>2.1645&quot;</td>
+          <td>.0018&quot;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>2.1648&quot;</td>
+          <td>.0018&quot;</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>2.1648&quot;</td>
+          <td>.0016&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<p>Overall I think that&rsquo;s just about perfect. I kinda wish main 5 was a little looser to match the other journals better but at the same time it may not be a bad thing to have main 5 a little tight. It&rsquo;s the furthest from the oil pump so maybe that&rsquo;ll help keep oil pressure high back there.</p>
+<h2>
+  Measuring the Rod Bearings
+  <a href="#measuring-the-rod-bearings" id="measuring-the-rod-bearings" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>For rod clearances the OEM B20 specs are .0008&quot; - .0015&quot; but I want somewhere around .0018&quot; - .0020&quot;. This is still in spec for the GSR (B18C1) as Honda allows .0013&quot; - .0020&quot; (page 3-5 of the 94-01 Integra FSM) so that feels perfectly reasonable.</p>
+<p>Just like the main bearings I&rsquo;ll be running ACL race bearings. Initially I had purchased a set of <a href="https://www.aclperformance.com.au/details/4B1946H" target="_blank" rel="noopener">ACL 4B1946H-STD</a> but ended up having to order another set of <a href="https://www.aclperformance.com.au/details/4B1946HX" target="_blank" rel="noopener">ACL 4B1946HX-STD</a> bearings afterwards because my clearances were too tight. The HX series bearings by ACL have an extra .001&quot; of oil clearance and you can swap a single half to add .0005&quot; of clearance if needed.</p>
+<p>Bearing clearances with the H series bearings:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Rod</th>
+          <th>Crank Journal Diameter</th>
+          <th>Bearing Clearance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1.7712&quot;</td>
+          <td>.00125&quot;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>1.7710&quot;</td>
+          <td>.0015&quot;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>1.7711&quot;</td>
+          <td>.00125&quot;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>1.7711&quot;</td>
+          <td>.00125&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<p>A little too tight, especially rod 3 and 4. Once I swapped one H half with a HX half I was able to increase my clearances to:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Rod</th>
+          <th>Crank Journal Diameter</th>
+          <th>Bearing Clearance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1.7712&quot;</td>
+          <td>.00175&quot;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>1.7710&quot;</td>
+          <td>.0020&quot;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>1.7711&quot;</td>
+          <td>.0020&quot;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>1.7711&quot;</td>
+          <td>.00175&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<p>Which is much better.</p>
+<p><strong>Side note</strong>: If you&rsquo;re wondering why rod 3 increased by .00075&quot; when the HX bearing half should have only added .0005&quot; it&rsquo;s because I measured the crank journal incorrectly when testing the H bearings and had over-estimated it&rsquo;s diameter so there was more clearance than expected.</p>
+<h2>
+  Summary
+  <a href="#summary" id="summary" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>All in all I think these bearing clearances look great. Now that some of the OEM bearing colors are discontinued it can be harder to perfect your clearances but it&rsquo;s still reasonable to get within the ideal range.</p>
+<p>The next part will be over P2W clearance and ring gaps. Stay tuned!</p>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+  <script src="https://eddieabbondanz.io/js/lol.js"></script>
+  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+</body>
+
+</html>
