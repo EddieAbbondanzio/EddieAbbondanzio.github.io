@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How to Build a B20 VTEC Part 4: Piston to Wall Clearance and Ring Gaps</title>
+  
+  <meta name="description" content="My blog about my project cars and other contraptions">
+  
+  <meta name="author" content="Eddie Abbondanzio">
+  
+
+  
+  
+  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.79526dae8d29fab82bb520e28634f9db92f9ed4cda79daa0ddbf5508bedda33d.css" integrity="sha256-eVJtro0p&#43;rgrtSDihjT525L57Uzaedqg3b9VCL7doz0=" media="screen">
+
+  <link rel="stylesheet" href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css">
+
+  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
+</head>
+
+<body>
+  <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/series/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/series/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+  
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/series/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+  <main>
+    
+<article class="post" data-pagefind-meta="image:">
+  <h1 class="h1 mb2" data-pagefind-meta="title">
+    
+    How to Build a B20 VTEC Part 4: Piston to Wall Clearance and Ring Gaps
+  </h1>
+
+  <div class="fr meta pb3">
+    
+    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/honda-info-and-diys" title="More Honda Info and DIYs posts">
+      <i class="fas fa-th-list"></i>
+      Honda Info and DIYs
+    </a>
+    
+
+    
+    <div class="date" title="Posted on Oct 18, 2025">
+      <i class="fas fa-calendar-day"></i>
+      <time>Oct 18, 2025</time>
+    </div>
+    
+  </div>
+
+  <div class="markdown-body" data-pagefind-body>
+    <p>With the bearing clearances dialed in, all that&rsquo;s left to prep for installing the crank, pistons, and rods in the block is double checking the piston to wall clearance and setting the ring gaps.</p>
+<h2>
+  Piston To Wall Clearance
+  <a href="#piston-to-wall-clearance" id="piston-to-wall-clearance" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Piston to wall clearance (aka p2w) is how much space there is between the piston and cylinder wall. P2W is important because too little clearance and your pistons could contact the cylinder wall when the engine is running which will ruin the cylinders, and too much clearance can result in piston slap when the engine is first started up that can lead to premature wear.</p>
+<p>Setting piston to wall clearance is difficult because the only way to change it is typically via machining and you need to have your pistons picked out before you can even measure it.</p>
+<p>But before buying your pistons you should either have a machine shop check the cylinders to ensure they are within the service range and are still in round, <a href="https://www.youtube.com/watch?v=VXiN1lNZ7TY" target="_blank" rel="noopener">or check them yourself using a 3 - 4&quot; micrometer and a dial bore gauge</a>. If your cylinders are out of round or beyond the factory allowed service range you&rsquo;ll need to have them bored out otherwise you&rsquo;ll never be able to properly set p2w.</p>
+<p>For a B20, the standard cylinder range is 84mm - 84.02mm (3.307&quot; - 3.308&quot;) with a service limit of 84.07mm (3.310&quot;). Source: 97-00 Honda CRV factory service manual page 2-3</p>
+<h2>
+  The Ideal P2W Depends On Your Build
+  <a href="#the-ideal-p2w-depends-on-your-build" id="the-ideal-p2w-depends-on-your-build" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>There&rsquo;s a few factors to keep in mind when figuring out what your ideal pw2 will be. Things like:</p>
+<ul>
+<li>Block material</li>
+<li>Piston type (ie cast or forged)</li>
+<li>Piston material (what alloy)</li>
+<li>Target power level</li>
+</ul>
+<p>But the best place to start would be the spec sheet for your pistons (assuming your not running OEM).
+<div class="image">
+<a href="./images/piston-specs.jpg" target="_blank">
+  <img loading="lazy" src="./images/piston-specs.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>For my pistons the manufacturer recommends a minimum p2w of .00276&quot; and from measuring my cylinders the machine shop I used targeted .0035&quot; which gives me a bit of a nice safety margin. (I didn&rsquo;t explicitly request a p2w clearance when they had the block)</p>
+<p>Good reads:</p>
+<ul>
+<li><a href="https://honda-tech.com/forums/all-motor-naturally-aspirated-44/forged-pistons-vs-cast-pistons-2721867/" target="_blank" rel="noopener">Forged pistons Vs. Cast pistons</a></li>
+<li><a href="https://honda-tech.com/forums/forced-induction-16/piston-wall-clearance-wiseco-pistons-1135995/" target="_blank" rel="noopener">Piston to Wall Clearance on Wiseco pistons</a></li>
+<li><a href="https://honda-tech.com/forums/forced-induction-16/how-much-piston-wall-clearance-600-700whp-823346/#post10814282" target="_blank" rel="noopener">How much Piston to Wall Clearance for 600-700whp</a></li>
+<li><a href="https://honda-tech.com/forums/all-motor-naturally-aspirated-44/wiseco-84-5mm-b20-piston-clearence-1860425/#post25798485" target="_blank" rel="noopener">wiseco 84.5mm b20 piston clearance??</a></li>
+</ul>
+<h2>
+  How to Measure P2W
+  <a href="#how-to-measure-p2w" id="how-to-measure-p2w" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Measuring piston to wall clearance is pretty similar to measuring bearing clearances. You&rsquo;ll need a 3 - 4&quot; micrometer and a dial bore gauge.</p>
+<p>There&rsquo;s lot of good videos out there like <a href="https://www.youtube.com/watch?v=oBmrGro0MhM" target="_blank" rel="noopener">this one</a>.</p>
+<p>Just be careful and make sure you measure your pistons in the correct spot. The spec sheet should explain where to measure from.</p>
+<p>My measurements were as follows:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Piston Diameter</th>
+          <th>P2W</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>3.32375&quot;</td>
+          <td>.003275&quot;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>3.32350&quot;</td>
+          <td>.003525&quot;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>3.32325&quot;</td>
+          <td>.003775&quot;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>3.32325&quot;</td>
+          <td>.003771&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<h2>
+  Piston Ring Gaps
+  <a href="#piston-ring-gaps" id="piston-ring-gaps" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Piston ring gap is how far apart each end of the piston ring are from each other where they meet. It&rsquo;s important to have just enough ring gap to prevent the ring ends from touching because when that happens the ring will warp and no longer hold compression.</p>
+<p>On the other hand too much ring gap will negatively impact cylinder compression but to be fair you have to run a lot of gap before it becomes non-negligible.</p>
+<p>Each piston has 3 rings. The top one is responsible for compression, the 2nd ring is responsible for helping with some compression but it&rsquo;s main focus is removing oil from the cylinder walls, and lastly the oil ring on the bottom focus on lubricating the cylinder walls.</p>
+<p>The top and 2nd ring gaps are the most important ones to get right.</p>
+<h2>
+  Optimal Ring Gaps
+  <a href="#optimal-ring-gaps" id="optimal-ring-gaps" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Just like bearing clearance, and p2w, the ideal range for ring gaps depends on your application.</p>
+<p>For an OEM B20 Honda recommends:</p>
+<ul>
+<li>.008&quot; - .012&quot; for the top ring</li>
+<li>.016&quot; - .024&quot; for the 2nd ring</li>
+<li>.008&quot; - .020&quot; for the oil ring</li>
+</ul>
+<p>Source: 97-00 Honda CRV factory service manual page 2-3</p>
+<p>Those gaps are a little tight for a custom motor though. Instead I opted to follow Supertech&rsquo;s guidelines for ring gap based on motor usage.</p>
+<p>Their approach is to multiply the cylinder bore in inches by a factor and that&rsquo;ll dictate your top ring gap.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Application</th>
+          <th>Factor</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Street Performance</td>
+          <td>.0045</td>
+      </tr>
+      <tr>
+          <td>Moderate Turbo</td>
+          <td>.0050</td>
+      </tr>
+      <tr>
+          <td>Drag / Oval</td>
+          <td>.0055</td>
+      </tr>
+      <tr>
+          <td>Turbo / Nitrous Race only</td>
+          <td>.0065</td>
+      </tr>
+  </tbody>
+</table>
+<p>Then you take the top ring gap and multiply it by 1.25 to determine the 2nd ring gap. (You want your 2nd ring to be larger than the first to prevent ring flutter)</p>
+<p>My motor is going to see a lot of autocross and some track days so to play it safe I&rsquo;ll go with the turbo factor instead of street performance. For my 84.5mm (3.3267&quot;) this would put my ring gaps at:</p>
+<ul>
+<li>Top: .0166&quot; (3.3267 * .0050)</li>
+<li>2nd: .020&quot; (.0166 * 1.25)</li>
+<li>Oil rings: 0.15&quot; (Min recommended value that doesn&rsquo;t change)</li>
+</ul>
+<p>Since I don&rsquo;t have a .0166&quot; feeler gauge I&rsquo;ll round up my top ring gap to .017&quot;.</p>
+<h2>
+  Setting Ring Gaps
+  <a href="#setting-ring-gaps" id="setting-ring-gaps" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>In order to set ring gap you&rsquo;ll need some tools.</p>
+<ul>
+<li>A piston ring filer (<a href="https://www.summitracing.com/parts/pro-66785" target="_blank" rel="noopener">Good budget option</a>)</li>
+<li>A set of feeler gauges. Straight ones work best for this (<a href="https://www.harborfreight.com/feeler-gauge-32-piece-63665.html" target="_blank" rel="noopener">Harbor Freight</a>)</li>
+<li>(Optional) A piston ring squaring tool (<a href="https://www.printables.com/model/1447489-honda-b20-845mm-piston-squaring-tool" target="_blank" rel="noopener">I designed a simple 3d printed one</a>)</li>
+</ul>
+<p>The piston ring squaring tool is optional because it&rsquo;s perfectly acceptable to push the ring down into the cylinder using the piston. I just wanted to try something a little more precise.</p>
+<p><a href="https://www.youtube.com/watch?v=Io5PFReqvYw" target="_blank" rel="noopener">Once you&rsquo;ve got all the tools it&rsquo;s just a game of inserting the ring into the cylinder, checking the gap, and filing more as needed until gaps are good</a></p>
+<p><div class="image">
+<a href="./images/piston-press.jpg" target="_blank">
+  <img loading="lazy" src="./images/piston-press.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="./images/checking-a-ring.jpg" target="_blank">
+  <img loading="lazy" src="./images/checking-a-ring.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="./images/ring-filer.jpg" target="_blank">
+  <img loading="lazy" src="./images/ring-filer.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Some misc tips I found helpful:</p>
+<ul>
+<li>Only file the ring on one side. I used the side with the up marking to make it easy to keep track of</li>
+<li>Aim for a slightly undersized gap at first then slow down as you get closer to your target. This helps prevent over shooting the gap.</li>
+<li>The second ring will file much faster than the top ring</li>
+</ul>
+<h2>
+  My Actual Ring Gaps Were Larger Than Planned
+  <a href="#my-actual-ring-gaps-were-larger-than-planned" id="my-actual-ring-gaps-were-larger-than-planned" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>I took my time and was able to get my ring gaps sorted out in about 1 hour of filing. I was able to dial in my top ring gaps without issue but both the 2nd ring and oil rings ended up having larger gaps than I had planned for. This wasn&rsquo;t because I made a mistake, but instead just how the rings came from the manufacturer (NPR).</p>
+<table>
+  <thead>
+      <tr>
+          <th>Cylinder</th>
+          <th>Top Ring</th>
+          <th>2nd Ring</th>
+          <th>Oil Ring A</th>
+          <th>Oil Ring B</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>.017&quot;</td>
+          <td>.025&quot;</td>
+          <td>.018&quot;</td>
+          <td>.018&quot;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>.017&quot;</td>
+          <td>.025&quot;</td>
+          <td>.028&quot;</td>
+          <td>.025&quot;</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>.017&quot;</td>
+          <td>.025&quot;</td>
+          <td>.019&quot;</td>
+          <td>.019&quot;</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>.017&quot;</td>
+          <td>.025&quot;</td>
+          <td>.017&quot;</td>
+          <td>.017&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<p>.025&quot; may sound like a large gap for the 2nd ring but I&rsquo;m not worried about it. I ran into a similar issue when I rebuilt my other B20 and have had zero problems with blow by or oil consumption so I&rsquo;m confident this will be fine.</p>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+  <script src="https://eddieabbondanz.io/js/lol.js"></script>
+  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+</body>
+
+</html>
