@@ -157,6 +157,42 @@
 <div class="py4 fr-tablet post-summary">
   
   
+
+  <div class="ml4-tablet mt3-phone">
+    <a class="mb1 fw500 tdn h4" href="https://eddieabbondanz.io/post/nomansblocks/18-04-08/">
+       
+      No Mans Blocks - 4/8/18
+    </a>
+
+    <div class="fr meta">
+      
+      <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/development" title="More Development posts">
+        <i class="fas fa-th-list"></i>
+        Development
+      </a>
+      
+
+      
+      <div class="date" title="Posted on Apr 8, 2018">
+        <i class="fas fa-calendar-day"></i>
+        <time>Apr 8, 2018</time>
+      </div>
+      
+    </div>
+
+    
+    <p class="mt2">
+       Building Up the Network Logic While this week may not have much to show for it has built a solid foundation for networking. I spent some time refactoring the pre-existing network logic to try to clean things up. I really didn&rsquo;t like how the NetServerManager and NetClientManager derived from a base class of NetManager that had a NetMessageProcessor component. It was gross having to call that and subscribe to it&rsquo;s message events. I also didn&rsquo;t care for how each message had it&rsquo;s own event. To try to curtail this redundancy I came up with the following solution.
+
+      <a class="db mt1" href="https://eddieabbondanz.io/post/nomansblocks/18-04-08/">Read more...</a>
+    </p>
+    
+
+  </div>
+</div>  
+<div class="py4 fr-tablet post-summary">
+  
+  
   <a class="fr jcc fs0" href="https://eddieabbondanz.io/post/honda/b-series-bolts/">
 
       <div class="thumbnail-container fc">
@@ -187,11 +223,14 @@
       
     </div>
 
+    
     <p class="mt2">
       I&rsquo;m in the middle of swapping a B20B into my 1993 civic, and I had to buy (just about) every bolt / nut on the engine and transmission since I was missing so many. I also had the pleasure of tracking down all this information from various forums and sources. To try and help any others who are partaking in a similar project I&rsquo;ve compiled a list of what I found below.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/honda/b-series-bolts/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -227,11 +266,14 @@
       
     </div>
 
+    
     <p class="mt2">
        Wrapping it up It&rsquo;s funny, you never realize how many things are missing until you try to finish up your project. I spent today going over the motor ensuring I had everything I needed for it. Turns out I was missing quite a few bolts, and some misc small things.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/civic/18-04-06/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -267,11 +309,14 @@
       
     </div>
 
+    
     <p class="mt2">
        I like projects And I&rsquo;m the kind of person that can&rsquo;t leave a car alone. My civic is a 1993 DX hatch that I picked up off a friend of a friend 3 years ago. When I first bought it, it was an automatic and 100% stock. Cut to today and it&rsquo;s totally different, it&rsquo;s gone through rust repair, a paint job, and currently another motor swap. If your interested in it&rsquo;s full history check out my build thread on D-Series.org. Currently however it looks like this:
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/civic/18-04-01/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -300,11 +345,14 @@
       
     </div>
 
+    
     <p class="mt2">
       Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&rsquo;s own set of methods for writing to it&rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&rsquo;ll need a way to differentiate between the running environments. Instead of wrapping all our Debug.Log() calls in preprocessor directives such as #IF UNITY_EDITOR we can write a simple logging class to handle it for us. While we&rsquo;re at it well add the ability to write log files since they can be quite useful.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/unity/debug-logging/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -333,11 +381,14 @@
       
     </div>
 
+    
     <p class="mt2">
        Stepping back into Networking These past few months I&rsquo;ve been on a tangent that wasn&rsquo;t exactly planned. Diving head first into networking code, and attempting to refactor the voxel engine to support it really burnt me out. During this break I&rsquo;ve been focusing on the core voxel engine itself. I decided to take the time to really spruce up the voxel engine and add in some much needed features. While I can&rsquo;t exactly remember every change some of the key ones are:
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/nomansblocks/18-03-31/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -373,11 +424,14 @@
       
     </div>
 
+    
     <p class="mt2">
       Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/unity/object-pool/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -413,12 +467,15 @@
       
     </div>
 
+    
     <p class="mt2">
       TL;DR Full algorithm is at the bottom. Classes for Block, Chunk, and MeshData are defined below the intro.
 This article goes over how to implement a greedy meshing algorithm for generating optimized meshes for vertex-colored voxels in Unity. The algorithm is derived from Robert O&rsquo;Leary, with a few alterations made.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/voxel/greedy-mesh/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -454,11 +511,14 @@ This article goes over how to implement a greedy meshing algorithm for generatin
       
     </div>
 
+    
     <p class="mt2">
       Now that I&rsquo;m back at college it&rsquo;s been hard to make progress on the Civic. I do have a slight update to drop as the hood is just about done now.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/civic/15-09-07/">Read more...</a>
     </p>
+    
+
   </div>
 </div>  
 <div class="py4 fr-tablet post-summary">
@@ -494,51 +554,14 @@ This article goes over how to implement a greedy meshing algorithm for generatin
       
     </div>
 
+    
     <p class="mt2">
       I&rsquo;ve been quite busy working on the Civic in the past month. I&rsquo;m verfy excited to shared the journey I&rsquo;m embarking on, and can&rsquo;t wait to see how the finished product looks.
 
       <a class="db mt1" href="https://eddieabbondanz.io/post/civic/15-08-22/">Read more...</a>
     </p>
-  </div>
-</div>  
-<div class="py4 fr-tablet post-summary">
-  
-  
-  <a class="fr jcc fs0" href="https://eddieabbondanz.io/post/civic/15-07-03/">
+    
 
-      <div class="thumbnail-container fc">
-        <img class="thumbnail aic" src="https://eddieabbondanz.io/post/civic/15-07-03/images/thumbnail.jpg" />
-      </div>
-  </a>
-  
-
-  <div class="ml4-tablet mt3-phone">
-    <a class="mb1 fw500 tdn h4" href="https://eddieabbondanz.io/post/civic/15-07-03/">
-       
-      Civic Build - 07/03/15
-    </a>
-
-    <div class="fr meta">
-      
-      <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/93-eg-hatch-build" title="More 93 EG Hatch Build posts">
-        <i class="fas fa-th-list"></i>
-        93 EG Hatch Build
-      </a>
-      
-
-      
-      <div class="date" title="Posted on Jul 15, 2015">
-        <i class="fas fa-calendar-day"></i>
-        <time>Jul 15, 2015</time>
-      </div>
-      
-    </div>
-
-    <p class="mt2">
-      I don&rsquo;t know why, but I&rsquo;ve always been a fan of Honda. I just love the simplicity, and elegant styling. Sure they may not be the most luxurious cars out there but they are reliable and that&rsquo;s a fact.
-
-      <a class="db mt1" href="https://eddieabbondanz.io/post/civic/15-07-03/">Read more...</a>
-    </p>
   </div>
 </div>  
 
