@@ -1,28 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail</title>
-  
-  <meta name="description" content="My blog about my project cars and other contraptions">
-  
-  <meta name="author" content="Eddie Abbondanzio">
-  
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.e8401ce051b85ccf39fd80d6c1466eb941846856f3b81512c7a61c44855a7e2c.css"
+      integrity="sha256-6EAc4FG4XM85/YDWwUZuuUGEaFbzuBUSx6YcRIVafiw="
+      media="screen"
+    />
 
-  
-  
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.79526dae8d29fab82bb520e28634f9db92f9ed4cda79daa0ddbf5508bedda33d.css" integrity="sha256-eVJtro0p&#43;rgrtSDihjT525L57Uzaedqg3b9VCL7doz0=" media="screen">
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
 
-  <link rel="stylesheet" href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css">
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
-</head>
-
-<body>
-  <nav class="navbar fr jcsb aic mt2-phone">
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
     <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
@@ -49,21 +62,21 @@
           <a href="https://eddieabbondanz.io/post/"> All </a>
 
           
-          <a href="https://eddieabbondanz.io/series/development">Development</a>
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
           
-          <a href="https://eddieabbondanz.io/series/ls-xj-build">LS XJ Build</a>
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
           
-          <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
           
-          <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
           
-          <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
           
-          <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
           
-          <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
           
-          <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
           
         </div>
       </div>
@@ -97,7 +110,7 @@
   </a>
 </nav>
 
-  
+    
 <div id="hamburger-menu" class="hamburger-menu">
    
 
@@ -110,21 +123,21 @@
       <a href="https://eddieabbondanz.io/post/"> All </a>
 
       
-      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
       
-      <a href="https://eddieabbondanz.io/series/ls-xj-build"> LS XJ Build </a>
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
       
-      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
       
-      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
       
-      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
       
-      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
       
-      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
       
-      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
       
     </div>
   </div>
@@ -151,32 +164,47 @@
   </div>
 </div>
 
-  <main>
-    
-<article class="post" data-pagefind-meta="image:">
-  <h1 class="h1 mb2" data-pagefind-meta="title">
-    
-    Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail
-  </h1>
 
-  <div class="fr meta pb3">
-    
-    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/ls-xj-build" title="More LS XJ Build posts">
-      <i class="fas fa-th-list"></i>
-      LS XJ Build
-    </a>
-    
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      Rust Repair Part 3: Déjà Vu Replacing the Driver Frame Rail
+    </h1>
 
-    
-    <div class="date" title="Posted on Nov 19, 2020">
-      <i class="fas fa-calendar-day"></i>
-      <time>Nov 19, 2020</time>
+    <div class="fr meta pb3">
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/categories/ls-xj-build"
+          title="More LS XJ Build posts"
+        >
+          <i class="fas fa-folder"></i>
+          LS XJ Build
+        </a>
+      
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/series/rust-repair"
+          title="More Rust Repair posts"
+        >
+          <i class="fas fa-th-list"></i>
+          Rust Repair
+        </a>
+      
+
+      
+        <div class="date" title="Posted on Nov 19, 2020">
+          <i class="fas fa-calendar-day"></i>
+          <time>Nov 19, 2020</time>
+        </div>
+      
     </div>
-    
-  </div>
 
-  <div class="markdown-body" data-pagefind-body>
-    <p>The driver side frame rail was in far worse shape than the passenger side on my XJ. I opted to replace the passenger side first since there&rsquo;s a little less going on on that side. On the driver side the fuel neck hoses pass through the frame, and all of the fuel lines, brake lines, and vacuum lines run parallel down the frame rail.</p>
+    <div class="markdown-body" data-pagefind-body>
+      <p>The driver side frame rail was in far worse shape than the passenger side on my XJ. I opted to replace the passenger side first since there&rsquo;s a little less going on on that side. On the driver side the fuel neck hoses pass through the frame, and all of the fuel lines, brake lines, and vacuum lines run parallel down the frame rail.</p>
 <p>I figured once I had a little experience under my belt, the driver side would be a lot easier to manage.</p>
 <p>To prepare, I began by drilling out all of the spot welds holding the driver side frame rail in place, and then chopped out a good portion of the rear floor. This was surprisingly easy to do now that I knew where every spot weld was.
 <div class="image">
@@ -344,16 +372,16 @@ The half circle is the brace I made for the seat pivot bracket earlier on. To en
 <p>My workstation. Most of the fabrication was done with me kneeling on the floor and working on the ground.</p>
 <p><a href="https://eddieabbondanz.io/post/ls-xj-build/rust-repair-part-4/">Continue on to Part 4</a></p>
 
-  </div>
-</article>
+    </div>
+  </article>
 
-  </main>
+    </main>
 
-  <footer>
+    <footer>
   <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
 </footer>
-  <script src="https://eddieabbondanz.io/js/lol.js"></script>
-  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
 
 <script>
@@ -422,6 +450,5 @@ The half circle is the brace I made for the seat pivot bracket earlier on. To en
 
   }
 </script>
-</body>
-
+  </body>
 </html>

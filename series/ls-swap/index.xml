@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XJ LS Swap on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/series/ls-swap/</link>
+    <description>Recent content in XJ LS Swap on Eddie Abbondanzio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/series/ls-swap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LS Swap Part 2: Converting a NP241C Transfer Case For the XJ With a SYE</title>
+      <link>https://eddieabbondanz.io/post/ls-xj-build/ls-swap-part-2-transfer-case/</link>
+      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/ls-xj-build/ls-swap-part-2-transfer-case/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s several options for transfer cases when LS swapping an XJ. Two of the more popular options are running the stock NP231 / NP242 with an adapter so it&amp;rsquo;ll mate up to the GM transmission or use a GM transfer case such as the NP241 that can be adapted to work with the XJ&amp;rsquo;s driveshafts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LS Swap Part 1: A New Heart for the XJ</title>
+      <link>https://eddieabbondanz.io/post/ls-xj-build/ls-swap-part-1/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/ls-xj-build/ls-swap-part-1/</guid>
+      <description>&lt;p&gt;For the past year I&amp;rsquo;ve been daydreaming about a 6.0 LQ4 + 4L60E build but after seeing the prices of LQ4s I (the 6.0 tax is real) I decided to go with it&amp;rsquo;s little brother the 5.3 LM7.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

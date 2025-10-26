@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How to Build a B20V on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/series/how-to-build-a-b20v/</link>
+    <description>Recent content in How to Build a B20V on Eddie Abbondanzio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/series/how-to-build-a-b20v/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Build a B20 VTEC Part 4: Piston to Wall Clearance and Ring Gaps</title>
+      <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-4/</link>
+      <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-4/</guid>
+      <description>&lt;p&gt;With the bearing clearances dialed in, all that&amp;rsquo;s left to prep for installing the crank, pistons, and rods in the block is double checking the piston to wall clearance and setting the ring gaps.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Build a B20 VTEC Part 3: Measuring Bearing Clearances</title>
+      <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-3/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-3/</guid>
+      <description>&lt;p&gt;Measuring bearing clearances isn&amp;rsquo;t what I&amp;rsquo;d call the most exciting step when it comes to building an engine but it&amp;rsquo;s an important one that can catch issues that will dramatically shorten your engine&amp;rsquo;s life. Simply put, bearing clearance is how much space exists between your crank journals and the main / rod bearings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Build a B20 VTEC Part 2: Collecting All the Parts</title>
+      <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-2/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-2/</guid>
+      <description>&lt;p&gt;In order to hit my power goals of 200 - 225whp, the B20V I&amp;rsquo;m building will need some mods to get there. Originally my block was a high compression B20B that had &lt;a href=&#34;https://eddieabbondanz.io/post/honda/low-comp-or-high-comp-b20b/&#34;&gt;the better PHK pistons&lt;/a&gt; but the cylinders were out of round and had to be bored 0.5mm over (not to mention 1 piston was cracked) so I can&amp;rsquo;t use the stock internals.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Build a B20 VTEC Part 1: Planning Your Goals and Budget</title>
+      <link>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-1/</link>
+      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/honda/how-to-build-a-b20-vtec-part-1/</guid>
+      <description>&lt;p&gt;Building a B20 VTEC (aka B20V, aka CRVTEC) isn&amp;rsquo;t much more difficult than building a normal B20 but it can be daunting to figure out what you&amp;rsquo;ll need for parts with so many different options out there. You can do anything from slapping a VTEC head on a stock B20 block and sending it, to going all out with high comp pistons, big cams, and a bunch of headwork.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

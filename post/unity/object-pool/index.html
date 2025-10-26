@@ -1,28 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Object Pooling in Unity</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Object Pooling in Unity</title>
-  
-  <meta name="description" content="My blog about my project cars and other contraptions">
-  
-  <meta name="author" content="Eddie Abbondanzio">
-  
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.e8401ce051b85ccf39fd80d6c1466eb941846856f3b81512c7a61c44855a7e2c.css"
+      integrity="sha256-6EAc4FG4XM85/YDWwUZuuUGEaFbzuBUSx6YcRIVafiw="
+      media="screen"
+    />
 
-  
-  
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.79526dae8d29fab82bb520e28634f9db92f9ed4cda79daa0ddbf5508bedda33d.css" integrity="sha256-eVJtro0p&#43;rgrtSDihjT525L57Uzaedqg3b9VCL7doz0=" media="screen">
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
 
-  <link rel="stylesheet" href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css">
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
-</head>
-
-<body>
-  <nav class="navbar fr jcsb aic mt2-phone">
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
     <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
@@ -49,21 +62,21 @@
           <a href="https://eddieabbondanz.io/post/"> All </a>
 
           
-          <a href="https://eddieabbondanz.io/series/development">Development</a>
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
           
-          <a href="https://eddieabbondanz.io/series/ls-xj-build">LS XJ Build</a>
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
           
-          <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
           
-          <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
           
-          <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
           
-          <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
           
-          <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
           
-          <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
           
         </div>
       </div>
@@ -97,7 +110,7 @@
   </a>
 </nav>
 
-  
+    
 <div id="hamburger-menu" class="hamburger-menu">
    
 
@@ -110,21 +123,21 @@
       <a href="https://eddieabbondanz.io/post/"> All </a>
 
       
-      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
       
-      <a href="https://eddieabbondanz.io/series/ls-xj-build"> LS XJ Build </a>
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
       
-      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
       
-      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
       
-      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
       
-      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
       
-      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
       
-      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
       
     </div>
   </div>
@@ -151,32 +164,38 @@
   </div>
 </div>
 
-  <main>
-    
-<article class="post" data-pagefind-meta="image:">
-  <h1 class="h1 mb2" data-pagefind-meta="title">
-    
-    Object Pooling in Unity
-  </h1>
 
-  <div class="fr meta pb3">
-    
-    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/development" title="More Development posts">
-      <i class="fas fa-th-list"></i>
-      Development
-    </a>
-    
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      Object Pooling in Unity
+    </h1>
 
-    
-    <div class="date" title="Posted on Mar 30, 2018">
-      <i class="fas fa-calendar-day"></i>
-      <time>Mar 30, 2018</time>
+    <div class="fr meta pb3">
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/categories/development"
+          title="More Development posts"
+        >
+          <i class="fas fa-folder"></i>
+          Development
+        </a>
+      
+      
+
+      
+        <div class="date" title="Posted on Mar 30, 2018">
+          <i class="fas fa-calendar-day"></i>
+          <time>Mar 30, 2018</time>
+        </div>
+      
     </div>
-    
-  </div>
 
-  <div class="markdown-body" data-pagefind-body>
-    <p>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.</p>
+    <div class="markdown-body" data-pagefind-body>
+      <p>Creating new gameobjects during runtime can be a costly operation. Multiple this action by 10 or more times in a single frame and you&rsquo;ll notice a slight hiccup in FPS. One option to counter this is by taking advantage of object pooling. Object pooling is when a collection of inactive gameobjects is kept on standby. When the game needs a new object it can call upon the pool to retrieve an already instantiated instance. Then when finished, the object can be returned back to the pool for later use.</p>
 <p>To prepare my project for some of the new features coming up I decided to finally implement a better system for handling object pools. This implementation doesn&rsquo;t use a data structure to maintain references of the objects in the pools. Instead it uses the sibling index of Unity&rsquo;s transforms to keep all of the in use objects at the top, and object sitting in standby at the bottom. Now we only need an integer that tracks the index of the next free object.</p>
 <p>To get started we&rsquo;ll need a way to differentiate between our objects. Create a new enum and add some values to represent the prefabs you wish to pool. I&rsquo;ve added the PrefabType cube since in this tutorial we&rsquo;ll be building a cube object pool.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">/// &lt;summary&gt;</span>
@@ -436,16 +455,16 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>You&rsquo;ll notice that Unity doesn&rsquo;t like to add all the objects right away in Editor Mode. While the pool may not appear to be at it&rsquo;s correct size you can trigger updates in the Editor by clicking objects in the Hierarchy tab. This pool could use some expanding upon, but is atleast a good base to build off of.</p>
 
-  </div>
-</article>
+    </div>
+  </article>
 
-  </main>
+    </main>
 
-  <footer>
+    <footer>
   <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
 </footer>
-  <script src="https://eddieabbondanz.io/js/lol.js"></script>
-  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
 
 <script>
@@ -514,6 +533,5 @@
 
   }
 </script>
-</body>
-
+  </body>
 </html>

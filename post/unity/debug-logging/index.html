@@ -1,28 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Logging to Unity or Console</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Logging to Unity or Console</title>
-  
-  <meta name="description" content="My blog about my project cars and other contraptions">
-  
-  <meta name="author" content="Eddie Abbondanzio">
-  
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.e8401ce051b85ccf39fd80d6c1466eb941846856f3b81512c7a61c44855a7e2c.css"
+      integrity="sha256-6EAc4FG4XM85/YDWwUZuuUGEaFbzuBUSx6YcRIVafiw="
+      media="screen"
+    />
 
-  
-  
-  <link rel="stylesheet" href="https://eddieabbondanz.io/sass/index.min.79526dae8d29fab82bb520e28634f9db92f9ed4cda79daa0ddbf5508bedda33d.css" integrity="sha256-eVJtro0p&#43;rgrtSDihjT525L57Uzaedqg3b9VCL7doz0=" media="screen">
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
 
-  <link rel="stylesheet" href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css">
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
 
-  <script data-goatcounter="https://tgpo.eddieabbondanz.io/count" async src="//tgpo.eddieabbondanz.io/count.js"></script>
-</head>
-
-<body>
-  <nav class="navbar fr jcsb aic mt2-phone">
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
   <div class="title h100 fr aic">
     <a href="https://eddieabbondanz.io/">
       <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
@@ -49,21 +62,21 @@
           <a href="https://eddieabbondanz.io/post/"> All </a>
 
           
-          <a href="https://eddieabbondanz.io/series/development">Development</a>
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
           
-          <a href="https://eddieabbondanz.io/series/ls-xj-build">LS XJ Build</a>
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
           
-          <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
           
-          <a href="https://eddieabbondanz.io/series/93-eg-hatch-build">93 EG Hatch Build</a>
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
           
-          <a href="https://eddieabbondanz.io/series/88-integra-build">88 Integra Build</a>
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
           
-          <a href="https://eddieabbondanz.io/series/honda-info-and-diys">Honda Info and DIYs</a>
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
           
-          <a href="https://eddieabbondanz.io/series/xj-info-and-diys">XJ Info and DIYs</a>
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
           
-          <a href="https://eddieabbondanz.io/series/shop-and-tools">Shop and Tools</a>
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
           
         </div>
       </div>
@@ -97,7 +110,7 @@
   </a>
 </nav>
 
-  
+    
 <div id="hamburger-menu" class="hamburger-menu">
    
 
@@ -110,21 +123,21 @@
       <a href="https://eddieabbondanz.io/post/"> All </a>
 
       
-      <a href="https://eddieabbondanz.io/series/development"> Development </a>
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
       
-      <a href="https://eddieabbondanz.io/series/ls-xj-build"> LS XJ Build </a>
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
       
-      <a href="https://eddieabbondanz.io/series/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
       
-      <a href="https://eddieabbondanz.io/series/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
       
-      <a href="https://eddieabbondanz.io/series/88-integra-build"> 88 Integra Build </a>
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
       
-      <a href="https://eddieabbondanz.io/series/honda-info-and-diys"> Honda Info and DIYs </a>
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
       
-      <a href="https://eddieabbondanz.io/series/xj-info-and-diys"> XJ Info and DIYs </a>
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
       
-      <a href="https://eddieabbondanz.io/series/shop-and-tools"> Shop and Tools </a>
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
       
     </div>
   </div>
@@ -151,32 +164,38 @@
   </div>
 </div>
 
-  <main>
-    
-<article class="post" data-pagefind-meta="image:">
-  <h1 class="h1 mb2" data-pagefind-meta="title">
-    
-    Logging to Unity or Console
-  </h1>
 
-  <div class="fr meta pb3">
-    
-    <a class="mr1ch tdn" href="https://eddieabbondanz.io/series/development" title="More Development posts">
-      <i class="fas fa-th-list"></i>
-      Development
-    </a>
-    
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      Logging to Unity or Console
+    </h1>
 
-    
-    <div class="date" title="Posted on Mar 31, 2018">
-      <i class="fas fa-calendar-day"></i>
-      <time>Mar 31, 2018</time>
+    <div class="fr meta pb3">
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/categories/development"
+          title="More Development posts"
+        >
+          <i class="fas fa-folder"></i>
+          Development
+        </a>
+      
+      
+
+      
+        <div class="date" title="Posted on Mar 31, 2018">
+          <i class="fas fa-calendar-day"></i>
+          <time>Mar 31, 2018</time>
+        </div>
+      
     </div>
-    
-  </div>
 
-  <div class="markdown-body" data-pagefind-body>
-    <p>Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&rsquo;s own set of methods for writing to it&rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&rsquo;ll need a way to differentiate between the running environments. Instead of wrapping all our Debug.Log() calls in preprocessor directives such as #IF UNITY_EDITOR we can write a simple logging class to handle it for us. While we&rsquo;re at it well add the ability to write log files since they can be quite useful.</p>
+    <div class="markdown-body" data-pagefind-body>
+      <p>Sometimes we want code that can run outside of Unity and that can make things tricky when it comes to writing text to console. Unity has it&rsquo;s own set of methods for writing to it&rsquo;s command console via the Debug class with the most commonly used one being Debug.Log(). However in the event you want to create a library of code that can be run within Unity or in the command console (say a game server for example) you&rsquo;ll need a way to differentiate between the running environments. Instead of wrapping all our Debug.Log() calls in preprocessor directives such as #IF UNITY_EDITOR we can write a simple logging class to handle it for us. While we&rsquo;re at it well add the ability to write log files since they can be quite useful.</p>
 <p>Before we go ahead and dive into creating the new logger we&rsquo;ll need to add a few helpers first.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> LogLevel : <span style="color:#66d9ef">byte</span> {
 </span></span><span style="display:flex;"><span>    None = <span style="color:#ae81ff">0</span>,
@@ -461,16 +480,16 @@ any message that has a level of verbose from being displayed. Verbose messages w
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">#endif</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
-  </div>
-</article>
+    </div>
+  </article>
 
-  </main>
+    </main>
 
-  <footer>
+    <footer>
   <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
 </footer>
-  <script src="https://eddieabbondanz.io/js/lol.js"></script>
-  <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
 
 <script>
@@ -539,6 +558,5 @@ any message that has a level of verbose from being displayed. Verbose messages w
 
   }
 </script>
-</body>
-
+  </body>
 </html>

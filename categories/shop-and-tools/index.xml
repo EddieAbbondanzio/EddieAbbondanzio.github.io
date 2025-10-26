@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shop and Tools on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/categories/shop-and-tools/</link>
+    <description>Recent content in Shop and Tools on Eddie Abbondanzio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/categories/shop-and-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Get Your Prusa i3 MK3.5S to Pass Fan Calibration</title>
+      <link>https://eddieabbondanz.io/post/3d-printing/mk3.5s-fan-calibration/</link>
+      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/3d-printing/mk3.5s-fan-calibration/</guid>
+      <description>The Prusa MK3.5S is a great printer but it&amp;rsquo;s definitely picky about it&amp;rsquo;s fans. I figured I&amp;rsquo;d write up some of the tricks I learned while tuning mine.</description>
+    </item>
+    <item>
+      <title>How I Built My Chassis Table</title>
+      <link>https://eddieabbondanz.io/post/tools/diy-chassis-table/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/tools/diy-chassis-table/</guid>
+      <description>&lt;p&gt;I recently built a chassis table for [the XJ I&amp;rsquo;m restoring]({{ categoryref &amp;ldquo;LS XJ Build&amp;rdquo; }}) and figured I&amp;rsquo;d do a brief writeup. I&amp;rsquo;ve never built a chassis table before and from researching them online I quickly learned there&amp;rsquo;s no one size fits all solution.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Harbor Freight 30-5 Cart Lid Lock Delete Mod</title>
+      <link>https://eddieabbondanz.io/post/tools/hf-30-5-lid-lock-delete-mod/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/tools/hf-30-5-lid-lock-delete-mod/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t use the locks on my HF 5 drawer carts and wanted to free up some extra space so I decided to delete them. This was a fairly easy mod to do since the parts are held in by small rivets that can be drilled out.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Replacements Bins for the HF 15 and 20 Bin Storage Cases</title>
+      <link>https://eddieabbondanz.io/post/tools/hf-15-20-storage-bin-case-replacement-bins/</link>
+      <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/tools/hf-15-20-storage-bin-case-replacement-bins/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve got a growing collection of nuts and bolts and started using the &lt;a href=&#34;https://www.harborfreight.com/20-bin-medium-portable-parts-storage-case-93928.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;20 bin storage cases (SKU: 93928)&lt;/a&gt; that Harbor Freight sells to keep them all organized.&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/stack.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/stack.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;The bins work great for all my larger hardware such as some of my Honda bolts:&#xA;&lt;div class=&#34;image&#34;&gt;&#xA;&lt;a href=&#34;./images/honda-bolts.jpg&#34; target=&#34;_blank&#34;&gt;&#xA;  &lt;img loading=&#34;lazy&#34; src=&#34;./images/honda-bolts.jpg&#34; alt=&#34;&#34; title=&#34;&#34; /&gt;&#xA;&lt;/a&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building My Ultimate Mig Cart</title>
+      <link>https://eddieabbondanz.io/post/tools/mig-cart/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/tools/mig-cart/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve had my OG mig welder for about 8 years now. It&amp;rsquo;s just a little Lincoln Power Mig 140c but the thing has been an absolute unit for only being a 110v welder. I&amp;rsquo;ve pushed it well beyond it&amp;rsquo;s 20% duty cycle many times now and never once hit thermal throttling. And while it&amp;rsquo;s only rated for up to 1/8&amp;quot; steel, I&amp;rsquo;ve managed to weld up to 3/16&amp;quot; on occasion.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Beefing up a Budget Bead Roller</title>
+      <link>https://eddieabbondanz.io/post/tools/bead-roller/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/tools/bead-roller/</guid>
+      <description>&lt;p&gt;Something I&amp;rsquo;ve been wanting for a long time is a bead roller so I can make my patch panels look more authentic.&lt;/p&gt;&#xA;&lt;p&gt;But I always had my standards set really high and thought I needed a high end motorized bead roller that can do up to 36&amp;quot;. I finally came to my senses and realized a budget 18&amp;quot; unit would be far more than sufficient for my needs given I&amp;rsquo;m usually making small patches.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
