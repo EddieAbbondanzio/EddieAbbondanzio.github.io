@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rust Repair Part 19: Salvaging What I Can of the Driver Side</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
+
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.88a71dbb50cbcf901310925187b3cf90739d2d25c21a0e944e088b7d7fcb5226.css"
+      integrity="sha256-iKcdu1DLz5ATEJJRh7PPkHOdLSXCGg6UTgiLfX/LUiY="
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
+
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+    
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      Rust Repair Part 19: Salvaging What I Can of the Driver Side
+    </h1>
+
+    <div class="fr meta pb3">
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/categories/ls-xj-build"
+          title="More LS XJ Build posts"
+        >
+          <i class="fas fa-folder"></i>
+          LS XJ Build
+        </a>
+      
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/series/unibody-rust-repair"
+          title="More Unibody Rust Repair posts"
+        >
+          <i class="fas fa-th-list"></i>
+          Unibody Rust Repair
+        </a>
+      
+
+      
+        <div class="date" title="Posted on May 15, 2023">
+          <i class="fas fa-calendar-day"></i>
+          <time>May 15, 2023</time>
+        </div>
+      
+    </div>
+
+    <div class="markdown-body" data-pagefind-body>
+      <p>There&rsquo;s a lot of rust on the driver side of my XJ, but it&rsquo;s not as bad as the passenger side used to be. Back when I first began on phase 2 of the rust repair, I purposely started on the passenger side as I thought it&rsquo;d be the easier of the two sides, but it turns out that wasn&rsquo;t the case.
+<div class="image">
+<a href="images/1.jpg" target="_blank">
+  <img loading="lazy" src="images/1.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Underneath the paint on the rocker is a bunch of rust. It hasn&rsquo;t fully taken over the entire rocker yet, but it&rsquo;s definitely made itself at home in all of the seams.
+<div class="image">
+<a href="images/2.jpg" target="_blank">
+  <img loading="lazy" src="images/2.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The first piece I removed was the floor brace below where the rear seat goes. The hidden bolt on the right was so stuck I wasn&rsquo;t able to remove it even after soaking it in PB blaster.
+<div class="image">
+<a href="images/3.jpg" target="_blank">
+  <img loading="lazy" src="images/3.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I also remembered to weld a brace on the B pillar <em>before</em> cutting out the rocker panel this time. I took some measurements of the pillars position so I could double check my work later on.
+<div class="image">
+<a href="images/4.jpg" target="_blank">
+  <img loading="lazy" src="images/4.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The backside of the inner rocker doesn&rsquo;t look great. Lots of rust creeping out from all the holes.
+<div class="image">
+<a href="images/5.jpg" target="_blank">
+  <img loading="lazy" src="images/5.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Out of curiosity I cut a chunk of the outer rocker off so I could peek at the inside.
+<div class="image">
+<a href="images/6.jpg" target="_blank">
+  <img loading="lazy" src="images/6.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Not too terrible. The metal is pretty rusted but still solid.</p>
+<p>You can see the seam where I welded my new outer rockers on several years ago.
+<div class="image">
+<a href="images/7.jpg" target="_blank">
+  <img loading="lazy" src="images/7.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>With a few more cuts via the angle grinder the rest of the rocker was removed.
+<div class="image">
+<a href="images/8.jpg" target="_blank">
+  <img loading="lazy" src="images/8.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>More remnants of my beginner welds from years ago lol.
+<div class="image">
+<a href="images/9.jpg" target="_blank">
+  <img loading="lazy" src="images/9.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Starting With the A Pillar
+  <a href="#starting-with-the-a-pillar" id="starting-with-the-a-pillar" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>The hard part about replacing the inner rockers is that if the inner rocker rusted out, there&rsquo;s a good chance the portions of the body that touch the inner rocker are also gonna be rusted out. In my case this meant I had to replace part of the lower A pillar, and also the corner of the rear wheel well before I could weld in the new inner rocker.</p>
+<p>Since the A pillar was the easier of the two, I decided to start with that.</p>
+<p><div class="image">
+<a href="images/10.jpg" target="_blank">
+  <img loading="lazy" src="images/10.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Cutting out part of the floor makes it easier to work on the backside of the pillar.
+<div class="image">
+<a href="images/11.jpg" target="_blank">
+  <img loading="lazy" src="images/11.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Since the pillar on this side wasn&rsquo;t nearly as bad as the passenger side I figured I could sandblast the metal since I&rsquo;d be keeping most of it.
+<div class="image">
+<a href="images/12.jpg" target="_blank">
+  <img loading="lazy" src="images/12.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>After that I welded in a new lower patch.
+<div class="image">
+<a href="images/14.jpg" target="_blank">
+  <img loading="lazy" src="images/14.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/15.jpg" target="_blank">
+  <img loading="lazy" src="images/15.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>It took me 3 tries to make the patch. The first one had the upper bends too shallow, the second one was just right measurement wise but I accidentally bent it backwards so it would have fit the passenger side. The third one (left most in the picture) ended up being perfect.
+<div class="image">
+<a href="images/13.jpg" target="_blank">
+  <img loading="lazy" src="images/13.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Then the metal that was too rusty to salvage was cut off so it could be replaced.
+<div class="image">
+<a href="images/16.jpg" target="_blank">
+  <img loading="lazy" src="images/16.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/17.jpg" target="_blank">
+  <img loading="lazy" src="images/17.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>My metal brake is tuned pretty tight right now so the bends are crisper than the OEM ones but I&rsquo;m not too concerned about matching the OEM design since it&rsquo;ll be hidden behind the doors.
+<div class="image">
+<a href="images/18.jpg" target="_blank">
+  <img loading="lazy" src="images/18.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>One last patch was made to replace the metal in front of the pillar.
+<div class="image">
+<a href="images/19.jpg" target="_blank">
+  <img loading="lazy" src="images/19.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/20.jpg" target="_blank">
+  <img loading="lazy" src="images/20.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>And just like that, the A pillar was all taken care of. This ended up being significantly less work than the A pillar on the passenger side.
+<div class="image">
+<a href="images/21.jpg" target="_blank">
+  <img loading="lazy" src="images/21.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Tearing Into the Rear Quarter
+  <a href="#tearing-into-the-rear-quarter" id="tearing-into-the-rear-quarter" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>I ended up getting a little sidetracked at this point in the project. In order to get access to this end of the rocker panel I needed to remove the dog leg portion of the rear quarter, and also the inner wheel well. But it felt silly to cut part of the quarter panel skin off since I needed to remove all of it.</p>
+<p>I figured my best bet would be to pause on the rocker and take care of the quarter panel because by the time I finished that, I&rsquo;d have already removed all the metal in the way of the inner / outer rocker.
+<div class="image">
+<a href="images/22.jpg" target="_blank">
+  <img loading="lazy" src="images/22.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>First up was removing my custom cut-n-fold patch panel. It was held in place by 3 bolts, some seam sealer, and several spot welds.
+<div class="image">
+<a href="images/23.jpg" target="_blank">
+  <img loading="lazy" src="images/23.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>From the outside it doesn&rsquo;t look too bad, but the inside was a different story.
+<div class="image">
+<a href="images/24.jpg" target="_blank">
+  <img loading="lazy" src="images/24.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Everything rusted out in just 2 years. It was next to impossible to stop the leaks which meant water pooled up in the panel and slowly rusted everything. I regret doing this mod, but I really had no other choice at the time.
+<div class="image">
+<a href="images/25.jpg" target="_blank">
+  <img loading="lazy" src="images/25.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Back when the Jeep was on the road I left my rear interior removed for about a year and would dry out the quarters whenever possible but it didn&rsquo;t do much other than slow the rust down a bit.</p>
+<p>You can see the water line based on the rust stain it left.
+<div class="image">
+<a href="images/26.jpg" target="_blank">
+  <img loading="lazy" src="images/26.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Patch panel not looking great. Thankfully I made them from 16ga steel so they hadn&rsquo;t rusted through.
+<div class="image">
+<a href="images/27.jpg" target="_blank">
+  <img loading="lazy" src="images/27.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>With the patch panel removed, next up was addressing the fuel neck area. There&rsquo;s only 4 spot welds and some adhesive mating the quarter panel to the filler area so it was pretty easy to remove with the die grinder and a heat gun to soften the adhesive.
+<div class="image">
+<a href="images/28.jpg" target="_blank">
+  <img loading="lazy" src="images/28.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/29.jpg" target="_blank">
+  <img loading="lazy" src="images/29.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>From there the quarter panel skin was ready to be removed. I couldn&rsquo;t find the spot welds on the back seam so I used the grinder to grind down the edge of the panel until it split. It&rsquo;s a neat trick I learned when re-skinning the lower halves of the new doors.
+<div class="image">
+<a href="images/30.jpg" target="_blank">
+  <img loading="lazy" src="images/30.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/31.jpg" target="_blank">
+  <img loading="lazy" src="images/31.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Rust everywhere.
+<div class="image">
+<a href="images/32.jpg" target="_blank">
+  <img loading="lazy" src="images/32.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The outer half of the inner wheel well was toast.
+<div class="image">
+<a href="images/33.jpg" target="_blank">
+  <img loading="lazy" src="images/33.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The bottom of the fuel neck housing was holding up good though! That&rsquo;s my handy work from 2 years ago. I never had access to grind the welds on the backside which is why they look a little rough.</p>
+<p>They&rsquo;re not leaking though because I seam sealed them on the inside of the fuel neck passage.
+<div class="image">
+<a href="images/34.jpg" target="_blank">
+  <img loading="lazy" src="images/34.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Outer half of the wheel well removed.
+<div class="image">
+<a href="images/35.jpg" target="_blank">
+  <img loading="lazy" src="images/35.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>There&rsquo;s a little bit of rust on the inner half but I think I can sandblast it.
+<div class="image">
+<a href="images/36.jpg" target="_blank">
+  <img loading="lazy" src="images/36.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The backside of the C pillar by the rocker doesn&rsquo;t actually look that bad. I think I can salvage most of it. This is great news because on the passenger side I had to rebuild it from scratch and it took me close to 20 hours from start to finish.
+<div class="image">
+<a href="images/37.jpg" target="_blank">
+  <img loading="lazy" src="images/37.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Dropping the Gas Tank
+  <a href="#dropping-the-gas-tank" id="dropping-the-gas-tank" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Before going any further I opted to drop the gas tank since I needed to do a bunch of grinding around the rubber fuel neck hoses and I didn&rsquo;t want to find out what would happen if I accidentally cut into them.</p>
+<p>Dropping the gas tank wasn&rsquo;t really that hard, and it gave me a chance to look over the rust repair I did back here a couple years ago. Everything is still holding up great. There&rsquo;s a couple small spots of rust that I&rsquo;d like to address soon but nothing concerning.</p>
+<p><div class="image">
+<a href="images/38.jpg" target="_blank">
+  <img loading="lazy" src="images/38.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The paint looks glossy in some areas and dusty in other areas because it&rsquo;s covered in fluid film. The fluid film tends to trap dust and builds up this thick layer which is why it looks brownish. The epoxy primer underneath is still perfect.
+<div class="image">
+<a href="images/39.jpg" target="_blank">
+  <img loading="lazy" src="images/39.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>There&rsquo;s a bit of rust coming out from behind the brackets that mate the frame rails to the rear crossmember, and I plan to replace them soon. I&rsquo;ve never been happy with the design of those brackets because I feel like I overcomplicated them by bending up 16ga when I should have just used some 1/8&quot; angle.
+<div class="image">
+<a href="images/40.jpg" target="_blank">
+  <img loading="lazy" src="images/40.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I&rsquo;m not really seeing any rust on the passenger side other than the exhaust lol.
+<div class="image">
+<a href="images/41.jpg" target="_blank">
+  <img loading="lazy" src="images/41.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Even everything inside of the fuel neck passage area looks great. Each year when I fluid film my Jeep in the fall I like to spray a ton up in there because I know it&rsquo;s the perfect spot for rust.
+<div class="image">
+<a href="images/42.jpg" target="_blank">
+  <img loading="lazy" src="images/42.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Cutting Out the Rust
+  <a href="#cutting-out-the-rust" id="cutting-out-the-rust" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>With the gas tank out of the way I felt comfortable breaking out the grinder so I could start removing rusted metal.</p>
+<p>I opted to start by cutting off the lower portion of the spare tire bracket since it was toast.
+<div class="image">
+<a href="images/43.jpg" target="_blank">
+  <img loading="lazy" src="images/43.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I tried cleaning up the floor with the die grinder but I couldn&rsquo;t quite get all the rust due to some pits that formed.
+<div class="image">
+<a href="images/44.jpg" target="_blank">
+  <img loading="lazy" src="images/44.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/45.jpg" target="_blank">
+  <img loading="lazy" src="images/45.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Some of the brackets inside of the upper portion of the quarter panel were showing signs of rust creeping out from behind them too.
+<div class="image">
+<a href="images/46.jpg" target="_blank">
+  <img loading="lazy" src="images/46.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The inner bracing where the hatch support mounts was looking really rough.
+<div class="image">
+<a href="images/47.jpg" target="_blank">
+  <img loading="lazy" src="images/47.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Drilling out the spot welds revealed more rust than I expected.
+<div class="image">
+<a href="images/48.jpg" target="_blank">
+  <img loading="lazy" src="images/48.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/49.jpg" target="_blank">
+  <img loading="lazy" src="images/49.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  No Choice But to Sandblast
+  <a href="#no-choice-but-to-sandblast" id="no-choice-but-to-sandblast" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Not wanting to miss any rust while I had the chance to properly address I figured it&rsquo;d be best if I bite the bullet and sandblast everything. I&rsquo;m trying to avoid sandblasting as much as possible because the Jeep is inside my garage and it makes a royal mess but there&rsquo;s no better option I&rsquo;m aware of.</p>
+<p><div class="image">
+<a href="images/50.jpg" target="_blank">
+  <img loading="lazy" src="images/50.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I forgot to snap a picture but I drilled out the spot welds on this bracket so I could sandblast between the layers. This pic was taken after I welded it back together.
+<div class="image">
+<a href="images/51.jpg" target="_blank">
+  <img loading="lazy" src="images/51.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The backside where the hatch strut mounts looks way better now.
+<div class="image">
+<a href="images/52.jpg" target="_blank">
+  <img loading="lazy" src="images/52.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/53.jpg" target="_blank">
+  <img loading="lazy" src="images/53.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The inner wheel well even cleaned up nicely too.
+<div class="image">
+<a href="images/54.jpg" target="_blank">
+  <img loading="lazy" src="images/54.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I was super pumped to see how well the C pillar cleaned up. Not having to rebuild it saves me a ton of time.
+<div class="image">
+<a href="images/55.jpg" target="_blank">
+  <img loading="lazy" src="images/55.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/56.jpg" target="_blank">
+  <img loading="lazy" src="images/56.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>While the blaster was out I cleaned up some pieces of the front door hinges that I had been meaning to address for awhile.
+<div class="image">
+<a href="images/57.jpg" target="_blank">
+  <img loading="lazy" src="images/57.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Fresh Epoxy To Protect Everything
+  <a href="#fresh-epoxy-to-protect-everything" id="fresh-epoxy-to-protect-everything" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>Painting everything is always my favorite step of the process. It just makes everything look instantly better.
+<div class="image">
+<a href="images/58.jpg" target="_blank">
+  <img loading="lazy" src="images/58.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/59.jpg" target="_blank">
+  <img loading="lazy" src="images/59.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/60.jpg" target="_blank">
+  <img loading="lazy" src="images/60.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/61.jpg" target="_blank">
+  <img loading="lazy" src="images/61.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Starting the Reconstruction
+  <a href="#starting-the-reconstruction" id="starting-the-reconstruction" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>The first piece I welded back on was the backing brace for the hatch strut. I&rsquo;m getting a little better about welding thicker metal to the thin gauge of the body.
+<div class="image">
+<a href="images/62.jpg" target="_blank">
+  <img loading="lazy" src="images/62.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>After that I made a new corner for the rear wheel well so I&rsquo;d have something to weld the spare tire bracket to.
+<div class="image">
+<a href="images/63.jpg" target="_blank">
+  <img loading="lazy" src="images/63.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/64.jpg" target="_blank">
+  <img loading="lazy" src="images/64.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/65.jpg" target="_blank">
+  <img loading="lazy" src="images/65.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Then I made a new lower half for the spare tire bracket.
+<div class="image">
+<a href="images/66.jpg" target="_blank">
+  <img loading="lazy" src="images/66.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/67.jpg" target="_blank">
+  <img loading="lazy" src="images/67.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>And with the new pieces welded in, I once again broke out the epoxy.
+<div class="image">
+<a href="images/68.jpg" target="_blank">
+  <img loading="lazy" src="images/68.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Inner Rocker Removal
+  <a href="#inner-rocker-removal" id="inner-rocker-removal" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Now that the quarter panel was all taken care of, I was finally ready to jump back over to the rocker panel. I used my sawzall to remove the inner rocker by chopping a portion of the floor out with it.
+<div class="image">
+<a href="images/69.jpg" target="_blank">
+  <img loading="lazy" src="images/69.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Having this much metal cut out of the body makes me feel uneasy.
+<div class="image">
+<a href="images/70.jpg" target="_blank">
+  <img loading="lazy" src="images/70.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Rebuilding the Rear Wheel Well
+  <a href="#rebuilding-the-rear-wheel-well" id="rebuilding-the-rear-wheel-well" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>A large portion of the rear wheel well where the inner rocker mates was too rusty to salvage and had to be cut out. This left me with a giant hole where the rocker needed to be welded.
+<div class="image">
+<a href="images/71.jpg" target="_blank">
+  <img loading="lazy" src="images/71.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I made a small patch and did my best to match the contour of the wheel well.
+<div class="image">
+<a href="images/72.jpg" target="_blank">
+  <img loading="lazy" src="images/72.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/73.jpg" target="_blank">
+  <img loading="lazy" src="images/73.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The welds aren&rsquo;t the prettiest but welding 18ga to whatever crazy thin gauge the inner wheel well is was kicking my butt.
+<div class="image">
+<a href="images/74.jpg" target="_blank">
+  <img loading="lazy" src="images/74.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Welding the New Inner Rocker
+  <a href="#welding-the-new-inner-rocker" id="welding-the-new-inner-rocker" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>And after all that work, I was finally able to weld in the new inner rocker.
+<div class="image">
+<a href="images/75.jpg" target="_blank">
+  <img loading="lazy" src="images/75.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I trimmed down my wheel well patches so they&rsquo;d match with the passenger side.
+<div class="image">
+<a href="images/76.jpg" target="_blank">
+  <img loading="lazy" src="images/76.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/77.jpg" target="_blank">
+  <img loading="lazy" src="images/77.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welding in the front was super easy. It&rsquo;s just three spot welds.
+<div class="image">
+<a href="images/78.jpg" target="_blank">
+  <img loading="lazy" src="images/78.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/79.jpg" target="_blank">
+  <img loading="lazy" src="images/79.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Adding the Missing Brace
+  <a href="#adding-the-missing-brace" id="adding-the-missing-brace" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>I was never able to fully complete my rear brace until now because it needed to be welded to the backside of the inner rocker, but with the new rocker in place I was finally able to complete the &ldquo;X&rdquo;.
+<div class="image">
+<a href="images/80.jpg" target="_blank">
+  <img loading="lazy" src="images/80.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/81.jpg" target="_blank">
+  <img loading="lazy" src="images/81.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>It may be a bit excessive right now, but in a month or two the floor needs to come out so a little extra bracing won&rsquo;t hurt.
+<div class="image">
+<a href="images/82.jpg" target="_blank">
+  <img loading="lazy" src="images/82.jpg" alt="" title="" />
+</a>
+</div></p>
+<h2>
+  Fixing the Bottom of the C Pillar
+  <a href="#fixing-the-bottom-of-the-c-pillar" id="fixing-the-bottom-of-the-c-pillar" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>The bottom of the C pillar probably doesn&rsquo;t look great to most people, but I&rsquo;m super happy with it&rsquo;s condition because it&rsquo;s salvageable.
+<div class="image">
+<a href="images/83.jpg" target="_blank">
+  <img loading="lazy" src="images/83.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/84.jpg" target="_blank">
+  <img loading="lazy" src="images/84.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/85.jpg" target="_blank">
+  <img loading="lazy" src="images/85.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I didn&rsquo;t have to cut out that much metal, and it wasn&rsquo;t overly difficult to bend up a new patch.
+<div class="image">
+<a href="images/86.jpg" target="_blank">
+  <img loading="lazy" src="images/86.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/87.jpg" target="_blank">
+  <img loading="lazy" src="images/87.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welded in and all cleaned up with the grinder.
+<div class="image">
+<a href="images/88.jpg" target="_blank">
+  <img loading="lazy" src="images/88.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Next Steps
+  <a href="#next-steps" id="next-steps" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p><div class="image">
+<a href="images/89.jpg" target="_blank">
+  <img loading="lazy" src="images/89.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The lower portion of the C pillar still needs to be cleaned up a bit more before it&rsquo;s ready for paint. There&rsquo;s a hole I need to weld up on it from an old spot weld that was drilled out, and I need to trim the bottom of the patch a little better.</p>
+<p>Once it&rsquo;s ready for paint I&rsquo;ll give it a couple coats of epoxy and also spray the inner rocker at the same time.</p>
+<p>From there I&rsquo;ll likely work on installing the outer rocker.</p>
+
+    </div>
+  </article>
+
+  
+    <div class="post-series-buttons">
+  
+  
+
+  
+    <a class="prev-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-18/">
+      <span class="icon"><i class="fas fa-angle-left"></i></span>
+      <div>
+        <h6>Prev</h6>
+        <span class="dn-phone">Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</span>
+      </div>
+    </a>
+  
+
+  
+    <a class="next-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-20/">
+      <div>
+        <h6>Next</h6>
+        <span class="dn-phone">Rust Repair Part 20: Blowing Off the Dust a Year Later</span>
+      </div>
+
+      <span class="icon"><i class="fas fa-angle-right"></i></span>
+    </a>
+  
+</div>
+
+  
+
+    </main>
+
+    <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+  </body>
+</html>

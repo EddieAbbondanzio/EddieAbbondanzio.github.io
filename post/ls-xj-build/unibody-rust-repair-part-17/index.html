@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rust Repair Part 17: Finally Finishing the Passenger Quarter Panel</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
+
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.88a71dbb50cbcf901310925187b3cf90739d2d25c21a0e944e088b7d7fcb5226.css"
+      integrity="sha256-iKcdu1DLz5ATEJJRh7PPkHOdLSXCGg6UTgiLfX/LUiY="
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
+
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+    
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      Rust Repair Part 17: Finally Finishing the Passenger Quarter Panel
+    </h1>
+
+    <div class="fr meta pb3">
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/categories/ls-xj-build"
+          title="More LS XJ Build posts"
+        >
+          <i class="fas fa-folder"></i>
+          LS XJ Build
+        </a>
+      
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/series/unibody-rust-repair"
+          title="More Unibody Rust Repair posts"
+        >
+          <i class="fas fa-th-list"></i>
+          Unibody Rust Repair
+        </a>
+      
+
+      
+        <div class="date" title="Posted on Apr 12, 2023">
+          <i class="fas fa-calendar-day"></i>
+          <time>Apr 12, 2023</time>
+        </div>
+      
+    </div>
+
+    <div class="markdown-body" data-pagefind-body>
+      <p>It&rsquo;s taken me roughly 3 times as long as I imagined to finish all the work on the passenger side, but it&rsquo;s been well worth the effort. To recap the past 6 months I&rsquo;ve replaced:</p>
+<ul>
+<li>The front / rear door.</li>
+<li>The drip rail along with the edge of the roof</li>
+<li>The inner and outer rocker including installing a 2x6 for extra strength</li>
+<li>The bottom corner of the A pillar</li>
+<li>The bottom of the B pillar</li>
+<li>The lower half of the C Pillar (AKA dog leg)</li>
+<li>The outer half of the inner wheel on the rear</li>
+<li>The inner lower quarter panel structure to undo the cut n fold mod</li>
+<li>The entire outer quarter panel skin</li>
+<li>And many more little pieces</li>
+</ul>
+<p>So much work but the progress is really starting to show.</p>
+<h1>
+  Painting the Inner Quarter Panel
+  <a href="#painting-the-inner-quarter-panel" id="painting-the-inner-quarter-panel" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Since I&rsquo;m getting ready to weld on the outer skin I wanted to finalize the inner quarter panel and paint everything I could.
+<div class="image">
+<a href="images/1.jpg" target="_blank">
+  <img loading="lazy" src="images/1.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I also made some braces that will be welded on the inside of the quarters below where the taillights mount. From the factory, the Cherokee&rsquo;s have a second inner layer that&rsquo;s there to help stiffen things up but I had to remove it to get at some rust between the layers.
+<div class="image">
+<a href="images/2.jpg" target="_blank">
+  <img loading="lazy" src="images/2.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Anytime I make a piece like this I&rsquo;ll make a second one for the other side while the design is still fresh in my head.</p>
+<p>Test fit.
+<div class="image">
+<a href="images/3.jpg" target="_blank">
+  <img loading="lazy" src="images/3.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welded in.
+<div class="image">
+<a href="images/8.jpg" target="_blank">
+  <img loading="lazy" src="images/8.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Fitting up the Outer Skin
+  <a href="#fitting-up-the-outer-skin" id="fitting-up-the-outer-skin" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Replacement panels are never perfect fits so it can take some time to really dial in where you want to position the new one. Using a bunch of self tapper screws and my hammer to &ldquo;massage&rdquo; some spots I was able to get the panel to line up almost perfectly with the body and my DIY inner wheel well.
+<div class="image">
+<a href="images/4.jpg" target="_blank">
+  <img loading="lazy" src="images/4.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/5.jpg" target="_blank">
+  <img loading="lazy" src="images/5.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Each self tapper is where I intend to spot weld so there&rsquo;s no harm in all the holes. The trick is to remove one screw at a time and weld up the hole. This keeps the panel from moving.
+<div class="image">
+<a href="images/6.jpg" target="_blank">
+  <img loading="lazy" src="images/6.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>After one last sanity check and some measurements to ensure I was absolutely happy with the placement I drilled out the holes to about 3/8&quot; and grinded off any paint around them to prep for welding.
+<div class="image">
+<a href="images/7.jpg" target="_blank">
+  <img loading="lazy" src="images/7.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Welding it in
+  <a href="#welding-it-in" id="welding-it-in" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>About 40 spot welds later the panel was officially welded in! Well minus the top seam.
+<div class="image">
+<a href="images/9.jpg" target="_blank">
+  <img loading="lazy" src="images/9.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>When doing plug welds like these I like to run the welder on the hotter side to ensure the welds are as strong as possible.
+<div class="image">
+<a href="images/10.jpg" target="_blank">
+  <img loading="lazy" src="images/10.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welding up the top seam took longer than all of the plug welds. You can&rsquo;t put too much heat into the panel otherwise you risk warping it so you have to make small tacks that are as spaced out along the seam and give the panel time to cool down every so often. It&rsquo;s a real test of your patience but it&rsquo;s worth the wait.
+<div class="image">
+<a href="images/11.jpg" target="_blank">
+  <img loading="lazy" src="images/11.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>A bit of careful grinding cleaned everything up nicely.
+<div class="image">
+<a href="images/12.jpg" target="_blank">
+  <img loading="lazy" src="images/12.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Not bad! I&rsquo;m not seeing too much warpage so I don&rsquo;t anticipate too many difficulties when it comes to the body filler stage.
+<div class="image">
+<a href="images/13.jpg" target="_blank">
+  <img loading="lazy" src="images/13.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Paint!
+  <a href="#paint" id="paint" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Of course the repair wouldn&rsquo;t be complete without some paint to protect it in the mean time. Two coats of epoxy primer fixed that problem.
+<div class="image">
+<a href="images/14.jpg" target="_blank">
+  <img loading="lazy" src="images/14.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>The upper seam looks a little lumpy but it&rsquo;s not that bad. I think with some planishing it&rsquo;ll smooth out nicely.
+<div class="image">
+<a href="images/15.jpg" target="_blank">
+  <img loading="lazy" src="images/15.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/16.jpg" target="_blank">
+  <img loading="lazy" src="images/16.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>It&rsquo;s exciting to finally have finished the first side. I&rsquo;ve still got a ton of work to do on the driver side, floor pan, and firewall but it feels like a huge accomplishment getting such a large portion done.</p>
+
+    </div>
+  </article>
+
+  
+    <div class="post-series-buttons">
+  
+  
+
+  
+    <a class="prev-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-16/">
+      <span class="icon"><i class="fas fa-angle-left"></i></span>
+      <div>
+        <h6>Prev</h6>
+        <span class="dn-phone">Rust Repair Part 16: A New Rear Passenger Inner Wheel Well</span>
+      </div>
+    </a>
+  
+
+  
+    <a class="next-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-18/">
+      <div>
+        <h6>Next</h6>
+        <span class="dn-phone">Rust Repair Part 18: Diving Into the Driver Side and Fixing the Drip Rail</span>
+      </div>
+
+      <span class="icon"><i class="fas fa-angle-right"></i></span>
+    </a>
+  
+</div>
+
+  
+
+    </main>
+
+    <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+  </body>
+</html>

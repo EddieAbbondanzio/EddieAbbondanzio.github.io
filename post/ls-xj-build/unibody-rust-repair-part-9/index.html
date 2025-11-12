@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rust Repair Part 9: Closing Up The Floor</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
+
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.88a71dbb50cbcf901310925187b3cf90739d2d25c21a0e944e088b7d7fcb5226.css"
+      integrity="sha256-iKcdu1DLz5ATEJJRh7PPkHOdLSXCGg6UTgiLfX/LUiY="
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
+
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+    
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      Rust Repair Part 9: Closing Up The Floor
+    </h1>
+
+    <div class="fr meta pb3">
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/categories/ls-xj-build"
+          title="More LS XJ Build posts"
+        >
+          <i class="fas fa-folder"></i>
+          LS XJ Build
+        </a>
+      
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/series/unibody-rust-repair"
+          title="More Unibody Rust Repair posts"
+        >
+          <i class="fas fa-th-list"></i>
+          Unibody Rust Repair
+        </a>
+      
+
+      
+        <div class="date" title="Posted on Dec 27, 2020">
+          <i class="fas fa-calendar-day"></i>
+          <time>Dec 27, 2020</time>
+        </div>
+      
+    </div>
+
+    <div class="markdown-body" data-pagefind-body>
+      <p>The least exciting portion of this project by far was closing up the two holes left in the floor directly below where the rear seat goes. I initally cut these holes in the floor way back at the beginning of the project because I needed to remove the original frame rails.
+<div class="image">
+<a href="images/1.jpg" target="_blank">
+  <img loading="lazy" src="images/1.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Before I could even weld them closed I had to make some smaller patches on the edges to simplify closing them up.
+<div class="image">
+<a href="images/2.jpg" target="_blank">
+  <img loading="lazy" src="images/2.jpg" alt="" title="" />
+</a>
+</div></p>
+<p><div class="image">
+<a href="images/3.jpg" target="_blank">
+  <img loading="lazy" src="images/3.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/4.jpg" target="_blank">
+  <img loading="lazy" src="images/4.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I made my patches out of 18ga which is slightly thicker than the OEM floor. I really wish I had a bead roller as I feel like that would have made the patches look more OEM.
+<div class="image">
+<a href="images/5.jpg" target="_blank">
+  <img loading="lazy" src="images/5.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Because of the odd location of the patch I wasn&rsquo;t able to use clamps to hold it down on the frame to spot weld it in place. Instead I used self tappers to hold it tight. This worked out pretty decently and ensured the floor was firmly against the frame. It also allowed me to prep the edges of the floor that would be welded to the patch.
+<div class="image">
+<a href="images/6.jpg" target="_blank">
+  <img loading="lazy" src="images/6.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Doing the other side was basically the same exact process. A small patch had to be made near the wheel well to prepare for the larger patch.
+<div class="image">
+<a href="images/7.jpg" target="_blank">
+  <img loading="lazy" src="images/7.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>In order to make the large patch I made a template of it using thick paper. Then traced it out on my sheet metal.
+<div class="image">
+<a href="images/8.jpg" target="_blank">
+  <img loading="lazy" src="images/8.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Several cuts with the angle grinder later.
+<div class="image">
+<a href="images/9.jpg" target="_blank">
+  <img loading="lazy" src="images/9.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Then two bends in the metal brake and several holes drilled for spot welds we had our second patch.
+<div class="image">
+<a href="images/10.jpg" target="_blank">
+  <img loading="lazy" src="images/10.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I decided to prep them for paint so I could cover the bottomside that will be covered by the frame rail.
+<div class="image">
+<a href="images/11.jpg" target="_blank">
+  <img loading="lazy" src="images/11.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I was feeling lazy and brushed the paint on. I wish I had sprayed it instead.
+<div class="image">
+<a href="images/12.jpg" target="_blank">
+  <img loading="lazy" src="images/12.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>But with the paint on the backside I was ready to weld them in.
+<div class="image">
+<a href="images/13.jpg" target="_blank">
+  <img loading="lazy" src="images/13.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/14.jpg" target="_blank">
+  <img loading="lazy" src="images/14.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Spot welding them to the frame was actually pretty easy. I&rsquo;ve got a lot of practice dialing in the welder now when working with 18ga and 16ga.
+<div class="image">
+<a href="images/15.jpg" target="_blank">
+  <img loading="lazy" src="images/15.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>To make butt welding up the seams I picked up some butt weld clamps from Harbor Freight. I&rsquo;ve never heard of these till now but I really llike them.
+<div class="image">
+<a href="images/16.jpg" target="_blank">
+  <img loading="lazy" src="images/16.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welding up the seams took a long time as I had to work slow to prevent from warping the floor.
+<div class="image">
+<a href="images/17.jpg" target="_blank">
+  <img loading="lazy" src="images/17.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>With all the welding done, it was time to break out the grinder and clean everything up.
+<div class="image">
+<a href="images/18.jpg" target="_blank">
+  <img loading="lazy" src="images/18.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/19.jpg" target="_blank">
+  <img loading="lazy" src="images/19.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>If I could do this all over I&rsquo;d run the patch through a bead roller to give it a more OEM look. Oh well it&rsquo;s not a show Jeep.</p>
+<p>One part that worried me a bit was welding the cargo area patch to the center of the floor below the rear seat.
+<div class="image">
+<a href="images/20.jpg" target="_blank">
+  <img loading="lazy" src="images/20.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I left the patch overhanging the OEM floor a bit. I ended up using the angle grinder with a cutting disc to cut off the excess so I could butt weld it up.
+<div class="image">
+<a href="images/21.jpg" target="_blank">
+  <img loading="lazy" src="images/21.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Talk about a slow process. I tack welded it extra slow to ensure the floor didn&rsquo;t get too hot.
+<div class="image">
+<a href="images/22.jpg" target="_blank">
+  <img loading="lazy" src="images/22.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Welding in the driver side patch went fairly smooth. My cuts were a bit sloppier as the gaps were larger on this side, but it wasn&rsquo;t anything extra welding couldn&rsquo;t fix.
+<div class="image">
+<a href="images/23.jpg" target="_blank">
+  <img loading="lazy" src="images/23.jpg" alt="" title="" />
+</a>
+</div></p>
+<p><div class="image">
+<a href="images/24.jpg" target="_blank">
+  <img loading="lazy" src="images/24.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/25.jpg" target="_blank">
+  <img loading="lazy" src="images/25.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/26.jpg" target="_blank">
+  <img loading="lazy" src="images/26.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>With both patches welded in I sanded down the floor so I could lay a fresh coat of paint down.
+<div class="image">
+<a href="images/27.jpg" target="_blank">
+  <img loading="lazy" src="images/27.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/28.jpg" target="_blank">
+  <img loading="lazy" src="images/28.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>I made sure to tape off everything extra carefully.
+<div class="image">
+<a href="images/29.jpg" target="_blank">
+  <img loading="lazy" src="images/29.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/30.jpg" target="_blank">
+  <img loading="lazy" src="images/30.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>And two coats of paint later it was looking better.
+<div class="image">
+<a href="images/31.jpg" target="_blank">
+  <img loading="lazy" src="images/31.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/32.jpg" target="_blank">
+  <img loading="lazy" src="images/32.jpg" alt="" title="" />
+</a>
+</div>
+<div class="image">
+<a href="images/33.jpg" target="_blank">
+  <img loading="lazy" src="images/33.jpg" alt="" title="" />
+</a>
+</div></p>
+<p>Well until it dried. The floor ended up with a lot of overspray unfortunately. This was my first time spraying in an enclosed area and I didn&rsquo;t realize the lack of airflow would cause a massive overspray issue. Live and learn I suppose. Least it&rsquo;ll be hidden underneath all the carpet and what not.
+<div class="image">
+<a href="images/34.jpg" target="_blank">
+  <img loading="lazy" src="images/34.jpg" alt="" title="" />
+</a>
+</div></p>
+
+    </div>
+  </article>
+
+  
+    <div class="post-series-buttons">
+  
+  
+
+  
+    <a class="prev-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-8/">
+      <span class="icon"><i class="fas fa-angle-left"></i></span>
+      <div>
+        <h6>Prev</h6>
+        <span class="dn-phone">Rust Repair Part 8: Welding on Frame Stiffeners</span>
+      </div>
+    </a>
+  
+
+  
+    <a class="next-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-10/">
+      <div>
+        <h6>Next</h6>
+        <span class="dn-phone">Rust Repair Part 10: The Finishing Touches</span>
+      </div>
+
+      <span class="icon"><i class="fas fa-angle-right"></i></span>
+    </a>
+  
+</div>
+
+  
+
+    </main>
+
+    <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+  </body>
+</html>
