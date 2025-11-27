@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homelab on Eddie Abbondanzio</title>
+    <link>https://eddieabbondanz.io/categories/homelab/</link>
+    <description>Recent content in Homelab on Eddie Abbondanzio</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://eddieabbondanz.io/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My $460 Scratch Built NAS with 12TB of Storage</title>
+      <link>https://eddieabbondanz.io/post/homelab/diy-elitedesk-g3-800-sff-nas/</link>
+      <pubDate>Thu, 27 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/homelab/diy-elitedesk-g3-800-sff-nas/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been having some fun dipping my toes into the realm of homelabbing and decided it was time to build a proper NAS. I used to back up my data between my two laptops using Syncthing and I felt fairly safe with that setup because if one laptop died I&amp;rsquo;d still have all the data on the other laptop.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

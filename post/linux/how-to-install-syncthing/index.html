@@ -234,6 +234,10 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable syncthing.service
 </span></span><span style="display:flex;"><span>sudo systemctl start syncthing.service
 </span></span></code></pre></div><p>Then check for any errors in <code>systemctl status syncthing</code>. If everything worked, you can access the web UI at http://127.0.0.1:8034 and start customizing Syncthing.</p>
+<h2>
+  Config Paths
+  <a href="#config-paths" id="config-paths" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h2><p>It&rsquo;s up to you to set up your syncthing install but a handy command for figuring out your next steps is <code>syncthing -paths</code>. It&rsquo;ll print out the various file paths it&rsquo;s using such as <code>config.xml</code> or encryption keys.</p>
 
     </div>
   </article>
