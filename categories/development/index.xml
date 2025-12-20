@@ -16,13 +16,6 @@
       <description>&lt;p&gt;If you&amp;rsquo;re trying to install FreeCAD on Linux via an appimage and your running into a &lt;code&gt;Squashfs image uses (null) compression, this version supports only xz, zlib&lt;/code&gt; error on startup it&amp;rsquo;s due to a bug in AppImageLauncher. This is a &lt;a href=&#34;https://github.com/TheAssassin/AppImageLauncher/issues/585&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;known bug&lt;/a&gt; that&amp;rsquo;s been &lt;a href=&#34;https://github.com/TheAssassin/AppImageLauncher/pull/690&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fixed&lt;/a&gt; for a few months but at the time of writing this (2025-08-04) the fix hasn&amp;rsquo;t been included in any releases yet.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>How to Install Syncthing on Ubuntu</title>
-      <link>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</link>
-      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/post/linux/how-to-install-syncthing/</guid>
-      <description>&lt;p&gt;Syncthing rocks. I use it to keep my notes and docs synced between my two laptops and it&amp;rsquo;s never let me down. Recently one of my laptops went kaput after an OS upgrade and I was forced to set everything up from scratch (including Syncthing). Thankfully it&amp;rsquo;s pretty easy to set up.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Abusing For Loops In C# For Job Security</title>
       <link>https://eddieabbondanz.io/post/c-sharp/abusing-for-loops-for-job-security/</link>
       <pubDate>Mon, 11 Jan 2021 00:00:00 +0000</pubDate>

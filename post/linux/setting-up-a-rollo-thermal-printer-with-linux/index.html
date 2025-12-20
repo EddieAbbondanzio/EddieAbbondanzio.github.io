@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>How To Set Up a Rollo Thermal Printer With Linux</title>
+    
+      <meta name="description" content="My blog about my project cars and other contraptions" />
+    
+    
+      <meta name="author" content="Eddie Abbondanzio" />
+    
+    
+
+    
+    
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io/sass/index.min.88a71dbb50cbcf901310925187b3cf90739d2d25c21a0e944e088b7d7fcb5226.css"
+      integrity="sha256-iKcdu1DLz5ATEJJRh7PPkHOdLSXCGg6UTgiLfX/LUiY="
+      media="screen"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://eddieabbondanz.io//widgets/_plugin-vue_export-helper.css"
+    />
+
+    <script
+      data-goatcounter="https://tgpo.eddieabbondanz.io/count"
+      async
+      src="//tgpo.eddieabbondanz.io/count.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar fr jcsb aic mt2-phone">
+  <div class="title h100 fr aic">
+    <a href="https://eddieabbondanz.io/">
+      <img class="avatar mr2" src="https://eddieabbondanz.io/img/avatar.jpg" />
+    </a>
+
+    <a class="tdn fwb" href="https://eddieabbondanz.io/">
+      <span>Eddie Abbondanzio</span>
+    </a>
+  </div>
+
+  <div id="desktop-search" class="pr2 hidden-phone">
+    
+  </div>
+
+  <div class="menu h100 aic fr-tablet dn-phone">
+     
+    <div class="item dropdown">
+      <a class="trigger"
+        >Blog
+        <span class="icon"><i class="fas fa-chevron-down"></i></span>
+      </a>
+      <div class="content-wrapper">
+        <div class="content">
+          <a href="https://eddieabbondanz.io/post/"> All </a>
+
+          
+          <a href="https://eddieabbondanz.io/categories/development">Development</a>
+          
+          <a href="https://eddieabbondanz.io/categories/ls-xj-build">LS XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build">OEM&#43; XJ Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build">93 EG Hatch Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/88-integra-build">88 Integra Build</a>
+          
+          <a href="https://eddieabbondanz.io/categories/honda-info-and-diys">Honda Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/xj-info-and-diys">XJ Info and DIYs</a>
+          
+          <a href="https://eddieabbondanz.io/categories/shop-and-tools">Shop and Tools</a>
+          
+        </div>
+      </div>
+    </div>
+      
+    <a class="item single" href="https://eddieabbondanz.io/app">Apps</a>
+      
+    <a class="item single" href="https://eddieabbondanz.io/about">About</a>
+     
+    <div class="item social h100 fr aic px3">
+      
+      <a href="http://github.com/EddieAbbondanzio" target="_blank" title="GitHub">
+        <span class="icon">
+          <i class="fab fa-github fa-lg"></i>
+        </span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank" title="Linkedin">
+        <span class="icon">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+
+  <a id="hamburger" class="hamburger" href="#">
+    <span class="icon">
+      <i class="fa fa-bars fa-lg"></i>
+    </span>
+  </a>
+</nav>
+
+    
+<div id="hamburger-menu" class="hamburger-menu">
+   
+
+  <div>
+    <div id="phone-search" class="mt2">
+      
+    </div>
+    
+    <div class="ml2">
+      <a href="https://eddieabbondanz.io/post/"> All </a>
+
+      
+      <a href="https://eddieabbondanz.io/categories/development"> Development </a>
+      
+      <a href="https://eddieabbondanz.io/categories/ls-xj-build"> LS XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/oem&#43;-xj-build"> OEM&#43; XJ Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/93-eg-hatch-build"> 93 EG Hatch Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/88-integra-build"> 88 Integra Build </a>
+      
+      <a href="https://eddieabbondanz.io/categories/honda-info-and-diys"> Honda Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/xj-info-and-diys"> XJ Info and DIYs </a>
+      
+      <a href="https://eddieabbondanz.io/categories/shop-and-tools"> Shop and Tools </a>
+      
+    </div>
+  </div>
+   
+  <a href="https://eddieabbondanz.io/app">Apps</a>
+   
+  <a href="https://eddieabbondanz.io/about">About</a>
+  
+
+  <div class="fr jcse">
+    
+    <a href="http://github.com/EddieAbbondanzio" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-github fa-lg"></i>
+      </span>
+    </a>
+    
+    <a href="https://www.linkedin.com/in/ed-abbondanzio-5a7378208/" target="_blank">
+      <span class="icon is-medium">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </span>
+    </a>
+    
+  </div>
+</div>
+
+
+    <main>
+      
+  <article class="post" data-pagefind-meta="image:">
+    <h1 class="h1 mb2" data-pagefind-meta="title">
+      
+      How To Set Up a Rollo Thermal Printer With Linux
+    </h1>
+
+    <div class="fr meta pb3">
+      
+      
+        <a
+          class="mr1ch tdn"
+          href="https://eddieabbondanz.io/series/linux"
+          title="More Linux posts"
+        >
+          <i class="fas fa-th-list"></i>
+          Linux
+        </a>
+      
+
+      
+        <div class="date" title="Posted on Dec 20, 2025">
+          <i class="fas fa-calendar-day"></i>
+          <time>Dec 20, 2025</time>
+        </div>
+      
+    </div>
+
+    <div class="markdown-body" data-pagefind-body>
+      <p>With my side gig of selling 3d printed parts slowly taking off, I figured it was time to pick up a thermal printer for making shipping labels. I was worried this be easier said than done since I run Pop!_OS on my laptop but as it turns out Rollo (one of the popular budget friendly printer manufacturers out there) has full linux support and even offers official drivers.</p>
+<p>I was able to find a nice lightly used Rollo X1038 printer for $108 shipped and picked up 500 generic 4x6 shipping labels for $8.96.
+<div class="image">
+<a href="./images/1.jpg" target="_blank">
+  <img loading="lazy" src="./images/1.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  Setup
+  <a href="#setup" id="setup" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p>Setting up the printer was surprisingly easy.</p>
+<ol>
+<li>Head over to <a href="https://www.rollo.com/driver-linux/" target="_blank" rel="noopener">Rollo&rsquo;s site</a> and download / install the appropriate Linux driver for your distro. (I used the Ubuntu one)</li>
+<li>Connect the printer to your laptop via a USB cable and power it up. It should be auto detected and added but if not you can manually add it.</li>
+<li>Open up the printer settings and ensure your have the correct label size and orientation configured.
+<div class="image">
+<a href="./images/2-printer-settings.png" target="_blank">
+  <img loading="lazy" src="./images/2-printer-settings.png" alt="" title="" />
+</a>
+</div></li>
+<li>Download a sample label to test with. <a href="https://www.rollo.com/sample/" target="_blank" rel="noopener">Rollo has one available</a></li>
+<li>Open up the sample label and print it. It should just work.</li>
+</ol>
+<p>That&rsquo;s it!
+<div class="image">
+<a href="./images/3-test-label.jpg" target="_blank">
+  <img loading="lazy" src="./images/3-test-label.jpg" alt="" title="" />
+</a>
+</div></p>
+<h1>
+  FAQs
+  <a href="#faqs" id="faqs" class="anchor" aria-hidden="true"><i class="fa fa-link"></i></a>
+</h1><p><strong>Why are my labels being printed cut off?</strong></p>
+<p>Double check the following:</p>
+<ul>
+<li>Labels are correctly positioned in the printer</li>
+<li>You&rsquo;ve correctly set the paper size and orientation in your OS printer settings</li>
+<li>The program you&rsquo;re printing the label from (ex: Document Viewer) has the correct paper size and orientation configured</li>
+</ul>
+<p>If none of the above fix the issue check that the document you are printing has the label positioned correctly. The label should be in the top left corner of the page with no space between it and the edges.</p>
+<p><strong>Will this work for the newer wireless Rollo X1040?</strong></p>
+<p>It <em>should</em>, but I don&rsquo;t have one to test with. The wireless printer was too expensive for me.</p>
+<p><a href="https://forums.linuxmint.com/viewtopic.php?p=2530379#p2530379" target="_blank" rel="noopener">Others have had good luck with it though</a></p>
+
+    </div>
+  </article>
+
+  
+    <div class="post-series-buttons">
+  
+  
+
+  
+    <a class="prev-post fr aic jcc pa0-phone pa2" href="https://eddieabbondanz.io/post/linux/freecad-appimage-fails-to-start/">
+      <span class="icon"><i class="fas fa-angle-left"></i></span>
+      <div>
+        <h6>Prev</h6>
+        <span class="dn-phone">FreeCAD AppImage Fails to Start Due to SquashFS Error</span>
+      </div>
+    </a>
+  
+
+  
+</div>
+
+  
+
+    </main>
+
+    <footer>
+  <p>&copy; 2013 - 2025 Eddie Abbondanzio</p>
+</footer>
+    <script src="https://eddieabbondanz.io/js/lol.js"></script>
+    <link href="https://eddieabbondanz.io/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="https://eddieabbondanz.io/pagefind/pagefind-ui.js"></script>
+
+<script>
+  const DRAWER_QUERY = ".pagefind-ui__drawer"
+
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDesktopSearchBar();
+    initPhoneSearchBar();
+  });
+
+  function initDesktopSearchBar() {
+    new PagefindUI({
+      element: "#desktop-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+    
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+  }
+
+  function initPhoneSearchBar() {
+    new PagefindUI({
+      element: "#phone-search", 
+      showSubResults: false, 
+      pageSize: 10, 
+      translations: {
+        placeholder: "Search posts"
+      } 
+    });
+
+        
+    const input = document.querySelector("#desktop-search input")
+    input.addEventListener("focus", () => {
+      const drawer = document.querySelector(DRAWER_QUERY)
+      if(drawer) {
+        drawer.classList.remove("hidden")
+      }
+    })
+
+    
+    window.addEventListener("click", (ev) => {
+      if(!ev.target.closest("#desktop-search")) {
+        const drawer = document.querySelector(DRAWER_QUERY)
+        drawer.classList.add("hidden")
+      }
+    })
+
+  }
+</script>
+  </body>
+</html>

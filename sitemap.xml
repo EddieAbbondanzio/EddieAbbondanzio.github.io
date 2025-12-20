@@ -12,10 +12,22 @@
   </url><url>
     <loc>https://eddieabbondanz.io/app/clapbutton/</loc>
   </url><url>
-    <loc>https://eddieabbondanz.io/categories/</loc>
-    <lastmod>2025-11-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://eddieabbondanz.io/</loc>
+    <lastmod>2025-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eddieabbondanz.io/post/linux/setting-up-a-rollo-thermal-printer-with-linux/</loc>
+    <lastmod>2025-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/linux/</loc>
+    <lastmod>2025-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eddieabbondanz.io/post/</loc>
+    <lastmod>2025-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eddieabbondanz.io/series/</loc>
+    <lastmod>2025-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://eddieabbondanz.io/categories/</loc>
     <lastmod>2025-11-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/categories/homelab/</loc>
@@ -24,16 +36,10 @@
     <loc>https://eddieabbondanz.io/post/homelab/diy-elitedesk-g3-800-sff-nas/</loc>
     <lastmod>2025-11-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://eddieabbondanz.io/post/</loc>
-    <lastmod>2025-11-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://eddieabbondanz.io/categories/ls-xj-build/</loc>
     <lastmod>2025-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/post/ls-xj-build/unibody-rust-repair-part-26/</loc>
-    <lastmod>2025-11-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://eddieabbondanz.io/series/</loc>
     <lastmod>2025-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/series/unibody-rust-repair/</loc>
@@ -97,9 +103,6 @@
     <lastmod>2025-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/post/linux/freecad-appimage-fails-to-start/</loc>
-    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://eddieabbondanz.io/series/linux/</loc>
     <lastmod>2025-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://eddieabbondanz.io/post/shop/mini-bike-build/</loc>

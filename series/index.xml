@@ -6,8 +6,15 @@
     <description>Recent content in Series on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://eddieabbondanz.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://eddieabbondanz.io/series/linux/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/series/linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>XJ Unibody Rust Repair</title>
       <link>https://eddieabbondanz.io/series/unibody-rust-repair/</link>
@@ -27,13 +34,6 @@
       <link>https://eddieabbondanz.io/series/3d-printing/</link>
       <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://eddieabbondanz.io/series/3d-printing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://eddieabbondanz.io/series/linux/</link>
-      <pubDate>Mon, 04 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://eddieabbondanz.io/series/linux/</guid>
       <description></description>
     </item>
     <item>

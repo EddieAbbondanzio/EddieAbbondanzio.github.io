@@ -6,10 +6,17 @@
     <description>Recent content in Posts on Eddie Abbondanzio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://eddieabbondanz.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My $460 Scratch Built NAS with 12TB of Storage</title>
+      <title>How To Set Up a Rollo Thermal Printer With Linux</title>
+      <link>https://eddieabbondanz.io/post/linux/setting-up-a-rollo-thermal-printer-with-linux/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://eddieabbondanz.io/post/linux/setting-up-a-rollo-thermal-printer-with-linux/</guid>
+      <description>&lt;p&gt;With my side gig of selling 3d printed parts slowly taking off, I figured it was time to pick up a thermal printer for making shipping labels. I was worried this be easier said than done since I run Pop!_OS on my laptop but as it turns out Rollo (one of the popular budget friendly printer manufacturers out there) has full linux support and even offers official drivers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My $450 Scratch Built NAS with 12TB of Storage</title>
       <link>https://eddieabbondanz.io/post/homelab/diy-elitedesk-g3-800-sff-nas/</link>
       <pubDate>Thu, 27 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://eddieabbondanz.io/post/homelab/diy-elitedesk-g3-800-sff-nas/</guid>
